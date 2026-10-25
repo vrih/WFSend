@@ -1,0 +1,4 @@
+National time series of total reported waiting list by service
+Data is submitted at provider level and aggregated up to national level. Therefore variation in the number of providers submitting each month could cause variation in the reported waiting list so this should be taken into account if comparing across months - see Table 1 for more detail
+Service,Apr-26,May-26,Jun-26,Jul-26,Aug-26,Sep-26,Oct-26,Nov-26,Dec-26,Jan-27,Feb-27,Mar-27
+England,1219376,1219947

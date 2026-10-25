@@ -1,0 +1,6 @@
+"National overview of waiting list metrics by service, February 2026"
+Data is submitted at provider level and aggregated up to national level. Therefore variation in the number of providers submitting each month could cause variation in the reported waiting list so this should be taken into account if comparing across months - see Table 1 for more detail
+The sum of weekly breakdowns may not match the total waiting list as some providers were still collecting data by weeks waiting
+"* Data for adult safeguarding, looked after children teams and children and young people's safeguarding is only published at national level and for total waiting list to prevent risk of disclosing sensitive information."
+,Total waiting list,Waiting 0-1 weeks,Waiting >1-2 weeks,Waiting >2-4 weeks,Waiting >4-12 weeks,Waiting >12-18 weeks,Waiting >18-52 weeks,Waiting >52-104 weeks,Waiting >104 weeks
+England,1168069,118162,97852,170586,333065,147045,206586,59539,34650

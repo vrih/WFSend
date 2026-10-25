@@ -1,0 +1,79 @@
+{
+  "dataset": "community_waits",
+  "original_file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+  "original_sha256": "edae7b0f2d237b00919b9800662ca9fdf84b64db4676967059d1d179da5a247b",
+  "original_bytes": 1430894,
+  "extracted": "2026-10-25",
+  "files": [
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Cover page",
+      "rows_kept": 0
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Contents",
+      "rows_kept": 0
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 1",
+      "rows_kept": 5
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 2",
+      "rows_kept": 3
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 3",
+      "rows_kept": 5
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4a",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4b",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4c",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4d",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4e",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4f",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4g",
+      "rows_kept": 8
+    },
+    {
+      "file": "Community-health-services-waiting-lists-2025-26-November.xlsx",
+      "sheet": "Table 4h",
+      "rows_kept": 8
+    }
+  ]
+}

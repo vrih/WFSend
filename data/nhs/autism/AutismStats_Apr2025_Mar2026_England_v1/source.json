@@ -1,0 +1,33 @@
+{
+  "dataset": "autism",
+  "original_file": "AutismStats_Apr2025_Mar2026_England_v1.zip",
+  "original_sha256": "99c7a5b8fc69bec630793b4e67b72232966fd10172186b78fd2ad57b65d473e7",
+  "original_bytes": 7485027,
+  "extracted": "2026-10-25",
+  "files": [
+    {
+      "file": "AutismStats_Apr2025_Mar2026_England_v1.csv",
+      "rows_kept": 648
+    },
+    {
+      "file": "AutismStats_Apr2025_Mar2026_ICB.csv",
+      "rows_kept": 2592
+    },
+    {
+      "file": "AutismStats_Apr2025_Mar2026_Provider.csv",
+      "rows_kept": 2592
+    },
+    {
+      "file": "AutismStats_Apr2025_Mar2026_Region.csv",
+      "rows_kept": 2592
+    },
+    {
+      "file": "AutismStats_Apr2025_Mar2026_SubICB.csv",
+      "rows_kept": 2592
+    },
+    {
+      "file": "AutismStatsDQ_Apr2025_Mar2026.csv",
+      "rows_kept": 1512
+    }
+  ]
+}
