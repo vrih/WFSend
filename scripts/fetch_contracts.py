@@ -56,7 +56,9 @@ def request(url, body=None, tries=6):
             if attempt == tries - 1 or (e.code != 429 and e.code < 500):
                 raise
             wait = e.headers.get("Retry-After", "")
-            time.sleep(int(wait) if wait.isdigit() else 30 * (attempt + 1))
+            wait = min(int(wait) if wait.isdigit() else 30 * (attempt + 1), 300)
+            print(f"    HTTP {e.code}, waiting {wait}s", flush=True)
+            time.sleep(wait)
         except (urllib.error.URLError, TimeoutError, ConnectionError):
             if attempt == tries - 1:
                 raise
@@ -142,6 +144,8 @@ def find_a_tender(since, until):
             if BUYER in (rel.get("buyer", {}).get("name") or "").lower():
                 rows.append(fts_row(rel))
         url = d.get("links", {}).get("next")
+        if pages % 25 == 0:
+            print(f"      {pages} pages", flush=True)
         time.sleep(PAUSE)
     print(f"    {since[:10]} to {until[:10]}: {pages} pages, {len(rows)} council notices", flush=True)
     return rows
