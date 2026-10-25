@@ -135,17 +135,23 @@ def fts_row(rel):
 
 def find_a_tender(since, until):
     """The council's notices updated between since and until, from the national feed."""
-    rows, pages = [], 0
+    rows, pages, seen = [], 0, set()
     url = f"{FTS_FEED}?updatedFrom={since}&updatedTo={until}&limit=100"
     while url:
         d = request(url)
         pages += 1
-        for rel in d.get("releases", []):
+        releases = d.get("releases", [])
+        new = [rel for rel in releases if (rel["id"], rel.get("date")) not in seen]
+        if releases and not new:
+            print(f"    the feed repeated a page after {pages - 1} pages; stopping this month", flush=True)
+            break
+        for rel in new:
+            seen.add((rel["id"], rel.get("date")))
             if BUYER in (rel.get("buyer", {}).get("name") or "").lower():
                 rows.append(fts_row(rel))
         url = d.get("links", {}).get("next")
         if pages % 25 == 0:
-            print(f"      {pages} pages", flush=True)
+            print(f"      {pages} pages, back to {releases[-1].get('date', '')[:10] if releases else '?'}", flush=True)
         time.sleep(PAUSE)
     print(f"    {since[:10]} to {until[:10]}: {pages} pages, {len(rows)} council notices", flush=True)
     return rows
