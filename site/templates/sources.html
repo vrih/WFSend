@@ -30,6 +30,10 @@
 <h2 id="gias">Register of schools</h2>
 <p>The list of special schools, resourced provision and SEN units on the <a href="places.html#special-school-needs">Places</a> page comes from the DfE's <a href="{{ d.specialist_settings.manifest.downloads_url }}">Get Information About Schools</a>, which publishes every school's details each day. A script downloads the file and keeps Waltham Forest's special schools and any school recorded with resourced provision or an SEN unit, including ones that have closed. Last downloaded {{ d.specialist_settings.manifest.fetched }}. Copy: <a href="data/gias_specialist_settings.csv">gias_specialist_settings.csv</a>.</p>
 
+<h2 id="payments">Council payments to suppliers</h2>
+{% set pm = d.supplier_payments.manifest %}
+<p>The <a href="money.html#payments">payments to suppliers</a> on the Money page come from the council's monthly reports of spending over £500, published on its <a href="{{ pm.url }}">transparency page</a>. A script downloads every report and keeps the payments coded to the council's SEND services, from the {{ d.supplier_payments.first_coded_label }} report onwards. It also counts every payment in each report, so changes in how much the council publishes can be seen. Last downloaded {{ pm.fetched }}. Copies: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>, <a href="data/spend_reports.csv">spend_reports.csv</a>.</p>
+
 <h2 id="upcoming">When new figures are due</h2>
 <p>Dates from the GOV.UK release calendar, checked {{ releases.checked }}. Provisional dates can change.</p>
 <div class="tablewrap"><table class="wide">

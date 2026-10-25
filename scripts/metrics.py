@@ -8,6 +8,7 @@ Rates are recomputed from counts where DfE publishes counts, so the
 calculation is visible here rather than taken on trust.
 """
 import csv
+import datetime as dt
 import json
 import re
 from pathlib import Path
@@ -589,6 +590,82 @@ def spending():
         }
     periods = out["ep"]["per_head"]["periods"]
     return {"lines": out, "periods": periods}
+
+
+# --- Payments to suppliers (council transparency reports) ------------------
+
+SPEND = ROOT / "data" / "spend"
+# From the April 2026 report the council lists far fewer payments each month,
+# across every service, not just SEND. Only financial years up to March 2026
+# are shown until the council explains the change or republishes those months.
+SPEND_LAST_COMPLETE = (2026, 3)
+TOP_SUPPLIERS = 15
+
+
+def supplier_payments():
+    """SEND payments over £500 by service and financial year (April to March),
+    and the largest suppliers in the latest complete year."""
+    manifest = json.loads((SPEND / "manifest.json").read_text())
+    with (SPEND / "reports.csv").open(encoding="utf-8") as f:
+        reports = list(csv.DictReader(f))
+    with (SPEND / "send_payments.csv").open(encoding="utf-8") as f:
+        payments = list(csv.DictReader(f))
+
+    def ym(r):
+        return int(r["report_month"][:4]), int(r["report_month"][5:])
+
+    def fy(m):
+        y = m[0] if m[1] >= 4 else m[0] - 1
+        return f"{y}/{str(y + 1)[2:]}"
+
+    first = tuple(int(x) for x in payments[0]["report_month"].split("-"))
+    months = {ym(r) for r in reports if first <= ym(r) <= SPEND_LAST_COMPLETE}
+    years = sorted({fy(m) for m in months if sum(fy(n) == fy(m) for n in months) == 12})
+    rows = [dict(p, year=fy(ym(p)), amount=float(p["Invoice Amount"])) for p in payments if fy(ym(p)) in years]
+
+    services = []
+    for code in manifest["send_services"]:
+        rs = [r for r in rows if r["Service"][:6] == code]
+        if not rs:
+            continue
+        services.append({
+            "label": rs[-1]["Service"][7:],  # the latest name the council uses
+            "total": {y: sum(r["amount"] for r in rs if r["year"] == y) for y in years},
+            "payments": {y: sum(r["year"] == y for r in rs) for y in years},
+        })
+    services.sort(key=lambda s: -s["total"][years[-1]])
+
+    latest = [r for r in rows if r["year"] == years[-1]]
+    by_supplier = {}
+    for r in latest:
+        s = by_supplier.setdefault(r["Supplier Name"], {"name": r["Supplier Name"], "total": 0, "payments": 0, "by_service": {}})
+        s["total"] += r["amount"]
+        s["payments"] += 1
+        s["by_service"][r["Service"][7:]] = s["by_service"].get(r["Service"][7:], 0) + r["amount"]
+    top = sorted(by_supplier.values(), key=lambda s: -s["total"])[:TOP_SUPPLIERS]
+    for s in top:
+        s["service"] = max(s["by_service"], key=s["by_service"].get)
+
+    def per_report(sel):
+        rs = [r for r in reports if sel(ym(r))]
+        return {"reports": len(rs), "payments": sum(int(r["payments"]) for r in rs) / len(rs) if rs else None}
+
+    return {
+        "years": years,
+        "latest_year": years[-1],
+        "services": services,
+        "total": {y: sum(r["amount"] for r in rows if r["year"] == y) for y in years},
+        "count": {y: sum(r["year"] == y for r in rows) for y in years},
+        "top": top,
+        "suppliers": len(by_supplier),
+        "top_share": 100 * sum(s["total"] for s in top) / sum(s["total"] for s in by_supplier.values()),
+        "redacted": by_supplier.get("REDACTED PERSONAL DATA", {"total": 0, "payments": 0}),
+        "before": per_report(lambda m: fy(m) == years[-1]),
+        "after": per_report(lambda m: m > SPEND_LAST_COMPLETE),
+        "first_report": manifest["first_report"],
+        "first_coded_label": dt.date(*first, 1).strftime("%B %Y"),
+        "manifest": manifest,
+    }
 
 
 # --- More outcomes ----------------------------------------------------------
