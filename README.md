@@ -7,9 +7,11 @@ links back to a public source:
 - **Department for Education statistics**, downloaded automatically from
   [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/):
   EHC plan numbers, requests, 20-week timeliness, annual reviews, placements,
-  SEND Tribunal appeal rates, results at key stages 2 and 4, and exclusions.
-  Each figure is shown for Waltham Forest, London and England, with a ranking
-  against the other London boroughs.
+  SEND Tribunal appeal rates, results at key stages 2 and 4,
+  pupils' main type of need, and exclusions. Each figure is shown for Waltham
+  Forest, London, England and the average of Waltham Forest's 10 statistical
+  neighbours ("similar areas"), with rankings against the London boroughs and
+  against the neighbours.
 - **Local Government and Social Care Ombudsman**, downloaded automatically:
   every published decision about the council (SEND decisions are picked out
   by the Ombudsman's own category) and its yearly complaint statistics.
@@ -25,7 +27,7 @@ links back to a public source:
 
 ```
 data/dfe_sources.yaml     which DfE data sets to download
-scripts/fetch_dfe.py      downloads them, keeps England + London rows -> data/dfe/*.csv
+scripts/fetch_dfe.py      downloads them, keeps England, London and neighbour rows -> data/dfe/*.csv
 scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
 scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
@@ -35,7 +37,8 @@ scripts/build.py          renders site/templates/*.html -> _site/
 
 The site is plain HTML and CSS. Charts are inline SVG, so no JavaScript
 libraries or external services are needed. A small script adds hover
-tooltips. Every chart has a "Show the numbers" table.
+tooltips. Every chart has a "Show the numbers" table. The Deadlines page
+(`site/static/deadlines.js`) works out statutory deadlines in the browser.
 
 ### Build locally
 
@@ -73,6 +76,13 @@ release comes out. Check them each year:
 | Early years foundation stage profile | Autumn |
 | Key stage 4 destination measures | Autumn |
 | NEET age 16 to 17 by local authority | Summer |
+
+The statistical neighbours are listed in `data/dfe_sources.yaml` under
+`statistical_neighbours`, copied from the DfE's Children's services
+statistical neighbour benchmarking tool (on the
+[LAIT page](https://www.gov.uk/government/publications/local-authority-interactive-tool-lait)).
+If the DfE rebuilds the model, update the list and re-run `fetch_dfe.py` so
+the extracts include any new neighbour outside London.
 
 To find a new `file_id`, open the release on Explore Education Statistics,
 go to "Explore data", open the data set and copy the id from the data

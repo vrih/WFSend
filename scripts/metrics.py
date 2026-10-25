@@ -1,8 +1,9 @@
 """Metrics computed from the DfE extracts in data/dfe/.
 
 Each metric function returns a dict with the series for Waltham Forest,
-London and England, the latest London ranking where one makes sense, and the
-manifest keys of the files it was computed from (used for source links).
+London, England and its statistical neighbours ("Similar areas"), the latest
+London ranking where one makes sense, and the manifest keys of the files it
+was computed from (used for source links).
 Rates are recomputed from counts where DfE publishes counts, so the
 calculation is visible here rather than taken on trust.
 """
@@ -11,10 +12,26 @@ import json
 import re
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parent.parent
 DFE = ROOT / "data" / "dfe"
 WF = "Waltham Forest"
 SUPPRESSED = {"", "x", "c", "z", "u", "low", "~", ":", ".."}
+
+# Statistical neighbours: the DfE's 10 councils most like Waltham Forest.
+_SN = yaml.safe_load((ROOT / "data" / "dfe_sources.yaml").read_text())["statistical_neighbours"]["areas"]
+NEIGHBOURS = [a["name"] for a in _SN]
+OUTSIDE_LONDON = {a["name"] for a in _SN if a["region"] != "London"}  # kept out of London rankings
+SN = "Similar areas"
+SN_MIN = 7  # neighbours with a value needed before an average is shown
+
+
+def sn_average(values):
+    """Simple average over the neighbours, as the DfE's LAIT tool does."""
+    vs = [values.get(a) for a in NEIGHBOURS]
+    vs = [v for v in vs if v is not None]
+    return sum(vs) / len(vs) if len(vs) >= SN_MIN else None
 
 
 def load(key):
@@ -58,20 +75,34 @@ def january(p):
     return f"Jan {int(p[:4]) + 1}" if len(p) == 6 else p
 
 
+def _rank(values, hib):
+    v = values[WF]
+    better = sum(1 for x in values.values() if (x > v if hib else x < v))
+    tied = sum(1 for x in values.values() if x == v) > 1
+    return {"pos": better + 1, "of": len(values), "joint": tied}
+
+
 def build(series_by_area, periods, **meta):
-    """Package a metric. series_by_area includes every London borough."""
+    """Package a metric. series_by_area includes every London borough and
+    the statistical neighbours."""
     main = {a: series_by_area.get(a, {}) for a in (WF, "London", "England")}
+    # Averaging counts across councils of different sizes means nothing, so
+    # the neighbour average is only given for rates, shares and spend per head.
+    if meta.get("unit") != "count":
+        main[SN] = {p: sn_average({a: series_by_area.get(a, {}).get(p) for a in NEIGHBOURS}) for p in periods}
     latest = periods[-1]
-    boroughs = {a: s.get(latest) for a, s in series_by_area.items() if a not in ("London", "England")}
+    boroughs = {a: s.get(latest) for a, s in series_by_area.items()
+                if a not in ("London", "England") and a not in OUTSIDE_LONDON}
     boroughs = {a: v for a, v in boroughs.items() if v is not None}
+    neighbours = {a: series_by_area.get(a, {}).get(latest) for a in [WF] + NEIGHBOURS}
+    neighbours = {a: v for a, v in neighbours.items() if v is not None}
     hib = meta.get("higher_is_better", True)
-    rank = None
-    if WF in boroughs and len(boroughs) > 5 and meta.pop("rank", True):
-        v = boroughs[WF]
-        better = sum(1 for x in boroughs.values() if (x > v if hib else x < v))
-        tied = sum(1 for x in boroughs.values() if x == v) > 1
-        rank = {"pos": better + 1, "of": len(boroughs), "joint": tied}
-    meta.pop("rank", None)
+    rank = sn_rank = None
+    if meta.pop("rank", True):
+        if WF in boroughs and len(boroughs) > 5:
+            rank = _rank(boroughs, hib)
+        if WF in neighbours and len(neighbours) > SN_MIN:
+            sn_rank = _rank(neighbours, hib)
     # latest period where Waltham Forest has a value
     wf_latest = next((p for p in reversed(periods) if main[WF].get(p) is not None), None)
     return {
@@ -81,7 +112,9 @@ def build(series_by_area, periods, **meta):
         "wf_latest_period": wf_latest,
         "latest": {a: main[a].get(latest) for a in main},
         "boroughs": boroughs,
+        "neighbours": neighbours,
         "rank": rank,
+        "sn_rank": sn_rank,
         **meta,
     }
 
@@ -208,11 +241,12 @@ def placements():
     vals = {}
     for r in rows:
         a = area_of(r)
-        if a in (WF, "London", "England") and r["time_period"] == latest:
+        if a in (WF, "London", "England", *NEIGHBOURS) and r["time_period"] == latest:
             vals.setdefault(a, {})[r["setting_type"]] = num(r["ehc_plan_count"])
     table = []
     for label, setting in PLACEMENT_GROUPS:
-        table.append({"label": label, **{a: pct(vals[a].get(setting), vals[a].get("Total")) for a in vals}})
+        shares = {a: pct(vals[a].get(setting), vals[a].get("Total")) for a in vals}
+        table.append({"label": label, **{a: shares[a] for a in (WF, "London", "England")}, SN: sn_average(shares)})
     return {"period": january(latest), "rows": table, "sources": ["ehcp_caseload"],
             "title": "Where children and young people with EHC plans are placed"}
 
@@ -308,6 +342,51 @@ def sen_prevalence():
         "support": build(support, periods, id="pupils_support", title="Pupils on SEN support",
                          explain="Pupils whose needs are met through SEN support without an EHC plan, as a share of all pupils. School census, January.", **common),
     }
+
+
+NEED_SHORT = {
+    "Autistic spectrum disorder": "autism",
+    "Speech, language and communications needs": "speech, language and communication needs",
+    "Social, emotional and mental health": "social, emotional and mental health needs",
+    "Moderate learning difficulty": "moderate learning difficulty",
+    "Severe learning difficulty": "severe learning difficulty",
+}
+
+
+def primary_need():
+    """Pupils' primary type of need, as a share of pupils with an EHC plan or
+    on SEN support. School census, so it counts pupils at the borough's schools."""
+    rows = load("sen_primary_need")
+    counts = {}  # (provision, need, area, period) -> pupils
+    for r in rows:
+        a = area_of(r)
+        if a:
+            counts[(r["sen_provision"], r["sen_primary_need"], a, january(r["time_period"]))] = num(r["pupil_count"])
+    periods = sorted({k[3] for k in counts}, key=lambda p: int(p[-4:]))
+    latest = periods[-1]
+    areas = {k[2] for k in counts}
+    out = {"period": latest, "sources": ["sen_primary_need"]}
+    for key, prov in (("ehcp", "Education, health and care plan"), ("support", "SEN support / SEN without an EHC plan")):
+        needs = sorted({k[1] for k in counts if k[0] == prov} - {"Total"})
+        share = {n: {a: {p: pct(counts.get((prov, n, a, p)), counts.get((prov, "Total", a, p))) for p in periods}
+                     for a in areas} for n in needs}
+        rows_ = []
+        for n in needs:
+            vals = {a: share[n][a][latest] for a in areas}
+            rows_.append({"label": n, "count": counts.get((prov, n, WF, latest)),
+                          **{a: vals.get(a) for a in (WF, "London", "England")}, SN: sn_average(vals)})
+        rows_ = [r for r in rows_ if any(r[a] for a in (WF, "London", "England"))]  # e.g. "Unknown", always 0
+        rows_.sort(key=lambda r: -(r[WF] or 0))
+        group = "pupils with an EHC plan" if key == "ehcp" else "pupils on SEN support"
+        # trend charts for the three most common needs in Waltham Forest
+        trends = [build({a: share[r["label"]][a] for a in areas}, periods, id=f"need_{key}_{i}", unit="percent", rank=False,
+                        title=f"Primary need is {NEED_SHORT.get(r['label'], r['label'].lower())}: share of {group}",
+                        explain=f"Of {group} at schools in the area, the share whose main (primary) need is recorded as {r['label'].lower()}. School census, January.",
+                        sources=["sen_primary_need"])
+                  for i, r in enumerate(rows_[:3])]
+        out[key] = {"rows": rows_, "total": counts.get((prov, "Total", WF, latest)), "trends": trends,
+                    "title": f"Primary type of need: {group}, {latest}"}
+    return out
 
 
 # --- Outcomes --------------------------------------------------------------

@@ -5,7 +5,7 @@
 <p class="lede">Every figure on this site comes from a public document or official statistic, listed below.</p>
 
 <h2>Department for Education statistics</h2>
-<p>These come from <a href="https://explore-education-statistics.service.gov.uk/">Explore Education Statistics</a>. A script downloads each file, keeps the rows for England, London and the London boroughs, and saves a copy in the repository. Rates such as "% within 20 weeks" are recalculated from the published counts. The City of London is left out of London rankings because its numbers are too small to compare.</p>
+<p>These come from <a href="https://explore-education-statistics.service.gov.uk/">Explore Education Statistics</a>. A script downloads each file, keeps the rows for England, London, the London boroughs and Waltham Forest's similar areas (below), and saves a copy in the repository. Rates such as "% within 20 weeks" are recalculated from the published counts. The City of London is left out of London rankings because its numbers are too small to compare.</p>
 <div class="tablewrap"><table class="wide">
 <thead><tr><th scope="col">Data</th><th scope="col">Publication</th><th scope="col">Downloaded</th><th scope="col">Copy used here</th></tr></thead>
 <tbody>
@@ -13,6 +13,12 @@
 <tr><td><a href="{{ m.dataset_url }}">{{ m.title }}</a></td><td><a href="{{ PUBS[m.publication].url }}">{{ PUBS[m.publication].title }}</a></td><td>{{ m.fetched }}</td><td><a href="data/{{ key }}.csv">{{ key }}.csv</a></td></tr>
 {% endfor %}
 </tbody></table></div>
+
+<h2 id="similar-areas">Similar areas</h2>
+<p>As well as London and England, many charts compare Waltham Forest with the average of its 10 "statistical neighbours". These are the councils the DfE judges most like Waltham Forest, using census measures such as deprivation, housing, employment and first language. Councils and Ofsted use the same comparison. The 10 similar areas, closest first, are:
+{% for n in NEIGHBOURS %}{{ n }}{{ ", " if not loop.last and loop.revindex > 2 else (" and " if loop.revindex == 2 else "") }}{% endfor %}.</p>
+<p>The similar areas figure is a simple average of the 10 councils' rates, as in the DfE's own <a href="https://www.gov.uk/government/publications/local-authority-interactive-tool-lait">local authority interactive tool</a>. It is left blank when fewer than {{ SN_MIN }} of them have a figure. No average is given for counts, because the councils differ in size. Southampton is the only one outside London, so it isn't included in the London rankings.</p>
+<p class="source">Source: {{ SN_CFG.publisher }}, <a class="cite" href="{{ SN_CFG.url }}">{{ SN_CFG.title }}</a> ({{ SN_CFG.version }}).</p>
 
 <h2 id="ombudsman">Ombudsman data</h2>
 <p>Published decisions and headline complaint statistics from the <a href="https://www.lgo.org.uk/">Local Government and Social Care Ombudsman</a> are downloaded by a script, like the DfE data. Last downloaded {{ LGO_MANIFEST.fetched }}. Copies: <a href="data/ombudsman_decisions.csv">ombudsman_decisions.csv</a>, <a href="data/ombudsman_annual_stats.csv">ombudsman_annual_stats.csv</a>.</p>

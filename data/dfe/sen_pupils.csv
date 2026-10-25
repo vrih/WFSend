@@ -104,6 +104,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 202526,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,28683,100
 202526,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1546,5.38995223651
 202526,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4643,16.18728863786
+202526,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,35292,100
+202526,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",2370,6.71540292417
+202526,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5862,16.60999659979
 202425,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9032426,100
 202425,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",482640,5.34341493636
 202425,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1284284,14.21859420713
@@ -209,6 +212,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 202425,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,30155,100
 202425,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1440,4.77532747471
 202425,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4409,14.62112419167
+202425,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,35872,100
+202425,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",2233,6.22491079393
+202425,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5718,15.94000892060
 202324,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9092073,100
 202324,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",434354,4.77728236453
 202324,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1238851,13.62561651231
@@ -314,6 +320,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 202324,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31019,100
 202324,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1326,4.27479931654
 202324,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4404,14.19774976627
+202324,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,36019,100
+202324,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",2050,5.69144062855
+202324,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5764,16.00266526000
 202223,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9073832,100
 202223,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",389171,4.28893768366
 202223,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1183384,13.04172261509
@@ -419,6 +428,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 202223,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31287,100
 202223,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1329,4.24777063956
 202223,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4244,13.56473934861
+202223,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,35499,100
+202223,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1853,5.21986534831
+202223,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5357,15.09056593143
 202122,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9000031,100
 202122,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",355566,3.95071972529
 202122,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1129843,12.55376787035
@@ -524,6 +536,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 202122,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31615,100
 202122,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1116,3.52996995097
 202122,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4099,12.96536454214
+202122,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,35039,100
+202122,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1711,4.88313022631
+202122,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5253,14.99186620622
 202021,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8911887,100
 202021,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",325618,3.65374920036
 202021,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1083083,12.15323982451
@@ -629,6 +644,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 202021,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31445,100
 202021,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1009,3.20877723008
 202021,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,3833,12.18953728732
+202021,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,34485,100
+202021,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1534,4.44831085979
+202021,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5384,15.61258518196
 201920,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8890345,100
 201920,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",294758,3.31548438221
 201920,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1079000,12.13676184669
@@ -734,6 +752,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 201920,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,32236,100
 201920,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",965,2.99354758654
 201920,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4041,12.53567440129
+201920,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,34492,100
+201920,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1411,4.09080366461
+201920,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5151,14.93389771541
 201819,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8819289,100
 201819,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",271165,3.07468096351
 201819,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1047163,11.87355352568
@@ -839,6 +860,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 201819,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,32102,100
 201819,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",916,2.85340477228
 201819,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4144,12.90885303096
+201819,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,33976,100
+201819,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1233,3.62903225806
+201819,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5239,15.41970802919
 201718,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8735098,100
 201718,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",253679,2.90413456151
 201718,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1022537,11.70607358955
@@ -944,6 +968,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 201718,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31830,100
 201718,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",871,2.73641218975
 201718,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4161,13.07257304429
+201718,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,33449,100
+201718,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1127,3.36930849950
+201718,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5362,16.03037460013
 201617,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8669080,100
 201617,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",242184,2.79365284436
 201617,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1002069,11.55911584620
@@ -1049,6 +1076,9 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 201617,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31347,100
 201617,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",826,2.63502089514
 201617,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4246,13.54515583628
+201617,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,32872,100
+201617,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",1011,3.07556583110
+201617,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5378,16.36042832806
 201516,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8559540,100
 201516,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",236806,2.76657390467
 201516,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,991981,11.58918586746
@@ -1154,3 +1184,6 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_na
 201516,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31439,100
 201516,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",828,2.63367155443
 201516,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4542,14.44702439645
+201516,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,Total,32213,100
+201516,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,"Education, health and care plan",860,2.66972961226
+201516,Academic year,Local authority,E92000001,England,South East,E12000008,852,Southampton,E06000045,,,Total,Total,Total,SEN support / SEN without an EHC plan,5374,16.68270573991

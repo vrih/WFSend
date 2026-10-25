@@ -7,7 +7,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1605,
+    "rows": 1650,
     "fetched": "2026-10-25"
   },
   "ehcp_annual_reviews": {
@@ -18,7 +18,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 35,
+    "rows": 36,
     "fetched": "2026-10-25"
   },
   "ehcp_assessments": {
@@ -29,7 +29,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 245,
+    "rows": 252,
     "fetched": "2026-10-25"
   },
   "ehcp_caseload": {
@@ -40,7 +40,7 @@
     "api_id": "01a0aa37-1008-7183-9271-35e3bcbb26c8",
     "api_version": "1.0",
     "published": "2026-09-17T07:24:23.885692+00:00",
-    "rows": 11760,
+    "rows": 12096,
     "fetched": "2026-10-25"
   },
   "ehcp_new_plans": {
@@ -51,7 +51,7 @@
     "api_id": "01a0aa36-6b29-70e3-8f29-5d5b9aeeea9b",
     "api_version": "1.0",
     "published": "2026-09-17T07:24:23.519392+00:00",
-    "rows": 10290,
+    "rows": 10584,
     "fetched": "2026-10-25"
   },
   "ehcp_requests": {
@@ -62,7 +62,7 @@
     "api_id": "01a0aa36-eb22-7682-94aa-a6bcbb1117ae",
     "api_version": "1.0",
     "published": "2026-09-17T07:24:23.831346+00:00",
-    "rows": 2450,
+    "rows": 2520,
     "fetched": "2026-10-25"
   },
   "ehcp_timeliness": {
@@ -73,7 +73,7 @@
     "api_id": "01a0aa36-b680-76f8-8e62-55b216223feb",
     "api_version": "1.0",
     "published": "2026-09-17T07:24:23.759471+00:00",
-    "rows": 1960,
+    "rows": 2016,
     "fetched": "2026-10-25"
   },
   "exclusions_characteristics": {
@@ -84,7 +84,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 2729,
+    "rows": 2805,
     "fetched": "2026-10-25"
   },
   "eyfs_sen": {
@@ -95,7 +95,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1110,
+    "rows": 1140,
     "fetched": "2026-10-25"
   },
   "ks2_attainment": {
@@ -106,7 +106,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1322,
+    "rows": 1358,
     "fetched": "2026-10-25"
   },
   "ks4_destinations_sen": {
@@ -117,7 +117,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1470,
+    "rows": 1510,
     "fetched": "2026-10-25"
   },
   "ks4_sen": {
@@ -128,7 +128,7 @@
     "api_id": "19e39901-560d-f972-b6f3-dd085539c095",
     "api_version": "2.0",
     "published": "2026-10-15T08:30:15.889132+00:00",
-    "rows": 1440,
+    "rows": 1480,
     "fetched": "2026-10-25"
   },
   "neet_sen": {
@@ -139,7 +139,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1678,
+    "rows": 1725,
     "fetched": "2026-10-25"
   },
   "s251_outturn": {
@@ -150,7 +150,18 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 2880,
+    "rows": 2960,
+    "fetched": "2026-10-25"
+  },
+  "sen_primary_need": {
+    "title": "Language by type of SEN provision and type of need - 2016 to 2025 - 2026 format",
+    "publication": "sen",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/26483052-eb00-450e-8fd8-f5eeb5297576",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/26483052-eb00-450e-8fd8-f5eeb5297576/csv",
+    "api_id": "019df85e-2ad9-70a1-b7db-cb241de3c082",
+    "api_version": "1.1",
+    "published": "2026-06-11T08:30:26.538249+00:00",
+    "rows": 10624,
     "fetched": "2026-10-25"
   },
   "sen_pupils": {
@@ -161,7 +172,7 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1155,
+    "rows": 1188,
     "fetched": "2026-10-25"
   },
   "send_appeal_rate": {
@@ -169,7 +180,7 @@
     "publication": "ehcp",
     "dataset_url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans/2026",
     "download_url": "https://content.explore-education-statistics.service.gov.uk/api/releases/9b5381be-1851-4493-8ae4-54e7223837aa/files/330e4c5f-158a-41d5-97aa-76204facc80c",
-    "rows": 68,
+    "rows": 70,
     "fetched": "2026-10-25"
   }
 }

@@ -1,9 +1,10 @@
-{% macro tile(label, value, compare, rank="", more="", more_href="") %}
+{% macro tile(label, value, compare, rank="", more="", more_href="", rank2="") %}
 <li class="tile">
   <p class="label">{{ label }}</p>
   <span class="value">{{ value }}</span>
   {% if compare %}<p class="compare">{{ compare }}</p>{% endif %}
   {% if rank %}<p class="rank">{{ rank }}</p>{% endif %}
+  {% if rank2 %}<p class="rank">{{ rank2 }}</p>{% endif %}
   {% if more %}<a class="more" href="{{ more_href }}">{{ more }}</a>{% endif %}
 </li>
 {% endmacro %}
@@ -11,6 +12,7 @@
 {% macro compare(m, unit=None) -%}
 {%- set u = unit or m.unit -%}
 London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u) }}
+{%- if m.latest[SN] is defined and m.latest[SN] is not none %} · Similar areas {{ fmt(m.latest[SN], u) }}{% endif %}
 {%- endmacro %}
 
 {% macro observations_table(meas) %}

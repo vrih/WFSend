@@ -15,6 +15,30 @@
 {{ figure(d.prevalence.ehcp) }}
 {{ figure(d.prevalence.support) }}
 
+<h2 id="primary-need">Main types of need</h2>
+{% set pn = d.primary_need %}
+<p>Schools record each pupil's main ("primary") special educational need in the school census. Like the figures above, these count pupils at schools in the borough, not every plan the council maintains. In {{ pn.period }}, {{ "{:,.0f}".format(pn.ehcp.rows[0].count) }} of the {{ "{:,.0f}".format(pn.ehcp.total) }} pupils with an EHC plan at Waltham Forest schools ({{ fmt(pn.ehcp.rows[0][WF]) }}) had {{ "autism" if pn.ehcp.rows[0].label == "Autistic spectrum disorder" else pn.ehcp.rows[0].label|lower }} as their main need, compared with {{ fmt(pn.ehcp.rows[0]["England"]) }} in England.</p>
+{% for key in ("ehcp", "support") %}
+{% set g = pn[key] %}
+<figure class="metric" id="need-{{ key }}">
+<figcaption><h3>{{ g.title }}</h3>
+<p class="explain">Share of {{ "pupils with an EHC plan" if key == "ehcp" else "pupils on SEN support" }} by their main type of need, most common in Waltham Forest first. Waltham Forest: {{ "{:,.0f}".format(g.total) }} pupils.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Main need</th><th scope="col">Pupils in Waltham Forest</th>{% for a in AREAS %}<th scope="col">{{ a }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for r in g.rows %}
+<tr><th scope="row">{{ r.label }}</th><td>{{ fmt(r.count, "count") if r.count is not none else "–" }}</td>{% for a in AREAS %}<td{% if a == WF %} class="hlcol"{% endif %}>{{ fmt(r[a]) }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Down syndrome has been recorded as a separate need since January 2025. Before then it was usually recorded under a learning difficulty.</p>
+<p class="source">{{ cite_dfe(pn.sources) }}</p>
+</figure>
+{% if key == "ehcp" %}
+<h3>How the most common needs have changed</h3>
+{% for m in g.trends %}{{ figure(m) }}{% endfor %}
+{% endif %}
+{% endfor %}
+
 <h2>Where children with EHC plans are placed</h2>
 <figure class="metric" id="placements">
 <figcaption><h3>{{ p.title }}, {{ p.period }}</h3>

@@ -11,7 +11,30 @@
 #              once a year (see README "Updating the data").
 #
 # `keep` restricts rows to the breakdowns the site uses, to keep the committed
-# CSVs small. Rows are always limited to England, London and the London boroughs.
+# CSVs small. Rows are always limited to England, London, the London boroughs
+# and Waltham Forest's statistical neighbours (listed below).
+
+# The 10 councils most like Waltham Forest, from the DfE's Children's services
+# statistical neighbour benchmarking tool (ModelLong sheet). The site compares
+# Waltham Forest with their average, as the DfE's own LAIT tool does. Check
+# the tool once a year; the model was last rebuilt in May 2025.
+statistical_neighbours:
+  title: Children's services statistical neighbour benchmarking tool
+  publisher: Department for Education
+  version: v1, May 2025
+  url: https://www.gov.uk/government/publications/local-authority-interactive-tool-lait
+  download_url: https://assets.publishing.service.gov.uk/media/682dd813e9440506ee95390e/Children_s_services_statistical_neighbour_benchmarking_tool.xlsx
+  areas:  # closest first
+    - {code: E09000026, name: Redbridge, region: London}
+    - {code: E09000003, name: Barnet, region: London}
+    - {code: E09000017, name: Hillingdon, region: London}
+    - {code: E09000008, name: Croydon, region: London}
+    - {code: E09000009, name: Ealing, region: London}
+    - {code: E09000014, name: Haringey, region: London}
+    - {code: E09000018, name: Hounslow, region: London}
+    - {code: E09000015, name: Harrow, region: London}
+    - {code: E09000023, name: Lewisham, region: London}
+    - {code: E06000045, name: Southampton, region: South East}
 
 publications:
   ehcp:
@@ -104,6 +127,16 @@ datasets:
       establishment_type: [Total]
       hospital_school: [Total]
     # This file also has parliamentary constituency rows; those are dropped.
+
+  sen_primary_need:
+    publication: sen
+    # "Language by type of SEN provision and type of need": the smallest of the
+    # files with a primary need breakdown. Only the language totals are kept.
+    api_id: 019df85e-2ad9-70a1-b7db-cb241de3c082
+    keep:
+      phase_type_grouping: [Total]
+      first_language: [Total]
+      sen_provision: ["Education, health and care plan", "SEN support / SEN without an EHC plan"]
 
   ks2_attainment:
     publication: ks2

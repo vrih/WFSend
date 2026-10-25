@@ -21,6 +21,7 @@
   --s1: #2c7a4b;   /* Waltham Forest */
   --s2: #cc5f22;   /* London */
   --s3: #56688f;   /* England */
+  --s5: #7c4f9f;   /* Similar areas (statistical neighbours' average) */
   --other: #8e9089;   /* ranked bars: 3:1 on surface */
   --good: #2c7a4b;
   --warning: #e3a032;
@@ -48,6 +49,7 @@
     --s1: #5fb47e;
     --s2: #e5824b;
     --s3: #93a2c8;
+    --s5: #c19ae0;
     --other: #6b726c;
     --good: #4fae6e;
     --critical: #e36464;
@@ -73,6 +75,7 @@
   --s1: #5fb47e;
   --s2: #e5824b;
   --s3: #93a2c8;
+  --s5: #c19ae0;
   --other: #6b726c;
   --good: #4fae6e;
   --critical: #e36464;
@@ -138,7 +141,7 @@ figure.metric { background: var(--surface); border: 1px solid var(--border); bor
 .legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.88rem; color: var(--ink-2); margin: 6px 0; }
 .key { display: inline-flex; align-items: center; gap: 6px; }
 .swatch { width: 14px; height: 3px; border-radius: 2px; background: currentColor; display: inline-block; }
-.swatch.s1 { background: var(--s1); height: 4px; } .swatch.s2 { background: var(--s2); } .swatch.s3 { background: var(--s3); }
+.swatch.s1 { background: var(--s1); height: 4px; } .swatch.s2 { background: var(--s2); } .swatch.s3 { background: var(--s3); } .swatch.s5 { background: var(--s5); }
 /* s4: a second local series (e.g. North East London next to NELFT), dashed in the local colour */
 .swatch.s4 { background: repeating-linear-gradient(90deg, var(--s1) 0 5px, transparent 5px 8px); }
 
@@ -147,10 +150,10 @@ svg .grid { stroke: var(--grid); stroke-width: 1; }
 svg .axis { stroke: var(--axis); stroke-width: 1; }
 svg .tick { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
 svg .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
-svg .line.s1 { stroke: var(--s1); stroke-width: 3; } svg .line.s2 { stroke: var(--s2); } svg .line.s3 { stroke: var(--s3); }
+svg .line.s1 { stroke: var(--s1); stroke-width: 3; } svg .line.s2 { stroke: var(--s2); } svg .line.s3 { stroke: var(--s3); } svg .line.s5 { stroke: var(--s5); }
 svg .line.s4 { stroke: var(--s1); stroke-dasharray: 6 4; }
 svg .dot { stroke: var(--surface); stroke-width: 2; }
-svg .dot.s1 { fill: var(--s1); } svg .dot.s2 { fill: var(--s2); } svg .dot.s3 { fill: var(--s3); }
+svg .dot.s1 { fill: var(--s1); } svg .dot.s2 { fill: var(--s2); } svg .dot.s3 { fill: var(--s3); } svg .dot.s5 { fill: var(--s5); }
 svg .dot.s4 { fill: var(--surface); stroke: var(--s1); }
 svg .hit { fill: transparent; cursor: pointer; }
 svg .endlabel { font-size: 12px; fill: var(--ink-2); }
@@ -170,7 +173,7 @@ svg .endname { fill: var(--ink); font-weight: 600; }
 .rb .val { position: absolute; left: calc(100% + 6px); top: -4px; white-space: nowrap; font-weight: 700; }
 .rb:hover .fill, .rb:focus .fill { filter: brightness(0.9); }
 .refline { position: absolute; top: -5px; bottom: -5px; width: 0; border-left: 2px solid var(--muted); }
-.refline.s2 { border-color: var(--s2); } .refline.s3 { border-color: var(--s3); }
+.refline.s2 { border-color: var(--s2); } .refline.s3 { border-color: var(--s3); } .refline.s5 { border-color: var(--s5); }
 .rhead { min-height: 34px; }
 .rhead .bar { height: 34px; }
 .rhead .refline { top: auto; bottom: -5px; height: 12px; }
@@ -191,6 +194,16 @@ thead th { color: var(--ink-2); font-weight: 600; border-bottom-color: var(--axi
 tbody th { font-weight: 600; text-align: left; }
 table.wide td, table.wide th { text-align: left; }
 .hlcol { font-weight: 700; background: var(--forest-tint); }
+
+/* deadlines calculator */
+.calc { display: grid; gap: 4px; max-width: 32rem; margin: 12px 0; padding: 12px 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+.calc label { font-weight: 600; margin-top: 6px; }
+.calc input { font: inherit; padding: 6px 8px; border: 1px solid var(--axis); border-radius: 4px; background: var(--page); color: var(--ink); max-width: 14rem; }
+.calc input:focus-visible { outline: 3px solid var(--heather); outline-offset: 2px; }
+.deadlines td.when { white-space: nowrap; color: var(--muted); }
+.deadlines td.when.set { color: var(--ink); }
+.deadlines .rel { font-size: 0.85rem; color: var(--ink-2); }
+.deadlines .past .rel { color: var(--critical-text); }
 
 /* status (always with icon + label) */
 .status { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-weight: 600; }
