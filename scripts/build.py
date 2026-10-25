@@ -11,6 +11,7 @@ import datetime as dt
 import hashlib
 import io
 import json
+import re
 import shutil
 import sys
 from html import escape
@@ -84,6 +85,42 @@ def cite_ons():
     return Markup(f'ONS, <a class="cite" href="{escape(m["url"])}" rel="noopener">{escape(m["title"])}</a>: '
                   f'<a class="cite" href="{escape(m["dataset_url"])}" rel="noopener">{escape(m["dataset"])}</a>'
                   f' (downloaded {escape(m["fetched"])})')
+
+
+def slug(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")[:60].rstrip("-") or "section"
+
+
+HEADING = re.compile(r"<(h[23])(\s[^>]*)?>(.*?)</\1>", re.S)
+FIGURE = re.compile(r'<figure\b[^>]*\bid="([^"]+)"[^>]*>\s*<figcaption>\s*<h3', re.S)
+
+
+def add_anchors(page):
+    """Give every h2 and h3 an id, and a link to itself, so any section or chart
+    can be linked to. A chart's heading links to its <figure> id."""
+    taken = set(re.findall(r'\bid="([^"]+)"', page))
+    figure_at = {m.end() - 3: m.group(1) for m in FIGURE.finditer(page)}  # offset of the <h3
+
+    def heading(m):
+        tag, attrs, inner = m.group(1), m.group(2) or "", m.group(3)
+        if 'class="anchor"' in inner:
+            return m.group(0)
+        target = figure_at.get(m.start())
+        if not target:
+            found = re.search(r'\bid="([^"]+)"', attrs)
+            if found:
+                target = found.group(1)
+            else:
+                base = target = slug(re.sub(r"<[^>]+>", "", inner))
+                n = 2
+                while target in taken:
+                    target, n = f"{base}-{n}", n + 1
+                taken.add(target)
+                attrs += f' id="{target}"'
+        label = escape("Link to " + re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", inner)).strip(), quote=True)
+        return f'<{tag}{attrs}>{inner}<a class="anchor" href="#{target}" aria-label="{label}"></a></{tag}>'
+
+    return HEADING.sub(heading, page)
 
 
 def figure(m, ranked=False, note=None, y_max=None, areas=AREAS):
@@ -366,9 +403,9 @@ def main():
     for name, _ in PAGES + GUIDES:
         if name == "sources.html":
             continue
-        html = env.get_template(name).render(page=name, **ctx)
+        html = add_anchors(env.get_template(name).render(page=name, **ctx))
         (OUT / name).write_text(html, encoding="utf-8")
-    (OUT / "sources.html").write_text(env.get_template("sources.html").render(page="sources.html", **ctx), encoding="utf-8")
+    (OUT / "sources.html").write_text(add_anchors(env.get_template("sources.html").render(page="sources.html", **ctx)), encoding="utf-8")
 
     # downloadable data
     for f in (ROOT / "data" / "dfe").glob("*"):

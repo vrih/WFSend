@@ -64,6 +64,9 @@ a good reason; optional extras like `openpyxl` stay optional.
 - Must meet WCAG 2.2 AA: headings in order, `scope` on table headers, alt
   text or text equivalents for charts, sufficient contrast. Check new pages
   with axe-core (Playwright and Chromium are available in cloud sessions).
+- Every `h2` and `h3` gets an id and a `#` link to itself at build time
+  (`add_anchors()` in `build.py`), and a chart's heading links to its
+  `<figure>` id. Give a heading an explicit `id` only when other pages link to it.
 - New pages go in the nav in `base.html`, in `sitemap.xml` (built in
   `build.py`), and need a `title` and `description` block.
 
