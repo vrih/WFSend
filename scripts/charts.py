@@ -135,7 +135,9 @@ def ranked_bars(values, highlight="Waltham Forest", unit="percent", higher_is_be
         hl = " hl" if area == highlight else ""
         pct = 100 * v / vmax if vmax else 0
         tip = f"{rank}. {area}: {_fmt(v, unit)}"
-        label = f'<span class="val">{escape(_fmt(v, unit))}</span>' if hl else ""
+        # Only WF's value is printed; the rest are read out to screen readers.
+        label = (f'<span class="val">{escape(_fmt(v, unit))}</span>' if hl
+                 else f'<span class="vh">: {escape(_fmt(v, unit))}</span>')
         rows.append(
             f'<li class="rb{hl}" data-tip="{escape(tip)}" title="{escape(tip)}">'
             f'<span class="rn">{rank}</span><span class="an">{escape(area)}</span>'
@@ -151,4 +153,4 @@ def table(series, periods, unit="percent", caption=""):
         cells = "".join(f"<td>{escape(_fmt(s.get(p), unit)) if s.get(p) is not None else '–'}</td>" for p in periods)
         body += f"<tr><th scope='row'>{escape(area)}</th>{cells}</tr>"
     cap = f"<caption>{escape(caption)}</caption>" if caption else ""
-    return f'<div class="tablewrap"><table>{cap}<thead><tr><th></th>{head}</tr></thead><tbody>{body}</tbody></table></div>'
+    return f'<div class="tablewrap"><table>{cap}<thead><tr><th scope="col"><span class="vh">Area</span></th>{head}</tr></thead><tbody>{body}</tbody></table></div>'
