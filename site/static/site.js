@@ -27,18 +27,19 @@
 
 // Tables that scroll sideways get a tab stop and a name, so keyboard users can scroll them.
 (function () {
-  // Name it after its caption, its figure's title, or the nearest heading above it.
+  // Name it after its caption, or the nearest heading above it; number repeats.
+  var used = {};
   function name(w) {
-    var cap = w.querySelector("caption");
-    if (cap) return cap.textContent.trim();
-    var fig = w.closest("figure");
-    var h = fig && (fig.querySelector("h3") || fig.querySelector("figcaption"));
-    if (h) return h.textContent.trim();
-    var all = document.querySelectorAll("h1, h2, h3"), last = null;
-    for (var i = 0; i < all.length; i++) {
-      if (all[i].compareDocumentPosition(w) & Node.DOCUMENT_POSITION_FOLLOWING) last = all[i];
+    var cap = w.querySelector("caption"), n = "Data";
+    if (cap) n = cap.textContent.trim();
+    else {
+      var all = document.querySelectorAll("h1, h2, h3, h4");
+      for (var i = 0; i < all.length; i++) {
+        if (all[i].compareDocumentPosition(w) & Node.DOCUMENT_POSITION_FOLLOWING) n = all[i].textContent.trim();
+      }
     }
-    return last ? last.textContent.trim() : "Data";
+    used[n] = (used[n] || 0) + 1;
+    return used[n] > 1 ? n + " (" + used[n] + ")" : n;
   }
   function mark() {
     document.querySelectorAll(".tablewrap").forEach(function (w) {
