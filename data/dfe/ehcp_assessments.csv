@@ -1,0 +1,246 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,new_la_code,old_la_code,la_name,breakdown_topic,breakdown,assess_in_year,assess_issued,assess_issued_pc,assess_not_issued,assess_not_issued_pc,assess_not_made,assess_not_made_pc,assess_withdrawn,assess_withdrawn_pc,outcome_decision_within_time,outcome_decision_over_time,outcome_decision_within_time_pc,outcome_decision_over_time_pc,number_assess_mediation,number_assess_tribunal,number_asssess_mediation_tribunal,number_other_mediation,number_other_tribunal,number_other_mediation_tribunal
+2019,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,x,53899,x,3368,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,x,9000,x,490,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,x,2,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,x,131,x,6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,x,227,x,55,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,x,449,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,x,143,x,44,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,x,157,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,x,85,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,x,304,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,x,353,x,27,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,x,273,x,12,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,x,314,x,14,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,x,250,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,x,132,x,8,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,x,228,x,13,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,x,301,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,x,229,x,3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,x,353,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,x,352,x,77,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,x,324,x,15,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,x,354,x,35,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,x,659,x,11,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,x,345,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,x,218,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,x,217,x,11,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,x,264,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,x,361,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,x,186,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,x,327,x,12,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,x,524,x,30,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,x,337,x,16,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,x,194,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,x,142,x,15,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,x,265,x,35,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,x,60097,x,3122,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,x,9963,x,313,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,x,3,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,x,130,x,13,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,x,282,x,40,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,x,447,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,x,163,x,12,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,x,198,x,3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,x,86,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,x,359,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,x,401,x,21,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,x,335,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,x,258,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,x,434,x,3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,x,148,x,12,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,x,264,x,9,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,x,365,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,x,284,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,x,385,x,3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,x,453,x,35,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,x,377,x,3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,x,475,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,x,610,x,14,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,x,309,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,x,209,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,x,227,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,x,369,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,x,310,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,x,210,x,9,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,x,403,x,8,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,x,451,x,13,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,x,326,x,14,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,x,198,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,x,191,x,23,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,x,303,x,36,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,x,62180,x,3903,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,x,9604,x,402,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,x,1,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,x,115,x,17,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,x,289,x,37,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,x,345,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,x,216,x,17,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,x,244,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,x,83,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,x,297,x,6,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,x,488,x,31,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,x,288,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,x,311,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,x,360,x,12,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,x,137,x,10,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,x,236,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,x,364,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,x,320,x,2,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,x,335,x,11,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,x,476,x,33,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,x,316,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,x,347,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,x,639,x,14,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,x,260,x,7,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,x,240,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,x,212,x,14,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,x,332,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,x,307,x,3,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,x,180,x,11,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,x,334,x,18,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,x,370,x,9,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,x,288,x,17,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,x,204,x,10,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,x,204,x,17,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,x,466,x,68,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2022,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,73040,68665,94,4199,5.7,x,0,306,0.4,x,x,x,x,1024,864,x,720,1489,x
+2022,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,11518,10997,95.5,394,3.4,x,0,125,1.1,x,x,x,x,99,76,x,60,124,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,3,3,100,0,0,x,0,0,0,x,x,x,x,0,1,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,145,131,90.3,14,9.7,x,0,0,0,x,x,x,x,0,3,x,0,11,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,472,415,87.9,49,10.4,x,0,8,1.7,x,x,x,x,13,4,x,9,4,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,343,334,97.4,0,0,x,0,9,2.6,x,x,x,x,0,0,x,0,5,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,210,198,94.3,11,5.2,x,0,0,0,x,x,x,x,0,1,x,0,1,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,258,250,96.9,6,2.3,x,0,2,0.8,x,x,x,x,2,4,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,82,79,96.3,3,3.7,x,0,0,0,x,x,x,x,1,1,x,2,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,245,245,100,0,0,x,0,0,0,x,x,x,x,0,0,x,1,5,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,221,199,90,21,9.5,x,0,1,0.5,x,x,x,x,10,6,x,0,1,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,204,204,100,0,0,x,0,0,0,x,x,x,x,3,2,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,738,738,100,0,0,x,0,0,0,x,x,x,x,1,0,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,386,375,97.2,11,2.8,x,0,0,0,x,x,x,x,4,1,x,5,2,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,174,156,89.7,18,10.3,x,0,0,0,x,x,x,x,0,6,x,0,5,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,306,259,84.6,47,15.4,x,0,0,0,x,x,x,x,1,1,x,0,4,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,518,518,100,0,0,x,0,0,0,x,x,x,x,0,0,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,392,391,99.7,1,0.3,x,0,0,0,x,x,x,x,1,1,x,1,5,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,330,312,94.5,15,4.5,x,0,3,0.9,x,x,x,x,1,4,x,1,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,488,450,92.2,24,4.9,x,0,14,2.9,x,x,x,x,7,5,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,614,611,99.5,3,0.5,x,0,0,0,x,x,x,x,1,1,x,9,15,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,488,473,96.9,12,2.5,x,0,3,0.6,x,x,x,x,2,2,x,2,9,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,629,570,90.6,0,0,x,0,59,9.4,x,x,x,x,11,5,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,442,410,92.8,32,7.2,x,0,0,0,x,x,x,x,5,3,x,2,2,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,272,265,97.4,6,2.2,x,0,0,0,x,x,x,x,1,0,x,5,4,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,359,350,97.5,7,1.9,x,0,2,0.6,x,x,x,x,0,1,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,343,341,99.4,2,0.6,x,0,0,0,x,x,x,x,1,0,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,340,328,96.5,12,3.5,x,0,0,0,x,x,x,x,4,1,x,7,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,242,231,95.5,7,2.9,x,0,4,1.7,x,x,x,x,0,1,x,0,5,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,287,265,92.3,20,7,x,0,2,0.7,x,x,x,x,3,2,x,2,2,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,522,505,96.7,11,2.1,x,0,6,1.1,x,x,x,x,2,3,x,3,2,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,291,278,95.5,9,3.1,x,0,4,1.4,x,x,x,x,11,5,x,0,0,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,272,250,91.9,14,5.1,x,0,8,2.9,x,x,x,x,0,1,x,2,9,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,333,308,92.5,25,7.5,x,0,0,0,x,x,x,x,4,6,x,7,30,x
+2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,569,555,97.5,14,2.5,x,0,0,0,x,x,x,x,10,5,x,2,3,x
+2023,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,91023,85924,94.4,4614,5.1,123,0.1,362,0.4,1661,2926,36.2,63.8,1549,1048,333,1275,1887,343
+2023,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,13625,13062,95.9,451,3.3,0,0,112,0.8,204,247,45.2,54.8,124,94,31,64,139,21
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,5,5,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,203,186,91.6,17,8.4,0,0,0,0,14,3,82.4,17.6,1,2,0,1,12,1
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,451,414,91.8,37,8.2,0,0,0,0,25,12,67.6,32.4,14,11,6,1,13,1
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,225,213,94.7,12,5.3,0,0,0,0,6,6,50,50,1,3,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,312,300,96.2,12,3.8,0,0,0,0,3,9,25,75,4,6,3,3,10,2
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,104,102,98.1,2,1.9,0,0,0,0,2,0,100,0,2,1,1,0,2,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,456,451,98.9,2,0.4,0,0,3,0.7,1,1,50,50,1,0,0,5,6,3
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,301,271,90,30,10,0,0,0,0,8,22,26.7,73.3,12,4,1,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,451,441,97.8,10,2.2,0,0,0,0,4,6,40,60,0,2,0,2,11,1
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,767,731,95.3,13,1.7,0,0,23,3,8,5,61.5,38.5,6,0,0,0,2,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,400,394,98.5,6,1.5,0,0,0,0,6,0,100,0,3,3,1,6,2,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,178,170,95.5,8,4.5,0,0,0,0,5,3,62.5,37.5,0,4,0,1,4,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,553,532,96.2,18,3.3,0,0,3,0.5,4,14,22.2,77.8,0,2,0,3,11,3
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,651,645,99.1,6,0.9,0,0,0,0,6,0,100,0,0,0,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,414,413,99.8,1,0.2,0,0,0,0,1,0,100,0,0,1,0,1,2,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,502,456,90.8,19,3.8,0,0,27,5.4,1,18,5.3,94.7,5,6,0,0,4,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,598,580,97,18,3,0,0,0,0,8,10,44.4,55.6,5,1,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,697,693,99.4,4,0.6,0,0,0,0,3,1,75,25,1,0,0,11,12,5
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,638,614,96.2,9,1.4,0,0,15,2.4,4,5,44.4,55.6,0,2,0,0,10,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,521,488,93.7,0,0,0,0,33,6.3,0,0,x,x,5,5,5,2,3,2
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,301,286,95,15,5,0,0,0,0,10,5,66.7,33.3,17,10,4,5,2,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,394,384,97.5,10,2.5,0,0,0,0,3,7,30,70,1,1,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,497,487,98,10,2,0,0,0,0,6,4,60,40,0,0,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,504,472,93.7,32,6.3,0,0,0,0,11,21,34.4,65.6,4,0,0,5,9,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,365,338,92.6,26,7.1,0,0,1,0.3,13,13,50,50,5,9,1,3,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,252,236,93.7,14,5.6,0,0,2,0.8,4,10,28.6,71.4,1,4,0,2,3,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,416,399,95.9,15,3.6,0,0,2,0.5,8,7,53.3,46.7,5,0,0,3,1,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,414,412,99.5,2,0.5,0,0,0,0,0,2,0,100,1,1,1,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,311,294,94.5,15,4.8,0,0,2,0.6,8,7,53.3,46.7,15,1,1,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,267,255,95.5,11,4.1,0,0,1,0.4,3,8,27.3,72.7,1,3,0,3,9,0
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,398,367,92.2,31,7.8,0,0,0,0,14,17,45.2,54.8,12,10,7,7,11,3
+2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,746,700,93.8,46,6.2,0,0,0,0,15,31,32.6,67.4,2,2,0,0,0,0
+2024,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,105340,98547,93.6,6404,6.1,62,0.1,327,0.3,2179,4212,34.1,65.9,2124,1445,475,1862,3088,701
+2024,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,15184,14443,95.1,616,4.1,51,0.3,74,0.5,300,314,48.9,51.1,164,142,45,114,134,48
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,5,5,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,213,185,86.9,0,0,13,6.1,15,7,0,0,x,x,0,3,0,1,9,1
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,748,690,92.2,58,7.8,0,0,0,0,18,40,31,69,17,9,1,8,14,4
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,502,499,99.4,2,0.4,0,0,1,0.2,2,0,100,0,1,0,0,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,206,173,84,33,16,0,0,0,0,25,8,75.8,24.2,5,7,2,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,310,295,95.2,15,4.8,0,0,0,0,1,14,6.7,93.3,1,8,1,1,9,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,109,105,96.3,4,3.7,0,0,0,0,2,2,50,50,1,0,0,7,5,5
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,430,428,99.5,2,0.5,0,0,0,0,1,1,50,50,0,0,0,1,4,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,202,199,98.5,3,1.5,0,0,0,0,3,0,100,0,3,5,1,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,540,529,98,11,2,0,0,0,0,2,9,18.2,81.8,1,3,1,2,7,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,692,638,92.2,31,4.5,0,0,23,3.3,13,18,41.9,58.1,13,3,1,5,8,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,418,411,98.3,7,1.7,0,0,0,0,3,4,42.9,57.1,1,2,0,4,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,171,157,91.8,14,8.2,0,0,0,0,8,6,57.1,42.9,11,5,5,10,5,5
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,529,502,94.9,24,4.5,0,0,3,0.6,9,15,37.5,62.5,6,5,1,10,5,3
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,803,793,98.8,10,1.2,0,0,0,0,10,0,100,0,0,0,0,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,544,540,99.3,4,0.7,0,0,0,0,2,2,50,50,0,1,0,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,571,541,94.7,20,3.5,0,0,10,1.8,2,18,10,90,2,2,0,2,4,1
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,799,727,91,72,9,0,0,0,0,54,18,75,25,7,11,1,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,956,944,98.7,1,0.1,0,0,11,1.2,1,0,100,0,1,0,0,27,18,17
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,558,539,96.6,18,3.2,1,0.2,0,0,9,9,50,50,3,2,0,3,6,2
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,755,706,93.5,44,5.8,0,0,5,0.7,40,4,90.9,9.1,1,6,0,1,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,260,229,88.1,31,11.9,0,0,0,0,13,17,43.3,56.7,7,11,3,3,6,1
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,474,469,98.9,5,1.1,0,0,0,0,1,4,20,80,1,2,0,6,2,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,457,439,96.1,18,3.9,0,0,0,0,5,13,27.8,72.2,2,1,0,0,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,468,406,86.8,62,13.2,0,0,0,0,29,33,46.8,53.2,22,12,4,4,8,1
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,412,401,97.3,11,2.7,0,0,0,0,7,4,63.6,36.4,4,4,0,2,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,315,301,95.6,14,4.4,0,0,0,0,2,12,14.3,85.7,1,2,0,1,1,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,427,420,98.4,7,1.6,0,0,0,0,5,2,71.4,28.6,5,0,0,3,1,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,683,655,95.9,28,4.1,0,0,0,0,8,19,29.6,70.4,2,9,0,0,3,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,435,368,84.6,24,5.5,37,8.5,6,1.4,5,19,20.8,79.2,15,11,11,2,2,2
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,314,302,96.2,12,3.8,0,0,0,0,2,10,16.7,83.3,8,4,1,0,1,0
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,397,368,92.7,29,7.3,0,0,0,0,18,11,62.1,37.9,19,13,12,10,16,6
+2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,481,479,99.6,2,0.4,0,0,0,0,0,2,0,100,4,1,0,1,0,0
+2025,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,118821,111243,93.6,7161,6,71,0.1,346,0.3,2673,4478,37.4,62.6,2444,1712,522,2094,3722,599
+2025,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,16162,15243,94.3,822,5.1,2,0,95,0.6,312,508,38,62,283,230,71,179,281,54
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,5,5,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All EHC needs assessments,All EHC needs assessments,230,207,90,6,2.6,1,0.4,16,7,2,4,33.3,66.7,0,1,0,0,6,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All EHC needs assessments,All EHC needs assessments,641,582,90.8,59,9.2,0,0,0,0,15,44,25.4,74.6,25,10,6,10,23,3
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All EHC needs assessments,All EHC needs assessments,426,421,98.8,0,0,0,0,5,1.2,0,0,x,x,1,0,0,0,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All EHC needs assessments,All EHC needs assessments,261,237,90.8,24,9.2,0,0,0,0,10,14,41.7,58.3,14,7,2,3,5,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All EHC needs assessments,All EHC needs assessments,346,329,95.1,17,4.9,0,0,0,0,2,15,11.8,88.2,5,8,2,9,9,2
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All EHC needs assessments,All EHC needs assessments,124,121,97.6,3,2.4,0,0,0,0,2,1,66.7,33.3,3,4,3,1,3,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All EHC needs assessments,All EHC needs assessments,428,422,98.6,6,1.4,0,0,0,0,1,5,16.7,83.3,1,0,0,4,7,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All EHC needs assessments,All EHC needs assessments,433,421,97.2,12,2.8,0,0,0,0,2,10,16.7,83.3,46,28,7,0,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All EHC needs assessments,All EHC needs assessments,472,434,91.9,34,7.2,0,0,4,0.8,15,19,44.1,55.9,1,14,1,0,11,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All EHC needs assessments,All EHC needs assessments,796,723,90.8,54,6.8,0,0,19,2.4,16,38,29.6,70.4,25,4,3,23,22,7
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All EHC needs assessments,All EHC needs assessments,404,403,99.8,1,0.2,0,0,0,0,1,0,100,0,1,0,0,3,10,2
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All EHC needs assessments,All EHC needs assessments,233,228,97.9,4,1.7,1,0.4,0,0,2,2,50,50,6,4,4,6,6,6
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All EHC needs assessments,All EHC needs assessments,348,298,85.6,42,12.1,0,0,8,2.3,7,35,16.7,83.3,4,11,2,4,1,1
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All EHC needs assessments,All EHC needs assessments,705,692,98.2,9,1.3,0,0,4,0.6,9,0,100,0,0,0,0,0,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All EHC needs assessments,All EHC needs assessments,544,540,99.3,4,0.7,0,0,0,0,3,1,75,25,1,1,1,4,1,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All EHC needs assessments,All EHC needs assessments,539,493,91.5,41,7.6,0,0,5,0.9,1,40,2.4,97.6,14,5,0,4,18,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All EHC needs assessments,All EHC needs assessments,821,756,92.1,65,7.9,0,0,0,0,37,26,58.7,41.3,23,18,6,15,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All EHC needs assessments,All EHC needs assessments,1072,1054,98.3,5,0.5,0,0,13,1.2,2,3,40,60,1,1,1,31,16,14
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All EHC needs assessments,All EHC needs assessments,789,718,91,55,7,0,0,16,2,25,30,45.5,54.5,8,12,5,3,21,3
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All EHC needs assessments,All EHC needs assessments,781,716,91.7,61,7.8,0,0,4,0.5,42,19,68.9,31.1,1,22,1,0,3,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All EHC needs assessments,All EHC needs assessments,383,306,79.9,77,20.1,0,0,0,0,21,56,27.3,72.7,18,30,8,11,15,4
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All EHC needs assessments,All EHC needs assessments,441,434,98.4,7,1.6,0,0,0,0,1,6,14.3,85.7,3,3,1,2,9,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All EHC needs assessments,All EHC needs assessments,446,414,92.8,31,7,0,0,1,0.2,2,29,6.5,93.5,6,4,2,0,6,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All EHC needs assessments,All EHC needs assessments,402,384,95.5,18,4.5,0,0,0,0,10,8,55.6,44.4,1,2,0,0,12,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All EHC needs assessments,All EHC needs assessments,468,435,92.9,33,7.1,0,0,0,0,16,17,48.5,51.5,14,13,5,12,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All EHC needs assessments,All EHC needs assessments,337,318,94.4,19,5.6,0,0,0,0,5,14,26.3,73.7,7,0,0,1,18,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All EHC needs assessments,All EHC needs assessments,535,510,95.3,25,4.7,0,0,0,0,18,7,72,28,14,6,3,4,15,2
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All EHC needs assessments,All EHC needs assessments,879,836,95.1,43,4.9,0,0,0,0,18,25,41.9,58.1,15,3,0,19,20,6
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All EHC needs assessments,All EHC needs assessments,698,684,98,14,2,0,0,0,0,5,9,35.7,64.3,15,10,6,1,6,1
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,276,262,94.9,14,5.1,0,0,0,0,3,11,21.4,78.6,1,0,0,5,8,2
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,302,265,87.7,37,12.3,0,0,0,0,18,19,48.6,51.4,7,7,2,4,7,1
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,597,595,99.7,2,0.3,0,0,0,0,1,1,50,50,2,2,0,0,3,0

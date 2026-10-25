@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Targets{% endblock %}
+{% block content %}
+{% set statuses = {"met": ("met", "Met"), "behind": ("behind", "Behind"), "improving": ("improving", "Improving, no end point"), "no data": ("nodata", "No data published"), "unclear": ("unclear", "Unclear")} %}
+<h1>Targets</h1>
+<p class="lede">What the law requires, what the council has committed to, and where no target has been set.</p>
+
+<h2>What the law requires</h2>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Duty</th><th scope="col">Deadline</th><th scope="col">Latest Waltham Forest figure</th><th scope="col">Law</th></tr></thead>
+<tbody>
+<tr><td>Tell the family whether the council will carry out an EHC needs assessment</td><td>6 weeks from the request</td>
+  <td>{{ fmt(d.six_weeks.latest[WF]) }} of decisions on time ({{ d.six_weeks.latest_period }}, <a href="assessments.html#decisions">DfE</a>)</td><td>{{ cite("send_regs_2014", "regulation 5") }}</td></tr>
+<tr><td>Health and social care bodies provide advice for an assessment</td><td>6 weeks from being asked</td>
+  <td>"65-90%" (October 2025, <a href="health.html">council</a>)</td><td>{{ cite("send_regs_2014", "regulation 8") }}</td></tr>
+<tr><td>Issue the final EHC plan</td><td>20 weeks from the request</td>
+  <td>{{ fmt(d.timeliness.latest[WF]) }} on time ({{ d.timeliness.latest_period }}, <a href="assessments.html#timeliness">DfE</a>)</td><td>{{ cite("send_regs_2014", "regulation 13") }}</td></tr>
+<tr><td>Review every EHC plan</td><td>At least every 12 months</td>
+  <td>{{ fmt(d.ar.completed.latest[WF]) }} of reviews due in {{ d.ar.period }} completed (<a href="reviews.html">DfE</a>)</td><td>{{ cite("cfa_2014_s44", "section 44(1)") }}</td></tr>
+<tr><td>Decide the outcome of an annual review</td><td>4 weeks from the review meeting</td>
+  <td>{{ fmt(d.ar.decision.latest[WF]) }} on time ({{ d.ar.period }}, <a href="reviews.html#decisions">DfE</a>)</td><td>{{ cite("send_regs_2014", "regulation 20") }}</td></tr>
+</tbody></table></div>
+<p class="note">The law allows a few exceptions to the 6 and 20 week deadlines, for example when a school is closed for 4 weeks or more. The DfE timeliness figure leaves those cases out.</p>
+
+<h2>Measures with no target</h2>
+<p>The SEND Local Area Improvement Plan lists "measures of success" with March 2025 baselines. For the measures parents ask about most, it sets no numeric target or trajectory.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Measure</th><th scope="col">Latest council figure</th><th scope="col">Target</th></tr></thead>
+<tbody>
+{% for key in ["timeliness_20_weeks", "annual_reviews_on_time", "year9_reviews", "ehcp_audit_quality", "complaints"] %}
+{% set m = local.measures[key] %}{% set o = m.observations[-1] %}
+<tr><td>{{ m.title }}{% if m.plan_ref is defined %}<br><span class="note">{{ m.plan_ref }}</span>{% endif %}</td>
+<td>{{ fmt(o.value, m.unit) }} ({{ o.period }})<br><span class="note">{{ cite(o.source, o.page) }}</span></td>
+<td><span class="notarget">None published</span></td></tr>
+{% endfor %}
+</tbody></table></div>
+<p>The SEND Strategy 2025–2028 says the partnership will "develop a local area plan with clear targets that measure if we are realising our vision" ({{ cite("send_strategy_2025", 4) }}). If you know where those targets are published, please get in touch.</p>
+
+<h2>Commitments with a number and a date</h2>
+<p>These are the improvement plan commitments that do include a number and a deadline. The status column is our reading of the latest published figure, not the council's own RAG rating.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Commitment</th><th scope="col">Due</th><th scope="col">Latest published position</th><th scope="col">Status</th></tr></thead>
+<tbody>
+{% for t in local.targets %}
+{% set st = statuses[t.status] %}
+<tr><td>{{ t.commitment }}<br><span class="note">{{ cite(t.source.source, t.source.page) }}</span></td>
+<td>{{ t.due }}</td>
+<td>{{ t.latest }}{% if t.latest_source is defined %}<br><span class="note">{{ cite(t.latest_source.source, t.latest_source.page) }}</span>{% endif %}</td>
+<td><span class="status {{ st[0] }}">{{ st[1] }}</span></td></tr>
+{% endfor %}
+</tbody></table></div>
+
+<h2>Progress on the improvement plan</h2>
+{% set s = local.improvement_plan_status %}
+<p>In {{ s.period }}, the council reported the {{ s.total }} actions in the plan as:
+{% for c in s.counts %}{{ c.value }} {{ c.label|lower }}{{ ", " if not loop.last else "" }}{% endfor %} ({{ cite(s.source, s.page) }}). These ratings describe whether actions are happening, not whether outcomes for children have improved.</p>
+{% endblock %}

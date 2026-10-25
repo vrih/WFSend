@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %} | Waltham Forest SEND data</title>
+<meta name="description" content="{% block description %}Performance data on special educational needs and disability (SEND) services in Waltham Forest, from public sources.{% endblock %}">
+<link rel="stylesheet" href="static/style.css">
+<script src="static/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html">Waltham Forest SEND data</a>
+    <p class="tagline">How SEND services in Waltham Forest are performing. Every figure links to its public source.</p>
+    <nav aria-label="Sections">
+      <ul>
+      {% for href, label in pages %}
+        <li><a href="{{ href }}"{% if href == page %} aria-current="page"{% endif %}>{{ label }}</a></li>
+      {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{% block content %}{% endblock %}
+</main>
+<footer class="wrap footer">
+  <p>An independent site built from public sources. It is not run by or affiliated with the London Borough of Waltham Forest.
+  DfE statistics are Crown copyright, used under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
+  <p>Built {{ built }}. <a href="sources.html">Sources and method</a> · <a href="data/headlines.csv">Download the headline figures (CSV)</a></p>
+</footer>
+<div id="tip" role="tooltip" hidden></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% block title %}Assessments and timeliness{% endblock %}
+{% block content %}
+<h1>EHC needs assessments and timeliness</h1>
+<p class="lede">Parents, schools and professionals can ask the council for an education, health and care (EHC) needs assessment. The law sets two deadlines. The council must say within <strong>6 weeks</strong> whether it will assess. It must issue the final plan within <strong>20 weeks</strong> of the request ({{ cite("send_regs_2014", "regulations 5 and 13") }}).</p>
+
+<h2 id="timeliness">Plans issued within 20 weeks</h2>
+{{ figure(d.timeliness, ranked=True, y_max=100) }}
+
+<h3 id="council-timeliness">What the council reports to its own boards</h3>
+<p>The improvement plan tracks the same measure each month. These figures come from the council's case management system, so they won't exactly match the DfE figures above.</p>
+{{ ui.observations_table(local.measures.timeliness_20_weeks) }}
+
+<h2 id="requests">Requests for an assessment</h2>
+{{ figure(d.requests) }}
+
+<h2 id="decisions">Deciding whether to assess</h2>
+{{ figure(d.six_weeks, ranked=True, y_max=100) }}
+{{ figure(d.refused, note="Waltham Forest reported no refusals to assess in 2024 or 2025. In the same years it recorded no decision for " ~ fmt(d.undecided.series[WF]["2024"]) ~ " and " ~ fmt(d.undecided.series[WF]["2025"]) ~ " of requests, against about 7–9% in London and England. The council has told its own board that data from its case management system is inaccurate.") }}
+{{ figure(d.undecided) }}
+
+<h2 id="not-issued">Assessments that end without a plan</h2>
+{{ figure(d.not_issued) }}
+
+<h2 id="issued">New plans issued</h2>
+{{ figure(d.plans_issued) }}
+{% endblock %}

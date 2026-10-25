@@ -1,0 +1,38 @@
+current:
+  source: ofsted_2025
+  dates: 10 to 14 February 2025
+  published: 1 April 2025
+  outcome: >-
+    The local area partnership's arrangements lead to inconsistent experiences
+    and outcomes for children and young people with special educational needs
+    and/or disabilities (SEND). The local area partnership must work jointly to
+    make improvements.
+  outcome_page: 1
+  scale_note: >-
+    Area SEND inspections have three possible outcomes. This is the middle one.
+    The other two are "typically positive experiences and outcomes" and
+    "widespread and/or systemic failings".
+  next: The next full area SEND inspection will be within about three years.
+  areas_for_improvement_page: 6
+  areas_for_improvement:
+    - Improve communication with parents, so that services are co-produced with families, parents know how their input has changed things, and families can navigate the Local Offer.
+    - Strengthen preparation for adulthood, including a broad education, employment and training offer, Year 9 annual reviews that reflect young people's aspirations, and timely Care Act assessment referrals.
+    - Put in place a multi-agency quality assurance framework for EHC plans and annual reviews, so that plans reflect current needs, set ambitious outcomes, and are updated at transition points.
+    - Health leaders to improve waiting times "at pace" for neurodevelopmental assessments, CAMHS treatment, continence and wheelchair services.
+  quotes:
+    - text: Some parents and carers and young people told inspectors that they have lost confidence in the partnership's governance of SEND services.
+      page: 2
+    - text: Sometimes, EHC plans do not reflect the children's and young people's needs or identify specific provision to meet their needs successfully.
+      page: 3
+    - text: Many wait up to a year for an autism or attention deficit and hyperactive disorder (ADHD) assessment.
+      page: 3
+
+history:
+  - { date: "January 2017", summary: "Joint local area SEND inspection. A written statement of action was required.", source: ofsted_2017 }
+  - { date: "March 2019", summary: "Revisit found sufficient progress on the significant weaknesses identified in 2017.", source: ofsted_2019 }
+  - { date: "February 2025", summary: "Area SEND inspection: inconsistent experiences and outcomes (middle of three outcomes).", source: ofsted_2025 }
+
+response:
+  - { date: "April 2025", summary: "SEND Local Area Improvement Plan published. It has six priorities and 46 actions, with measures and March 2025 baselines.", source: laip_2025 }
+  - { date: "October 2025", summary: "Highlight report to the Health and Wellbeing Board: 35 of 46 actions complete or on track, 8 at risk of delay, 3 delayed.", source: hwb_oct2025_highlight }
+  - { date: "December 2025", summary: "Cabinet asked to approve the SEND Strategy 2025-2028. The strategy says a separate Local Area Plan will hold the 'clear targets'.", source: send_strategy_cabinet_dec2025 }

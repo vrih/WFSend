@@ -1,0 +1,120 @@
+{
+  "ehcp_annual_reviews": {
+    "title": "Number of annual reviews of EHC plans",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/49159ef4-a116-47d7-9e16-61feb9981089",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/49159ef4-a116-47d7-9e16-61feb9981089/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 35,
+    "fetched": "2026-10-25"
+  },
+  "ehcp_assessments": {
+    "title": "Assessments for an education, health and care plan carried out during the calendar year",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/866331e6-4be2-4242-985a-c00c7ac274b5",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/866331e6-4be2-4242-985a-c00c7ac274b5/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 245,
+    "fetched": "2026-10-25"
+  },
+  "ehcp_caseload": {
+    "title": "Education, health and care plans as at January each year",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/262aaba5-f871-4c2f-8fba-a0d1122be74c",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/262aaba5-f871-4c2f-8fba-a0d1122be74c/csv",
+    "api_id": "01a0aa37-1008-7183-9271-35e3bcbb26c8",
+    "api_version": "1.0",
+    "published": "2026-09-17T07:24:23.885692+00:00",
+    "rows": 11760,
+    "fetched": "2026-10-25"
+  },
+  "ehcp_new_plans": {
+    "title": "New education, health and care plans issued during the calendar year",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/3238af68-2166-40a5-ae38-3b3d50d7740e",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/3238af68-2166-40a5-ae38-3b3d50d7740e/csv",
+    "api_id": "01a0aa36-6b29-70e3-8f29-5d5b9aeeea9b",
+    "api_version": "1.0",
+    "published": "2026-09-17T07:24:23.519392+00:00",
+    "rows": 10290,
+    "fetched": "2026-10-25"
+  },
+  "ehcp_requests": {
+    "title": "Requests for an education, health and care needs assessment received during the calendar year",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/159be1b6-419d-42e7-8972-1e0e666b1de4",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/159be1b6-419d-42e7-8972-1e0e666b1de4/csv",
+    "api_id": "01a0aa36-eb22-7682-94aa-a6bcbb1117ae",
+    "api_version": "1.0",
+    "published": "2026-09-17T07:24:23.831346+00:00",
+    "rows": 2450,
+    "fetched": "2026-10-25"
+  },
+  "ehcp_timeliness": {
+    "title": "Timeliness of new education, health and care plans, including those issued within the statutory 20 weeks",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/81d75f9d-bca6-42d9-95ba-ff9ece0ce2af",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/81d75f9d-bca6-42d9-95ba-ff9ece0ce2af/csv",
+    "api_id": "01a0aa36-b680-76f8-8e62-55b216223feb",
+    "api_version": "1.0",
+    "published": "2026-09-17T07:24:23.759471+00:00",
+    "rows": 1960,
+    "fetched": "2026-10-25"
+  },
+  "exclusions_characteristics": {
+    "title": "Suspensions and permanent exclusions - by characteristic",
+    "publication": "exclusions",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/ae917392-59b2-4d62-b898-c8286adbc02e",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/ae917392-59b2-4d62-b898-c8286adbc02e/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 2729,
+    "fetched": "2026-10-25"
+  },
+  "ks2_attainment": {
+    "title": "Attainment by region, local authority and pupil characteristics",
+    "publication": "ks2",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/33799174-6834-4433-b0d0-a0e602ea90b7",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/33799174-6834-4433-b0d0-a0e602ea90b7/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 1322,
+    "fetched": "2026-10-25"
+  },
+  "ks4_sen": {
+    "title": "National characteristics summary data",
+    "publication": "ks4",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/7a97ac14-2dad-43d3-9f9a-f0dca8bc2808",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/7a97ac14-2dad-43d3-9f9a-f0dca8bc2808/csv",
+    "api_id": "19e39901-560d-f972-b6f3-dd085539c095",
+    "api_version": "2.0",
+    "published": "2026-10-15T08:30:15.889132+00:00",
+    "rows": 1440,
+    "fetched": "2026-10-25"
+  },
+  "sen_pupils": {
+    "title": "Pupils in all schools, by type of SEN provision - 2016 to 2026",
+    "publication": "sen",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/730c131b-6383-443d-ae53-880a69799f11",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/730c131b-6383-443d-ae53-880a69799f11/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 1155,
+    "fetched": "2026-10-25"
+  },
+  "send_appeal_rate": {
+    "title": "SEND Tribunals and appeal rate 2024-2025",
+    "publication": "ehcp",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans/2026",
+    "download_url": "https://content.explore-education-statistics.service.gov.uk/api/releases/9b5381be-1851-4493-8ae4-54e7223837aa/files/330e4c5f-158a-41d5-97aa-76204facc80c",
+    "rows": 68,
+    "fetched": "2026-10-25"
+  }
+}

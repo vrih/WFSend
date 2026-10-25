@@ -1,0 +1,95 @@
+# Every non-DfE figure on the site points at one of these documents.
+# Add a document here first, then reference it by id (with a page number)
+# from the other files in data/local/.
+#
+# Fields: title, publisher, date (of the meeting or publication), url, and
+# optionally `meeting` and `notes`. Keep urls pointing at the publisher's own copy.
+
+ofsted_2025:
+  title: Area SEND inspection of Waltham Forest Local Area Partnership
+  publisher: Ofsted and Care Quality Commission
+  date: 2025-04-01
+  url: https://files.ofsted.gov.uk/v1/file/50273312
+  notes: Inspection 10 to 14 February 2025. All Ofsted reports for the council are at https://reports.ofsted.gov.uk/provider/44/80517
+
+ofsted_2019:
+  title: Local area SEND revisit, Waltham Forest
+  publisher: Ofsted and Care Quality Commission
+  date: 2019-05-13
+  url: https://files.ofsted.gov.uk/v1/file/50076928
+
+ofsted_2017:
+  title: Local area SEND inspection, Waltham Forest
+  publisher: Ofsted and Care Quality Commission
+  date: 2017-03-30
+  url: https://files.ofsted.gov.uk/v1/file/2670177
+
+laip_2025:
+  title: SEND Local Area Improvement Plan
+  publisher: London Borough of Waltham Forest and NHS North East London
+  date: 2025-07-01
+  meeting: Children and Families Scrutiny Committee, 1 July 2025 (Appendix 2 to item 1)
+  url: https://democracy.walthamforest.gov.uk/documents/s103995/1b%20-%20Appendix%202%20-%20SEND%20Local%20Area%20Improvement%20Plan.pdf
+  notes: Published April 2025 and signed off by the Local Area SEND Board in May 2025. The baselines are dated March 2025.
+
+scrutiny_jul2025:
+  title: SEND Inspection Findings and SEND Improvement Plan
+  publisher: London Borough of Waltham Forest
+  date: 2025-07-01
+  meeting: Children and Families Scrutiny Committee, 1 July 2025
+  url: https://democracy.walthamforest.gov.uk/documents/s103993/1%20-%20Scrutiny%20Report%20SEND%20Inspection.pdf
+
+hwb_oct2025_report:
+  title: SEND Improvement Plan - Progress So Far
+  publisher: London Borough of Waltham Forest
+  date: 2025-10-20
+  meeting: Integrated Meeting of Health & Wellbeing and Health & Care Partnership Boards, 20 October 2025
+  url: https://democracy.walthamforest.gov.uk/documents/s105502/The%20Integrated%20meeting%20of%20Waltham%20Forest%20Health%20SP%20FINAL.pdf
+
+hwb_oct2025_highlight:
+  title: SEND Local Area Improvement Plan - Highlight Report (September 2025)
+  publisher: London Borough of Waltham Forest
+  date: 2025-10-20
+  meeting: Integrated Meeting of Health & Wellbeing and Health & Care Partnership Boards, 20 October 2025 (Appendix 1)
+  url: https://democracy.walthamforest.gov.uk/documents/s105503/Appendix%201%201%20-%20SEND%20Improvement%20Plan%20-%20HWB%20-%20Highlight%20Report%20-%20Sept%2025.pdf
+  notes: Reports figures up to August 2025 against the March 2025 baselines in the improvement plan.
+
+send_strategy_cabinet_dec2025:
+  title: Waltham Forest SEND Strategy 2025 - 2028 (Cabinet report)
+  publisher: London Borough of Waltham Forest
+  date: 2025-12-02
+  meeting: Cabinet, 2 December 2025
+  url: https://www.civico.net/walthamforest/documents/74234222/download
+
+send_strategy_2025:
+  title: Waltham Forest SEND Strategy 2025 - 2028 (Appendix 1 to Cabinet report)
+  publisher: London Borough of Waltham Forest
+  date: 2025-12-02
+  meeting: Cabinet, 2 December 2025
+  url: https://www.civico.net/walthamforest/documents/74234223/download
+
+budget_feb2026:
+  title: Budget and Council Tax Setting 2026/27
+  publisher: London Borough of Waltham Forest
+  date: 2026-02-19
+  meeting: Cabinet, 19 February 2026
+  url: https://civico.net/walthamforest/documents/74236251/download
+
+schools_budget_mar2026:
+  title: Schools and Early Years Budgets 2026/27
+  publisher: London Borough of Waltham Forest
+  date: 2026-03-17
+  meeting: Cabinet, 17 March 2026
+  url: https://civico.net/walthamforest/documents/74237157/download
+
+send_regs_2014:
+  title: The Special Educational Needs and Disability Regulations 2014
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/uksi/2014/1530/contents
+
+cfa_2014_s44:
+  title: Children and Families Act 2014, section 44 (Reviews and re-assessments)
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/ukpga/2014/6/section/44

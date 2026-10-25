@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Sources and method{% endblock %}
+{% block content %}
+<h1>Sources and method</h1>
+<p class="lede">Every figure on this site comes from a public document or official statistic, listed below.</p>
+
+<h2>Department for Education statistics</h2>
+<p>These come from <a href="https://explore-education-statistics.service.gov.uk/">Explore Education Statistics</a>. A script downloads each file, keeps the rows for England, London and the London boroughs, and saves a copy in the repository. Rates such as "% within 20 weeks" are recalculated from the published counts. The City of London is left out of London rankings because its numbers are too small to compare.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Data</th><th scope="col">Publication</th><th scope="col">Downloaded</th><th scope="col">Copy used here</th></tr></thead>
+<tbody>
+{% for key, m in MANIFEST|dictsort %}
+<tr><td><a href="{{ m.dataset_url }}">{{ m.title }}</a></td><td><a href="{{ PUBS[m.publication].url }}">{{ PUBS[m.publication].title }}</a></td><td>{{ m.fetched }}</td><td><a href="data/{{ key }}.csv">{{ key }}.csv</a></td></tr>
+{% endfor %}
+</tbody></table></div>
+
+<h2>Council, NHS and inspection documents</h2>
+<p>Figures from these documents were copied by hand, with the page number. The original wording is kept where it is unclear what a figure covers, with a note explaining the problem. The extracted figures are in <a href="data/council_reported.yaml">council_reported.yaml</a> and <a href="data/inspection.yaml">inspection.yaml</a>.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Document</th><th scope="col">Publisher</th><th scope="col">Date</th><th scope="col">Notes</th></tr></thead>
+<tbody>
+{% for key, s in SOURCES.items()|sort(attribute="1.date", reverse=true) if key in USED.local %}
+<tr><td><a href="{{ s.url }}">{{ s.title }}</a>{% if s.meeting is defined %}<br><span class="note">{{ s.meeting }}</span>{% endif %}</td><td>{{ s.publisher }}</td><td>{{ s.date }}</td><td>{{ s.notes if s.notes is defined else "" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+
+<h2>Things to bear in mind</h2>
+<ul>
+  <li><strong>DfE and council figures measure different things.</strong> DfE timeliness counts plans issued in a calendar year. The council's monitoring uses monthly or quarterly snapshots from its own case management system.</li>
+  <li><strong>Data quality.</strong> In October 2025 the council said its performance data "may be providing a worst-case scenario as data analytics from our Capita system is inaccurate" ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}). The council did not say whether this also affects the figures it sends to the DfE.</li>
+  <li><strong>Small numbers.</strong> Exam results and exclusion rates for pupils with EHC plans are based on small groups and can change a lot from year to year.</li>
+  <li><strong>Provisional data.</strong> The latest year of exam results is usually provisional and is revised later.</li>
+  <li><strong>Suppressed figures.</strong> DfE hides some small numbers to protect privacy. These show as "–" or "no data".</li>
+</ul>
+
+<h2>Gaps</h2>
+<p>Figures parents have asked for that we have not found published for Waltham Forest:</p>
+<ul>
+  <li>Numeric targets for EHC plan timeliness, annual reviews or plan quality.</li>
+  <li>Any council monitoring published after the September 2025 highlight report.</li>
+  <li>Outcomes of SEND Tribunal appeals for Waltham Forest. National figures are published, but not figures for each council.</li>
+  <li>How many children are waiting for a named school place or for the provision in their plan to be delivered.</li>
+</ul>
+
+<h2>Corrections and updates</h2>
+<p>The code and data are open. See the repository README for how to add a new document or refresh the statistics. If something here is wrong or out of date, please raise an issue on the repository.</p>
+{% endblock %}

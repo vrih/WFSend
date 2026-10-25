@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+{% set t = d.timeliness %}
+{% set ar = d.ar %}
+{% set cl = d.caseload %}
+{% set lt = local.measures.timeliness_20_weeks.observations[-1] %}
+<h1>How are SEND services in Waltham Forest performing?</h1>
+<p class="lede">Parents have asked Waltham Forest Council for clear performance figures and targets for special educational needs and disability (SEND) services. This site brings together what has already been published by the Department for Education, Ofsted and the council's own committee papers. Every figure links to its source.</p>
+
+<h2>Headlines</h2>
+<ul class="tiles">
+  {{ ui.tile("New EHC plans issued within 20 weeks, " ~ t.latest_period,
+             fmt(t.latest[WF]), ui.compare(t), rank_text(t), "Assessments and timeliness", "assessments.html#timeliness") }}
+  {{ ui.tile("Council's own monitoring, " ~ lt.period,
+             fmt(lt.value), "Within 20 weeks. Published target: none", "", "What the council reports", "assessments.html#council-timeliness") }}
+  {{ ui.tile("Annual reviews due in " ~ ar.period ~ " that were completed",
+             fmt(ar.completed.latest[WF]), ui.compare(ar.completed), rank_text(ar.completed), "Annual reviews", "reviews.html") }}
+  {{ ui.tile("Annual review decisions within the legal 4 weeks, " ~ ar.period,
+             fmt(ar.decision.latest[WF]), ui.compare(ar.decision), rank_text(ar.decision), "Annual reviews", "reviews.html#ar_decision") }}
+  {{ ui.tile("EHC plans maintained, " ~ cl.latest_period,
+             fmt(cl.latest[WF], "count"), "Up " ~ fmt(d.growth.growth[WF]) ~ " since " ~ d.growth["from"] ~ " (England up " ~ fmt(d.growth.growth["England"]) ~ ")", "", "EHC plans", "plans.html") }}
+  {{ ui.tile("SEND Tribunal appeal rate, " ~ d.appeal_rate.latest_period,
+             fmt(d.appeal_rate.latest[WF]), "England " ~ fmt(d.appeal_rate.latest["England"]), rank_text(d.appeal_rate), "Complaints and appeals", "disputes.html") }}
+  {{ ui.tile("Forecast schools budget (DSG) deficit, March 2026",
+             local.finance[1].value, "Driven by an £18.3m High Needs deficit", "", "Money", "money.html") }}
+  {{ ui.tile("Ofsted / CQC area SEND inspection, February 2025",
+             "Inconsistent", "The middle of three outcomes: experiences and outcomes are inconsistent", "", "Inspection", "inspection.html") }}
+</ul>
+
+<div class="callout">
+  <p><strong>No published targets.</strong> The council's SEND Improvement Plan tracks measures such as 20-week timeliness and annual reviews completed on time. It records baselines but sets no numeric target for either.
+  The SEND Strategy 2025–2028 says "clear targets" will sit in a separate Local Area Plan ({{ cite("send_strategy_2025", 4) }}). We have not found those targets published. <a href="targets.html">See every target we could find</a>.</p>
+</div>
+
+<h2>What changed</h2>
+<p>For four years, Waltham Forest issued about nine in ten new EHC plans within the 20-week legal limit, well above London and England. That fell to {{ fmt(t.series[WF]["2024"]) }} in 2024 and {{ fmt(t.series[WF]["2025"]) }} in {{ t.latest_period }}. That puts the borough {{ rank_text(t) }}. The council's monthly monitoring shows the same thing: {{ fmt(lt.value) }} in {{ lt.period }}. The council puts this down to delays in educational psychologist advice ({{ cite(lt.source, lt.page) }}).</p>
+{{ figure(t) }}
+
+<h2>Sections</h2>
+<ul class="cards">
+  <li><a href="assessments.html">Assessments</a><br>Requests, decisions, and how long new EHC plans take.</li>
+  <li><a href="plans.html">EHC plans</a><br>How many children have a plan and where they go to school.</li>
+  <li><a href="reviews.html">Annual reviews</a><br>Whether plans are reviewed every year as the law requires.</li>
+  <li><a href="outcomes.html">Outcomes</a><br>Results at 11 and 16, exclusions and attendance for pupils with SEND.</li>
+  <li><a href="health.html">Health</a><br>Waiting times for therapy, autism and ADHD assessment, and CAMHS.</li>
+  <li><a href="disputes.html">Complaints and appeals</a><br>SEND Tribunal appeals and complaints to the council.</li>
+  <li><a href="targets.html">Targets</a><br>Legal timescales, and the targets the council has and hasn't set.</li>
+  <li><a href="inspection.html">Inspection</a><br>What Ofsted and CQC found in 2025.</li>
+  <li><a href="money.html">Money</a><br>High needs funding and the schools budget deficit.</li>
+</ul>
+
+<h2>About the figures</h2>
+<p>National statistics come from the Department for Education's <a href="https://explore-education-statistics.service.gov.uk/">Explore Education Statistics</a> and are refreshed automatically. Local figures come from council and NHS papers, cited to the page. They are copied as printed, including the council's own warning that its case management data may be inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}). See <a href="sources.html">sources and method</a>.</p>
+<p>Spotted a mistake or know of a newer document? Corrections are welcome.</p>
+{% endblock %}

@@ -1,0 +1,36 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,new_la_code,old_la_code,la_name,breakdown_topic,breakdown,total_ehc_plans,review_expected_2025,review_not_expected_2025,review_completed_2025,review_completed_prior_2025,review_not_completed,outcome_amended,outcome_ceased,outcome_maintained,no_outcome_recorded,decision_4_weeks,decision_over_4_weeks
+2025,Calendar year,National,E92000001,England,,,,,,All reviews of EHC plans,All reviews of EHC plans,718838,596987,121851,339027,100079,157881,199980,3300,120460,15287,161396,177631
+2025,Calendar year,Regional,E92000001,England,E12000007,London,,,,All reviews of EHC plans,All reviews of EHC plans,108712,92227,16485,43750,10511,37966,23410,428,17466,2446,18492,25258
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All reviews of EHC plans,All reviews of EHC plans,26,22,4,22,0,0,15,1,6,0,19,3
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000007,202,Camden,All reviews of EHC plans,All reviews of EHC plans,1645,1431,214,324,88,1019,219,1,104,0,86,238
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000011,203,Greenwich,All reviews of EHC plans,All reviews of EHC plans,3626,2967,659,522,8,2437,61,17,444,0,237,285
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000012,204,Hackney,All reviews of EHC plans,All reviews of EHC plans,3721,3291,430,1535,216,1540,419,3,792,321,323,1212
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000013,205,Hammersmith and Fulham,All reviews of EHC plans,All reviews of EHC plans,1843,1599,244,884,108,607,518,20,346,0,369,515
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000019,206,Islington,All reviews of EHC plans,All reviews of EHC plans,2334,1985,349,1103,330,552,456,20,627,0,401,702
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000020,207,Kensington and Chelsea,All reviews of EHC plans,All reviews of EHC plans,880,760,120,396,242,122,301,3,91,1,141,255
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000022,208,Lambeth,All reviews of EHC plans,All reviews of EHC plans,3350,2954,396,1750,233,971,782,10,958,0,507,1243
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000023,209,Lewisham,All reviews of EHC plans,All reviews of EHC plans,3698,3217,481,0,0,3217,0,0,0,0,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000028,210,Southwark,All reviews of EHC plans,All reviews of EHC plans,3619,3128,491,1762,1057,309,568,23,1150,21,755,1007
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000030,211,Tower Hamlets,All reviews of EHC plans,All reviews of EHC plans,4834,4066,768,3152,201,713,1375,7,1763,7,1207,1945
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000032,212,Wandsworth,All reviews of EHC plans,All reviews of EHC plans,3359,2898,461,1523,0,1375,743,14,766,0,860,663
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000033,213,Westminster,All reviews of EHC plans,All reviews of EHC plans,1527,1301,226,584,453,264,417,6,142,19,431,153
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000002,301,Barking and Dagenham,All reviews of EHC plans,All reviews of EHC plans,3297,2982,315,888,238,1856,596,3,87,202,112,776
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000003,302,Barnet,All reviews of EHC plans,All reviews of EHC plans,4840,3992,848,2407,920,665,880,4,1523,0,870,1537
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000004,303,Bexley,All reviews of EHC plans,All reviews of EHC plans,3540,2983,557,1763,376,844,1554,3,206,0,1031,732
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000005,304,Brent,All reviews of EHC plans,All reviews of EHC plans,4171,3635,536,1542,401,1692,1023,78,441,0,859,683
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000006,305,Bromley,All reviews of EHC plans,All reviews of EHC plans,4790,4076,714,1209,435,2432,927,2,274,6,196,1013
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000008,306,Croydon,All reviews of EHC plans,All reviews of EHC plans,5926,4722,1204,1477,445,2800,693,20,137,627,295,1182
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000009,307,Ealing,All reviews of EHC plans,All reviews of EHC plans,4546,3816,730,1472,525,1819,647,19,667,139,152,1320
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000010,308,Enfield,All reviews of EHC plans,All reviews of EHC plans,5055,4422,633,3418,462,542,2163,44,1184,27,2439,979
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000014,309,Haringey,All reviews of EHC plans,All reviews of EHC plans,3048,2691,357,1390,692,609,1091,27,272,0,347,1043
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000015,310,Harrow,All reviews of EHC plans,All reviews of EHC plans,3019,2569,450,956,84,1529,68,7,0,881,351,605
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000016,311,Havering,All reviews of EHC plans,All reviews of EHC plans,3419,2896,523,950,16,1930,437,0,513,0,259,691
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000017,312,Hillingdon,All reviews of EHC plans,All reviews of EHC plans,3735,3242,493,1378,326,1538,722,5,651,0,572,806
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000018,313,Hounslow,All reviews of EHC plans,All reviews of EHC plans,3499,3064,435,907,348,1809,399,12,496,0,411,496
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000021,314,Kingston upon Thames,All reviews of EHC plans,All reviews of EHC plans,2159,1796,363,1436,276,84,493,9,934,0,814,622
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000024,315,Merton,All reviews of EHC plans,All reviews of EHC plans,2917,2428,489,1996,234,198,1411,29,426,130,767,1229
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000025,316,Newham,All reviews of EHC plans,All reviews of EHC plans,3639,2749,890,820,820,1109,485,5,325,5,353,467
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000026,317,Redbridge,All reviews of EHC plans,All reviews of EHC plans,3830,2992,838,959,485,1548,804,16,139,0,230,729
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All reviews of EHC plans,All reviews of EHC plans,2166,1853,313,1520,229,104,545,13,962,0,864,656
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All reviews of EHC plans,All reviews of EHC plans,2708,2361,347,2067,137,157,1869,2,184,12,1851,216
+2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All reviews of EHC plans,All reviews of EHC plans,3946,3339,607,1638,126,1575,729,5,856,48,383,1255

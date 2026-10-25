@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Money{% endblock %}
+{% block content %}
+<h1>High needs funding and the schools budget deficit</h1>
+<p class="lede">Support for children with EHC plans is mostly paid for from the High Needs Block of the Dedicated Schools Grant (DSG), a ring-fenced government grant. Spending above the grant builds up as a DSG deficit. A government "statutory override" currently keeps that deficit off the council's main budget, until March 2028 ({{ cite("schools_budget_mar2026", 7) }}).</p>
+
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">What</th><th scope="col">Figure</th><th scope="col">Detail</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for f in local.finance %}
+<tr><td>{{ f.label }}</td><td><strong>{{ f.value }}</strong></td><td>{{ f.detail }}</td><td>{{ cite(f.source, f.page) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+
+<div class="callout"><p><strong>Why this matters for families.</strong> The council's draft deficit management plan relies on "reducing the number of requests to assess children whose needs can be met outside the statutory framework" ({{ cite("budget_feb2026", 34) }}). Families have a legal right to request an assessment. Any change in how requests are handled should show up in the <a href="assessments.html#decisions">request and refusal figures</a>.</p></div>
+{% endblock %}

@@ -1,0 +1,36 @@
+name: Refresh DfE data
+
+# Re-downloads the DfE statistics monthly and opens a pull request if
+# anything changed, so new figures are reviewed before they go live.
+on:
+  schedule:
+    - cron: "17 6 3 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/fetch_dfe.py
+      - run: python scripts/build.py
+      - name: Ignore runs where only the download date changed
+        run: |
+          if git diff --quiet -- data/dfe/*.csv; then git checkout -- data/dfe/manifest.json; fi
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data-refresh
+          commit-message: Refresh DfE SEND statistics
+          title: Refresh DfE SEND statistics
+          body: |
+            Automated monthly download from Explore Education Statistics.
+            Check the diff of `data/dfe/*.csv` and the built pages before merging.
+            If a new release has replaced a `file_id` data set in `data/dfe_sources.yaml`, update the id by hand.

@@ -1,0 +1,1156 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_name,region_code,old_la_code,la_name,new_la_code,pcon_code,pcon_name,phase_type_grouping,establishment_type,hospital_school,sen_provision,pupil_count,pupil_percent
+202526,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8920227,100
+202526,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",538547,6.03736877996
+202526,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1319780,14.79536339153
+202526,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1409041,100
+202526,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",84406,5.99031539891
+202526,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,194773,13.82308960491
+202526,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2891,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",15,0.51885160843
+202526,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,449,15.53095814597
+202526,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,46055,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",2361,5.12647920964
+202526,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,6111,13.26891759852
+202526,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,67996,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",3906,5.74445555620
+202526,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,8847,13.01105947408
+202526,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,43011,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",2540,5.90546604357
+202526,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,5775,13.42679779591
+202526,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50019,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",2865,5.72782342709
+202526,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,6119,12.23335132649
+202526,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,57500,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",3624,6.30260869565
+202526,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,7789,13.54608695652
+202526,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,28805,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1344,4.66585662211
+202526,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4837,16.79222357229
+202526,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,63189,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",3951,6.25267055974
+202526,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,10015,15.84927756413
+202526,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,57704,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",3690,6.39470400665
+202526,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6274,10.87272979342
+202526,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,55209,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",3806,6.89380354652
+202526,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6899,12.49615098987
+202526,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,46827,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",2959,6.31900399342
+202526,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,8496,18.14337881991
+202526,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,42007,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",2880,6.85600019044
+202526,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6710,15.97352822148
+202526,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,25980,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1657,6.37798306389
+202526,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3726,14.34180138568
+202526,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,40220,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",2413,5.99950273495
+202526,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5914,14.70412729985
+202526,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,42333,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",2164,5.11185127441
+202526,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,4495,10.61819384404
+202526,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,44047,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",2408,5.46688764274
+202526,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,5250,11.91908643040
+202526,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,55331,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",3189,5.76349605103
+202526,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,7128,12.88247094757
+202526,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,46778,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",2480,5.30163752191
+202526,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6984,14.93009534396
+202526,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,23300,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1910,8.19742489270
+202526,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,4169,17.89270386266
+202526,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,23241,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",1161,4.99548212211
+202526,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,3579,15.39950948754
+202526,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,30467,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1821,5.97695867660
+202526,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,4031,13.23070863557
+202526,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,35727,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",2713,7.59369664399
+202526,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5540,15.50647969322
+202526,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,39093,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",2544,6.50755889801
+202526,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5988,15.31732023635
+202526,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,31824,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",2108,6.62393162393
+202526,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4921,15.46317244846
+202526,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,62621,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",3062,4.88973347599
+202526,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,7071,11.29173919292
+202526,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,59357,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",3004,5.06090267365
+202526,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,6648,11.20002695554
+202526,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,39228,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1603,4.08636688079
+202526,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,5263,13.41643723870
+202526,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,46793,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",2625,5.60981343363
+202526,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7974,17.04101040753
+202526,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,42587,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",2358,5.53690093220
+202526,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,4924,11.56221382111
+202526,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,46311,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",4000,8.63725680723
+202526,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,6338,13.68573341106
+202526,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,43161,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",2914,6.75146544334
+202526,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5698,13.20173304603
+202526,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,40746,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2785,6.83502675109
+202526,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,6168,15.13768222647
+202526,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,28683,100
+202526,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1546,5.38995223651
+202526,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4643,16.18728863786
+202425,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9032426,100
+202425,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",482640,5.34341493636
+202425,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1284284,14.21859420713
+202425,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1436792,100
+202425,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",77760,5.41205686000
+202425,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,189608,13.19662136203
+202425,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,3000,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",12,0.40000000000
+202425,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,417,13.90000000000
+202425,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,46322,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",2230,4.81412719658
+202425,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5755,12.42390224947
+202425,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,70058,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",3572,5.09863256159
+202425,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,8209,11.71743412600
+202425,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,43749,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",2341,5.35097945095
+202425,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,5258,12.01856042423
+202425,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50616,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",2614,5.16437490121
+202425,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,6090,12.03176861071
+202425,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,58216,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",3273,5.62216572763
+202425,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,7554,12.97581420915
+202425,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,29751,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1261,4.23851299115
+202425,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4853,16.31205673758
+202425,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,64457,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",3441,5.33844268271
+202425,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,9747,15.12170904634
+202425,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,58526,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",3365,5.74958138263
+202425,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6487,11.08396268325
+202425,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,56388,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",3585,6.35773568844
+202425,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6730,11.93516350996
+202425,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,47994,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",2660,5.54235946159
+202425,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,8483,17.67512605742
+202425,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,42790,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",2701,6.31222248188
+202425,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6550,15.30731479317
+202425,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,26127,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1561,5.97466222681
+202425,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3605,13.79798675699
+202425,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,41009,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",2274,5.54512424102
+202425,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5705,13.91158038479
+202425,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,42781,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1989,4.64926018559
+202425,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,4494,10.50466328510
+202425,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,44038,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",2185,4.96162405195
+202425,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,4762,10.81338843725
+202425,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56841,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",3028,5.32714062032
+202425,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,7047,12.39774106718
+202425,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,48069,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",2335,4.85760053256
+202425,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,7105,14.78083588175
+202425,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,24007,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1767,7.36035323030
+202425,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,4180,17.41158828674
+202425,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,23940,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",1112,4.64494569757
+202425,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,3383,14.13116123642
+202425,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,31008,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1625,5.24058307533
+202425,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,4064,13.10629514963
+202425,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,37122,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",2601,7.00662679812
+202425,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5339,14.38230698777
+202425,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,39925,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",2425,6.07388854101
+202425,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,6167,15.44646211646
+202425,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,32265,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",2028,6.28544862854
+202425,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4663,14.45219277855
+202425,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,64244,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",2522,3.92565842724
+202425,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,6927,10.78232986738
+202425,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,60636,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",2625,4.32911141895
+202425,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,6732,11.10231545616
+202425,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,39392,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1470,3.73172217709
+202425,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,4910,12.46445978878
+202425,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,47649,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",2500,5.24669982580
+202425,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7473,15.68343511930
+202425,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,42861,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",2196,5.12353888150
+202425,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,4692,10.94701476867
+202425,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,46997,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",3574,7.60474072813
+202425,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,6178,13.14551992680
+202425,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,43932,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",2728,6.20959664936
+202425,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5339,12.15287262132
+202425,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,41927,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2720,6.48746631049
+202425,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,6301,15.02850192000
+202425,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,30155,100
+202425,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1440,4.77532747471
+202425,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4409,14.62112419167
+202324,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9092073,100
+202324,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",434354,4.77728236453
+202324,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1238851,13.62561651231
+202324,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1454596,100
+202324,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",71553,4.91909781135
+202324,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,184980,12.71693308657
+202324,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2985,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",11,0.36850921273
+202324,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,386,12.93132328308
+202324,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,46114,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1976,4.28503274493
+202324,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5539,12.01153662662
+202324,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,70404,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",3420,4.85767854099
+202324,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,8131,11.54905971251
+202324,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44126,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",2094,4.74550151837
+202324,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4901,11.10683044010
+202324,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50850,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",2361,4.64306784660
+202324,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5666,11.14257620452
+202324,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,58419,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",2942,5.03603279754
+202324,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,7634,13.06766634143
+202324,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,30504,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1219,3.99619722003
+202324,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4438,14.54891161814
+202324,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65470,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",3017,4.60821750420
+202324,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,9590,14.64793034977
+202324,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59438,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",3123,5.25421447558
+202324,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6603,11.10905481341
+202324,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,57368,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",3318,5.78371217403
+202324,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6683,11.64935155487
+202324,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,48889,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",2332,4.76998915911
+202324,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,8202,16.77678005277
+202324,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,43390,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",2451,5.64876699700
+202324,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6215,14.32357686102
+202324,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,26747,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1565,5.85112349048
+202324,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3602,13.46693087075
+202324,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,41718,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",2232,5.35020854307
+202324,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5612,13.45222685651
+202324,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,43167,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1765,4.08877151527
+202324,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,4587,10.62617277086
+202324,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,43753,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",1918,4.38369940346
+202324,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,4326,9.88732201220
+202324,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,57403,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2789,4.85863108199
+202324,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,6791,11.83039213978
+202324,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,48365,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",2198,4.54460870464
+202324,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,7019,14.51256073606
+202324,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,24468,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1637,6.69037109694
+202324,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,4180,17.08353768187
+202324,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,24343,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",1037,4.25995152610
+202324,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,3360,13.80273589943
+202324,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,31320,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1456,4.64878671775
+202324,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,3964,12.65644955300
+202324,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,38023,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",2377,6.25147936775
+202324,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5406,14.21771033321
+202324,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,40068,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",2210,5.51562344015
+202324,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,6210,15.49865229110
+202324,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,32646,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1915,5.86595601298
+202324,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4717,14.44893708264
+202324,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,65477,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",2263,3.45617545092
+202324,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,6707,10.24329153748
+202324,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,61588,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",2454,3.98454244333
+202324,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,6275,10.18867311813
+202324,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,39530,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1348,3.41006830255
+202324,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,4671,11.81634201871
+202324,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,48517,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",2321,4.78389018282
+202324,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7412,15.27711936022
+202324,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,43033,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",2032,4.72195756744
+202324,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,4412,10.25259684428
+202324,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,48094,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",3251,6.75967896203
+202324,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5964,12.40071526593
+202324,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,44618,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",2565,5.74880093235
+202324,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5234,11.73069164911
+202324,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,42742,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2630,6.15319825932
+202324,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,6139,14.36292171634
+202324,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31019,100
+202324,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1326,4.27479931654
+202324,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4404,14.19774976627
+202223,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9073832,100
+202223,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",389171,4.28893768366
+202223,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1183384,13.04172261509
+202223,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1461472,100
+202223,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",65345,4.47117700510
+202223,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,176999,12.11100862691
+202223,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2942,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",8,0.27192386131
+202223,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,330,11.21685927940
+202223,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,45682,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1699,3.71918917735
+202223,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5489,12.01567356945
+202223,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,70604,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",2827,4.00402243498
+202223,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,7640,10.82091666194
+202223,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44399,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1877,4.22757269307
+202223,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4722,10.63537467060
+202223,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50744,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",2109,4.15615639287
+202223,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5506,10.85054390666
+202223,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,58449,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",2694,4.60914643535
+202223,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,7365,12.60072884052
+202223,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,31320,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1137,3.63026819923
+202223,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4401,14.05172413793
+202223,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65890,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",2811,4.26620124449
+202223,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,8941,13.56958567309
+202223,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59838,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",2862,4.78291386744
+202223,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6521,10.89775727798
+202223,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,57745,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",3106,5.37882067711
+202223,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6363,11.01913585591
+202223,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,48780,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",2085,4.27429274292
+202223,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,7581,15.54120541205
+202223,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,44293,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",2327,5.25365181857
+202223,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6170,13.92996636037
+202223,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,26921,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1468,5.45299208796
+202223,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3273,12.15779502990
+202223,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,42060,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1990,4.73133618640
+202223,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5425,12.89824060865
+202223,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,43261,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1601,3.70079286193
+202223,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,4397,10.16388895309
+202223,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,42925,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",1644,3.82993593476
+202223,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,3733,8.69656377402
+202223,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,57403,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2566,4.47014964374
+202223,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,6354,11.06910788634
+202223,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,48370,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",2066,4.27124250568
+202223,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6682,13.81434773620
+202223,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,24856,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1504,6.05085291277
+202223,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,4019,16.16913421306
+202223,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,24575,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",955,3.88606307222
+202223,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,3096,12.59816887080
+202223,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,31512,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1356,4.30312261995
+202223,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,3551,11.26872302614
+202223,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,38712,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",2212,5.71399049390
+202223,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5391,13.92591444513
+202223,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,40371,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",2020,5.00359168710
+202223,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5955,14.75068737460
+202223,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,32742,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1869,5.70826461425
+202223,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4418,13.49337242685
+202223,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,65794,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",2121,3.22369820956
+202223,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,6613,10.05106848648
+202223,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,61736,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",2220,3.59595697810
+202223,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,6027,9.76253725541
+202223,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,39540,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1269,3.20940819423
+202223,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,4353,11.00910470409
+202223,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,48992,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",2095,4.27620836054
+202223,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7123,14.53910842586
+202223,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,42971,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1809,4.20981592236
+202223,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,4112,9.56924437411
+202223,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,48693,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",2889,5.93309099870
+202223,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,6038,12.40013965046
+202223,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,44773,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",2281,5.09458825631
+202223,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5162,11.52926987246
+202223,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,43292,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2539,5.86482490991
+202223,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,6004,13.86861313868
+202223,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31287,100
+202223,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1329,4.24777063956
+202223,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4244,13.56473934861
+202122,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,9000031,100
+202122,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",355566,3.95071972529
+202122,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1129843,12.55376787035
+202122,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1457938,100
+202122,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",60250,4.13254884638
+202122,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,170735,11.71071746535
+202122,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2867,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",9,0.31391698639
+202122,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,389,13.56818974537
+202122,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,45153,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1570,3.47706686155
+202122,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5286,11.70686333134
+202122,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,69742,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",2528,3.62478850620
+202122,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,7409,10.62344068136
+202122,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44603,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1686,3.78001479721
+202122,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4635,10.39167768984
+202122,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50493,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",2015,3.99065216960
+202122,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5209,10.31628146475
+202122,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,58419,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",2534,4.33762988068
+202122,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,6830,11.69140176997
+202122,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,31622,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1107,3.50072734172
+202122,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4389,13.87957750932
+202122,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65368,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",2604,3.98360053848
+202122,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,8562,13.09815200097
+202122,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59273,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",2620,4.42022506031
+202122,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6151,10.37740623892
+202122,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,58052,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",2883,4.96623716667
+202122,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6008,10.34934196926
+202122,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,48354,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1897,3.92315010133
+202122,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,7024,14.52620258923
+202122,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,45150,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",2202,4.87707641196
+202122,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6179,13.68549280177
+202122,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,27061,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1381,5.10328517054
+202122,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3221,11.90273825800
+202122,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,42044,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1839,4.37398915421
+202122,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5271,12.53686614023
+202122,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,42585,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1469,3.44957144534
+202122,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,4146,9.73582247270
+202122,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,42035,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",1447,3.44236945402
+202122,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,3458,8.22647793505
+202122,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56855,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2480,4.36197344121
+202122,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,5951,10.46697739864
+202122,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,47822,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1975,4.12989837313
+202122,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6608,13.81790807578
+202122,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,25053,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1418,5.66000079830
+202122,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3743,14.94032650780
+202122,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,24551,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",883,3.59659484338
+202122,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2838,11.55961060649
+202122,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,31351,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1244,3.96797550317
+202122,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,3115,9.93588721252
+202122,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,39193,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",2154,5.49587936621
+202122,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5396,13.76776465185
+202122,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,40820,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1895,4.64233219010
+202122,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5929,14.52474277315
+202122,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,32569,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1657,5.08766004482
+202122,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4241,13.02158494273
+202122,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,65507,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",1612,2.46080571541
+202122,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,6692,10.21570213870
+202122,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,61623,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",2076,3.36887201207
+202122,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,5440,8.82787270986
+202122,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,39051,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1189,3.04473637038
+202122,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,4594,11.76410335202
+202122,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,49167,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1961,3.98844753594
+202122,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7461,15.17481237415
+202122,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,42450,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1640,3.86336866902
+202122,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3837,9.03886925795
+202122,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,49026,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",2647,5.39917594745
+202122,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5697,11.62036470444
+202122,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,44694,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",2077,4.64715621783
+202122,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5133,11.48476305544
+202122,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,43770,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2435,5.56317112177
+202122,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5794,13.23737719899
+202122,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31615,100
+202122,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1116,3.52996995097
+202122,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4099,12.96536454214
+202021,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8911887,100
+202021,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",325618,3.65374920036
+202021,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1083083,12.15323982451
+202021,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1453264,100
+202021,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",55856,3.84348611126
+202021,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,165782,11.40756256261
+202021,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2715,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",7,0.25782688766
+202021,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,293,10.79189686924
+202021,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,44782,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1460,3.26023848867
+202021,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5095,11.37733910946
+202021,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,68235,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",2321,3.40148017879
+202021,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,6940,10.17073349454
+202021,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44628,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1547,3.46643362911
+202021,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4442,9.95339248902
+202021,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50456,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",1982,3.92817504360
+202021,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5417,10.73608688758
+202021,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,57878,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",2284,3.94623172880
+202021,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,6828,11.79722865337
+202021,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,31683,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1084,3.42139317615
+202021,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4053,12.79234920935
+202021,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,64964,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",2546,3.91909365186
+202021,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,7728,11.89581922295
+202021,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59264,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",2513,4.24034827213
+202021,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6134,10.35029697624
+202021,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,58472,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",2491,4.26015870844
+202021,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,5861,10.02360103981
+202021,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,48154,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1687,3.50334343979
+202021,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,6881,14.28957095983
+202021,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,45283,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",2079,4.59112691296
+202021,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6136,13.55033897930
+202021,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,27356,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1306,4.77408977920
+202021,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,2963,10.83126188039
+202021,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,42195,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1690,4.00521388790
+202021,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5014,11.88292451712
+202021,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,42146,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1312,3.11298818393
+202021,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,4075,9.66877046457
+202021,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,41217,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",1352,3.28019991750
+202021,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,3158,7.66188708542
+202021,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56507,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2342,4.14461925071
+202021,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,5834,10.32438458951
+202021,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,47219,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1878,3.97721256273
+202021,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6402,13.55810161163
+202021,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,25249,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1261,4.99425719830
+202021,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3777,14.95900827755
+202021,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,24625,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",711,2.88730964467
+202021,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2883,11.70761421319
+202021,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,30861,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1124,3.64213732542
+202021,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,3044,9.86358186708
+202021,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,39566,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",2011,5.08264671687
+202021,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5263,13.30182479906
+202021,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,41233,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1768,4.28782771081
+202021,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5658,13.72201877137
+202021,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,32825,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1583,4.82254379284
+202021,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4131,12.58492003046
+202021,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,65208,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",1290,1.97828487302
+202021,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,6762,10.36989326463
+202021,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,61761,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",1962,3.17676203429
+202021,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,5285,8.55718009747
+202021,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,39002,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1113,2.85369981026
+202021,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,4386,11.24557714988
+202021,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,49265,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1838,3.73084339794
+202021,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7258,14.73256876078
+202021,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,41795,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1552,3.71336284244
+202021,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3778,9.03935877497
+202021,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,48440,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",2531,5.22502064409
+202021,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5598,11.55656482246
+202021,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,44576,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",1857,4.16591888011
+202021,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5270,11.82250538406
+202021,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,44259,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2365,5.34354594545
+202021,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5602,12.65731263697
+202021,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31445,100
+202021,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",1009,3.20877723008
+202021,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,3833,12.18953728732
+201920,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8890345,100
+201920,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",294758,3.31548438221
+201920,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1079000,12.13676184669
+201920,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1457113,100
+201920,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",50810,3.48703223428
+201920,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,167915,11.52381455659
+201920,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2429,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",10,0.41169205434
+201920,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,233,9.59242486620
+201920,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,44517,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1326,2.97863737448
+201920,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,4999,11.22941797515
+201920,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,67875,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",2106,3.10276243093
+201920,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,7255,10.68876611418
+201920,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44645,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1383,3.09777130697
+201920,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4768,10.67980736924
+201920,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,50993,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",1744,3.42007726550
+201920,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5053,9.90920322397
+201920,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,57317,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",1956,3.41260010119
+201920,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,6926,12.08367500043
+201920,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,32371,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1064,3.28689258904
+201920,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,4154,12.83247351024
+201920,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65718,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",2410,3.66718402872
+201920,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,8104,12.33147691652
+201920,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59761,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",2200,3.68133063369
+201920,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6216,10.40143237228
+201920,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,59260,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",2230,3.76307796152
+201920,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6040,10.19237259534
+201920,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,48324,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1604,3.31926165052
+201920,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,6654,13.76955550037
+201920,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,42659,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",1796,4.21013150800
+201920,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,5834,13.67589488736
+201920,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,27672,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1314,4.74848222029
+201920,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3070,11.09424689216
+201920,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,42670,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1499,3.51300679634
+201920,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5341,12.51699086008
+201920,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,41918,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1228,2.92952908058
+201920,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,3991,9.52096951190
+201920,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,40868,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",1209,2.95830478614
+201920,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,3067,7.50464911422
+201920,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56873,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2196,3.86123468077
+201920,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,6136,10.78895082024
+201920,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,47328,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1738,3.67224475997
+201920,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6395,13.51208586883
+201920,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,25581,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1191,4.65579922598
+201920,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3802,14.86259333098
+201920,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,25446,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",648,2.54656920537
+201920,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2743,10.77969032460
+201920,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,30847,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",1016,3.29367523584
+201920,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,2906,9.42068920802
+201920,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,40043,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",1883,4.70244487176
+201920,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5467,13.65282321504
+201920,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,41825,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1594,3.81111775254
+201920,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5755,13.75971309025
+201920,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,33133,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1453,4.38535598949
+201920,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4133,12.47396855099
+201920,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,65468,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",919,1.40373923138
+201920,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,7040,10.75334514572
+201920,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,61766,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",1728,2.79765566816
+201920,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,5408,8.75562607259
+201920,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,38926,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1069,2.74623644864
+201920,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,4199,10.78713456301
+201920,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,49517,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1644,3.32007189450
+201920,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7438,15.02110386331
+201920,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,41232,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1439,3.49000776096
+201920,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3794,9.20159099728
+201920,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,48127,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",2437,5.06368566501
+201920,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5665,11.77093938953
+201920,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,44995,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",1714,3.80931214579
+201920,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5385,11.96799644404
+201920,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,44773,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2097,4.68362629263
+201920,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5903,13.18428517186
+201920,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,32236,100
+201920,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",965,2.99354758654
+201920,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4041,12.53567440129
+201819,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8819289,100
+201819,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",271165,3.07468096351
+201819,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1047163,11.87355352568
+201819,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1452286,100
+201819,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",46576,3.20708180069
+201819,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,165196,11.37489447670
+201819,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2428,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",6,0.24711696869
+201819,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,259,10.66721581548
+201819,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,43916,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1178,2.68239366062
+201819,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5000,11.38537207395
+201819,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,66962,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",2016,3.01066276395
+201819,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,7147,10.67321764582
+201819,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44624,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1334,2.98942273216
+201819,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4971,11.13974542846
+201819,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,51167,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",1639,3.20323646100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5071,9.91068462094
+201819,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,56762,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",1802,3.17465910292
+201819,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,6433,11.33328635354
+201819,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,32774,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1172,3.57600537011
+201819,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,3910,11.93018856410
+201819,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65439,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",2294,3.50555479148
+201819,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,7582,11.58636287229
+201819,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59583,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",2023,3.39526374972
+201819,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6358,10.67082892771
+201819,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,59621,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",1800,3.01907046175
+201819,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6133,10.28664396772
+201819,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,47740,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1400,2.93255131964
+201819,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,6167,12.91788856304
+201819,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,45094,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",1598,3.54370869738
+201819,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,5979,13.25897015123
+201819,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,27532,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1157,4.20238268197
+201819,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3053,11.08891471741
+201819,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,42402,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1314,3.09891042875
+201819,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5083,11.98764209235
+201819,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,41251,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1157,2.80478049016
+201819,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,3974,9.63370584955
+201819,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,40305,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",1078,2.67460612827
+201819,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,2927,7.26212628706
+201819,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56316,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2074,3.68278997087
+201819,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,6053,10.74827757653
+201819,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,46727,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1577,3.37492242172
+201819,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6345,13.57887302844
+201819,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,25551,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1101,4.30902900082
+201819,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3629,14.20296661578
+201819,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,25550,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",569,2.22700587084
+201819,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2668,10.44227005870
+201819,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,30275,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",868,2.86705202312
+201819,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,2823,9.32452518579
+201819,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,40328,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",1766,4.37909145010
+201819,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5114,12.68101567149
+201819,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,42265,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1494,3.53483970188
+201819,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5387,12.74577073228
+201819,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,33255,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1358,4.08359645166
+201819,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4157,12.50037588332
+201819,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,64676,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",537,0.83029253509
+201819,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,7190,11.11695219246
+201819,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,61354,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",1603,2.61270658799
+201819,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,5526,9.00674772630
+201819,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,38426,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",1032,2.68568156977
+201819,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,3625,9.43371675428
+201819,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,49299,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1519,3.08119840159
+201819,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,7137,14.47696707843
+201819,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,40638,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1333,3.28018111127
+201819,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3937,9.68797677051
+201819,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,47912,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",2226,4.64601769911
+201819,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5944,12.40607780931
+201819,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,45091,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",1628,3.61047659178
+201819,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5729,12.70541793262
+201819,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,44921,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",2007,4.46784354756
+201819,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5741,12.78021415373
+201819,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,32102,100
+201819,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",916,2.85340477228
+201819,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4144,12.90885303096
+201718,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8735098,100
+201718,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",253679,2.90413456151
+201718,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1022537,11.70607358955
+201718,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1440110,100
+201718,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",43377,3.01206157862
+201718,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,162518,11.28511016519
+201718,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2382,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",9,0.37783375314
+201718,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,216,9.06801007556
+201718,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,43506,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1092,2.50999862087
+201718,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,4973,11.43060727256
+201718,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,65789,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",1851,2.81354025748
+201718,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,6943,10.55343598473
+201718,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44498,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1204,2.70573958380
+201718,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4865,10.93307564384
+201718,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,51308,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",1603,3.12426911982
+201718,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5010,9.76455913307
+201718,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,56000,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",1698,3.03214285714
+201718,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,6409,11.44464285714
+201718,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,32618,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1129,3.46127904837
+201718,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,3849,11.80023300018
+201718,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65028,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",2114,3.25090730147
+201718,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,7636,11.74263394230
+201718,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59339,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",1833,3.08903082289
+201718,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6413,10.80739479937
+201718,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,59750,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",1659,2.77656903765
+201718,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6210,10.39330543933
+201718,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,47306,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1309,2.76709085528
+201718,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,5941,12.55866063501
+201718,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,44569,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",1539,3.45307276358
+201718,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,5987,13.43310372680
+201718,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,27595,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",1089,3.94636709548
+201718,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,2980,10.79905780032
+201718,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,42090,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1261,2.99596103587
+201718,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5135,12.20004751722
+201718,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,40266,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1110,2.75666815675
+201718,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,3924,9.74519445686
+201718,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,40112,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",997,2.48554048663
+201718,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,2726,6.79597128041
+201718,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56276,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",2003,3.55924372734
+201718,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,5927,10.53202075485
+201718,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,45706,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1372,3.00179407517
+201718,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6449,14.10974489126
+201718,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,25890,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",1008,3.89339513325
+201718,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3837,14.82039397450
+201718,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,25470,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",519,2.03769140164
+201718,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2567,10.07852375343
+201718,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,29624,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",796,2.68701053200
+201718,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,2535,8.55725087766
+201718,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,40427,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",1660,4.10616667078
+201718,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5438,13.45140623840
+201718,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,42813,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1337,3.12288323640
+201718,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5521,12.89561581762
+201718,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,33184,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1242,3.74276759884
+201718,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4018,12.10824493731
+201718,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,63049,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",412,0.65346000729
+201718,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,7051,11.18336531903
+201718,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,60402,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",1521,2.51812853879
+201718,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,4927,8.15701466838
+201718,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,37686,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",974,2.58451414318
+201718,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,3495,9.27400095526
+201718,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,48706,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1408,2.89081427339
+201718,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,6413,13.16675563585
+201718,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,39878,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1318,3.30508049551
+201718,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3842,9.63438487386
+201718,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,47278,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",2096,4.43335166462
+201718,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5741,12.14306865772
+201718,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,45196,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",1497,3.31224002124
+201718,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,5723,12.66262501106
+201718,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,44539,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",1846,4.14468218864
+201718,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5656,12.69898291385
+201718,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31830,100
+201718,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",871,2.73641218975
+201718,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4161,13.07257304429
+201617,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8669080,100
+201617,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",242184,2.79365284436
+201617,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,1002069,11.55911584620
+201617,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1430439,100
+201617,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",41141,2.87611006131
+201617,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,162815,11.38217008904
+201617,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2376,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",105,4.41919191919
+201617,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,293,12.33164983164
+201617,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,42944,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",1012,2.35655737704
+201617,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,4911,11.43582339791
+201617,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,64752,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",1763,2.72269582406
+201617,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,6679,10.31473931307
+201617,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44815,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1146,2.55717951578
+201617,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,4937,11.01640075867
+201617,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,51262,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",1558,3.03928836174
+201617,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,4871,9.50216534665
+201617,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,55035,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",1604,2.91450894885
+201617,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,6019,10.93667666030
+201617,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,32771,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",1029,3.13997131610
+201617,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,3632,11.08296969881
+201617,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65230,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",1956,2.99862026674
+201617,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,7174,10.99800705196
+201617,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,59313,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",1759,2.96562305059
+201617,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6439,10.85596749447
+201617,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,59648,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",1444,2.42086909871
+201617,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6538,10.96097103004
+201617,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,46437,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1236,2.66167065055
+201617,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,5874,12.64939595581
+201617,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,44554,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",1492,3.34874534273
+201617,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,6080,13.64636171836
+201617,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,27588,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",973,3.52689575177
+201617,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3101,11.24039437436
+201617,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,41550,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1294,3.11432009626
+201617,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5271,12.68592057761
+201617,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,39877,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1082,2.71334353135
+201617,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,3936,9.87035133034
+201617,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,39598,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",931,2.35112884489
+201617,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,2583,6.52305672003
+201617,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,56105,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",1912,3.40789590945
+201617,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,5774,10.29141787719
+201617,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,45163,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1317,2.91610389035
+201617,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6152,13.62177003299
+201617,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,26069,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",962,3.69020675898
+201617,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3917,15.02550922551
+201617,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,26124,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",544,2.08237635890
+201617,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2589,9.91042719338
+201617,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,29023,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",721,2.48423663990
+201617,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,2326,8.01433345966
+201617,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,40304,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",1522,3.77630011909
+201617,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5860,14.53949980150
+201617,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,43183,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1276,2.95486649839
+201617,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5499,12.73417780144
+201617,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,33214,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1181,3.55572951165
+201617,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,3908,11.76612271933
+201617,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,62135,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",488,0.78538665808
+201617,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,7604,12.23786915587
+201617,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,60051,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",1467,2.44292351501
+201617,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,4901,8.16139614660
+201617,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,36837,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",898,2.43776637619
+201617,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,3549,9.63433504357
+201617,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,48050,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1343,2.79500520291
+201617,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,6802,14.15608740894
+201617,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,38943,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1218,3.12764810107
+201617,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3582,9.19805870117
+201617,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,46679,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",1968,4.21602862100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5640,12.08252104800
+201617,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,45287,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",1388,3.06489721112
+201617,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,6431,14.20054320224
+201617,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,44175,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",1726,3.90718732314
+201617,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5697,12.89643463497
+201617,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31347,100
+201617,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",826,2.63502089514
+201617,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4246,13.54515583628
+201516,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,Total,8559540,100
+201516,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,"Education, health and care plan",236806,2.76657390467
+201516,Academic year,National,E92000001,England,,,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,991981,11.58918586746
+201516,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,Total,1412745,100
+201516,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,"Education, health and care plan",39473,2.79406403844
+201516,Academic year,Regional,E92000001,England,London,E12000007,,,,,,Total,Total,Total,SEN support / SEN without an EHC plan,165566,11.71945397081
+201516,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,Total,2355,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,"Education, health and care plan",8,0.33970276008
+201516,Academic year,Local authority,E92000001,England,London,E12000007,201,City of London,E09000001,,,Total,Total,Total,SEN support / SEN without an EHC plan,285,12.10191082802
+201516,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,Total,41975,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,"Education, health and care plan",942,2.24419297200
+201516,Academic year,Local authority,E92000001,England,London,E12000007,301,Barking and Dagenham,E09000002,,,Total,Total,Total,SEN support / SEN without an EHC plan,5038,12.00238237045
+201516,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,Total,63656,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,"Education, health and care plan",1681,2.64075656654
+201516,Academic year,Local authority,E92000001,England,London,E12000007,302,Barnet,E09000003,,,Total,Total,Total,SEN support / SEN without an EHC plan,6956,10.92748523312
+201516,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,Total,44383,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,"Education, health and care plan",1151,2.59333528603
+201516,Academic year,Local authority,E92000001,England,London,E12000007,303,Bexley,E09000004,,,Total,Total,Total,SEN support / SEN without an EHC plan,5054,11.38724286325
+201516,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,Total,51093,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,"Education, health and care plan",1511,2.95735227917
+201516,Academic year,Local authority,E92000001,England,London,E12000007,304,Brent,E09000005,,,Total,Total,Total,SEN support / SEN without an EHC plan,5056,9.89568042589
+201516,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,Total,54398,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,"Education, health and care plan",1621,2.97988896650
+201516,Academic year,Local authority,E92000001,England,London,E12000007,305,Bromley,E09000006,,,Total,Total,Total,SEN support / SEN without an EHC plan,5544,10.19155115996
+201516,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,Total,32422,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,"Education, health and care plan",917,2.82832644500
+201516,Academic year,Local authority,E92000001,England,London,E12000007,202,Camden,E09000007,,,Total,Total,Total,SEN support / SEN without an EHC plan,3579,11.03880081426
+201516,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,Total,65092,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,"Education, health and care plan",1839,2.82523197935
+201516,Academic year,Local authority,E92000001,England,London,E12000007,306,Croydon,E09000008,,,Total,Total,Total,SEN support / SEN without an EHC plan,7646,11.74645117679
+201516,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,Total,58955,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,"Education, health and care plan",1657,2.81061826817
+201516,Academic year,Local authority,E92000001,England,London,E12000007,307,Ealing,E09000009,,,Total,Total,Total,SEN support / SEN without an EHC plan,6493,11.01348486133
+201516,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,Total,58929,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,"Education, health and care plan",1350,2.29089242987
+201516,Academic year,Local authority,E92000001,England,London,E12000007,308,Enfield,E09000010,,,Total,Total,Total,SEN support / SEN without an EHC plan,6483,11.00137453545
+201516,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,Total,45327,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,"Education, health and care plan",1204,2.65625344717
+201516,Academic year,Local authority,E92000001,England,London,E12000007,203,Greenwich,E09000011,,,Total,Total,Total,SEN support / SEN without an EHC plan,6072,13.39598914554
+201516,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,Total,43372,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,"Education, health and care plan",1461,3.36853269390
+201516,Academic year,Local authority,E92000001,England,London,E12000007,204,Hackney,E09000012,,,Total,Total,Total,SEN support / SEN without an EHC plan,5830,13.44185188600
+201516,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,Total,26984,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,"Education, health and care plan",934,3.46131040616
+201516,Academic year,Local authority,E92000001,England,London,E12000007,205,Hammersmith and Fulham,E09000013,,,Total,Total,Total,SEN support / SEN without an EHC plan,3309,12.26282241328
+201516,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,Total,41131,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,"Education, health and care plan",1288,3.13145802436
+201516,Academic year,Local authority,E92000001,England,London,E12000007,309,Haringey,E09000014,,,Total,Total,Total,SEN support / SEN without an EHC plan,5503,13.37920303420
+201516,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,Total,39156,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,"Education, health and care plan",1009,2.57687199918
+201516,Academic year,Local authority,E92000001,England,London,E12000007,310,Harrow,E09000015,,,Total,Total,Total,SEN support / SEN without an EHC plan,3561,9.09439166411
+201516,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,Total,39182,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,"Education, health and care plan",913,2.33015160022
+201516,Academic year,Local authority,E92000001,England,London,E12000007,311,Havering,E09000016,,,Total,Total,Total,SEN support / SEN without an EHC plan,2554,6.51829921902
+201516,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,Total,55321,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,"Education, health and care plan",1800,3.25373727879
+201516,Academic year,Local authority,E92000001,England,London,E12000007,312,Hillingdon,E09000017,,,Total,Total,Total,SEN support / SEN without an EHC plan,5865,10.60176063339
+201516,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,Total,44065,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,"Education, health and care plan",1306,2.96380347214
+201516,Academic year,Local authority,E92000001,England,London,E12000007,313,Hounslow,E09000018,,,Total,Total,Total,SEN support / SEN without an EHC plan,6253,14.19040054464
+201516,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,Total,25592,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,"Education, health and care plan",898,3.50890903407
+201516,Academic year,Local authority,E92000001,England,London,E12000007,206,Islington,E09000019,,,Total,Total,Total,SEN support / SEN without an EHC plan,3906,15.26258205689
+201516,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,Total,26144,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,"Education, health and care plan",492,1.88188494492
+201516,Academic year,Local authority,E92000001,England,London,E12000007,207,Kensington and Chelsea,E09000020,,,Total,Total,Total,SEN support / SEN without an EHC plan,2315,8.85480416156
+201516,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,Total,28649,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,"Education, health and care plan",724,2.52713881810
+201516,Academic year,Local authority,E92000001,England,London,E12000007,314,Kingston upon Thames,E09000021,,,Total,Total,Total,SEN support / SEN without an EHC plan,2298,8.02122238123
+201516,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,Total,39582,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,"Education, health and care plan",1403,3.54454044767
+201516,Academic year,Local authority,E92000001,England,London,E12000007,208,Lambeth,E09000022,,,Total,Total,Total,SEN support / SEN without an EHC plan,5651,14.27669142539
+201516,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,Total,43537,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,"Education, health and care plan",1232,2.82977697131
+201516,Academic year,Local authority,E92000001,England,London,E12000007,209,Lewisham,E09000023,,,Total,Total,Total,SEN support / SEN without an EHC plan,5557,12.76385603050
+201516,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,Total,33153,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,"Education, health and care plan",1148,3.46273338762
+201516,Academic year,Local authority,E92000001,England,London,E12000007,315,Merton,E09000024,,,Total,Total,Total,SEN support / SEN without an EHC plan,4063,12.25530117938
+201516,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,Total,61029,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,"Education, health and care plan",489,0.80125841812
+201516,Academic year,Local authority,E92000001,England,London,E12000007,316,Newham,E09000025,,,Total,Total,Total,SEN support / SEN without an EHC plan,8314,13.62303167346
+201516,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,Total,59190,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,"Education, health and care plan",1426,2.40919074167
+201516,Academic year,Local authority,E92000001,England,London,E12000007,317,Redbridge,E09000026,,,Total,Total,Total,SEN support / SEN without an EHC plan,5670,9.57932083122
+201516,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,Total,36039,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,"Education, health and care plan",891,2.47232165154
+201516,Academic year,Local authority,E92000001,England,London,E12000007,318,Richmond upon Thames,E09000027,,,Total,Total,Total,SEN support / SEN without an EHC plan,3609,10.01415133605
+201516,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,Total,47486,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,"Education, health and care plan",1286,2.70816661752
+201516,Academic year,Local authority,E92000001,England,London,E12000007,210,Southwark,E09000028,,,Total,Total,Total,SEN support / SEN without an EHC plan,6665,14.03571578991
+201516,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,Total,38150,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,"Education, health and care plan",1137,2.98034076015
+201516,Academic year,Local authority,E92000001,England,London,E12000007,319,Sutton,E09000029,,,Total,Total,Total,SEN support / SEN without an EHC plan,3511,9.20314547837
+201516,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,Total,46433,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,"Education, health and care plan",1850,3.98423534985
+201516,Academic year,Local authority,E92000001,England,London,E12000007,211,Tower Hamlets,E09000030,,,Total,Total,Total,SEN support / SEN without an EHC plan,5870,12.64187108306
+201516,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,Total,44933,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,"Education, health and care plan",1380,3.07123940088
+201516,Academic year,Local authority,E92000001,England,London,E12000007,320,Waltham Forest,E09000031,,,Total,Total,Total,SEN support / SEN without an EHC plan,6672,14.84877484254
+201516,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,Total,43593,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,"Education, health and care plan",1697,3.89282682999
+201516,Academic year,Local authority,E92000001,England,London,E12000007,212,Wandsworth,E09000032,,,Total,Total,Total,SEN support / SEN without an EHC plan,5842,13.40123414309
+201516,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,Total,31439,100
+201516,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,"Education, health and care plan",828,2.63367155443
+201516,Academic year,Local authority,E92000001,England,London,E12000007,213,Westminster,E09000033,,,Total,Total,Total,SEN support / SEN without an EHC plan,4542,14.44702439645

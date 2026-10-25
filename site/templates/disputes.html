@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% block title %}Complaints and appeals{% endblock %}
+{% block content %}
+{% set ap = d.appeal_rate %}
+<h1>Complaints and SEND Tribunal appeals</h1>
+<p class="lede">Families can appeal to the SEND Tribunal against many council decisions, such as refusing to assess, refusing to issue a plan, what a plan says, or the school it names.</p>
+
+<h2>Tribunal appeals</h2>
+<p>In {{ ap.latest_period }}, {{ "{:,.0f}".format(ap.appeals[WF][ap.latest_period]) }} appeals about Waltham Forest decisions were registered with the SEND Tribunal ({{ "{:,.0f}".format(ap.appeals[WF][ap.periods[0]]) }} in {{ ap.periods[0] }}). That is an appeal rate of {{ fmt(ap.latest[WF]) }}, compared with {{ fmt(ap.latest["England"]) }} across England. Appeals are counted against all the decisions families could have appealed.</p>
+{{ figure(ap, ranked=True, areas=(WF, "England"), note="DfE did not publish a 2024 appeal rate for Waltham Forest; the figure is suppressed in its table. The notes to DfE's table explain how appealable decisions are counted, including a 2025 change to use annual reviews completed. A low appeal rate is not on its own evidence that families are satisfied.") }}
+
+<h2>Complaints to the council</h2>
+<p>The improvement plan's measure is simply "fewer complaints received".</p>
+{{ ui.observations_table(local.measures.complaints) }}
+{% endblock %}

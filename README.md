@@ -1,0 +1,89 @@
+# Waltham Forest SEND data
+
+A static website showing how special educational needs and disability (SEND)
+services in Waltham Forest are performing, and what targets exist. Every figure
+links back to a public source:
+
+- **Department for Education statistics**, downloaded automatically from
+  [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/):
+  EHC plan numbers, requests, 20-week timeliness, annual reviews, placements,
+  SEND Tribunal appeal rates, results at key stages 2 and 4, and exclusions.
+  Each figure is shown for Waltham Forest, London and England, with a ranking
+  against the other London boroughs.
+- **Council, NHS and Ofsted documents**: committee papers, the SEND Local Area
+  Improvement Plan and its highlight reports, budget reports, and the 2025 area
+  SEND inspection. These are entered by hand with page numbers.
+
+## How it works
+
+```
+data/dfe_sources.yaml     which DfE data sets to download
+scripts/fetch_dfe.py      downloads them, keeps England + London rows -> data/dfe/*.csv
+data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
+scripts/metrics.py        calculates the metrics shown on the site
+scripts/build.py          renders site/templates/*.html -> _site/
+```
+
+The site is plain HTML and CSS. Charts are inline SVG, so no JavaScript
+libraries or external services are needed. A small script adds hover
+tooltips. Every chart has a "Show the numbers" table.
+
+### Build locally
+
+```sh
+pip install -r requirements.txt
+python scripts/build.py          # uses the committed data, no network needed
+python -m http.server -d _site   # then open http://localhost:8000
+```
+
+### Refresh the DfE statistics
+
+```sh
+python scripts/fetch_dfe.py                  # everything (about 2 minutes)
+python scripts/fetch_dfe.py ehcp_timeliness  # or one data set
+```
+
+The `Refresh DfE data` workflow does this on the 3rd of each month and opens
+a pull request if anything changed.
+
+Data sets with an `api_id` follow new DfE releases automatically. Data sets
+with a `file_id` are not in the DfE API yet, so their id changes when a new
+release comes out. Check them each year:
+
+| Data set | Usually published |
+|---|---|
+| Education, health and care plans (annual reviews, assessments, appeal rates) | June |
+| Special educational needs in England | June |
+| Key stage 2 attainment | September (provisional), December (revised) |
+| Suspensions and permanent exclusions | July |
+
+To find a new `file_id`, open the release on Explore Education Statistics,
+go to "Explore data", open the data set and copy the id from the data
+catalogue URL (`/data-catalogue/data-set/<id>`). The tribunal appeal rate is
+a supporting file, not a data set. Its `download_url` points at a specific
+release and needs updating by hand too.
+
+### Add or update a council figure
+
+1. Add the document to `data/local/sources.yaml`, using the publisher's own
+   URL (for example `democracy.walthamforest.gov.uk` or `civico.net`).
+2. Add the figure to `data/local/council_reported.yaml`, with the source id
+   and page number. Copy values as printed. If a label is unclear, keep it and
+   explain in `note`.
+3. Run `python scripts/build.py` and check the page.
+
+## Hosting
+
+**GitHub Pages:** in the repository settings, go to Pages and set the source
+to "GitHub Actions". The `Build and deploy site` workflow publishes `_site/`
+on every push to `main`.
+
+**Cloudflare Pages:** set the build command to
+`pip install -r requirements.txt && python scripts/build.py` and the output
+directory to `_site`.
+
+## Licence and attribution
+
+DfE statistics are Crown copyright, reused under the
+[Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
+Council and Ofsted documents are quoted for comment and linked at source.

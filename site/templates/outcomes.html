@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% block title %}Outcomes{% endblock %}
+{% block content %}
+{% set ehc = "Education, health and care plan" %}
+{% set sup = "SEN support / SEN without an EHC plan" %}
+<h1>Outcomes for children and young people with SEND</h1>
+<p class="lede">Results at the end of primary and secondary school, exclusions and attendance, for pupils with an EHC plan and pupils on SEN support. Cohorts are small, especially for EHC plans, so a change of a few pupils can move the percentage a lot from year to year. The latest year is often provisional.</p>
+
+<h2>End of primary school (key stage 2)</h2>
+{{ figure(d.ks2[ehc], y_max=100) }}
+{{ figure(d.ks2[sup], y_max=100) }}
+
+<h2>End of secondary school (key stage 4)</h2>
+{{ figure(d.ks4[ehc].em, y_max=100) }}
+{{ figure(d.ks4[sup].em, y_max=100) }}
+{{ figure(d.ks4[ehc].a8) }}
+{{ figure(d.ks4[sup].a8) }}
+
+<h2>Suspensions and exclusions</h2>
+{{ figure(d.exclusions["EHC plan"].susp) }}
+{{ figure(d.exclusions["SEN support"].susp) }}
+{{ figure(d.exclusions["EHC plan"].perm) }}
+
+<h3>The council's own figures</h3>
+<p>The improvement plan also tracks exclusions and suspensions from the council's own records. They may be counted differently from the DfE statistics. They show suspensions of pupils with an EHC plan almost doubling between 2023/24 and 2024/25.</p>
+{{ ui.simple_table(local.local_exclusions) }}
+
+<h2>Attendance</h2>
+<p>This site does not yet include the DfE attendance statistics by SEN status. These are the council's own figures.</p>
+{{ ui.simple_table(local.local_attendance) }}
+
+<h2>After school</h2>
+<p>Of 351 young people in Years 12 and 13 with an EHC plan, 339 (97%) were in education, employment or training and 12 (3%) were not. This is a three-month average for 2024/25 ({{ cite("hwb_oct2025_highlight", 17) }}). There is no baseline yet for young people aged 18 and over.</p>
+{% endblock %}

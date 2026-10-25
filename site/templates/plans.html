@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}EHC plans{% endblock %}
+{% block content %}
+{% set p = d.placements %}
+<h1>EHC plans: how many, and where children go to school</h1>
+<p class="lede">An EHC plan is a legal document setting out a child or young person's needs and the support they must get, from birth to age 25.</p>
+
+<h2>Plans maintained by the council</h2>
+{{ figure(d.caseload, note="The number of plans grew " ~ fmt(d.growth.growth[WF]) ~ " between " ~ d.growth["from"] ~ " and " ~ d.growth["to"] ~ ", compared with " ~ fmt(d.growth.growth["London"]) ~ " in London and " ~ fmt(d.growth.growth["England"]) ~ " in England.") }}
+
+<h2>Share of pupils with SEND</h2>
+<p>These figures come from the school census and count pupils at schools in the borough, whoever maintains their plan. They are not directly comparable with the council's plan count above.</p>
+{{ figure(d.prevalence.ehcp) }}
+{{ figure(d.prevalence.support) }}
+
+<h2>Where children with EHC plans are placed</h2>
+<figure class="metric" id="placements">
+<figcaption><h3>{{ p.title }}, {{ p.period }}</h3>
+<p class="explain">Share of all EHC plans by the type of setting named. "Educated elsewhere" covers elective home education and other arrangements made by the council or by parents.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Setting</th>{% for a in AREAS %}<th scope="col">{{ a }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for r in p.rows %}
+<tr><th scope="row">{{ r.label }}</th>{% for a in AREAS %}<td{% if a == WF %} class="hlcol"{% endif %}>{{ fmt(r[a]) }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe(p.sources) }}</p>
+</figure>
+<p>The council says better commissioning means that "only five children have had to be placed out of Borough this year (compares with 28 last year)". It also says that in November 2024, 17% of SEND education placements were outside the borough ({{ cite("hwb_oct2025_report", 3) }}; {{ cite("hwb_oct2025_report", 2) }}).</p>
+{% endblock %}

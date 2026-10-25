@@ -1,0 +1,238 @@
+# Figures Waltham Forest Council and its partners have published in committee
+# papers. Each observation cites a document in sources.yaml and a page number.
+# Values are copied as printed. Where a label in the source is ambiguous it is
+# kept verbatim and explained in `note`.
+#
+# target: the numeric target the council has published for this measure, or
+# null where the plan sets a measure and baseline but no target.
+
+measures:
+
+  timeliness_20_weeks:
+    title: New EHC plans issued within 20 weeks (council monitoring)
+    unit: percent
+    plan_ref: Improvement plan measure 3b
+    statutory: All plans must be issued within 20 weeks of the request, unless a legal exception applies.
+    statutory_source: { source: send_regs_2014, page: "Regulation 13" }
+    target: null
+    target_note: The improvement plan records a baseline but sets no target or trajectory. It relies on a recovery plan to clear backlogs "by end of 2025".
+    target_source: { source: hwb_oct2025_report, page: 4 }
+    observations:
+      - { period: "Q4 2025", value: 33.81, n: 47, source: laip_2025, page: 15, note: "Labelled 'Q4 2025' in a plan published in April 2025, so probably January to March 2025 (financial-year quarter 4 of 2024/25)." }
+      - { period: "March 2025", value: 31.91, n: 15, source: laip_2025, page: 15 }
+      - { period: "June 2025", value: 30.58, source: hwb_oct2025_highlight, page: 15 }
+      - { period: "August 2025", value: 28, n: 96, source: hwb_oct2025_highlight, page: 15, note: "The council blames delays in educational psychologist advice." }
+
+  annual_reviews_on_time:
+    title: Annual reviews completed on time (council monitoring)
+    unit: percent
+    plan_ref: Improvement plan measure 3c
+    statutory: Every EHC plan must be reviewed at least once every 12 months, and the council must give its decision within 4 weeks of the review meeting.
+    statutory_source: { source: cfa_2014_s44, page: "Section 44(1); SEND Regulations 2014 reg. 20" }
+    target: null
+    target_note: No target is set. The council says it is clearing the backlog with temporary staff.
+    observations:
+      - { period: "Q4 2025", value: 10, n: 23, source: laip_2025, page: 15, note: "Labelled 'Q4 2025' in a plan published in April 2025." }
+      - { period: "March 2025", value: 20, n: 12, source: laip_2025, page: 15 }
+      - { period: "June 2025", value: 24.18, source: hwb_oct2025_highlight, page: 15 }
+      - { period: "August 2025", value: 40.83, n: 1354, source: hwb_oct2025_highlight, page: 15, note: "The same report also gives '58%, N=1941' as a figure 'to date' without saying what period that covers." }
+
+  year9_reviews:
+    title: Year 9 annual reviews (preparing for adulthood) completed on time
+    unit: percent
+    plan_ref: Improvement plan measure 5.01
+    statutory: From Year 9, every annual review must cover preparation for adulthood.
+    target: null
+    target_note: No target is set.
+    observations:
+      - { period: "March 2025", value: 14, n: 33, source: laip_2025, page: 20, note: "193 Year 9 reviews were late." }
+      - { period: "August 2025", value: 12, n: 5, source: hwb_oct2025_highlight, page: 17, note: "156 Year 9 reviews overdue, down from 202 in July 2025." }
+
+  year9_overdue:
+    title: Year 9 annual reviews overdue
+    unit: count
+    lower_is_better: true
+    target: null
+    observations:
+      - { period: "March 2025", value: 193, source: laip_2025, page: 20 }
+      - { period: "July 2025", value: 202, source: hwb_oct2025_highlight, page: 17 }
+      - { period: "August 2025", value: 156, source: hwb_oct2025_highlight, page: 17 }
+
+  complaints:
+    title: SEND complaints received per month
+    unit: count
+    lower_is_better: true
+    plan_ref: Improvement plan measure 2.08 ("Fewer complaints received")
+    target: null
+    observations:
+      - { period: "March 2025", value: 60, source: hwb_oct2025_highlight, page: 14 }
+      - { period: "July 2025", value: 40, source: hwb_oct2025_highlight, page: 14 }
+      - { period: "August 2025", value: 25, source: hwb_oct2025_highlight, page: 14 }
+
+  ehcp_audit_quality:
+    title: EHC plans graded "good" in quality audits
+    unit: percent
+    plan_ref: Improvement plan measure 3a
+    target: null
+    target_note: No audits were done between December 2024 and August 2025. There is no benchmark for annual reviews.
+    observations:
+      - { period: "December 2024", value: 82.3, source: hwb_oct2025_highlight, page: 15, note: "The improvement plan dates this baseline 'December 2025'. The later highlight report says December 2024." }
+
+backlogs:
+  - { label: "EHC needs assessments outstanding", value: 230, period: "November 2024", source: hwb_oct2025_report, page: 2 }
+  - { label: "Annual reviews outstanding", value: 1637, period: "November 2024", source: hwb_oct2025_report, page: 2 }
+  - { label: "Share of SEND education placements outside the borough", value: "17%", period: "November 2024", source: hwb_oct2025_report, page: 2 }
+  - { label: "Children placed out of borough this year (28 the year before)", value: 5, period: "October 2025", source: hwb_oct2025_report, page: 3 }
+  - { label: "Permanent staff in the SEND establishment", value: "70%", period: "October 2025", source: hwb_oct2025_report, page: 3 }
+  - { label: "Health advice for assessments returned within 6 weeks", value: "65-90%", period: "October 2025", source: hwb_oct2025_report, page: 4, note: "The statutory deadline for health advice is 6 weeks (SEND Regulations 2014, reg. 8)." }
+
+data_quality_warning:
+  text: >-
+    The council told the Health and Wellbeing Board in October 2025 that
+    "performance data may be providing a worst-case scenario as data analytics
+    from our Capita system is inaccurate."
+  source: hwb_oct2025_report
+  page: 5
+
+health_waits:
+  title: Children waiting for specialist health services
+  source: hwb_oct2025_highlight
+  page: 18
+  columns: ["March 2025 baseline", "July 2025", "August 2025"]
+  rows:
+    - { label: "Occupational therapy: children waiting over 52 weeks", values: [33, 42, 37] }
+    - { label: "Speech and language therapy: children waiting over 52 weeks", values: [1, 0, 0] }
+    - { label: "CAMHS neurodevelopmental pathway: average wait once on pathway (weeks)", values: [48, 46, 39] }
+    - { label: "Under-5s autism assessment (SACC): children waiting over 52 weeks", values: [25, 31, 28] }
+    - { label: "Continence service: children waiting over 52 weeks", values: [4, 25, 13] }
+
+local_exclusions:
+  title: Exclusions and suspensions of pupils with SEND (council's own figures)
+  source: hwb_oct2025_highlight
+  page: 16
+  note: These are the council's own monitoring figures and may not match the DfE statistics above.
+  columns: ["2023/24", "2024/25"]
+  rows:
+    - { label: "Permanent exclusions (all pupils)", values: [110, 43] }
+    - { label: "of which pupils with an EHC plan", values: [20, 10] }
+    - { label: "of which pupils on SEN support", values: [31, 14] }
+    - { label: "Suspensions (all pupils)", values: [1951, 1987] }
+    - { label: "of which pupils with an EHC plan", values: [199, 378] }
+    - { label: "of which pupils on SEN support", values: [557, 715] }
+
+local_attendance:
+  title: School attendance (council's own figures)
+  source: hwb_oct2025_highlight
+  page: 16
+  columns: ["2023/24", "2024/25"]
+  rows:
+    - { label: "Pupils with an EHC plan", values: ["89.3%", "89.44%"] }
+    - { label: "Pupils on SEN support", values: ["92.1%", "91.8%"] }
+    - { label: "Pupils with no SEN", values: ["94.4%", "n/a"] }
+    - { label: "All pupils", values: ["93.7%", "93.8%"] }
+
+improvement_plan_status:
+  period: September 2025
+  source: hwb_oct2025_highlight
+  page: 2
+  total: 46
+  counts:
+    - { label: Completed, value: 6 }
+    - { label: On track, value: 29 }
+    - { label: At risk of delay, value: 8 }
+    - { label: Delayed or significant risks, value: 3 }
+    - { label: Not started, value: 0 }
+
+# Dated, numeric commitments in the improvement plan, and the latest published
+# position. `status` is our reading of the latest figure, not the council's RAG.
+targets:
+  - commitment: Clear the backlog of EHC needs assessments and annual reviews
+    due: End of 2025
+    source: { source: hwb_oct2025_report, page: 4 }
+    latest: In October 2025 the council said the "historic backlog for EHCPs has been cleared". It reported 28% of assessments finished within 20 weeks in August 2025.
+    latest_source: { source: hwb_oct2025_report, page: 3 }
+    status: unclear
+  - commitment: Health visitor development checks at or above the London average
+    due: April 2026
+    source: { source: laip_2025, page: 10 }
+    latest: 94% of 2-year-olds reviewed by 2.5 years in July 2025, against a London average of 65.4%.
+    latest_source: { source: hwb_oct2025_highlight, page: 12 }
+    status: met
+  - commitment: Short breaks taken up by 10% more children than the 783 currently using them
+    due: September 2026
+    source: { source: hwb_oct2025_highlight, page: 4 }
+    latest: 864 children on 19 September 2025 (target about 861).
+    latest_source: { source: hwb_oct2025_highlight, page: 12 }
+    status: met
+  - commitment: 90% of new EHC plans and annual reviews include documented input from children, young people and families
+    due: January 2026
+    source: { source: hwb_oct2025_highlight, page: 6 }
+    latest: No baseline yet. It will be set from Invision360 audits.
+    latest_source: { source: hwb_oct2025_highlight, page: 14 }
+    status: no data
+  - commitment: 90% of EHCP-related data available within 5 working days of a request
+    due: December 2025
+    source: { source: hwb_oct2025_highlight, page: 4 }
+    latest: No progress figure published.
+    status: no data
+  - commitment: 100% of SEND staff in all settings complete at least one accredited training module a year
+    due: June 2026
+    source: { source: hwb_oct2025_highlight, page: 4 }
+    latest: Training attendance has been published (2,393 attendees in 2024), but not as a percentage of staff.
+    latest_source: { source: hwb_oct2025_highlight, page: 12 }
+    status: no data
+  - commitment: Publish a graduated response framework, with 100% of schools trained on it
+    due: September 2026
+    source: { source: hwb_oct2025_highlight, page: 5 }
+    latest: Due to go to the SENCO forum "next academic year".
+    status: no data
+  - commitment: VERBO speech and language programme in 25% of schools by December 2025 and 90% by July 2026
+    due: December 2025 and July 2026
+    source: { source: hwb_oct2025_highlight, page: 11 }
+    latest: 0 schools in August 2025, with 5 schools lined up as early adopters. Delayed by NHS contract signing.
+    latest_source: { source: hwb_oct2025_highlight, page: 18 }
+    status: behind
+  - commitment: 50 children use Spectrum Gaming in its first year
+    due: First year
+    source: { source: hwb_oct2025_highlight, page: 18 }
+    latest: 0 referrals by August 2025.
+    latest_source: { source: hwb_oct2025_highlight, page: 18 }
+    status: behind
+  - commitment: Bring CAMHS waits down from an average of 48 weeks and end waits of more than 52 weeks
+    due: Not stated
+    source: { source: hwb_oct2025_highlight, page: 18 }
+    latest: 39 weeks once on the pathway in August 2025.
+    latest_source: { source: hwb_oct2025_highlight, page: 18 }
+    status: improving
+
+finance:
+  - label: High Needs Block allocation 2026/27 (gross)
+    value: "£65.80m"
+    detail: Up from £62.38m in 2025/26. The council says this is "solely due to the rolling-in of existing grants", so funding has not risen in real terms.
+    source: schools_budget_mar2026
+    page: "2 and 8"
+  - label: Forecast cumulative DSG deficit at 31 March 2026
+    value: "£14.8m"
+    detail: Made up of a £18.3m High Needs Block deficit, partly offset by surpluses in the other blocks.
+    source: budget_feb2026
+    page: 11
+  - label: Forecast High Needs in-year deficit 2026/27 (before any mitigations)
+    value: "£10.34m"
+    detail: Caused "mainly by continued growth in EHCPs and cost pressures in out borough placements".
+    source: schools_budget_mar2026
+    page: 7
+  - label: When the DSG first went into deficit
+    value: "March 2021"
+    detail: £942,000 net deficit, driven by the High Needs Block.
+    source: schools_budget_mar2026
+    page: 7
+  - label: DfE intervention programme
+    value: "None"
+    detail: The council is not in a DfE intervention programme (Safety Valve or Delivering Better Value). DfE officers are keeping its position under review.
+    source: budget_feb2026
+    page: 33
+  - label: Main ways the council plans to bring spending down
+    value: "Draft deficit management plan"
+    detail: '"reducing the number of requests to assess children whose needs can be met outside the statutory framework; more cost-effective provision being commissioned locally and closer financial management; and improving the workforce capacity."'
+    source: budget_feb2026
+    page: 34

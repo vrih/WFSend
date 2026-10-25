@@ -1,0 +1,46 @@
+{% macro tile(label, value, compare, rank="", more="", more_href="") %}
+<li class="tile">
+  <p class="label">{{ label }}</p>
+  <span class="value">{{ value }}</span>
+  {% if compare %}<p class="compare">{{ compare }}</p>{% endif %}
+  {% if rank %}<p class="rank">{{ rank }}</p>{% endif %}
+  {% if more %}<a class="more" href="{{ more_href }}">{{ more }}</a>{% endif %}
+</li>
+{% endmacro %}
+
+{% macro compare(m, unit=None) -%}
+{%- set u = unit or m.unit -%}
+London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u) }}
+{%- endmacro %}
+
+{% macro observations_table(meas) %}
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Period</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for o in meas.observations %}
+<tr>
+  <td>{{ o.period }}</td>
+  <td><strong>{{ fmt(o.value, meas.unit) }}</strong>{% if o.n is defined %} <span class="note">(n={{ "{:,}".format(o.n) }})</span>{% endif %}
+  {% if o.note is defined %}<br><span class="note">{{ o.note }}</span>{% endif %}</td>
+  <td>{{ cite(o.source, o.page) }}</td>
+</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note"><strong>Published target:</strong>
+{% if meas.target is none %}<span class="notarget">none</span>{% else %}{{ meas.target }}{% endif %}.
+{% if meas.target_note is defined %}{{ meas.target_note }}{% endif %}
+{% if meas.target_source is defined %}({{ cite(meas.target_source.source, meas.target_source.page) }}){% endif %}</p>
+{% if meas.statutory is defined %}<p class="note"><strong>Legal requirement:</strong> {{ meas.statutory }}
+{% if meas.statutory_source is defined %}({{ cite(meas.statutory_source.source, meas.statutory_source.page) }}){% endif %}</p>{% endif %}
+{% endmacro %}
+
+{% macro simple_table(block) %}
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col"></th>{% for c in block.columns %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for r in block.rows %}
+<tr><th scope="row">{{ r.label }}</th>{% for v in r["values"] %}<td>{{ "{:,}".format(v) if v is number else v }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">Source: {{ cite(block.source, block.page) }}{% if block.note is defined %}. {{ block.note }}{% endif %}</p>
+{% endmacro %}

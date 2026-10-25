@@ -1,0 +1,69 @@
+time_period,geographic_level,area,appeals,appealable_decisions,appeal_rate
+2024,Local authority,Camden,53,1047,5.10
+2025,Local authority,Camden,57,389,14.70
+2024,Local authority,City of London,,18,0.00
+2025,Local authority,City of London,0,26,0.00
+2024,Local authority,Hackney,72,1835,3.90
+2025,Local authority,Hackney,106,1828,5.80
+2024,Local authority,Hammersmith and Fulham,35,1186,3.00
+2025,Local authority,Hammersmith and Fulham,40,1008,4.00
+2024,Local authority,Haringey,123,1487,8.30
+2025,Local authority,Haringey,151,1675,9.00
+2024,Local authority,Islington,116,1548,7.50
+2025,Local authority,Islington,100,1239,8.10
+2024,Local authority,Kensington and Chelsea,26,199,13.10
+2025,Local authority,Kensington and Chelsea,38,443,8.60
+2024,Local authority,Lambeth,43,1682,2.60
+2025,Local authority,Lambeth,58,2067,2.80
+2024,Local authority,Lewisham,102,2080,4.90
+2025,Local authority,Lewisham,114,x,x
+2024,Local authority,Newham,68,386,17.60
+2025,Local authority,Newham,83,1155,7.20
+2024,Local authority,Southwark,120,1906,6.30
+2025,Local authority,Southwark,149,2104,7.10
+2024,Local authority,Tower Hamlets,64,1901,3.40
+2025,Local authority,Tower Hamlets,93,3496,2.70
+2024,Local authority,Wandsworth,87,2162,4.00
+2025,Local authority,Wandsworth,99,1702,5.80
+2024,Local authority,Westminster,40,283,14.10
+2025,Local authority,Westminster,46,659,7.00
+2024,Local authority,Barking and Dagenham,38,1109,3.40
+2025,Local authority,Barking and Dagenham,59,1059,5.60
+2024,Local authority,Barnet,161,2257,7.10
+2025,Local authority,Barnet,166,2794,5.90
+2024,Local authority,Bexley,48,2078,2.30
+2025,Local authority,Bexley,59,2063,2.90
+2024,Local authority,Brent,46,1698,2.70
+2025,Local authority,Brent,68,1799,3.80
+2024,Local authority,Bromley,213,2954,7.20
+2025,Local authority,Bromley,243,1761,13.80
+2024,Local authority,Croydon,85,2791,3.00
+2025,Local authority,Croydon,79,1750,4.50
+2024,Local authority,Ealing,74,2748,2.70
+2025,Local authority,Ealing,84,1687,5.00
+2024,Local authority,Enfield,76,3377,2.30
+2025,Local authority,Enfield,84,3908,2.10
+2024,Local authority,Greenwich,101,1063,9.50
+2025,Local authority,Greenwich,139,699,19.90
+2024,Local authority,Harrow,29,1497,1.90
+2025,Local authority,Harrow,33,1096,3.00
+2024,Local authority,Havering,59,1858,3.20
+2025,Local authority,Havering,79,1138,6.90
+2024,Local authority,Hillingdon,143,2375,6.00
+2025,Local authority,Hillingdon,195,1719,11.30
+2024,Local authority,Hounslow,99,2525,3.90
+2025,Local authority,Hounslow,126,1189,10.60
+2024,Local authority,Kingston upon Thames,78,1249,6.20
+2025,Local authority,Kingston upon Thames,128,1619,7.90
+2024,Local authority,Merton,46,2315,2.00
+2025,Local authority,Merton,55,2257,2.40
+2024,Local authority,Redbridge,41,x,x
+2025,Local authority,Redbridge,73,1253,5.80
+2024,Local authority,Richmond upon Thames,41,1363,3.00
+2025,Local authority,Richmond upon Thames,41,1660,2.50
+2024,Local authority,Sutton,90,2216,4.10
+2025,Local authority,Sutton,144,2527,5.70
+2024,Local authority,Waltham Forest,58,x,x
+2025,Local authority,Waltham Forest,62,1665,3.70
+2024,National,England,22276,364912,6.10
+2025,National,England,26977,405735,6.60
