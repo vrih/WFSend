@@ -6,6 +6,7 @@
 {% set ar = d.ar %}
 {% set cl = d.caseload %}
 {% set lt = local.measures.timeliness_20_weeks.observations[-1] %}
+{% set fin = {} %}{% for f in local.finance %}{% set _ = fin.update({f.id: f}) %}{% endfor %}
 <h1>How are SEND services in Waltham Forest performing?</h1>
 <p class="lede">Parents have asked Waltham Forest Council for clear performance figures and targets for special educational needs and disability (SEND) services. This site brings together what has already been published by the Department for Education, Ofsted and the council's own committee papers. Every figure links to its source.</p>
 
@@ -13,8 +14,8 @@
 <ul class="tiles">
   {{ ui.tile("New EHC plans issued within 20 weeks, " ~ t.latest_period,
              fmt(t.latest[WF]), ui.compare(t), rank_text(t), "Assessments and timeliness", "assessments.html#timeliness") }}
-  {{ ui.tile("Council's own monitoring, " ~ lt.period,
-             fmt(lt.value), "Within 20 weeks. Published target: none", "", "What the council reports", "assessments.html#council-timeliness") }}
+  {{ ui.tile("Within 20 weeks, council's latest figure (" ~ lt.period ~ ")",
+             fmt(lt.value), "Published target: none", "", "What the council reports", "assessments.html#council-timeliness") }}
   {{ ui.tile("Annual reviews due in " ~ ar.period ~ " that were completed",
              fmt(ar.completed.latest[WF]), ui.compare(ar.completed), rank_text(ar.completed), "Annual reviews", "reviews.html") }}
   {{ ui.tile("Annual review decisions within the legal 4 weeks, " ~ ar.period,
@@ -23,19 +24,20 @@
              fmt(cl.latest[WF], "count"), "Up " ~ fmt(d.growth.growth[WF]) ~ " since " ~ d.growth["from"] ~ " (England up " ~ fmt(d.growth.growth["England"]) ~ ")", "", "EHC plans", "plans.html") }}
   {{ ui.tile("SEND Tribunal appeal rate, " ~ d.appeal_rate.latest_period,
              fmt(d.appeal_rate.latest[WF]), "England " ~ fmt(d.appeal_rate.latest["England"]), rank_text(d.appeal_rate), "Complaints and appeals", "disputes.html") }}
-  {{ ui.tile("Forecast schools budget (DSG) deficit, March 2026",
-             local.finance[1].value, "Driven by an £18.3m High Needs deficit", "", "Money", "money.html") }}
+  {{ ui.tile("Schools budget (DSG) deficit, 31 March 2026",
+             fin.dsg_deficit.value, "High Needs overspend forecast for 2026/27: " ~ fin.hnb_forecast_2627.value, "", "Money", "money.html") }}
   {{ ui.tile("Ofsted / CQC area SEND inspection, February 2025",
              "Inconsistent", "The middle of three outcomes: experiences and outcomes are inconsistent", "", "Inspection", "inspection.html") }}
 </ul>
 
 <div class="callout">
-  <p><strong>No published targets.</strong> The council's SEND Improvement Plan tracks measures such as 20-week timeliness and annual reviews completed on time. It records baselines but sets no numeric target for either.
-  The SEND Strategy 2025–2028 says "clear targets" will sit in a separate Local Area Plan ({{ cite("send_strategy_2025", 4) }}). We have not found those targets published. <a href="targets.html">See every target we could find</a>.</p>
+  <p><strong>No published targets for timeliness or annual reviews.</strong> The council's SEND Improvement Plan tracks 20-week timeliness and annual reviews completed on time. It records baselines but sets no numeric target for either.
+  The SEND Strategy 2025–2028 says "clear targets" will sit in a separate Local Area Plan ({{ cite("send_strategy_2025", 4) }}). We have not found those targets published.</p>
+  <p>The only new numbers are in the SEND Reform Plan the council sent to the DfE in June 2026. They cover slowing the growth in EHC plans and putting more children on SEN support, not how quickly families get a plan or a review ({{ cite("sf_jul2026", 178) }}). <a href="targets.html">See every target we could find</a>.</p>
 </div>
 
 <h2>What changed</h2>
-<p>For four years, Waltham Forest issued about nine in ten new EHC plans within the 20-week legal limit, well above London and England. That fell to {{ fmt(t.series[WF]["2024"]) }} in 2024 and {{ fmt(t.series[WF]["2025"]) }} in {{ t.latest_period }}. That puts the borough {{ rank_text(t) }}. The council's monthly monitoring shows the same thing: {{ fmt(lt.value) }} in {{ lt.period }}. The council puts this down to delays in educational psychologist advice ({{ cite(lt.source, lt.page) }}).</p>
+<p>For four years, Waltham Forest issued about nine in ten new EHC plans within the 20-week legal limit, well above London and England. That fell to {{ fmt(t.series[WF]["2024"]) }} in 2024 and {{ fmt(t.series[WF]["2025"]) }} in {{ t.latest_period }}. That puts the borough {{ rank_text(t) }}. The council's own reports show the same thing, and no recovery yet: 28% in August 2025, and in July 2026 "timeliness in statutory processes remains 12% within 20 weeks" ({{ cite(lt.source, lt.page) }}). The council puts the fall down to delays in educational psychologist advice ({{ cite("hwb_oct2025_report", 4) }}).</p>
 {{ figure(t) }}
 
 <h2>Sections</h2>

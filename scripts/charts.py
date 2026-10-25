@@ -14,7 +14,8 @@ def _fmt(v, unit):
     if v is None:
         return "no data"
     if unit == "percent":
-        return f"{v:.1f}%"
+        # whole numbers from council papers are shown as printed ("12%", not "12.0%")
+        return f"{v:.0f}%" if isinstance(v, int) else f"{v:.1f}%"
     if unit == "gbp_m":
         return f"£{v:,.1f}m"
     if unit == "score":

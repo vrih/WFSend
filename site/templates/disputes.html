@@ -10,6 +10,9 @@
 <p>In {{ ap.latest_period }}, {{ "{:,.0f}".format(ap.appeals[WF][ap.latest_period]) }} appeals about Waltham Forest decisions were registered with the SEND Tribunal ({{ "{:,.0f}".format(ap.appeals[WF][ap.periods[0]]) }} in {{ ap.periods[0] }}). That is an appeal rate of {{ fmt(ap.latest[WF]) }}, compared with {{ fmt(ap.latest["England"]) }} across England. Appeals are counted against all the decisions families could have appealed.</p>
 {{ figure(ap, ranked=True, areas=(WF, "England"), note="DfE did not publish a 2024 appeal rate for Waltham Forest; the figure is suppressed in its table. The notes to DfE's table explain how appealable decisions are counted, including a 2025 change to use annual reviews completed. A low appeal rate is not on its own evidence that families are satisfied.") }}
 
+<h3>The council's own count of appeals</h3>
+{{ ui.simple_table(local.tribunal_appeals) }}
+
 <h2>Complaints to the council</h2>
 <p>The improvement plan's measure is simply "fewer complaints received".</p>
 {{ ui.observations_table(local.measures.complaints) }}

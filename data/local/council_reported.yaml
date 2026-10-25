@@ -22,6 +22,8 @@ measures:
       - { period: "March 2025", value: 31.91, n: 15, source: laip_2025, page: 15 }
       - { period: "June 2025", value: 30.58, source: hwb_oct2025_highlight, page: 15 }
       - { period: "August 2025", value: 28, n: 96, source: hwb_oct2025_highlight, page: 15, note: "The council blames delays in educational psychologist advice." }
+      - { period: "2025 to date (plan dated 1 Sept 2025)", value: 31, source: sufficiency_plan_2025, page: 58, note: "'The EHCP 20-week statutory timelines have significantly dropped over the years from 90% previously to 50% in 2024 and 31% to-date.' The same plan also says 58% of the 375 new plans issued in 2025 to date went over 20 weeks (page 22). The two figures do not agree." }
+      - { period: "July 2026 report", value: 12, source: sf_jul2026, page: 178, note: "'Timeliness in statutory processes remains 12% within 20 weeks.' From the summary of the SEND Reform Plan submitted to the DfE in June 2026. The report does not say what period the figure covers." }
 
   annual_reviews_on_time:
     title: Annual reviews completed on time (council monitoring)
@@ -79,12 +81,47 @@ measures:
       - { period: "December 2024", value: 82.3, source: hwb_oct2025_highlight, page: 15, note: "The improvement plan dates this baseline 'December 2025'. The later highlight report says December 2024." }
 
 backlogs:
+  - { label: "Active EHC plans, council estimate after its annual review backlog is cleared (3,663 reported to DfE in January 2025)", value: 3354, period: "September 2025", source: sufficiency_plan_2025, page: 20, note: "The council expects 'a significant number of EHC plans are likely to be ceased' once overdue annual reviews are done." }
+  - { label: "Increase in EHC plans between March and August 2026", value: "201 (5%)", period: "August 2026", source: sf_oct2026, page: 29 }
   - { label: "EHC needs assessments outstanding", value: 230, period: "November 2024", source: hwb_oct2025_report, page: 2 }
   - { label: "Annual reviews outstanding", value: 1637, period: "November 2024", source: hwb_oct2025_report, page: 2 }
   - { label: "Share of SEND education placements outside the borough", value: "17%", period: "November 2024", source: hwb_oct2025_report, page: 2 }
   - { label: "Children placed out of borough this year (28 the year before)", value: 5, period: "October 2025", source: hwb_oct2025_report, page: 3 }
   - { label: "Permanent staff in the SEND establishment", value: "70%", period: "October 2025", source: hwb_oct2025_report, page: 3 }
   - { label: "Health advice for assessments returned within 6 weeks", value: "65-90%", period: "October 2025", source: hwb_oct2025_report, page: 4, note: "The statutory deadline for health advice is 6 weeks (SEND Regulations 2014, reg. 8)." }
+
+# From the SEND Sufficiency Plan, based on the council's Capita records for
+# January 2025 to around September 2025.
+assessments_2025_capita:
+  source: sufficiency_plan_2025
+  period: January to about September 2025
+  rows:
+    - { label: "Requests for assessment reviewed", value: "349", page: 24 }
+    - { label: "Requests decided within the legal 6 weeks", value: "91%", page: 24 }
+    - { label: "Requests where the council agreed to assess", value: "91%", page: 24 }
+    - { label: "Requests refused", value: "0%", page: 24 }
+    - { label: "Assessments completed", value: "295", page: 24 }
+    - { label: "Assessments completed within 16 weeks (the deadline to decide whether to issue a plan)", value: "54%", page: 24 }
+    - { label: "Assessments with no decision recorded", value: "26%", page: 25, note: "The plan says this 'needs further investigation to determine why such a high proportion of decisions are not being recorded'." }
+    - { label: "New EHC plans issued", value: "375", page: 22 }
+
+tribunal_appeals:
+  title: SEND Tribunal appeals against Waltham Forest (council's own count)
+  source: sufficiency_plan_2025
+  page: 27
+  columns: ["2020", "2021", "2022", "2023", "2024"]
+  rows:
+    - { label: "Appeals", values: [18, 16, 36, 34, 63] }
+  note: "In 2024, 27% of appeals were about refusals to assess, 25% about the school or type of placement and 21% about plan contents. Mediation referrals rose from 77 in 2022-23 to 145 in 2023-24 (page 26). The council's legal costs for tribunal cases were £48,860 in 2024, up from £26,197 in 2023, excluding counsel fees."
+
+sufficiency_findings:
+  source: sufficiency_plan_2025
+  items:
+    - { text: "Special schools in Waltham Forest are full (822 pupils). 116 of those places (14%) are taken by children from other boroughs.", page: 58 }
+    - { text: "12% of children and young people with EHC plans are placed outside the borough. 2.8% are on home tuition packages, 'mainly because of insufficient specialist provision to meet needs'.", page: 28 }
+    - { text: "5.1% of young people with EHC plans are post-16 and not in education, employment or training (no provision).", page: 28 }
+    - { text: "Out-of-borough independent and special school placements cost about £60,000 a year on average.", page: 59 }
+    - { text: "Without changes, EHC plans are forecast to grow by a further 78-80% by 2030.", page: 21 }
 
 data_quality_warning:
   text: >-
@@ -146,12 +183,23 @@ improvement_plan_status:
 # Dated, numeric commitments in the improvement plan, and the latest published
 # position. `status` is our reading of the latest figure, not the council's RAG.
 targets:
+  - commitment: SEND Reform Plan - cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28, and raise the share of children on SEN support from 12.5% to 14%
+    due: From 2027/28
+    source: { source: sf_jul2026, page: 178 }
+    latest: Plan accepted by the DfE on 2 October 2026. EHC plans grew by 201 (5%) between March and August 2026. The plan's other priority goals (attainment, exclusions and attendance, parental confidence, statutory timeliness) have no published numbers.
+    latest_source: { source: sf_oct2026, page: 29 }
+    status: no data
+  - commitment: Locality-based model to cut the rate of growth in EHC plans by 10% a year
+    due: Not stated
+    source: { source: sf_dec2024, page: 22 }
+    latest: No progress figure published. Plans grew 11.2% in the year to January 2025 and 7.7% to January 2026 (DfE).
+    status: no data
   - commitment: Clear the backlog of EHC needs assessments and annual reviews
     due: End of 2025
     source: { source: hwb_oct2025_report, page: 4 }
-    latest: In October 2025 the council said the "historic backlog for EHCPs has been cleared". It reported 28% of assessments finished within 20 weeks in August 2025.
-    latest_source: { source: hwb_oct2025_report, page: 3 }
-    status: unclear
+    latest: In October 2025 the council said the "historic backlog for EHCPs has been cleared". In July 2026 it reported timeliness "remains 12% within 20 weeks".
+    latest_source: { source: sf_jul2026, page: 178 }
+    status: behind
   - commitment: Health visitor development checks at or above the London average
     due: April 2026
     source: { source: laip_2025, page: 10 }
@@ -206,32 +254,56 @@ targets:
     status: improving
 
 finance:
-  - label: High Needs Block allocation 2026/27 (gross)
+  - id: dsg_deficit
+    label: Cumulative DSG deficit at 31 March 2026 (outturn)
+    value: "£14.32m"
+    detail: Up £8.94m in the year. The High Needs Block deficit alone is £19.79m, partly offset by surpluses in the other blocks. (The February 2026 budget had forecast £14.8m.)
+    source: sf_jul2026
+    page: 10
+  - id: hnb_outturn_2526
+    label: High Needs overspend 2025/26
+    value: "£10.91m"
+    detail: Against a planned overspend of £5.76m. The council says this includes a one-off reconciliation of historic payments to schools, as well as growth in EHC plans and alternative provision.
+    source: sf_jul2026
+    page: 11
+  - id: hnb_forecast_2627
+    label: Forecast High Needs overspend 2026/27 (at July 2026)
+    value: "£13.68m"
+    detail: Up £2.63m since the previous forecast, "due to the increasing number of Education & Health Care Plans (EHCP's) in mainstream settings". In March 2026 the budget assumed £10.34m.
+    source: sf_oct2026
+    page: 29
+  - id: stability_grant
+    label: High Needs Stability Grant
+    value: "£12.89m"
+    detail: Confirmed on 2 October 2026 after the DfE accepted the council's SEND Reform Plan. With the grant, the DSG deficit is forecast at £15.12m on 31 March 2027.
+    source: sf_oct2026
+    page: "30 and 31"
+  - id: hnb_allocation
+    label: High Needs Block allocation 2026/27 (gross)
     value: "£65.80m"
     detail: Up from £62.38m in 2025/26. The council says this is "solely due to the rolling-in of existing grants", so funding has not risen in real terms.
     source: schools_budget_mar2026
     page: "2 and 8"
-  - label: Forecast cumulative DSG deficit at 31 March 2026
-    value: "£14.8m"
-    detail: Made up of a £18.3m High Needs Block deficit, partly offset by surpluses in the other blocks.
-    source: budget_feb2026
-    page: 11
-  - label: Forecast High Needs in-year deficit 2026/27 (before any mitigations)
-    value: "£10.34m"
-    detail: Caused "mainly by continued growth in EHCPs and cost pressures in out borough placements".
-    source: schools_budget_mar2026
-    page: 7
-  - label: When the DSG first went into deficit
+  - id: hnb_outturn_2425
+    label: High Needs overspend 2024/25
+    value: "£3.82m"
+    detail: On a £58.5m budget, "mainly due to significant increases in spend across specialist settings, the highest being in INMSS" (independent and non-maintained special schools). SEND transport cost a further £5.25m.
+    source: sufficiency_plan_2025
+    page: 58
+  - id: first_deficit
+    label: When the DSG first went into deficit
     value: "March 2021"
     detail: £942,000 net deficit, driven by the High Needs Block.
     source: schools_budget_mar2026
     page: 7
-  - label: DfE intervention programme
+  - id: intervention
+    label: DfE intervention programme
     value: "None"
-    detail: The council is not in a DfE intervention programme (Safety Valve or Delivering Better Value). DfE officers are keeping its position under review.
+    detail: As of February 2026 the council was not in a DfE intervention programme (Safety Valve or Delivering Better Value). DfE officers were keeping its position under review.
     source: budget_feb2026
     page: 33
-  - label: Main ways the council plans to bring spending down
+  - id: mitigations
+    label: Main ways the council plans to bring spending down
     value: "Draft deficit management plan"
     detail: '"reducing the number of requests to assess children whose needs can be met outside the statutory framework; more cost-effective provision being commissioned locally and closer financial management; and improving the workforce capacity."'
     source: budget_feb2026

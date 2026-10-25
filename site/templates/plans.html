@@ -8,6 +8,8 @@
 <h2>Plans maintained by the council</h2>
 {{ figure(d.caseload, note="The number of plans grew " ~ fmt(d.growth.growth[WF]) ~ " between " ~ d.growth["from"] ~ " and " ~ d.growth["to"] ~ ", compared with " ~ fmt(d.growth.growth["London"]) ~ " in London and " ~ fmt(d.growth.growth["England"]) ~ " in England.") }}
 
+<p class="note">The council itself thinks the true number of active plans is lower. Its SEND Sufficiency Plan estimates {{ "{:,}".format(local.backlogs[0].value) }} active plans, against 3,663 reported to the DfE for January 2025, because overdue annual reviews are expected to end some plans ({{ cite(local.backlogs[0].source, local.backlogs[0].page) }}). Between March and August 2026 the number of plans rose by another 201 (5%) ({{ cite("sf_oct2026", 29) }}).</p>
+
 <h2>Share of pupils with SEND</h2>
 <p>These figures come from the school census and count pupils at schools in the borough, whoever maintains their plan. They are not directly comparable with the council's plan count above.</p>
 {{ figure(d.prevalence.ehcp) }}
@@ -26,5 +28,10 @@
 </tbody></table></div>
 <p class="source">{{ cite_dfe(p.sources) }}</p>
 </figure>
+<h3>What the council's SEND Sufficiency Plan found</h3>
+<ul>
+{% for i in local.sufficiency_findings["items"] %}<li>{{ i.text }} ({{ cite(local.sufficiency_findings.source, i.page) }})</li>
+{% endfor %}
+</ul>
 <p>The council says better commissioning means that "only five children have had to be placed out of Borough this year (compares with 28 last year)". It also says that in November 2024, 17% of SEND education placements were outside the borough ({{ cite("hwb_oct2025_report", 3) }}; {{ cite("hwb_oct2025_report", 2) }}).</p>
 {% endblock %}

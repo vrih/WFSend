@@ -93,3 +93,53 @@ cfa_2014_s44:
   publisher: legislation.gov.uk
   date: 2014-09-01
   url: https://www.legislation.gov.uk/ukpga/2014/6/section/44
+
+# Schools Forum papers. All packs are listed at
+# https://thehub-beta.walthamforest.gov.uk/schools-forum
+schools_forum_index:
+  title: Schools Forum meeting papers
+  publisher: London Borough of Waltham Forest (The Hub)
+  date: 2026-10-21
+  url: https://thehub-beta.walthamforest.gov.uk/schools-forum
+
+sf_dec2024:
+  title: Schools Forum report pack, 11 December 2024
+  publisher: London Borough of Waltham Forest
+  date: 2024-12-11
+  meeting: Schools Forum, 11 December 2024
+  url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2024-12/11_December_2024_School_Forum_Report.pdf
+
+sufficiency_plan_2025:
+  title: SEND Sufficiency Plan 2025-30 (in the Schools Forum pack, 10 December 2025)
+  publisher: London Borough of Waltham Forest
+  date: 2025-12-10
+  meeting: Schools Forum, 10 December 2025 (the plan itself is dated 1 September 2025)
+  url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2025-12/10th_December_2025_School_Forum_Report.pdf
+  notes: Page numbers are pages of the whole pack. Figures marked "to-date" run from January 2025 to around the plan's date of 1 September 2025. An earlier draft with the same figures was in the 22 October 2025 pack.
+
+sf_feb2026:
+  title: Schools Forum report pack, 11 February 2026 (High Needs Block budget 2026-27)
+  publisher: London Borough of Waltham Forest
+  date: 2026-02-11
+  meeting: Schools Forum, 11 February 2026
+  url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2026-02/11th_February_2026_School_Forum_report.pdf
+
+sf_jul2026:
+  title: Schools Forum report pack, 8 July 2026 (DSG outturn 2025-26; SEND Reform Plan)
+  publisher: London Borough of Waltham Forest
+  date: 2026-07-08
+  meeting: Schools Forum, 8 July 2026
+  url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2026-07/8th_July_2026_School_Forum_report.pdf
+
+sf_oct2026:
+  title: Schools Forum report pack, 21 October 2026 (DSG forecast 2026-27; SENIF extension)
+  publisher: London Borough of Waltham Forest
+  date: 2026-10-21
+  meeting: Schools Forum, 21 October 2026
+  url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2026-10/21October_2026_School_Forum_Report.pdf
+
+cfa_2014_s36:
+  title: Children and Families Act 2014, section 36 (Assessment of education, health and care needs)
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/ukpga/2014/6/section/36

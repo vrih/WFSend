@@ -12,6 +12,16 @@
 <p>The improvement plan tracks the same measure each month. These figures come from the council's case management system, so they won't exactly match the DfE figures above.</p>
 {{ ui.observations_table(local.measures.timeliness_20_weeks) }}
 
+<h3 id="capita-2025">What the council's own records showed for 2025</h3>
+<p>The SEND Sufficiency Plan, dated 1 September 2025, gives these figures from the council's case management system for 2025 so far.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">{{ local.assessments_2025_capita.period }}</th><th scope="col">Figure</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for r in local.assessments_2025_capita.rows %}
+<tr><td>{{ r.label }}{% if r.note is defined %}<br><span class="note">{{ r.note }}</span>{% endif %}</td><td><strong>{{ r.value }}</strong></td><td>{{ cite(local.assessments_2025_capita.source, r.page) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+
 <h2 id="requests">Requests for an assessment</h2>
 {{ figure(d.requests) }}
 
@@ -25,4 +35,12 @@
 
 <h2 id="issued">New plans issued</h2>
 {{ figure(d.plans_issued) }}
+
+<h2 id="policy">Changes that could affect who gets assessed</h2>
+<p>Families keep the legal right to ask for an EHC needs assessment, whatever the council's funding arrangements ({{ cite("cfa_2014_s36", "section 36(1)") }}). These council plans are aimed at reducing the number of EHC plans:</p>
+<ul>
+  <li><strong>SEND Reform Plan (June 2026).</strong> It aims to reduce projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28, and raise the share of children on SEN support from 12.5% to 14%. This is to be done through an "Experts at Hand" offer to schools ({{ cite("sf_jul2026", 178) }}).</li>
+  <li><strong>Early years funding in Reception (proposed October 2026).</strong> The council proposes to keep children on early years inclusion funding (SENIF) until the end of Reception instead of 1 January. It says an EHC plan "is often required solely for the purpose of additional support which can be better, and more quickly provided via the SENIF route". 106 Reception children currently get SENIF. The council says 87% of children on SENIF in Reception have an EHC plan by the end of the year ({{ cite("sf_oct2026", "pages 55 and 56") }}).</li>
+  <li><strong>Deficit management plan (February 2026).</strong> It relies partly on "reducing the number of requests to assess children whose needs can be met outside the statutory framework" ({{ cite("budget_feb2026", 34) }}).</li>
+</ul>
 {% endblock %}
