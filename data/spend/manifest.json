@@ -1,0 +1,17 @@
+{
+  "publisher": "London Borough of Waltham Forest",
+  "title": "Council transparency: spending over £500",
+  "url": "https://www.walthamforest.gov.uk/council-and-elections/about-us/council-budgets-and-spending/council-transparency",
+  "first_report": "2020-08",
+  "latest_report": "2026-08",
+  "send_services": {
+    "B6503E": "Central Expenditure High Needs",
+    "B6113E": "Provisions Team Short Breaks and Home School Transport",
+    "B6111E": "Assistant Director SEND Services",
+    "B6114E": "SEND Staffing",
+    "B6116E": "Education Psychology Service",
+    "B6207E": "SEND Commissioning and Delivery",
+    "B6208E": "SEND Statutory Assessments"
+  },
+  "fetched": "2026-10-25"
+}

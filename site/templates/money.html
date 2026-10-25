@@ -35,4 +35,38 @@
 {{ figure(sp.lines.sen_admin.per_head, ranked=True) }}
 {{ figure(sp.lines.independent.per_head, ranked=True) }}
 {{ figure(sp.lines.transport.per_head, ranked=True) }}
+
+{% set pay = d.supplier_payments %}{% set ly = pay.latest_year %}
+{% set src %}Source: London Borough of Waltham Forest, <a class="cite" href="{{ pay.manifest.url }}">{{ pay.manifest.title }}</a> (downloaded {{ pay.manifest.fetched }}). Copy used here: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>.{% endset %}
+<h2 id="payments">Payments to suppliers</h2>
+<p>Each month the council publishes every payment of £500 or more it makes to suppliers. These are the payments it coded to its SEND services. They show who the money goes to. They don't cover everything the council spends on SEND: payments under £500 and staff pay aren't listed.</p>
+<figure class="metric" id="payments-by-service">
+<figcaption><h3>Payments over £500 by SEND service</h3>
+<p class="explain">Financial years, April to March. Service names are the council's own.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Service</th>{% for y in pay.years %}<th scope="col">{{ y }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for s in pay.services %}
+<tr><th scope="row">{{ s.label }}</th>{% for y in pay.years %}<td>{% if s.payments[y] %}{{ fmt(s.total[y], "gbp") }}<br><span class="note">{{ "{:,}".format(s.payments[y]) }} payment{{ "s" if s.payments[y] != 1 }}</span>{% else %}–{% endif %}</td>{% endfor %}</tr>
+{% endfor %}
+<tr><th scope="row">Total</th>{% for y in pay.years %}<td><strong>{{ fmt(pay.total[y], "gbp") }}</strong><br><span class="note">{{ "{:,}".format(pay.count[y]) }} payments</span></td>{% endfor %}</tr>
+</tbody></table></div>
+<p class="note">"Provisions Team Short Breaks and Home School Transport" covers both short breaks for disabled children and transport to school, and the reports don't split them. Legal fees are coded to the council's legal service, so the cost of SEND Tribunal cases can't be picked out.</p>
+<p class="source">{{ src }}</p>
+</figure>
+
+<figure class="metric" id="largest-suppliers">
+<figcaption><h3>Largest suppliers paid from SEND services, {{ ly }}</h3>
+<p class="explain">The {{ pay.top|length }} largest of {{ pay.suppliers }} suppliers received {{ fmt(pay.top_share) }} of the money. Where a supplier was paid from more than one service, the one it received most from is shown.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Supplier</th><th scope="col">Service</th><th scope="col">Paid</th><th scope="col">Payments</th></tr></thead>
+<tbody>
+{% for s in pay.top %}
+<tr><th scope="row">{{ s.name }}</th><td>{{ s.service }}</td><td>{{ fmt(s.total, "gbp") }}</td><td>{{ "{:,}".format(s.payments) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Supplier names are as the council publishes them. The reports don't say what each payment was for. Going by the suppliers' names, as well as school and college places they include building work, agency staff and tuition. {% if pay.redacted.payments %}The council withholds the names of individuals: {{ "{:,}".format(pay.redacted.payments) }} payments worth {{ fmt(pay.redacted.total, "gbp") }} in {{ ly }} are listed as "REDACTED PERSONAL DATA".{% endif %}</p>
+<p class="source">{{ src }}</p>
+</figure>
+<p class="note">Why only these years: the reports from {{ pay.first_coded_label }} onwards use the council's current finance codes, and earlier reports can't be matched to these services. From April 2026 the reports list far fewer payments for every service, not just SEND: {{ "{:,.0f}".format(pay.after.payments) }} a month on average, against {{ "{:,.0f}".format(pay.before.payments) }} in {{ ly }}. We have left 2026/27 out until the council explains the change.</p>
 {% endblock %}

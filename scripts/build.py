@@ -261,6 +261,7 @@ def compute():
         "exclusions": M.exclusions(),
         "ombudsman": M.ombudsman(),
         "spending": M.spending(),
+        "supplier_payments": M.supplier_payments(),
         "absence": M.absence(),
         "eyfs": M.eyfs(),
         "ks4_destinations": M.ks4_destinations(),
@@ -375,6 +376,8 @@ def main():
     for f in (ROOT / "data" / "lgo").glob("*.csv"):
         shutil.copy(f, OUT / "data" / f"ombudsman_{f.name}")
     shutil.copy(ROOT / "data" / "gias" / "specialist_settings.csv", OUT / "data" / "gias_specialist_settings.csv")
+    for f in (ROOT / "data" / "spend").glob("*.csv"):
+        shutil.copy(f, OUT / "data" / f"spend_{f.name}")
     for f in (ROOT / "data" / "local").glob("*.yaml"):
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))

@@ -23,6 +23,9 @@ links back to a public source:
   [Nomis](https://www.nomisweb.co.uk/datasets/pestsyoala): the number of
   children aged 2 to 18 in each area, used to show requests for an assessment per
   1,000 children so areas of different sizes can be compared.
+- **Council spending over £500**, downloaded automatically from the council's
+  monthly transparency reports: payments coded to its SEND services, by
+  service and supplier.
 - **NHS England waiting times**: children's community health services
   waiting lists, autism and ADHD assessment waits, and waits for children's
   mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
@@ -39,6 +42,7 @@ scripts/fetch_dfe.py      downloads them, keeps England, London and neighbour ro
 scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
 scripts/fetch_gias.py     downloads the GIAS register, keeps Waltham Forest's specialist settings -> data/gias/
 scripts/fetch_ons.py      downloads ONS population estimates (ages 2 to 18) -> data/ons/population.csv
+scripts/fetch_spend.py    downloads the council's spending over £500 reports, keeps SEND payments -> data/spend/
 scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
@@ -74,11 +78,19 @@ python scripts/fetch_dfe.py ehcp_timeliness  # or one data set
 
 Refresh the Ombudsman data the same way with `python scripts/fetch_lgo.py`,
 the list of specialist settings with `python scripts/fetch_gias.py`, and the
-ONS population estimates with `python scripts/fetch_ons.py`. The GIAS file is
+ONS population estimates with `python scripts/fetch_ons.py`, and the council's
+spending over £500 with `python scripts/fetch_spend.py`. The GIAS file is
 about 65 MB, but only Waltham Forest's specialist settings are kept. The ONS
 publishes new mid-year estimates each summer.
 
-The `Refresh DfE and Ombudsman data` workflow runs all four on the 3rd of each
+The spending reports only use the council's current finance codes from
+September 2023, so earlier payments aren't kept. From April 2026 the reports
+list far fewer payments for every service. `SPEND_LAST_COMPLETE` in
+`scripts/metrics.py` keeps 2026/27 off the site. Review it when the council
+explains the change or republishes those months, and check `SEND_SERVICES` in
+`scripts/fetch_spend.py` if the council restructures its services.
+
+The `Refresh DfE and Ombudsman data` workflow runs all five on the 3rd of each
 month and opens a pull request if anything changed. Upcoming release dates
 are kept by hand in `data/local/release_calendar.yaml`.
 
