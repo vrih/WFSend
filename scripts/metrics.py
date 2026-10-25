@@ -870,6 +870,44 @@ def specialist_units():
     return {"by_year": dict(sorted(out.items())), "sources": ["specialist_unit_capacity"]}
 
 
+GIAS = ROOT / "data" / "gias"
+GIAS_URL = "https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/{urn}"
+
+
+def _census_month(s):
+    """'15-01-2026' -> 'January 2026'."""
+    return f"{list(MONTHS)[int(s[3:5]) - 1]} {s[6:]}" if s else ""
+
+
+def specialist_settings():
+    """Waltham Forest's special schools, resourced provision and SEN units as
+    listed on Get Information About Schools. Closed settings are kept in the
+    extract but left out here."""
+    with (GIAS / "specialist_settings.csv").open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    special, other = [], []
+    for r in rows:
+        status = r["EstablishmentStatus (name)"]
+        if status == "Closed":
+            continue
+        # "ASD - Autistic Spectrum Disorder" -> "Autistic Spectrum Disorder"
+        needs = [r[f"SEN{i} (name)"].split(" - ", 1)[-1] for i in range(1, 14) if r[f"SEN{i} (name)"]]
+        s = {
+            "urn": r["URN"], "url": GIAS_URL.format(urn=r["URN"]), "name": r["EstablishmentName"],
+            "type": r["TypeOfEstablishment (name)"], "status": status,
+            "phase": r["PhaseOfEducation (name)"], "ages": f'{r["StatutoryLowAge"]} to {r["StatutoryHighAge"]}',
+            "capacity": num(r["SchoolCapacity"]), "pupils": num(r["NumberOfPupils"]), "census": _census_month(r["CensusDate"]),
+            "provision": r["TypeOfResourcedProvision (name)"], "needs": needs,
+            "rp_capacity": num(r["ResourcedProvisionCapacity"]), "rp_pupils": num(r["ResourcedProvisionOnRoll"]),
+            "unit_capacity": num(r["SenUnitCapacity"]), "unit_pupils": num(r["SenUnitOnRoll"]),
+        }
+        # Special academies are grouped with other academies, so go by the type.
+        (special if "special" in s["type"].lower() else other).append(s)
+    manifest = json.loads((GIAS / "manifest.json").read_text())
+    return {"special": sorted(special, key=lambda s: s["name"]), "other": sorted(other, key=lambda s: s["name"]),
+            "manifest": manifest}
+
+
 def specialist_forecasts():
     """Council forecasts of resident pupils with an EHC plan who will need a
     specialist place, indexed to the first forecast year so areas compare."""
