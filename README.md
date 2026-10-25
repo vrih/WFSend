@@ -23,6 +23,7 @@ links back to a public source:
 data/dfe_sources.yaml     which DfE data sets to download
 scripts/fetch_dfe.py      downloads them, keeps England + London rows -> data/dfe/*.csv
 scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
+scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
 scripts/build.py          renders site/templates/*.html -> _site/

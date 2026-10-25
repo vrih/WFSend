@@ -1,40 +1,45 @@
-# NHS data (downloaded by hand)
+# NHS data (downloaded by hand, extracted locally)
 
-NHS England Digital blocks automated downloads, so these files are fetched in a
-browser and committed here. Keep the original file names, and don't edit the
-files: the site reads them exactly as published so every figure can be traced
-back.
+NHS England Digital blocks automated downloads, and its files are hundreds of
+megabytes uncompressed. So the files are downloaded in a browser and cut down
+on your own computer with `scripts/extract_nhs.py`. Only the small extracts are
+committed. The original files are not, and `.gitignore` stops zips being added
+by accident.
 
-## 1. Autism waiting times
+The extractor keeps rows for NELFT (North East London NHS Foundation Trust),
+NHS North East London, London and England. Each extract folder has a
+`source.json` recording the original file name, its size and SHA-256 hash, and
+the date it was extracted, so every figure can be traced back to the exact
+published file. Nothing in the extracted rows is edited.
 
-Publication: Autism Statistics (quarterly)
+## 1. Autism waiting times (quarterly)
+
 https://digital.nhs.uk/data-and-information/publications/statistical/autism-statistics
 
-1. Open the latest release, for example "Autism Statistics, July 2025 to June 2026".
-2. In the "Resources" section, download the CSV files for:
-   - the **Sub ICB** breakdown (Waltham Forest is in NHS North East London), and
-   - the **Provider** breakdown (NELFT is North East London NHS Foundation Trust).
-   If there is a single zip of all the CSVs, download that instead.
-3. Put the files in `data/nhs/raw/autism/<release>/`, for example
-   `data/nhs/raw/autism/2025-07_to_2026-06/`.
+Download the "Autism Waiting Time Statistics - Referral to Care Contact" zips
+you want (for example "April 2026 to June 2026" and "April 2025 to March
+2026"). Don't unzip them. Then run:
 
-## 2. Community health services waiting lists
+```sh
+python scripts/extract_nhs.py autism ~/Downloads/<zip file 1> ~/Downloads/<zip file 2>
+```
 
-Publication: Community health service waiting lists (monthly)
+## 2. Community health services waiting lists (monthly)
+
 https://digital.nhs.uk/data-and-information/publications/statistical/mi-nhse-community-health-service-waiting-lists
 
-1. Open the latest month.
-2. Download the file with **provider-level** data (it lists each NHS trust and
-   each service line, including children's speech and language therapy,
-   occupational therapy and community paediatrics).
-3. Put it in `data/nhs/raw/community_waits/<yyyy-mm>/`, for example
-   `data/nhs/raw/community_waits/2026-08/`.
+Download the provider-level file for each month you want (CSV, XLSX or zip),
+then run:
 
-## Adding the files
+```sh
+python scripts/extract_nhs.py community_waits ~/Downloads/<file>
+```
 
-From GitHub: open the repository, go to the folder, choose
-**Add file > Upload files**, drop the files in and commit to the working branch.
-Or copy them into place locally and commit as usual.
+XLSX files need `pip install openpyxl`. CSV and zip files need only Python.
 
-Every release added here becomes part of the time series, so adding a new
-release each quarter (autism) or month (community waits) builds up the history.
+## Then
+
+Commit the new folders under `data/nhs/autism/` or `data/nhs/community_waits/`
+and push. The script prints how many rows it kept from each file. If it says
+"no matching rows found", the file is probably a national-only summary rather
+than the provider or ICB breakdown.
