@@ -9,6 +9,7 @@
 {{ figure(d.caseload, note="The number of plans grew " ~ fmt(d.growth.growth[WF]) ~ " between " ~ d.growth["from"] ~ " and " ~ d.growth["to"] ~ ", compared with " ~ fmt(d.growth.growth["London"]) ~ " in London and " ~ fmt(d.growth.growth["England"]) ~ " in England.") }}
 
 <p class="note">The council itself thinks the true number of active plans is lower. Its SEND Sufficiency Plan estimates {{ "{:,}".format(local.backlogs[0].value) }} active plans, against 3,663 reported to the DfE for January 2025, because overdue annual reviews are expected to end some plans ({{ cite(local.backlogs[0].source, local.backlogs[0].page) }}). Between March and August 2026 the number of plans rose by another 201 (5%) ({{ cite("sf_oct2026", 29) }}).</p>
+<p class="note">The council's own monthly count of live plans was {% for p in local.live_plans %}{{ "{:,}".format(p.value) }} at the end of {{ p.period }} ({{ cite(p.source, p.page) }}){{ ", " if loop.revindex > 2 else (" and " if loop.revindex == 2 else ".") }}{% endfor %}</p>
 
 <h2>Share of pupils with SEND</h2>
 <p>These figures come from the school census and count pupils at schools in the borough, whoever maintains their plan. They are not directly comparable with the council's plan count above.</p>
