@@ -79,7 +79,7 @@
 <thead><tr><th scope="col">Published</th><th scope="col">Contract</th>{% if supplier %}<th scope="col">Supplier</th>{% else %}<th scope="col">Stage</th>{% endif %}<th scope="col">Value</th></tr></thead>
 <tbody>
 {% for n in rows %}
-<tr><td>{{ n.published }}</td><th scope="row"><a href="{{ n.url }}">{{ n.title }}</a></th><td>{% if supplier %}{{ n.suppliers }}{% else %}{{ n.stage_label }}{% endif %}</td><td>{{ fmt(n.amount, "gbp") if n.amount else "–" }}</td></tr>
+<tr><td>{{ n.published }}</td><th scope="row"><a href="{{ n.url }}">{{ n.title }}</a>{% if n.wider %}<br><span class="note">Wider contract that includes SEND work</span>{% endif %}</th><td>{% if supplier %}{{ n.suppliers }}{% else %}{{ n.stage_label }}{% endif %}</td><td>{{ fmt(n.amount, "gbp") if n.amount else "–" }}</td></tr>
 {% endfor %}
 </tbody></table></div>
 {% endmacro %}
@@ -88,6 +88,6 @@
 {% if ct.upcoming %}{{ notice_table(ct.upcoming, "SEND procurements planned or not yet awarded", supplier=False) }}{% else %}<p>None found.</p>{% endif %}
 <h3>Contracts awarded</h3>
 {{ notice_table(ct.awarded, "SEND contracts awarded") }}
-<p class="note">Values are as published. Many cover several years, some include VAT and some don't, and a planned value can change before the contract is awarded. A framework's value is the most that can be spent through it, not what is spent. Notices are picked out by words in their title or description, so a few SEND contracts may be missing.</p>
+<p class="note">Values are as published. Many cover several years, some include VAT and some don't, and a planned value can change before the contract is awarded. A framework's value is the most that can be spent through it, not what is spent. Notices are picked out by words in their title or description, so a few SEND contracts may be missing. Where only the description mentions SEND, the contract is marked as a wider one, and only part of its value is for SEND.</p>
 <p class="source">Source: <a class="cite" href="{{ ct.manifest.contracts_finder.url }}">Contracts Finder</a> and <a class="cite" href="{{ ct.manifest.find_a_tender.url }}">Find a Tender</a> (downloaded {{ ct.manifest.fetched }}). Copy used here: <a href="data/contract_notices.csv">contract_notices.csv</a>.</p>
 {% endblock %}

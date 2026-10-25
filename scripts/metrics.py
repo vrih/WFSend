@@ -654,7 +654,7 @@ CONTRACTS = ROOT / "data" / "contracts"
 # A notice is about SEND if its title or description matches one of these.
 # "SEND" is matched in capitals only, so the verb "send" doesn't count.
 SEND_NOTICE = re.compile(r"\bSEND\b|(?i:special educational|\bEHC|education,? health and care|home to school|"
-                         r"travel assistance|short breaks?\b|disabled child|alternative provision|high needs|"
+                         r"travel assistance|travel training|short breaks?\b|disabled child|alternative provision|high needs|"
                          r"\btuition\b|autis|resourced provision|special school|educational psycholog|"
                          r"speech and language|occupational therap|delivering better value|safety valve|"
                          r"disagreement resolution)")
@@ -685,6 +685,7 @@ def contracts():
         n["amount"] = num(n["awarded_value"]) or num(n["value"]) or num(n["value_high"])
         n["awarded"] = bool(n["suppliers"])
         n["stage_label"] = _stage(n["stage"])
+        n["wider"] = not SEND_NOTICE.search(n["title"])  # SEND is mentioned only in the description
 
     # The same award is often published on both services, or more than once.
     # Keep one per title and supplier list, preferring Find a Tender.
