@@ -42,13 +42,21 @@ FIELDS = ["source", "notice_id", "url", "procurement_id", "stage", "status", "pu
           "suppliers", "start", "end"]
 
 
-def request(url, body=None, tries=4):
+PAUSE = 1  # seconds between Find a Tender pages, to stay under its rate limit
+
+
+def request(url, body=None, tries=6):
     data = json.dumps(body).encode() if body is not None else None
     headers = {"User-Agent": "wfsend-data-fetch"} | ({"Content-Type": "application/json"} if data else {})
     for attempt in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, data=data, headers=headers), timeout=60) as r:
                 return json.load(r)
+        except urllib.error.HTTPError as e:
+            if attempt == tries - 1 or (e.code != 429 and e.code < 500):
+                raise
+            wait = e.headers.get("Retry-After", "")
+            time.sleep(int(wait) if wait.isdigit() else 30 * (attempt + 1))
         except (urllib.error.URLError, TimeoutError, ConnectionError):
             if attempt == tries - 1:
                 raise
@@ -134,6 +142,7 @@ def find_a_tender(since, until):
             if BUYER in (rel.get("buyer", {}).get("name") or "").lower():
                 rows.append(fts_row(rel))
         url = d.get("links", {}).get("next")
+        time.sleep(PAUSE)
     print(f"    {since[:10]} to {until[:10]}: {pages} pages, {len(rows)} council notices", flush=True)
     return rows
 
