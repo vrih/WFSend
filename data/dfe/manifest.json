@@ -194,7 +194,18 @@
     "api_id": null,
     "api_version": null,
     "published": null,
-    "rows": 1188,
+    "rows": 3531,
+    "fetched": "2026-10-25"
+  },
+  "sen_schools": {
+    "title": "School level data - 2026",
+    "publication": "sen",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/c5490fd8-6cf3-469e-9f60-0b4262134cb5",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/c5490fd8-6cf3-469e-9f60-0b4262134cb5/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 420,
     "fetched": "2026-10-25"
   },
   "send_appeal_rate": {

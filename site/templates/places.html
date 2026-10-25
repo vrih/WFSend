@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}School places and children out of school{% endblock %}
-{% block description %}Special schools, resourced provision, forecast demand for specialist places, and children home educated or missing education in Waltham Forest.{% endblock %}
+{% block description %}Special schools, resourced provision, forecast demand for specialist places, pupils with SEND in each mainstream school, and children home educated or missing education in Waltham Forest.{% endblock %}
 {% block content %}
 {% set ss = d.special_schools %}
 {% set su = d.specialist_units %}
@@ -82,6 +82,29 @@
 <p>Each council forecasts how many children living in its area will have an EHC plan and need a specialist place. Waltham Forest forecasts {{ fmt(fc.wf_counts[fc_first], "count") }} children in {{ fc_first }}, rising to {{ fmt(fc.wf_counts[fc_last], "count") }} by {{ fc_last }}. That is growth of {{ fmt(fc.latest[WF] - 100) }}, against {{ fmt(fc.latest["London"] - 100) }} in London, {{ fmt(fc.latest["England"] - 100) }} in England and {{ fmt(fc.latest[SN] - 100) }} in similar areas. It is {{ rank_text(fc) }}.</p>
 {{ figure(fc, ranked=True) }}
 <p class="note">The DfE says these forecasts can't be set against the capacity figures above to work out a shortfall. The forecasts count children living in the borough in Reception to Year 11, wherever they go to school, including independent and alternative provision. The capacity figures count places in the borough's schools, including sixth forms, whoever fills them. The council doesn't report how many new places it plans.</p>
+
+{% set sch = d.school_sen %}
+<h2 id="schools">Pupils with SEND in each mainstream school</h2>
+<p>How many pupils in each of the borough's state-funded mainstream primary and secondary schools had an EHC plan or SEN support in the January {{ sch.period[-4:] }} school census.</p>
+{% for ph, v in sch.phases.items() %}
+{% set a = v.areas %}
+<p>In Waltham Forest's {{ v.schools|length }} {{ ph }} schools, {{ fmt(a[WF].ehcp) }} of pupils had an EHC plan, against {{ fmt(a.London.ehcp) }} in London and {{ fmt(a.England.ehcp) }} in England. In individual schools the share ranged from {{ fmt(v.lowest.ehcp_pct) }} to {{ fmt(v.highest.ehcp_pct) }}. Half the schools had {{ fmt(v.median) }} or less.</p>
+{% endfor %}
+<p class="note">These figures show which pupils go to each school, not how well a school supports them. A school with resourced provision or an SEN unit (marked below) has places for pupils with EHC plans from across the borough, which can raise its share. In small schools the share can change a lot from year to year.</p>
+{% for ph, v in sch.phases.items() %}
+<details class="schools">
+<summary>Show all {{ v.schools|length }} {{ ph }} schools</summary>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">Pupils with an EHC plan or SEN support in each {{ ph }} school, January {{ sch.period[-4:] }}</caption>
+<thead><tr><th scope="col">School</th><th scope="col">Pupils</th><th scope="col">With an EHC plan</th><th scope="col">On SEN support</th><th scope="col">Resourced provision or SEN unit</th></tr></thead>
+<tbody>
+{% for s in v.schools %}
+<tr><th scope="row">{{ s.name }}</th><td>{{ fmt(s.pupils, "count") }}</td><td>{{ fmt(s.ehcp, "count") }} ({{ fmt(s.ehcp_pct) }})</td><td>{{ fmt(s.support, "count") }} ({{ fmt(s.support_pct) }})</td><td>{{ "Resourced provision" if s.rp else "" }}{{ " and " if s.rp and s.unit else "" }}{{ "SEN unit" if s.unit else "" }}{{ "–" if not (s.rp or s.unit) else "" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+</details>
+{% endfor %}
+<p class="source">{{ cite_dfe(sch.sources) }}</p>
 
 <h2 id="out-of-school">Children out of school</h2>
 <p>Some children with SEND leave school because their needs aren't being met. The DfE doesn't publish home education or children missing education by SEN for each council. Across England, 16% of children electively home educated in autumn 2025 were on SEN support and 7% had an EHC plan, compared with 14% and 5% of all pupils (DfE, <a class="cite" href="{{ PUBS.ehe.url }}">{{ PUBS.ehe.title }}</a>).</p>

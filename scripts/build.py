@@ -249,6 +249,7 @@ def compute():
         "special_schools": M.special_schools(),
         "specialist_units": M.specialist_units(),
         "specialist_settings": M.specialist_settings(),
+        "school_sen": M.school_sen(),
         "specialist_forecasts": M.specialist_forecasts(),
         "home_education": M.home_education(),
         "missing_education": M.missing_education(),

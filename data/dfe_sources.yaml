@@ -135,10 +135,20 @@ datasets:
     file_id: 730c131b-6383-443d-ae53-880a69799f11
     title: Pupils in all schools, by type of SEN provision - 2016 to 2026
     keep:
-      phase_type_grouping: [Total]
+      phase_type_grouping: [Total, State-funded primary, State-funded secondary]
       establishment_type: [Total]
       hospital_school: [Total]
     # This file also has parliamentary constituency rows; those are dropped.
+
+  # One year only: each release has its own school-level file, so update the
+  # id every June. Only Waltham Forest's schools are kept.
+  sen_schools:
+    publication: sen
+    file_id: c5490fd8-6cf3-469e-9f60-0b4262134cb5
+    title: School level data - 2026
+    school_rows: E09000031
+    keep:
+      sen_primary_need: [All pupils]
 
   sen_primary_need:
     publication: sen
