@@ -6,7 +6,40 @@
 <p class="lede">Health services are commissioned by NHS North East London and mostly provided by NELFT. The 2025 inspection asked health leaders to improve waiting times "at pace" for neurodevelopmental assessment, CAMHS, continence and wheelchair services ({{ cite("ofsted_2025", 6) }}).</p>
 <blockquote>"{{ inspection.current.quotes[2].text }}" ({{ cite("ofsted_2025", inspection.current.quotes[2].page) }})</blockquote>
 
-<h2>Waiting times</h2>
+{% set cw = d.community_waits %}
+{% if cw %}
+<h2 id="nhs-waits">NHS waiting lists for children's community services</h2>
+<p>NHS England publishes monthly waiting lists for each community health provider. The council's own reports name NELFT (North East London NHS Foundation Trust) as the provider of children's therapies in Waltham Forest ({{ cite("hwb_oct2025_report", 3) }}). NELFT also serves other boroughs, so these figures are not for Waltham Forest alone.</p>
+<figure class="metric" id="nhs-waits-table">
+<figcaption><h3>Children waiting at the end of {{ cw.latest }}</h3>
+<p class="explain">"Over 18 weeks" and "over 52 weeks" count how long children on the list had already waited. The NHS says the waiting-time bands may not add up to the total, because some providers were still collecting data by weeks waited.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Service</th><th scope="col">NELFT: children waiting</th><th scope="col">NELFT: over 18 weeks</th><th scope="col">NELFT: over 52 weeks</th><th scope="col">London: % over 18 weeks</th><th scope="col">England: % over 18 weeks</th></tr></thead>
+<tbody>
+{% set p = cw.latest %}
+{% for s in cw.services %}
+<tr><th scope="row">{{ s.name }}</th>
+<td>{{ fmt(s.total.NELFT[p], "count") if s.total.NELFT[p] is not none else "–" }}</td>
+<td>{% if s.over18.NELFT[p] is not none %}{{ fmt(s.over18.NELFT[p], "count") }} ({{ fmt(s.pct18.series.NELFT[p]) }}){% else %}–{% endif %}</td>
+<td>{{ fmt(s.over52.NELFT[p], "count") if s.over52.NELFT[p] is not none else "–" }}</td>
+<td>{{ fmt(s.pct18.series.London[p]) if s.pct18.series.London[p] is not none else "–" }}</td>
+<td>{{ fmt(s.pct18.series.England[p]) if s.pct18.series.England[p] is not none else "–" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% if cw.periods|length > 1 %}
+{% for s in cw.services %}
+<h4 class="sub">{{ s.pct18.title }}</h4>
+{{ charts.legend(["NELFT", "London", "England"])|safe }}
+{{ charts.line_chart(s.pct18.series, cw.periods, unit="percent", title=s.pct18.title, y_max=100)|safe }}
+<details><summary>Show the numbers</summary>{{ charts.table(s.pct18.series, cw.periods)|safe }}</details>
+{% endfor %}
+{% endif %}
+<p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mi-nhse-community-health-service-waiting-lists">Community health services waiting lists</a> (management information, unvalidated):
+{% for src in cw.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_community_waits.zip">Extracted rows (zip)</a></p>
+</figure>
+{% endif %}
+
+<h2>What the council reports</h2>
 {{ ui.simple_table(local.health_waits) }}
 <p>The council reports that health advice for EHC needs assessments is returned within 6 weeks in "65-90%" of cases ({{ cite("hwb_oct2025_report", 4) }}). The legal deadline is 6 weeks ({{ cite("send_regs_2014", "regulation 8") }}). No exact figure or trend has been published.</p>
 <p>In October 2025 the council said waits for occupational therapy "remain approximately one year", partly because therapists' time went into moving to a new community equipment provider. The previous provider went into insolvency on 31 July 2025 ({{ cite("hwb_oct2025_report", "pages 4 and 5") }}).</p>

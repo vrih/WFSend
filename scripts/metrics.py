@@ -8,6 +8,7 @@ calculation is visible here rather than taken on trust.
 """
 import csv
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -512,3 +513,85 @@ def neet():
                            explain="Average of December, January and February. Includes young people whose activity the council does not know, as the DfE's headline measure does.",
                            sources=["neet_sen"])
     return res
+
+
+# --- NHS community health services waiting lists (hand-downloaded) --------
+
+NHS = ROOT / "data" / "nhs"
+CHS_SERVICES = [
+    ("(CYP) Community paediatric service", "Community paediatrics"),
+    ("(CYP) Therapy interventions: Speech and language", "Speech and language therapy"),
+    ("(CYP) Therapy interventions: Occupational therapy", "Occupational therapy"),
+    ("(CYP) Therapy interventions: Physiotherapy", "Physiotherapy"),
+]
+CHS_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "": "England"}
+MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July",
+                                      "August", "September", "October", "November", "December"], 1)}
+
+
+def _chs_table(path):
+    """Read one extracted 'Table 4x' sheet: returns (month, {area: {service: value}})."""
+    with path.open(encoding="utf-8") as f:
+        rows = list(csv.reader(f))
+    title = rows[0][0]
+    m = re.search(r"(" + "|".join(MONTHS) + r") (\d{4})", title)
+    month = (int(m.group(2)), MONTHS[m.group(1)]) if m else None
+    header = next(r for r in rows if r[:2] == ["Organisation Type", "Organisation Code"])
+    out = {}
+    for r in rows[rows.index(header) + 1:]:
+        if len(r) < 3:
+            continue
+        code = "" if r[0] == "National" else r[1]
+        if code in CHS_AREAS:
+            out[CHS_AREAS[code]] = {h: num(r[i]) if i < len(r) else None for i, h in enumerate(header)}
+    return month, out
+
+
+def community_waits():
+    folders = sorted(p for p in (NHS / "community_waits").glob("*/") if (p / "source.json").exists())
+    if not folders:
+        return None
+    months = {}
+    for folder in folders:
+        tables = {}
+        for key in ("Table_4", "Table_4f", "Table_4g", "Table_4h"):
+            hits = list(folder.glob(f"*__{key}.csv"))
+            if hits:
+                tables[key] = _chs_table(hits[0])
+        if "Table_4" not in tables:
+            continue
+        month = tables["Table_4"][0]
+        src = json.loads((folder / "source.json").read_text())
+        months[month] = {"tables": tables, "source": src}
+    order = sorted(months)
+    label = lambda ym: f"{list(MONTHS)[ym[1] - 1][:3]} {ym[0]}"
+    periods = [label(m) for m in order]
+
+    services = []
+    for col, name in CHS_SERVICES:
+        total, over18, over52, pct18 = {}, {}, {}, {}
+        for ym in order:
+            t = months[ym]["tables"]
+            p = label(ym)
+            for area in CHS_AREAS.values():
+                get = lambda k: t.get(k, (None, {}))[1].get(area, {}).get(col)
+                tot = get("Table_4")
+                bands = [get(k) for k in ("Table_4f", "Table_4g", "Table_4h")]
+                o18 = sum(b for b in bands if b is not None) if any(b is not None for b in bands) else None
+                o52 = sum(b for b in bands[1:] if b is not None) if any(b is not None for b in bands[1:]) else None
+                total.setdefault(area, {})[p] = tot
+                over18.setdefault(area, {})[p] = o18
+                over52.setdefault(area, {})[p] = o52
+                pct18.setdefault(area, {})[p] = pct(o18, tot) if tot else None
+        services.append({
+            "name": name, "column": col, "total": total, "over18": over18, "over52": over52,
+            "pct18": {"id": "chs_" + re.sub(r"\W+", "_", name.lower()), "unit": "percent",
+                      "title": f"Children waiting over 18 weeks: {name.lower()}",
+                      "explain": "Share of children on the waiting list who had waited more than 18 weeks at the end of the month.",
+                      "series": {a: pct18.get(a, {}) for a in ("NELFT", "London", "England")},
+                      "periods": periods, "sources": [], "boroughs": {}, "rank": None,
+                      "latest_period": periods[-1]},
+        })
+    latest = order[-1]
+    return {"periods": periods, "latest": label(latest), "services": services,
+            "sources": [months[m]["source"] for m in order]}

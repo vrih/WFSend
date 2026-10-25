@@ -45,11 +45,16 @@ def wanted(cells):
 
 
 def filter_rows(rows):
-    """rows: iterator of lists. Yields the header then the matching rows."""
-    header = next(rows, None)
-    if header is None:
-        return
-    yield header
+    """rows: iterator of lists. Yields the header then the matching rows.
+
+    NHS spreadsheets often put a title and notes above the real header, so
+    every row up to and including the first row with three or more filled
+    cells is kept as-is. For plain CSVs that is just the header row.
+    """
+    for r in rows:
+        yield r
+        if sum(1 for c in r if str(c or "").strip()) >= 3:
+            break
     for r in rows:
         if wanted(r):
             yield r
@@ -64,7 +69,13 @@ def xlsx_sheets(binary):
     import openpyxl  # only needed for spreadsheets
     wb = openpyxl.load_workbook(binary, read_only=True, data_only=True)
     for ws in wb.worksheets:
+        ws.reset_dimensions()  # some NHS files record a wrong sheet size
         yield ws.title, ([("" if v is None else str(v)) for v in row] for row in ws.iter_rows(values_only=True))
+
+
+def any_match(path):
+    with path.open(encoding="utf-8", newline="") as f:
+        return any(wanted(r) for r in csv.reader(f))
 
 
 def write(dest, rows):
@@ -73,8 +84,11 @@ def write(dest, rows):
     with dest.open("w", newline="", encoding="utf-8") as f:
         w = csv.writer(f, lineterminator="\n")
         for n, r in enumerate(filter_rows(rows)):
+            r = list(r)
+            while r and str(r[-1] or "").strip() == "":  # drop trailing empty cells
+                r.pop()
             w.writerow(r)
-    if n < 1:  # header only, or empty
+    if n < 1 or not any_match(dest):  # header only, or empty
         dest.unlink()
         return 0
     return n
@@ -114,7 +128,8 @@ def main(argv):
         outdir = OUT / dataset / re.sub(r"[^\w-]+", "_", src.stem).strip("_")
         report = []
         print(f"[{dataset}] {src.name}")
-        if zipfile.is_zipfile(src):
+        # .xlsx files are zip archives too, so check the extension first
+        if src.suffix.lower() not in (".xlsx", ".xlsm") and zipfile.is_zipfile(src):
             with zipfile.ZipFile(src) as z:
                 for info in z.infolist():
                     if not info.is_dir():

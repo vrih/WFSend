@@ -134,6 +134,7 @@ def compute():
         "eyfs": M.eyfs(),
         "ks4_destinations": M.ks4_destinations(),
         "neet": M.neet(),
+        "community_waits": M.community_waits(),
     }
 
 
@@ -221,6 +222,11 @@ def main():
     for f in (ROOT / "data" / "local").glob("*.yaml"):
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))
+    # NHS extracts are folders of CSVs, so publish each dataset as one zip
+    for ds in ("community_waits", "autism"):
+        src = ROOT / "data" / "nhs" / ds
+        if src.is_dir() and any(src.iterdir()):
+            shutil.make_archive(str(OUT / "data" / f"nhs_{ds}"), "zip", src)
     (OUT / ".nojekyll").write_text("")
     (OUT / "CNAME").write_text(DOMAIN + "\n")  # custom domain for GitHub Pages
     print(f"Built {len(PAGES)} pages into {OUT.relative_to(ROOT)}/")
