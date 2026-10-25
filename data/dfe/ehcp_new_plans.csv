@@ -1469,6 +1469,48 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,x,x
 2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),3,1.13207547169811
 2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,253,100
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,116,45.8498023715415
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,2,0.790513833992095
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,35,13.8339920948617
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,1,0.395256916996047
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,154,60.8695652173913
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,23,9.09090909090909
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,8,3.16205533596838
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,2,0.790513833992095
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,33,13.0434782608696
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,6,2.37154150197628
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,6,2.37154150197628
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,5,1.97628458498024
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,5,1.97628458498024
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,13,5.13833992094862
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,42,16.600790513834
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),10,3.95256916996047
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),0,0
 2020,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Total,60097,100
 2020,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained,22255,37.0317985922758
 2020,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,681,1.13316804499393
@@ -2939,6 +2981,48 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,x,x
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),7,2.31023102310231
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,252,100
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,113,44.8412698412698
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,63,25
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,1,0.396825396825397
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,2,0.793650793650794
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,179,71.031746031746
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,1,0.396825396825397
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,3,1.19047619047619
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,1,0.396825396825397
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,5,1.98412698412698
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,4,1.58730158730159
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,4,1.58730158730159
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,4,1.58730158730159
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,6,2.38095238095238
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,58,23.015873015873
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),2,0.793650793650794
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),0,0
 2021,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Total,62180,100
 2021,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained,22911,36.8462528144098
 2021,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,800,1.28658732711483
@@ -4409,6 +4493,48 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,x,x
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),0,0
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,248,100
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,115,46.3709677419355
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,3,1.20967741935484
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,63,25.4032258064516
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,181,72.9838709677419
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,36,14.5161290322581
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,6,2.41935483870968
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,42,16.9354838709677
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,8,3.2258064516129
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,8,3.2258064516129
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,7,2.82258064516129
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,1,0.403225806451613
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,8,3.2258064516129
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,3,1.20967741935484
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,4,1.61290322580645
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,5,2.01612903225806
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),1,0.403225806451613
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),0,0
 2022,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Total,66706,100
 2022,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained,22213,33.2998530866789
 2022,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,575,0.861991425059215
@@ -5879,6 +6005,48 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,20,3.79506641366224
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,292,100
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,91,31.1643835616438
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,2,0.684931506849315
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,92,31.5068493150685
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,6,2.05479452054795
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,1,0.342465753424658
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,192,65.7534246575343
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,63,21.5753424657534
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,7,2.3972602739726
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,x,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,1,0.342465753424658
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,71,24.3150684931507
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,4,1.36986301369863
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,4,1.36986301369863
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,4,1.36986301369863
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,2,0.684931506849315
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,6,2.05479452054795
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,2,0.684931506849315
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,1,0.342465753424658
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,x,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,x,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",3,1.02739726027397
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,0,0
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,1,0.342465753424658
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,3,1.02739726027397
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,7,2.3972602739726
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,6,2.05479452054795
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,3,1.02739726027397
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
 2023,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Total,84428,100
 2023,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained,27883,33.025773440091
 2023,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,719,0.851613208888047
@@ -7349,6 +7517,48 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,0,0
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,297,100
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,135,45.4545454545455
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,89,29.96632996633
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,1,0.336700336700337
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,225,75.7575757575758
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,47,15.8249158249158
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,7,2.35690235690236
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,4,1.34680134680135
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,58,19.5286195286195
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,3,1.01010101010101
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,3,1.01010101010101
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,2,0.673400673400673
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,2,0.673400673400673
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,1,0.336700336700337
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,2,0.673400673400673
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,3,1.01010101010101
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,2,0.673400673400673
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,4,1.34680134680135
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
 2024,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Total,97747,100
 2024,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained,29771,30.4572007325033
 2024,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,745,0.762171729055623
@@ -8819,6 +9029,48 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,18,4.62724935732648
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,338,100
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,116,34.3195266272189
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,108,31.9526627218935
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,3,0.887573964497041
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,1,0.29585798816568
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,228,67.4556213017752
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,37,10.9467455621302
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,2,0.591715976331361
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,1,0.29585798816568
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,40,11.8343195266272
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,4,1.18343195266272
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,4,1.18343195266272
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,9,2.66272189349112
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,2,0.591715976331361
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,11,3.25443786982249
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,2,0.591715976331361
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",4,1.18343195266272
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,6,1.77514792899408
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,39,11.5384615384615
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,10,2.9585798816568
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
 2025,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Total,110708,100
 2025,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained,32929,29.7440112728981
 2025,Calendar year,National,E92000001,England,,,,,,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,924,0.834628030494635
@@ -10289,3 +10541,45 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Placement unknown,14,2.70793036750484
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total,335,100
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained,128,38.2089552238806
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained resourced provision,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream LA maintained SEN unit,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy,106,31.6417910447761
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy resourced provision,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream academy SEN unit,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school,1,0.298507462686567
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school resourced provision,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream free school SEN unit,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream independent,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Mainstream total,235,70.1492537313433
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special LA maintained,26,7.76119402985075
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special academy,2,0.597014925373134
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special free school,5,1.49253731343284
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special independent,2,0.597014925373134
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special non-maintained,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Special total,35,10.4477611940299
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU academy,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU free school,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU LA maintained,3,0.895522388059702
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,AP PRU total,3,0.895522388059702
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,General FE tertiary colleges,9,2.6865671641791
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Specialist post 16 institutions,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,UKRLP provider,1,0.298507462686567
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total further Education,10,2.98507462686567
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Elective home education,2,0.597014925373134
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements LA,1,0.298507462686567
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other arrangements parents,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Online provider,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Welsh schools and establishments,x,x
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other school types,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Other types of placement,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,"Not in employment, education or training",0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – notice to cease issued,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – other age groups,1,0.298507462686567
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Not in education or training – compulsory school age,0,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Total educated elsewhere,4,1.19402985074627
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Non maintained early years,39,11.6417910447761
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Placement unknown,9,2.6865671641791
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Awaiting provision (pre 2023 only),x,x
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All new EHC plans,All new EHC plans,Permanently excluded (pre 2023 only),x,x

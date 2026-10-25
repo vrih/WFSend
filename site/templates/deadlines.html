@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Deadlines calculator{% endblock %}
+{% block description %}Work out the legal deadlines for an EHC needs assessment, an annual review or a SEND Tribunal appeal.{% endblock %}
+{% block content %}
+{% macro step(label, rule, law, base, offset="", alt_base="", alt_offset="") %}
+<tr><td>{{ label }}</td><td>{{ rule }}</td>
+{% if base %}<td class="when" data-base="{{ base }}" data-offset="{{ offset }}"{% if alt_base %} data-alt-base="{{ alt_base }}" data-alt-offset="{{ alt_offset }}"{% endif %}>Enter a date</td>
+{% else %}<td class="when">Depends on a date you won't know</td>{% endif %}
+<td>{{ law }}</td></tr>
+{% endmacro %}
+<h1>Deadlines calculator</h1>
+<p class="lede">Enter a date to see the legal deadlines that follow from it. Nothing you type leaves your browser.</p>
+<p>The deadlines are calendar weeks and months. They include school holidays. The law allows a few exceptions, listed under each calculator. This is not legal advice. If a deadline is close or has been missed, get advice from <a href="https://www.ipsea.org.uk/">IPSEA</a> or Waltham Forest's SEND information, advice and support service (SENDIASS).</p>
+<noscript><p class="callout">The calculator needs JavaScript to work out dates. The rules in each table still apply.</p></noscript>
+
+<h2 id="assessment">EHC needs assessment</h2>
+<form class="calc" data-calc>
+  <label for="request">Date the council received the request for an assessment</label>
+  <input type="date" id="request" name="request">
+</form>
+<div class="tablewrap"><table class="wide deadlines">
+<thead><tr><th scope="col">Step</th><th scope="col">Deadline</th><th scope="col">Date</th><th scope="col">Law</th></tr></thead>
+<tbody aria-live="polite">
+{{ step("The council tells you whether it will assess", "6 weeks after the request", cite("send_regs_2014", "reg. 5"), "request", "6w") }}
+{{ step("Professionals asked for advice (for example an educational psychologist or health service) send it", "6 weeks after the council asks them", cite("send_regs_2014", "reg. 8"), "") }}
+{{ step("If the council decides after assessing not to issue a plan, it tells you", "16 weeks after the request", cite("send_regs_2014", "reg. 10"), "request", "16w") }}
+{{ step("You get the draft plan", "No fixed date. You must get at least 15 days to comment and ask for a school. This is the latest the draft can arrive and still leave you 15 days before the final plan is due.", cite("send_regs_2014", "reg. 13(1)"), "request", "20w -15d") }}
+{{ step("The council sends the final EHC plan", "20 weeks after the request", cite("send_regs_2014", "reg. 13(2)"), "request", "20w") }}
+</tbody></table></div>
+<p class="note"><strong>Exceptions.</strong> The 16 and 20 week deadlines don't apply if it is impractical to meet them because the council asked a school or nursery for advice shortly before a closure of 4 weeks or more, because of exceptional personal circumstances, or because the child or family were away from the area for 4 weeks or more ({{ cite("send_regs_2014", "regulation 10(4)") }}). The 6 week deadline has similar exceptions. See <a href="assessments.html#timeliness">how often Waltham Forest meets the 20 week deadline</a>.</p>
+
+<h2 id="annual-review">Annual review</h2>
+<form class="calc" data-calc>
+  <label for="meeting">Date of the annual review meeting</label>
+  <input type="date" id="meeting" name="meeting">
+  <label for="amend">Date the council sent its proposed amendments (if it is changing the plan)</label>
+  <input type="date" id="amend" name="amend">
+</form>
+<div class="tablewrap"><table class="wide deadlines">
+<thead><tr><th scope="col">Step</th><th scope="col">Deadline</th><th scope="col">Date</th><th scope="col">Law</th></tr></thead>
+<tbody aria-live="polite">
+{{ step("You are told the date of the meeting", "At least 2 weeks before the meeting", cite("send_regs_2014", "reg. 20(3)"), "meeting", "-2w") }}
+{{ step("Advice and reports are sent to everyone invited", "At least 2 weeks before the meeting", cite("send_regs_2014", "reg. 20(4)"), "meeting", "-2w") }}
+{{ step("The written report of the review is sent out", "2 weeks after the meeting", cite("send_regs_2014", "reg. 20(9)"), "meeting", "2w") }}
+{{ step("The council tells you whether it will keep, change or end the plan", "4 weeks after the meeting", cite("send_regs_2014", "reg. 20(10)"), "meeting", "4w") }}
+{{ step("You can comment on the proposed amendments and ask for a school until at least", "15 days, counting the day you received the amendments", cite("send_regs_2014", "reg. 22(2)"), "amend", "14d") }}
+{{ step("The council sends the final amended plan, or tells you it won't amend it", "8 weeks after it sent the proposed amendments", cite("send_regs_2014", "reg. 22(3) and (4)"), "amend", "8w") }}
+</tbody></table></div>
+<p class="note"><strong>Moving school.</strong> When a child is moving to a new phase of education, for example from primary to secondary school, the plan must be reviewed and amended by 15 February in the year of the move. For a move from secondary school to college or another post-16 setting, the date is 31 March ({{ cite("send_regs_2014", "regulation 18") }}). Every plan must be reviewed at least every 12 months ({{ cite("cfa_2014_s44", "section 44(1)") }}). See <a href="reviews.html">how many Waltham Forest reviews are done on time</a>.</p>
+
+<h2 id="appeal">Appealing to the SEND Tribunal</h2>
+<form class="calc" data-calc>
+  <label for="decision">Date on the council's decision letter (or final plan)</label>
+  <input type="date" id="decision" name="decision">
+  <label for="certificate">Date the mediation certificate was issued (if you have one)</label>
+  <input type="date" id="certificate" name="certificate">
+</form>
+<div class="tablewrap"><table class="wide deadlines">
+<thead><tr><th scope="col">Step</th><th scope="col">Deadline</th><th scope="col">Date</th><th scope="col">Law</th></tr></thead>
+<tbody aria-live="polite">
+{{ step("Contact a mediation adviser and say whether you want mediation", "2 months after the decision letter was sent", cite("send_regs_2014", "reg. 33"), "decision", "2m") }}
+{{ step("The mediation adviser issues a certificate, if you don't want mediation", "3 working days after you tell them", cite("send_regs_2014", "reg. 34"), "") }}
+{{ step("Your appeal must reach the Tribunal", "2 months after the decision letter, or 1 month after the mediation certificate, whichever is later", cite("tribunal_rules_2008", "rule 20(1)(c)"), "decision", "2m", "certificate", "1m") }}
+</tbody></table></div>
+<p class="note">You don't need a mediation certificate if your appeal is only about the school or type of school named in the plan, or that no school is named ({{ cite("cfa_2014_s55", "section 55(2)") }}). The Tribunal can accept a late appeal in some cases. See <a href="https://www.gov.uk/special-educational-needs-disability-tribunal">GOV.UK: appeal to the SEND Tribunal</a> and <a href="disputes.html">appeals about Waltham Forest decisions</a>.</p>
+<script src="static/deadlines.js" defer></script>
+{% endblock %}

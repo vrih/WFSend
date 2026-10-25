@@ -13,17 +13,17 @@
 <h2>Headlines</h2>
 <ul class="tiles">
   {{ ui.tile("New EHC plans issued within 20 weeks, " ~ t.latest_period,
-             fmt(t.latest[WF]), ui.compare(t), rank_text(t), "Assessments and timeliness", "assessments.html#timeliness") }}
+             fmt(t.latest[WF]), ui.compare(t), rank_text(t), "Assessments and timeliness", "assessments.html#timeliness", sn_rank_text(t)) }}
   {{ ui.tile("Within 20 weeks, council's latest figure (" ~ lt.period ~ ")",
              fmt(lt.value), "Published target: none", "", "What the council reports", "assessments.html#council-timeliness") }}
   {{ ui.tile("Annual reviews due in " ~ ar.period ~ " that were completed",
-             fmt(ar.completed.latest[WF]), ui.compare(ar.completed), rank_text(ar.completed), "Annual reviews", "reviews.html") }}
+             fmt(ar.completed.latest[WF]), ui.compare(ar.completed), rank_text(ar.completed), "Annual reviews", "reviews.html", sn_rank_text(ar.completed)) }}
   {{ ui.tile("Annual review decisions within the legal 4 weeks, " ~ ar.period,
-             fmt(ar.decision.latest[WF]), ui.compare(ar.decision), rank_text(ar.decision), "Annual reviews", "reviews.html#ar_decision") }}
+             fmt(ar.decision.latest[WF]), ui.compare(ar.decision), rank_text(ar.decision), "Annual reviews", "reviews.html#ar_decision", sn_rank_text(ar.decision)) }}
   {{ ui.tile("EHC plans maintained, " ~ cl.latest_period,
              fmt(cl.latest[WF], "count"), "Up " ~ fmt(d.growth.growth[WF]) ~ " since " ~ d.growth["from"] ~ " (England up " ~ fmt(d.growth.growth["England"]) ~ ")", "", "EHC plans", "plans.html") }}
   {{ ui.tile("SEND Tribunal appeal rate, " ~ d.appeal_rate.latest_period,
-             fmt(d.appeal_rate.latest[WF]), "England " ~ fmt(d.appeal_rate.latest["England"]), rank_text(d.appeal_rate), "Complaints and appeals", "disputes.html") }}
+             fmt(d.appeal_rate.latest[WF]), "England " ~ fmt(d.appeal_rate.latest["England"]) ~ " · Similar areas " ~ fmt(d.appeal_rate.latest[SN]), rank_text(d.appeal_rate), "Complaints and appeals", "disputes.html", sn_rank_text(d.appeal_rate)) }}
   {{ ui.tile("Schools budget (DSG) deficit, 31 March 2026",
              fin.dsg_deficit.value, "High Needs overspend forecast for 2026/27: " ~ fin.hnb_forecast_2627.value, "", "Money", "money.html") }}
   {{ ui.tile("Ofsted / CQC area SEND inspection, February 2025",
@@ -37,7 +37,7 @@
 </div>
 
 <h2>What changed</h2>
-<p>For four years, Waltham Forest issued about nine in ten new EHC plans within the 20-week legal limit, well above London and England. That fell to {{ fmt(t.series[WF]["2024"]) }} in 2024 and {{ fmt(t.series[WF]["2025"]) }} in {{ t.latest_period }}. That puts the borough {{ rank_text(t) }}. The council's own reports show the same thing, and no recovery yet: 28% in August 2025, and in July 2026 "timeliness in statutory processes remains 12% within 20 weeks" ({{ cite(lt.source, lt.page) }}). The council puts the fall down to delays in educational psychologist advice ({{ cite("hwb_oct2025_report", 4) }}).</p>
+<p>For four years, Waltham Forest issued about nine in ten new EHC plans within the 20-week legal limit, well above London and England. That fell to {{ fmt(t.series[WF]["2024"]) }} in 2024 and {{ fmt(t.series[WF]["2025"]) }} in {{ t.latest_period }}. That puts the borough {{ rank_text(t) }}, and {{ sn_rank_text(t) }} (<a href="sources.html#similar-areas">councils the DfE judges most like Waltham Forest</a>). The council's own reports show the same thing, and no recovery yet: 28% in August 2025, and in July 2026 "timeliness in statutory processes remains 12% within 20 weeks" ({{ cite(lt.source, lt.page) }}). The council puts the fall down to delays in educational psychologist advice ({{ cite("hwb_oct2025_report", 4) }}).</p>
 {{ figure(t) }}
 
 <h2>Sections</h2>
@@ -49,6 +49,7 @@
   <li><a href="health.html">Health</a><br>Waiting times for therapy, autism and ADHD assessment, and CAMHS.</li>
   <li><a href="disputes.html">Complaints and appeals</a><br>SEND Tribunal appeals, Ombudsman decisions and complaints to the council.</li>
   <li><a href="targets.html">Targets</a><br>Legal timescales, and the targets the council has and hasn't set.</li>
+  <li><a href="deadlines.html">Deadlines</a><br>Work out the legal deadlines for your own child's assessment, review or appeal.</li>
   <li><a href="inspection.html">Inspection</a><br>What Ofsted and CQC found in 2025.</li>
   <li><a href="money.html">Money</a><br>High needs funding and the schools budget deficit.</li>
 </ul>

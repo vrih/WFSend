@@ -1,8 +1,9 @@
 """Metrics computed from the DfE extracts in data/dfe/.
 
 Each metric function returns a dict with the series for Waltham Forest,
-London and England, the latest London ranking where one makes sense, and the
-manifest keys of the files it was computed from (used for source links).
+London, England and its statistical neighbours ("Similar areas"), the latest
+London ranking where one makes sense, and the manifest keys of the files it
+was computed from (used for source links).
 Rates are recomputed from counts where DfE publishes counts, so the
 calculation is visible here rather than taken on trust.
 """
@@ -11,10 +12,26 @@ import json
 import re
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parent.parent
 DFE = ROOT / "data" / "dfe"
 WF = "Waltham Forest"
 SUPPRESSED = {"", "x", "c", "z", "u", "low", "~", ":", ".."}
+
+# Statistical neighbours: the DfE's 10 councils most like Waltham Forest.
+_SN = yaml.safe_load((ROOT / "data" / "dfe_sources.yaml").read_text())["statistical_neighbours"]["areas"]
+NEIGHBOURS = [a["name"] for a in _SN]
+OUTSIDE_LONDON = {a["name"] for a in _SN if a["region"] != "London"}  # kept out of London rankings
+SN = "Similar areas"
+SN_MIN = 7  # neighbours with a value needed before an average is shown
+
+
+def sn_average(values):
+    """Simple average over the neighbours, as the DfE's LAIT tool does."""
+    vs = [values.get(a) for a in NEIGHBOURS]
+    vs = [v for v in vs if v is not None]
+    return sum(vs) / len(vs) if len(vs) >= SN_MIN else None
 
 
 def load(key):
@@ -58,20 +75,34 @@ def january(p):
     return f"Jan {int(p[:4]) + 1}" if len(p) == 6 else p
 
 
+def _rank(values, hib):
+    v = values[WF]
+    better = sum(1 for x in values.values() if (x > v if hib else x < v))
+    tied = sum(1 for x in values.values() if x == v) > 1
+    return {"pos": better + 1, "of": len(values), "joint": tied}
+
+
 def build(series_by_area, periods, **meta):
-    """Package a metric. series_by_area includes every London borough."""
+    """Package a metric. series_by_area includes every London borough and
+    the statistical neighbours."""
     main = {a: series_by_area.get(a, {}) for a in (WF, "London", "England")}
+    # Averaging counts across councils of different sizes means nothing, so
+    # the neighbour average is only given for rates, shares and spend per head.
+    if meta.get("unit") != "count":
+        main[SN] = {p: sn_average({a: series_by_area.get(a, {}).get(p) for a in NEIGHBOURS}) for p in periods}
     latest = periods[-1]
-    boroughs = {a: s.get(latest) for a, s in series_by_area.items() if a not in ("London", "England")}
+    boroughs = {a: s.get(latest) for a, s in series_by_area.items()
+                if a not in ("London", "England") and a not in OUTSIDE_LONDON}
     boroughs = {a: v for a, v in boroughs.items() if v is not None}
+    neighbours = {a: series_by_area.get(a, {}).get(latest) for a in [WF] + NEIGHBOURS}
+    neighbours = {a: v for a, v in neighbours.items() if v is not None}
     hib = meta.get("higher_is_better", True)
-    rank = None
-    if WF in boroughs and len(boroughs) > 5 and meta.pop("rank", True):
-        v = boroughs[WF]
-        better = sum(1 for x in boroughs.values() if (x > v if hib else x < v))
-        tied = sum(1 for x in boroughs.values() if x == v) > 1
-        rank = {"pos": better + 1, "of": len(boroughs), "joint": tied}
-    meta.pop("rank", None)
+    rank = sn_rank = None
+    if meta.pop("rank", True):
+        if WF in boroughs and len(boroughs) > 5:
+            rank = _rank(boroughs, hib)
+        if WF in neighbours and len(neighbours) > SN_MIN:
+            sn_rank = _rank(neighbours, hib)
     # latest period where Waltham Forest has a value
     wf_latest = next((p for p in reversed(periods) if main[WF].get(p) is not None), None)
     return {
@@ -81,7 +112,9 @@ def build(series_by_area, periods, **meta):
         "wf_latest_period": wf_latest,
         "latest": {a: main[a].get(latest) for a in main},
         "boroughs": boroughs,
+        "neighbours": neighbours,
         "rank": rank,
+        "sn_rank": sn_rank,
         **meta,
     }
 
@@ -208,11 +241,12 @@ def placements():
     vals = {}
     for r in rows:
         a = area_of(r)
-        if a in (WF, "London", "England") and r["time_period"] == latest:
+        if a in (WF, "London", "England", *NEIGHBOURS) and r["time_period"] == latest:
             vals.setdefault(a, {})[r["setting_type"]] = num(r["ehc_plan_count"])
     table = []
     for label, setting in PLACEMENT_GROUPS:
-        table.append({"label": label, **{a: pct(vals[a].get(setting), vals[a].get("Total")) for a in vals}})
+        shares = {a: pct(vals[a].get(setting), vals[a].get("Total")) for a in vals}
+        table.append({"label": label, **{a: shares[a] for a in (WF, "London", "England")}, SN: sn_average(shares)})
     return {"period": january(latest), "rows": table, "sources": ["ehcp_caseload"],
             "title": "Where children and young people with EHC plans are placed"}
 
@@ -310,7 +344,56 @@ def sen_prevalence():
     }
 
 
+NEED_SHORT = {
+    "Autistic spectrum disorder": "autism",
+    "Speech, language and communications needs": "speech, language and communication needs",
+    "Social, emotional and mental health": "social, emotional and mental health needs",
+    "Moderate learning difficulty": "moderate learning difficulty",
+    "Severe learning difficulty": "severe learning difficulty",
+}
+
+
+def primary_need():
+    """Pupils' primary type of need, as a share of pupils with an EHC plan or
+    on SEN support. School census, so it counts pupils at the borough's schools."""
+    rows = load("sen_primary_need")
+    counts = {}  # (provision, need, area, period) -> pupils
+    for r in rows:
+        a = area_of(r)
+        if a:
+            counts[(r["sen_provision"], r["sen_primary_need"], a, january(r["time_period"]))] = num(r["pupil_count"])
+    periods = sorted({k[3] for k in counts}, key=lambda p: int(p[-4:]))
+    latest = periods[-1]
+    areas = {k[2] for k in counts}
+    out = {"period": latest, "sources": ["sen_primary_need"]}
+    for key, prov in (("ehcp", "Education, health and care plan"), ("support", "SEN support / SEN without an EHC plan")):
+        needs = sorted({k[1] for k in counts if k[0] == prov} - {"Total"})
+        share = {n: {a: {p: pct(counts.get((prov, n, a, p)), counts.get((prov, "Total", a, p))) for p in periods}
+                     for a in areas} for n in needs}
+        rows_ = []
+        for n in needs:
+            vals = {a: share[n][a][latest] for a in areas}
+            rows_.append({"label": n, "count": counts.get((prov, n, WF, latest)),
+                          **{a: vals.get(a) for a in (WF, "London", "England")}, SN: sn_average(vals)})
+        rows_ = [r for r in rows_ if any(r[a] for a in (WF, "London", "England"))]  # e.g. "Unknown", always 0
+        rows_.sort(key=lambda r: -(r[WF] or 0))
+        group = "pupils with an EHC plan" if key == "ehcp" else "pupils on SEN support"
+        # trend charts for the three most common needs in Waltham Forest
+        trends = [build({a: share[r["label"]][a] for a in areas}, periods, id=f"need_{key}_{i}", unit="percent", rank=False,
+                        title=f"Primary need is {NEED_SHORT.get(r['label'], r['label'].lower())}: share of {group}",
+                        explain=f"Of {group} at schools in the area, the share whose main (primary) need is recorded as {r['label'].lower()}. School census, January.",
+                        sources=["sen_primary_need"])
+                  for i, r in enumerate(rows_[:3])]
+        out[key] = {"rows": rows_, "total": counts.get((prov, "Total", WF, latest)), "trends": trends,
+                    "title": f"Primary type of need: {group}, {latest}"}
+    return out
+
+
 # --- Outcomes --------------------------------------------------------------
+
+# Suffixes for figure ids, so each pupil group's chart has its own anchor.
+# Every outcome breakdown lists the groups in this order.
+GROUP_IDS = ("ehcp", "support", "nosen")
 
 def ks2():
     rows = load("ks2_attainment")
@@ -338,15 +421,15 @@ def short_group(g):
 def ks4():
     rows = load("ks4_sen")
     res = {}
-    for group in ("Education, health and care plan", "SEN support / SEN without an EHC plan", "No SEN provision"):
+    for g, group in zip(GROUP_IDS, ("Education, health and care plan", "SEN support / SEN without an EHC plan", "No SEN provision")):
         sub = [r for r in rows if r["breakdown"] == group]
         a8s, periods = collect(sub, lambda r: num(r["attainment8_average"]), label=academic)
         ems, _ = collect(sub, lambda r: num(r["engmath_94_percent"]), label=academic)
         res[group] = {
-            "a8": build(a8s, periods, unit="score", rank=False, sources=["ks4_sen"], id="a8",
+            "a8": build(a8s, periods, unit="score", rank=False, sources=["ks4_sen"], id=f"a8_{g}",
                         title=f"Average Attainment 8 score: {short_group(group)}",
                         explain="Average GCSE-equivalent score across eight subjects at the end of Year 11, in all state-funded schools (including special schools)."),
-            "em": build(ems, periods, unit="percent", rank=False, sources=["ks4_sen"], id="em",
+            "em": build(ems, periods, unit="percent", rank=False, sources=["ks4_sen"], id=f"em_{g}",
                         title=f"Grade 4 or above in English and maths GCSE: {short_group(group)}",
                         explain="Pupils at the end of Year 11 achieving at least a grade 4 (a standard pass) in both English and maths, in all state-funded schools."),
         }
@@ -356,16 +439,16 @@ def ks4():
 def exclusions():
     rows = load("exclusions_characteristics")
     res = {}
-    for ch, label in (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+    for g, (ch, label) in zip(GROUP_IDS, (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN"))):
         sub = [r for r in rows if r["characteristic"] == ch]
         susp, periods = collect(sub, lambda r: num(r["susp_rate"]), label=academic)
         perm, _ = collect(sub, lambda r: num(r["perm_excl_rate"]), label=academic)
         res[ch] = {
             "susp": build(susp, periods, unit="score", rank=False, higher_is_better=False, sources=["exclusions_characteristics"],
-                          id="susp", title=f"Suspensions per 100 {label}",
+                          id=f"susp_{g}", title=f"Suspensions per 100 {label}",
                           explain="The number of suspensions in the school year for every 100 pupils in the group. One pupil can be suspended more than once."),
             "perm": build(perm, periods, unit="score", rank=False, higher_is_better=False, sources=["exclusions_characteristics"],
-                          id="perm", title=f"Permanent exclusions per 100 {label}",
+                          id=f"perm_{g}", title=f"Permanent exclusions per 100 {label}",
                           explain="Permanent exclusions in the school year for every 100 pupils in the group."),
         }
     return res
@@ -450,16 +533,16 @@ def spending():
 def absence():
     rows = load("absence_sen")
     res = {}
-    for group, label in (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN"))):
         sub = [r for r in rows if r["characteristic_breakdown"] == group]
         overall, periods = collect(sub, lambda r: num(r["sess_overall_percent"]), label=academic)
         persistent, _ = collect(sub, lambda r: num(r["enrolments_pa_10_exact_percent"]), label=academic)
         res[group] = {
-            "overall": build(overall, periods, id="abs_overall", unit="percent", rank=False, higher_is_better=False,
+            "overall": build(overall, periods, id=f"abs_overall_{g}", unit="percent", rank=False, higher_is_better=False,
                              title=f"Overall absence: {label}",
                              explain="Share of school sessions missed, for any reason, in the autumn and spring terms. Each year's figure covers those two terms only.",
                              sources=["absence_sen"]),
-            "persistent": build(persistent, periods, id="abs_persistent", unit="percent", higher_is_better=False,
+            "persistent": build(persistent, periods, id=f"abs_persistent_{g}", unit="percent", higher_is_better=False,
                                 title=f"Persistently absent: {label}",
                                 explain="Share of pupils who missed 10% or more of sessions in the autumn and spring terms.",
                                 sources=["absence_sen"]),
@@ -470,12 +553,12 @@ def absence():
 def eyfs():
     rows = load("eyfs_sen")
     res = {}
-    for group, label in (("Education, health and care plan", "children with an EHC plan"),
-                         ("SEN support / SEN without an EHC plan", "children on SEN support"),
-                         ("No SEN provision", "children with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("Education, health and care plan", "children with an EHC plan"),
+                                             ("SEN support / SEN without an EHC plan", "children on SEN support"),
+                                             ("No SEN provision", "children with no SEN"))):
         sub = [r for r in rows if r["breakdown"] == group]
         series, periods = collect(sub, lambda r: num(r["gld_children_percent"]), label=academic)
-        res[group] = build(series, periods, id="eyfs_gld", unit="percent", rank=False,
+        res[group] = build(series, periods, id=f"eyfs_gld_{g}", unit="percent", rank=False,
                            title=f"Good level of development at the end of Reception: {label}",
                            explain="Children reaching the expected level in the early learning goals for communication, physical development, personal and social development, literacy and maths, assessed at the end of Reception.",
                            sources=["eyfs_sen"])
@@ -492,10 +575,10 @@ def ks4_destinations():
         if k[0] and (k not in best or r["version"] == "Revised"):
             best[k] = r
     res = {}
-    for group, label in (("SEN with EHC plan or statement", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("SEN with EHC plan or statement", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN"))):
         series, periods = collect([r for r in best.values() if r["breakdown"] == group],
                                   lambda r: num(r["pupil_percent"]), label=academic)
-        res[group] = build(series, periods, id="ks4_dest", unit="percent", rank=False,
+        res[group] = build(series, periods, id=f"ks4_dest_{g}", unit="percent", rank=False,
                            title=f"In education, employment or an apprenticeship after Year 11: {label}",
                            explain="Pupils who stayed in education, employment or an apprenticeship for at least two terms in the year after finishing Year 11. The year shown is the year they left Year 11. The latest year is provisional.",
                            sources=["ks4_destinations_sen"])
@@ -505,10 +588,10 @@ def ks4_destinations():
 def neet():
     rows = [r for r in load("neet_sen") if r["age"] == "16 to 17"]
     res = {}
-    for group, label in (("SEN EHC/statement", "young people with an EHC plan"), ("SEN support", "young people on SEN support"), ("No SEN", "young people with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("SEN EHC/statement", "young people with an EHC plan"), ("SEN support", "young people on SEN support"), ("No SEN", "young people with no SEN"))):
         series, periods = collect([r for r in rows if r["characteristic"] == group],
                                   lambda r: num(r["neet_nk_percent"]))
-        res[group] = build(series, periods, id="neet", unit="percent", higher_is_better=False,
+        res[group] = build(series, periods, id=f"neet_{g}", unit="percent", higher_is_better=False,
                            title=f"16 and 17 year olds not in education, employment or training, or not known: {label}",
                            explain="Average of December, January and February. Includes young people whose activity the council does not know, as the DfE's headline measure does.",
                            sources=["neet_sen"])

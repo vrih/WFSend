@@ -29,7 +29,7 @@ SITE = ROOT / "site"
 DOMAIN = "wfsenddata.org.uk"
 CONTACT_EMAIL = f"info@{DOMAIN}"
 
-AREAS = (M.WF, "London", "England")
+AREAS = (M.WF, "London", "England", M.SN)
 
 
 def read_yaml(name):
@@ -41,6 +41,7 @@ MANIFEST = json.loads((ROOT / "data" / "dfe" / "manifest.json").read_text())
 LGO_MANIFEST = json.loads((ROOT / "data" / "lgo" / "manifest.json").read_text())
 DFE_CFG = yaml.safe_load((ROOT / "data" / "dfe_sources.yaml").read_text())
 PUBS = DFE_CFG["publications"]
+SN_CFG = DFE_CFG["statistical_neighbours"]
 
 # Every citation used on the site, so sources.html can list exactly those.
 USED = {"local": set(), "dfe": set()}
@@ -55,6 +56,9 @@ def cite(source, page=None):
     s = SOURCES[source]
     USED["local"].add(source)
     where = f", p. {page}" if isinstance(page, int) else (f", {page}" if page else "")
+    if "short" in s:  # legislation: "SEND Regulations 2014, regulation 5"; full title on sources.html
+        label = s["short"] + where
+        return Markup(f'<a class="cite" href="{escape(s["url"])}" title="{escape(s["title"])}" rel="noopener">{escape(label)}</a>')
     label = f"{s['publisher']}, {s['title']} ({dt.date.fromisoformat(str(s['date'])).strftime('%B %Y')}){where}"
     return Markup(f'<a class="cite" href="{escape(s["url"])}" rel="noopener">{escape(label)}</a>')
 
@@ -87,6 +91,14 @@ def figure(m, ranked=False, note=None, y_max=None, areas=AREAS):
         refs = {a: m["series"].get(a, {}).get(latest) for a in ("London", "England")}
         parts.append(charts.ranked_bars(m["boroughs"], unit=m["unit"],
                                         higher_is_better=m.get("higher_is_better", True), refs=refs))
+    if ranked and m.get("sn_rank"):
+        latest = m["latest_period"]
+        parts.append(f'<details><summary>Compare with similar areas, {escape(latest)}</summary>'
+                     f'<p class="note">Waltham Forest is {escape(sn_rank_text(m))}. '
+                     f'<a href="sources.html#similar-areas">How similar areas are chosen</a>.</p>'
+                     + charts.ranked_bars(m["neighbours"], unit=m["unit"], higher_is_better=m.get("higher_is_better", True),
+                                          refs={M.SN: m["latest"].get(M.SN)})
+                     + "</details>")
     parts.append("<details><summary>Show the numbers</summary>"
                  + charts.table(series, m["periods"], unit=m["unit"]) + "</details>")
     if note:
@@ -102,6 +114,15 @@ def rank_text(m):
     best = m.get("rank_label") or ("best" if m.get("higher_is_better", True) else "lowest")
     joint = "joint " if r.get("joint") else ""
     return f"{joint}{ordinal(r['pos'])} of {r['of']} London boroughs ({ordinal(1)} = {best})"
+
+
+def sn_rank_text(m):
+    r = m.get("sn_rank")
+    if not r:
+        return ""
+    best = m.get("rank_label") or ("best" if m.get("higher_is_better", True) else "lowest")
+    joint = "joint " if r.get("joint") else ""
+    return f"{joint}{ordinal(r['pos'])} of {r['of']} with its similar areas ({ordinal(1)} = {best})"
 
 
 def ordinal(n):
@@ -122,6 +143,7 @@ def compute():
         "caseload": M.caseload(),
         "growth": M.caseload_growth(),
         "placements": M.placements(),
+        "primary_need": M.primary_need(),
         "prevalence": M.sen_prevalence(),
         "ar": ar,
         "appeal_rate": M.appeal_rate(),
@@ -181,6 +203,7 @@ PAGES = [
     ("health.html", "Health"),
     ("disputes.html", "Complaints & appeals"),
     ("targets.html", "Targets"),
+    ("deadlines.html", "Deadlines"),
     ("inspection.html", "Inspection"),
     ("money.html", "Money"),
     ("sources.html", "Sources"),
@@ -195,9 +218,10 @@ def main():
 
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
-    env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text,
+    env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
                        ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES,
-                       contact_email=CONTACT_EMAIL, domain=DOMAIN)
+                       contact_email=CONTACT_EMAIL, domain=DOMAIN,
+                       SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -206,7 +230,7 @@ def main():
 
     built = dt.date.today().isoformat()
     ctx = dict(d=d, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
-               MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, PUBS=PUBS, USED=USED)
+               MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
     for name, _ in PAGES:
         if name == "sources.html":

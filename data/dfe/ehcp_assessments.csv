@@ -34,6 +34,7 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,x,194,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,x,142,x,15,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2019,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,x,265,x,35,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2019,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,x,253,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2020,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,x,60097,x,3122,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2020,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,x,9963,x,313,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,x,3,x,1,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
@@ -69,6 +70,7 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,x,198,x,5,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,x,191,x,23,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2020,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,x,303,x,36,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2020,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,x,252,x,4,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2021,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,x,62180,x,3903,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2021,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,x,9604,x,402,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,x,1,x,0,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
@@ -104,6 +106,7 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,x,204,x,10,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,x,204,x,17,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2021,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,x,466,x,68,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+2021,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,x,248,x,13,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
 2022,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,73040,68665,94,4199,5.7,x,0,306,0.4,x,x,x,x,1024,864,x,720,1489,x
 2022,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,11518,10997,95.5,394,3.4,x,0,125,1.1,x,x,x,x,99,76,x,60,124,x
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,3,3,100,0,0,x,0,0,0,x,x,x,x,0,1,x,0,0,x
@@ -139,6 +142,7 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,272,250,91.9,14,5.1,x,0,8,2.9,x,x,x,x,0,1,x,2,9,x
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,333,308,92.5,25,7.5,x,0,0,0,x,x,x,x,4,6,x,7,30,x
 2022,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,569,555,97.5,14,2.5,x,0,0,0,x,x,x,x,10,5,x,2,3,x
+2022,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,292,292,100,0,0,x,0,0,0,x,x,x,x,0,0,x,0,4,x
 2023,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,91023,85924,94.4,4614,5.1,123,0.1,362,0.4,1661,2926,36.2,63.8,1549,1048,333,1275,1887,343
 2023,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,13625,13062,95.9,451,3.3,0,0,112,0.8,204,247,45.2,54.8,124,94,31,64,139,21
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,5,5,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,0,0
@@ -174,6 +178,7 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,267,255,95.5,11,4.1,0,0,1,0.4,3,8,27.3,72.7,1,3,0,3,9,0
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,398,367,92.2,31,7.8,0,0,0,0,14,17,45.2,54.8,12,10,7,7,11,3
 2023,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,746,700,93.8,46,6.2,0,0,0,0,15,31,32.6,67.4,2,2,0,0,0,0
+2023,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,297,297,100,0,0,0,0,0,0,0,0,x,x,0,1,0,0,1,0
 2024,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,105340,98547,93.6,6404,6.1,62,0.1,327,0.3,2179,4212,34.1,65.9,2124,1445,475,1862,3088,701
 2024,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,15184,14443,95.1,616,4.1,51,0.3,74,0.5,300,314,48.9,51.1,164,142,45,114,134,48
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,5,5,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,0,0
@@ -209,6 +214,7 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,314,302,96.2,12,3.8,0,0,0,0,2,10,16.7,83.3,8,4,1,0,1,0
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,397,368,92.7,29,7.3,0,0,0,0,18,11,62.1,37.9,19,13,12,10,16,6
 2024,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,481,479,99.6,2,0.4,0,0,0,0,0,2,0,100,4,1,0,1,0,0
+2024,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,338,338,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,2,0
 2025,Calendar year,National,E92000001,England,,,,,,All EHC needs assessments,All EHC needs assessments,118821,111243,93.6,7161,6,71,0.1,346,0.3,2673,4478,37.4,62.6,2444,1712,522,2094,3722,599
 2025,Calendar year,Regional,E92000001,England,E12000007,London,,,,All EHC needs assessments,All EHC needs assessments,16162,15243,94.3,822,5.1,2,0,95,0.6,312,508,38,62,283,230,71,179,281,54
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000001,201,City of London,All EHC needs assessments,All EHC needs assessments,5,5,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,0,0
@@ -244,3 +250,4 @@ time_period,time_identifier,geographic_level,country_code,country_name,region_co
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000027,318,Richmond upon Thames,All EHC needs assessments,All EHC needs assessments,276,262,94.9,14,5.1,0,0,0,0,3,11,21.4,78.6,1,0,0,5,8,2
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000029,319,Sutton,All EHC needs assessments,All EHC needs assessments,302,265,87.7,37,12.3,0,0,0,0,18,19,48.6,51.4,7,7,2,4,7,1
 2025,Calendar year,Local authority,E92000001,England,E12000007,London,E09000031,320,Waltham Forest,All EHC needs assessments,All EHC needs assessments,597,595,99.7,2,0.3,0,0,0,0,1,1,50,50,2,2,0,0,3,0
+2025,Calendar year,Local authority,E92000001,England,E12000008,South East,E06000045,852,Southampton,All EHC needs assessments,All EHC needs assessments,335,335,100,0,0,0,0,0,0,0,0,x,x,0,0,0,0,1,0

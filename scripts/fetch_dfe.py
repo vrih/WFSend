@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Download DfE SEND statistics and keep England, London and the London boroughs.
+"""Download DfE SEND statistics and keep England, London, the London boroughs
+and Waltham Forest's statistical neighbours.
 
 Reads data/dfe_sources.yaml, downloads each data set from Explore Education
 Statistics, filters it and writes:
@@ -56,12 +57,12 @@ def open_csv_stream(url, encoding="utf-8-sig"):
     return io.TextIOWrapper(raw, encoding=encoding, newline="")
 
 
-def in_scope(row):
+def in_scope(row, neighbours=frozenset()):
     level = row.get("geographic_level")
     if level == "National":
         return True
     if level in ("Regional", "Local authority"):
-        return row.get("region_code") in LONDON
+        return row.get("region_code") in LONDON or (level == "Local authority" and row.get("new_la_code") in neighbours)
     return False
 
 
@@ -78,7 +79,7 @@ def resolve(ds):
     return ds["file_id"], ds["title"], None, None
 
 
-def fetch_dataset(key, ds):
+def fetch_dataset(key, ds, neighbours):
     file_id, title, version, published = resolve(ds)
     url = f"{CATALOGUE}/{file_id}/csv"
     print(f"[{key}] {title}\n    {url}", flush=True)
@@ -89,7 +90,7 @@ def fetch_dataset(key, ds):
     unmatched = {col: set() for col in keep}
     for row in reader:
         seen += 1
-        if not in_scope(row):
+        if not in_scope(row, neighbours):
             continue
         if keep_row(row, keep):
             rows.append(row)
@@ -117,11 +118,12 @@ def fetch_dataset(key, ds):
     }
 
 
-def parse_appeal_rate(text):
+def parse_appeal_rate(text, extra=()):
     """Turn DfE's formatted appeal-rate table into tidy rows.
 
     Layout: a 'year' header row (2024 ... 2025 ...), a column header row, then
     one row per LA: name, old code, appeals, decisions, rate, appeals, decisions, rate.
+    Keeps London boroughs, England, and any LA named in `extra`.
     """
     rows = list(csv.reader(io.StringIO(text)))
     years = None
@@ -143,7 +145,7 @@ def parse_appeal_rate(text):
                 area, level = "England", "National"
             else:
                 continue
-        elif london:
+        elif london or name in extra:
             area, level = name, "Local authority"
         else:
             continue
@@ -157,13 +159,13 @@ def parse_appeal_rate(text):
     return out
 
 
-def fetch_supporting(key, sf):
+def fetch_supporting(key, sf, extra):
     print(f"[{key}] {sf['title']}\n    {sf['download_url']}", flush=True)
     with get(sf["download_url"]) as r:
         body = r.read()
         if body[:2] == b"\x1f\x8b":
             body = gzip.decompress(body)
-    rows = parse_appeal_rate(body.decode("utf-8-sig"))
+    rows = parse_appeal_rate(body.decode("utf-8-sig"), extra)
     if not rows:
         raise SystemExit(f"[{key}] could not parse supporting file")
     dest = OUT / f"{key}.csv"
@@ -183,14 +185,17 @@ def main(argv):
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     wanted = set(argv) or None
     today = dt.date.today().isoformat()
+    sn = cfg["statistical_neighbours"]["areas"]
+    neighbours = frozenset(a["code"] for a in sn)
+    outside_london = {a["name"] for a in sn if a["region"] != "London"}
     for key, ds in cfg["datasets"].items():
         if wanted and key not in wanted:
             continue
-        manifest[key] = fetch_dataset(key, ds) | {"fetched": today}
+        manifest[key] = fetch_dataset(key, ds, neighbours) | {"fetched": today}
     for key, sf in cfg.get("supporting_files", {}).items():
         if wanted and key not in wanted:
             continue
-        manifest[key] = fetch_supporting(key, sf) | {"fetched": today}
+        manifest[key] = fetch_supporting(key, sf, outside_london) | {"fetched": today}
     manifest_path.write_text(json.dumps(dict(sorted(manifest.items())), indent=2) + "\n")
 
 
