@@ -24,3 +24,37 @@
   document.querySelectorAll("[data-tip] > title").forEach(function (n) { n.remove(); });
   document.querySelectorAll("li[data-tip]").forEach(function (n) { n.removeAttribute("title"); n.tabIndex = 0; });
 })();
+
+// Tables that scroll sideways get a tab stop and a name, so keyboard users can scroll them.
+(function () {
+  // Name it after its caption, or the nearest heading above it; number repeats.
+  var used = {};
+  function name(w) {
+    var cap = w.querySelector("caption"), n = "Data";
+    if (cap) n = cap.textContent.trim();
+    else {
+      var all = document.querySelectorAll("h1, h2, h3, h4");
+      for (var i = 0; i < all.length; i++) {
+        if (all[i].compareDocumentPosition(w) & Node.DOCUMENT_POSITION_FOLLOWING) n = all[i].textContent.trim();
+      }
+    }
+    used[n] = (used[n] || 0) + 1;
+    return used[n] > 1 ? n + " (" + used[n] + ")" : n;
+  }
+  function mark() {
+    document.querySelectorAll(".tablewrap").forEach(function (w) {
+      if (w.scrollWidth > w.clientWidth + 1) {
+        if (!w.hasAttribute("tabindex")) {
+          w.tabIndex = 0;
+          w.setAttribute("role", "region");
+          w.setAttribute("aria-label", name(w) + ", table, scrolls sideways");
+        }
+      } else if (w.getAttribute("role") === "region" && document.activeElement !== w) {
+        w.removeAttribute("tabindex"); w.removeAttribute("role"); w.removeAttribute("aria-label");
+      }
+    });
+  }
+  mark();
+  window.addEventListener("resize", mark);
+  document.addEventListener("toggle", mark, true);
+})();

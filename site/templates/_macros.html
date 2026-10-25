@@ -36,7 +36,7 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 
 {% macro simple_table(block) %}
 <div class="tablewrap"><table class="wide">
-<thead><tr><th scope="col"></th>{% for c in block.columns %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+<thead><tr><th scope="col"><span class="vh">Item</span></th>{% for c in block.columns %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
 <tbody>
 {% for r in block.rows %}
 <tr><th scope="row">{{ r.label }}</th>{% for v in r["values"] %}<td>{{ "{:,}".format(v) if v is number else v }}</td>{% endfor %}</tr>
