@@ -1,0 +1,13 @@
+{
+  "dataset": "adhd",
+  "original_file": "ADHD_Region_Aug26.csv",
+  "original_sha256": "cebb6c0f96ef0b42d7d1f8eef93e54e84144425bc97e05fba1f2c9be99b8e07f",
+  "original_bytes": 1007913,
+  "extracted": "2026-10-25",
+  "files": [
+    {
+      "file": "ADHD_Region_Aug26.csv",
+      "rows_kept": 1227
+    }
+  ]
+}

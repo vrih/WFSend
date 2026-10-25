@@ -10,6 +10,17 @@
     "rows": 1650,
     "fetched": "2026-10-25"
   },
+  "cme_census": {
+    "title": "Children missing education at census date",
+    "publication": "cme",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/5fd47e69-cc0b-4916-8fb6-431a4504974e",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/5fd47e69-cc0b-4916-8fb6-431a4504974e/csv",
+    "api_id": "019bb854-d8d5-707a-bc53-e0de9ac70891",
+    "api_version": "1.0.1",
+    "published": "2026-01-29T14:54:38.031504+00:00",
+    "rows": 370,
+    "fetched": "2026-10-25"
+  },
   "ehcp_annual_reviews": {
     "title": "Number of annual reviews of EHC plans",
     "publication": "ehcp",
@@ -74,6 +85,17 @@
     "api_version": "1.0",
     "published": "2026-09-17T07:24:23.759471+00:00",
     "rows": 2016,
+    "fetched": "2026-10-25"
+  },
+  "ehe_census": {
+    "title": "Elective home education at census date",
+    "publication": "ehe",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/af1af85d-05cf-423e-acab-75ad1023943c",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/af1af85d-05cf-423e-acab-75ad1023943c/csv",
+    "api_id": "019bb857-0b36-7011-8d52-15ea8c0d18b0",
+    "api_version": "1.0.1",
+    "published": "2026-01-29T15:46:45.112291+00:00",
+    "rows": 370,
     "fetched": "2026-10-25"
   },
   "exclusions_characteristics": {
@@ -181,6 +203,39 @@
     "dataset_url": "https://explore-education-statistics.service.gov.uk/find-statistics/education-health-and-care-plans/2026",
     "download_url": "https://content.explore-education-statistics.service.gov.uk/api/releases/9b5381be-1851-4493-8ae4-54e7223837aa/files/330e4c5f-158a-41d5-97aa-76204facc80c",
     "rows": 70,
+    "fetched": "2026-10-25"
+  },
+  "special_school_capacity": {
+    "title": "Special school capacity - school",
+    "publication": "capacity",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/64be036b-167b-4870-a26d-e7389a23c9e0",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/64be036b-167b-4870-a26d-e7389a23c9e0/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 3267,
+    "fetched": "2026-10-25"
+  },
+  "specialist_forecasts": {
+    "title": "Local authority specialist provision pupil forecasts - national, regional, local authority",
+    "publication": "capacity",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/7ee937bb-686b-4389-9312-d4ebe56a452d",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/7ee937bb-686b-4389-9312-d4ebe56a452d/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 760,
+    "fetched": "2026-10-25"
+  },
+  "specialist_unit_capacity": {
+    "title": "Specialist provision capacity in mainstream schools - national, regional, local authority",
+    "publication": "capacity",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/2349aaee-6062-40ef-a6b1-4756b5538469",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/2349aaee-6062-40ef-a6b1-4756b5538469/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 309,
     "fetched": "2026-10-25"
   }
 }

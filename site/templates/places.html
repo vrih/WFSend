@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}School places and children out of school{% endblock %}
+{% block description %}Special school places, forecast demand for specialist places, and children home educated or missing education in Waltham Forest.{% endblock %}
+{% block content %}
+{% set ss = d.special_schools %}
+{% set su = d.specialist_units %}
+{% set fc = d.specialist_forecasts %}
+{% set ehe = d.home_education %}
+{% set cme = d.missing_education %}
+{% set eh = d.ehcp_home_educated %}
+{% set ss_year = ss.latest_period %}
+{% set ss_tot = ss.wf_totals[ss_year] %}
+{% set su_latest = su.by_year.values()|list|last %}
+{% set fc_first = fc.periods[0] %}{% set fc_last = fc.periods[-1] %}
+<h1>School places and children out of school</h1>
+<p class="lede">Whether there are enough specialist school places for children with EHC plans, how fast the council expects demand to grow, and how many children are not in school at all.</p>
+
+<h2 id="specialist-places">Specialist places in the borough</h2>
+<p>In May {{ ss_year[:2] ~ ss_year[-2:] }}, the council reported {{ "{:,.0f}".format(ss_tot[0]) }} places at Waltham Forest's {{ ss.schools|length }} special schools, with {{ "{:,.0f}".format(ss_tot[1]) }} pupils on roll. Mainstream schools had another {{ "{:,.0f}".format(su_latest.resourced + su_latest.units) }} places in resourced provision ({{ su_latest.primary|int }} primary and {{ su_latest.secondary|int }} secondary){% if not su_latest.units %}, and no SEN units{% endif %}.
+{%- set ss_places = ss.wf_totals.values()|map(attribute=0)|unique|list %}
+{%- set su_places = su.by_year.values()|map(attribute="resourced")|unique|list %}
+{% if ss_places|length == 1 and su_places|length == 1 %} Neither number changed between {{ su.by_year|list|first }} and {{ su.by_year|list|last }}, while the number of EHC plans the council maintains kept rising (see <a href="plans.html">EHC plans</a>).{% endif %}</p>
+<figure class="metric" id="special-schools">
+<figcaption><h3>Special schools in Waltham Forest, May {{ ss_year[:2] ~ ss_year[-2:] }}</h3>
+<p class="explain">Places reported by the council, and pupils on roll from the school census. Special schools can take pupils from other boroughs, and some Waltham Forest children go to special schools elsewhere.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">School</th><th scope="col">Places</th><th scope="col">Pupils on roll</th></tr></thead>
+<tbody>
+{% for s in ss.schools %}
+<tr><th scope="row">{{ s.name }}</th><td>{{ fmt(s.places, "count") }}</td><td>{{ fmt(s.pupils, "count") }}</td></tr>
+{% endfor %}
+<tr><th scope="row">Total</th><td><strong>{{ fmt(ss_tot[0], "count") }}</strong></td><td><strong>{{ fmt(ss_tot[1], "count") }}</strong></td></tr>
+</tbody></table></div>
+<p class="source">{{ cite_dfe(ss.sources + su.sources) }}</p>
+</figure>
+{{ figure(ss, y_max=120, note="The DfE publishes these as Official Statistics in Development: the collection is new and may change.") }}
+
+<h2 id="forecasts">Forecast demand for specialist places</h2>
+<p>Each council forecasts how many children living in its area will have an EHC plan and need a specialist place. Waltham Forest forecasts {{ fmt(fc.wf_counts[fc_first], "count") }} children in {{ fc_first }}, rising to {{ fmt(fc.wf_counts[fc_last], "count") }} by {{ fc_last }}. That is growth of {{ fmt(fc.latest[WF] - 100) }}, against {{ fmt(fc.latest["London"] - 100) }} in London, {{ fmt(fc.latest["England"] - 100) }} in England and {{ fmt(fc.latest[SN] - 100) }} in similar areas. It is {{ rank_text(fc) }}.</p>
+{{ figure(fc, ranked=True) }}
+<p class="note">The DfE says these forecasts can't be set against the capacity figures above to work out a shortfall. The forecasts count children living in the borough in Reception to Year 11, wherever they go to school, including independent and alternative provision. The capacity figures count places in the borough's schools, including sixth forms, whoever fills them. The council doesn't report how many new places it plans.</p>
+
+<h2 id="out-of-school">Children out of school</h2>
+<p>Some children with SEND leave school because their needs aren't being met. The DfE doesn't publish home education or children missing education by SEN for each council. Across England, 16% of children electively home educated in autumn 2025 were on SEN support and 7% had an EHC plan, compared with 14% and 5% of all pupils (DfE, <a class="cite" href="{{ PUBS.ehe.url }}">{{ PUBS.ehe.title }}</a>).</p>
+{{ figure(eh, note="Waltham Forest reported no plans for home-educated children in January 2025, after " ~ eh.counts["Jan 2024"]|int ~ " the year before. In the same year, plans recorded as \"other arrangements made by parents\" rose from " ~ eh.other["Jan 2024"]|int ~ " to " ~ eh.other["Jan 2025"]|int ~ ". This looks like a change in how cases were recorded, not a real fall. In " ~ eh.latest_period ~ " the council reported " ~ eh.counts[eh.latest_period]|int ~ " plans for home-educated children.") }}
+{{ figure(ehe, note="About " ~ fmt(ehe.wf_count, "count") ~ " Waltham Forest children were electively home educated in " ~ ehe.latest_period ~ ". The DfE doesn't publish a London figure for this data, only Inner and Outer London. Numbers rise each spring and summer as children leave school during the year.") }}
+{{ figure(cme, note="The DfE doesn't publish a London figure for this data, only Inner and Outer London. Waltham Forest's numbers are small, so the rate can move a lot from term to term.") }}
+{% endblock %}

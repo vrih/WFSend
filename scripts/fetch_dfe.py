@@ -57,9 +57,9 @@ def open_csv_stream(url, encoding="utf-8-sig"):
     return io.TextIOWrapper(raw, encoding=encoding, newline="")
 
 
-def in_scope(row, neighbours=frozenset()):
+def in_scope(row, neighbours=frozenset(), school_rows=False):
     level = row.get("geographic_level")
-    if level == "National":
+    if level == "National" or (school_rows and level == "School"):
         return True
     if level in ("Regional", "Local authority"):
         return row.get("region_code") in LONDON or (level == "Local authority" and row.get("new_la_code") in neighbours)
@@ -90,7 +90,7 @@ def fetch_dataset(key, ds, neighbours):
     unmatched = {col: set() for col in keep}
     for row in reader:
         seen += 1
-        if not in_scope(row, neighbours):
+        if not in_scope(row, neighbours, ds.get("school_rows", False)):
             continue
         if keep_row(row, keep):
             rows.append(row)

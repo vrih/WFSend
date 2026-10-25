@@ -1,0 +1,14 @@
+{
+  "dataset": "mhsds",
+  "original_file": "MHSDS Data_OctPerf_2025.zip",
+  "original_sha256": "09a5e05179ebf56d29707d338339fd9a9c5fcf25810a92420079efb36c92af25",
+  "original_bytes": 3902029,
+  "extracted": "2026-10-25",
+  "files": [
+    {
+      "file": "MHSDS Data_OctPerf_2025/MHSDS Data_OctPerf_2025.csv",
+      "rows_kept": 40
+    }
+  ],
+  "trimmed": "2026-10-25"
+}
