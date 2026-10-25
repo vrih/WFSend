@@ -43,9 +43,54 @@ python scripts/extract_nhs.py community_waits ~/Downloads/<file>
 
 XLSX files need `pip install openpyxl`. CSV and zip files need only Python.
 
+## 3. ADHD management information (quarterly)
+
+https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd
+
+From each release, download the three CSV files: national (for example
+`ADHD_Aug26.csv`), region (`ADHD_Region_Aug26.csv`) and ICB
+(`ADHD_ICB_Aug26.csv`). The summary Excel file isn't needed. Then run:
+
+```sh
+python scripts/extract_nhs.py adhd ~/Downloads/ADHD_Aug26.csv ~/Downloads/ADHD_Region_Aug26.csv ~/Downloads/ADHD_ICB_Aug26.csv
+```
+
+Each release covers the last 13 months. Where releases overlap, the release
+with the latest month wins, so revised figures replace older ones. ICB and
+region figures were first published in May 2026.
+
+## 4. Mental Health Services Monthly Statistics (monthly)
+
+https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics
+
+From each "Performance" release, download the main data zip (for example
+`MHSDS_Data_AugPerf_2026.zip`, about 4 MB zipped and 170 MB unzipped). Don't
+unzip it. Then run:
+
+```sh
+python scripts/extract_nhs.py mhsds ~/Downloads/MHSDS_Data_AugPerf_2026.zip
+```
+
+Only the children and young people's measures the site uses are kept (see
+`MHSDS_MEASURES` in the script). Each month adds one point to the CAMHS
+charts.
+
+If an extract was made with the wrong dataset name or before a rule existed,
+move its folder into `data/nhs/<dataset>/` and cut it down in place with:
+
+```sh
+python scripts/extract_nhs.py trim mhsds
+```
+
+The script stops if the dataset name isn't one it knows, so a typo can't
+create a folder the site never reads.
+
+NELFT's children's figures change sharply in April 2026, in both this data
+and the autism data. `MHSDS_NELFT_BREAK` in `scripts/metrics.py` keeps
+NELFT's months from then off the CAMHS charts.
+
 ## Then
 
-Commit the new folders under `data/nhs/autism/` or `data/nhs/community_waits/`
-and push. The script prints how many rows it kept from each file. If it says
+Commit the new folders under `data/nhs/` and push. The script prints how many rows it kept from each file. If it says
 "no matching rows found", the file is probably a national-only summary rather
 than the provider or ICB breakdown.

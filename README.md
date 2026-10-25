@@ -8,7 +8,8 @@ links back to a public source:
   [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/):
   EHC plan numbers, requests, 20-week timeliness, annual reviews, placements,
   SEND Tribunal appeal rates, results at key stages 2 and 4,
-  pupils' main type of need, and exclusions. Each figure is shown for Waltham
+  pupils' main type of need, exclusions, special school places and forecast
+  demand, elective home education and children missing education. Each figure is shown for Waltham
   Forest, London, England and the average of Waltham Forest's 10 statistical
   neighbours ("similar areas"), with rankings against the London boroughs and
   against the neighbours.
@@ -16,8 +17,8 @@ links back to a public source:
   every published decision about the council (SEND decisions are picked out
   by the Ombudsman's own category) and its yearly complaint statistics.
 - **NHS England waiting times**: children's community health services
-  waiting lists and autism assessment waits for NELFT, North East London,
-  London and England. NHS England blocks automated downloads, so these are
+  waiting lists, autism and ADHD assessment waits, and waits for children's
+  mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
   downloaded by hand and cut down with `scripts/extract_nhs.py`.
 - **Council, NHS and Ofsted documents**: committee papers, the SEND Local Area
   Improvement Plan and its highlight reports, budget reports, and the 2025 area
@@ -76,6 +77,7 @@ release comes out. Check them each year:
 | Early years foundation stage profile | Autumn |
 | Key stage 4 destination measures | Autumn |
 | NEET age 16 to 17 by local authority | Summer |
+| School capacity (special school places, specialist places in mainstream schools, forecasts) | Spring |
 
 The statistical neighbours are listed in `data/dfe_sources.yaml` under
 `statistical_neighbours`, copied from the DfE's Children's services

@@ -740,3 +740,256 @@ def autism():
         "after": {k: series(fn, after) for k, fn in (("waiting", waiting), ("over13", over13), ("median", median))},
         "sources": sources,
     }
+
+
+# --- School places and children out of school ------------------------------
+
+TERMS = {"Autumn term": (0, "Autumn"), "Spring term": (1, "Spring"), "Summer term": (2, "Summer")}
+
+
+def _term_label(r):
+    """'202526' + 'Autumn term' -> 'Autumn 2025'; spring and summer fall in the second year."""
+    order, name = TERMS[r["time_identifier"]]
+    year = int(r["time_period"][:4]) + (0 if order == 0 else 1)
+    return f"{name} {year}"
+
+
+def _termly(key, **meta):
+    rows = [r for r in load(key) if r["breakdown"] == "Total"]
+    series, _ = collect(rows, lambda r: num(r["rate_per_100"]), period_fn=_term_label)
+    order = sorted({(r["time_period"], TERMS[r["time_identifier"]][0]): _term_label(r) for r in rows}.items())
+    # No ranking: the DfE rounds rates to one decimal place, so most boroughs tie.
+    m = build(series, [label for _, label in order], unit="score", rank=False, **meta)
+    counts, _ = collect(rows, lambda r: num(r["child_count"]), period_fn=_term_label)
+    m["wf_count"] = counts.get(WF, {}).get(m["latest_period"])
+    return m
+
+
+def home_education():
+    return _termly("ehe_census", id="ehe_rate", sources=["ehe_census"],
+                   title="Children electively home educated, per 100 children",
+                   explain="Children of compulsory school age whose parents have chosen to educate them at home, on the census day each term, for every 100 children living in the area. The DfE publishes this rate to one decimal place.")
+
+
+def missing_education():
+    return _termly("cme_census", id="cme_rate", sources=["cme_census"],
+                   title="Children missing education, per 100 children",
+                   explain="Children of compulsory school age who are not on a school roll and not receiving a suitable education otherwise, on the census day each term, for every 100 children living in the area. Counts are rounded by the DfE.")
+
+
+def ehcp_home_educated():
+    """EHC plans where the child is electively home educated, as a share of all plans."""
+    rows = load("ehcp_caseload")
+    by = {}
+    for r in rows:
+        a = area_of(r)
+        if a:
+            by.setdefault((a, january(r["time_period"])), {})[r["setting_type"]] = num(r["ehc_plan_count"])
+    series, other = {}, {}
+    for (a, p), d in by.items():
+        series.setdefault(a, {})[p] = pct(d.get("Elective home education"), d.get("Total"))
+        other.setdefault(a, {})[p] = d.get("Other arrangements parents")
+    periods = sorted({p for _, p in by}, key=lambda p: int(p[-4:]))
+    periods = [p for p in periods if series.get("England", {}).get(p) is not None]  # not published before 2020
+    m = build(series, periods, id="ehcp_ehe", unit="percent", rank=False,
+              title="EHC plans where the child is home educated",
+              explain="Plans where the setting recorded is elective home education, as a share of all plans the council maintains. Counted each January.",
+              sources=["ehcp_caseload"])
+    m["counts"] = {p: by.get((WF, p), {}).get("Elective home education") for p in periods}
+    m["other"] = {p: other.get(WF, {}).get(p) for p in periods}
+    return m
+
+
+def _region_of(row):
+    return "London" if row.get("region_code") in ("E12000007", "E13000001", "E13000002") else None
+
+
+def special_schools():
+    """Special school places and pupils on roll, added up from the school-level file."""
+    rows = load("special_school_capacity")
+    periods = sorted({r["time_period"] for r in rows})
+    tot = {}  # (area, period) -> [places, pupils]
+    schools = []
+    for r in rows:
+        places, pupils = num(r["school_places"]), num(r["pupils_on_roll_count"])
+        region = _region_of(r)
+        la = r["la_name"] if region or r["la_name"] in NEIGHBOURS else None  # the file covers every school in England
+        areas = {"England", la, region} - {None}
+        for a in areas:
+            t = tot.setdefault((a, r["time_period"]), [0, 0])
+            t[0] += places or 0
+            t[1] += pupils or 0
+        if r["la_name"] == WF and r["time_period"] == periods[-1]:
+            schools.append({"name": r["school_name"], "phase": r["education_phase"], "places": places, "pupils": pupils})
+    occ = {}
+    for (a, p), (places, pupils) in tot.items():
+        occ.setdefault(a, {})[academic(p)] = pct(pupils, places)
+    # Fuller isn't simply better or worse, so no ranking.
+    m = build(occ, [academic(p) for p in periods], id="special_occupancy", unit="percent", rank=False,
+              title="Special school places filled",
+              explain="Pupils on roll in state-funded and non-maintained special schools in the area, as a share of the places the council reported each May. Over 100% means more pupils than places.",
+              sources=["special_school_capacity"])
+    m["schools"] = sorted(schools, key=lambda s: -(s["places"] or 0))
+    m["wf_totals"] = {academic(p): tot.get((WF, p)) for p in periods}
+    return m
+
+
+def specialist_units():
+    rows = [r for r in load("specialist_unit_capacity") if r["education_phase"] == "Total"]
+    out = {}
+    for r in rows:
+        a = area_of(r)
+        if a == WF:
+            out[academic(r["time_period"])] = {
+                "units": num(r["send_unit_capacity_count"]), "resourced": num(r["resourced_provision_capacity_count"]),
+                "primary": (num(r["primary_send_unit_capacity_count"]) or 0) + (num(r["primary_resourced_provision_capacity_count"]) or 0),
+                "secondary": (num(r["secondary_send_unit_capacity_count"]) or 0) + (num(r["secondary_resourced_provision_capacity_count"]) or 0),
+            }
+    return {"by_year": dict(sorted(out.items())), "sources": ["specialist_unit_capacity"]}
+
+
+def specialist_forecasts():
+    """Council forecasts of resident pupils with an EHC plan who will need a
+    specialist place, indexed to the first forecast year so areas compare."""
+    rows = [r for r in load("specialist_forecasts") if r["education_phase"] == "Total"]
+    counts, periods = collect(rows, lambda r: num(r["pupil_forecast_and_202425_actuals"]), label=academic)
+    periods = [p for p in periods if counts.get("England", {}).get(p) is not None]  # 2024/25 actuals are not published
+    first = periods[0]
+    index = {a: {p: 100 * s[p] / s[first] if s.get(p) is not None and s.get(first) else None for p in periods}
+             for a, s in counts.items()}
+    m = build(index, periods, id="specialist_forecast", unit="score", rank_label="fastest growth",
+              title=f"Forecast growth in pupils needing a specialist place ({first} = 100)",
+              explain=f"Each council's forecast of pupils living in its area, in Reception to Year 11, who will have an EHC plan and need a place in specialist provision: special schools, SEN units and resourced provision, independent and alternative provision. Shown as an index, where {first} = 100, so councils of different sizes can be compared.",
+              sources=["specialist_forecasts"])
+    m["wf_counts"] = counts.get(WF, {})
+    m["england_counts"] = counts.get("England", {})
+    return m
+
+
+# --- NHS ADHD management information (hand-downloaded) --------------------
+
+def _dmy(s):
+    """'01/06/2026' -> (2026, 6). The national file sometimes uses '2026-06-01'."""
+    if "/" in s:
+        d, m, y = s.split("/")
+    else:
+        y, m, d = s.split("-")
+    return int(y), int(m)
+
+
+def _month(ym):
+    return f"{list(MONTHS)[ym[1] - 1][:3]} {ym[0]}"
+
+
+def _nhs_folders(name):
+    return sorted(p for p in (NHS / name).glob("*/") if (p / "source.json").exists())
+
+
+ADHD_AGE = "5 to 17"  # under-5s are almost all suppressed
+
+
+def adhd():
+    """People who may be waiting for an ADHD assessment (MHSDS referrals for
+    neurodevelopmental conditions other than autism), children aged 5 to 17."""
+    folders = _nhs_folders("adhd")
+    if not folders:
+        return None
+    files = []
+    for folder in folders:
+        for f in folder.glob("*.csv"):
+            with f.open(encoding="utf-8") as fh:
+                rows = list(csv.DictReader(fh))
+            area = ("North East London" if "ICB_CODE" in rows[0] else "London" if "REGION_CODE" in rows[0] else "England")
+            latest = max(_dmy(r["REPORTING_PERIOD_START_DATE"]) for r in rows)
+            files.append((latest, area, rows))
+    vals = {}  # (year, month) -> area -> indicator -> value
+    for _, area, rows in sorted(files, key=lambda t: t[0]):  # later releases overwrite revised months
+        for r in rows:
+            if r["PRIMARY_LEVEL"] == ADHD_AGE:
+                vals.setdefault(_dmy(r["REPORTING_PERIOD_START_DATE"]), {}).setdefault(area, {})[r["INDICATOR_ID"]] = num(r["VALUE"])
+    order = sorted(m for m, v in vals.items() if all(v.get(a, {}).get("ADHD003") for a in ("North East London", "London", "England")))
+    areas = ("North East London", "London", "England")
+
+    def series(fn):
+        return {a: {_month(m): fn(vals[m].get(a, {})) for m in order} for a in areas}
+
+    def share(*ids):
+        def f(v):
+            parts = [v.get(i) for i in ids]
+            return pct(sum(parts), v.get("ADHD003")) if None not in parts else None
+        return f
+    periods = [_month(m) for m in order]
+
+    def metric(id_, fn, unit, title, explain):
+        return {"id": id_, "unit": unit, "title": title, "explain": explain, "series": series(fn), "periods": periods}
+    return {
+        "latest": periods[-1], "periods": periods,
+        "waiting": metric("adhd_waiting", lambda v: v.get("ADHD003"), "count", "Children with an open referral",
+                          "Children aged 5 to 17 with an open referral that may be for an ADHD assessment, at the end of the month."),
+        "over52": metric("adhd_over52", share("ADHD003c", "ADHD003d"), "percent", "Open referrals that have been open for a year or more",
+                         "Of children aged 5 to 17 with an open referral, the share whose referral had been open 52 weeks or more."),
+        "over104": metric("adhd_over104", share("ADHD003d"), "percent", "Open referrals that have been open for two years or more",
+                          "Of children aged 5 to 17 with an open referral, the share whose referral had been open 104 weeks or more."),
+        "no_contact": metric("adhd_no_contact", share("ADHD004"), "percent", "Open referrals with no contact yet",
+                             "Of children aged 5 to 17 with an open referral, the share who had not yet had any contact with the service."),
+        "counts": {a: vals[order[-1]].get(a, {}) for a in areas},
+        "first_counts": {a: vals[order[0]].get(a, {}) for a in areas},
+        "sources": [json.loads((f / "source.json").read_text()) for f in folders],
+    }
+
+
+# --- NHS Mental Health Services Monthly Statistics (hand-downloaded) --------
+
+MHSDS_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "England": "England"}
+# NELFT's children's mental health caseload halves in April 2026 (33,380 to
+# 16,825 children), the same month as the break in its autism figures, while
+# North East London barely changes. NHS England gives no reason, so NELFT's
+# months from here on are kept off the trend charts.
+MHSDS_NELFT_BREAK = AUTISM_BREAK
+
+
+def cyp_mental_health():
+    """Waits for a first contact with children and young people's mental health
+    services (MHS130 to MHS135, rolling 3 months)."""
+    folders = _nhs_folders("mhsds")
+    if not folders:
+        return None
+    vals = {}  # (year, month) of the period end -> area -> measure -> value
+    for folder in folders:
+        for f in folder.glob("*.csv"):
+            with f.open(encoding="utf-8") as fh:
+                for r in csv.DictReader(fh):
+                    area = MHSDS_AREAS.get(r["PRIMARY_LEVEL"])
+                    if area:
+                        vals.setdefault(_dmy(r["REPORTING_PERIOD_END"]), {}).setdefault(area, {})[r["MEASURE_ID"]] = num(r["MEASURE_VALUE"])
+    have = sorted(m for m, v in vals.items() if v.get("England", {}).get("MHS134") is not None)
+    # every month from first to last, so a missing month shows as a gap in the line
+    order = [(y, mo) for y in range(have[0][0], have[-1][0] + 1) for mo in range(1, 13)
+             if have[0] <= (y, mo) <= have[-1]]
+    periods = [_month(m) for m in order]
+    areas = tuple(MHSDS_AREAS.values())
+
+    def metric(id_, measure, unit, title, explain):
+        series = {a: {_month(m): (None if a == "NELFT" and m >= MHSDS_NELFT_BREAK else vals.get(m, {}).get(a, {}).get(measure))
+                      for m in order} for a in areas}
+        top = max((v for s in series.values() for v in s.values() if v is not None), default=0)
+        # round the axis up to a multiple of 400 so the 4 gridlines land on round numbers
+        return {"id": id_, "unit": unit, "title": title, "explain": explain, "periods": periods,
+                "series": series, "y_max": -(-top // 400) * 400 or None}
+    before = [m for m in have if m < MHSDS_NELFT_BREAK]
+    after = [m for m in have if m >= MHSDS_NELFT_BREAK]
+    nelft = lambda m, k: vals[m].get("NELFT", {}).get(k)
+    return {
+        "latest": periods[-1], "periods": periods,
+        "missing": [_month(m) for m in order if m not in have],
+        "nelft_break": {"before": _month(before[-1]), "after": _month(after[0]),
+                        "caseload": (nelft(before[-1], "CYP01"), nelft(after[0], "CYP01")),
+                        "waiting": (nelft(before[-1], "MHS133"), nelft(after[0], "MHS133")),
+                        "median": (nelft(before[-1], "MHS134"), nelft(after[0], "MHS134"))} if before and after else None,
+        "latest_values": {a: vals[order[-1]].get(a, {}) for a in areas},
+        "median_waiting": metric("cyp_mh_median", "MHS134", "count", "Median wait so far for children still waiting (days)",
+                                 "Children and young people under 18 referred to NHS-funded mental health services and still waiting for a first contact: the median number of days they had waited so far."),
+        "p90_waiting": metric("cyp_mh_p90", "MHS135", "count", "Longest waits for children still waiting: 90th percentile (days)",
+                              "One in ten children still waiting for a first contact had waited at least this many days."),
+        "sources": [json.loads((f / "source.json").read_text()) for f in folders],
+    }

@@ -1,0 +1,310 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,old_la_code,new_la_code,la_name,education_phase,school_count,schools_with_primary_and_secondary_capacity_count,school_places,pupils_on_roll_count,send_unit_capacity_count,resourced_provision_capacity_count,primary_send_unit_capacity_count,primary_resourced_provision_capacity_count,secondary_send_unit_capacity_count,secondary_resourced_provision_capacity_count
+202425,Academic year,National,E92000001,England,,,,,,Total,1915,42,1356593,1187415,10069,22165,6940,13133,3129,9018
+202425,Academic year,National,E92000001,England,,,,,,Primary,1262,1,496066,429412,6931,12944,6931,12941,0,3
+202425,Academic year,National,E92000001,England,,,,,,Secondary,653,41,860527,758003,3138,9221,9,192,3129,9015
+202425,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,102,3,74637,59453,224,1673,192,1194,32,479
+202425,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Primary,72,0,33795,24946,192,1169,192,1169,0,0
+202425,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Secondary,30,3,40842,34507,32,504,0,25,32,479
+202425,Academic year,Regional,E92000001,England,E12000007,London,,,,Total,360,11,294777,252426,1368,5571,1036,3675,332,1882
+202425,Academic year,Regional,E92000001,England,E12000007,London,,,,Primary,246,0,126215,103177,1036,3614,1036,3614,0,0
+202425,Academic year,Regional,E92000001,England,E12000007,London,,,,Secondary,114,11,168562,149249,332,1957,0,61,332,1882
+202425,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Total,258,8,220140,192973,1144,3898,844,2481,300,1403
+202425,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Primary,174,0,92420,78231,844,2445,844,2445,0,0
+202425,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Secondary,84,8,127720,114742,300,1453,0,36,300,1403
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,7,0,5721,4518,111,0,79,0,32,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Primary,4,0,1476,1311,79,0,79,0,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Secondary,3,0,4245,3207,32,0,0,0,32,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,9,0,5905,4509,0,105,0,78,0,27
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Primary,7,0,3280,2093,0,78,0,78,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Secondary,2,0,2625,2416,0,27,0,0,0,27
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,1,0,210,211,11,0,11,0,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Primary,1,0,210,211,11,0,11,0,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,4,0,1680,1326,14,33,14,33,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Primary,4,0,1680,1326,14,33,14,33,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,1,0,350,219,64,0,64,0,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Primary,1,0,350,219,64,0,64,0,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,6,0,4272,4012,0,91,0,52,0,39
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Primary,3,0,1190,896,0,52,0,52,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Secondary,3,0,3082,3116,0,39,0,0,0,39
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,14,1,9546,6987,0,376,0,304,0,72
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Primary,10,0,4998,2722,0,304,0,304,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Secondary,4,1,4548,4265,0,72,0,0,0,72
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,13,0,9736,7177,0,212,0,126,0,86
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Primary,9,0,5025,4047,0,126,0,126,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Secondary,4,0,4711,3130,0,86,0,0,0,86
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,14,1,14262,11978,0,168,0,91,0,77
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Primary,8,0,4632,3797,0,77,0,77,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Secondary,6,1,9630,8181,0,91,0,14,0,77
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,6,0,2475,2023,24,78,24,78,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Primary,6,0,2475,2023,24,78,24,78,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,8,1,5952,5452,0,167,0,136,0,31
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Primary,6,0,2645,2355,0,125,0,125,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Secondary,2,1,3307,3097,0,42,0,11,0,31
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,15,0,11716,8531,0,402,0,278,0,124
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Primary,11,0,5232,3535,0,278,0,278,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Secondary,4,0,6484,4996,0,124,0,0,0,124
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,4,0,2812,2510,0,41,0,18,0,23
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Primary,2,0,602,411,0,18,0,18,0,0
+202425,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Secondary,2,0,2210,2099,0,23,0,0,0,23
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,25,3,26877,22613,0,568,0,376,0,192
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Primary,18,0,11645,9821,0,340,0,340,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Secondary,7,3,15232,12792,0,228,0,36,0,192
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,14,1,10785,9406,0,250,0,127,0,123
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Primary,9,0,4022,3761,0,127,0,127,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Secondary,5,1,6763,5645,0,123,0,0,0,123
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,21,0,14327,12229,0,312,0,221,0,91
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Primary,15,0,6256,5363,0,221,0,221,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Secondary,6,0,8071,6866,0,91,0,0,0,91
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,7,1,6731,5858,0,155,0,118,0,37
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Primary,5,0,2443,1926,0,118,0,118,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Secondary,2,1,4288,3932,0,37,0,0,0,37
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,19,0,12624,11688,237,203,237,133,0,70
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Primary,16,0,7123,6429,237,133,237,133,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Secondary,3,0,5501,5259,0,70,0,0,0,70
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,22,1,15077,11005,0,428,0,304,0,110
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Primary,16,0,7764,5667,0,304,0,304,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Secondary,6,1,7313,5338,0,124,0,0,0,110
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,14,0,11755,11267,18,344,18,241,0,103
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Primary,10,0,4971,4659,18,241,18,241,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Secondary,4,0,6784,6608,0,103,0,0,0,103
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,14,0,13526,12086,0,248,0,115,0,133
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Primary,8,0,3600,3190,0,115,0,115,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Secondary,6,0,9926,8896,0,133,0,0,0,133
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,12,0,10943,9924,0,151,0,85,0,66
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Primary,8,0,5250,4405,0,85,0,85,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Secondary,4,0,5693,5519,0,66,0,0,0,66
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,12,0,9006,8491,145,41,89,21,56,20
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Primary,7,0,3948,3716,89,21,89,21,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Secondary,5,0,5058,4775,56,20,0,0,56,20
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,16,0,13508,10868,40,172,24,127,16,45
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Primary,12,0,7697,5687,24,127,24,127,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Secondary,4,0,5811,5181,16,45,0,0,16,45
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,18,0,14097,12056,194,95,167,37,27,58
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Primary,13,0,6951,5918,167,37,167,37,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Secondary,5,0,7146,6138,27,58,0,0,27,58
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,15,0,11648,10675,0,268,0,164,0,104
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Primary,9,0,3960,3180,0,164,0,164,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Secondary,6,0,7688,7495,0,104,0,0,0,104
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,9,0,7148,6614,164,47,164,0,0,47
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Primary,6,0,2751,2475,164,0,164,0,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Secondary,3,0,4397,4139,0,47,0,0,0,47
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,7,1,9376,8400,176,28,35,28,141,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Primary,3,0,2130,1792,35,28,35,28,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Secondary,4,1,7246,6608,141,0,0,0,141,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,13,0,11080,10086,0,151,0,91,0,60
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Primary,8,0,4350,3349,0,91,0,91,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Secondary,5,0,6730,6737,0,60,0,0,0,60
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,11,0,11638,11414,170,263,110,199,60,64
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Primary,6,0,3149,3098,110,199,110,199,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Secondary,5,0,8489,8316,60,64,0,0,60,64
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,9,1,9994,8293,0,174,0,94,0,80
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Primary,5,0,4410,3795,0,94,0,94,0,0
+202425,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Secondary,4,1,5584,4498,0,80,0,0,0,80
+202425,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,2,0,1470,1528,0,21,0,14,0,7
+202425,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Primary,1,0,420,411,0,14,0,14,0,0
+202425,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Secondary,1,0,1050,1117,0,7,0,0,0,7
+202324,Academic year,National,E92000001,England,,,,,,Total,1781,41,1271141,1142314,9828,19862,6552,11597,3256,8241
+202324,Academic year,National,E92000001,England,,,,,,Primary,1155,2,455569,404450,6541,11443,6529,11440,0,3
+202324,Academic year,National,E92000001,England,,,,,,Secondary,626,39,815572,737864,3287,8419,23,157,3256,8238
+202324,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,98,3,71385,58484,285,1547,223,1106,62,441
+202324,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Primary,69,0,31390,24116,223,1095,223,1095,0,0
+202324,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Secondary,29,3,39995,34368,62,452,0,11,62,441
+202324,Academic year,Regional,E92000001,England,E12000007,London,,,,Total,347,11,284880,250502,1365,5158,1018,3391,347,1743
+202324,Academic year,Regional,E92000001,England,E12000007,London,,,,Primary,235,0,119879,101518,1018,3342,1018,3342,0,0
+202324,Academic year,Regional,E92000001,England,E12000007,London,,,,Secondary,112,11,165001,148984,347,1816,0,49,347,1743
+202324,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Total,249,8,213495,192018,1080,3611,795,2285,285,1302
+202324,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Primary,166,0,88489,77402,795,2247,795,2247,0,0
+202324,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Secondary,83,8,125006,114616,285,1364,0,38,285,1302
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,9,0,6767,5417,186,0,124,0,62,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Primary,6,0,2238,1891,124,0,124,0,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Secondary,3,0,4529,3526,62,0,0,0,62,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,9,0,5840,4659,0,105,0,78,0,27
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Primary,7,0,3280,2217,0,78,0,78,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Secondary,2,0,2560,2442,0,27,0,0,0,27
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,1,0,210,209,11,0,11,0,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Primary,1,0,210,209,11,0,11,0,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,2,0,810,701,0,32,0,32,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Primary,2,0,810,701,0,32,0,32,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,1,0,350,247,64,0,64,0,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Primary,1,0,350,247,64,0,64,0,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,6,0,4152,3969,0,91,0,52,0,39
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Primary,3,0,1190,898,0,52,0,52,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Secondary,3,0,2962,3071,0,39,0,0,0,39
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,10,1,7143,5634,0,285,0,225,0,60
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Primary,7,0,3433,2156,0,225,0,225,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Secondary,3,1,3710,3478,0,60,0,0,0,60
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,12,0,9256,6921,0,206,0,120,0,86
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Primary,8,0,4545,3823,0,120,0,120,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Secondary,4,0,4711,3098,0,86,0,0,0,86
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,13,1,13422,11524,0,120,0,61,0,59
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Primary,7,0,3792,3108,0,61,0,61,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Secondary,6,1,9630,8416,0,59,0,0,0,59
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,6,0,2475,2015,24,78,24,78,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Primary,6,0,2475,2015,24,78,24,78,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,8,1,5952,5486,0,167,0,136,0,31
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Primary,6,0,2645,2405,0,125,0,125,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Secondary,2,1,3307,3081,0,42,0,11,0,31
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,15,0,11566,8869,0,382,0,266,0,116
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Primary,11,0,5190,3727,0,266,0,266,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Secondary,4,0,6376,5142,0,116,0,0,0,116
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,6,0,3442,2833,0,81,0,58,0,23
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Primary,4,0,1232,719,0,58,0,58,0,0
+202324,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Secondary,2,0,2210,2114,0,23,0,0,0,23
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,26,3,28767,24195,0,499,0,338,0,137
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Primary,19,0,13535,11515,0,314,0,314,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Secondary,7,3,15232,12680,0,185,0,24,0,137
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,14,1,10264,9549,0,250,0,127,0,123
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Primary,9,0,4022,3830,0,127,0,127,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Secondary,5,1,6242,5719,0,123,0,0,0,123
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,19,0,13576,11640,0,294,0,197,0,97
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Primary,13,0,5306,4611,0,197,0,197,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Secondary,6,0,8270,7029,0,97,0,0,0,97
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,7,1,6578,5916,0,155,0,118,0,37
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Primary,5,0,2443,1970,0,118,0,118,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Secondary,2,1,4135,3946,0,37,0,0,0,37
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,18,0,11978,11584,235,157,235,96,0,61
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Primary,15,0,6777,6353,235,96,235,96,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Secondary,3,0,5201,5231,0,61,0,0,0,61
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,17,1,12155,9770,0,295,0,222,0,73
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Primary,11,0,4951,4218,0,208,0,208,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Secondary,6,1,7204,5552,0,87,0,14,0,73
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,15,0,13064,12823,18,343,18,238,0,105
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Primary,10,0,4989,4756,18,238,18,238,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Secondary,5,0,8075,8067,0,105,0,0,0,105
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,14,0,13271,12089,0,248,0,115,0,133
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Primary,8,0,3600,3295,0,115,0,115,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Secondary,6,0,9671,8794,0,133,0,0,0,133
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,12,0,10868,9983,0,151,0,85,0,66
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Primary,8,0,5258,4510,0,85,0,85,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Secondary,4,0,5610,5473,0,66,0,0,0,66
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,9,0,6678,6454,121,21,77,21,44,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Primary,6,0,3528,3317,77,21,77,21,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Secondary,3,0,3150,3137,44,0,0,0,44,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,15,0,12188,10086,15,172,0,127,15,45
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Primary,11,0,6647,5026,0,127,0,127,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Secondary,4,0,5541,5060,15,45,0,0,15,45
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,19,0,13646,12432,203,97,176,39,27,58
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Primary,14,0,7160,6309,176,39,176,39,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Secondary,5,0,6486,6123,27,58,0,0,27,58
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,16,0,11838,11164,0,299,0,182,0,117
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Primary,10,0,4380,3681,0,182,0,182,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Secondary,6,0,7458,7483,0,117,0,0,0,117
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,9,0,6769,6299,156,47,156,0,0,47
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Primary,6,0,2514,2227,156,0,156,0,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Secondary,3,0,4255,4072,0,47,0,0,0,47
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,7,1,9803,8512,169,28,35,28,134,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Primary,3,0,2130,1836,35,28,35,28,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Secondary,4,1,7673,6676,134,0,0,0,134,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,12,0,10450,9592,0,141,0,83,0,58
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Primary,7,0,3720,2882,0,83,0,83,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Secondary,5,0,6730,6710,0,58,0,0,0,58
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,11,0,11638,11514,163,240,98,175,65,65
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Primary,6,0,3149,3206,98,175,98,175,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Secondary,5,0,8489,8308,65,65,0,0,65,65
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,9,1,9964,8416,0,174,0,94,0,80
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Primary,5,0,4380,3860,0,94,0,94,0,0
+202324,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Secondary,4,1,5584,4556,0,80,0,0,0,80
+202324,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,2,0,1470,1508,0,21,0,14,0,7
+202324,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Primary,1,0,420,413,0,14,0,14,0,0
+202324,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Secondary,1,0,1050,1095,0,7,0,0,0,7
+202223,Academic year,National,E92000001,England,,,,,,Total,1631,42,1159263,1045588,9010,17820,5912,10213,3098,7607
+202223,Academic year,National,E92000001,England,,,,,,Primary,1060,3,419044,376100,5904,10080,5894,10073,10,7
+202223,Academic year,National,E92000001,England,,,,,,Secondary,571,39,740219,669488,3106,7740,18,140,3088,7600
+202223,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Total,94,3,68731,57686,399,1458,188,1004,211,454
+202223,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Primary,65,0,29188,23123,188,993,188,993,0,0
+202223,Academic year,Regional,E92000001,England,E13000001,Inner London,,,,Secondary,29,3,39543,34563,211,465,0,11,211,454
+202223,Academic year,Regional,E92000001,England,E12000007,London,,,,Total,318,11,261729,232987,1506,4476,1039,2874,467,1602
+202223,Academic year,Regional,E92000001,England,E12000007,London,,,,Primary,215,0,109200,94419,1039,2825,1039,2825,0,0
+202223,Academic year,Regional,E92000001,England,E12000007,London,,,,Secondary,103,11,152529,138568,467,1651,0,49,467,1602
+202223,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Total,224,8,192998,175301,1107,3018,851,1870,256,1148
+202223,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Primary,150,0,80012,71296,851,1832,851,1832,0,0
+202223,Academic year,Regional,E92000001,England,E13000002,Outer London,,,,Secondary,74,8,112986,104005,256,1186,0,38,256,1148
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,9,0,6449,5506,300,0,89,0,211,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Primary,6,0,2106,1948,89,0,89,0,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Secondary,3,0,4343,3558,211,0,0,0,211,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,9,0,5852,4719,0,105,0,78,0,27
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Primary,7,0,3292,2241,0,78,0,78,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Secondary,2,0,2560,2478,0,27,0,0,0,27
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,1,0,210,202,11,0,11,0,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Primary,1,0,210,202,11,0,11,0,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,2,0,810,727,0,32,0,32,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Primary,2,0,810,727,0,32,0,32,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,1,0,350,284,64,0,64,0,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Primary,1,0,350,284,64,0,64,0,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,6,0,4152,4004,0,91,0,52,0,39
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Primary,3,0,1190,921,0,52,0,52,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Secondary,3,0,2962,3083,0,39,0,0,0,39
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,10,1,7143,5799,0,285,0,225,0,60
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Primary,7,0,3433,2312,0,225,0,225,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Secondary,3,1,3710,3487,0,60,0,0,0,60
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,12,0,9256,6887,0,206,0,120,0,86
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Primary,8,0,4545,3819,0,120,0,120,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Secondary,4,0,4711,3068,0,86,0,0,0,86
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,13,1,13422,11609,0,120,0,61,0,59
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Primary,7,0,3792,3167,0,61,0,61,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Secondary,6,1,9630,8442,0,59,0,0,0,59
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,6,0,2475,2003,24,78,24,78,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Primary,6,0,2475,2003,24,78,24,78,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,8,1,5952,5516,0,167,0,136,0,31
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Primary,6,0,2645,2456,0,125,0,125,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Secondary,2,1,3307,3060,0,42,0,11,0,31
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,11,0,9218,7442,0,293,0,164,0,129
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Primary,7,0,3108,2218,0,164,0,164,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Secondary,4,0,6110,5224,0,129,0,0,0,129
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,6,0,3442,2988,0,81,0,58,0,23
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Primary,4,0,1232,825,0,58,0,58,0,0
+202223,Academic year,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Secondary,2,0,2210,2163,0,23,0,0,0,23
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,24,3,27180,22411,100,282,84,150,16,132
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Primary,17,0,11435,9805,84,126,84,126,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Secondary,7,3,15745,12606,16,156,0,24,16,132
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,14,1,9709,9357,0,273,0,172,0,101
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Primary,10,0,4467,4279,0,172,0,172,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Secondary,4,1,5242,5078,0,101,0,0,0,101
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,7,1,6578,5902,0,155,0,118,0,37
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Primary,5,0,2443,1962,0,118,0,118,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Secondary,2,1,4135,3940,0,37,0,0,0,37
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,18,0,12038,11559,235,157,235,96,0,61
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Primary,15,0,6837,6390,235,96,235,96,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Secondary,3,0,5201,5169,0,61,0,0,0,61
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,16,1,11525,9366,0,275,0,202,0,73
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Primary,10,0,4321,3735,0,188,0,188,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Secondary,6,1,7204,5631,0,87,0,14,0,73
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,16,0,13904,13579,14,326,14,222,0,104
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Primary,11,0,5829,5592,14,222,14,222,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Secondary,5,0,8075,7987,0,104,0,0,0,104
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,14,0,13271,12097,0,248,0,115,0,133
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Primary,8,0,3600,3378,0,115,0,115,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Secondary,6,0,9671,8719,0,133,0,0,0,133
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,12,0,10707,9913,0,139,0,85,0,54
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Primary,8,0,5258,4479,0,85,0,85,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Secondary,4,0,5449,5434,0,54,0,0,0,54
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,7,0,5028,4813,97,24,65,24,32,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Primary,5,0,2928,2731,65,24,65,24,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Secondary,2,0,2100,2082,32,0,0,0,32,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,13,0,10703,9324,0,140,0,95,0,45
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Primary,9,0,5387,4404,0,95,0,95,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Secondary,4,0,5316,4920,0,45,0,0,0,45
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,20,0,13528,12525,191,113,164,55,27,58
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Primary,15,0,7160,6415,164,55,164,55,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Secondary,5,0,6368,6110,27,58,0,0,27,58
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,15,0,10650,10132,0,276,0,174,0,102
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Primary,10,0,4380,3851,0,174,0,174,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Secondary,5,0,6270,6281,0,102,0,0,0,102
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,9,0,6845,6347,156,47,156,0,0,47
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Primary,6,0,2588,2345,156,0,156,0,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Secondary,3,0,4257,4002,0,47,0,0,0,47
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,7,1,9280,8531,151,28,35,28,116,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Primary,3,0,2130,1854,35,28,35,28,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Secondary,4,1,7150,6677,116,0,0,0,116,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,12,0,10450,9509,0,139,0,83,0,56
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Primary,7,0,3720,2957,0,83,0,83,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Secondary,5,0,6730,6552,0,56,0,0,0,56
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,11,0,11638,11465,163,222,98,157,65,65
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Primary,6,0,3149,3259,98,157,98,157,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Secondary,5,0,8489,8206,65,65,0,0,65,65
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,9,1,9964,8471,0,174,0,94,0,80
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Primary,5,0,4380,3860,0,94,0,94,0,0
+202223,Academic year,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Secondary,4,1,5584,4611,0,80,0,0,0,80
+202223,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,2,0,1470,1478,0,21,0,14,0,7
+202223,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Primary,1,0,420,407,0,14,0,14,0,0
+202223,Academic year,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Secondary,1,0,1050,1071,0,7,0,0,0,7

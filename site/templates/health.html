@@ -83,6 +83,76 @@
 </figure>
 {% endif %}
 
+{% set ad = d.adhd %}
+{% if ad %}
+<h2 id="adhd">Waiting for an ADHD assessment</h2>
+<p>NHS England publishes monthly management information on people who may be waiting for an ADHD assessment. It counts referrals to NHS mental health services for "neurodevelopmental conditions, excluding autism", which also covers conditions such as dyslexia and Tourette syndrome, so it may overstate ADHD referrals. It doesn't include children waiting on community paediatrics lists, which are shown <a href="#nhs-waits">above</a>. The figures are for NHS North East London as a whole, not Waltham Forest alone, and cover children aged 5 to 17. NHS England rounds them to the nearest 5.</p>
+{% set p = ad.latest %}
+<figure class="metric" id="adhd-table">
+<figcaption><h3>Children who may be waiting for an ADHD assessment, {{ p }}</h3>
+<p class="explain">Children aged 5 to 17 with an open referral at the end of the month, and how long it had been open.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">Open referrals</th><th scope="col">Open a year or more</th><th scope="col">Open two years or more</th><th scope="col">No contact yet</th></tr></thead>
+<tbody>
+{% for a in ad.waiting.series %}
+<tr><th scope="row">{{ a }}</th>
+<td>{{ fmt(ad.waiting.series[a][p], "count") }}</td>
+<td>{{ fmt(ad.over52.series[a][p]) }}</td>
+<td>{{ fmt(ad.over104.series[a][p]) }}</td>
+<td>{{ fmt(ad.no_contact.series[a][p]) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% set nel = ad.counts["North East London"] %}
+<p class="note">In {{ p }}, {{ fmt(nel.ADHD003d, "count") }} children in North East London had a referral open for two years or more, up from {{ fmt(ad.first_counts["North East London"].ADHD003d, "count") }} in {{ ad.periods[0] }}. Fewer children in North East London are waiting with no contact at all than in London or England, but more have been waiting over a year. This suggests most children get a first contact and then wait for the assessment itself.</p>
+{% for m in (ad.over52, ad.over104, ad.no_contact) %}
+<h4 class="sub">{{ m.title }}</h4>
+<p class="explain">{{ m.explain }}</p>
+{{ charts.legend(m.series.keys())|safe }}
+{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=100)|safe }}
+<details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
+{% endfor %}
+<p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd">ADHD management information</a> (management information, experimental):
+{% for src in ad.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_adhd.zip">Extracted rows (zip)</a></p>
+</figure>
+{% endif %}
+
+{% set mh = d.cyp_mental_health %}
+{% if mh %}
+<h2 id="camhs">Waiting for children's mental health services (CAMHS)</h2>
+<p>NHS England publishes how long children and young people under 18 wait for a first contact with NHS-funded mental health services, over a rolling 3 months. "NELFT" counts children seen by the trust, which runs CAMHS in Waltham Forest and other boroughs. "North East London" counts children living or registered with a GP in the NHS North East London area. Neither is for Waltham Forest alone.</p>
+{% set p = mh.latest %}
+<figure class="metric" id="camhs-table">
+<figcaption><h3>Waits for a first contact, 3 months to {{ p }}</h3>
+<p class="explain">{% if mh.nelft_break %}NELFT's figures from {{ mh.nelft_break.after }} may not be comparable with earlier months (see below). {% endif %}"Still waiting" counts children who had not had a first contact by the end of the period, and how long they had waited so far. "Seen" counts children who had their first contact in the period, and how long they waited.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">Still waiting</th><th scope="col">Median wait so far</th><th scope="col">1 in 10 waited at least</th><th scope="col">Seen</th><th scope="col">Median wait to be seen</th><th scope="col">1 in 10 waited at least</th></tr></thead>
+<tbody>
+{% for a, v in mh.latest_values.items() %}
+<tr><th scope="row">{{ a }}</th>
+<td>{{ fmt(v.MHS133, "count") }}</td><td>{{ fmt(v.MHS134, "count") }} days</td><td>{{ fmt(v.MHS135, "count") }} days</td>
+<td>{{ fmt(v.MHS130, "count") }}</td><td>{{ fmt(v.MHS131, "count") }} days</td><td>{{ fmt(v.MHS132, "count") }} days</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% set nb = mh.nelft_break %}
+{% if nb %}
+<h4 class="sub">From {{ nb.after }}: a break in NELFT's figures</h4>
+<p>Between {{ nb.before }} and {{ nb.after }}, the number of children on NELFT's mental health caseload fell from {{ fmt(nb.caseload[0], "count") }} to {{ fmt(nb.caseload[1], "count") }}. The number still waiting for a first contact fell from {{ fmt(nb.waiting[0], "count") }} to {{ fmt(nb.waiting[1], "count") }}, and their median wait from {{ fmt(nb.median[0], "count") }} to {{ fmt(nb.median[1], "count") }} days. North East London, London and England show no such change. The same month brought a similar unexplained fall in NELFT's <a href="#autism">autism figures</a>. A change in how NELFT records or submits data is more likely than half its caseload being discharged in a month. NELFT's figures from {{ nb.after }} are in the table above but are kept off the charts below. The North East London line counts children by where they live, so it is not affected in the same way.</p>
+{% endif %}
+{% if mh.periods|length > 1 %}
+{% for m in (mh.median_waiting, mh.p90_waiting) %}
+<h4 class="sub">{{ m.title }}</h4>
+<p class="explain">{{ m.explain }}</p>
+{{ charts.legend(m.series.keys())|safe }}
+{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max)|safe }}
+<details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
+{% endfor %}
+{% if mh.missing %}<p class="note">No figures are shown for {{ mh.missing|join(", ") }} because that month's file hasn't been added yet.</p>{% endif %}
+{% endif %}
+<p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics">Mental Health Services Monthly Statistics</a> (measures MHS130 to MHS135):
+{% for src in mh.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_mhsds.zip">Extracted rows (zip)</a></p>
+</figure>
+{% endif %}
+
 <h2>What the council reports</h2>
 {{ ui.simple_table(local.health_waits) }}
 <p>The council reports that health advice for EHC needs assessments is returned within 6 weeks in "65-90%" of cases ({{ cite("hwb_oct2025_report", 4) }}). The legal deadline is 6 weeks ({{ cite("send_regs_2014", "regulation 8") }}). No exact figure or trend has been published.</p>

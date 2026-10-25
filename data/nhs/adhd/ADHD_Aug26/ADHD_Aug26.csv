@@ -1,0 +1,1313 @@
+REPORTING_PERIOD_START_DATE,REPORTING_PERIOD_END_DATE,BREAKDOWN,PRIMARY_LEVEL,PRIMARY_LEVEL_DESCRIPTION,INDICATOR_ID,VALUE
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003,4665
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003,145590
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD003,426980
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003,203170
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD003,25
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003a,265
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003a,15750
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD003a,51365
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003a,26575
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD003a,10
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003b,875
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003b,43270
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD003b,140060
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003b,50770
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD003b,5
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003c,1165
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003c,34830
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD003c,106185
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003c,49910
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003d,2365
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003d,51740
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD003d,129370
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003d,75915
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004,3150
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004,110350
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD004,326710
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004,120695
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD004,25
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004a,215
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004a,13875
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD004a,44225
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004a,23450
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD004a,10
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004b,650
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004b,31155
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD004b,98585
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004b,36365
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004c,820
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004c,25035
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD004c,77435
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004c,31480
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004d,1470
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004d,40285
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD004d,106465
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004d,29400
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005,1515
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005,35240
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD005,100270
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005,82475
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005a,590
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005a,13635
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD005a,41710
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005a,32355
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD005a,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005b,220
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005b,13830
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD005b,43335
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005b,26010
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005c,215
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3745
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD005c,6775
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005c,12730
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005d,490
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005d,4030
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD005d,8455
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005d,11380
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006,200
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006,4670
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD006,13150
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006,9725
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006a,95
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006a,1030
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD006a,3010
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006a,4070
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006b,10
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006b,910
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD006b,2475
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006b,2335
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006c,20
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006c,800
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD006c,2510
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006c,975
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006d,75
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1930
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD006d,5155
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006d,2345
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/06/2026,30/06/2026,Age Group,0 to 4,People aged 0 to 4,ADHD007,135
+01/06/2026,30/06/2026,Age Group,18 to 24,People aged 18 to 24,ADHD007,6250
+01/06/2026,30/06/2026,Age Group,25+,People aged 25+,ADHD007,20465
+01/06/2026,30/06/2026,Age Group,5 to 17,People aged 5 to 17,ADHD007,10250
+01/06/2026,30/06/2026,Age Group,Unknown,People aged Unknown,ADHD007,5
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003,4715
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003,130790
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD003,376360
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003,199995
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD003,25
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003a,340
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003a,14020
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD003a,44515
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003a,23715
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD003a,10
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003b,875
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003b,35645
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD003b,115895
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003b,52200
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003c,1145
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003c,29855
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD003c,88340
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003c,50060
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003d,2355
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003d,51275
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD003d,127610
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003d,74020
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004,3305
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004,97095
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD004,281910
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004,120070
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD004,25
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004a,300
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004a,12145
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD004a,37660
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004a,20420
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD004a,10
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004b,640
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004b,23850
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD004b,75235
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004b,38550
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004c,820
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004c,21005
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD004c,63650
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004c,32040
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004d,1550
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004d,40090
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD004d,105365
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004d,29060
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005,1410
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005,33695
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD005,94450
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005,79925
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005a,590
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005a,12770
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD005a,38000
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005a,31665
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD005a,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005b,220
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005b,13445
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD005b,41920
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005b,25470
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005c,195
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3600
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD005c,6595
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005c,12215
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005d,400
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3880
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD005d,7935
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005d,10575
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006,185
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006,3995
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD006,10680
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006,9490
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006a,105
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006a,945
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD006a,2545
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3705
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006b,15
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006b,755
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD006b,2400
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006b,2865
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006c,20
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006c,530
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD006c,1465
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1030
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006d,45
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1765
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD006d,4270
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1890
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/05/2026,31/05/2026,Age Group,0 to 4,People aged 0 to 4,ADHD007,185
+01/05/2026,31/05/2026,Age Group,18 to 24,People aged 18 to 24,ADHD007,4990
+01/05/2026,31/05/2026,Age Group,25+,People aged 25+,ADHD007,15935
+01/05/2026,31/05/2026,Age Group,5 to 17,People aged 5 to 17,ADHD007,8985
+01/05/2026,31/05/2026,Age Group,Unknown,People aged Unknown,ADHD007,10
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003,2470
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003,123980
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD003,353140
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003,175195
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD003,15
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003a,190
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003a,13750
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD003a,42535
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003a,21315
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD003a,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003b,560
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003b,33255
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD003b,107825
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003b,42325
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003c,675
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003c,27940
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD003c,81600
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003c,45860
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1045
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003d,49030
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD003d,121180
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003d,65695
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004,1255
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004,91885
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD004,264265
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004,101015
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD004,15
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004a,150
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004a,11560
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD004a,34895
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004a,17825
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD004a,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004b,325
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004b,22140
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD004b,69305
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004b,30020
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004c,380
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004c,20045
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD004c,60360
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004c,28610
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004d,405
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004d,38135
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD004d,99700
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004d,24560
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005,1215
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005,32095
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD005,88875
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005,74180
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005a,585
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005a,11935
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD005a,34640
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005a,29910
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005b,215
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005b,12990
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD005b,40565
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005b,23885
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005c,155
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3375
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD005c,6120
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005c,11040
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005d,260
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3795
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD005d,7550
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005d,9345
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006,170
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006,3825
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD006,10950
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006,7575
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006a,95
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006a,980
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD006a,2705
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3205
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006b,10
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006b,780
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD006b,2555
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1185
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006c,15
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006c,500
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD006c,1585
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1015
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006d,50
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1565
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD006d,4100
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006d,2170
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/04/2026,30/04/2026,Age Group,0 to 4,People aged 0 to 4,ADHD007,125
+01/04/2026,30/04/2026,Age Group,18 to 24,People aged 18 to 24,ADHD007,4420
+01/04/2026,30/04/2026,Age Group,25+,People aged 25+,ADHD007,13385
+01/04/2026,30/04/2026,Age Group,5 to 17,People aged 5 to 17,ADHD007,8150
+01/04/2026,30/04/2026,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003,3325
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003,113925
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD003,324715
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003,182265
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD003,30
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003a,300
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003a,12815
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD003a,39690
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003a,21565
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD003a,20
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003b,805
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003b,29090
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD003b,93655
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003b,43730
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003c,875
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003c,26090
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD003c,77200
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003c,47875
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1345
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003d,45930
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD003d,114175
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003d,69090
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004,1975
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004,82375
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD004,235870
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004,100170
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD004,30
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004a,255
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004a,10725
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD004a,32065
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004a,17900
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD004a,20
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004b,535
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004b,18225
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD004b,55960
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004b,30585
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004c,565
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004c,18925
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD004c,57915
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004c,28255
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004d,625
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004d,34500
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD004d,89930
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004d,23430
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005,1350
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005,31550
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD005,88850
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005,82095
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005a,610
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005a,11065
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD005a,31895
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005a,32005
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005b,230
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005b,13275
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD005b,42350
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005b,27855
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005c,195
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3425
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD005c,6850
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005c,11730
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005d,310
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3785
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD005d,7750
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005d,10505
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006,455
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006,3720
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD006,10610
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006,11965
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006a,110
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006a,910
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD006a,2185
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3755
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006b,15
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006b,610
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD006b,1970
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006b,2550
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006c,35
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006c,655
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD006c,2080
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1525
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006d,295
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1545
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD006d,4365
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006d,4135
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/03/2026,31/03/2026,Age Group,0 to 4,People aged 0 to 4,ADHD007,200
+01/03/2026,31/03/2026,Age Group,18 to 24,People aged 18 to 24,ADHD007,5180
+01/03/2026,31/03/2026,Age Group,25+,People aged 25+,ADHD007,15250
+01/03/2026,31/03/2026,Age Group,5 to 17,People aged 5 to 17,ADHD007,11255
+01/03/2026,31/03/2026,Age Group,Unknown,People aged Unknown,ADHD007,15
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003,3350
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003,119450
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD003,336615
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003,179115
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD003,20
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003a,300
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003a,11950
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD003a,35945
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003a,18880
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD003a,5
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003b,835
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003b,29495
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD003b,95390
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003b,44715
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD003b,5
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003c,870
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003c,27945
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD003c,81365
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003c,47390
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1345
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003d,50060
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD003d,123915
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003d,68130
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004,2030
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004,86515
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD004,241425
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004,98395
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD004,20
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004a,265
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004a,10185
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD004a,29925
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004a,15495
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD004a,5
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004b,545
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004b,18395
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD004b,56250
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004b,30460
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD004b,5
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004c,590
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004c,19460
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD004c,56360
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004c,28140
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004d,630
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004d,38480
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD004d,98885
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004d,24300
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005,1325
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005,32930
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD005,95190
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005,80720
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005a,600
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005a,9940
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD005a,27745
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005a,32025
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005b,225
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005b,14705
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD005b,48360
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005b,28300
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005c,185
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005c,4420
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD005c,11485
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005c,11070
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005d,315
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3865
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD005d,7595
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005d,9325
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006,200
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006,3510
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD006,9025
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006,8310
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006a,110
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006a,755
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD006a,1840
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3155
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006b,10
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006b,585
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD006b,1745
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1520
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006c,40
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006c,550
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD006c,1340
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1090
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006d,40
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1625
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD006d,4095
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006d,2545
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/02/2026,28/02/2026,Age Group,0 to 4,People aged 0 to 4,ADHD007,190
+01/02/2026,28/02/2026,Age Group,18 to 24,People aged 18 to 24,ADHD007,4695
+01/02/2026,28/02/2026,Age Group,25+,People aged 25+,ADHD007,14080
+01/02/2026,28/02/2026,Age Group,5 to 17,People aged 5 to 17,ADHD007,9490
+01/02/2026,28/02/2026,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003,3305
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003,116600
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD003,326155
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003,170370
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD003,25
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003a,310
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003a,11650
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD003a,35700
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003a,17225
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD003a,15
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003b,900
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003b,29860
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD003b,95815
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003b,43695
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD003b,5
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003c,850
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003c,27245
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD003c,78325
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003c,45555
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1250
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD003d,47840
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD003d,116320
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD003d,63900
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004,2030
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004,88525
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD004,249415
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004,92940
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD004,25
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004a,265
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004a,10095
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD004a,30190
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004a,14545
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD004a,10
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004b,610
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004b,18805
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD004b,56920
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004b,29440
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD004b,5
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004c,580
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004c,22340
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD004c,67315
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004c,27140
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD004d,575
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD004d,37285
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD004d,94990
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD004d,21815
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005,1275
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005,28075
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD005,76740
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005,77430
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005a,600
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005a,9145
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD005a,24890
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005a,31260
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD005a,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005b,220
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005b,12000
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD005b,38155
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005b,27070
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005c,175
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3200
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD005c,6350
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005c,10810
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD005d,285
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3730
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD005d,7345
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD005d,8290
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006,210
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006,3305
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD006,8635
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006,7105
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD006,5
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006a,85
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006a,735
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD006a,1695
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006a,2950
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD006a,5
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006b,20
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006b,590
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD006b,1920
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1065
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006c,30
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006c,485
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD006c,1355
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1090
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD006d,75
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1495
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD006d,3660
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD006d,2000
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/01/2026,31/01/2026,Age Group,0 to 4,People aged 0 to 4,ADHD007,175
+01/01/2026,31/01/2026,Age Group,18 to 24,People aged 18 to 24,ADHD007,4320
+01/01/2026,31/01/2026,Age Group,25+,People aged 25+,ADHD007,12840
+01/01/2026,31/01/2026,Age Group,5 to 17,People aged 5 to 17,ADHD007,8525
+01/01/2026,31/01/2026,Age Group,Unknown,People aged Unknown,ADHD007,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3350
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,108395
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD003,302455
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,167115
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD003,20
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,325
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,11740
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD003a,35835
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,16795
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD003a,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,935
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,27600
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD003b,88705
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,43405
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD003b,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,825
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,26110
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD003c,75290
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,45025
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1260
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,42950
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD003d,102625
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,61890
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2050
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,82430
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD004,232935
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,91230
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD004,20
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,260
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,10505
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD004a,31800
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,14095
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD004a,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,650
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,17360
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD004b,52610
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,29365
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD004b,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,560
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,21720
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD004c,66035
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,26855
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,575
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,32845
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD004d,82490
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,20915
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1300
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,25965
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD005,69520
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,75885
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,610
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,7985
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD005a,20675
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,30890
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,215
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,11365
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD005b,36060
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,26645
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD005b,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,185
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3105
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD005c,6085
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,10600
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,290
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3510
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD005d,6700
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,7750
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,190
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,2850
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD006,7900
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,6730
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,120
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,690
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD006a,1755
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3260
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD006a,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,15
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,615
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD006b,2175
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1230
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,15
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,505
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD006c,1340
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,770
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,40
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1040
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD006d,2635
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1475
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/12/2025,31/12/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,210
+01/12/2025,31/12/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,4380
+01/12/2025,31/12/2025,Age Group,25+,People aged 25+,ADHD007,12135
+01/12/2025,31/12/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,8230
+01/12/2025,31/12/2025,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3300
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,105645
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD003,294465
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,165275
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD003,15
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,310
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,11600
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD003a,37035
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,17265
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD003a,5
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,945
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,26265
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD003b,83640
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,43345
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,825
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,26280
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD003c,75380
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,44475
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1220
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,41500
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD003d,98405
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,60190
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2025
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,81945
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD004,233040
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,90535
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD004,15
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,250
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,10505
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD004a,33595
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,14405
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD004a,5
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,675
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,17395
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD004b,53025
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,29485
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,550
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,22225
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD004c,67235
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,26355
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,550
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,31815
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD004d,79185
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,20290
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1275
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,23700
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD005,61420
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,74740
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,595
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,7435
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD005a,18710
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,30705
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,210
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,9975
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD005b,30570
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,26190
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,180
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,2945
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD005c,5685
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,10365
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,290
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3345
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD005d,6455
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,7480
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,190
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,3360
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD006,9775
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,6780
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,100
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,745
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD006a,1810
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,2830
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD006a,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,25
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,750
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD006b,2575
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1490
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,20
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,480
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD006c,1345
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,885
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,45
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1380
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD006d,4045
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1570
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/11/2025,30/11/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,195
+01/11/2025,30/11/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,4305
+01/11/2025,30/11/2025,Age Group,25+,People aged 25+,ADHD007,13510
+01/11/2025,30/11/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,8185
+01/11/2025,30/11/2025,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3315
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,109990
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD003,307715
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,164455
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD003,15
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,335
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,12720
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD003a,40765
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,15265
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD003a,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,955
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,30055
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD003b,93810
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,46175
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,810
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,26855
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD003c,77785
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,44500
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1215
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,40360
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD003d,95355
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,58510
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD003d,5
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2055
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,88145
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD004,253155
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,90390
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD004,15
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,285
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,11740
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD004a,37875
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,12905
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD004a,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,690
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,22445
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD004b,68935
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,31870
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,535
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,22895
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD004c,69600
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,26325
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,550
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,31065
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD004d,76740
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,19295
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD004d,5
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1260
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,21845
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD005,54560
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,74060
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,580
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,7110
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD005a,17365
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,30375
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,205
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,8845
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD005b,25780
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,26070
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,185
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,2770
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD005c,5390
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,10360
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,285
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,3120
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD005d,6025
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,7250
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,205
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,4185
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD006,11245
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,7755
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,100
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,895
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD006a,2230
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3400
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD006a,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,30
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,825
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD006b,2810
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1755
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,25
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,735
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD006c,1915
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,985
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,50
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1730
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD006d,4290
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1610
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/10/2025,31/10/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,230
+01/10/2025,31/10/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,5690
+01/10/2025,31/10/2025,Age Group,25+,People aged 25+,ADHD007,17510
+01/10/2025,31/10/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,9070
+01/10/2025,31/10/2025,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3265
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,100325
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD003,273735
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,162090
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD003,15
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,325
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,10280
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD003a,32855
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,16460
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD003a,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,935
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,24675
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD003b,75040
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,45045
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,790
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,25795
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD003c,73270
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,43650
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1215
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,39570
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD003d,92565
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,56940
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD003d,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2045
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,77675
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD004,215100
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,89560
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD004,15
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,280
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,9525
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD004a,30795
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,14050
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD004a,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,695
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,17955
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD004b,53865
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,31220
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,520
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,19795
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD004c,56415
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,25720
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,550
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,30400
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD004d,74030
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,18570
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD004d,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1220
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,22650
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD005,58635
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,72530
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,565
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,6900
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD005a,16475
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,30125
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,185
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,9050
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD005b,26310
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,25395
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,175
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3765
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD005c,10090
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,10025
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,290
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,2935
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD005d,5755
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,6985
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,150
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,4565
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD006,11405
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,6340
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,65
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,785
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD006a,1760
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,2800
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,25
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,965
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD006b,2995
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1170
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,20
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,745
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD006c,1975
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,920
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,35
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,2070
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD006d,4680
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1450
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/09/2025,30/09/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,155
+01/09/2025,30/09/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,4220
+01/09/2025,30/09/2025,Age Group,25+,People aged 25+,ADHD007,12720
+01/09/2025,30/09/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,8200
+01/09/2025,30/09/2025,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3265
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,99670
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD003,268805
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,158925
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD003,10
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,395
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,9880
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD003a,32025
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,16745
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD003a,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,885
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,24210
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD003b,71390
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,42690
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,775
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,26395
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD003c,75320
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,43790
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD003c,5
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1215
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,39185
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD003d,90070
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,55700
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD003d,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2080
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,78895
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD004,216270
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,87505
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD004,10
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,340
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,9240
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD004a,30165
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,14105
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD004a,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,675
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,18540
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD004b,54630
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,29640
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,505
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,20650
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD004c,59110
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,25670
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD004c,5
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,560
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,30460
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD004d,72365
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,18090
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD004d,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1185
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,20780
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD005,52535
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,71420
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,565
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,6620
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD005a,15690
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,30045
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,165
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,7780
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD005b,21330
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,24845
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,170
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3690
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD005c,10090
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,9905
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,280
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,2690
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD005d,5425
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,6620
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,175
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,2970
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD006,7565
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,6425
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,90
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,670
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD006a,1610
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,2650
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD006a,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,20
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,1015
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD006b,2810
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1225
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,25
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,415
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD006c,1185
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1115
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,40
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,870
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD006d,1955
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1435
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/08/2025,31/08/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,180
+01/08/2025,31/08/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,3560
+01/08/2025,31/08/2025,Age Group,25+,People aged 25+,ADHD007,10805
+01/08/2025,31/08/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,4955
+01/08/2025,31/08/2025,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3265
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,99455
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD003,265310
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,157800
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD003,10
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,425
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,9680
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD003a,31245
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,19840
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD003a,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,845
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,24365
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD003b,70740
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,40315
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,815
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,27125
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD003c,76750
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,43120
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1185
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,38285
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD003d,86580
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,54520
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD003d,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2105
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,79665
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD004,216135
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,87810
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD004,10
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,370
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,9030
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD004a,29485
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,17095
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD004a,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,645
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,19160
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD004b,55445
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,27750
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,520
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,21800
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD004c,62020
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,25335
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,570
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,29675
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD004d,69185
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,17630
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD004d,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1160
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,19790
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD005,49175
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,69990
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,560
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,6580
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD005a,15410
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,29810
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,165
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,7025
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD005b,18825
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,24555
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,160
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3495
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD005c,9410
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,9445
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,275
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,2685
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD005d,5530
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,6175
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,205
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,3610
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD006,9135
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,8395
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,125
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,710
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD006a,1795
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,4040
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,25
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,1305
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD006b,3525
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1910
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD006b,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,25
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,555
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD006c,1595
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1045
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,30
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,1040
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD006d,2225
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1405
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/07/2025,31/07/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,250
+01/07/2025,31/07/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,4220
+01/07/2025,31/07/2025,Age Group,25+,People aged 25+,ADHD007,13200
+01/07/2025,31/07/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,10600
+01/07/2025,31/07/2025,Age Group,Unknown,People aged Unknown,ADHD007,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003,3225
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003,96650
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD003,254745
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003,156950
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD003,10
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003a,440
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003a,8775
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD003a,27180
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003a,19030
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD003a,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003b,840
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003b,24030
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD003b,69460
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003b,41850
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD003b,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003c,810
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003c,27490
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD003c,77310
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003c,43380
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD003c,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD003d,1140
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD003d,36350
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD003d,80790
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD003d,52690
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD003d,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004,2115
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004,77395
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD004,209980
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004,86155
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD004,10
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004a,380
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004a,8130
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD004a,25315
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004a,16320
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD004a,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004b,650
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004b,19190
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD004b,56045
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004b,28600
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD004b,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004c,535
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004c,22470
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD004c,64450
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004c,25125
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD004c,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD004d,555
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD004d,27600
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD004d,64170
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD004d,16110
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD004d,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005,1110
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005,19260
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD005,44765
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005,70790
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD005,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005a,560
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005a,6580
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD005a,15200
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005a,30220
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005b,145
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005b,6805
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD005b,15910
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005b,24915
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005c,160
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005c,3415
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD005c,8410
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005c,9615
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD005d,250
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD005d,2460
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD005d,5240
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD005d,6040
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006,185
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006,2870
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD006,7145
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006,7170
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD006,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006a,95
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006a,710
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD006a,1715
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006a,3495
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD006a,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006b,20
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006b,795
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD006b,2225
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006b,1395
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006c,40
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006c,725
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD006c,1865
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006c,1225
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD006c,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD006d,30
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD006d,640
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD006d,1345
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD006d,1055
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD006d,*
+01/06/2025,30/06/2025,Age Group,0 to 4,People aged 0 to 4,ADHD007,230
+01/06/2025,30/06/2025,Age Group,18 to 24,People aged 18 to 24,ADHD007,3595
+01/06/2025,30/06/2025,Age Group,25+,People aged 25+,ADHD007,11525
+01/06/2025,30/06/2025,Age Group,5 to 17,People aged 5 to 17,ADHD007,9940
+01/06/2025,30/06/2025,Age Group,Unknown,People aged Unknown,ADHD007,*

@@ -77,6 +77,18 @@ publications:
     title: Suspensions and permanent exclusions in England
     publisher: Department for Education
     url: https://explore-education-statistics.service.gov.uk/find-statistics/suspensions-and-permanent-exclusions-in-england
+  ehe:
+    title: Elective home education
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/elective-home-education
+  cme:
+    title: Children missing education
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/children-missing-education
+  capacity:
+    title: School capacity
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/school-capacity
 
 datasets:
   ehcp_caseload:
@@ -218,6 +230,36 @@ datasets:
     title: NEET by characteristics
     keep:
       characteristic_grouping: [Total, SEND]
+
+  ehe_census:
+    publication: ehe
+    api_id: 019bb857-0b36-7011-8d52-15ea8c0d18b0  # "Elective home education at census date"
+    keep:
+      breakdown_topic: [Total]
+
+  cme_census:
+    publication: cme
+    api_id: 019bb854-d8d5-707a-bc53-e0de9ac70891  # "Children missing education at census date"
+    keep:
+      breakdown_topic: [Total]
+
+  # School capacity: the specialist figures are Official Statistics in
+  # Development, collected each May. Published once a year (usually spring).
+  special_school_capacity:
+    publication: capacity
+    file_id: 64be036b-167b-4870-a26d-e7389a23c9e0
+    title: Special school capacity - school
+    school_rows: true  # one row per special school in England; totals are added up in metrics.py
+
+  specialist_unit_capacity:
+    publication: capacity
+    file_id: 2349aaee-6062-40ef-a6b1-4756b5538469
+    title: Specialist provision capacity in mainstream schools - national, regional, local authority
+
+  specialist_forecasts:
+    publication: capacity
+    file_id: 7ee937bb-686b-4389-9312-d4ebe56a452d
+    title: Local authority specialist provision pupil forecasts - national, regional, local authority
 
 # The SEND Tribunal appeal rate by local authority is published by DfE as a
 # supporting (non-tidy) CSV inside the EHCP release, not as a data set.

@@ -144,6 +144,12 @@ def compute():
         "growth": M.caseload_growth(),
         "placements": M.placements(),
         "primary_need": M.primary_need(),
+        "special_schools": M.special_schools(),
+        "specialist_units": M.specialist_units(),
+        "specialist_forecasts": M.specialist_forecasts(),
+        "home_education": M.home_education(),
+        "missing_education": M.missing_education(),
+        "ehcp_home_educated": M.ehcp_home_educated(),
         "prevalence": M.sen_prevalence(),
         "ar": ar,
         "appeal_rate": M.appeal_rate(),
@@ -158,6 +164,8 @@ def compute():
         "neet": M.neet(),
         "community_waits": M.community_waits(),
         "autism": M.autism(),
+        "adhd": M.adhd(),
+        "cyp_mental_health": M.cyp_mental_health(),
     }
 
 
@@ -198,6 +206,7 @@ PAGES = [
     ("index.html", "Overview"),
     ("assessments.html", "Assessments"),
     ("plans.html", "EHC plans"),
+    ("places.html", "Places"),
     ("reviews.html", "Annual reviews"),
     ("outcomes.html", "Outcomes"),
     ("health.html", "Health"),
@@ -248,7 +257,7 @@ def main():
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))
     # NHS extracts are folders of CSVs, so publish each dataset as one zip
-    for ds in ("community_waits", "autism"):
+    for ds in ("community_waits", "autism", "adhd", "mhsds"):
         src = ROOT / "data" / "nhs" / ds
         if src.is_dir() and any(src.iterdir()):
             shutil.make_archive(str(OUT / "data" / f"nhs_{ds}"), "zip", src)

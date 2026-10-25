@@ -21,3 +21,21 @@ releases:
     date: 2027-06-24
     status: provisional
     url: https://www.gov.uk/government/statistics/announcements/special-educational-needs-in-england-academic-year-202627
+  - key: ehe
+    title: "Elective home education: Autumn term 2026/27"
+    covers: Children electively home educated in each council area, autumn term 2026
+    date: 2027-01-28
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/elective-home-education-autumn-term-202627
+  - key: cme
+    title: "Children missing education: Autumn term 2026/27"
+    covers: Children missing education in each council area, autumn term 2026
+    date: 2027-01-28
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/children-missing-education-autumn-term-202627
+  - key: capacity
+    title: "School capacity in England: academic year 2025 to 2026"
+    covers: Special school places and specialist places in mainstream schools in May 2026, and councils' forecasts of pupils needing a specialist place
+    date: 2027-03-25
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/school-capacity-in-england-academic-year-2025-to-2026

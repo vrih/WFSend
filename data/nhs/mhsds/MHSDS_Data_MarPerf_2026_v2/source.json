@@ -1,0 +1,14 @@
+{
+  "dataset": "mhsds",
+  "original_file": "MHSDS Data_MarPerf_2026_v2.zip",
+  "original_sha256": "a75ef083147a747d0d18902ca8c153c1c34211b14c52e6ab0a42331363fbab78",
+  "original_bytes": 4076264,
+  "extracted": "2026-10-25",
+  "files": [
+    {
+      "file": "MHSDS Data_MarPerf_2026_v2.csv",
+      "rows_kept": 40
+    }
+  ],
+  "trimmed": "2026-10-25"
+}

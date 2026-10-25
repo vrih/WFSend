@@ -1,0 +1,371 @@
+time_period,time_identifier,geographic_level,country_code,country_name,region_code,region_name,old_la_code,new_la_code,la_name,breakdown_topic,breakdown,child_count,child_percent,rate_per_100
+202526,Autumn term,National,E92000001,England,,,,,,Total,Total,126000,100,1.5000000
+202526,Autumn term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3910,100,0.9000000
+202526,Autumn term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,8700,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,640,100,1.8000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,low
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,270,100,1.2000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,210,100,0.6000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,210,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,320,100,1.4000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,100,100,0.7000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,270,100,0.8000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,480,100,1.2000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,390,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,390,100,0.9000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,190,100,low
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,180,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,310,100,0.9000000
+202526,Autumn term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,580,100,1.1000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,670,100,1.6000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,580,100,1.3000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,380,100,0.6000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,460,100,1.1000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,430,100,0.9000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,530,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,770,100,1.2000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,670,100,1.2000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,630,100,1.1000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,310,100,0.8000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,520,100,1.2000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,490,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,520,100,1.1000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,250,100,1.0000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,230,100,0.7000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,360,100,0.7000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,170,100,0.5000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,300,100,0.8000000
+202526,Autumn term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,450,100,1.1000000
+202425,Autumn term,National,E92000001,England,,,,,,Total,Total,111700,100,1.4000000
+202425,Autumn term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3730,100,0.9000000
+202425,Autumn term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,8050,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,600,100,1.8000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,low
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,230,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,360,100,1.0000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,210,100,1.0000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,300,100,1.3000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,100,100,0.7000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,210,100,0.6000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,520,100,1.3000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,380,100,1.0000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,390,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,170,100,low
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,140,100,0.8000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,310,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,410,100,0.8000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,570,100,1.3000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,550,100,1.3000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,420,100,0.7000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,410,100,1.0000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,400,100,0.8000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,430,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,770,100,1.3000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,640,100,1.2000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,500,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,320,100,0.8000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,410,100,1.0000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,420,100,0.9000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,530,100,1.2000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,280,100,1.1000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,240,100,0.7000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,320,100,0.6000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,200,100,0.6000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,280,100,0.8000000
+202425,Autumn term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,380,100,0.9000000
+202324,Autumn term,National,E92000001,England,,,,,,Total,Total,92000,100,1.1000000
+202324,Autumn term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3290,100,0.8000000
+202324,Autumn term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,7040,100,0.8000000
+202324,Autumn term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,470,100,1.4000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,low
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,230,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,x,x,x
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,180,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,270,100,1.2000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,110,100,0.7000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,220,100,0.6000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,440,100,1.1000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,360,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,290,100,0.7000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,160,100,low
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,130,100,0.7000000
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,x,x,x
+202324,Autumn term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,350,100,0.6000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,440,100,1.0000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,410,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,380,100,0.6000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,310,100,0.8000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,420,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,370,100,0.8000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,670,100,1.1000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,570,100,1.0000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,490,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,310,100,0.8000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,310,100,0.8000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,390,100,0.8000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,410,100,0.9000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,260,100,1.0000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,220,100,0.7000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,310,100,0.6000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,200,100,0.6000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,250,100,0.7000000
+202324,Autumn term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,340,100,0.8000000
+202223,Autumn term,National,E92000001,England,,,,,,Total,Total,80900,100,1.0000000
+202223,Autumn term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3160,100,0.7000000
+202223,Autumn term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,6380,100,0.8000000
+202223,Autumn term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,x,x,x
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,230,100,0.9000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,x,x,x
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,150,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,260,100,1.1000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,110,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,210,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,440,100,1.1000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,290,100,0.8000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,240,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,150,100,low
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,160,100,0.8000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,200,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,x,x,x
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,470,100,1.1000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,350,100,0.8000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,340,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,260,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,x,x,x
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,330,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,590,100,1.0000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,490,100,0.9000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,440,100,0.8000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,240,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,280,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,320,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,400,100,0.9000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,260,100,1.0000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,180,100,0.6000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,270,100,0.5000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,210,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,260,100,0.7000000
+202223,Autumn term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,360,100,0.9000000
+202425,Spring term,National,E92000001,England,,,,,,Total,Total,123300,100,1.5000000
+202425,Spring term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3830,100,0.9000000
+202425,Spring term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,8580,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,640,100,1.9000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,0.5000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,260,100,1.1000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,280,100,0.8000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,210,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,310,100,1.4000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,100,100,0.6000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,270,100,0.8000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,510,100,1.3000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,380,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,390,100,0.9000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,180,100,low
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,170,100,0.9000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,340,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,430,100,0.8000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,600,100,1.4000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,530,100,1.2000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,530,100,0.8000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,450,100,1.1000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,450,100,0.9000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,480,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,850,100,1.4000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,650,100,1.2000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,560,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,340,100,0.8000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,430,100,1.0000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,430,100,0.9000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,520,100,1.1000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,290,100,1.1000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,230,100,0.7000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,350,100,0.7000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,180,100,0.6000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,290,100,0.8000000
+202425,Spring term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,430,100,1.1000000
+202324,Spring term,National,E92000001,England,,,,,,Total,Total,103500,100,1.3000000
+202324,Spring term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3490,100,0.8000000
+202324,Spring term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,7570,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,510,100,1.5000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,low
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,220,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,330,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,170,100,0.8000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,290,100,1.2000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,110,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,210,100,0.6000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,480,100,1.1000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,370,100,1.0000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,300,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,170,100,low
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,140,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,310,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,400,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,540,100,1.2000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,470,100,1.1000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,410,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,340,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,440,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,420,100,0.8000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,720,100,1.2000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,620,100,1.1000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,470,100,0.8000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,340,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,360,100,0.9000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,400,100,0.8000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,450,100,1.0000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,280,100,1.1000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,220,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,310,100,0.6000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,190,100,0.6000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,240,100,0.7000000
+202324,Spring term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,360,100,0.9000000
+202223,Spring term,National,E92000001,England,,,,,,Total,Total,86200,100,1.1000000
+202223,Spring term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3170,100,0.7000000
+202223,Spring term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,6660,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,x,x,x
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,0.6000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,230,100,0.9000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,x,x,x
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,160,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,300,100,1.3000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,120,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,190,100,0.5000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,430,100,1.0000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,320,100,0.9000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,250,100,0.6000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,150,100,low
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,170,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,250,100,0.7000000
+202223,Spring term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,350,100,0.6000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,510,100,1.2000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,350,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,370,100,0.6000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,270,100,0.7000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,x,x,x
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,380,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,570,100,1.0000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,510,100,0.9000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,470,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,260,100,0.7000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,310,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,370,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,360,100,0.8000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,270,100,1.1000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,190,100,0.6000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,270,100,0.5000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,210,100,0.7000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,260,100,0.7000000
+202223,Spring term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,360,100,0.9000000
+202425,Summer term,National,E92000001,England,,,,,,Total,Total,137200,100,1.7000000
+202425,Summer term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,4150,100,1.0000000
+202425,Summer term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,9160,100,1.1000000
+202425,Summer term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,710,100,2.1000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,0.8000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,280,100,1.1000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,360,100,1.0000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,240,100,1.1000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,330,100,1.4000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,120,100,0.8000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,290,100,0.8000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,580,100,1.4000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,390,100,1.0000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,390,100,0.9000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,210,100,0.5000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,190,100,1.0000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,330,100,0.9000000
+202425,Summer term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,470,100,0.9000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,700,100,1.6000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,570,100,1.3000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,440,100,0.7000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,510,100,1.3000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,450,100,0.9000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,530,100,1.1000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,840,100,1.4000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,710,100,1.3000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,620,100,1.1000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,340,100,0.8000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,500,100,1.2000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,490,100,1.0000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,570,100,1.2000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,300,100,1.2000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,250,100,0.8000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,380,100,0.7000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,210,100,0.7000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,320,100,0.9000000
+202425,Summer term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,450,100,1.1000000
+202324,Summer term,National,E92000001,England,,,,,,Total,Total,117900,100,1.4000000
+202324,Summer term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3870,100,0.9000000
+202324,Summer term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,8400,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,610,100,1.8000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,low
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,240,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,340,100,0.9000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,200,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,330,100,1.4000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,120,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,230,100,0.7000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,510,100,1.2000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,390,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,350,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,200,100,0.5000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,170,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,390,100,1.1000000
+202324,Summer term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,420,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,540,100,1.3000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,510,100,1.2000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,480,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,410,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,480,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,480,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,770,100,1.3000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,630,100,1.2000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,560,100,1.0000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,360,100,0.9000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,430,100,1.1000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,440,100,0.9000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,530,100,1.2000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,300,100,1.2000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,240,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,370,100,0.7000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,210,100,0.7000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,280,100,0.8000000
+202324,Summer term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,390,100,1.0000000
+202223,Summer term,National,E92000001,England,,,,,,Total,Total,97600,100,1.2000000
+202223,Summer term,Regional,E92000001,England,E13000001,Inner London,,,,Total,Total,3380,100,0.8000000
+202223,Summer term,Regional,E92000001,England,E13000002,Outer London,,,,Total,Total,7320,100,0.9000000
+202223,Summer term,Local authority,E92000001,England,E12000008,South East,852,E06000045,Southampton,Total,Total,470,100,1.4000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,201,E09000001,City of London,Total,Total,low,100,0.9000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,202,E09000007,Camden,Total,Total,240,100,1.0000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,204,E09000012,Hackney,Total,Total,340,100,0.9000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,205,E09000013,Hammersmith and Fulham,Total,Total,180,100,0.9000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,206,E09000019,Islington,Total,Total,300,100,1.3000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,207,E09000020,Kensington and Chelsea,Total,Total,90,100,0.6000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,208,E09000022,Lambeth,Total,Total,240,100,0.7000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,209,E09000023,Lewisham,Total,Total,470,100,1.1000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,210,E09000028,Southwark,Total,Total,360,100,0.9000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,211,E09000030,Tower Hamlets,Total,Total,260,100,0.6000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,212,E09000032,Wandsworth,Total,Total,160,100,low
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,213,E09000033,Westminster,Total,Total,110,100,0.5000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,309,E09000014,Haringey,Total,Total,290,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000001,Inner London,316,E09000025,Newham,Total,Total,340,100,0.6000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,203,E09000011,Greenwich,Total,Total,520,100,1.2000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,301,E09000002,Barking and Dagenham,Total,Total,420,100,1.0000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,302,E09000003,Barnet,Total,Total,x,x,x
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,303,E09000004,Bexley,Total,Total,320,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,304,E09000005,Brent,Total,Total,380,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,305,E09000006,Bromley,Total,Total,400,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,306,E09000008,Croydon,Total,Total,620,100,1.0000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,307,E09000009,Ealing,Total,Total,540,100,1.0000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,308,E09000010,Enfield,Total,Total,520,100,0.9000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,310,E09000015,Harrow,Total,Total,320,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,311,E09000016,Havering,Total,Total,340,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,312,E09000017,Hillingdon,Total,Total,x,x,x
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,313,E09000018,Hounslow,Total,Total,380,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,314,E09000021,Kingston upon Thames,Total,Total,280,100,1.1000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,315,E09000024,Merton,Total,Total,230,100,0.7000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,317,E09000026,Redbridge,Total,Total,290,100,0.6000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,318,E09000027,Richmond upon Thames,Total,Total,220,100,0.7000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,319,E09000029,Sutton,Total,Total,270,100,0.8000000
+202223,Summer term,Local authority,E92000001,England,E13000002,Outer London,320,E09000031,Waltham Forest,Total,Total,360,100,0.9000000
