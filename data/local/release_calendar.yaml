@@ -1,0 +1,23 @@
+# Upcoming official releases that will update figures on this site.
+# Dates come from the GOV.UK release calendar. "Provisional" dates can move.
+# Check https://www.gov.uk/search/research-and-statistics?content_store_document_type=upcoming_statistics
+checked: 2026-10-25
+releases:
+  - key: tribunals
+    title: Tribunals statistics quarterly, July to September 2026
+    covers: SEND Tribunal appeals and outcomes for England, academic year 2025/26 (not broken down by council)
+    date: 2026-12-10
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/tribunals-statistics-quarterly-july-to-september-2026
+  - key: ehcp
+    title: "Education, health and care plans: reporting year 2027"
+    covers: Plans in place in January 2027, and requests, 20-week timeliness, annual reviews and tribunal appeal rates for the 2026 calendar year
+    date: 2027-06-24
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/education-health-and-care-plans-reporting-year-2027
+  - key: sen
+    title: "Special educational needs in England: academic year 2026/27"
+    covers: Pupils with EHC plans and on SEN support in the January 2027 school census
+    date: 2027-06-24
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/special-educational-needs-in-england-academic-year-202627

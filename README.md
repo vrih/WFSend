@@ -10,6 +10,9 @@ links back to a public source:
   SEND Tribunal appeal rates, results at key stages 2 and 4, and exclusions.
   Each figure is shown for Waltham Forest, London and England, with a ranking
   against the other London boroughs.
+- **Local Government and Social Care Ombudsman**, downloaded automatically:
+  every published decision about the council (SEND decisions are picked out
+  by the Ombudsman's own category) and its yearly complaint statistics.
 - **Council, NHS and Ofsted documents**: committee papers, the SEND Local Area
   Improvement Plan and its highlight reports, budget reports, and the 2025 area
   SEND inspection. These are entered by hand with page numbers.
@@ -19,6 +22,7 @@ links back to a public source:
 ```
 data/dfe_sources.yaml     which DfE data sets to download
 scripts/fetch_dfe.py      downloads them, keeps England + London rows -> data/dfe/*.csv
+scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
 scripts/build.py          renders site/templates/*.html -> _site/
@@ -43,8 +47,11 @@ python scripts/fetch_dfe.py                  # everything (about 2 minutes)
 python scripts/fetch_dfe.py ehcp_timeliness  # or one data set
 ```
 
-The `Refresh DfE data` workflow does this on the 3rd of each month and opens
-a pull request if anything changed.
+Refresh the Ombudsman data the same way with `python scripts/fetch_lgo.py`.
+
+The `Refresh DfE and Ombudsman data` workflow runs both on the 3rd of each
+month and opens a pull request if anything changed. Upcoming release dates
+are kept by hand in `data/local/release_calendar.yaml`.
 
 Data sets with an `api_id` follow new DfE releases automatically. Data sets
 with a `file_id` are not in the DfE API yet, so their id changes when a new

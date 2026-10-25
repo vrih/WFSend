@@ -7,6 +7,7 @@ Rates are recomputed from counts where DfE publishes counts, so the
 calculation is visible here rather than taken on trust.
 """
 import csv
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -364,3 +365,45 @@ def exclusions():
                           explain="Permanent exclusions in the school year for every 100 pupils in the group."),
         }
     return res
+
+
+# --- Local Government and Social Care Ombudsman ---------------------------
+
+LGO = ROOT / "data" / "lgo"
+SEND_CATEGORY = "Special educational needs"
+
+
+def _lgo(name):
+    with (LGO / name).open(encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def ombudsman():
+    """Published Ombudsman decisions about SEND, by reporting year (April to March),
+    plus the Ombudsman's headline statistics for all council services."""
+    decisions = _lgo("decisions.csv")
+    send = sorted((d for d in decisions if d["category"] == SEND_CATEGORY),
+                  key=lambda d: d["date"], reverse=True)
+    years = sorted({d["reporting_year"] for d in decisions})
+    by_year = []
+    for y in years:
+        ds = [d for d in send if d["reporting_year"] == y]
+        by_year.append({
+            "year": y,
+            "published": len(ds),
+            "upheld": sum(d["outcome"] == "Upheld" for d in ds),
+            "not_upheld": sum(d["outcome"] == "Not upheld" for d in ds),
+            "closed": sum(d["outcome"] == "Closed after initial enquiries" for d in ds),
+            "all_published": sum(d["reporting_year"] == y for d in decisions),
+        })
+    # The Ombudsman deletes decision statements after five years, so the first
+    # year is incomplete; the current reporting year is still in progress.
+    fetched = json.loads((LGO / "manifest.json").read_text())["fetched"]
+    fy, fm = int(fetched[:4]), int(fetched[5:7])
+    current = f"{fy if fm >= 4 else fy - 1}/{str((fy if fm >= 4 else fy - 1) + 1)[2:]}"
+    for i, row in enumerate(by_year):
+        row["partial"] = "year to date" if row["year"] == current else ("incomplete: older decisions deleted" if i == 0 else "")
+    stats = []
+    for r in _lgo("annual_stats.csv"):
+        stats.append({k: (num(v) if k != "reporting_year" else v) for k, v in r.items()})
+    return {"send": send, "by_year": by_year, "stats": stats}

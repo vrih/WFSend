@@ -14,6 +14,19 @@
 {% endfor %}
 </tbody></table></div>
 
+<h2 id="ombudsman">Ombudsman data</h2>
+<p>Published decisions and headline complaint statistics from the <a href="https://www.lgo.org.uk/">Local Government and Social Care Ombudsman</a> are downloaded by a script, like the DfE data. Last downloaded {{ LGO_MANIFEST.fetched }}. Copies: <a href="data/ombudsman_decisions.csv">ombudsman_decisions.csv</a>, <a href="data/ombudsman_annual_stats.csv">ombudsman_annual_stats.csv</a>.</p>
+
+<h2 id="upcoming">When new figures are due</h2>
+<p>Dates from the GOV.UK release calendar, checked {{ releases.checked }}. Provisional dates can change.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Date</th><th scope="col">Release</th><th scope="col">What it will update</th></tr></thead>
+<tbody>
+{% for r in releases.releases|sort(attribute="date") %}
+<tr><td>{{ r.date.strftime("%-d %B %Y") }}<br><span class="note">{{ r.status }}</span></td><td><a href="{{ r.url }}">{{ r.title }}</a></td><td>{{ r.covers }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+
 <h2>Council, NHS and inspection documents</h2>
 <p>Figures from these documents were copied by hand, with the page number. The original wording is kept where it is unclear what a figure covers, with a note explaining the problem. The extracted figures are in <a href="data/council_reported.yaml">council_reported.yaml</a> and <a href="data/inspection.yaml">inspection.yaml</a>.</p>
 <div class="tablewrap"><table class="wide">

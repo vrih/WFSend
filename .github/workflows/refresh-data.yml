@@ -1,6 +1,6 @@
-name: Refresh DfE data
+name: Refresh DfE and Ombudsman data
 
-# Re-downloads the DfE statistics monthly and opens a pull request if
+# Re-downloads the DfE statistics and Ombudsman decisions monthly and opens a pull request if
 # anything changed, so new figures are reviewed before they go live.
 on:
   schedule:
@@ -21,15 +21,17 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - run: python scripts/fetch_dfe.py
+      - run: python scripts/fetch_lgo.py
       - run: python scripts/build.py
       - name: Ignore runs where only the download date changed
         run: |
           if git diff --quiet -- data/dfe/*.csv; then git checkout -- data/dfe/manifest.json; fi
+          if git diff --quiet -- data/lgo/*.csv; then git checkout -- data/lgo/manifest.json; fi
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: data-refresh
-          commit-message: Refresh DfE SEND statistics
-          title: Refresh DfE SEND statistics
+          commit-message: Refresh DfE statistics and Ombudsman decisions
+          title: Refresh DfE statistics and Ombudsman decisions
           body: |
             Automated monthly download from Explore Education Statistics.
             Check the diff of `data/dfe/*.csv` and the built pages before merging.

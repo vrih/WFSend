@@ -36,6 +36,7 @@ def read_yaml(name):
 
 SOURCES = read_yaml("sources.yaml")
 MANIFEST = json.loads((ROOT / "data" / "dfe" / "manifest.json").read_text())
+LGO_MANIFEST = json.loads((ROOT / "data" / "lgo" / "manifest.json").read_text())
 DFE_CFG = yaml.safe_load((ROOT / "data" / "dfe_sources.yaml").read_text())
 PUBS = DFE_CFG["publications"]
 
@@ -124,6 +125,7 @@ def compute():
         "ks2": M.ks2(),
         "ks4": M.ks4(),
         "exclusions": M.exclusions(),
+        "ombudsman": M.ombudsman(),
     }
 
 
@@ -142,6 +144,11 @@ def headline_rows(d, local):
     for key, meas in local["measures"].items():
         o = meas["observations"][-1]
         add(meas["title"], o["period"], o["value"], meas["unit"], SOURCES[o["source"]]["url"] + f" (p. {o['page']})")
+    lgo = d["ombudsman"]["stats"][-1]
+    add("Ombudsman: complaints about the council upheld (all services)", lgo["reporting_year"],
+        int(lgo["upheld"]), "count", LGO_MANIFEST["statistics_url"])
+    for y in d["ombudsman"]["by_year"]:
+        add("Ombudsman: published SEND decisions upheld", y["year"], y["upheld"], "count", LGO_MANIFEST["decisions_url"])
     for f in local["finance"]:
         add(f["label"], "", f["value"], "", SOURCES[f["source"]]["url"] + f" (p. {f['page']})")
     return rows
@@ -174,6 +181,7 @@ def main():
     d = compute()
     local = read_yaml("council_reported.yaml")
     inspection = read_yaml("inspection.yaml")
+    releases = read_yaml("release_calendar.yaml")
 
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
@@ -186,8 +194,8 @@ def main():
     shutil.copytree(SITE / "static", OUT / "static")
 
     built = dt.date.today().isoformat()
-    ctx = dict(d=d, local=local, inspection=inspection, built=built, SOURCES=SOURCES,
-               MANIFEST=MANIFEST, PUBS=PUBS, USED=USED)
+    ctx = dict(d=d, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
+               MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, PUBS=PUBS, USED=USED)
     # sources.html last, so it can list every citation the other pages used
     for name, _ in PAGES:
         if name == "sources.html":
@@ -199,6 +207,8 @@ def main():
     # downloadable data
     for f in (ROOT / "data" / "dfe").glob("*"):
         shutil.copy(f, OUT / "data" / f.name)
+    for f in (ROOT / "data" / "lgo").glob("*.csv"):
+        shutil.copy(f, OUT / "data" / f"ombudsman_{f.name}")
     for f in (ROOT / "data" / "local").glob("*.yaml"):
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))

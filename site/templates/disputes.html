@@ -13,6 +13,47 @@
 <h3>The council's own count of appeals</h3>
 {{ ui.simple_table(local.tribunal_appeals) }}
 
+<h2 id="ombudsman">Complaints to the Local Government and Social Care Ombudsman</h2>
+{% set o = d.ombudsman %}
+<p>Families who are unhappy with how the council handled a complaint can go to the Ombudsman. The Ombudsman can look at delays and failures to deliver what a plan says. It usually won't look at decisions that can be appealed to the SEND Tribunal.</p>
+<figure class="metric">
+<figcaption><h3>Published Ombudsman decisions about SEND in Waltham Forest</h3>
+<p class="explain">Decisions the Ombudsman has published in its "special educational needs" category, by reporting year (April to March). "Upheld" means the Ombudsman found fault, including cases where the council had already accepted fault and offered a remedy.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Year</th><th scope="col">SEND decisions published</th><th scope="col">Upheld</th><th scope="col">Not upheld</th><th scope="col">Closed without investigating</th><th scope="col">All published decisions about the council</th></tr></thead>
+<tbody>
+{% for y in o.by_year %}
+<tr><th scope="row">{{ y.year }}{% if y.partial %}<br><span class="note">{{ y.partial }}</span>{% endif %}</th><td>{{ y.published }}</td><td><strong>{{ y.upheld }}</strong></td><td>{{ y.not_upheld }}</td><td>{{ y.closed }}</td><td>{{ y.all_published }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">The Ombudsman does not publish every decision and deletes decision statements after five years, so these are minimum counts. Its headline statistics are not split by service, so the SEND figures come from the category on each published decision.</p>
+<p class="source">Source: <a class="cite" href="{{ LGO_MANIFEST.decisions_url }}">Local Government and Social Care Ombudsman, published decisions</a> (downloaded {{ LGO_MANIFEST.fetched }}). <a href="data/ombudsman_decisions.csv">Download all decisions (CSV)</a></p>
+</figure>
+
+<h3>The SEND decisions</h3>
+<details><summary>Show all {{ o.send|length }} decision summaries</summary>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Date</th><th scope="col">Outcome</th><th scope="col">Summary</th></tr></thead>
+<tbody>
+{% for x in o.send %}
+<tr><td>{{ x.date }}</td><td>{{ x.outcome }}</td><td>{{ x.summary }} <a href="{{ x.url }}">Read the decision ({{ x.reference }})</a></td></tr>
+{% endfor %}
+</tbody></table></div>
+</details>
+
+<h3>All council services, compared with similar councils</h3>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Year</th><th scope="col">Complaints investigated</th><th scope="col">Upheld</th><th scope="col">Upheld rate</th><th scope="col">Similar councils</th><th scope="col">Upheld per 100,000 residents</th><th scope="col">Similar councils</th></tr></thead>
+<tbody>
+{% for r in o.stats %}
+<tr><th scope="row">{{ r.reporting_year }}</th><td>{{ "{:,.0f}".format(r.investigated) if r.investigated is not none else "–" }}</td><td>{{ "{:,.0f}".format(r.upheld) if r.upheld is not none else "–" }}</td>
+<td>{{ "{:.0f}%".format(r.upheld_pct) if r.upheld_pct is not none else "–" }}</td><td>{{ "{:.0f}%".format(r.upheld_pct_similar) if r.upheld_pct_similar is not none else "–" }}</td>
+<td>{{ r.upheld_per_100k if r.upheld_per_100k is not none else "–" }}</td><td>{{ r.upheld_per_100k_similar if r.upheld_per_100k_similar is not none else "–" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">These cover every council service (housing, social care, parking and so on), not just SEND. "Similar councils" is the Ombudsman's average for London boroughs.</p>
+<p class="source">Source: <a class="cite" href="{{ LGO_MANIFEST.statistics_url }}">Local Government and Social Care Ombudsman, Waltham Forest complaint statistics</a> (downloaded {{ LGO_MANIFEST.fetched }})</p>
+
 <h2>Complaints to the council</h2>
 <p>The improvement plan's measure is simply "fewer complaints received".</p>
 {{ ui.observations_table(local.measures.complaints) }}
