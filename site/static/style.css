@@ -241,3 +241,11 @@ blockquote { margin: 12px 0; padding: 8px 16px; border-left: 4px solid var(--axi
   details > *:not(summary) { display: block; }
   figure.metric { break-inside: avoid; border: 0; }
 }
+
+/* Section and chart links: a "#" after each heading, shown on hover or focus */
+.anchor { margin-left: 0.35em; color: var(--muted); text-decoration: none; font-weight: normal; opacity: 0; }
+.anchor::after { content: "#"; }
+h2:hover .anchor, h3:hover .anchor, .anchor:focus, .anchor:hover { opacity: 1; }
+@media (hover: none) { .anchor { opacity: 1; } }
+[id] { scroll-margin-top: 16px; }
+figure.metric:target, h2:target, h3:target { outline: 2px solid var(--link); outline-offset: 6px; }

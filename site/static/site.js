@@ -58,3 +58,21 @@
   window.addEventListener("resize", mark);
   document.addEventListener("toggle", mark, true);
 })();
+
+// Heading links: clicking one also copies the link, and says so.
+(function () {
+  var tip = document.getElementById("tip");
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("a.anchor");
+    if (!a || !navigator.clipboard) return;
+    navigator.clipboard.writeText(a.href).then(function () {
+      if (!tip) return;
+      tip.textContent = "Link copied";
+      tip.hidden = false;
+      var r = a.getBoundingClientRect();
+      tip.style.left = (r.left + window.scrollX) + "px";
+      tip.style.top = (r.top + window.scrollY - tip.offsetHeight - 8) + "px";
+      setTimeout(function () { tip.hidden = true; }, 1500);
+    }, function () {});
+  });
+})();
