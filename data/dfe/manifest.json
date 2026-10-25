@@ -1,4 +1,15 @@
 {
+  "absence_sen": {
+    "title": "Absence by pupil characteristics - autumn and spring terms combined",
+    "publication": "absence",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/be7980d7-70b8-441d-9ae9-c181f89c3813",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/be7980d7-70b8-441d-9ae9-c181f89c3813/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 1605,
+    "fetched": "2026-10-25"
+  },
   "ehcp_annual_reviews": {
     "title": "Number of annual reviews of EHC plans",
     "publication": "ehcp",
@@ -76,6 +87,17 @@
     "rows": 2729,
     "fetched": "2026-10-25"
   },
+  "eyfs_sen": {
+    "title": "Headline measures by child characteristics",
+    "publication": "eyfs",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/853bf1b8-799c-4921-8b87-1d2bee0f3c22",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/853bf1b8-799c-4921-8b87-1d2bee0f3c22/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 1110,
+    "fetched": "2026-10-25"
+  },
   "ks2_attainment": {
     "title": "Attainment by region, local authority and pupil characteristics",
     "publication": "ks2",
@@ -87,6 +109,17 @@
     "rows": 1322,
     "fetched": "2026-10-25"
   },
+  "ks4_destinations_sen": {
+    "title": "Key stage 4 destination measures",
+    "publication": "ks4_destinations",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/08ef3846-2514-4b7c-a85f-6df089099641",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/08ef3846-2514-4b7c-a85f-6df089099641/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 1470,
+    "fetched": "2026-10-25"
+  },
   "ks4_sen": {
     "title": "National characteristics summary data",
     "publication": "ks4",
@@ -96,6 +129,28 @@
     "api_version": "2.0",
     "published": "2026-10-15T08:30:15.889132+00:00",
     "rows": 1440,
+    "fetched": "2026-10-25"
+  },
+  "neet_sen": {
+    "title": "NEET by characteristics",
+    "publication": "neet",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/a7bc111a-9503-40df-99fa-764fcb13a2e9",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/a7bc111a-9503-40df-99fa-764fcb13a2e9/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 1678,
+    "fetched": "2026-10-25"
+  },
+  "s251_outturn": {
+    "title": "LA expenditure on schools, other education and community - unrounded data",
+    "publication": "expenditure",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/61de56b6-878c-4858-916b-f67a0cf9337d",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/61de56b6-878c-4858-916b-f67a0cf9337d/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 2880,
     "fetched": "2026-10-25"
   },
   "sen_pupils": {

@@ -13,4 +13,26 @@
 </tbody></table></div>
 
 <div class="callout"><p><strong>Why this matters for families.</strong> The council's draft deficit management plan relies on "reducing the number of requests to assess children whose needs can be met outside the statutory framework" ({{ cite("budget_feb2026", 34) }}). Families have a legal right to request an assessment. Any change in how requests are handled should show up in the <a href="assessments.html#decisions">request and refusal figures</a>.</p></div>
+
+<h2 id="spending">What the council spends on SEND services</h2>
+<p>Every council reports its education spending to the DfE line by line (the "section 251" return). These are Waltham Forest's net figures for the lines most relevant to SEND, in £ million. "Net" means after income, for example when schools buy educational psychology time.</p>
+{% set sp = d.spending %}
+<figure class="metric" id="spending-table">
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">£ million, net</th>{% for p in sp.periods %}<th scope="col">{{ p }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for key, line in sp.lines.items() %}
+<tr><th scope="row">{{ line.label }}</th>{% for p in sp.periods %}<td>{{ "{:.2f}".format(line.total[p]) if line.total.get(p) is not none else "–" }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Big jumps from one year to the next can reflect changes in how the council codes its spending, not just real changes. For example, SEN transport shows £0 in 2017/18. Treat single years with care.</p>
+<p class="source">{{ cite_dfe(["s251_outturn"]) }}</p>
+</figure>
+
+<h3>Compared with other councils</h3>
+<p>Spending per head, as calculated by the DfE, so councils of different sizes can be compared. The spending file only has totals for England and for Inner and Outer London, not London as a whole.</p>
+{{ figure(sp.lines.ep.per_head, ranked=True, note="The council blames slow EHC plans on delays in educational psychologist advice (see Assessments). In " ~ sp.lines.ep.per_head.latest_period ~ ", Waltham Forest's net spend per head on its educational psychology service was " ~ fmt(sp.lines.ep.per_head.latest[WF], "gbp") ~ ", " ~ rank_text(sp.lines.ep.per_head) ~ ". England: " ~ fmt(sp.lines.ep.per_head.latest["England"], "gbp") ~ ".") }}
+{{ figure(sp.lines.sen_admin.per_head, ranked=True) }}
+{{ figure(sp.lines.independent.per_head, ranked=True) }}
+{{ figure(sp.lines.transport.per_head, ranked=True) }}
 {% endblock %}

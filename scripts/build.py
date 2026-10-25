@@ -99,8 +99,9 @@ def rank_text(m):
     r = m.get("rank")
     if not r:
         return ""
-    best = "best" if m.get("higher_is_better", True) else "lowest"
-    return f"{ordinal(r['pos'])} of {r['of']} London boroughs ({ordinal(1)} = {best})"
+    best = m.get("rank_label") or ("best" if m.get("higher_is_better", True) else "lowest")
+    joint = "joint " if r.get("joint") else ""
+    return f"{joint}{ordinal(r['pos'])} of {r['of']} London boroughs ({ordinal(1)} = {best})"
 
 
 def ordinal(n):
@@ -128,6 +129,11 @@ def compute():
         "ks4": M.ks4(),
         "exclusions": M.exclusions(),
         "ombudsman": M.ombudsman(),
+        "spending": M.spending(),
+        "absence": M.absence(),
+        "eyfs": M.eyfs(),
+        "ks4_destinations": M.ks4_destinations(),
+        "neet": M.neet(),
     }
 
 

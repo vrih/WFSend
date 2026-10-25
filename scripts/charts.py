@@ -16,6 +16,8 @@ def _fmt(v, unit):
     if unit == "percent":
         # whole numbers from council papers are shown as printed ("12%", not "12.0%")
         return f"{v:.0f}%" if isinstance(v, int) else f"{v:.1f}%"
+    if unit == "gbp":
+        return f"£{v:,.0f}"
     if unit == "gbp_m":
         return f"£{v:,.1f}m"
     if unit == "score":
@@ -60,7 +62,8 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
     # x labels: thin out if crowded
     stride = 1 if n <= 8 else 2
     for i, p in enumerate(periods):
-        if i % stride == 0 or i == n - 1:
+        # label every `stride`-th period plus the last, without crowding the last one
+        if i == n - 1 or (i % stride == 0 and i < n - stride):
             out.append(f'<text class="tick" x="{x(i):.1f}" y="{H - 12}" text-anchor="middle">{escape(p)}</text>')
 
     # direct end labels, nudged apart so they never overlap

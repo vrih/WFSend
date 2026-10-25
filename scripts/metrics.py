@@ -65,9 +65,12 @@ def build(series_by_area, periods, **meta):
     boroughs = {a: v for a, v in boroughs.items() if v is not None}
     hib = meta.get("higher_is_better", True)
     rank = None
-    if WF in boroughs and len(boroughs) > 5 and meta.get("rank", True):
-        order = sorted(boroughs, key=lambda a: boroughs[a], reverse=hib)
-        rank = {"pos": order.index(WF) + 1, "of": len(order)}
+    if WF in boroughs and len(boroughs) > 5 and meta.pop("rank", True):
+        v = boroughs[WF]
+        better = sum(1 for x in boroughs.values() if (x > v if hib else x < v))
+        tied = sum(1 for x in boroughs.values() if x == v) > 1
+        rank = {"pos": better + 1, "of": len(boroughs), "joint": tied}
+    meta.pop("rank", None)
     # latest period where Waltham Forest has a value
     wf_latest = next((p for p in reversed(periods) if main[WF].get(p) is not None), None)
     return {
@@ -407,3 +410,105 @@ def ombudsman():
     for r in _lgo("annual_stats.csv"):
         stats.append({k: (num(v) if k != "reporting_year" else v) for k, v in r.items()})
     return {"send": send, "by_year": by_year, "stats": stats}
+
+
+# --- Spending (section 251 outturn) ---------------------------------------
+
+SPEND_LINES = [
+    ("2.1.1", "Educational psychology service", "ep"),
+    ("2.1.2", "SEN administration, assessment and coordination", "sen_admin"),
+    ("1.2.3", "Top-up funding for independent and non-maintained providers", "independent"),
+    ("2.1.4", "SEN transport (under 16)", "transport"),
+    ("1.2.1", "Top-up funding for maintained schools", "topup_maintained"),
+    ("1.2.2", "Top-up funding for academies, free schools and colleges", "topup_academies"),
+]
+
+
+def spending():
+    rows = load("s251_outturn")
+    out = {}
+    for code, label, key in SPEND_LINES:
+        sub = [r for r in rows if r["category_of_expenditure"].startswith(code + " ")]
+        per_head, periods = collect(sub, lambda r: num(r["net_per_capita_expenditure"]), label=academic)
+        total, _ = collect(sub, lambda r: (num(r["net_expenditure"]) or 0) / 1e6 if num(r["net_expenditure"]) is not None else None, label=academic)
+        out[key] = {
+            "label": label,
+            "code": code,
+            "total": total.get(WF, {}),
+            "per_head": build(per_head, periods, id=f"spend_{key}", unit="gbp", rank_label="highest",
+                              title=f"{label}: net spend per head",
+                              explain="Net spending per head as published by the DfE. The population used depends on the budget line (pupils or children), so compare places on the same line, not different lines.",
+                              sources=["s251_outturn"]),
+        }
+    periods = out["ep"]["per_head"]["periods"]
+    return {"lines": out, "periods": periods}
+
+
+# --- More outcomes ----------------------------------------------------------
+
+def absence():
+    rows = load("absence_sen")
+    res = {}
+    for group, label in (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+        sub = [r for r in rows if r["characteristic_breakdown"] == group]
+        overall, periods = collect(sub, lambda r: num(r["sess_overall_percent"]), label=academic)
+        persistent, _ = collect(sub, lambda r: num(r["enrolments_pa_10_exact_percent"]), label=academic)
+        res[group] = {
+            "overall": build(overall, periods, id="abs_overall", unit="percent", rank=False, higher_is_better=False,
+                             title=f"Overall absence: {label}",
+                             explain="Share of school sessions missed, for any reason, in the autumn and spring terms. Each year's figure covers those two terms only.",
+                             sources=["absence_sen"]),
+            "persistent": build(persistent, periods, id="abs_persistent", unit="percent", higher_is_better=False,
+                                title=f"Persistently absent: {label}",
+                                explain="Share of pupils who missed 10% or more of sessions in the autumn and spring terms.",
+                                sources=["absence_sen"]),
+        }
+    return res
+
+
+def eyfs():
+    rows = load("eyfs_sen")
+    res = {}
+    for group, label in (("Education, health and care plan", "children with an EHC plan"),
+                         ("SEN support / SEN without an EHC plan", "children on SEN support"),
+                         ("No SEN provision", "children with no SEN")):
+        sub = [r for r in rows if r["breakdown"] == group]
+        series, periods = collect(sub, lambda r: num(r["gld_children_percent"]), label=academic)
+        res[group] = build(series, periods, id="eyfs_gld", unit="percent", rank=False,
+                           title=f"Good level of development at the end of Reception: {label}",
+                           explain="Children reaching the expected level in the early learning goals for communication, physical development, personal and social development, literacy and maths, assessed at the end of Reception.",
+                           sources=["eyfs_sen"])
+    return res
+
+
+def ks4_destinations():
+    rows = [r for r in load("ks4_destinations_sen")
+            if r["destination_description"] == "Sustained education, employment & apprenticeships"]
+    # Use revised figures where both versions exist for a year.
+    best = {}
+    for r in rows:
+        k = (area_of(r), r["time_period"], r["breakdown"])
+        if k[0] and (k not in best or r["version"] == "Revised"):
+            best[k] = r
+    res = {}
+    for group, label in (("SEN with EHC plan or statement", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+        series, periods = collect([r for r in best.values() if r["breakdown"] == group],
+                                  lambda r: num(r["pupil_percent"]), label=academic)
+        res[group] = build(series, periods, id="ks4_dest", unit="percent", rank=False,
+                           title=f"In education, employment or an apprenticeship after Year 11: {label}",
+                           explain="Pupils who stayed in education, employment or an apprenticeship for at least two terms in the year after finishing Year 11. The year shown is the year they left Year 11. The latest year is provisional.",
+                           sources=["ks4_destinations_sen"])
+    return res
+
+
+def neet():
+    rows = [r for r in load("neet_sen") if r["age"] == "16 to 17"]
+    res = {}
+    for group, label in (("SEN EHC/statement", "young people with an EHC plan"), ("SEN support", "young people on SEN support"), ("No SEN", "young people with no SEN")):
+        series, periods = collect([r for r in rows if r["characteristic"] == group],
+                                  lambda r: num(r["neet_nk_percent"]))
+        res[group] = build(series, periods, id="neet", unit="percent", higher_is_better=False,
+                           title=f"16 and 17 year olds not in education, employment or training, or not known: {label}",
+                           explain="Average of December, January and February. Includes young people whose activity the council does not know, as the DfE's headline measure does.",
+                           sources=["neet_sen"])
+    return res

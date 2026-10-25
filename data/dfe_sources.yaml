@@ -30,6 +30,26 @@ publications:
     title: Key stage 4 performance
     publisher: Department for Education
     url: https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance
+  expenditure:
+    title: LA and school expenditure
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/la-and-school-expenditure
+  absence:
+    title: Pupil absence in schools in England
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/pupil-absence-in-schools-in-england
+  eyfs:
+    title: Early years foundation stage profile results
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/early-years-foundation-stage-profile-results
+  ks4_destinations:
+    title: Key stage 4 destination measures
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-destination-measures
+  neet:
+    title: Participation in education, training and NEET age 16 to 17 by local authority
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/participation-in-education-training-and-neet-age-16-to-17-by-local-authority
   exclusions:
     title: Suspensions and permanent exclusions in England
     publisher: Department for Education
@@ -113,6 +133,58 @@ datasets:
     keep:
       education_phase: [Total]
       characteristic_group: [SEN provision, Total]
+
+  s251_outturn:
+    publication: expenditure
+    file_id: 61de56b6-878c-4858-916b-f67a0cf9337d
+    title: LA expenditure on schools, other education and community - unrounded data
+    encoding: cp1252
+    keep:
+      category_of_expenditure:
+        - "1.2.1 Top-up funding – maintained schools"
+        - "1.2.2 Top-up funding – academies, free schools and colleges"
+        - "1.2.3 Top-up and other funding – non-maintained and independent providers"
+        - "2.1.1 Educational psychology service"
+        - "2.1.2 SEN administration, assessment and coordination and monitoring"
+        - "2.1.4 Home to school transport (pre 16): SEN transport expenditure"
+        - "2.1.6 Home to post-16 provision: SEN/ LLDD transport expenditure (aged 16-18)"
+        - "2.1.7 Home to post-16 provision: SEN/ LLDD transport expenditure (aged 19-25)"
+
+  absence_sen:
+    publication: absence
+    file_id: be7980d7-70b8-441d-9ae9-c181f89c3813
+    title: Absence by pupil characteristics - autumn and spring terms combined
+    keep:
+      education_phase: [Total]
+      characteristic: [Total, SEN provision]
+
+  eyfs_sen:
+    publication: eyfs
+    file_id: 853bf1b8-799c-4921-8b87-1d2bee0f3c22
+    title: Headline measures by child characteristics
+    keep:
+      breakdown_topic: [Total, SEN provision]
+      sex: [Total]
+
+  ks4_destinations_sen:
+    publication: ks4_destinations
+    file_id: 08ef3846-2514-4b7c-a85f-6df089099641
+    title: Key stage 4 destination measures
+    keep:
+      breakdown_topic: [Total, SEN provision]
+      establishment_type_group: [State-funded mainstream and special, Total state-funded mainstream and special]  # LA vs national label
+      establishment_type: [Total]
+      sex: [Total]
+      ethnicity_major: [Total]
+      disadvantage_status: [Total]
+      destination_group: [Overall destination]
+
+  neet_sen:
+    publication: neet
+    file_id: a7bc111a-9503-40df-99fa-764fcb13a2e9
+    title: NEET by characteristics
+    keep:
+      characteristic_grouping: [Total, SEND]
 
 # The SEND Tribunal appeal rate by local authority is published by DfE as a
 # supporting (non-tidy) CSV inside the EHCP release, not as a data set.

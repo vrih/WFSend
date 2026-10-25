@@ -63,6 +63,11 @@ release comes out. Check them each year:
 | Special educational needs in England | June |
 | Key stage 2 attainment | September (provisional), December (revised) |
 | Suspensions and permanent exclusions | July |
+| LA and school expenditure (section 251 outturn) | Usually winter |
+| Pupil absence (autumn and spring terms) | Summer, with the full year in spring |
+| Early years foundation stage profile | Autumn |
+| Key stage 4 destination measures | Autumn |
+| NEET age 16 to 17 by local authority | Summer |
 
 To find a new `file_id`, open the release on Explore Education Statistics,
 go to "Explore data", open the data set and copy the id from the data

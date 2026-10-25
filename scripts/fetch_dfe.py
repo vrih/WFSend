@@ -46,14 +46,14 @@ def get_json(url):
         return json.loads(body)
 
 
-def open_csv_stream(url):
+def open_csv_stream(url, encoding="utf-8-sig"):
     """Stream a (possibly gzipped) CSV download as text lines."""
     raw = io.BufferedReader(get(url), buffer_size=1 << 20)
     # EES sometimes gzips the body with or without a Content-Encoding header,
     # so sniff the magic bytes rather than trusting headers.
     if raw.peek(2)[:2] == b"\x1f\x8b":
         raw = gzip.GzipFile(fileobj=raw)
-    return io.TextIOWrapper(raw, encoding="utf-8-sig", newline="")
+    return io.TextIOWrapper(raw, encoding=encoding, newline="")
 
 
 def in_scope(row):
@@ -82,7 +82,8 @@ def fetch_dataset(key, ds):
     file_id, title, version, published = resolve(ds)
     url = f"{CATALOGUE}/{file_id}/csv"
     print(f"[{key}] {title}\n    {url}", flush=True)
-    reader = csv.DictReader(open_csv_stream(url))
+    # A few older DfE files are Windows-1252 rather than UTF-8; see `encoding` in the config.
+    reader = csv.DictReader(open_csv_stream(url, ds.get("encoding", "utf-8-sig")))
     keep = ds.get("keep", {})
     rows, seen = [], 0
     unmatched = {col: set() for col in keep}
