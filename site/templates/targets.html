@@ -46,7 +46,7 @@
 {% set st = statuses[t.status] %}
 <tr><td>{{ t.commitment }}<br><span class="note">{{ cite(t.source.source, t.source.page) }}</span></td>
 <td>{{ t.due }}</td>
-<td>{{ t.latest }}{% if t.latest_source is defined %}<br><span class="note">{{ cite(t.latest_source.source, t.latest_source.page) }}</span>{% endif %}</td>
+<td>{{ t.latest }}{% if t.latest_source is defined %}<br><span class="note">{{ cite(t.latest_source.source, t.latest_source.page) }}</span>{% endif %}{% if t.latest_dfe is defined %}<br><span class="note">{{ cite_dfe(t.latest_dfe) }}</span>{% endif %}</td>
 <td><span class="status {{ st[0] }}">{{ st[1] }}</span></td></tr>
 {% endfor %}
 </tbody></table></div>

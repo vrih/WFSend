@@ -220,12 +220,18 @@ improvement_plan_status:
 # Dated, numeric commitments in the improvement plan, and the latest published
 # position. `status` is our reading of the latest figure, not the council's RAG.
 targets:
-  - commitment: SEND Reform Plan - cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28, and raise the share of children on SEN support from 12.5% to 14%
+  - commitment: SEND Reform Plan - cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28
     due: From 2027/28
     source: { source: sf_jul2026, page: 178 }
     latest: Plan accepted by the DfE on 2 October 2026. EHC plans grew by 201 (5%) between March and August 2026. The plan's other priority goals (attainment, exclusions and attendance, parental confidence, statutory timeliness) have no published numbers.
     latest_source: { source: sf_oct2026, page: 29 }
     status: no data
+  - commitment: SEND Reform Plan - raise the share of children on SEN support from 12.5% to 14%
+    due: Not stated (the plan runs to 2028)
+    source: { source: sf_jul2026, page: 178 }
+    latest: 13.2% of pupils in January 2026, up from 12.2% in January 2025 (DfE). The DfE's January 2025 figure is lower than the 12.5% starting point in the plan, so the council may be counting a different group of pupils. The plan's 14% matches the England average it quotes; the DfE's England figure has since risen to 14.8%.
+    latest_dfe: [sen_pupils]
+    status: improving
   - commitment: Locality-based model to cut the rate of growth in EHC plans by 10% a year
     due: Not stated
     source: { source: sf_dec2024, page: 22 }
@@ -333,12 +339,6 @@ finance:
     detail: £942,000 net deficit, driven by the High Needs Block.
     source: schools_budget_mar2026
     page: 7
-  - id: intervention
-    label: DfE intervention programme
-    value: "None"
-    detail: As of February 2026 the council was not in a DfE intervention programme (Safety Valve or Delivering Better Value). DfE officers were keeping its position under review.
-    source: budget_feb2026
-    page: 33
   - id: mitigations
     label: Main ways the council plans to bring spending down
     value: "Draft deficit management plan"
