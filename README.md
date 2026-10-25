@@ -21,7 +21,7 @@ links back to a public source:
   provision and SEN units, with the ages and types of need each one takes.
 - **ONS population estimates**, downloaded automatically from
   [Nomis](https://www.nomisweb.co.uk/datasets/pestsyoala): the number of
-  children aged 2 to 18 in each area, used to show EHC plans and requests per
+  children aged 2 to 18 in each area, used to show requests for an assessment per
   1,000 children so areas of different sizes can be compared.
 - **NHS England waiting times**: children's community health services
   waiting lists, autism and ADHD assessment waits, and waits for children's

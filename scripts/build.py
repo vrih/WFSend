@@ -243,7 +243,6 @@ def compute():
         "six_weeks": req_out["six_weeks"],
         "not_issued": M.assessments_not_issued(),
         "caseload": M.caseload(),
-        "caseload_rate": M.caseload_rate(),
         "growth": M.caseload_growth(),
         "placements": M.placements(),
         "primary_need": M.primary_need(),

@@ -231,14 +231,10 @@ def request_outcomes():
     }
 
 
-def _caseload_counts():
+def caseload():
     rows = [r for r in load("ehcp_caseload") if r["setting_type"] == "Total"]
     series, periods = collect(rows, lambda r: num(r["ehc_plan_count"]), label=january)
-    return series, sorted(periods, key=lambda p: int(p[-4:]))
-
-
-def caseload():
-    series, periods = _caseload_counts()
+    periods = sorted(periods, key=lambda p: int(p[-4:]))
     return build(series, periods, id="caseload", unit="count", rank=False,
                  title="EHC plans maintained by the council",
                  explain="All EHC plans (ages 0 to 25) the council maintains, counted each January.",
@@ -270,15 +266,8 @@ def per_1000(counts, periods, year_of, **meta):
     series = {a: {p: 1000 * s[p] / pop[a][year_of(p)] if s.get(p) is not None and year_of(p) in pop.get(a, {}) else None
                   for p in periods}
               for a, s in counts.items()}
-    return build(series, periods, unit="rate", rank_label="highest", population=True, **meta)
-
-
-def caseload_rate():
-    # A January count is set against the estimate for the June before it.
-    return per_1000(*_caseload_counts(), lambda p: int(p[-4:]) - 1, id="caseload_rate",
-                    title="EHC plans per 1,000 children aged 2 to 18",
-                    explain="All EHC plans the council maintains in January, for every 1,000 children aged 2 to 18 living in the area. Population from the ONS estimate for the June before.",
-                    sources=["ehcp_caseload"])
+    children = {p: pop[WF][year_of(p)] for p in periods if year_of(p) in pop.get(WF, {})}
+    return build(series, periods, unit="rate", rank_label="highest", population=True, wf_children=children, **meta)
 
 
 def requests_rate():

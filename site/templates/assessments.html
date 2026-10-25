@@ -27,7 +27,8 @@
 <h2>Requests for an assessment</h2>
 {{ figure(d.requests) }}
 <p>To compare areas of different sizes, this chart divides the number of requests by the number of children living in each area.</p>
-{{ figure(d.requests_rate, ranked=True, note="Requests can be made for anyone aged 0 to 25. The DfE doesn't publish requests by age, so we use the same age group as for EHC plans, where most plans are for children aged 2 to 18. A 0 to 25 base would be swayed by the number of students and young workers, which is higher in London.") }}
+{% set rr = d.requests_rate %}{% set kids = rr.wf_children.values()|list %}
+{{ figure(rr, ranked=True, note="Requests can be made for anyone aged 0 to 25. The DfE doesn't publish requests by age, so we divide by children aged 2 to 18, the ages most EHC plans are for. A 0 to 25 base would be swayed by the number of students and young workers, which is higher in London. The number of children aged 2 to 18 living in Waltham Forest fell from " ~ fmt(kids[0], "count") ~ " in " ~ rr.periods[0] ~ " to " ~ fmt(kids[-1], "count") ~ " in " ~ rr.periods[-1] ~ ", so a falling rate means fewer requests, not more children. Population figures are ONS estimates, which the ONS revises from time to time.") }}
 
 <h2 id="decisions">Deciding whether to assess</h2>
 {{ figure(d.six_weeks, ranked=True, y_max=100) }}

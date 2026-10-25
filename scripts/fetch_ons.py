@@ -8,7 +8,7 @@ boroughs and Waltham Forest's statistical neighbours, and writes:
   data/ons/population.csv    population at 30 June by single year of age, as published
   data/ons/manifest.json     where the data came from and when
 
-The site uses these to turn counts (EHC plans, requests) into rates per 1,000
+The site uses these to turn request counts into rates per 1,000
 children, so areas of different sizes can be compared.
 
 Usage:
