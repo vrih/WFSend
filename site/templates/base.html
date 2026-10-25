@@ -6,6 +6,9 @@
 <title>{% block title %}{% endblock %} | Waltham Forest SEND data</title>
 <meta name="description" content="{% block description %}Performance data on special educational needs and disability (SEND) services in Waltham Forest, from public sources.{% endblock %}">
 <link rel="canonical" href="https://{{ domain }}/{{ "" if page == "index.html" else page }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
 <link rel="stylesheet" href="static/style.css">
 <script src="static/site.js" defer></script>
 </head>
@@ -13,7 +16,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="masthead">
   <div class="wrap">
-    <a class="brand" href="index.html">Waltham Forest SEND data</a>
+    <div class="row"><a class="brand" href="index.html">Waltham Forest <b>SEND</b> data</a><span class="badge-independent">Independent</span></div>
     <p class="tagline">How SEND services in Waltham Forest are performing. Every figure links to its public source.</p>
     <nav aria-label="Sections">
       <ul>
@@ -28,8 +31,8 @@
 {% block content %}{% endblock %}
 </main>
 <footer class="wrap footer">
-  <p>An independent site built from public sources. It is not run by or affiliated with the London Borough of Waltham Forest.
-  DfE statistics are Crown copyright, used under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
+  <p class="disclaimer"><strong>Independent site.</strong> Built from public sources. It is not run by or affiliated with the London Borough of Waltham Forest.</p>
+  <p>DfE statistics are Crown copyright, used under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
   <p>Contact, corrections and new documents: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
   <p>Built {{ built }}. <a href="sources.html">Sources and method</a> · <a href="data/headlines.csv">Download the headline figures (CSV)</a></p>
 </footer>
