@@ -230,6 +230,14 @@ def main():
             shutil.make_archive(str(OUT / "data" / f"nhs_{ds}"), "zip", src)
     (OUT / ".nojekyll").write_text("")
     (OUT / "CNAME").write_text(DOMAIN + "\n")  # custom domain for GitHub Pages
+    # for search engines; submit https://DOMAIN/sitemap.xml in Search Console
+    urls = "".join(f"  <url><loc>https://{DOMAIN}/{'' if name == 'index.html' else name}</loc></url>\n"
+                   for name, _ in PAGES)
+    (OUT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",
+        encoding="utf-8")
+    (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
     print(f"Built {len(PAGES)} pages into {OUT.relative_to(ROOT)}/")
 
 
