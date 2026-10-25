@@ -60,7 +60,7 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
         out.append(f'<text class="tick" x="{left - 6}" y="{yy + 4:.1f}" text-anchor="end">{escape(_fmt(tv, unit).replace(".0%", "%").replace(".0", ""))}</text>')
     out.append(f'<line class="axis" x1="{left}" x2="{left + pw}" y1="{top + ph}" y2="{top + ph}"/>')
     # x labels: thin out if crowded
-    stride = 1 if n <= 8 else 2
+    stride = 1 if n <= 8 else 2 if n <= 12 else 3
     for i, p in enumerate(periods):
         # label every `stride`-th period plus the last, without crowding the last one
         if i == n - 1 or (i % stride == 0 and i < n - stride):

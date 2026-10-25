@@ -24,6 +24,12 @@ you want (for example "April 2026 to June 2026" and "April 2025 to March
 python scripts/extract_nhs.py autism ~/Downloads/<zip file 1> ~/Downloads/<zip file 2>
 ```
 
+Where releases overlap, the later folder's figures win. NELFT's children's
+figures fall by almost 90% between March and April 2026, which looks like a
+recording change. `AUTISM_BREAK` in `scripts/metrics.py` keeps months from
+April 2026 off the trend charts. Review it when NHS England explains the
+change or a new release revises those months.
+
 ## 2. Community health services waiting lists (monthly)
 
 https://digital.nhs.uk/data-and-information/publications/statistical/mi-nhse-community-health-service-waiting-lists

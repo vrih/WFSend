@@ -135,6 +135,7 @@ def compute():
         "ks4_destinations": M.ks4_destinations(),
         "neet": M.neet(),
         "community_waits": M.community_waits(),
+        "autism": M.autism(),
     }
 
 

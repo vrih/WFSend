@@ -13,6 +13,10 @@ links back to a public source:
 - **Local Government and Social Care Ombudsman**, downloaded automatically:
   every published decision about the council (SEND decisions are picked out
   by the Ombudsman's own category) and its yearly complaint statistics.
+- **NHS England waiting times**: children's community health services
+  waiting lists and autism assessment waits for NELFT, North East London,
+  London and England. NHS England blocks automated downloads, so these are
+  downloaded by hand and cut down with `scripts/extract_nhs.py`.
 - **Council, NHS and Ofsted documents**: committee papers, the SEND Local Area
   Improvement Plan and its highlight reports, budget reports, and the 2025 area
   SEND inspection. These are entered by hand with page numbers.
