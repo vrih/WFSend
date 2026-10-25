@@ -8,6 +8,7 @@ No network access is needed: it reads the committed DfE extracts
 """
 import csv
 import datetime as dt
+import hashlib
 import io
 import json
 import shutil
@@ -318,6 +319,13 @@ GUIDES = [
 ]
 
 
+def asset(path):
+    """URL for a file in site/static/, versioned by its content so browsers
+    fetch the new copy as soon as it changes rather than when their cache expires."""
+    digest = hashlib.sha256((SITE / "static" / path).read_bytes()).hexdigest()[:10]
+    return f"static/{path}?v={digest}"
+
+
 def main():
     d = compute()
     local = read_yaml("council_reported.yaml")
@@ -329,7 +337,7 @@ def main():
     env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
                        ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES,
-                       guides=GUIDES, contact_email=CONTACT_EMAIL, domain=DOMAIN,
+                       guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN,
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
 
     if OUT.exists():
