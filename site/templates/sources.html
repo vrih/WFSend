@@ -23,6 +23,9 @@
 <h2 id="ombudsman">Ombudsman data</h2>
 <p>Published decisions and headline complaint statistics from the <a href="https://www.lgo.org.uk/">Local Government and Social Care Ombudsman</a> are downloaded by a script, like the DfE data. Last downloaded {{ LGO_MANIFEST.fetched }}. Copies: <a href="data/ombudsman_decisions.csv">ombudsman_decisions.csv</a>, <a href="data/ombudsman_annual_stats.csv">ombudsman_annual_stats.csv</a>.</p>
 
+<h2 id="gias">Register of schools</h2>
+<p>The list of special schools, resourced provision and SEN units on the <a href="places.html#special-school-needs">Places</a> page comes from the DfE's <a href="{{ d.specialist_settings.manifest.downloads_url }}">Get Information About Schools</a>, which publishes every school's details each day. A script downloads the file and keeps Waltham Forest's special schools and any school recorded with resourced provision or an SEN unit, including ones that have closed. Last downloaded {{ d.specialist_settings.manifest.fetched }}. Copy: <a href="data/gias_specialist_settings.csv">gias_specialist_settings.csv</a>.</p>
+
 <h2 id="upcoming">When new figures are due</h2>
 <p>Dates from the GOV.UK release calendar, checked {{ releases.checked }}. Provisional dates can change.</p>
 <div class="tablewrap"><table class="wide">

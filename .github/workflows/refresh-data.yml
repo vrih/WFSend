@@ -1,6 +1,6 @@
 name: Refresh DfE and Ombudsman data
 
-# Re-downloads the DfE statistics and Ombudsman decisions monthly and opens a pull request if
+# Re-downloads the DfE statistics, Ombudsman decisions and GIAS school list monthly and opens a pull request if
 # anything changed, so new figures are reviewed before they go live.
 on:
   schedule:
@@ -22,11 +22,13 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python scripts/fetch_dfe.py
       - run: python scripts/fetch_lgo.py
+      - run: python scripts/fetch_gias.py
       - run: python scripts/build.py
       - name: Ignore runs where only the download date changed
         run: |
           if git diff --quiet -- data/dfe/*.csv; then git checkout -- data/dfe/manifest.json; fi
           if git diff --quiet -- data/lgo/*.csv; then git checkout -- data/lgo/manifest.json; fi
+          if git diff --quiet -- data/gias/*.csv; then git checkout -- data/gias/manifest.json; fi
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: data-refresh

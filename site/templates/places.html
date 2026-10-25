@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}School places and children out of school{% endblock %}
-{% block description %}Special school places, forecast demand for specialist places, and children home educated or missing education in Waltham Forest.{% endblock %}
+{% block description %}Special schools, resourced provision, forecast demand for specialist places, and children home educated or missing education in Waltham Forest.{% endblock %}
 {% block content %}
 {% set ss = d.special_schools %}
 {% set su = d.specialist_units %}
@@ -34,6 +34,49 @@
 <p class="source">{{ cite_dfe(ss.sources + su.sources) }}</p>
 </figure>
 {{ figure(ss, y_max=120, note="The DfE publishes these as Official Statistics in Development: the collection is new and may change.") }}
+
+{% set gs = d.specialist_settings %}
+{% set gias_source %}Source: DfE, <a class="cite" href="{{ gs.manifest.downloads_url }}">Get Information About Schools</a> (downloaded {{ gs.manifest.fetched }}). <a href="data/gias_specialist_settings.csv">Download the list (CSV)</a>{% endset %}
+<p>The DfE's register of schools, Get Information About Schools, records the ages each special school takes and the types of need it caters for. Schools and the council keep these entries up to date themselves.</p>
+<figure class="metric" id="special-school-needs">
+<figcaption><h3>Special schools in Waltham Forest: ages and types of need</h3>
+<p class="explain">As recorded on Get Information About Schools. Capacity can differ from the places the council reported above. Pupil numbers are from the school census in the month shown. Follow a school's name for its full entry.</p></figcaption>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">School</th><th scope="col">Ages</th><th scope="col">Types of need</th><th scope="col">Capacity</th><th scope="col">Pupils on roll</th></tr></thead>
+<tbody>
+{% for s in gs.special %}
+<tr><th scope="row"><a href="{{ s.url }}">{{ s.name }}</a>{% if s.status != "Open" %}<br><span class="note">{{ s.status }}</span>{% endif %}</th><td>{{ s.ages }}</td><td>{{ s.needs|join("; ") or "Not recorded" }}</td><td>{{ fmt(s.capacity, "count") }}</td><td>{{ fmt(s.pupils, "count") }}{% if s.census %}<br><span class="note">{{ s.census }}</span>{% endif %}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ gias_source }}</p>
+</figure>
+
+<p>Some mainstream schools have places set aside for children with a particular type of need. In <strong>resourced provision</strong>, children are taught mostly in ordinary classes and get extra support. In an <strong>SEN unit</strong>, children are taught mostly in separate classes. Places are usually for children with an EHC plan.</p>
+{% set no_places = gs.other|selectattr("rp_capacity", "none")|selectattr("unit_capacity", "none")|list %}
+{% set ns = namespace(whole_school=[]) %}
+{% for s in gs.other if s.capacity and ((s.rp_capacity or 0) >= s.capacity or (s.unit_capacity or 0) >= s.capacity) %}{% set ns.whole_school = ns.whole_school + [s.name] %}{% endfor %}
+{% set whole_school = ns.whole_school %}
+<figure class="metric" id="resourced-provision-list">
+<figcaption><h3>Schools recorded with resourced provision or an SEN unit</h3>
+<p class="explain">As recorded on Get Information About Schools. "Places" and "Children in it" are for the resourced provision or unit only, not the whole school.</p></figcaption>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">School</th><th scope="col">Ages</th><th scope="col">Provision</th><th scope="col">Types of need</th><th scope="col">Places</th><th scope="col">Children in it</th></tr></thead>
+<tbody>
+{% for s in gs.other %}
+<tr><th scope="row"><a href="{{ s.url }}">{{ s.name }}</a>{% if s.status != "Open" %}<br><span class="note">{{ s.status }}</span>{% endif %}</th><td>{{ s.ages }}</td><td>{{ s.provision }}</td><td>{{ s.needs|join("; ") or "Not recorded" }}</td>
+{% if s.provision == "Resourced provision and SEN unit" %}
+<td>{{ fmt(s.rp_capacity, "count") }} resourced<br>{{ fmt(s.unit_capacity, "count") }} unit</td><td>{{ fmt(s.rp_pupils, "count") }} resourced<br>{{ fmt(s.unit_pupils, "count") }} unit</td>
+{% elif s.provision == "SEN unit" %}
+<td>{{ fmt(s.unit_capacity, "count") if s.unit_capacity is not none else "Not recorded" }}</td><td>{{ fmt(s.unit_pupils, "count") if s.unit_pupils is not none else "Not recorded" }}</td>
+{% else %}
+<td>{{ fmt(s.rp_capacity, "count") if s.rp_capacity is not none else "Not recorded" }}</td><td>{{ fmt(s.rp_pupils, "count") if s.rp_pupils is not none else "Not recorded" }}</td>
+{% endif %}
+</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Some entries look incomplete or out of date.{% if no_places %} {{ no_places|length }} {{ "school has" if no_places|length == 1 else "schools have" }} no places recorded.{% endif %}{% if whole_school %} {{ whole_school|join(" and ") }} {{ "records" if whole_school|length == 1 else "record" }} as many specialist places as the whole school, or more.{% endif %} So we haven't added these up, and they don't match the DfE count of {{ fmt(su_latest.resourced + su_latest.units, "count") }} places above, which comes from what the council reported each May.</p>
+<p class="source">{{ gias_source }}</p>
+</figure>
 
 <h2 id="forecasts">Forecast demand for specialist places</h2>
 <p>Each council forecasts how many children living in its area will have an EHC plan and need a specialist place. Waltham Forest forecasts {{ fmt(fc.wf_counts[fc_first], "count") }} children in {{ fc_first }}, rising to {{ fmt(fc.wf_counts[fc_last], "count") }} by {{ fc_last }}. That is growth of {{ fmt(fc.latest[WF] - 100) }}, against {{ fmt(fc.latest["London"] - 100) }} in London, {{ fmt(fc.latest["England"] - 100) }} in England and {{ fmt(fc.latest[SN] - 100) }} in similar areas. It is {{ rank_text(fc) }}.</p>

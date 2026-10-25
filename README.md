@@ -16,6 +16,9 @@ links back to a public source:
 - **Local Government and Social Care Ombudsman**, downloaded automatically:
   every published decision about the council (SEND decisions are picked out
   by the Ombudsman's own category) and its yearly complaint statistics.
+- **Get Information About Schools**, downloaded automatically: the DfE's
+  register of schools, for Waltham Forest's special schools, resourced
+  provision and SEN units, with the ages and types of need each one takes.
 - **NHS England waiting times**: children's community health services
   waiting lists, autism and ADHD assessment waits, and waits for children's
   mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
@@ -30,6 +33,7 @@ links back to a public source:
 data/dfe_sources.yaml     which DfE data sets to download
 scripts/fetch_dfe.py      downloads them, keeps England, London and neighbour rows -> data/dfe/*.csv
 scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
+scripts/fetch_gias.py     downloads the GIAS register, keeps Waltham Forest's specialist settings -> data/gias/
 scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
@@ -63,9 +67,12 @@ python scripts/fetch_dfe.py                  # everything (about 2 minutes)
 python scripts/fetch_dfe.py ehcp_timeliness  # or one data set
 ```
 
-Refresh the Ombudsman data the same way with `python scripts/fetch_lgo.py`.
+Refresh the Ombudsman data the same way with `python scripts/fetch_lgo.py`,
+and the list of specialist settings with `python scripts/fetch_gias.py`. The
+GIAS file is about 65 MB, but only Waltham Forest's specialist settings are
+kept.
 
-The `Refresh DfE and Ombudsman data` workflow runs both on the 3rd of each
+The `Refresh DfE and Ombudsman data` workflow runs all three on the 3rd of each
 month and opens a pull request if anything changed. Upcoming release dates
 are kept by hand in `data/local/release_calendar.yaml`.
 
