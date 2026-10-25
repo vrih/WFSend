@@ -57,5 +57,5 @@
 <p>National statistics come from the Department for Education's <a href="https://explore-education-statistics.service.gov.uk/">Explore Education Statistics</a> and are refreshed automatically. Local figures come from council and NHS papers, cited to the page. They are copied as printed, including the council's own warning that its case management data may be inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}). See <a href="sources.html">sources and method</a>.</p>
 {% set next = releases.releases|selectattr("key", "equalto", "ehcp")|first %}
 <p>The next DfE figures for EHC plans, covering 2026, are due on {{ next.date.strftime("%-d %B %Y") }} (provisional). See <a href="sources.html#upcoming">when new figures are due</a>.</p>
-<p>Spotted a mistake or know of a newer document? Corrections are welcome.</p>
+<p>Spotted a mistake or know of a newer document? Email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
 {% endblock %}

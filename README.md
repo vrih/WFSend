@@ -83,11 +83,20 @@ release and needs updating by hand too.
 
 **GitHub Pages:** in the repository settings, go to Pages and set the source
 to "GitHub Actions". The `Build and deploy site` workflow publishes `_site/`
-on every push to `main`.
+on every push to `main`. The build writes a `CNAME` file for
+`wfsenddata.org.uk`. In Pages settings, set the custom domain to
+`wfsenddata.org.uk` and tick "Enforce HTTPS". At your DNS provider add `A`
+records for the apex domain pointing at GitHub's Pages addresses
+(185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) and a
+`CNAME` record for `www` pointing at `vrih.github.io`.
 
 **Cloudflare Pages:** set the build command to
 `pip install -r requirements.txt && python scripts/build.py` and the output
 directory to `_site`.
+
+## Contact
+
+info@wfsenddata.org.uk
 
 ## Licence and attribution
 

@@ -26,6 +26,8 @@ import metrics as M  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "_site"
 SITE = ROOT / "site"
+DOMAIN = "wfsenddata.org.uk"
+CONTACT_EMAIL = f"info@{DOMAIN}"
 
 AREAS = (M.WF, "London", "England")
 
@@ -186,7 +188,8 @@ def main():
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text,
-                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES)
+                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES,
+                       contact_email=CONTACT_EMAIL, domain=DOMAIN)
 
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -213,6 +216,7 @@ def main():
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))
     (OUT / ".nojekyll").write_text("")
+    (OUT / "CNAME").write_text(DOMAIN + "\n")  # custom domain for GitHub Pages
     print(f"Built {len(PAGES)} pages into {OUT.relative_to(ROOT)}/")
 
 
