@@ -391,6 +391,10 @@ def primary_need():
 
 # --- Outcomes --------------------------------------------------------------
 
+# Suffixes for figure ids, so each pupil group's chart has its own anchor.
+# Every outcome breakdown lists the groups in this order.
+GROUP_IDS = ("ehcp", "support", "nosen")
+
 def ks2():
     rows = load("ks2_attainment")
     res = {}
@@ -417,15 +421,15 @@ def short_group(g):
 def ks4():
     rows = load("ks4_sen")
     res = {}
-    for group in ("Education, health and care plan", "SEN support / SEN without an EHC plan", "No SEN provision"):
+    for g, group in zip(GROUP_IDS, ("Education, health and care plan", "SEN support / SEN without an EHC plan", "No SEN provision")):
         sub = [r for r in rows if r["breakdown"] == group]
         a8s, periods = collect(sub, lambda r: num(r["attainment8_average"]), label=academic)
         ems, _ = collect(sub, lambda r: num(r["engmath_94_percent"]), label=academic)
         res[group] = {
-            "a8": build(a8s, periods, unit="score", rank=False, sources=["ks4_sen"], id="a8",
+            "a8": build(a8s, periods, unit="score", rank=False, sources=["ks4_sen"], id=f"a8_{g}",
                         title=f"Average Attainment 8 score: {short_group(group)}",
                         explain="Average GCSE-equivalent score across eight subjects at the end of Year 11, in all state-funded schools (including special schools)."),
-            "em": build(ems, periods, unit="percent", rank=False, sources=["ks4_sen"], id="em",
+            "em": build(ems, periods, unit="percent", rank=False, sources=["ks4_sen"], id=f"em_{g}",
                         title=f"Grade 4 or above in English and maths GCSE: {short_group(group)}",
                         explain="Pupils at the end of Year 11 achieving at least a grade 4 (a standard pass) in both English and maths, in all state-funded schools."),
         }
@@ -435,16 +439,16 @@ def ks4():
 def exclusions():
     rows = load("exclusions_characteristics")
     res = {}
-    for ch, label in (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+    for g, (ch, label) in zip(GROUP_IDS, (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN"))):
         sub = [r for r in rows if r["characteristic"] == ch]
         susp, periods = collect(sub, lambda r: num(r["susp_rate"]), label=academic)
         perm, _ = collect(sub, lambda r: num(r["perm_excl_rate"]), label=academic)
         res[ch] = {
             "susp": build(susp, periods, unit="score", rank=False, higher_is_better=False, sources=["exclusions_characteristics"],
-                          id="susp", title=f"Suspensions per 100 {label}",
+                          id=f"susp_{g}", title=f"Suspensions per 100 {label}",
                           explain="The number of suspensions in the school year for every 100 pupils in the group. One pupil can be suspended more than once."),
             "perm": build(perm, periods, unit="score", rank=False, higher_is_better=False, sources=["exclusions_characteristics"],
-                          id="perm", title=f"Permanent exclusions per 100 {label}",
+                          id=f"perm_{g}", title=f"Permanent exclusions per 100 {label}",
                           explain="Permanent exclusions in the school year for every 100 pupils in the group."),
         }
     return res
@@ -529,16 +533,16 @@ def spending():
 def absence():
     rows = load("absence_sen")
     res = {}
-    for group, label in (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("EHC plan", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN"))):
         sub = [r for r in rows if r["characteristic_breakdown"] == group]
         overall, periods = collect(sub, lambda r: num(r["sess_overall_percent"]), label=academic)
         persistent, _ = collect(sub, lambda r: num(r["enrolments_pa_10_exact_percent"]), label=academic)
         res[group] = {
-            "overall": build(overall, periods, id="abs_overall", unit="percent", rank=False, higher_is_better=False,
+            "overall": build(overall, periods, id=f"abs_overall_{g}", unit="percent", rank=False, higher_is_better=False,
                              title=f"Overall absence: {label}",
                              explain="Share of school sessions missed, for any reason, in the autumn and spring terms. Each year's figure covers those two terms only.",
                              sources=["absence_sen"]),
-            "persistent": build(persistent, periods, id="abs_persistent", unit="percent", higher_is_better=False,
+            "persistent": build(persistent, periods, id=f"abs_persistent_{g}", unit="percent", higher_is_better=False,
                                 title=f"Persistently absent: {label}",
                                 explain="Share of pupils who missed 10% or more of sessions in the autumn and spring terms.",
                                 sources=["absence_sen"]),
@@ -549,12 +553,12 @@ def absence():
 def eyfs():
     rows = load("eyfs_sen")
     res = {}
-    for group, label in (("Education, health and care plan", "children with an EHC plan"),
-                         ("SEN support / SEN without an EHC plan", "children on SEN support"),
-                         ("No SEN provision", "children with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("Education, health and care plan", "children with an EHC plan"),
+                                             ("SEN support / SEN without an EHC plan", "children on SEN support"),
+                                             ("No SEN provision", "children with no SEN"))):
         sub = [r for r in rows if r["breakdown"] == group]
         series, periods = collect(sub, lambda r: num(r["gld_children_percent"]), label=academic)
-        res[group] = build(series, periods, id="eyfs_gld", unit="percent", rank=False,
+        res[group] = build(series, periods, id=f"eyfs_gld_{g}", unit="percent", rank=False,
                            title=f"Good level of development at the end of Reception: {label}",
                            explain="Children reaching the expected level in the early learning goals for communication, physical development, personal and social development, literacy and maths, assessed at the end of Reception.",
                            sources=["eyfs_sen"])
@@ -571,10 +575,10 @@ def ks4_destinations():
         if k[0] and (k not in best or r["version"] == "Revised"):
             best[k] = r
     res = {}
-    for group, label in (("SEN with EHC plan or statement", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("SEN with EHC plan or statement", "pupils with an EHC plan"), ("SEN support", "pupils on SEN support"), ("No identified SEN", "pupils with no SEN"))):
         series, periods = collect([r for r in best.values() if r["breakdown"] == group],
                                   lambda r: num(r["pupil_percent"]), label=academic)
-        res[group] = build(series, periods, id="ks4_dest", unit="percent", rank=False,
+        res[group] = build(series, periods, id=f"ks4_dest_{g}", unit="percent", rank=False,
                            title=f"In education, employment or an apprenticeship after Year 11: {label}",
                            explain="Pupils who stayed in education, employment or an apprenticeship for at least two terms in the year after finishing Year 11. The year shown is the year they left Year 11. The latest year is provisional.",
                            sources=["ks4_destinations_sen"])
@@ -584,10 +588,10 @@ def ks4_destinations():
 def neet():
     rows = [r for r in load("neet_sen") if r["age"] == "16 to 17"]
     res = {}
-    for group, label in (("SEN EHC/statement", "young people with an EHC plan"), ("SEN support", "young people on SEN support"), ("No SEN", "young people with no SEN")):
+    for g, (group, label) in zip(GROUP_IDS, (("SEN EHC/statement", "young people with an EHC plan"), ("SEN support", "young people on SEN support"), ("No SEN", "young people with no SEN"))):
         series, periods = collect([r for r in rows if r["characteristic"] == group],
                                   lambda r: num(r["neet_nk_percent"]))
-        res[group] = build(series, periods, id="neet", unit="percent", higher_is_better=False,
+        res[group] = build(series, periods, id=f"neet_{g}", unit="percent", higher_is_better=False,
                            title=f"16 and 17 year olds not in education, employment or training, or not known: {label}",
                            explain="Average of December, January and February. Includes young people whose activity the council does not know, as the DfE's headline measure does.",
                            sources=["neet_sen"])

@@ -56,6 +56,9 @@ def cite(source, page=None):
     s = SOURCES[source]
     USED["local"].add(source)
     where = f", p. {page}" if isinstance(page, int) else (f", {page}" if page else "")
+    if "short" in s:  # legislation: "SEND Regulations 2014, regulation 5"; full title on sources.html
+        label = s["short"] + where
+        return Markup(f'<a class="cite" href="{escape(s["url"])}" title="{escape(s["title"])}" rel="noopener">{escape(label)}</a>')
     label = f"{s['publisher']}, {s['title']} ({dt.date.fromisoformat(str(s['date'])).strftime('%B %Y')}){where}"
     return Markup(f'<a class="cite" href="{escape(s["url"])}" rel="noopener">{escape(label)}</a>')
 

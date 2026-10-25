@@ -83,24 +83,28 @@ schools_budget_mar2026:
   url: https://civico.net/walthamforest/documents/74237157/download
 
 send_regs_2014:
+  short: SEND Regulations 2014  # link text for inline citations
   title: The Special Educational Needs and Disability Regulations 2014
   publisher: legislation.gov.uk
   date: 2014-09-01
   url: https://www.legislation.gov.uk/uksi/2014/1530/contents
 
 cfa_2014_s44:
+  short: Children and Families Act 2014  # link text for inline citations
   title: Children and Families Act 2014, section 44 (Reviews and re-assessments)
   publisher: legislation.gov.uk
   date: 2014-09-01
   url: https://www.legislation.gov.uk/ukpga/2014/6/section/44
 
 cfa_2014_s55:
+  short: Children and Families Act 2014  # link text for inline citations
   title: Children and Families Act 2014, section 55 (Mediation)
   publisher: legislation.gov.uk
   date: 2014-09-01
   url: https://www.legislation.gov.uk/ukpga/2014/6/section/55
 
 tribunal_rules_2008:
+  short: Tribunal Procedure Rules 2008  # link text for inline citations
   title: The Tribunal Procedure (First-tier Tribunal) (Health, Education and Social Care Chamber) Rules 2008, rule 20 (Starting proceedings)
   publisher: legislation.gov.uk
   date: 2008-11-03
@@ -151,6 +155,7 @@ sf_oct2026:
   url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2026-10/21October_2026_School_Forum_Report.pdf
 
 cfa_2014_s36:
+  short: Children and Families Act 2014  # link text for inline citations
   title: Children and Families Act 2014, section 36 (Assessment of education, health and care needs)
   publisher: legislation.gov.uk
   date: 2014-09-01
