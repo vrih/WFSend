@@ -139,8 +139,8 @@ health_waits:
   rows:
     - { label: "Occupational therapy: children waiting over 52 weeks", values: [33, 42, 37] }
     - { label: "Speech and language therapy: children waiting over 52 weeks", values: [1, 0, 0] }
-    - { label: "CAMHS neurodevelopmental pathway: average wait once on pathway (weeks)", values: [48, 46, 39] }
-    - { label: "Under-5s autism assessment (SACC): children waiting over 52 weeks", values: [25, 31, 28] }
+    - { id: camhs_neuro, label: "CAMHS neurodevelopmental pathway: average wait once on pathway (weeks)", values: [48, 46, 39] }
+    - { id: sacc, label: "Under-5s autism assessment (SACC): children waiting over 52 weeks", values: [25, 31, 28] }
     - { label: "Continence service: children waiting over 52 weeks", values: [4, 25, 13] }
 
 local_exclusions:

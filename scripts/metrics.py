@@ -151,6 +151,28 @@ def timeliness():
                  sources=["ehcp_timeliness"])
 
 
+TIMELINESS_BANDS = (("within20", "Plans issued within 20 weeks"),
+                    ("20to52", "Plans issued between 20 and 52 weeks"),
+                    ("over52", "Plans issued after 52 weeks"))
+
+
+def timeliness_bands():
+    """How long new plans took, in the DfE's three bands, as shares of all plans
+    issued in the year (excluding exemptions, as timeliness() does)."""
+    rows = [r for r in load("ehcp_timeliness") if r["exemptions_flag"] == "Excluding exemptions"
+            and r["breakdown_topic"].lower().startswith("all ehc plans") and area_of(r) in (WF, "London", "England")]
+    by = {}
+    for r in rows:
+        by.setdefault(r["time_period"], {}).setdefault(area_of(r), {})[r["timeliness"]] = num(r["ehc_plan_count"])
+    out = {}
+    for p, areas in sorted(by.items()):
+        out[p] = {a: {"total": v.get("Total plans issued"),
+                      **{k: pct(v.get(label), v.get("Total plans issued")) for k, label in TIMELINESS_BANDS}}
+                  for a, v in areas.items()}
+    periods = [p for p in out if all(out[p].get(a, {}).get("over52") is not None for a in (WF, "London", "England"))]
+    return {"periods": periods, "latest_period": periods[-1], "values": out, "sources": ["ehcp_timeliness"]}
+
+
 def plans_issued():
     rows = [r for r in load("ehcp_timeliness")
             if r["exemptions_flag"] == "Including exemptions" and r["timeliness"] == "Total plans issued"]

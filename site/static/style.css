@@ -121,6 +121,9 @@ p, li { max-width: 72ch; }
 
 .callout { background: var(--callout); border-left: 4px solid var(--warning); padding: 12px 16px; margin: 20px 0; border-radius: 4px; }
 .callout p { margin: 6px 0; }
+.answer { background: var(--forest-tint); border-left: 4px solid var(--forest-ink); padding: 12px 16px; margin: 16px 0 20px; border-radius: 4px; }
+.answer p { margin: 6px 0; font-size: 1.05rem; }
+.answer .note { font-size: 0.88rem; }
 
 /* stat tiles */
 .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 20px 0; padding: 0; list-style: none; }

@@ -165,3 +165,8 @@ nice_cg128:
   publisher: NICE
   date: 2017-12-20
   url: https://www.nice.org.uk/guidance/cg128/chapter/Recommendations
+nhs_choice_framework:
+  title: "NHS Choice Framework: what choices are available to you in your NHS care"
+  publisher: Department of Health and Social Care
+  date: 2024-10-23
+  url: https://www.gov.uk/government/publications/the-nhs-choice-framework/the-nhs-choice-framework-what-choices-are-available-to-me-in-the-nhs

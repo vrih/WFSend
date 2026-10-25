@@ -42,6 +42,7 @@
 {% set au = d.autism %}
 {% if au %}
 <h2 id="autism">Waiting for an autism assessment</h2>
+<p>In plain words: <a href="autism-assessment-waiting-time.html">how long is the wait for an autism assessment?</a></p>
 <p>NHS England publishes monthly figures on people referred for a suspected autism assessment. NICE guidance says an autism assessment should start within 3 months (13 weeks) of referral ({{ cite("nice_cg128", "recommendation 1.5.1") }}).</p>
 <p>"NELFT" counts children seen by the trust, which also works outside North East London. "North East London" counts children registered with a GP or living in the NHS North East London area, whichever provider they were referred to. Neither is for Waltham Forest alone. NHS England describes these as experimental statistics.</p>
 <figure class="metric" id="autism-table">
@@ -86,6 +87,7 @@
 {% set ad = d.adhd %}
 {% if ad %}
 <h2 id="adhd">Waiting for an ADHD assessment</h2>
+<p>In plain words: <a href="adhd-assessment-waiting-time.html">how long is the wait for an ADHD assessment?</a></p>
 <p>NHS England publishes monthly management information on people who may be waiting for an ADHD assessment. It counts referrals to NHS mental health services for "neurodevelopmental conditions, excluding autism", which also covers conditions such as dyslexia and Tourette syndrome, so it may overstate ADHD referrals. It doesn't include children waiting on community paediatrics lists, which are shown <a href="#nhs-waits">above</a>. The figures are for NHS North East London as a whole, not Waltham Forest alone, and cover children aged 5 to 17. NHS England rounds them to the nearest 5.</p>
 {% set p = ad.latest %}
 <figure class="metric" id="adhd-table">
