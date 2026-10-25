@@ -1,0 +1,11 @@
+{
+  "publisher": "Office for National Statistics",
+  "title": "Population estimates for England and Wales",
+  "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales",
+  "dataset": "Population estimates - local authority based by single year of age",
+  "dataset_url": "https://www.nomisweb.co.uk/datasets/pestsyoala",
+  "download_url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2002_1.data.csv?geography=E92000001%2CE12000007%2CE09000001%2CE09000002%2CE09000003%2CE09000004%2CE09000005%2CE09000006%2CE09000007%2CE09000008%2CE09000009%2CE09000010%2CE09000011%2CE09000012%2CE09000013%2CE09000014%2CE09000015%2CE09000016%2CE09000017%2CE09000018%2CE09000019%2CE09000020%2CE09000021%2CE09000022%2CE09000023%2CE09000024%2CE09000025%2CE09000026%2CE09000027%2CE09000028%2CE09000029%2CE09000030%2CE09000031%2CE09000032%2CE09000033%2CE06000045&date=2018%2C2019%2C2020%2C2021%2C2022%2C2023%2C2024%2C2025&gender=0&c_age=103%2C104%2C105%2C106%2C107%2C108%2C109%2C110%2C111%2C112%2C113%2C114%2C115%2C116%2C117%2C118%2C119&measures=20100&select=date_name%2Cgeography_code%2Cgeography_name%2Cc_age_name%2Cobs_value",
+  "published": "2026-07-29",
+  "latest_year": 2025,
+  "fetched": "2026-10-25"
+}

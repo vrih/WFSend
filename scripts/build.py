@@ -3,8 +3,8 @@
 
   python scripts/build.py
 
-No network access is needed: it reads the committed DfE extracts
-(data/dfe/) and the curated local figures (data/local/).
+No network access is needed: it reads the committed DfE and ONS extracts
+(data/dfe/, data/ons/) and the curated local figures (data/local/).
 """
 import csv
 import datetime as dt
@@ -40,6 +40,7 @@ def read_yaml(name):
 SOURCES = read_yaml("sources.yaml")
 MANIFEST = json.loads((ROOT / "data" / "dfe" / "manifest.json").read_text())
 LGO_MANIFEST = json.loads((ROOT / "data" / "lgo" / "manifest.json").read_text())
+ONS_MANIFEST = json.loads((ROOT / "data" / "ons" / "manifest.json").read_text())
 DFE_CFG = yaml.safe_load((ROOT / "data" / "dfe_sources.yaml").read_text())
 PUBS = DFE_CFG["publications"]
 SN_CFG = DFE_CFG["statistical_neighbours"]
@@ -78,6 +79,13 @@ def cite_dfe(keys):
     return Markup("Source: " + "; ".join(parts))
 
 
+def cite_ons():
+    m = ONS_MANIFEST
+    return Markup(f'ONS, <a class="cite" href="{escape(m["url"])}" rel="noopener">{escape(m["title"])}</a>: '
+                  f'<a class="cite" href="{escape(m["dataset_url"])}" rel="noopener">{escape(m["dataset"])}</a>'
+                  f' (downloaded {escape(m["fetched"])})')
+
+
 def figure(m, ranked=False, note=None, y_max=None, areas=AREAS):
     """A chart (or ranked bars) with legend, data table and source line."""
     series = {a: m["series"].get(a, {}) for a in areas if m["series"].get(a)}
@@ -104,7 +112,8 @@ def figure(m, ranked=False, note=None, y_max=None, areas=AREAS):
                  + charts.table(series, m["periods"], unit=m["unit"]) + "</details>")
     if note:
         parts.append(f'<p class="note">{note}</p>')
-    parts.append(f'<p class="source">{cite_dfe(m["sources"])}</p></figure>')
+    ons = f"; {cite_ons()}" if m.get("population") else ""
+    parts.append(f'<p class="source">{cite_dfe(m["sources"])}{ons}</p></figure>')
     return Markup("\n".join(parts))
 
 
@@ -228,11 +237,13 @@ def compute():
         "timeliness_bands": M.timeliness_bands(),
         "plans_issued": M.plans_issued(),
         "requests": M.requests(),
+        "requests_rate": M.requests_rate(),
         "refused": req_out["refused"],
         "undecided": req_out["undecided"],
         "six_weeks": req_out["six_weeks"],
         "not_issued": M.assessments_not_issued(),
         "caseload": M.caseload(),
+        "caseload_rate": M.caseload_rate(),
         "growth": M.caseload_growth(),
         "placements": M.placements(),
         "primary_need": M.primary_need(),
@@ -349,7 +360,7 @@ def main():
     built = dt.date.today().isoformat()
     waits = wait_answers(d, local)
     ctx = dict(d=d, waits=waits, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
-               MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
+               MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, ONS_MANIFEST=ONS_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
     for name, _ in PAGES + GUIDES:
         if name == "sources.html":
@@ -361,6 +372,7 @@ def main():
     # downloadable data
     for f in (ROOT / "data" / "dfe").glob("*"):
         shutil.copy(f, OUT / "data" / f.name)
+    shutil.copy(ROOT / "data" / "ons" / "population.csv", OUT / "data" / "ons_population.csv")
     for f in (ROOT / "data" / "lgo").glob("*.csv"):
         shutil.copy(f, OUT / "data" / f"ombudsman_{f.name}")
     shutil.copy(ROOT / "data" / "gias" / "specialist_settings.csv", OUT / "data" / "gias_specialist_settings.csv")

@@ -8,6 +8,9 @@
 <h2>Plans maintained by the council</h2>
 {{ figure(d.caseload, note="The number of plans grew " ~ fmt(d.growth.growth[WF]) ~ " between " ~ d.growth["from"] ~ " and " ~ d.growth["to"] ~ ", compared with " ~ fmt(d.growth.growth["London"]) ~ " in London and " ~ fmt(d.growth.growth["England"]) ~ " in England.") }}
 
+<p>Councils differ in size, so the number of plans on its own doesn't show whether Waltham Forest has more or fewer than other areas. This chart divides it by the number of children living in each area.</p>
+{{ figure(d.caseload_rate, ranked=True, note="The count covers plans for everyone aged 0 to 25, but most are for children aged 2 to 18, so we divide by that age group. A 0 to 25 base would be swayed by the number of students and young workers, which is higher in London. This makes the rate a fair way to compare areas of different sizes, not the share of children with a plan. Population figures are ONS estimates, which the ONS revises from time to time.") }}
+
 <p class="note">The council itself thinks the true number of active plans is lower. Its SEND Sufficiency Plan estimates {{ "{:,}".format(local.backlogs[0].value) }} active plans, against 3,663 reported to the DfE for January 2025, because overdue annual reviews are expected to end some plans ({{ cite(local.backlogs[0].source, local.backlogs[0].page) }}). Between March and August 2026 the number of plans rose by another 201 (5%) ({{ cite("sf_oct2026", 29) }}).</p>
 
 <h2>Share of pupils with SEND</h2>
