@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% set w = waits[page] %}
+{% set au = d.autism %}
+{% set p = au.latest %}{% set pm = p|month %}
+{% set hw = {} %}{% for r in local.health_waits.rows if r.id is defined %}{% set _ = hw.update({r.id: r}) %}{% endfor %}
+{% block title %}How long is the wait for an autism assessment in Waltham Forest?{% endblock %}
+{% block description %}{{ w.description }}{% endblock %}
+{% block content %}
+<h1>How long is the wait for an autism assessment in Waltham Forest?</h1>
+{{ ui.short_answer(w, "NHS England figures for the 3 months to " ~ pm ~ ". Later months are not used yet (see below).") }}
+
+<h2 id="how-long">Waits for a first assessment appointment, 3 months to {{ pm }}</h2>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">Median wait from referral</th><th scope="col">Children waiting</th><th scope="col">Of those, waiting 13 weeks or more</th></tr></thead>
+<tbody>
+{% for a in au.median.series %}
+{% set m = au.median.series[a][p] %}
+<tr><th scope="row">{{ a }}</th>
+<td>{% if m is not none %}{{ fmt(m, "count") }} days (about {{ (m / 30.44)|round|int }} months){% else %}–{% endif %}</td>
+<td>{{ fmt(au.waiting.series[a][p], "count") if au.waiting.series[a][p] is not none else "–" }}</td>
+<td>{{ fmt(au.over13.series[a][p]) if au.over13.series[a][p] is not none else "–" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/autism-statistics">Autism waiting time statistics</a> (experimental statistics). Children aged 0 to 17.</p>
+<p>NICE guidance says an autism assessment should start within 3 months (13 weeks) of referral ({{ cite("nice_cg128", "recommendation 1.5.1") }}).</p>
+<p>"NELFT" is North East London NHS Foundation Trust, the NHS trust that runs children's community and mental health services in Waltham Forest. It also works in other boroughs. "North East London" counts children living in or registered with a GP in the NHS North East London area, whoever they were referred to. Neither is for Waltham Forest alone.</p>
+
+<h2 id="council">What the council reports</h2>
+<p>The council's own reports track two NHS routes in Waltham Forest ({{ cite(local.health_waits.source, local.health_waits.page) }}):</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col"><span class="vh">Measure</span></th>{% for c in local.health_waits.columns %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for k in ("sacc", "camhs_neuro") %}
+<tr><th scope="row">{{ hw[k].label }}</th>{% for v in hw[k]["values"] %}<td>{{ v }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">"Once on pathway" suggests the CAMHS figure doesn't include time on the waiting list before that. The council doesn't say.</p>
+
+<h2 id="caveats">What these figures don't tell you</h2>
+<ul>
+  <li>The wait is to the <em>first</em> assessment appointment. Getting a diagnosis can take longer.</li>
+  <li>The median is the middle wait. Half of children waited longer.</li>
+  <li>In April 2026 the number of children NELFT reports as waiting fell by about 90% in a single month, with no explanation from NHS England. A change in how NELFT records data is more likely than a real fall. Until it is explained, this page uses figures up to {{ pm }}. The later months are on the <a href="health.html#autism">health page</a>.</li>
+</ul>
+
+<h2 id="choice">{{ w.faq[2][0] }}</h2>
+<p>{{ w.faq[2][1]|trim(".") }} ({{ cite("nhs_choice_framework") }}). Not every provider assesses children, and some have their own waiting lists, so ask how long the wait is before you choose.</p>
+
+<h2 id="school">Support at school doesn't need a diagnosis</h2>
+<p>You don't need a diagnosis to ask the council for an EHC needs assessment. The legal test is about your child's needs ({{ cite("cfa_2014_s36", "section 36(8)") }}). See <a href="ehcp-waiting-time.html">how long an EHC plan takes</a>.</p>
+
+<p>For trend charts and the full figures, see the <a href="health.html#autism">health page</a>.</p>
+{{ ui.other_guides(page, guides) }}
+{% endblock %}

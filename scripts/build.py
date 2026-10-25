@@ -129,11 +129,102 @@ def ordinal(n):
     return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
 
+def one_in(v):
+    """A share in words: 25.7 -> 'about 1 in 4', 70.4 -> 'about 7 in 10'."""
+    if v >= 90:
+        return "more than 9 in 10"
+    if v >= 30:
+        return f"about {round(v / 10)} in 10"
+    return f"about 1 in {round(100 / v)}"
+
+
+def long_month(p):
+    """'Mar 2026' -> 'March 2026'."""
+    return dt.datetime.strptime(p, "%b %Y").strftime("%B %Y")
+
+
+def months(days):
+    return f"about {round(days / 30.44)} months"
+
+
+def wait_answers(d, local):
+    """The plain-language answers at the top of each waiting-time page. They are
+    also used for the meta description, the FAQ structured data and llms.txt, so
+    search engines and AI tools quote the same words people read."""
+    pc = lambda v: f"{v:.0f}%"
+    b = d["timeliness_bands"]
+    y = b["latest_period"]
+    wf, ldn, eng = (b["values"][y][a] for a in (M.WF, "London", "England"))
+    lt = local["measures"]["timeliness_20_weeks"]["observations"][-1]
+    ehcp = [
+        ("How long does an EHC plan take in Waltham Forest?",
+         f"Of the new EHC plans Waltham Forest issued in {y}, {pc(wf['within20'])} ({one_in(wf['within20'])}) were issued "
+         f"within the 20-week legal limit. {pc(wf['20to52'])} took between 20 weeks and a year, and {pc(wf['over52'])} "
+         f"({one_in(wf['over52'])}) took more than a year. In London {pc(ldn['within20'])} were on time, and in England "
+         f"{pc(eng['within20'])}. The council's own latest figure ({lt['period']}) is {lt['value']}% within 20 weeks."),
+        ("What is the legal time limit for an EHC plan?",
+         "The council must tell you within 6 weeks of the request whether it will carry out an EHC needs assessment. "
+         "If it assesses and decides to issue a plan, the final plan must be issued within 20 weeks of the request. "
+         "A few exceptions apply, such as school holidays of 4 weeks or more."),
+        ("Does my child need a diagnosis to get an EHC needs assessment?",
+         "No. The council must assess if your child has or may have special educational needs and may need "
+         "support through an EHC plan. A diagnosis is not part of the legal test, and parents can ask for an "
+         "assessment themselves."),
+    ]
+    au = d["autism"]
+    p = long_month(au["latest"])
+    med = {a: au["median"]["series"][a][au["latest"]] for a in au["median"]["series"]}
+    over13 = au["over13"]["series"]["NELFT"][au["latest"]]
+    autism = [
+        ("How long is the wait for an autism assessment in Waltham Forest?",
+         f"Children seen by NELFT, the NHS trust that assesses children in Waltham Forest, who had their first "
+         f"autism assessment appointment in the 3 months to {p}, had waited a median of {med['NELFT']:,.0f} days "
+         f"({months(med['NELFT'])}) since referral. Half waited longer. NICE says an assessment should start within "
+         f"3 months. Across North East London the median was {med['North East London']:,.0f} days, in London "
+         f"{med['London']:,.0f} days and in England {med['England']:,.0f} days."),
+        ("How many children are waiting more than 3 months for an autism assessment?",
+         f"In {p}, {pc(over13)} ({one_in(over13)}) of children with an open autism referral at NELFT had been "
+         f"waiting 13 weeks or more."),
+        ("Can I ask to be referred somewhere else for an autism or ADHD assessment?",
+         "In England, if your GP refers you to a mental health service, you can usually choose which NHS-funded "
+         "provider you are referred to for your first appointment. Ask your GP. This is sometimes called "
+         "\"right to choose\"."),
+    ]
+    ad = d["adhd"]
+    p = ad["latest"]
+    o52, o104 = ad["over52"]["series"], ad["over104"]["series"]
+    teasers = {
+        "ehcp-waiting-time.html": f"In {y}, {pc(wf['within20'])} of new plans were issued within the legal 20 weeks.",
+        "autism-assessment-waiting-time.html": f"A median of {months(med['NELFT'])} from referral to a first appointment at NELFT.",
+        "adhd-assessment-waiting-time.html": f"{pc(o52['North East London'][p])} of children waiting in North East London had waited a year or more.",
+    }
+    adhd = [
+        ("How long is the wait for an ADHD assessment in Waltham Forest?",
+         f"The NHS does not publish how long children wait from referral to an ADHD assessment. It does publish how "
+         f"long children still on the waiting list have waited so far. In North East London in {long_month(p)}, "
+         f"{pc(o52['North East London'][p])} ({one_in(o52['North East London'][p])}) of children aged 5 to 17 "
+         f"with an open referral had been waiting a year or more, and {pc(o104['North East London'][p])} two "
+         f"years or more. In London the figures were {pc(o52['London'][p])} and {pc(o104['London'][p])}, and in "
+         f"England {pc(o52['England'][p])} and {pc(o104['England'][p])}."),
+        autism[2],
+    ]
+    out = {}
+    for page, faq in (("ehcp-waiting-time.html", ehcp), ("autism-assessment-waiting-time.html", autism),
+                      ("adhd-assessment-waiting-time.html", adhd)):
+        ld = {"@context": "https://schema.org", "@type": "FAQPage",
+              "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                             for q, a in faq]}
+        out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page],
+                     "jsonld": Markup(json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"))}
+    return out
+
+
 def compute():
     req_out = M.request_outcomes()
     ar = M.annual_reviews()
     return {
         "timeliness": M.timeliness(),
+        "timeliness_bands": M.timeliness_bands(),
         "plans_issued": M.plans_issued(),
         "requests": M.requests(),
         "refused": req_out["refused"],
@@ -218,6 +309,14 @@ PAGES = [
     ("sources.html", "Sources"),
 ]
 
+# Plain-language answers for families starting out. Linked from the home page
+# rather than the menu.
+GUIDES = [
+    ("ehcp-waiting-time.html", "How long does an EHC plan take?"),
+    ("autism-assessment-waiting-time.html", "How long is the wait for an autism assessment?"),
+    ("adhd-assessment-waiting-time.html", "How long is the wait for an ADHD assessment?"),
+]
+
 
 def main():
     d = compute()
@@ -227,9 +326,10 @@ def main():
 
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
+    env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
                        ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES,
-                       contact_email=CONTACT_EMAIL, domain=DOMAIN,
+                       guides=GUIDES, contact_email=CONTACT_EMAIL, domain=DOMAIN,
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
 
     if OUT.exists():
@@ -238,10 +338,11 @@ def main():
     shutil.copytree(SITE / "static", OUT / "static")
 
     built = dt.date.today().isoformat()
-    ctx = dict(d=d, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
+    waits = wait_answers(d, local)
+    ctx = dict(d=d, waits=waits, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
                MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
-    for name, _ in PAGES:
+    for name, _ in PAGES + GUIDES:
         if name == "sources.html":
             continue
         html = env.get_template(name).render(page=name, **ctx)
@@ -265,13 +366,24 @@ def main():
     (OUT / "CNAME").write_text(DOMAIN + "\n")  # custom domain for GitHub Pages
     # for search engines; submit https://DOMAIN/sitemap.xml in Search Console
     urls = "".join(f"  <url><loc>https://{DOMAIN}/{'' if name == 'index.html' else name}</loc></url>\n"
-                   for name, _ in PAGES)
+                   for name, _ in PAGES + GUIDES)
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",
         encoding="utf-8")
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
-    print(f"Built {len(PAGES)} pages into {OUT.relative_to(ROOT)}/")
+    # a plain-text map of the site for AI tools (https://llmstxt.org)
+    lines = ["# Waltham Forest SEND data", "",
+             "> Independent site showing how special educational needs and disability (SEND) services in Waltham "
+             "Forest, London, are performing. Every figure links to a public source (DfE, NHS England, Ofsted, "
+             "council papers). Not run by Waltham Forest Council.", "", "## Waiting times", ""]
+    for name, title in GUIDES:
+        lines.append(f"- [{title}](https://{DOMAIN}/{name}): {waits[name]['description']}")
+    lines += ["", "## Data pages", ""]
+    lines += [f"- [{label}](https://{DOMAIN}/{'' if name == 'index.html' else name})" for name, label in PAGES]
+    lines += ["", "## Data", "", f"- [Headline figures (CSV)](https://{DOMAIN}/data/headlines.csv)", ""]
+    (OUT / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
+    print(f"Built {len(PAGES) + len(GUIDES)} pages into {OUT.relative_to(ROOT)}/")
 
 
 if __name__ == "__main__":

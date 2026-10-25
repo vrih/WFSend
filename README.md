@@ -36,6 +36,13 @@ scripts/metrics.py        calculates the metrics shown on the site
 scripts/build.py          renders site/templates/*.html -> _site/
 ```
 
+Three plain-language pages answer the questions families ask when they start
+out: how long an EHC plan, an autism assessment and an ADHD assessment take.
+Their short answers are written in `wait_answers()` in `scripts/build.py` from
+the latest figures, and reused for the page description, FAQ structured data
+and `llms.txt`, so they update with each data refresh. Check the wording still
+makes sense after a refresh, especially if a figure moves a lot.
+
 The site is plain HTML and CSS. Charts are inline SVG, so no JavaScript
 libraries or external services are needed. A small script adds hover
 tooltips. Every chart has a "Show the numbers" table. The Deadlines page

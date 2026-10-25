@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% set w = waits[page] %}
+{% set ad = d.adhd %}
+{% set p = ad.latest %}{% set pm = p|month %}
+{% set hw = {} %}{% for r in local.health_waits.rows if r.id is defined %}{% set _ = hw.update({r.id: r}) %}{% endfor %}
+{% block title %}How long is the wait for an ADHD assessment in Waltham Forest?{% endblock %}
+{% block description %}{{ w.description }}{% endblock %}
+{% block content %}
+<h1>How long is the wait for an ADHD assessment in Waltham Forest?</h1>
+{{ ui.short_answer(w, "NHS England figures for " ~ pm ~ ", for North East London as a whole.") }}
+
+<h2 id="how-long">How long children on the list have waited so far, {{ pm }}</h2>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">Children with an open referral</th><th scope="col">Waiting a year or more</th><th scope="col">Waiting two years or more</th><th scope="col">No contact yet</th></tr></thead>
+<tbody>
+{% for a in ad.waiting.series %}
+<tr><th scope="row">{{ a }}</th>
+<td>{{ fmt(ad.waiting.series[a][p], "count") }}</td>
+<td>{{ fmt(ad.over52.series[a][p]) }}</td>
+<td>{{ fmt(ad.over104.series[a][p]) }}</td>
+<td>{{ fmt(ad.no_contact.series[a][p]) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd">ADHD management information</a> (management information, experimental). Children aged 5 to 17. Counts are rounded to the nearest 5.</p>
+{% set nel = ad.counts["North East London"] %}
+<p>In {{ pm }}, {{ fmt(nel.ADHD003d, "count") }} children in North East London had been waiting two years or more, up from {{ fmt(ad.first_counts["North East London"].ADHD003d, "count") }} in {{ ad.periods[0]|month }}. Fewer children in North East London have had no contact at all than in London or England, but more have waited over a year. Most seem to get a first contact and then wait for the assessment itself.</p>
+
+<h2 id="council">What the council reports</h2>
+<p>The council reports the average wait on the CAMHS neurodevelopmental pathway. The report doesn't say which conditions it covers ({{ cite(local.health_waits.source, local.health_waits.page) }}):</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col"><span class="vh">Measure</span></th>{% for c in local.health_waits.columns %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+<tbody><tr><th scope="row">{{ hw.camhs_neuro.label }}</th>{% for v in hw.camhs_neuro["values"] %}<td>{{ v }}</td>{% endfor %}</tr></tbody>
+</table></div>
+<p class="note">"Once on pathway" suggests this doesn't count time on the waiting list before that, which may be why it is much shorter than the NHS England figures above. The council doesn't say.</p>
+
+<h2 id="caveats">What these figures don't tell you</h2>
+<ul>
+  <li>They show how long children <em>still waiting</em> have waited so far. They will wait longer before they are seen. The NHS doesn't publish how long a finished wait took.</li>
+  <li>They count referrals for "neurodevelopmental conditions, excluding autism". That includes ADHD but also conditions such as Tourette syndrome, so it may overstate ADHD referrals.</li>
+  <li>They don't include children waiting on community paediatrics lists. Some children are assessed for ADHD there instead (see the <a href="health.html#nhs-waits">NHS community waiting lists</a>).</li>
+  <li>They cover all of North East London, not Waltham Forest alone.</li>
+</ul>
+
+<h2 id="choice">{{ w.faq[1][0] }}</h2>
+<p>{{ w.faq[1][1]|trim(".") }} ({{ cite("nhs_choice_framework") }}). Not every provider assesses children, and some have their own waiting lists, so ask how long the wait is before you choose.</p>
+
+<h2 id="school">Support at school doesn't need a diagnosis</h2>
+<p>You don't need a diagnosis to ask the council for an EHC needs assessment. The legal test is about your child's needs ({{ cite("cfa_2014_s36", "section 36(8)") }}). See <a href="ehcp-waiting-time.html">how long an EHC plan takes</a>.</p>
+
+<p>For trend charts and the full figures, see the <a href="health.html#adhd">health page</a>.</p>
+{{ ui.other_guides(page, guides) }}
+{% endblock %}

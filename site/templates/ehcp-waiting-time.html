@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% set w = waits[page] %}
+{% set b = d.timeliness_bands %}
+{% set y = b.latest_period %}
+{% set lt = local.measures.timeliness_20_weeks.observations[-1] %}
+{% set next = releases.releases|selectattr("key", "equalto", "ehcp")|first %}
+{% block title %}How long does an EHC plan take in Waltham Forest?{% endblock %}
+{% block description %}{{ w.description }}{% endblock %}
+{% block content %}
+<h1>How long does an EHC plan take in Waltham Forest?</h1>
+{{ ui.short_answer(w, "Department for Education figures for plans issued in " ~ y ~ ". The next figures, for " ~ (y|int + 1) ~ ", are due on " ~ next.date.strftime("%-d %B %Y") ~ ".") }}
+
+<h2 id="how-long">How long new plans took in {{ y }}</h2>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">New plans issued</th><th scope="col">Within 20 weeks</th><th scope="col">20 weeks to a year</th><th scope="col">More than a year</th></tr></thead>
+<tbody>
+{% for a in (WF, "London", "England") %}
+{% set v = b["values"][y][a] %}
+<tr><th scope="row">{{ a }}</th><td>{{ fmt(v.total, "count") }}</td><td>{{ fmt(v.within20) }}</td><td>{{ fmt(v["20to52"]) }}</td><td>{{ fmt(v.over52) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe(b.sources) }}. Plans where a legal exception to the 20 weeks applied are left out.</p>
+
+<p>Waltham Forest used to issue about nine in ten new plans on time, well above London and England (<a href="assessments.html#timeliness">see the full trend</a>). Since then the share issued within 20 weeks has fallen each year:
+{% for p in b.periods %}{{ fmt(b["values"][p][WF].within20) }} in {{ p }}{{ ", " if not loop.last else ". " }}{% endfor %}
+{% set first = b["values"][b.periods[0]][WF].over52 %}
+The share taking more than a year went from {{ "none" if first == 0 else fmt(first) }} in {{ b.periods[0] }} to {{ fmt(b["values"][y][WF].over52) }} in {{ y }}.</p>
+<p>The council's own monitoring shows no recovery yet. Its latest figure ({{ lt.period }}) is {{ lt.value }}% within 20 weeks ({{ cite(lt.source, lt.page) }}). These figures come from the council's case management system, which the council has said may be inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}).</p>
+
+<h2 id="steps">The steps and the legal deadlines</h2>
+<ol>
+  <li><strong>Someone asks for an assessment.</strong> A parent, a young person or a school can ask the council directly ({{ cite("cfa_2014_s36", "section 36(1)") }}).</li>
+  <li><strong>The council decides whether to assess: 6 weeks.</strong> In {{ d.six_weeks.latest_period }}, Waltham Forest made {{ fmt(d.six_weeks.latest[WF]) }} of these decisions within 6 weeks (England {{ fmt(d.six_weeks.latest["England"]) }}). Most of the delay comes after this step.</li>
+  <li><strong>Professionals send their advice: 6 weeks</strong> from when the council asks them, for example an educational psychologist or a health service ({{ cite("send_regs_2014", "regulation 8") }}). The council says delays in educational psychologist advice are the main reason plans are late ({{ cite("hwb_oct2025_report", 4) }}).</li>
+  <li><strong>You get a draft plan</strong> and at least 15 days to comment and ask for a school ({{ cite("send_regs_2014", "regulation 13(1)") }}).</li>
+  <li><strong>The final plan: 20 weeks</strong> from the request ({{ cite("send_regs_2014", "regulation 13(2)") }}).</li>
+</ol>
+<p>Enter the date of your own request in the <a href="deadlines.html#assessment">deadlines calculator</a> to see each date.</p>
+
+<h2 id="diagnosis">{{ w.faq[2][0] }}</h2>
+<p>{{ w.faq[2][1]|trim(".") }} ({{ cite("cfa_2014_s36", "section 36(8)") }}). You don't need to wait for an autism or ADHD assessment before asking. See the waits for <a href="autism-assessment-waiting-time.html">autism</a> and <a href="adhd-assessment-waiting-time.html">ADHD</a> assessments.</p>
+
+<h2 id="caveats">What these figures don't tell you</h2>
+<ul>
+  <li>They count plans by the year they were <em>issued</em>, so a request made in 2024 that ended in a plan in 2025 counts in 2025.</li>
+  <li>They only include requests that ended with a plan. Families who were refused an assessment, or assessed and refused a plan, aren't counted.</li>
+  <li>They can't tell you how long your own child will wait. That depends on how quickly advice comes in, and on how busy the council is when you apply.</li>
+</ul>
+
+<h2 id="late">If the deadlines are missed</h2>
+<p>The deadlines are legal duties, not targets. If one is missed you can complain to the council, and then to the Local Government and Social Care Ombudsman (see <a href="disputes.html">complaints and appeals</a>). If the council refuses to assess or refuses to issue a plan, you can appeal to the SEND Tribunal. You must usually speak to a mediation adviser first ({{ cite("cfa_2014_s55", "section 55") }}). For free advice, contact <a href="https://www.ipsea.org.uk/">IPSEA</a> or Waltham Forest's SEND information, advice and support service (SENDIASS).</p>
+
+<p>For charts, rankings against other London boroughs and more of the council's own figures, see <a href="assessments.html">assessments and timeliness</a>.</p>
+{{ ui.other_guides(page, guides) }}
+{% endblock %}
