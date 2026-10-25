@@ -29,6 +29,8 @@
 <h3>The council's own figures</h3>
 <p>The improvement plan also tracks exclusions and suspensions from the council's own records. They may be counted differently from the DfE statistics. They show suspensions of pupils with an EHC plan almost doubling between 2023/24 and 2024/25.</p>
 {{ ui.simple_table(local.local_exclusions) }}
+<p>The council's latest corporate performance report has figures for 2025/26, counted a different way.</p>
+{{ ui.simple_table(local.local_exclusions_2026) }}
 
 <h2 id="attendance">Attendance</h2>
 {{ figure(d.absence["EHC plan"].persistent, ranked=True) }}
@@ -38,6 +40,8 @@
 <h3>The council's own figures</h3>
 <p>These come from the council's improvement plan. They are attendance rather than absence, and cover full school years.</p>
 {{ ui.simple_table(local.local_attendance) }}
+<p>The council's latest corporate performance report has provisional figures for 2025/26, compared with London and England.</p>
+{{ ui.simple_table(local.local_attendance_2026) }}
 
 <h2 id="after-school">After school</h2>
 {{ figure(d.ks4_destinations["SEN with EHC plan or statement"], y_max=100) }}

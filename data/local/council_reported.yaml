@@ -18,6 +18,8 @@ measures:
     target_note: The improvement plan records a baseline but sets no target or trajectory. It relies on a recovery plan to clear backlogs "by end of 2025".
     target_source: { source: hwb_oct2025_report, page: 4 }
     observations:
+      - { period: "March 2023", value: 87.7, n: 57, source: send_perf_mar2024, page: 2, note: "57 of 65 plans issued in the month. The council's monthly briefing counts plans issued within 20 weeks, or 24 weeks where a legal exception applies." }
+      - { period: "March 2024", value: 79.3, n: 23, source: send_perf_mar2024, page: 2, note: "23 of 29 plans issued in the month, within 20 weeks or 24 weeks where a legal exception applies. February 2024: 83.9% (52 of 62)." }
       - { period: "Q4 2025", value: 33.81, n: 47, source: laip_2025, page: 15, note: "Labelled 'Q4 2025' in a plan published in April 2025, so probably January to March 2025 (financial-year quarter 4 of 2024/25)." }
       - { period: "March 2025", value: 31.91, n: 15, source: laip_2025, page: 15 }
       - { period: "June 2025", value: 30.58, source: hwb_oct2025_highlight, page: 15 }
@@ -34,6 +36,8 @@ measures:
     target: null
     target_note: No target is set. The council says it is clearing the backlog with temporary staff.
     observations:
+      - { period: "March 2023", value: 67.1, n: 1634, source: send_perf_mar2024, page: 2, note: "Measured differently from the later figures: plans with an annual review completed in the previous 12 months (1,634 of 2,434), not reviews completed on time." }
+      - { period: "March 2024", value: 51.5, n: 1432, source: send_perf_mar2024, page: 2, note: "Plans with an annual review completed in the previous 12 months (1,432 of 2,779), not reviews completed on time." }
       - { period: "Q4 2025", value: 10, n: 23, source: laip_2025, page: 15, note: "Labelled 'Q4 2025' in a plan published in April 2025." }
       - { period: "March 2025", value: 20, n: 12, source: laip_2025, page: 15 }
       - { period: "June 2025", value: 24.18, source: hwb_oct2025_highlight, page: 15 }
@@ -79,6 +83,12 @@ measures:
     target_note: No audits were done between December 2024 and August 2025. There is no benchmark for annual reviews.
     observations:
       - { period: "December 2024", value: 82.3, source: hwb_oct2025_highlight, page: 15, note: "The improvement plan dates this baseline 'December 2025'. The later highlight report says December 2024." }
+
+# The council's own count of live EHC plans at the end of each month.
+live_plans:
+  - { period: "March 2024", value: 3433, source: send_perf_mar2024, page: 2 }
+  - { period: "March 2026", value: 4022, source: cif_jul2026, page: 30 }
+  - { period: "July 2026", value: 4168, source: cif_sep2026, page: 30 }
 
 backlogs:
   - { label: "Active EHC plans, council estimate after its annual review backlog is cleared (3,663 reported to DfE in January 2025)", value: 3354, period: "September 2025", source: sufficiency_plan_2025, page: 20, note: "The council expects 'a significant number of EHC plans are likely to be ceased' once overdue annual reviews are done." }
@@ -157,6 +167,20 @@ local_exclusions:
     - { label: "of which pupils with an EHC plan", values: [199, 378] }
     - { label: "of which pupils on SEN support", values: [557, 715] }
 
+local_exclusions_2026:
+  title: Permanent exclusions, including cancelled and pending cases (council's own figures)
+  source: cif_sep2026
+  page: "pp. 31-32"
+  note: These count every permanent exclusion, including ones later cancelled and, for 2025/26, ones still waiting for a governing body hearing. The table above counts only upheld exclusions, which is why it gives 43 for 2024/25. The earlier report also gives 14 pupils on SEN support for 2024/25, where this one gives 13.
+  columns: ["2024/25", "2025/26"]
+  rows:
+    - { label: "Permanent exclusions (all pupils)", values: [50, 44] }
+    - { label: "of which pupils with an EHC plan", values: [10, 4] }
+    - { label: "of which pupils on SEN support", values: [13, 18] }
+    - { label: "Upheld", values: [43, 30] }
+    - { label: "Cancelled", values: [7, 7] }
+    - { label: "Waiting for a governing body hearing", values: [0, 7] }
+
 local_attendance:
   title: School attendance (council's own figures)
   source: hwb_oct2025_highlight
@@ -167,6 +191,19 @@ local_attendance:
     - { label: "Pupils on SEN support", values: ["92.1%", "91.8%"] }
     - { label: "Pupils with no SEN", values: ["94.4%", "n/a"] }
     - { label: "All pupils", values: ["93.7%", "93.8%"] }
+
+local_attendance_2026:
+  title: School attendance in 2025/26, provisional (council's own figures)
+  source: cif_sep2026
+  page: "pp. 36, 38"
+  note: Provisional figures for pupils of compulsory school age, before the DfE's checks. The council gives 93.63% for all pupils in 2024/25 on the same basis, where the table above gives 93.8%.
+  columns: ["Waltham Forest", "London", "England"]
+  rows:
+    - { label: "Pupils with an EHC plan", values: ["89.09%", "88.97%", "86.36%"] }
+    - { label: "Pupils on SEN support", values: ["91.76%", "91.35%", "89.93%"] }
+    - { label: "Pupils with no SEN", values: ["94.27%", "94.45%", "94.20%"] }
+    - { label: "All pupils", values: ["93.54%", "93.65%", "93.07%"] }
+    - { label: "Pupils with an EHC plan who were persistently absent", values: ["33.84%", "n/a", "n/a"] }
 
 improvement_plan_status:
   period: September 2025
