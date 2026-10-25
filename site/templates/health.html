@@ -39,6 +39,50 @@
 </figure>
 {% endif %}
 
+{% set au = d.autism %}
+{% if au %}
+<h2 id="autism">Waiting for an autism assessment</h2>
+<p>NHS England publishes monthly figures on people referred for a suspected autism assessment. NICE guidance says an autism assessment should start within 3 months (13 weeks) of referral ({{ cite("nice_cg128", "recommendation 1.5.1") }}).</p>
+<p>"NELFT" counts children seen by the trust, which also works outside North East London. "North East London" counts children registered with a GP or living in the NHS North East London area, whichever provider they were referred to. Neither is for Waltham Forest alone. NHS England describes these as experimental statistics.</p>
+<figure class="metric" id="autism-table">
+<figcaption><h3>Children waiting for an autism assessment, {{ au.latest }}</h3>
+<p class="explain">Children aged 0 to 17 with a suspected autism referral still open at the end of the month.</p></figcaption>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th><th scope="col">Children with an open referral</th><th scope="col">Open 13 weeks or more</th><th scope="col">Median wait for a first appointment</th></tr></thead>
+<tbody>
+{% set p = au.latest %}
+{% for a in au.waiting.series %}
+<tr><th scope="row">{{ a }}</th>
+<td>{{ fmt(au.waiting.series[a][p], "count") if au.waiting.series[a][p] is not none else "–" }}</td>
+<td>{{ fmt(au.over13.series[a][p]) if au.over13.series[a][p] is not none else "–" }}</td>
+<td>{{ fmt(au.median.series[a][p], "count") ~ " days" if au.median.series[a][p] is not none else "–" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% for m in (au.over13, au.median) %}
+<h4 class="sub">{{ m.title }}</h4>
+<p class="explain">{{ m.explain }}</p>
+{{ charts.legend(m.series.keys())|safe }}
+{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max)|safe }}
+<details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
+{% endfor %}
+{% if au.after_periods %}
+<h4 class="sub">From {{ au.after_periods[0] }}: a break in the figures</h4>
+<p>In {{ au.after_periods[0] }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.after.waiting.NELFT[au.after_periods[0]], "count") }} in a single month. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month. Until this is explained, these months are shown separately and not added to the trend.</p>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Area</th>{% for q in au.after_periods %}<th scope="col">{{ q }}: waiting</th>{% endfor %}<th scope="col">{{ au.after_periods[-1] }}: 13+ weeks</th></tr></thead>
+<tbody>
+{% for a in au.after.waiting %}
+<tr><th scope="row">{{ a }}</th>
+{% for q in au.after_periods %}<td>{{ fmt(au.after.waiting[a][q], "count") if au.after.waiting[a][q] is not none else "–" }}</td>{% endfor %}
+<td>{{ fmt(au.after.over13[a][au.after_periods[-1]]) if au.after.over13[a][au.after_periods[-1]] is not none else "–" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% endif %}
+<p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/autism-statistics">Autism waiting time statistics</a> (experimental statistics):
+{% for src in au.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_autism.zip">Extracted rows (zip)</a></p>
+</figure>
+{% endif %}
+
 <h2>What the council reports</h2>
 {{ ui.simple_table(local.health_waits) }}
 <p>The council reports that health advice for EHC needs assessments is returned within 6 weeks in "65-90%" of cases ({{ cite("hwb_oct2025_report", 4) }}). The legal deadline is 6 weeks ({{ cite("send_regs_2014", "regulation 8") }}). No exact figure or trend has been published.</p>

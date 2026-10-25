@@ -595,3 +595,65 @@ def community_waits():
     latest = order[-1]
     return {"periods": periods, "latest": label(latest), "services": services,
             "sources": [months[m]["source"] for m in order]}
+
+
+# NHS England autism waiting time statistics (long format, one row per metric).
+# NELFT is the provider; QMF counts patients by GP practice or residence in NEL.
+AUTISM_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "England": "England"}
+AUTISM_METRICS = ("ASD16b", "ASD16c", "ASD25a")
+# From April 2026 NELFT's children's figures fall by almost 90% in one month
+# (4,305 to 505 children waiting). NHS England gives no reason, so months from
+# here on are shown separately rather than joined onto the trend.
+AUTISM_BREAK = (2026, 4)
+
+
+def autism():
+    folders = sorted(p for p in (NHS / "autism").glob("*/") if (p / "source.json").exists())
+    if not folders:
+        return None
+    vals = {}  # (year, month) -> area -> metric -> value
+    sources = []
+    for folder in folders:  # later releases sort last, so they win for any overlap
+        sources.append(json.loads((folder / "source.json").read_text()))
+        for f in folder.glob("AutismStats_*.csv"):
+            if f.name.startswith("AutismStatsDQ"):
+                continue
+            with f.open(encoding="utf-8") as fh:
+                for r in csv.DictReader(fh):
+                    area = AUTISM_AREAS.get(r["PRIMARY_LEVEL"])
+                    if not area or "Age Group" in r["BREAKDOWN"] or r["METRIC"] not in AUTISM_METRICS:
+                        continue
+                    d, m, y = r["REPORTING_PERIOD_START"].split("/")
+                    vals.setdefault((int(y), int(m)), {}).setdefault(area, {})[r["METRIC"]] = num(r["METRIC_VALUE"])
+    label = lambda ym: f"{list(MONTHS)[ym[1] - 1][:3]} {ym[0]}"
+    order = sorted(vals)
+
+    def series(fn, months):
+        return {a: {label(ym): fn(vals[ym].get(a, {})) for ym in months} for a in AUTISM_AREAS.values()}
+
+    waiting = lambda v: v.get("ASD16b")
+    over13 = lambda v: pct(v.get("ASD16c"), v["ASD16b"]) if v.get("ASD16b") else None
+    median = lambda v: v.get("ASD25a")
+    before = [ym for ym in order if ym < AUTISM_BREAK]
+    after = [ym for ym in order if ym >= AUTISM_BREAK]
+
+    def metric(id_, fn, unit, title, explain):
+        s = series(fn, before)
+        top = max((v for a in s.values() for v in a.values() if v is not None), default=0)
+        return {"id": id_, "unit": unit, "title": title, "explain": explain, "series": s,
+                "periods": [label(m) for m in before],
+                # round the axis up to a multiple of 400 so the 4 gridlines land on round numbers
+                "y_max": 100 if unit == "percent" else -(-top // 400) * 400 or None}
+    return {
+        "latest": label(before[-1]),
+        "periods": [label(m) for m in before],
+        "after_periods": [label(m) for m in after],
+        "waiting": metric("autism_waiting", waiting, "count", "Children with an open autism referral",
+                          "Children aged 0 to 17 with a suspected autism referral still open at the end of the month."),
+        "over13": metric("autism_over13", over13, "percent", "Children whose autism referral has been open 13 weeks or more",
+                         "Share of children with an open suspected autism referral whose referral had been open for at least 13 weeks."),
+        "median": metric("autism_median", median, "count", "Median wait for a first appointment (days)",
+                         "Median days from referral to first appointment, for children whose first appointment was in the quarter up to that month."),
+        "after": {k: series(fn, after) for k, fn in (("waiting", waiting), ("over13", over13), ("median", median))},
+        "sources": sources,
+    }
