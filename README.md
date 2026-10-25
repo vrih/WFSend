@@ -19,6 +19,10 @@ links back to a public source:
 - **Get Information About Schools**, downloaded automatically: the DfE's
   register of schools, for Waltham Forest's special schools, resourced
   provision and SEN units, with the ages and types of need each one takes.
+- **ONS population estimates**, downloaded automatically from
+  [Nomis](https://www.nomisweb.co.uk/datasets/pestsyoala): the number of
+  children aged 2 to 18 in each area, used to show requests for an assessment per
+  1,000 children so areas of different sizes can be compared.
 - **NHS England waiting times**: children's community health services
   waiting lists, autism and ADHD assessment waits, and waits for children's
   mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
@@ -34,6 +38,7 @@ data/dfe_sources.yaml     which DfE data sets to download
 scripts/fetch_dfe.py      downloads them, keeps England, London and neighbour rows -> data/dfe/*.csv
 scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
 scripts/fetch_gias.py     downloads the GIAS register, keeps Waltham Forest's specialist settings -> data/gias/
+scripts/fetch_ons.py      downloads ONS population estimates (ages 2 to 18) -> data/ons/population.csv
 scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
@@ -68,11 +73,12 @@ python scripts/fetch_dfe.py ehcp_timeliness  # or one data set
 ```
 
 Refresh the Ombudsman data the same way with `python scripts/fetch_lgo.py`,
-and the list of specialist settings with `python scripts/fetch_gias.py`. The
-GIAS file is about 65 MB, but only Waltham Forest's specialist settings are
-kept.
+the list of specialist settings with `python scripts/fetch_gias.py`, and the
+ONS population estimates with `python scripts/fetch_ons.py`. The GIAS file is
+about 65 MB, but only Waltham Forest's specialist settings are kept. The ONS
+publishes new mid-year estimates each summer.
 
-The `Refresh DfE and Ombudsman data` workflow runs all three on the 3rd of each
+The `Refresh DfE and Ombudsman data` workflow runs all four on the 3rd of each
 month and opens a pull request if anything changed. Upcoming release dates
 are kept by hand in `data/local/release_calendar.yaml`.
 

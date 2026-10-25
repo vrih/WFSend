@@ -16,6 +16,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 DFE = ROOT / "data" / "dfe"
+ONS = ROOT / "data" / "ons"
 WF = "Waltham Forest"
 SUPPRESSED = {"", "x", "c", "z", "u", "low", "~", ":", ".."}
 
@@ -183,9 +184,13 @@ def plans_issued():
                  sources=["ehcp_timeliness"])
 
 
-def requests():
+def _request_counts():
     rows = [r for r in load("ehcp_requests") if r["request_type"] == "Total" and r["request_outcome"] == "Total"]
-    series, periods = collect(rows, lambda r: num(r["request_count"]))
+    return collect(rows, lambda r: num(r["request_count"]))
+
+
+def requests():
+    series, periods = _request_counts()
     return build(series, periods, id="requests", unit="count", rank=False,
                  title="Requests for an EHC needs assessment",
                  explain="The number of new requests for an EHC needs assessment the council received each calendar year.",
@@ -234,6 +239,42 @@ def caseload():
                  title="EHC plans maintained by the council",
                  explain="All EHC plans (ages 0 to 25) the council maintains, counted each January.",
                  sources=["ehcp_caseload"])
+
+
+# --- Rates per 1,000 children ----------------------------------------------
+# Counts are divided by the ONS mid-year estimate of children aged 2 to 18,
+# where most EHC plans are. A wider 0 to 25 base would be swayed by the
+# number of students and young workers, which is higher in London.
+
+def population():
+    """{area: {mid-year: people aged 2 to 18}}, summed from single years of age."""
+    out = {}
+    with (ONS / "population.csv").open(encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            a = None if r["area_name"] == "City of London" else r["area_name"]
+            if a:
+                out.setdefault(a, {}).setdefault(int(r["year"]), 0)
+                out[a][int(r["year"])] += int(r["population"])
+    return out
+
+
+def per_1000(counts, periods, year_of, **meta):
+    """Rate per 1,000 children aged 2 to 18 from {area: {period: count}}.
+    year_of maps a period to the mid-year population estimate used."""
+    pop = population()
+    periods = [p for p in periods if year_of(p) in pop["England"]]
+    series = {a: {p: 1000 * s[p] / pop[a][year_of(p)] if s.get(p) is not None and year_of(p) in pop.get(a, {}) else None
+                  for p in periods}
+              for a, s in counts.items()}
+    children = {p: pop[WF][year_of(p)] for p in periods if year_of(p) in pop.get(WF, {})}
+    return build(series, periods, unit="rate", rank_label="highest", population=True, wf_children=children, **meta)
+
+
+def requests_rate():
+    return per_1000(*_request_counts(), int, id="requests_rate",
+                    title="Requests for an assessment per 1,000 children aged 2 to 18",
+                    explain="Requests for an EHC needs assessment received in the calendar year, for every 1,000 children aged 2 to 18 living in the area. Population from the ONS estimate for June of that year.",
+                    sources=["ehcp_requests"])
 
 
 def caseload_growth():

@@ -20,7 +20,7 @@ def _fmt(v, unit):
         return f"£{v:,.0f}"
     if unit == "gbp_m":
         return f"£{v:,.1f}m"
-    if unit == "score":
+    if unit in ("score", "rate"):
         return f"{v:.1f}"
     return f"{v:,.0f}"
 
