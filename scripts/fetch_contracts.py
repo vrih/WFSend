@@ -26,6 +26,7 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "contracts"
@@ -42,6 +43,7 @@ FIELDS = ["source", "notice_id", "url", "procurement_id", "stage", "status", "pu
           "suppliers", "start", "end"]
 
 
+LONDON = ZoneInfo("Europe/London")
 PAUSE = 1  # seconds between Find a Tender pages, to stay under its rate limit
 
 
@@ -134,24 +136,33 @@ def fts_row(rel):
 
 
 def find_a_tender(since, until):
-    """The council's notices updated between since and until, from the national feed."""
+    """The council's notices updated between since and until, from the national feed.
+
+    The feed's own "next" cursor can return the same page again and again, so
+    pages are requested by date instead: each request asks for notices updated
+    before the oldest one already seen. The feed reads its dates as UK local
+    time, while notices carry UTC offsets, so dates are converted to London time.
+    """
     rows, pages, seen = [], 0, set()
-    url = f"{FTS_FEED}?updatedFrom={since}&updatedTo={until}&limit=100"
-    while url:
-        d = request(url)
+    to = until
+    while True:
+        d = request(f"{FTS_FEED}?updatedFrom={since}&updatedTo={to}&limit=100")
         pages += 1
         releases = d.get("releases", [])
         new = [rel for rel in releases if (rel["id"], rel.get("date")) not in seen]
-        if releases and not new:
-            print(f"    the feed repeated a page after {pages - 1} pages; stopping this month", flush=True)
-            break
         for rel in new:
             seen.add((rel["id"], rel.get("date")))
             if BUYER in (rel.get("buyer", {}).get("name") or "").lower():
                 rows.append(fts_row(rel))
-        url = d.get("links", {}).get("next")
+        if len(releases) < 100:
+            break
+        oldest = min(dt.datetime.fromisoformat(rel["date"].replace("Z", "+00:00")) for rel in releases)
+        # One second of overlap, so notices sharing the oldest timestamp aren't missed;
+        # if a whole page shares it, step back past it.
+        step = dt.timedelta(seconds=1 if new else -1)
+        to = (oldest.astimezone(LONDON) + step).strftime("%Y-%m-%dT%H:%M:%S")
         if pages % 25 == 0:
-            print(f"      {pages} pages, back to {releases[-1].get('date', '')[:10] if releases else '?'}", flush=True)
+            print(f"      {pages} pages, back to {to[:16]}", flush=True)
         time.sleep(PAUSE)
     print(f"    {since[:10]} to {until[:10]}: {pages} pages, {len(rows)} council notices", flush=True)
     return rows
