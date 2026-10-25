@@ -58,8 +58,11 @@ def open_csv_stream(url, encoding="utf-8-sig"):
 
 
 def in_scope(row, neighbours=frozenset(), school_rows=False):
+    """school_rows: True keeps every school row; an LA code keeps that LA's schools only."""
     level = row.get("geographic_level")
-    if level == "National" or (school_rows and level == "School"):
+    if level == "School":
+        return school_rows is True or (bool(school_rows) and row.get("new_la_code") == school_rows)
+    if level == "National":
         return True
     if level in ("Regional", "Local authority"):
         return row.get("region_code") in LONDON or (level == "Local authority" and row.get("new_la_code") in neighbours)

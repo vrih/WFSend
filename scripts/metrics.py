@@ -385,7 +385,7 @@ def appeal_rate():
 # --- Prevalence ------------------------------------------------------------
 
 def sen_prevalence():
-    rows = load("sen_pupils")
+    rows = [r for r in load("sen_pupils") if r["phase_type_grouping"] == "Total"]
     ehcp, support = {}, {}
     periods = set()
     for r in rows:
@@ -406,6 +406,62 @@ def sen_prevalence():
         "support": build(support, periods, id="pupils_support", title="Pupils on SEN support",
                          explain="Pupils whose needs are met through SEN support without an EHC plan, as a share of all pupils. School census, January.", **common),
     }
+
+
+SCHOOL_PHASES = {"State-funded primary": "primary", "State-funded secondary": "secondary"}
+
+
+def school_sen():
+    """Pupils with an EHC plan or on SEN support in each Waltham Forest mainstream
+    school, from the DfE's school-level file, with the borough, London and England
+    shares for the same phase from the main SEN file."""
+    rows = load("sen_schools")
+    period = january(rows[0]["time_period"])
+    schools = {}
+    for r in rows:
+        if r["phase_type_grouping"] not in SCHOOL_PHASES:
+            continue
+        s = schools.setdefault(r["school_urn"], {"urn": r["school_urn"], "name": r["school_name"],
+                                                 "phase": SCHOOL_PHASES[r["phase_type_grouping"]],
+                                                 "type": r["establishment_type"], "rp": False, "unit": False})
+        unit, prov, n = r["specialist_provision_unit_type"], r["sen_provision"], num(r["pupil_count"])
+        if unit == "Resourced provision":
+            s["rp"] = bool(n)  # 1 if the school has resourced provision, not a pupil count
+        elif unit == "SEN unit":
+            s["unit"] = bool(n)
+        elif prov == "All pupils":
+            s["pupils"] = n
+        elif prov == "Education, health and care plans":
+            s["ehcp"] = n
+        elif prov == "SEN support":
+            s["support"] = n
+    for s in schools.values():
+        s["ehcp_pct"] = pct(s["ehcp"], s["pupils"])
+        s["support_pct"] = pct(s["support"], s["pupils"])
+
+    wanted = {"Education, health and care plan": "ehcp", "SEN support / SEN without an EHC plan": "support"}
+    areas = {}
+    for r in load("sen_pupils"):
+        a = area_of(r)
+        if (a in (WF, "London", "England") and january(r["time_period"]) == period
+                and r["phase_type_grouping"] in SCHOOL_PHASES and r["establishment_type"] == "Total"
+                and r["sen_provision"] in wanted):
+            areas.setdefault(SCHOOL_PHASES[r["phase_type_grouping"]], {}).setdefault(a, {})[wanted[r["sen_provision"]]] = num(r["pupil_percent"])
+
+    phases = {}
+    for ph in SCHOOL_PHASES.values():
+        ss = sorted((s for s in schools.values() if s["phase"] == ph), key=lambda s: s["name"])
+        by_ehcp = sorted(ss, key=lambda s: s["ehcp_pct"])
+        phases[ph] = {
+            "schools": ss,
+            "areas": areas[ph],
+            "lowest": by_ehcp[0],
+            "highest": by_ehcp[-1],
+            "median": by_ehcp[len(by_ehcp) // 2]["ehcp_pct"] if len(by_ehcp) % 2 else
+                      (by_ehcp[len(by_ehcp) // 2 - 1]["ehcp_pct"] + by_ehcp[len(by_ehcp) // 2]["ehcp_pct"]) / 2,
+            "with_provision": [s for s in ss if s["rp"] or s["unit"]],
+        }
+    return {"period": period, "phases": phases, "sources": ["sen_schools", "sen_pupils"]}
 
 
 NEED_SHORT = {

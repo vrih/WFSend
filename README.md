@@ -8,7 +8,7 @@ links back to a public source:
   [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/):
   EHC plan numbers, requests, 20-week timeliness, annual reviews, placements,
   SEND Tribunal appeal rates, results at key stages 2 and 4,
-  pupils' main type of need, exclusions, special school places and forecast
+  pupils' main type of need, pupils with SEND in each mainstream school, exclusions, special school places and forecast
   demand, elective home education and children missing education. Each figure is shown for Waltham
   Forest, London, England and the average of Waltham Forest's 10 statistical
   neighbours ("similar areas"), with rankings against the London boroughs and
