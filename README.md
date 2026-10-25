@@ -26,6 +26,8 @@ links back to a public source:
 - **Council spending over £500**, downloaded automatically from the council's
   monthly transparency reports: payments coded to its SEND services, by
   service and supplier.
+- **Contracts Finder and Find a Tender**, downloaded automatically: the
+  council's procurement notices, with SEND contracts awarded and planned.
 - **NHS England waiting times**: children's community health services
   waiting lists, autism and ADHD assessment waits, and waits for children's
   mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
@@ -43,6 +45,7 @@ scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/l
 scripts/fetch_gias.py     downloads the GIAS register, keeps Waltham Forest's specialist settings -> data/gias/
 scripts/fetch_ons.py      downloads ONS population estimates (ages 2 to 18) -> data/ons/population.csv
 scripts/fetch_spend.py    downloads the council's spending over £500 reports, keeps SEND payments -> data/spend/
+scripts/fetch_contracts.py downloads the council's notices from Contracts Finder and Find a Tender -> data/contracts/
 scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
@@ -90,7 +93,13 @@ list far fewer payments for every service. `SPEND_LAST_COMPLETE` in
 explains the change or republishes those months, and check `SEND_SERVICES` in
 `scripts/fetch_spend.py` if the council restructures its services.
 
-The `Refresh DfE and Ombudsman data` workflow runs all five on the 3rd of each
+Contract notices come from `python scripts/fetch_contracts.py`. Find a Tender
+has no search API, so the script reads its national feed from where the last
+run stopped (`fts_read_to` in `data/contracts/manifest.json`) and keeps the
+council's notices. Which notices count as SEND is decided by `SEND_NOTICE` in
+`scripts/metrics.py`. Check new matches after a refresh.
+
+The `Refresh DfE and Ombudsman data` workflow runs all six on the 3rd of each
 month and opens a pull request if anything changed. Upcoming release dates
 are kept by hand in `data/local/release_calendar.yaml`.
 
