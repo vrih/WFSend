@@ -6,6 +6,9 @@
 # target: the numeric target the council has published for this measure, or
 # null where the plan sets a measure and baseline but no target.
 #
+# not_updated: shown under the latest figure when the council has stopped
+# publishing the measure.
+#
 # n: the count printed next to a percentage ("n=57"). In these documents it is
 # the number that met the measure, not the total, so n_label says what it counts.
 
@@ -40,6 +43,7 @@ measures:
     target: null
     target_note: No target is set. The council says it is clearing the backlog with temporary staff.
     n_label: reviews meeting the measure
+    not_updated: The council hasn't published this measure since its September 2025 highlight report.
     observations:
       - { period: "March 2023", value: 67.1, n: 1634, source: send_perf_mar2024, page: 2, note: "Measured differently from the later figures: plans with an annual review completed in the previous 12 months (1,634 of 2,434), not reviews completed on time." }
       - { period: "March 2024", value: 51.5, n: 1432, source: send_perf_mar2024, page: 2, note: "Plans with an annual review completed in the previous 12 months (1,432 of 2,779), not reviews completed on time." }
@@ -56,6 +60,7 @@ measures:
     target: null
     target_note: No target is set.
     n_label: reviews on time
+    not_updated: The council hasn't published this measure since its September 2025 highlight report.
     observations:
       - { period: "March 2025", value: 14, n: 33, source: laip_2025, page: 20, note: "193 Year 9 reviews were late." }
       - { period: "August 2025", value: 12, n: 5, source: hwb_oct2025_highlight, page: 17, note: "156 Year 9 reviews overdue, down from 202 in July 2025." }
@@ -76,6 +81,7 @@ measures:
     lower_is_better: true
     plan_ref: Improvement plan measure 2.08 ("Fewer complaints received")
     target: null
+    not_updated: The council hasn't published this measure since its September 2025 highlight report.
     observations:
       - { period: "March 2025", value: 60, source: hwb_oct2025_highlight, page: 14 }
       - { period: "July 2025", value: 40, source: hwb_oct2025_highlight, page: 14 }
@@ -87,6 +93,7 @@ measures:
     plan_ref: Improvement plan measure 3a
     target: null
     target_note: No audits were done between December 2024 and August 2025. There is no benchmark for annual reviews.
+    not_updated: The council hasn't published this measure since its September 2025 highlight report.
     observations:
       - { period: "December 2024", value: 82.3, source: hwb_oct2025_highlight, page: 15, note: "The improvement plan dates this baseline 'December 2025'. The later highlight report says December 2024." }
 

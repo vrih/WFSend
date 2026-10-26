@@ -15,11 +15,8 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 {%- if m.latest[SN] is defined and m.latest[SN] is not none %} · Similar areas {{ fmt(m.latest[SN], u) }}{% endif %}
 {%- endmacro %}
 
-{% macro observations_table(meas) %}
-<div class="tablewrap"><table class="wide">
-<thead><tr><th scope="col">Period</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead>
-<tbody>
-{% for o in meas.observations %}
+{% macro observation_rows(rows, meas) %}
+{% for o in rows %}
 <tr>
   <td>{{ o.period }}</td>
   <td><strong>{{ fmt(o.value, meas.unit) }}</strong>{% if o.n is defined %} <span class="note">({{ "{:,}".format(o.n) }} {{ meas.n_label }})</span>{% endif %}
@@ -27,7 +24,27 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
   <td>{{ cite(o.source, o.page) }}</td>
 </tr>
 {% endfor %}
+{% endmacro %}
+
+{% macro observations_table(meas) %}
+{# The latest figure, with earlier ones folded away #}
+<div class="tablewrap"><table class="wide">
+<caption class="vh">{{ meas.title }}: latest figure</caption>
+<thead><tr><th scope="col">Period</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{{ observation_rows(meas.observations[-1:], meas) }}
 </tbody></table></div>
+{% if meas.not_updated is defined %}<p class="note">{{ meas.not_updated }}</p>{% endif %}
+{% if meas.observations|length > 1 %}
+<details><summary>Earlier figures</summary>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">{{ meas.title }}: earlier figures</caption>
+<thead><tr><th scope="col">Period</th><th scope="col">Value</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{{ observation_rows(meas.observations[:-1]|reverse|list, meas) }}
+</tbody></table></div>
+</details>
+{% endif %}
 <p class="note"><strong>Published target:</strong>
 {% if meas.target is none %}<span class="notarget">none</span>{% else %}{{ meas.target }}{% endif %}.
 {% if meas.target_note is defined %}{{ meas.target_note }}{% endif %}
