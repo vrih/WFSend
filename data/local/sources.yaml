@@ -245,3 +245,17 @@ foi_send_costs_jun2026:
   date: 2026-06-15
   url: https://www.whatdotheyknow.com/request/freedom_of_information_request_s_1987
   notes: Response attached as "Response some exempt.pdf". Several parts were refused because answering them would exceed the FOI cost limit.
+
+foi_ehc_requests_weekly_may2026:
+  title: "FOI response: EHC needs assessment requests and plans issued each week, 2024 to 2026 (council ref. 10195633)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-05-18
+  url: https://www.whatdotheyknow.com/request/ehcna_requests_and_plans_issued_114
+  notes: Response attached as "FOI 10195633.xlsx". The date is when the spreadsheet was last saved. The figures are in data/local/foi_ehc_requests_weekly.csv.
+
+foi_ehc_assessments_may2024:
+  title: "FOI response: EHC plan requests and assessments in progress (council ref. 612949332)"
+  publisher: London Borough of Waltham Forest
+  date: 2024-05-23
+  url: https://www.whatdotheyknow.com/request/ehc_plans_foi_request_31
+  notes: Response attached as a Word document, with answers written under each question.

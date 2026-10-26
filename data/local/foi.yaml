@@ -9,6 +9,21 @@
 
 responses:
 
+  ehc_assessments_mar2024:
+    source: foi_ehc_assessments_may2024
+    period: 30 March 2024
+    rows:
+      - { label: "Requests for new EHC plans waiting for a decision on whether to assess", value: 24, page: "question 3", note: "Printed as '24 as at 30/03/2024 (requests for new plans only)'. The question described this as the 6-week stage before the council decides whether to assess." }
+      - { label: "Requests for new EHC plans at the assessment stage", value: 169, page: "question 4", note: "Printed as '169 as at 30/03/2024 (requests for new plans only)'." }
+    note: "The council did not answer the questions on special school places and waiting lists. It said the request numbers were already published by the DfE."
+
+  ehc_requests_weekly:
+    source: foi_ehc_requests_weekly_may2026
+    period: Week 1 of 2024 to week 18 of 2026
+    file: foi_ehc_requests_weekly.csv
+    columns: { requests: "REQUESTS", plan_starts: "PLAN_STARTS" }
+    note: "Copied from the spreadsheet as published. The council says it can only give figures from 2024 because of a system migration. Its week 1 is the week containing 1 January, so a year can have 53 weeks and the last week of one year can overlap the first week of the next. The response does not define a request or a plan start, or say whether requests from other councils are included."
+
   send_waits_nov2025:
     source: foi_send_waits_nov2025
     period: November 2025 (the date of the response)
