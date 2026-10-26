@@ -154,7 +154,9 @@ release and needs updating by hand too.
 ### Add or update a council figure
 
 1. Add the document to `data/local/sources.yaml`, using the publisher's own
-   URL (for example `democracy.walthamforest.gov.uk` or `civico.net`).
+   URL (for example `democracy.walthamforest.gov.uk` or `civico.net`). For
+   an FOI response, use the `whatdotheyknow.com` request page. It blocks
+   automated downloads, so save the response by hand.
 2. Add the figure to `data/local/council_reported.yaml`, with the source id
    and page number. Copy values as printed. If a label is unclear, keep it and
    explain in `note`.
