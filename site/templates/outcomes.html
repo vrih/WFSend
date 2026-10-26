@@ -9,23 +9,18 @@
 <p class="lede">Results at the end of primary and secondary school, exclusions and attendance, for pupils with an EHC plan and pupils on SEN support. Cohorts are small, especially for EHC plans, so a change of a few pupils can move the percentage a lot from year to year. The latest year is often provisional.</p>
 
 <h2 id="early-years">End of Reception (early years foundation stage)</h2>
-{{ figure(d.eyfs["Education, health and care plan"], y_max=100) }}
-{{ figure(d.eyfs["SEN support / SEN without an EHC plan"], y_max=100) }}
+{{ figure(d.eyfs["Education, health and care plan"], y_max=100, also=d.eyfs["SEN support / SEN without an EHC plan"]) }}
 
 <h2>End of primary school (key stage 2)</h2>
-{{ figure(d.ks2[ehc], y_max=100) }}
-{{ figure(d.ks2[sup], y_max=100) }}
+{{ figure(d.ks2[ehc], y_max=100, also=d.ks2[sup]) }}
 
 <h2>End of secondary school (key stage 4)</h2>
-{{ figure(d.ks4[ehc].em, y_max=100) }}
-{{ figure(d.ks4[sup].em, y_max=100) }}
-{{ figure(d.ks4[ehc].a8) }}
-{{ figure(d.ks4[sup].a8) }}
+{{ figure(d.ks4[ehc].em, y_max=100, also=d.ks4[sup].em) }}
+{{ figure(d.ks4[ehc].a8, also=d.ks4[sup].a8) }}
 
 <h2>Suspensions and exclusions</h2>
-{{ figure(d.exclusions["EHC plan"].susp) }}
-{{ figure(d.exclusions["SEN support"].susp) }}
-{{ figure(d.exclusions["EHC plan"].perm) }}
+{{ figure(d.exclusions["EHC plan"].susp, also=d.exclusions["SEN support"].susp, start="2016/17") }}
+{{ figure(d.exclusions["EHC plan"].perm, start="2016/17") }}
 
 <h3>The council's own figures</h3>
 {% set le = local.local_exclusions %}{% set xc = d.exclusion_counts %}
@@ -44,9 +39,8 @@
 {{ ui.simple_table(local.local_exclusions_2026) }}
 
 <h2 id="attendance">Attendance</h2>
-{{ figure(d.absence["EHC plan"].persistent, ranked=True) }}
-{{ figure(d.absence["SEN support"].persistent, ranked=True) }}
-{{ figure(d.absence["EHC plan"].overall) }}
+{{ figure(d.absence["EHC plan"].persistent, ranked=True, also=d.absence["SEN support"].persistent) }}
+{{ figure(d.absence["EHC plan"].overall, also=d.absence["SEN support"].overall) }}
 
 <h3>The council's own figures</h3>
 <p>These come from the council's improvement plan. They are attendance rather than absence, and cover full school years.</p>
@@ -55,10 +49,8 @@
 {{ ui.simple_table(local.local_attendance_2026) }}
 
 <h2 id="after-school">After school</h2>
-{{ figure(d.ks4_destinations["SEN with EHC plan or statement"], y_max=100) }}
-{{ figure(d.ks4_destinations["SEN support"], y_max=100) }}
-{{ figure(d.neet["SEN EHC/statement"], ranked=True) }}
-{{ figure(d.neet["SEN support"], ranked=True) }}
+{{ figure(d.ks4_destinations["SEN with EHC plan or statement"], y_max=100, also=d.ks4_destinations["SEN support"]) }}
+{{ figure(d.neet["SEN EHC/statement"], ranked=True, also=d.neet["SEN support"]) }}
 
 <h3>The council's own figures</h3>
 <p>Of 351 young people in Years 12 and 13 with an EHC plan, 339 (97%) were in education, employment or training and 12 (3%) were not. This is a three-month average for 2024/25 ({{ cite("hwb_oct2025_highlight", 17) }}). There is no baseline yet for young people aged 18 and over.</p>
