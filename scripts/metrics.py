@@ -667,7 +667,9 @@ STAGES = [("tender", "Tender"), ("Opportunity", "Tender"), ("planning", "Planned
 
 
 def _stage(stage):
-    return next((label for key, label in STAGES if key in stage.split(", ") or stage == key), stage)
+    """Find a Tender tags can carry a suffix, such as "planningUpdate"."""
+    tags = stage.split(", ")
+    return next((label for key, label in STAGES if any(t == key or t.startswith(key) for t in tags)), stage)
 
 
 def _norm(title):
@@ -685,7 +687,9 @@ def contracts():
         n["amount"] = num(n["awarded_value"]) or num(n["value"]) or num(n["value_high"])
         n["awarded"] = bool(n["suppliers"])
         n["stage_label"] = _stage(n["stage"])
-        n["wider"] = not SEND_NOTICE.search(n["title"])  # SEND is mentioned only in the description
+        # A wider contract mentions SEND only further into its description,
+        # not in its title or opening words.
+        n["wider"] = not SEND_NOTICE.search(n["title"] + " " + n["description"][:200])
 
     # The same award is often published on both services, or more than once.
     # Keep one per title and supplier list, preferring Find a Tender.
