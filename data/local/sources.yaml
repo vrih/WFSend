@@ -207,3 +207,41 @@ nhs_choice_framework:
   publisher: Department of Health and Social Care
   date: 2024-10-23
   url: https://www.gov.uk/government/publications/the-nhs-choice-framework/the-nhs-choice-framework-what-choices-are-available-to-me-in-the-nhs
+
+# Freedom of Information (FOI) responses. The url is the request page on
+# WhatDoTheyKnow, where the council's response is published. The figures are
+# in data/local/foi.yaml.
+foi_send_waits_nov2025:
+  title: "FOI response: current SEND waiting times and backlogs (council ref. 5692681)"
+  publisher: London Borough of Waltham Forest
+  date: 2025-11-27
+  url: https://www.whatdotheyknow.com/request/what_does_your_current_send_serv_129
+  notes: Response attached as "Response all information to be supplied.pdf".
+
+foi_eotas_may2026:
+  title: "FOI response: education otherwise than at school and interim tuition, 2025-26 (council ref. 11913297)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-05-18
+  url: https://www.whatdotheyknow.com/request/freedom_of_information_request_e_2065
+  notes: Response attached as "Response all information to be supplied.pdf".
+
+foi_placements_may2026:
+  title: "FOI response: new placements commissioned for children with EHC plans, 2025-26 (council ref. 11913497)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-05-19
+  url: https://www.whatdotheyknow.com/request/freedom_of_information_request_i_731
+  notes: Response attached as "Response all information to be supplied.pdf".
+
+foi_no_placement_may2026:
+  title: "FOI response: children with EHC plans and no named placement (council ref. 11912797)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-05-21
+  url: https://www.whatdotheyknow.com/request/freedom_of_information_request_c_3037
+  notes: Response attached as "Response some exempt.pdf". Part of the request was refused because answering it would exceed the FOI cost limit.
+
+foi_send_costs_jun2026:
+  title: "FOI response: independent placement costs, cost of EHC plans and annual reviews (council ref. 11191281)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-06-15
+  url: https://www.whatdotheyknow.com/request/freedom_of_information_request_s_1987
+  notes: Response attached as "Response some exempt.pdf". Several parts were refused because answering them would exceed the FOI cost limit.
