@@ -30,6 +30,16 @@
 <p>Ofsted asked the partnership to make sure annual reviews from Year 9 "represent children's and young people's aspirations and ambitions" ({{ cite("ofsted_2025", 6) }}).</p>
 {{ ui.observations_table(local.measures.year9_reviews) }}
 
+<h2 id="backlog">Reviews that are overdue</h2>
+{% set fw = foi.send_waits_nov2025 %}{% set od = fw.rows[3] %}
+{% set ns = namespace(prev=none) %}{% for b in local.backlogs if b.label == "Annual reviews outstanding" %}{% set ns.prev = b %}{% endfor %}
+<p>In November 2025, in answer to a Freedom of Information (FOI) request, the council said {{ od.value }} plans that had been open for at least a year had not been reviewed in the last 12 months ({{ cite(fw.source, od.page) }}). It had told the Health and Wellbeing Board there were {{ "{:,}".format(ns.prev.value) }} annual reviews outstanding in {{ ns.prev.period }} ({{ cite(ns.prev.source, ns.prev.page) }}). The DfE figures above record {{ "{:,.0f}".format(w.not_completed) }} reviews due in {{ ar.period }} as not completed. The three figures are counted in different ways, but all show well over a thousand plans without an up-to-date review.</p>
+<h3>Annual reviews by calendar year, from an FOI answer</h3>
+<p>In June 2026 the council gave these figures in answer to another FOI request. For 2024, it said {{ foi.annual_reviews_by_year.rows[1]["values"][0] }} of {{ "{:,}".format(foi.annual_reviews_by_year.rows[0]["values"][0]) }} plans due a review were reviewed within 12 months of the previous review. That is {{ fmt(100 * foi.annual_reviews_by_year.rows[1]["values"][0] / foi.annual_reviews_by_year.rows[0]["values"][0]) }}, lower than any figure the council has reported to its own boards, though those are measured differently (see <a href="#council-reviews">above</a>).</p>
+{{ ui.simple_table(foi.annual_reviews_by_year) }}
+{% set fr = foi.annual_reviews_by_year.rows %}
+<p class="note">The DfE figures for {{ ar.period }} record {{ "{:,.0f}".format(w.expected) }} plans due a review and {{ "{:,.0f}".format(w.completed) }} reviews completed in the year. The council's FOI figure of {{ "{:,}".format(fr[1]["values"][1]) }} reviews done on time in 2025 is close to the DfE's number of plans due, not to the number completed.</p>
+
 {% set lb = local.backlogs[0] %}
 <h2 id="ceased">Plans ended at a review</h2>
 <p>Of the {{ "{:,.0f}".format(w.completed) }} reviews completed in {{ ar.period }}, {{ "{:,.0f}".format(w.ceased) }} ({{ fmt(w.ceased_pct) }}) ended the plan (London {{ fmt(ar.detail["London"].ceased_pct) }}, England {{ fmt(e.ceased_pct) }}).</p>
