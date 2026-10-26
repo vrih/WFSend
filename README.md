@@ -81,7 +81,8 @@ tooltips. Every chart has a "Show the numbers" table. The Resources page
 links to advice services and complaint routes. The deadlines calculator sits
 under it (`SUBPAGES` in `build.py`) and works out statutory deadlines in the
 browser (`site/static/deadlines.js`). "SEND in each school" sits under Places
-and "Where the money goes" under Money in the same way. When a page moves,
+and "Where the money goes" under Money in the same way. A menu item with
+subpages shows them as tabs at the top of the item and each subpage. When a page moves,
 add its old address to `REDIRECTS` in `build.py` so links to it still work.
 
 Each data page opens with a "Key points" box (`key_points` in

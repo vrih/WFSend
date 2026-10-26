@@ -3,7 +3,6 @@
 {% block title %}Where SEND money goes in Waltham Forest{% endblock %}
 {% block description %}{% with ip = foi.independent_placements %}Waltham Forest paid for {{ ip.rows[0]["values"][-1] }} children in independent or non-maintained special schools in 2025-26, at {{ ip.rows[1]["values"][-1] }}.{% endwith %} What SEND places and packages cost, the council's payments to suppliers and its SEND contracts.{% endblock %}
 {% block content %}
-<p class="breadcrumb"><a href="money.html">Money</a></p>
 <h1>Where SEND money goes</h1>
 <p class="lede">What the council pays for independent school places, education outside school and an average EHC plan, who it pays, and the SEND contracts it plans and awards. For the High Needs budget and the deficit, see <a href="money.html">Money</a>.</p>
 {% set sp = d.spending %}

@@ -49,6 +49,17 @@
   </div>
 </header>
 <main id="main" class="wrap">
+{% set parent = section.get(page, page) %}
+{% if parent in subpages %}
+<nav class="subnav" aria-label="In this section">
+  <ul>
+    <li><a href="{{ root }}{{ parent }}"{% if page == parent %} aria-current="page"{% endif %}>{{ (pages|selectattr(0, "equalto", parent)|first)[1] }}</a></li>
+  {% for href, label in subpages[parent] %}
+    <li><a href="{{ root }}{{ href }}"{% if href == page %} aria-current="page"{% endif %}>{{ label }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
 {% block content %}{% endblock %}
 </main>
 <footer class="wrap footer">

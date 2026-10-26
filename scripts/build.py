@@ -567,6 +567,10 @@ SUBPAGES = [
     ("spending.html", "Where the money goes", "money.html"),
 ]
 SECTION = {name: parent for name, _, parent in SUBPAGES}
+# Subpages of each menu item, shown as tabs on the item and its subpages
+CHILDREN = {}
+for _name, _label, _parent in SUBPAGES:
+    CHILDREN.setdefault(_parent, []).append((_name, _label))
 
 # Old addresses, sent on to where their content now lives
 REDIRECTS = {
@@ -603,7 +607,7 @@ def main():
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
-                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION,
+                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION, subpages=CHILDREN,
                        guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
                        JSONLD=JSONLD, UPDATED=UPDATED, root="",
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
