@@ -645,6 +645,27 @@ def spending():
                               sources=["s251_outturn"]),
         }
     periods = out["ep"]["per_head"]["periods"]
+
+    # Schools and other settings buy educational psychology time from the
+    # council, and that income is taken off before the net figure. So show
+    # gross and income too, and how much of gross spend income covers.
+    ep = [r for r in rows if r["category_of_expenditure"].startswith("2.1.1 ")]
+    millions = lambda col: lambda r: num(r[col]) / 1e6 if num(r[col]) is not None else None
+    for col in ("gross_expenditure", "income"):
+        s, _ = collect(ep, millions(col), label=academic)
+        out["ep"][col] = s.get(WF, {})
+    share, _ = collect(ep, lambda r: pct(num(r["income"]), num(r["gross_expenditure"])), label=academic)
+    # The file has Inner and Outer London but no London total, so add them up.
+    london = {}
+    for r in ep:
+        if r["geographic_level"] == "Regional" and r["region_name"] in ("Inner London", "Outer London"):
+            g, i = london.setdefault(academic(r["time_period"]), [0, 0])
+            london[academic(r["time_period"])] = [g + (num(r["gross_expenditure"]) or 0), i + (num(r["income"]) or 0)]
+    share["London"] = {p: pct(i, g) for p, (g, i) in london.items()}
+    out["ep"]["income_share"] = build(share, periods, id="spend_ep_income", unit="percent", rank_label="highest",
+                                      title="Educational psychology service: income as a share of gross spend",
+                                      explain="Income the council received for its educational psychology service, for example from schools buying time, as a percentage of what the service cost before that income.",
+                                      sources=["s251_outturn"])
     return {"lines": out, "periods": periods}
 
 
