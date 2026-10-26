@@ -115,6 +115,7 @@ main { padding: 24px 16px 48px; }
 h1 { font-size: 1.9rem; line-height: 1.2; margin: 8px 0 12px; }
 h2 { font-size: 1.35rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px solid var(--border); }
 h3 { font-size: 1.1rem; margin: 0 0 4px; }
+p + h3, .tablewrap + h3 { margin-top: 24px; }  /* figures already leave room above a following h3 */
 h4.sub { font-size: 0.95rem; margin: 20px 0 6px; color: var(--ink-2); }
 p, li { max-width: 72ch; }
 .breadcrumb { margin: 0; font-size: 0.95rem; }
