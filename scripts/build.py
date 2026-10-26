@@ -395,6 +395,16 @@ def main():
         shutil.rmtree(OUT)
     (OUT / "data").mkdir(parents=True)
     shutil.copytree(SITE / "static", OUT / "static")
+    # browsers and iOS look for these at the site root, whatever the page links to
+    for f in (SITE / "icons").iterdir():
+        shutil.copy(f, OUT / f.name)
+    (OUT / "site.webmanifest").write_text(json.dumps({
+        "name": "Waltham Forest SEND data", "short_name": "WF SEND data", "start_url": "./",
+        "display": "browser", "background_color": "#f7f6f1", "theme_color": "#24543a",
+        "icons": [{"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+                  {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+                  {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}],
+    }, indent=2) + "\n", encoding="utf-8")
 
     built = dt.date.today().isoformat()
     waits = wait_answers(d, local)
