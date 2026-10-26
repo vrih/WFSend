@@ -11,7 +11,8 @@
 
 <h2>Reviews completed in {{ ar.period }}</h2>
 <p>{{ "{:,.0f}".format(w.expected) }} Waltham Forest plans were due a review in {{ ar.period }}. {{ "{:,.0f}".format(w.completed) }} ({{ fmt(w.completed_pct) }}) were completed in the year. {{ "{:,.0f}".format(w.not_completed) }} ({{ fmt(w.not_completed_pct) }}) were recorded as not completed. Across England, {{ fmt(e.completed_pct) }} were completed.</p>
-{{ figure(ar.completed, ranked=True) }}
+{% set zero = ar.completed.boroughs|dictsort|selectattr(1, "equalto", 0)|map(attribute=0)|list %}
+{{ figure(ar.completed, ranked=True, note=(zero|join(" and ") ~ " recorded no completed reviews at all in " ~ ar.period ~ ". That is unlikely to be a true count, but it is what was sent to the DfE, so the rankings include it.") if zero else None) }}
 
 <h2 id="decisions">Decisions within 4 weeks</h2>
 <p>Of the {{ "{:,.0f}".format(w.completed) }} reviews completed, the council issued its decision within the legal 4 weeks in {{ "{:,.0f}".format(w.d4) }} cases ({{ fmt(ar.decision.latest[WF]) }}). In England the figure was {{ fmt(ar.decision.latest["England"]) }}.</p>
@@ -22,15 +23,13 @@
 
 <h2 id="year9">Year 9 reviews (preparing for adulthood)</h2>
 <p>Ofsted asked the partnership to make sure annual reviews from Year 9 "represent children's and young people's aspirations and ambitions" ({{ cite("ofsted_2025", 6) }}).</p>
+<h3>{{ local.measures.year9_reviews.title }}</h3>
 {{ ui.observations_table(local.measures.year9_reviews) }}
+<h3>{{ local.measures.year9_overdue.title }}</h3>
 {{ ui.observations_table(local.measures.year9_overdue) }}
 
-<h2>Backlogs</h2>
-<div class="tablewrap"><table class="wide">
-<thead><tr><th scope="col">Measure</th><th scope="col">When</th><th scope="col">Figure</th><th scope="col">Source</th></tr></thead>
-<tbody>
-{% for b in local.backlogs[:2] %}
-<tr><td>{{ b.label }}</td><td>{{ b.period }}</td><td><strong>{{ "{:,}".format(b.value) if b.value is number else b.value }}</strong></td><td>{{ cite(b.source, b.page) }}</td></tr>
-{% endfor %}
-</tbody></table></div>
+{% set lb = local.backlogs[0] %}
+<h2 id="ceased">Plans ended at a review</h2>
+<p>Of the {{ "{:,.0f}".format(w.completed) }} reviews completed in {{ ar.period }}, {{ "{:,.0f}".format(w.ceased) }} ({{ fmt(w.ceased_pct) }}) ended the plan (London {{ fmt(ar.detail["London"].ceased_pct) }}, England {{ fmt(e.ceased_pct) }}).</p>
+<p>The council expects more plans to end once overdue reviews are done. It says "a significant number of EHC plans are likely to be ceased", and estimates {{ "{:,}".format(lb.value) }} active plans, against {{ fmt(d.caseload.series[WF]["Jan 2025"], "count") }} reported to the DfE for January 2025 ({{ cite(lb.source, lb.page) }}). So far the reviews completed have ended very few plans. This figure only counts plans ended at a review. The council can also end a plan at other times. See <a href="plans.html">how many plans the council maintains</a>.</p>
 {% endblock %}

@@ -24,6 +24,7 @@
 <tr><td>{{ r.label }}{% if r.note is defined %}<br><span class="note">{{ r.note }}</span>{% endif %}</td><td><strong>{{ r.value }}</strong></td><td>{{ cite(local.assessments_2025_capita.source, r.page) }}</td></tr>
 {% endfor %}
 </tbody></table></div>
+<p class="note">For the whole of 2025, the DfE figures count {{ fmt(d.requests.series[WF]["2025"], "count") }} requests and {{ fmt(d.plans_issued.series[WF]["2025"], "count") }} new plans. The council's 375 plans by about September fits with the DfE's count for the year. Its 349 requests is about half the DfE's, which would mean as many requests again in the last 3 or 4 months of the year. The plan doesn't say whether "reviewed" counts the same thing as the requests the DfE counts. The council hasn't explained the difference.</p>
 
 <h2>Requests for an assessment</h2>
 {{ figure(d.requests) }}
