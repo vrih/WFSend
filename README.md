@@ -50,6 +50,7 @@ scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> dat
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
 scripts/build.py          renders site/templates/*.html -> _site/
+scripts/make_icons.py     draws the favicon and home screen icons -> site/icons/ (needs Pillow)
 ```
 
 Three plain-language pages answer the questions families ask when they start
