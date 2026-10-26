@@ -687,6 +687,8 @@ def contracts():
         n["amount"] = num(n["awarded_value"]) or num(n["value"]) or num(n["value_high"])
         n["awarded"] = bool(n["suppliers"])
         n["stage_label"] = _stage(n["stage"])
+        names = [s.strip() for s in re.split(r"[;,]", n["suppliers"]) if s.strip()]
+        n["supplier_short"] = ", ".join(names[:3]) + (f" and {len(names) - 3} others" if len(names) > 3 else "")
         # A wider contract mentions SEND only further into its description,
         # not in its title or opening words.
         n["wider"] = not SEND_NOTICE.search(n["title"] + " " + n["description"][:200])
@@ -712,7 +714,8 @@ def contracts():
             continue
         seen.add(key)
         upcoming.append(n)
-    return {"awarded": awarded, "upcoming": upcoming, "since": since, "manifest": manifest}
+    return {"awarded": awarded, "upcoming": upcoming, "since": since,
+            "since_label": dt.date.fromisoformat(since).strftime("%B %Y"), "manifest": manifest}
 
 
 # --- Payments to suppliers (council transparency reports) ------------------
