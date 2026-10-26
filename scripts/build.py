@@ -542,11 +542,18 @@ PAGES = [
     ("health.html", "Health"),
     ("disputes.html", "Complaints & appeals"),
     ("targets.html", "Targets"),
-    ("deadlines.html", "Deadlines"),
     ("inspection.html", "Inspection"),
     ("money.html", "Money"),
+    ("resources.html", "Resources"),
     ("sources.html", "Sources"),
 ]
+
+# Pages that sit under a menu item rather than in the menu, with the item
+# they belong to
+SUBPAGES = [
+    ("deadlines.html", "Deadlines calculator", "resources.html"),
+]
+SECTION = {name: parent for name, _, parent in SUBPAGES}
 
 # Plain-language answers for families starting out. Linked from the home page
 # rather than the menu.
@@ -557,7 +564,7 @@ GUIDES = [
 ]
 
 # Pages described to search engines as a Dataset
-DATASETS = {name for name, _ in PAGES} - {"deadlines.html", "sources.html"}
+DATASETS = {name for name, _ in PAGES} - {"resources.html", "sources.html"}
 
 
 def asset(path):
@@ -577,7 +584,7 @@ def main():
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
-                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES,
+                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION,
                        guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
                        JSONLD=JSONLD, UPDATED=UPDATED, root="",
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
@@ -603,7 +610,8 @@ def main():
                MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, ONS_MANIFEST=ONS_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
     rendered = {}
-    for name in sorted((n for n, _ in PAGES + GUIDES), key=lambda n: n == "sources.html"):
+    names = [n for n, _ in PAGES] + [n for n, _, _ in SUBPAGES] + [n for n, _ in GUIDES]
+    for name in sorted(names, key=lambda n: n == "sources.html"):
         PAGE_DATES.clear()
         html = add_anchors(env.get_template(name).render(page=name, **ctx))
         rendered[name] = (html, max(PAGE_DATES, default=None))
@@ -640,7 +648,7 @@ def main():
     # for search engines; submit https://DOMAIN/sitemap.xml in Search Console
     urls = "".join(f"  <url><loc>{page_url(name)}</loc>"
                    + (f"<lastmod>{rendered[name][1]}</lastmod>" if rendered[name][1] else "") + "</url>\n"
-                   for name, _ in PAGES + GUIDES)
+                   for name in names)
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",
@@ -655,6 +663,7 @@ def main():
         lines.append(f"- [{title}](https://{DOMAIN}/{name}): {waits[name]['description']}")
     lines += ["", "## Data pages", ""]
     lines += [f"- [{label}]({page_url(name)}): {info[name]['description']}" for name, label in PAGES]
+    lines += [f"- [{label}]({page_url(name)}): {info[name]['description']}" for name, label, _ in SUBPAGES]
     lines += ["", "## Data", "",
               f"- [Every page as plain text]({SITE_URL}llms-full.txt): all the figures, tables and sources in one file",
               f"- [Headline figures (CSV)]({SITE_URL}data/headlines.csv)", ""]
@@ -662,12 +671,12 @@ def main():
     full = [f"# Waltham Forest SEND data: every page\n\n> {lines[2][2:]}\n\n"
             "Each page below is converted from the website. Charts are left out: their figures are in the tables. "
             f"Links in brackets are the public sources. Built {built}.\n"]
-    for name, _ in PAGES + GUIDES:
+    for name in names:
         updated = rendered[name][1]
         full.append(f"---\n\nPage: {page_url(name)}\n" + (f"Figures last updated: {updated}\n" if updated else "")
                     + "\n" + plain_text(name, info[name]["main"]))
     (OUT / "llms-full.txt").write_text("\n".join(full), encoding="utf-8")
-    print(f"Built {len(PAGES) + len(GUIDES)} pages into {OUT.relative_to(ROOT)}/")
+    print(f"Built {len(names)} pages into {OUT.relative_to(ROOT)}/")
 
 
 if __name__ == "__main__":

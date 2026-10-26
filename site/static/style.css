@@ -117,6 +117,9 @@ h2 { font-size: 1.35rem; margin: 40px 0 8px; padding-top: 8px; border-top: 1px s
 h3 { font-size: 1.1rem; margin: 0 0 4px; }
 h4.sub { font-size: 0.95rem; margin: 20px 0 6px; color: var(--ink-2); }
 p, li { max-width: 72ch; }
+.breadcrumb { margin: 0; font-size: 0.95rem; }
+.breadcrumb a { display: inline-block; padding: 4px 0; }
+.breadcrumb + h1 { margin-top: 4px; }
 .lede { font-size: 1.1rem; color: var(--ink-2); }
 
 .callout { background: var(--callout); border-left: 4px solid var(--warning); padding: 12px 16px; margin: 20px 0; border-radius: 4px; }

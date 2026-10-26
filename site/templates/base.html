@@ -42,7 +42,7 @@
     <nav aria-label="Sections">
       <ul>
       {% for href, label in pages %}
-        <li><a href="{{ root }}{{ href }}"{% if href == page %} aria-current="page"{% endif %}>{{ label }}</a></li>
+        <li><a href="{{ root }}{{ href }}"{% if href == page %} aria-current="page"{% elif href == section.get(page) %} aria-current="true"{% endif %}>{{ label }}</a></li>
       {% endfor %}
       </ul>
     </nav>
