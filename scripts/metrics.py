@@ -315,6 +315,35 @@ def placements():
             "title": "Where children and young people with EHC plans are placed"}
 
 
+def foi_weekly():
+    """The council's weekly counts of requests and plan starts (FOI answer), added up by quarter and year.
+
+    The council's week 1 is the week containing 1 January. Weeks 1-13 are
+    counted as January to March, 14-26 April to June, 27-39 July to September
+    and 40 onwards October to December. A quarter is only shown once all its
+    weeks are in the file.
+    """
+    rows = list(csv.DictReader((ROOT / "data" / "local" / "foi_ehc_requests_weekly.csv").open()))
+    q_of = lambda w: min((w - 1) // 13, 3)
+    quarters, years = {}, {}
+    for r in rows:
+        y, w = int(r["year"]), int(r["week"])
+        for key, store in (((y, q_of(w)), quarters), (y, years)):
+            t = store.setdefault(key, {"requests": 0, "plan_starts": 0, "weeks": set()})
+            t["requests"] += int(r["requests"])
+            t["plan_starts"] += int(r["plan_starts"])
+            t["weeks"].add(w)
+    names = ("Jan–Mar", "Apr–Jun", "Jul–Sep", "Oct–Dec")
+    full = [k for k, t in sorted(quarters.items()) if len(t["weeks"]) >= 13]
+    periods = [f"{names[q]} {y}" for y, q in full]
+    series = {label: {p: quarters[k][col] for p, k in zip(periods, full)}
+              for label, col in (("Requests", "requests"), ("Plan starts", "plan_starts"))}
+    last = rows[-1]
+    return {"periods": periods, "series": series, "years": years,
+            "dfe_requests": requests()["series"][WF], "dfe_issued": plans_issued()["series"][WF],
+            "last_week": f"week {last['week']} of {last['year']}"}
+
+
 def placement_counts():
     """Waltham Forest plans by setting each January, to set beside the council's FOI answers."""
     out = {}

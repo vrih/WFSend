@@ -25,11 +25,46 @@
 {% endfor %}
 </tbody></table></div>
 
+{% set fw = foi.send_waits_nov2025 %}{% set fa = foi.ehc_assessments_mar2024 %}
+<h3 id="foi-waits">Waits and backlogs the council gave in FOI answers</h3>
+<p>The council has given these figures in answer to Freedom of Information (FOI) requests. In November 2025, it gave an average waiting time of {{ fw.rows[0].value|lower }} for new referrals, and {{ fw.rows[1].value|lower }} for EHC needs assessments. For comparison, the legal 20 weeks for the whole process is 140 days.</p>
+<figure class="metric" id="foi-waits-figures">
+<figcaption><h3>Waits and backlog, November 2025</h3>
+<p class="explain">The council's own definitions are in the notes. Both averages count the days since the request for cases that were still open, not how long finished cases took.</p></figcaption>
+{{ ui.foi_table(fw, fw.rows[:3]) }}
+<p>Earlier, in answer to a different request, the council said that on 30 March 2024 there were {{ fa.rows[0].value }} requests for new plans waiting for a decision on whether to assess, and {{ fa.rows[1].value }} assessments in progress ({{ cite(fa.source, "questions 3 and 4") }}). {% for b in local.backlogs if b.label == "EHC needs assessments outstanding" %}In October 2025 it told the Health and Wellbeing Board there had been {{ b.value }} assessments outstanding in {{ b.period }} ({{ cite(b.source, b.page) }}).{% endfor %}</p>
+<p class="note">These figures use different definitions, so they show the rough size of the backlog, not an exact trend. In October 2025 the council said its "historic backlog for EHCPs has been cleared" (see <a href="targets.html#commitments">targets</a>). Its FOI answer a month later counted {{ fw.rows[2].value }} requests that were still open with no plan yet started.</p>
+</figure>
+
 <h2>Requests for an assessment</h2>
 {{ figure(d.requests) }}
 <p>To compare areas of different sizes, this chart divides the number of requests by the number of children living in each area.</p>
 {% set rr = d.requests_rate %}{% set kids = rr.wf_children.values()|list %}
 {{ figure(rr, ranked=True, note="Requests can be made for anyone aged 0 to 25. The DfE doesn't publish requests by age, so we divide by children aged 2 to 18, the ages most EHC plans are for. A 0 to 25 base would be swayed by the number of students and young workers, which is higher in London. The number of children aged 2 to 18 living in Waltham Forest fell from " ~ fmt(kids[0], "count") ~ " in " ~ rr.periods[0] ~ " to " ~ fmt(kids[-1], "count") ~ " in " ~ rr.periods[-1] ~ ", so a falling rate means fewer requests, not more children. Population figures are ONS estimates, which the ONS revises from time to time.") }}
+
+{% set fk = d.foi_weekly %}{% set fr = foi.ehc_requests_weekly %}
+<h3 id="council-weekly">The council's own count, every 3 months</h3>
+<p>In answer to an FOI request, the council gave the number of requests it received and plans it started each week, from January 2024 to {{ fk.last_week }}. Added up every 3 months, requests have stayed between {{ fk.series.Requests.values()|min }} and {{ fk.series.Requests.values()|max }}. Plan starts have varied more, between {{ fk.series["Plan starts"].values()|min }} and {{ fk.series["Plan starts"].values()|max }}.</p>
+<figure class="metric" id="council-weekly-chart">
+<figcaption><h3>Requests and plan starts every 3 months, from the council's records</h3>
+<p class="explain">Weekly figures from the council's FOI answer, added up into 3-month periods. The council's week 1 is the week containing 1 January, so periods are close to calendar quarters but not exact.</p></figcaption>
+{{ charts.legend(fk.series.keys())|safe }}
+{{ charts.line_chart(fk.series, fk.periods, unit="count", title="Requests and plan starts every 3 months, from the council's records")|safe }}
+<details><summary>Show the numbers</summary>{{ charts.table(fk.series, fk.periods, unit="count")|safe }}</details>
+<p class="note">{{ fr.note }}</p>
+<p class="source">Source: {{ cite(fr.source, "spreadsheet") }}. <a href="data/{{ fr.file }}">Download the weekly figures (CSV)</a></p>
+</figure>
+<p>The council's counts are higher than the figures it sends to the DfE every year.</p>
+<div class="tablewrap"><table>
+<thead><tr><th scope="col"><span class="vh">Measure</span></th><th scope="col">2024</th><th scope="col">2025</th></tr></thead>
+<tbody>
+<tr><th scope="row">Requests: council's FOI answer</th>{% for y in (2024, 2025) %}<td>{{ fmt(fk.years[y].requests, "count") }}</td>{% endfor %}</tr>
+<tr><th scope="row">Requests: DfE figures</th>{% for y in ("2024", "2025") %}<td>{{ fmt(fk.dfe_requests[y], "count") }}</td>{% endfor %}</tr>
+<tr><th scope="row">Plan starts: council's FOI answer</th>{% for y in (2024, 2025) %}<td>{{ fmt(fk.years[y].plan_starts, "count") }}</td>{% endfor %}</tr>
+<tr><th scope="row">New plans issued: DfE figures</th>{% for y in ("2024", "2025") %}<td>{{ fmt(fk.dfe_issued[y], "count") }}</td>{% endfor %}</tr>
+</tbody></table></div>
+<p class="note">The council hasn't said why the counts differ. Its years run from the week containing 1 January and can have 53 weeks, so they can include a few days of the year before or after. That isn't enough to explain a gap of {{ fmt(fk.years[2025].requests - fk.dfe_requests["2025"], "count") }} requests in 2025. The FOI answer doesn't say whether it counts requests and plans for children moving in from other councils. Its SEND Sufficiency Plan gives lower figures again for January to about September 2025 (see <a href="#capita-2025">above</a>).</p>
+<p class="source">Sources: {{ cite(fr.source, "spreadsheet") }}; {{ cite_dfe(["ehcp_requests", "ehcp_timeliness"])|replace("Source: ", "") }}</p>
 
 <h2 id="decisions">Deciding whether to assess</h2>
 {{ figure(d.six_weeks, ranked=True, y_max=100) }}
