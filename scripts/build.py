@@ -470,6 +470,7 @@ def compute():
         "growth": M.caseload_growth(),
         "placements": M.placements(),
         "placement_counts": M.placement_counts(),
+        "foi_weekly": M.foi_weekly(),
         "primary_need": M.primary_need(),
         "special_schools": M.special_schools(),
         "specialist_units": M.specialist_units(),
