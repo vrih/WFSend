@@ -25,6 +25,7 @@ jobs:
       - run: python scripts/fetch_gias.py
       - run: python scripts/fetch_ons.py
       - run: python scripts/fetch_spend.py
+      - run: python scripts/fetch_contracts.py
       - run: python scripts/build.py
       - name: Ignore runs where only the download date changed
         run: |
@@ -33,6 +34,7 @@ jobs:
           if git diff --quiet -- data/gias/*.csv; then git checkout -- data/gias/manifest.json; fi
           if git diff --quiet -- data/ons/*.csv; then git checkout -- data/ons/manifest.json; fi
           if git diff --quiet -- data/spend/*.csv; then git checkout -- data/spend/manifest.json; fi
+          if git diff --quiet -- data/contracts/*.csv; then git checkout -- data/contracts/manifest.json; fi
       - uses: peter-evans/create-pull-request@v6
         with:
           branch: data-refresh

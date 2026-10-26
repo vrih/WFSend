@@ -648,6 +648,76 @@ def spending():
     return {"lines": out, "periods": periods}
 
 
+# --- Contracts (Contracts Finder and Find a Tender notices) ----------------
+
+CONTRACTS = ROOT / "data" / "contracts"
+# A notice is about SEND if its title or description matches one of these.
+# "SEND" is matched in capitals only, so the verb "send" doesn't count.
+SEND_NOTICE = re.compile(r"\bSEND\b|(?i:special educational|\bEHC|education,? health and care|home to school|"
+                         r"travel assistance|travel training|short breaks?\b|disabled child|alternative provision|high needs|"
+                         r"\btuition\b|autis|resourced provision|special school|educational psycholog|"
+                         r"speech and language|occupational therap|delivering better value|safety valve|"
+                         r"disagreement resolution)")
+# Adult services that mention autism or learning disability.
+NOT_SEND = re.compile(r"(?i)supported living|supported employment")
+UPCOMING_MONTHS = 24
+# Plain names for Contracts Finder notice types and Find a Tender release tags.
+STAGES = [("tender", "Tender"), ("Opportunity", "Tender"), ("planning", "Planned"), ("Pipeline", "Planned"),
+          ("FutureOpportunity", "Planned"), ("EarlyEngagement", "Early market engagement")]
+
+
+def _stage(stage):
+    """Find a Tender tags can carry a suffix, such as "planningUpdate"."""
+    tags = stage.split(", ")
+    return next((label for key, label in STAGES if any(t == key or t.startswith(key) for t in tags)), stage)
+
+
+def _norm(title):
+    return re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+
+
+def contracts():
+    """The council's SEND procurement notices: contracts awarded, and procurements
+    announced in the last UPCOMING_MONTHS months with no award notice yet."""
+    manifest = json.loads((CONTRACTS / "manifest.json").read_text())
+    with (CONTRACTS / "notices.csv").open(encoding="utf-8") as f:
+        notices = [n for n in csv.DictReader(f)
+                   if SEND_NOTICE.search(n["title"] + " " + n["description"]) and not NOT_SEND.search(n["title"])]
+    for n in notices:
+        n["amount"] = num(n["awarded_value"]) or num(n["value"]) or num(n["value_high"])
+        n["awarded"] = bool(n["suppliers"])
+        n["stage_label"] = _stage(n["stage"])
+        names = [s.strip() for s in re.split(r"[;,]", n["suppliers"]) if s.strip()]
+        n["supplier_short"] = ", ".join(names[:3]) + (f" and {len(names) - 3} others" if len(names) > 3 else "")
+        # A wider contract mentions SEND only further into its description,
+        # not in its title or opening words.
+        n["wider"] = not SEND_NOTICE.search(n["title"] + " " + n["description"][:200])
+
+    # The same award is often published on both services, or more than once.
+    # Keep one per title and supplier list, preferring Find a Tender.
+    awarded, seen = [], set()
+    for n in sorted((n for n in notices if n["awarded"]), key=lambda n: (n["source"] != "Find a Tender", n["published"])):
+        key = (_norm(n["title"]), _norm(n["suppliers"])[:30])
+        if key not in seen:
+            seen.add(key)
+            awarded.append(n)
+    awarded.sort(key=lambda n: n["published"], reverse=True)
+
+    fetched = dt.date.fromisoformat(manifest["fetched"])
+    since = dt.date(fetched.year - UPCOMING_MONTHS // 12, fetched.month, 1).isoformat()
+    done = {n["procurement_id"] for n in awarded} | {_norm(n["title"]) for n in awarded if n["published"] >= since}
+    upcoming, seen = [], set()
+    for n in sorted((n for n in notices if not n["awarded"] and n["published"] >= since),
+                    key=lambda n: n["published"], reverse=True):
+        key = _norm(n["title"])
+        if n["procurement_id"] in done or key in done or key in seen or n["status"].lower() in ("withdrawn", "cancelled"):
+            continue
+        seen.add(key)
+        upcoming.append(n)
+    return {"awarded": awarded, "upcoming": upcoming, "since": since,
+            "since_label": dt.date.fromisoformat(since).strftime("%B %Y"), "manifest": manifest}
+
+
 # --- Payments to suppliers (council transparency reports) ------------------
 
 SPEND = ROOT / "data" / "spend"

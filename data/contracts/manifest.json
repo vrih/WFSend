@@ -1,0 +1,14 @@
+{
+  "buyer": "London Borough of Waltham Forest",
+  "contracts_finder": {
+    "title": "Contracts Finder",
+    "url": "https://www.contractsfinder.service.gov.uk/"
+  },
+  "find_a_tender": {
+    "title": "Find a Tender",
+    "url": "https://www.find-tender.service.gov.uk/",
+    "read_from": "2025-02-24T00:00:00"
+  },
+  "fts_read_to": "2026-10-25T23:47:17",
+  "fetched": "2026-10-26"
+}
