@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
-{% block title %}Assessments and timeliness{% endblock %}
+{% block title %}EHC needs assessments in Waltham Forest{% endblock %}
+{% block description %}In {{ d.timeliness.latest_period }}, {{ fmt(d.timeliness.latest[WF]) }} of new EHC plans in Waltham Forest were issued within the legal 20 weeks (London {{ fmt(d.timeliness.latest["London"]) }}, England {{ fmt(d.timeliness.latest["England"]) }}). Requests, decisions and how long assessments take.{% endblock %}
 {% block content %}
 <h1>EHC needs assessments and timeliness</h1>
 <p class="lede">Parents, schools and professionals can ask the council for an education, health and care (EHC) needs assessment. The law sets two deadlines. The council must say within <strong>6 weeks</strong> whether it will assess. It must issue the final plan within <strong>20 weeks</strong> of the request ({{ cite("send_regs_2014", "regulations 5 and 13") }}).</p>

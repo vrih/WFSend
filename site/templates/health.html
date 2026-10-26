@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
-{% block title %}Health{% endblock %}
+{% block title %}NHS waiting times for children with SEND in Waltham Forest{% endblock %}
+{% block description %}NHS waiting times for children's therapies, autism and ADHD assessments and mental health services in Waltham Forest and North East London.{% endblock %}
 {% block content %}
 <h1>Health services for children with SEND</h1>
 <p class="lede">Health services are commissioned by NHS North East London and mostly provided by NELFT. The 2025 inspection asked health leaders to improve waiting times "at pace" for neurodevelopmental assessment, CAMHS, continence and wheelchair services ({{ cite("ofsted_2025", 6) }}).</p>
@@ -35,7 +36,7 @@
 {% endfor %}
 {% endif %}
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mi-nhse-community-health-service-waiting-lists">Community health services waiting lists</a> (management information, unvalidated):
-{% for src in cw.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_community_waits.zip">Extracted rows (zip)</a></p>
+{% for src in cw.sources %}{% set _ = fetched(src, "extracted") %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_community_waits.zip">Extracted rows (zip)</a></p>
 </figure>
 {% endif %}
 
@@ -80,7 +81,7 @@
 </tbody></table></div>
 {% endif %}
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/autism-statistics">Autism waiting time statistics</a> (experimental statistics):
-{% for src in au.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_autism.zip">Extracted rows (zip)</a></p>
+{% for src in au.sources %}{% set _ = fetched(src, "extracted") %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_autism.zip">Extracted rows (zip)</a></p>
 </figure>
 {% endif %}
 
@@ -114,7 +115,7 @@
 <details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
 {% endfor %}
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd">ADHD management information</a> (management information, experimental):
-{% for src in ad.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_adhd.zip">Extracted rows (zip)</a></p>
+{% for src in ad.sources %}{% set _ = fetched(src, "extracted") %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_adhd.zip">Extracted rows (zip)</a></p>
 </figure>
 {% endif %}
 
@@ -151,7 +152,7 @@
 {% if mh.missing %}<p class="note">No figures are shown for {{ mh.missing|join(", ") }} because that month's file hasn't been added yet.</p>{% endif %}
 {% endif %}
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mental-health-services-monthly-statistics">Mental Health Services Monthly Statistics</a> (measures MHS130 to MHS135):
-{% for src in mh.sources %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_mhsds.zip">Extracted rows (zip)</a></p>
+{% for src in mh.sources %}{% set _ = fetched(src, "extracted") %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_mhsds.zip">Extracted rows (zip)</a></p>
 </figure>
 {% endif %}
 

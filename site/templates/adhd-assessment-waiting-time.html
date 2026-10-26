@@ -22,6 +22,7 @@
 <td>{{ fmt(ad.no_contact.series[a][p]) }}</td></tr>
 {% endfor %}
 </tbody></table></div>
+{% for src in d.adhd.sources %}{% set _ = fetched(src, "extracted") %}{% endfor %}
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/mi-adhd">ADHD management information</a> (management information, experimental). Children aged 5 to 17. Counts are rounded to the nearest 5.</p>
 {% set nel = ad.counts["North East London"] %}
 <p>In {{ pm }}, {{ fmt(nel.ADHD003d, "count") }} children in North East London had been waiting two years or more, up from {{ fmt(ad.first_counts["North East London"].ADHD003d, "count") }} in {{ ad.periods[0]|month }}. Fewer children in North East London have had no contact at all than in London or England, but more have waited over a year. Most seem to get a first contact and then wait for the assessment itself.</p>

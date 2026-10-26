@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}School places and children out of school{% endblock %}
+{% block title %}SEND school places in Waltham Forest{% endblock %}
 {% block description %}Special schools, resourced provision, forecast demand for specialist places, pupils with SEND in each mainstream school, and children home educated or missing education in Waltham Forest.{% endblock %}
 {% block content %}
 {% set ss = d.special_schools %}
@@ -36,7 +36,7 @@
 {{ figure(ss, y_max=120, note="The DfE publishes these as Official Statistics in Development: the collection is new and may change.") }}
 
 {% set gs = d.specialist_settings %}
-{% set gias_source %}Source: DfE, <a class="cite" href="{{ gs.manifest.downloads_url }}">Get Information About Schools</a> (downloaded {{ gs.manifest.fetched }}). <a href="data/gias_specialist_settings.csv">Download the list (CSV)</a>{% endset %}
+{% set gias_source %}Source: DfE, <a class="cite" href="{{ gs.manifest.downloads_url }}">Get Information About Schools</a> (downloaded {{ fetched(gs.manifest) }}). <a href="data/gias_specialist_settings.csv">Download the list (CSV)</a>{% endset %}
 <p>The DfE's register of schools, Get Information About Schools, records the ages each special school takes and the types of need it caters for. Schools and the council keep these entries up to date themselves.</p>
 <figure class="metric" id="special-school-needs">
 <figcaption><h3>Special schools in Waltham Forest: ages and types of need</h3>

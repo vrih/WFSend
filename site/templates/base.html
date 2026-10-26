@@ -5,37 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{% endblock %} | Waltham Forest SEND data</title>
 <meta name="description" content="{% block description %}Performance data on special educational needs and disability (SEND) services in Waltham Forest, from public sources.{% endblock %}">
+{% if page == "404.html" %}
+<meta name="robots" content="noindex">
+{% else %}
 <link rel="canonical" href="https://{{ domain }}/{{ "" if page == "index.html" else page }}">
+<meta property="og:url" content="https://{{ domain }}/{{ "" if page == "index.html" else page }}">
+{% endif %}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Waltham Forest SEND data">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="{{ self.title() }} | Waltham Forest SEND data">
 <meta property="og:description" content="{{ self.description() }}">
-<meta property="og:url" content="https://{{ domain }}/{{ "" if page == "index.html" else page }}">
-<meta name="twitter:card" content="summary">
-{% if page in waits %}<script type="application/ld+json">{{ waits[page].jsonld }}</script>
-{% endif %}
+<meta property="og:image" content="https://{{ domain }}/share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Waltham Forest SEND data: how SEND services in Waltham Forest are performing. Every figure links to its public source.">
+<meta name="twitter:card" content="summary_large_image">
+{{ JSONLD }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
-<link rel="icon" href="favicon.ico" sizes="48x48">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="{{ root }}favicon.ico" sizes="48x48">
+<link rel="icon" href="{{ root }}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ root }}apple-touch-icon.png">
+<link rel="manifest" href="{{ root }}site.webmanifest">
 <meta name="theme-color" content="#24543a">
-<link rel="stylesheet" href="{{ asset("style.css") }}">
-<script src="{{ asset("site.js") }}" defer></script>
+<link rel="stylesheet" href="{{ root }}{{ asset("style.css") }}">
+<script src="{{ root }}{{ asset("site.js") }}" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="masthead">
   <div class="wrap">
-    <div class="row"><a class="brand" href="index.html">Waltham Forest <b>SEND</b> data</a><span class="badge-independent">Independent</span></div>
+    <div class="row"><a class="brand" href="{{ root }}index.html">Waltham Forest <b>SEND</b> data</a><span class="badge-independent">Independent</span></div>
     <p class="tagline">How SEND services in Waltham Forest are performing. Every figure links to its public source.</p>
     <nav aria-label="Sections">
       <ul>
       {% for href, label in pages %}
-        <li><a href="{{ href }}"{% if href == page %} aria-current="page"{% endif %}>{{ label }}</a></li>
+        <li><a href="{{ root }}{{ href }}"{% if href == page %} aria-current="page"{% endif %}>{{ label }}</a></li>
       {% endfor %}
       </ul>
     </nav>
@@ -48,7 +55,7 @@
   <p class="disclaimer"><strong>Independent site.</strong> Built from public sources. It is not run by or affiliated with the London Borough of Waltham Forest.</p>
   <p>DfE statistics are Crown copyright, used under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
   <p>Contact, corrections and new documents: <a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
-  <p>Built {{ built }}. <a href="sources.html">Sources and method</a> · <a href="data/headlines.csv">Download the headline figures (CSV)</a></p>
+  <p>{{ UPDATED }}Built {{ built }}. <a href="{{ root }}sources.html">Sources and method</a> · <a href="{{ root }}data/headlines.csv">Download the headline figures (CSV)</a></p>
 </footer>
 <div id="tip" role="tooltip" hidden></div>
 </body>

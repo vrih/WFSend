@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
-{% block title %}Complaints and appeals{% endblock %}
+{% block title %}SEND complaints and tribunal appeals in Waltham Forest{% endblock %}
+{% block description %}Waltham Forest's SEND Tribunal appeal rate was {{ fmt(d.appeal_rate.latest[WF]) }} in {{ d.appeal_rate.latest_period }} (England {{ fmt(d.appeal_rate.latest["England"]) }}). Tribunal appeals, Ombudsman decisions and complaints to the council.{% endblock %}
 {% block content %}
 {% set ap = d.appeal_rate %}
 <h1>Complaints and SEND Tribunal appeals</h1>
@@ -27,7 +28,7 @@
 {% endfor %}
 </tbody></table></div>
 <p class="note">The Ombudsman does not publish every decision and deletes decision statements after five years, so these are minimum counts. Its headline statistics are not split by service, so the SEND figures come from the category on each published decision.</p>
-<p class="source">Source: <a class="cite" href="{{ LGO_MANIFEST.decisions_url }}">Local Government and Social Care Ombudsman, published decisions</a> (downloaded {{ LGO_MANIFEST.fetched }}). <a href="data/ombudsman_decisions.csv">Download all decisions (CSV)</a></p>
+<p class="source">Source: <a class="cite" href="{{ LGO_MANIFEST.decisions_url }}">Local Government and Social Care Ombudsman, published decisions</a> (downloaded {{ fetched(LGO_MANIFEST) }}). <a href="data/ombudsman_decisions.csv">Download all decisions (CSV)</a></p>
 </figure>
 
 <h3>The SEND decisions</h3>
@@ -52,7 +53,7 @@
 {% endfor %}
 </tbody></table></div>
 <p class="note">These cover every council service (housing, social care, parking and so on), not just SEND. "Similar councils" is the Ombudsman's average for London boroughs.</p>
-<p class="source">Source: <a class="cite" href="{{ LGO_MANIFEST.statistics_url }}">Local Government and Social Care Ombudsman, Waltham Forest complaint statistics</a> (downloaded {{ LGO_MANIFEST.fetched }})</p>
+<p class="source">Source: <a class="cite" href="{{ LGO_MANIFEST.statistics_url }}">Local Government and Social Care Ombudsman, Waltham Forest complaint statistics</a> (downloaded {{ fetched(LGO_MANIFEST) }})</p>
 
 <h2>Complaints to the council</h2>
 <p>The improvement plan's measure is simply "fewer complaints received".</p>

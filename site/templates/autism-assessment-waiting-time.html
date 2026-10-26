@@ -22,6 +22,7 @@
 <td>{{ fmt(au.over13.series[a][p]) if au.over13.series[a][p] is not none else "–" }}</td></tr>
 {% endfor %}
 </tbody></table></div>
+{% for src in d.autism.sources %}{% set _ = fetched(src, "extracted") %}{% endfor %}
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/autism-statistics">Autism waiting time statistics</a> (experimental statistics). Children aged 0 to 17.</p>
 <p>NICE guidance says an autism assessment should start within 3 months (13 weeks) of referral ({{ cite("nice_cg128", "recommendation 1.5.1") }}).</p>
 <p>"NELFT" is North East London NHS Foundation Trust, the NHS trust that runs children's community and mental health services in Waltham Forest. It also works in other boroughs. "North East London" counts children living in or registered with a GP in the NHS North East London area, whoever they were referred to. Neither is for Waltham Forest alone.</p>
