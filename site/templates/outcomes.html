@@ -7,6 +7,13 @@
 {% set sup = "SEN support / SEN without an EHC plan" %}
 <h1>Outcomes for children and young people with SEND</h1>
 <p class="lede">Results at the end of primary and secondary school, exclusions and attendance, for pupils with an EHC plan and pupils on SEN support. Cohorts are small, especially for EHC plans, so a change of a few pupils can move the percentage a lot from year to year. The latest year is often provisional.</p>
+{% set k2 = d.ks2[ehc] %}{% set su = d.exclusions["EHC plan"].susp %}{% set pa = d.absence["EHC plan"].persistent %}{% set ne = d.neet["SEN EHC/statement"] %}
+{% call ui.key_points() %}
+<li>At the end of primary school in {{ k2.latest_period }}, {{ fmt(k2.latest[WF]) }} of pupils with an EHC plan met the expected standard in reading, writing and maths, against {{ fmt(k2.latest["England"]) }} in England.</li>
+<li>Pupils with an EHC plan had {{ fmt(su.latest[WF], su.unit) }} suspensions per 100 pupils in {{ su.latest_period }} (England {{ fmt(su.latest["England"], su.unit) }}).</li>
+<li>{{ fmt(pa.latest[WF]) }} of pupils with an EHC plan were persistently absent in {{ pa.latest_period }} (England {{ fmt(pa.latest["England"]) }}).</li>
+<li>{{ fmt(ne.latest[WF]) }} of 16 and 17 year olds with an EHC plan were not in education, employment or training, or not known, in {{ ne.latest_period }} (England {{ fmt(ne.latest["England"]) }}).</li>
+{% endcall %}
 
 <h2 id="early-years">End of Reception (early years foundation stage)</h2>
 {{ figure(d.eyfs["Education, health and care plan"], y_max=100, also=d.eyfs["SEN support / SEN without an EHC plan"]) }}

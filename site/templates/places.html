@@ -15,6 +15,13 @@
 {% set fc_first = fc.periods[0] %}{% set fc_last = fc.periods[-1] %}
 <h1>School places and children out of school</h1>
 <p class="lede">Whether there are enough specialist school places for children with EHC plans, how fast the council expects demand to grow, and how many children are not in school at all.</p>
+{% set sa = d.ehcp_school_age_neet %}
+{% call ui.key_points() %}
+<li>In May {{ ss_year[:2] ~ ss_year[-2:] }}, the borough's {{ ss.schools|length }} special schools had {{ fmt(ss_tot[1], "count") }} pupils for {{ fmt(ss_tot[0], "count") }} places.</li>
+<li>The council forecasts {{ fmt(fc.latest[WF] - 100) }} more children needing a specialist place by {{ fc_last }}, against {{ fmt(fc.latest["London"] - 100) }} across London.</li>
+<li>In May 2026, the council said {{ foi.no_placement_may2026.rows[0].value }} children and young people with an EHC plan had no school or college named.</li>
+<li>In {{ sa.latest_period }}, {{ fmt(sa.counts[sa.latest_period], "count") }} children of school age with an EHC plan were recorded as not in education ({{ fmt(sa.latest[WF]) }} of plans, England {{ fmt(sa.latest["England"]) }}).</li>
+{% endcall %}
 
 <h2 id="specialist-places">Specialist places in the borough</h2>
 <p>In May {{ ss_year[:2] ~ ss_year[-2:] }}, the council reported {{ "{:,.0f}".format(ss_tot[0]) }} places at Waltham Forest's {{ ss.schools|length }} special schools, with {{ "{:,.0f}".format(ss_tot[1]) }} pupils on roll. Mainstream schools had another {{ "{:,.0f}".format(su_latest.resourced + su_latest.units) }} places in resourced provision ({{ su_latest.primary|int }} primary and {{ su_latest.secondary|int }} secondary){% if not su_latest.units %}, and no SEN units{% endif %}.

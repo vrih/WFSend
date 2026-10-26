@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "_macros.html" as ui %}
 {% block title %}SEND inspection and targets in Waltham Forest{% endblock %}
 {% block description %}Ofsted and CQC found "inconsistent experiences and outcomes" for children with SEND in Waltham Forest in 2025. What inspectors asked for, the legal deadlines, the targets the council has and hasn't set, and how it is doing against them.{% endblock %}
 {% block content %}
@@ -6,6 +7,12 @@
 {% set statuses = {"met": ("met", "Met"), "behind": ("behind", "Behind"), "improving": ("improving", "Improving, no end point"), "no data": ("nodata", "No data published"), "unclear": ("unclear", "Unclear")} %}
 <h1>Inspection and targets</h1>
 <p class="lede">What Ofsted and the Care Quality Commission found in 2025, what the law requires, what the council has committed to since, and where no target has been set.</p>
+{% set counts = {} %}{% for t in local.targets %}{% set _ = counts.update({t.status: counts.get(t.status, 0) + 1}) %}{% endfor %}
+{% call ui.key_points() %}
+<li>The 2025 inspection found "inconsistent experiences and outcomes", the middle of three possible outcomes.</li>
+<li>The council has published no numeric target for how quickly it issues EHC plans or completes annual reviews.</li>
+<li>Of {{ local.targets|length }} commitments with a number and a date, by our reading {{ counts.get("met", 0) }} have been met, {{ counts.get("behind", 0) }} are behind, {{ counts.get("improving", 0) }} are improving with no end point and {{ counts.get("no data", 0) }} have no progress figure published.</li>
+{% endcall %}
 
 <h2 id="inspection">The 2025 inspection</h2>
 <p>Ofsted and the Care Quality Commission inspect the "local area partnership": the council and NHS North East London together. The latest inspection was {{ c.dates }}, and the report was published on {{ c.published }}.</p>

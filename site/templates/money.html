@@ -5,6 +5,13 @@
 {% block content %}
 <h1>High needs funding and the schools budget deficit</h1>
 <p class="lede">Support for children with EHC plans is mostly paid for from the High Needs Block of the Dedicated Schools Grant (DSG), a ring-fenced government grant. Spending above the grant builds up as a DSG deficit. A government "statutory override" currently keeps that deficit off the council's main budget, until March 2028 ({{ cite("sf_oct2026", 31) }}).</p>
+{% set fin = {} %}{% for f in local.finance %}{% set _ = fin.update({f.id: f}) %}{% endfor %}{% set eph = d.spending.lines.ep.per_head %}
+{% call ui.key_points() %}
+<li>The schools budget (DSG) deficit was {{ fin.dsg_deficit.value }} at 31 March 2026.</li>
+<li>The council forecasts a High Needs overspend of {{ fin.hnb_forecast_2627.value }} in 2026/27.</li>
+<li>The DfE has agreed a {{ fin.stability_grant.value }} High Needs Stability Grant. {{ fin.stability_grant.detail.split(". ")[-1] }}</li>
+<li>Net spend per head on educational psychology was £{{ eph.latest[WF]|round|int }} in {{ eph.latest_period }}, against £{{ eph.latest["England"]|round|int }} in England. The council sells much of the service to schools, which lowers its net figure.</li>
+{% endcall %}
 
 <div class="tablewrap"><table class="wide">
 <thead><tr><th scope="col">What</th><th scope="col">Figure</th><th scope="col">Detail</th><th scope="col">Source</th></tr></thead>

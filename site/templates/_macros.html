@@ -1,10 +1,11 @@
-{% macro tile(label, value, compare, rank="", more="", more_href="", rank2="") %}
+{% macro tile(label, value, compare, rank="", more="", more_href="", rank2="", aside="") %}
 <li class="tile">
   <p class="label">{{ label }}</p>
   <span class="value">{{ value }}</span>
   {% if compare %}<p class="compare">{{ compare }}</p>{% endif %}
   {% if rank %}<p class="rank">{{ rank }}</p>{% endif %}
   {% if rank2 %}<p class="rank">{{ rank2 }}</p>{% endif %}
+  {% if aside %}<p class="compare">{{ aside }}</p>{% endif %}
   {% if more %}<a class="more" href="{{ more_href }}">{{ more }}</a>{% endif %}
 </li>
 {% endmacro %}
@@ -91,4 +92,13 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 {% endfor %}
 </tbody></table></div>
 <p class="source">Source: {{ cite(block.source, pages[0] if pages|length == 1 else "pages " ~ pages|join(" and ")) }}</p>
+{% endmacro %}
+
+{% macro key_points() %}
+<div class="answer keypoints">
+<p><strong>Key points</strong></p>
+<ul>
+{{ caller() }}
+</ul>
+</div>
 {% endmacro %}

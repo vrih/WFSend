@@ -6,6 +6,11 @@
 {% set ap = d.appeal_rate %}
 <h1>Complaints and SEND Tribunal appeals</h1>
 <p class="lede">Families can appeal to the SEND Tribunal against many council decisions, such as refusing to assess, refusing to issue a plan, what a plan says, or the school it names.</p>
+{% set ar_ = d.appeal_rate %}{% set lgo_last = d.ombudsman.by_year|selectattr("year", "ne", d.ombudsman.by_year[-1].year)|list|last %}
+{% call ui.key_points() %}
+<li>{{ fmt(ar_.appeals[WF][ar_.latest_period], "count") }} appeals about Waltham Forest decisions were registered with the SEND Tribunal in {{ ar_.latest_period }}: an appeal rate of {{ fmt(ar_.latest[WF]) }}, against {{ fmt(ar_.latest["England"]) }} in England.</li>
+<li>The Ombudsman published {{ lgo_last.published }} decisions about SEND in Waltham Forest in {{ lgo_last.year }}, and found fault in {{ lgo_last.upheld }}.</li>
+{% endcall %}
 
 <h2>Tribunal appeals</h2>
 <p>In {{ ap.latest_period }}, {{ "{:,.0f}".format(ap.appeals[WF][ap.latest_period]) }} appeals about Waltham Forest decisions were registered with the SEND Tribunal ({{ "{:,.0f}".format(ap.appeals[WF][ap.periods[0]]) }} in {{ ap.periods[0] }}). That is an appeal rate of {{ fmt(ap.latest[WF]) }}, compared with {{ fmt(ap.latest["England"]) }} across England. Appeals are counted against all the decisions families could have appealed.</p>
