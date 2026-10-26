@@ -36,7 +36,25 @@
 
 <h3>Compared with other councils</h3>
 <p>Spending per head, as calculated by the DfE, so councils of different sizes can be compared. The spending file only has totals for England and for Inner and Outer London, not London as a whole.</p>
-{{ figure(sp.lines.ep.per_head, ranked=True, note="The council blames slow EHC plans on delays in educational psychologist advice (see Assessments). In " ~ sp.lines.ep.per_head.latest_period ~ ", Waltham Forest's net spend per head on its educational psychology service was " ~ fmt(sp.lines.ep.per_head.latest[WF], "gbp") ~ ", " ~ rank_text(sp.lines.ep.per_head) ~ ". England: " ~ fmt(sp.lines.ep.per_head.latest["England"], "gbp") ~ ".") }}
+{% set ep = sp.lines.ep %}{% set eps = ep.income_share %}
+{{ figure(ep.per_head, ranked=True, note="The council blames slow EHC plans on delays in educational psychologist advice (see Assessments). In " ~ ep.per_head.latest_period ~ ", Waltham Forest's net spend per head on its educational psychology service was " ~ fmt(ep.per_head.latest[WF], "gbp") ~ ", " ~ rank_text(ep.per_head) ~ ". England: " ~ fmt(ep.per_head.latest["England"], "gbp") ~ ". This is after income. Waltham Forest sells much of its educational psychology service to schools, so its net figure is low partly because schools pay for the service, not only because less is spent. See below.") }}
+
+<h3>Educational psychology: what the service costs and who pays</h3>
+<p>The council sells educational psychology time to schools through its traded services ({{ cite("wf_traded_services") }}). The DfE figures show the service's cost before income ("gross"), the income it received, and what was left for the council to pay ("net").</p>
+<figure class="metric" id="spending-ep">
+<div class="tablewrap"><table>
+<thead><tr><th scope="col">Waltham Forest, £ million</th>{% for p in sp.periods %}<th scope="col">{{ p }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for label, s in [("Gross: cost before income", ep.gross_expenditure), ("Income", ep.income), ("Net: paid by the council", ep.total)] %}
+<tr><th scope="row">{{ label }}</th>{% for p in sp.periods %}<td>{{ "{:.2f}".format(s[p]) if s.get(p) is not none else "–" }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+{% set y0, y1 = sp.periods[-2], sp.periods[-1] %}
+{% set d_gross = ep.gross_expenditure[y1] - ep.gross_expenditure[y0] %}{% set d_income = ep.income[y1] - ep.income[y0] %}
+<p class="note">From {{ y0 }} to {{ y1 }}, gross spend {{ "fell" if d_gross < 0 else "rose" }} by £{{ "{:.2f}".format(d_gross|abs) }} million and income {{ "fell" if d_income < 0 else "rose" }} by £{{ "{:.2f}".format(d_income|abs) }} million. Income was recorded as £0 in 2016/17. Treat single years with care.</p>
+<p class="source">{{ cite_dfe(["s251_outturn"]) }}</p>
+</figure>
+{{ figure(eps, ranked=True, note="In " ~ eps.latest_period ~ ", income covered " ~ fmt(eps.latest[WF]) ~ " of the cost of Waltham Forest's educational psychology service, " ~ rank_text(eps) ~ ". England: " ~ fmt(eps.latest["England"]) ~ ". Councils record schools' payments differently depending on the type of school. When the council's own maintained schools buy services, both the cost and the income are left out of the figures. When academies buy them, both are included (" ~ cite("s251_guidance_2024", "'Gross total of all the columns'") ~ "). So a council with more academies shows a higher gross figure and a higher share from income, for the same work. None of these figures show how many educational psychologists a council employs.") }}
 {{ figure(sp.lines.sen_admin.per_head, ranked=True) }}
 {{ figure(sp.lines.independent.per_head, ranked=True) }}
 {{ figure(sp.lines.transport.per_head, ranked=True) }}

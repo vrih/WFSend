@@ -141,6 +141,20 @@ schools_forum_index:
   date: 2026-10-21
   url: https://thehub-beta.walthamforest.gov.uk/schools-forum
 
+s251_guidance_2024:
+  title: "Section 251 financial data collection: guidance for local authorities compiling their outturn statement, 2024 to 2025"
+  publisher: Department for Education
+  date: 2025-07-21
+  url: https://www.gov.uk/government/publications/section-251-2024-to-2025/section-251-financial-data-collection-guidance-for-local-authorities-compiling-their-outturn-statement
+  notes: Withdrawn on 10 August 2026 but still published. It is the guidance councils followed for the 2024-25 figures.
+
+wf_traded_services:
+  title: Waltham Forest Traded Services
+  publisher: London Borough of Waltham Forest (The Hub)
+  date: 2026-09-01
+  url: https://thehub-beta.walthamforest.gov.uk/wf-traded-services
+  notes: Web page, last updated 1 September 2026. Lists Education Psychology among the services the council sells to schools, on yearly subscriptions starting in April.
+
 sf_dec2024:
   title: Schools Forum report pack, 11 December 2024
   publisher: London Borough of Waltham Forest
