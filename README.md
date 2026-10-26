@@ -50,7 +50,7 @@ scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> dat
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
 scripts/build.py          renders site/templates/*.html -> _site/
-scripts/make_icons.py     draws the favicon and home screen icons -> site/icons/ (needs Pillow)
+scripts/make_icons.py     draws the favicon, home screen icons and share image -> site/icons/ (needs Pillow)
 ```
 
 Three plain-language pages answer the questions families ask when they start
@@ -59,6 +59,21 @@ Their short answers are written in `wait_answers()` in `scripts/build.py` from
 the latest figures, and reused for the page description, FAQ structured data
 and `llms.txt`, so they update with each data refresh. Check the wording still
 makes sense after a refresh, especially if a figure moves a lot.
+
+For search engines and AI tools, the build also writes:
+
+- a "Figures last updated" date on each page, also used for the sitemap's
+  `lastmod` and the structured data. It is the latest date among the data and
+  documents the page cites (see `PAGE_DATES` in `build.py`), not the build
+  date. In templates, show a manifest's download date with `fetched(manifest)`
+  rather than `manifest.fetched`, so it counts.
+- schema.org structured data on every page: the site as an `Organization` and
+  `WebSite`, data pages as a `Dataset` (charts, sources cited and download
+  links, read from the rendered page), and the waiting-time guides as an
+  `FAQPage`.
+- `llms.txt`, listing every page with its description, and `llms-full.txt`,
+  every page converted to Markdown with its tables and source links.
+- `404.html`, which GitHub Pages serves for any missing address.
 
 The site is plain HTML and CSS. Charts are inline SVG, so no JavaScript
 libraries or external services are needed. A small script adds hover

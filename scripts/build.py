@@ -14,7 +14,8 @@ import json
 import re
 import shutil
 import sys
-from html import escape
+from html import escape, unescape
+from html.parser import HTMLParser
 from pathlib import Path
 
 import yaml
@@ -30,6 +31,8 @@ OUT = ROOT / "_site"
 SITE = ROOT / "site"
 DOMAIN = "wfsenddata.org.uk"
 CONTACT_EMAIL = f"info@{DOMAIN}"
+SITE_URL = f"https://{DOMAIN}/"
+ORG_ID = SITE_URL + "#organization"
 
 AREAS = (M.WF, "London", "England", M.SN)
 
@@ -48,6 +51,13 @@ SN_CFG = DFE_CFG["statistical_neighbours"]
 
 # Every citation used on the site, so sources.html can list exactly those.
 USED = {"local": set(), "dfe": set()}
+# Dates of the data on the page being rendered: when each DfE, NHS or other file
+# was last downloaded with changed figures, or the date of each document quoted.
+# The latest is the page's "figures last updated" date.
+PAGE_DATES = set()
+# Placeholders filled in once a page has rendered and its dates are known
+JSONLD = Markup("<!--jsonld-->")
+UPDATED = Markup("<!--updated-->")
 
 
 def fmt(v, unit="percent"):
@@ -58,6 +68,8 @@ def cite(source, page=None):
     """Inline citation link for a local document."""
     s = SOURCES[source]
     USED["local"].add(source)
+    if "short" not in s:  # legislation is not data, and would date a page to 2014
+        PAGE_DATES.add(str(s["date"]))
     where = f", p. {page}" if isinstance(page, int) else (f", {page}" if page else "")
     if "short" in s:  # legislation: "SEND Regulations 2014, regulation 5"; full title on sources.html
         label = s["short"] + where
@@ -71,6 +83,7 @@ def cite_dfe(keys):
     for k in keys:
         USED["dfe"].add(k)
         m = MANIFEST[k]
+        PAGE_DATES.add(m["fetched"])
         pub = PUBS[m["publication"]]
         parts.append(
             f'DfE, <a class="cite" href="{escape(pub["url"])}" rel="noopener">{escape(pub["title"])}</a>: '
@@ -82,9 +95,16 @@ def cite_dfe(keys):
 
 def cite_ons():
     m = ONS_MANIFEST
+    PAGE_DATES.add(m["fetched"])
     return Markup(f'ONS, <a class="cite" href="{escape(m["url"])}" rel="noopener">{escape(m["title"])}</a>: '
                   f'<a class="cite" href="{escape(m["dataset_url"])}" rel="noopener">{escape(m["dataset"])}</a>'
                   f' (downloaded {escape(m["fetched"])})')
+
+
+def fetched(manifest, key="fetched"):
+    """A download date from a manifest, counted towards the page's date."""
+    PAGE_DATES.add(manifest[key])
+    return manifest[key]
 
 
 def slug(text):
@@ -258,12 +278,179 @@ def wait_answers(d, local):
     out = {}
     for page, faq in (("ehcp-waiting-time.html", ehcp), ("autism-assessment-waiting-time.html", autism),
                       ("adhd-assessment-waiting-time.html", adhd)):
-        ld = {"@context": "https://schema.org", "@type": "FAQPage",
-              "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
-                             for q, a in faq]}
-        out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page],
-                     "jsonld": Markup(json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"))}
+        out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page]}
     return out
+
+
+def page_url(name):
+    return SITE_URL + ("" if name == "index.html" else name)
+
+
+def text_of(fragment):
+    return re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", "", fragment))).strip()
+
+
+def unique(items):
+    return list(dict.fromkeys(items))
+
+
+def page_info(name, html):
+    """The title, description and main content of a rendered page."""
+    return {"title": text_of(re.search(r"<title>(.*?) \| ", html).group(1)),
+            "description": text_of(re.search(r'<meta name="description" content="([^"]*)"', html).group(1)),
+            "main": re.search(r'<main id="main"[^>]*>(.*)</main>', html, re.S).group(1)}
+
+
+def structured_data(name, info, updated, waits):
+    """schema.org data for search engines and AI tools: who publishes the site,
+    and what each page holds. Data pages are described as a Dataset, listing the
+    charts as the variables measured, the sources cited and the files to download,
+    so they can be found in Google Dataset Search."""
+    url, main = page_url(name), info["main"]
+    org = {"@type": "Organization", "@id": ORG_ID, "name": "Waltham Forest SEND data", "url": SITE_URL,
+           "email": CONTACT_EMAIL, "logo": SITE_URL + "icon-512.png",
+           "description": "An independent site showing how special educational needs and disability (SEND) services "
+                          "in Waltham Forest are performing, from public sources. It is not run by or affiliated with "
+                          "the London Borough of Waltham Forest."}
+    graph = [org]
+    if name == "index.html":
+        graph.append({"@type": "WebSite", "@id": SITE_URL + "#website", "name": "Waltham Forest SEND data",
+                      "url": SITE_URL, "inLanguage": "en-GB", "description": org["description"],
+                      "publisher": {"@id": ORG_ID},
+                      "about": {"@type": "Thing", "name": "Special educational needs and disability (SEND) "
+                                                          "services in Waltham Forest, London"}})
+    base = {"name": info["title"], "description": info["description"], "url": url, "inLanguage": "en-GB",
+            "publisher": {"@id": ORG_ID}, "dateModified": updated}
+    if name in waits:
+        graph.append({"@type": "FAQPage", **base, "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+            for q, a in waits[name]["faq"]]})
+    elif name in DATASETS:
+        files = unique(re.findall(r'href="(data/[^"#]+)"', main) + (["data/headlines.csv"] if name == "index.html" else []))
+        kind = {".csv": "text/csv", ".zip": "application/zip", ".yaml": "application/yaml"}
+        graph.append({"@type": "Dataset", "@id": url + "#dataset", **base, "creator": {"@id": ORG_ID},
+                      "isAccessibleForFree": True,
+                      "spatialCoverage": {"@type": "Place", "name": "London Borough of Waltham Forest, England"},
+                      "variableMeasured": unique(text_of(h) for pair in re.findall(  # headline tiles and charts
+                          r'<p class="label">(.*?)</p>|<figure\b[^>]*>\s*<figcaption>\s*<h3[^>]*>(.*?)</h3>', main, re.S)
+                          for h in pair if h),
+                      "isBasedOn": unique(unescape(u) for u in re.findall(r'<a class="cite" href="([^"]+)"', main)),
+                      "distribution": [{"@type": "DataDownload", "contentUrl": SITE_URL + f,
+                                        "encodingFormat": kind[Path(f).suffix]} for f in files]})
+    else:
+        graph.append({"@type": "WebPage", **base})
+    graph = [{k: v for k, v in g.items() if v} for g in graph]
+    ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("</", "<\\/")
+    return f'<script type="application/ld+json">{ld}</script>'
+
+
+class PlainText(HTMLParser):
+    """Turns a page's main content into Markdown for llms-full.txt: headings,
+    paragraphs, lists, links and the "Show the numbers" tables. Charts are left
+    out because every chart's numbers are in its table."""
+    SKIP = {"svg", "script", "style", "summary", "form", "button"}
+    BLOCKS = {"p", "h1", "h2", "h3", "h4", "li", "blockquote", "figcaption", "dt", "dd", "div", "ul", "ol", "table", "details"}
+
+    def __init__(self, url):
+        super().__init__(convert_charrefs=True)
+        self.url, self.out, self.buf, self.skip, self.links, self.prefix = url, [], [], [], [], ""
+        self.rows = self.row = None
+        self.spans, self.in_list = [], False
+
+    def flush(self):
+        text = re.sub(r"\s+", " ", "".join(self.buf)).strip()
+        self.buf = []
+        if self.row is not None:
+            if self.row:
+                self.row[-1] += text
+        elif text:
+            if self.prefix == "- " and self.in_list:  # list items on consecutive lines
+                self.out[-1] += "\n- " + text
+            else:
+                self.out.append(self.prefix + text)
+            self.in_list = self.prefix == "- "
+        self.prefix = ""
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if self.skip or tag in self.SKIP or "anchor" in (a.get("class") or "").split() or a.get("aria-hidden") == "true":
+            if tag not in ("br", "input", "img", "meta", "hr"):
+                self.skip.append(tag)
+            return
+        if tag in self.BLOCKS or tag in ("tr", "th", "td"):
+            self.flush()
+        if tag in ("h1", "h2", "h3", "h4"):
+            self.prefix = "#" * int(tag[1]) + " "
+        elif tag == "li":
+            self.prefix = "- "
+        elif tag == "blockquote":
+            self.prefix = "> "
+        elif tag == "table":
+            self.rows = []
+        elif tag == "tr" and self.rows is not None:
+            self.row = []
+            self.rows.append(self.row)
+        elif tag in ("th", "td") and self.row is not None:
+            self.row.append("")
+        elif tag == "a":
+            href = a.get("href") or ""
+            if href.startswith("#"):
+                href = self.url + href
+            elif href and not re.match(r"[a-z]+:", href):
+                href = SITE_URL + href
+            self.links.append((len(self.buf), href))
+        elif tag == "br":
+            self.buf.append(" ")
+        elif tag == "span":  # ranked bars: "1. Sutton: 87.5%"
+            cls = a.get("class") or ""
+            self.spans.append(". " if cls == "rn" else "")
+            if cls == "val":
+                self.buf.append(": ")
+
+    def handle_endtag(self, tag):
+        if self.skip:
+            if tag == self.skip[-1]:
+                self.skip.pop()
+            return
+        if tag == "a" and self.links:
+            start, href = self.links.pop()
+            text = "".join(self.buf[start:]).strip()
+            if text and href:
+                self.buf[start:] = [f"[{text}]({href})"]
+        elif tag == "span" and self.spans:
+            self.buf.append(self.spans.pop())
+        elif tag in ("th", "td"):
+            self.flush()
+        elif tag == "tr":
+            self.row = None
+        elif tag == "table" and self.rows is not None:
+            rows, self.rows = [r for r in self.rows if any(r)], None
+            if rows:
+                width = max(len(r) for r in rows)
+                rows = [[c.replace("|", "\\|") for c in r] + [""] * (width - len(r)) for r in rows]
+                lines = ["| " + " | ".join(r) + " |" for r in rows]
+                lines.insert(1, "|" + " --- |" * width)
+                self.out.append("\n".join(lines))
+        elif tag in self.BLOCKS:
+            self.flush()
+
+    def handle_data(self, data):
+        if not self.skip:
+            self.buf.append(data)
+
+    def text(self):
+        self.flush()
+        return "\n\n".join(self.out) + "\n"
+
+
+def plain_text(name, main):
+    parser = PlainText(page_url(name))
+    parser.feed(main)
+    return parser.text()
+
+
+def long_date(iso):
+    return dt.date.fromisoformat(iso).strftime("%-d %B %Y")
 
 
 def compute():
@@ -369,6 +556,9 @@ GUIDES = [
     ("adhd-assessment-waiting-time.html", "How long is the wait for an ADHD assessment?"),
 ]
 
+# Pages described to search engines as a Dataset
+DATASETS = {name for name, _ in PAGES} - {"deadlines.html", "sources.html"}
+
 
 def asset(path):
     """URL for a file in site/static/, versioned by its content so browsers
@@ -388,7 +578,8 @@ def main():
     env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
                        ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES,
-                       guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN,
+                       guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
+                       JSONLD=JSONLD, UPDATED=UPDATED, root="",
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
 
     if OUT.exists():
@@ -411,12 +602,20 @@ def main():
     ctx = dict(d=d, waits=waits, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
                MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, ONS_MANIFEST=ONS_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
-    for name, _ in PAGES + GUIDES:
-        if name == "sources.html":
-            continue
+    rendered = {}
+    for name in sorted((n for n, _ in PAGES + GUIDES), key=lambda n: n == "sources.html"):
+        PAGE_DATES.clear()
         html = add_anchors(env.get_template(name).render(page=name, **ctx))
+        rendered[name] = (html, max(PAGE_DATES, default=None))
+    info = {}
+    for name, (html, updated) in rendered.items():
+        info[name] = page_info(name, html)
+        html = html.replace(JSONLD, structured_data(name, info[name], updated, waits))
+        html = html.replace(UPDATED, f"Figures last updated {long_date(updated)}. " if updated else "")
         (OUT / name).write_text(html, encoding="utf-8")
-    (OUT / "sources.html").write_text(add_anchors(env.get_template("sources.html").render(page="sources.html", **ctx)), encoding="utf-8")
+    # GitHub Pages serves this for any missing address, so its links start from the site root
+    html = env.get_template("404.html").render(page="404.html", **{**ctx, "root": "/"})
+    (OUT / "404.html").write_text(add_anchors(html).replace(JSONLD, "").replace(UPDATED, ""), encoding="utf-8")
 
     # downloadable data
     for f in (ROOT / "data" / "dfe").glob("*"):
@@ -439,7 +638,8 @@ def main():
     (OUT / ".nojekyll").write_text("")
     (OUT / "CNAME").write_text(DOMAIN + "\n")  # custom domain for GitHub Pages
     # for search engines; submit https://DOMAIN/sitemap.xml in Search Console
-    urls = "".join(f"  <url><loc>https://{DOMAIN}/{'' if name == 'index.html' else name}</loc></url>\n"
+    urls = "".join(f"  <url><loc>{page_url(name)}</loc>"
+                   + (f"<lastmod>{rendered[name][1]}</lastmod>" if rendered[name][1] else "") + "</url>\n"
                    for name, _ in PAGES + GUIDES)
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -454,9 +654,19 @@ def main():
     for name, title in GUIDES:
         lines.append(f"- [{title}](https://{DOMAIN}/{name}): {waits[name]['description']}")
     lines += ["", "## Data pages", ""]
-    lines += [f"- [{label}](https://{DOMAIN}/{'' if name == 'index.html' else name})" for name, label in PAGES]
-    lines += ["", "## Data", "", f"- [Headline figures (CSV)](https://{DOMAIN}/data/headlines.csv)", ""]
+    lines += [f"- [{label}]({page_url(name)}): {info[name]['description']}" for name, label in PAGES]
+    lines += ["", "## Data", "",
+              f"- [Every page as plain text]({SITE_URL}llms-full.txt): all the figures, tables and sources in one file",
+              f"- [Headline figures (CSV)]({SITE_URL}data/headlines.csv)", ""]
     (OUT / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
+    full = [f"# Waltham Forest SEND data: every page\n\n> {lines[2][2:]}\n\n"
+            "Each page below is converted from the website. Charts are left out: their figures are in the tables. "
+            f"Links in brackets are the public sources. Built {built}.\n"]
+    for name, _ in PAGES + GUIDES:
+        updated = rendered[name][1]
+        full.append(f"---\n\nPage: {page_url(name)}\n" + (f"Figures last updated: {updated}\n" if updated else "")
+                    + "\n" + plain_text(name, info[name]["main"]))
+    (OUT / "llms-full.txt").write_text("\n".join(full), encoding="utf-8")
     print(f"Built {len(PAGES) + len(GUIDES)} pages into {OUT.relative_to(ROOT)}/")
 
 

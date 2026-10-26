@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Page not found{% endblock %}
+{% block description %}The page you were looking for is not on this site.{% endblock %}
+{% block content %}
+<h1>Page not found</h1>
+<p class="lede">If you typed the address, check it is correct. If you followed a link, the page may have moved.</p>
+<p>Try one of these:</p>
+<ul>
+  <li><a href="{{ root }}index.html">How SEND services in Waltham Forest are performing</a></li>
+{% for href, title in guides %}
+  <li><a href="{{ root }}{{ href }}">{{ title }}</a></li>
+{% endfor %}
+  <li><a href="{{ root }}deadlines.html">Work out the legal deadlines for your child</a></li>
+</ul>
+<p>If a link on this site is broken, email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+{% endblock %}

@@ -69,6 +69,11 @@ a good reason; optional extras like `openpyxl` stay optional.
   `<figure>` id. Give a heading an explicit `id` only when other pages link to it.
 - New pages go in the nav in `base.html`, in `sitemap.xml` (built in
   `build.py`), and need a `title` and `description` block.
+- Page titles lead with what the page is about and name Waltham Forest
+  ("EHC plans in Waltham Forest"). Descriptions give the headline figure
+  where there is one: they are reused in `llms.txt` and structured data.
+- In templates, show a manifest's download date with `fetched(manifest)`, not
+  `manifest.fetched`, so it counts towards the page's "Figures last updated".
 
 ## Writing style
 

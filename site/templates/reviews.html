@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
-{% block title %}Annual reviews{% endblock %}
+{% block title %}EHC plan annual reviews in Waltham Forest{% endblock %}
+{% block description %}In {{ d.ar.period }}, {{ fmt(d.ar.completed.latest[WF]) }} of Waltham Forest EHC plans due an annual review had one completed (England {{ fmt(d.ar.completed.latest["England"]) }}). Reviews completed, and decisions made within the legal 4 weeks.{% endblock %}
 {% block content %}
 {% set ar = d.ar %}
 {% set w = ar.detail[WF] %}

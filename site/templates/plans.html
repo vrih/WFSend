@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block title %}EHC plans{% endblock %}
+{% block title %}EHC plans in Waltham Forest{% endblock %}
+{% block description %}Waltham Forest maintained {{ fmt(d.caseload.latest[WF], "count") }} EHC plans in {{ d.caseload.latest_period }}, up {{ fmt(d.growth.growth[WF]) }} since {{ d.growth["from"] }}. How many children have a plan, their needs, and where they go to school.{% endblock %}
 {% block content %}
 {% set p = d.placements %}
 <h1>EHC plans: how many, and where children go to school</h1>

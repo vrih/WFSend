@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Money{% endblock %}
+{% block title %}SEND funding and the deficit in Waltham Forest{% endblock %}
+{% block description %}{% with f = local.finance|selectattr("id", "equalto", "dsg_deficit")|first %}{{ f.label }}: {{ f.value }}.{% endwith %} High needs funding and the schools budget deficit in Waltham Forest, SEND payments to suppliers and SEND contracts.{% endblock %}
 {% block content %}
 <h1>High needs funding and the schools budget deficit</h1>
 <p class="lede">Support for children with EHC plans is mostly paid for from the High Needs Block of the Dedicated Schools Grant (DSG), a ring-fenced government grant. Spending above the grant builds up as a DSG deficit. A government "statutory override" currently keeps that deficit off the council's main budget, until March 2028 ({{ cite("sf_oct2026", 31) }}).</p>
@@ -41,7 +42,7 @@
 {{ figure(sp.lines.transport.per_head, ranked=True) }}
 
 {% set pay = d.supplier_payments %}{% set ly = pay.latest_year %}
-{% set src %}Source: London Borough of Waltham Forest, <a class="cite" href="{{ pay.manifest.url }}">{{ pay.manifest.title }}</a> (downloaded {{ pay.manifest.fetched }}). Copy used here: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>.{% endset %}
+{% set src %}Source: London Borough of Waltham Forest, <a class="cite" href="{{ pay.manifest.url }}">{{ pay.manifest.title }}</a> (downloaded {{ fetched(pay.manifest) }}). Copy used here: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>.{% endset %}
 <h2 id="payments">Payments to suppliers</h2>
 <p>Each month the council publishes every payment of £500 or more it makes to suppliers. These are the payments it coded to its SEND services. They show who the money goes to. They don't cover everything the council spends on SEND: payments under £500 and staff pay aren't listed.</p>
 <figure class="metric" id="payments-by-service">
@@ -93,5 +94,5 @@
 <h3>Contracts awarded</h3>
 {{ notice_table(ct.awarded, "SEND contracts awarded") }}
 <p class="note">Values are as published. Many cover several years, some include VAT and some don't, and a planned value can change before the contract is awarded. A framework's value is the most that can be spent through it, not what is spent. Notices are picked out by words in their title or description, so a few SEND contracts may be missing. Where only the description mentions SEND, the contract is marked as a wider one, and only part of its value is for SEND.</p>
-<p class="source">Source: <a class="cite" href="{{ ct.manifest.contracts_finder.url }}">Contracts Finder</a> and <a class="cite" href="{{ ct.manifest.find_a_tender.url }}">Find a Tender</a> (downloaded {{ ct.manifest.fetched }}). Copy used here: <a href="data/contract_notices.csv">contract_notices.csv</a>.</p>
+<p class="source">Source: <a class="cite" href="{{ ct.manifest.contracts_finder.url }}">Contracts Finder</a> and <a class="cite" href="{{ ct.manifest.find_a_tender.url }}">Find a Tender</a> (downloaded {{ fetched(ct.manifest) }}). Copy used here: <a href="data/contract_notices.csv">contract_notices.csv</a>.</p>
 {% endblock %}
