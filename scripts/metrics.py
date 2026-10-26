@@ -315,6 +315,16 @@ def placements():
             "title": "Where children and young people with EHC plans are placed"}
 
 
+def placement_counts():
+    """Waltham Forest plans by setting each January, to set beside the council's FOI answers."""
+    out = {}
+    for r in load("ehcp_caseload"):
+        if area_of(r) == WF:
+            out.setdefault(r["setting_type"], {})[january(r["time_period"])] = num(r["ehc_plan_count"])
+    periods = sorted({p for s in out.values() for p in s}, key=lambda p: int(p[-4:]))
+    return {"periods": periods, "counts": out, "sources": ["ehcp_caseload"]}
+
+
 def assessments_not_issued():
     rows = load("ehcp_assessments")
 
@@ -645,6 +655,10 @@ def spending():
                               sources=["s251_outturn"]),
         }
     periods = out["ep"]["per_head"]["periods"]
+    # Top-up for independent and non-maintained providers, special school column only
+    ind = [r for r in rows if r["category_of_expenditure"].startswith("1.2.3 ")]
+    s, _ = collect(ind, lambda r: num(r["sen_and_special_schools"]), label=academic)
+    out["independent"]["special_schools"] = s.get(WF, {})
 
     # Schools and other settings buy educational psychology time from the
     # council, and that income is taken off before the net figure. So show

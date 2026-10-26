@@ -65,18 +65,19 @@ responses:
     rows:
       - { label: "Children and young people with an EHC plan and no named placement in section I", value: 272, page: 1 }
       - { label: "Of those, with no education package commissioned by the council", value: 272, page: 2, note: "The council says EOTAS, tuition and part-time packages are named in the plan if provided, and that searching each case would exceed the FOI cost limit. It is not clear whether 272 means none of these children has any package, or that none is recorded against them." }
-      - { label: "Of those, primary age", value: 53, page: 2 }
-      - { label: "Of those, secondary age", value: 60, page: 2 }
-      - { label: "Of those, post-16", value: 104, page: 2, note: "Primary, secondary and post-16 add up to 217, not 272. The response does not explain the other 55." }
-      - { label: "Of those, primary need autism (ASD)", value: 93, page: 2 }
-      - { label: "Of those, primary need social, emotional and mental health (SEMH)", value: 69, page: 2 }
-      - { label: "Of those, primary need speech, language and communication (SLCN)", value: 48, page: 2 }
-      - { label: "Of those, all other primary needs", value: 62, page: 2 }
+      - { group: phase, label: "Of those, primary age", value: 53, page: 2 }
+      - { group: phase, label: "Of those, secondary age", value: 60, page: 2 }
+      - { group: phase, label: "Of those, post-16", value: 104, page: 2, note: "Primary, secondary and post-16 add up to 217, not 272. The response does not explain the other 55." }
+      - { group: need, label: "Of those, primary need autism (ASD)", value: 93, page: 2 }
+      - { group: need, label: "Of those, primary need social, emotional and mental health (SEMH)", value: 69, page: 2 }
+      - { group: need, label: "Of those, primary need speech, language and communication (SLCN)", value: 48, page: 2 }
+      - { group: need, label: "Of those, all other primary needs", value: 62, page: 2 }
     note: "The council said what type of placement each child is waiting for is 'Not recorded at this granularity'."
 
   independent_placements:
     title: Children placed in independent or non-maintained special schools
     source: foi_send_costs_jun2026
+    page: "pages 1 and 2"
     columns: ["2022-23", "2023-24", "2024-25", "2025-26"]
     rows:
       - { label: "Children and young people placed", values: [39, 54, 70, 82], page: 1 }

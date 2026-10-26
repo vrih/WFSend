@@ -62,3 +62,16 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 {% endfor %}
 </ul>
 {% endmacro %}
+
+{% macro foi_table(block, rows=None, caption="Figure") %}
+{%- set rows = rows if rows is not none else block.rows %}
+{%- set pages = rows|map(attribute="page")|unique|list %}
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col"><span class="vh">Item</span></th><th scope="col">{{ caption }}</th></tr></thead>
+<tbody>
+{% for r in rows %}
+<tr><th scope="row">{{ r.label }}</th><td><strong>{{ "{:,}".format(r.value) if r.value is number else r.value }}</strong>{% if r.note is defined %}<br><span class="note">{{ r.note }}</span>{% endif %}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">Source: {{ cite(block.source, pages[0] if pages|length == 1 else "pages " ~ pages|join(" and ")) }}</p>
+{% endmacro %}
