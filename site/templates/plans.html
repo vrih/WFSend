@@ -1,10 +1,18 @@
 {% extends "base.html" %}
+{% import "_macros.html" as ui %}
 {% block title %}EHC plans in Waltham Forest{% endblock %}
 {% block description %}Waltham Forest maintained {{ fmt(d.caseload.latest[WF], "count") }} EHC plans in {{ d.caseload.latest_period }}, up {{ fmt(d.growth.growth[WF]) }} since {{ d.growth["from"] }}. How many children have a plan, their needs, and where they go to school.{% endblock %}
 {% block content %}
 {% set p = d.placements %}
 <h1>EHC plans: how many, and where children go to school</h1>
 <p class="lede">An EHC plan is a legal document setting out a child or young person's needs and the support they must get, from birth to age 25.</p>
+{% set pn0 = d.primary_need.ehcp.rows[0] %}{% set ms = d.placements.rows[0] %}
+{% call ui.key_points() %}
+<li>The council maintained {{ fmt(d.caseload.latest[WF], "count") }} EHC plans in {{ d.caseload.latest_period }}, up {{ fmt(d.growth.growth[WF]) }} since {{ d.growth["from"] }} (England up {{ fmt(d.growth.growth["England"]) }}).</li>
+<li>{{ fmt(d.prevalence.ehcp.latest[WF]) }} of pupils at the borough's schools have an EHC plan, against {{ fmt(d.prevalence.ehcp.latest["England"]) }} in England.</li>
+<li>{{ "Autism" if pn0.label == "Autistic spectrum disorder" else pn0.label }} is the main need for {{ fmt(pn0[WF]) }} of pupils with a plan (England {{ fmt(pn0["England"]) }}).</li>
+<li>{{ fmt(ms[WF]) }} of plans name a mainstream school, against {{ fmt(ms["London"]) }} in London and {{ fmt(ms["England"]) }} in England.</li>
+{% endcall %}
 
 <h2>Plans maintained by the council</h2>
 {{ figure(d.caseload, note="The number of plans grew " ~ fmt(d.growth.growth[WF]) ~ " between " ~ d.growth["from"] ~ " and " ~ d.growth["to"] ~ ", compared with " ~ fmt(d.growth.growth["London"]) ~ " in London and " ~ fmt(d.growth.growth["England"]) ~ " in England.") }}
@@ -59,5 +67,5 @@
 {% for i in local.sufficiency_findings["items"] %}<li>{{ i.text }} ({{ cite(local.sufficiency_findings.source, i.page) }})</li>
 {% endfor %}
 </ul>
-<p>The council says better commissioning means that "only five children have had to be placed out of Borough this year (compares with 28 last year)". It also says that in November 2024, 17% of SEND education placements were outside the borough ({{ cite("hwb_oct2025_report", 3) }}; {{ cite("hwb_oct2025_report", 2) }}).</p>
+<p>How many children the council places outside the borough, and how its figures compare, is on <a href="places.html#out-of-borough">Places</a>.</p>
 {% endblock %}

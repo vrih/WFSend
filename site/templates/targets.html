@@ -1,10 +1,35 @@
 {% extends "base.html" %}
-{% block title %}Waltham Forest Council's SEND targets{% endblock %}
-{% block description %}The legal deadlines for SEND, the targets Waltham Forest Council has set itself, and how it is doing against them.{% endblock %}
+{% import "_macros.html" as ui %}
+{% block title %}SEND inspection and targets in Waltham Forest{% endblock %}
+{% block description %}Ofsted and CQC found "inconsistent experiences and outcomes" for children with SEND in Waltham Forest in 2025. What inspectors asked for, the legal deadlines, the targets the council has and hasn't set, and how it is doing against them.{% endblock %}
 {% block content %}
+{% set c = inspection.current %}
 {% set statuses = {"met": ("met", "Met"), "behind": ("behind", "Behind"), "improving": ("improving", "Improving, no end point"), "no data": ("nodata", "No data published"), "unclear": ("unclear", "Unclear")} %}
-<h1>Targets</h1>
-<p class="lede">What the law requires, what the council has committed to, and where no target has been set.</p>
+<h1>Inspection and targets</h1>
+<p class="lede">What Ofsted and the Care Quality Commission found in 2025, what the law requires, what the council has committed to since, and where no target has been set.</p>
+{% set counts = {} %}{% for t in local.targets %}{% set _ = counts.update({t.status: counts.get(t.status, 0) + 1}) %}{% endfor %}
+{% call ui.key_points() %}
+<li>The 2025 inspection found "inconsistent experiences and outcomes", the middle of three possible outcomes.</li>
+<li>The council has published no numeric target for how quickly it issues EHC plans or completes annual reviews.</li>
+<li>Of {{ local.targets|length }} commitments with a number and a date, by our reading {{ counts.get("met", 0) }} have been met, {{ counts.get("behind", 0) }} are behind, {{ counts.get("improving", 0) }} are improving with no end point and {{ counts.get("no data", 0) }} have no progress figure published.</li>
+{% endcall %}
+
+<h2 id="inspection">The 2025 inspection</h2>
+<p>Ofsted and the Care Quality Commission inspect the "local area partnership": the council and NHS North East London together. The latest inspection was {{ c.dates }}, and the report was published on {{ c.published }}.</p>
+<blockquote>{{ c.outcome }}</blockquote>
+<p class="source">{{ cite(c.source, c.outcome_page) }}</p>
+<p>{{ c.scale_note }} {{ c.next }}</p>
+
+<h3>What inspectors asked the partnership to improve</h3>
+<ul>
+{% for a in c.areas_for_improvement %}<li>{{ a }}</li>{% endfor %}
+</ul>
+<p class="source">{{ cite(c.source, c.areas_for_improvement_page) }}</p>
+
+<h3>In the inspectors' words</h3>
+{% for q in c.quotes %}
+<blockquote>"{{ q.text }}"<br><span class="source">{{ cite(c.source, q.page) }}</span></blockquote>
+{% endfor %}
 
 <h2>What the law requires</h2>
 <div class="tablewrap"><table class="wide">
@@ -35,6 +60,7 @@
 <td><span class="notarget">None published</span></td></tr>
 {% endfor %}
 </tbody></table></div>
+<p class="note">Apart from the 20-week figure, the council hasn't published any of these measures since its September 2025 highlight report.</p>
 <p>The SEND Reform Plan submitted in June 2026 lists "improving statutory timeliness for EHCP processes" as one of five priority goals. The Schools Forum summary gives no number or date for it ({{ cite("sf_jul2026", 178) }}).</p>
 <p>The SEND Strategy 2025–2028 says the partnership will "develop a local area plan with clear targets that measure if we are realising our vision" ({{ cite("send_strategy_2025", 4) }}). If you know where those targets are published, please get in touch.</p>
 
@@ -56,4 +82,17 @@
 {% set s = local.improvement_plan_status %}
 <p>In {{ s.period }}, the council reported the {{ s.total }} actions in the plan as:
 {% for c in s.counts %}{{ c.value }} {{ c.label|lower }}{{ ", " if not loop.last else "" }}{% endfor %} ({{ cite(s.source, s.page) }}). These ratings describe whether actions are happening, not whether outcomes for children have improved.</p>
+<h3>What the council has done since the inspection</h3>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">When</th><th scope="col">What happened</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for h in inspection.response %}<tr><td>{{ h.date }}</td><td>{{ h.summary }}</td><td>{{ cite(h.source) }}</td></tr>{% endfor %}
+</tbody></table></div>
+<h2>Inspection history</h2>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">When</th><th scope="col">What happened</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for h in inspection.history %}<tr><td>{{ h.date }}</td><td>{{ h.summary }}</td><td>{{ cite(h.source) }}</td></tr>{% endfor %}
+</tbody></table></div>
+
 {% endblock %}

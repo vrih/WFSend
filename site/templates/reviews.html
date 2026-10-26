@@ -8,6 +8,11 @@
 {% set e = ar.detail["England"] %}
 <h1>Annual reviews</h1>
 <p class="lede">Every EHC plan must be reviewed at least once every 12 months ({{ cite("cfa_2014_s44", "section 44(1)") }}). After the review meeting, the council has <strong>4 weeks</strong> to decide whether to keep, amend or end the plan ({{ cite("send_regs_2014", "regulation 20") }}). The DfE's latest annual review figures for each council cover the {{ ar.period }} calendar year.</p>
+{% call ui.key_points() %}
+<li>{{ fmt(w.completed_pct) }} of plans due a review in {{ ar.period }} had one completed, against {{ fmt(e.completed_pct) }} in England.</li>
+<li>The council made its decision within the legal 4 weeks after {{ fmt(ar.decision.latest[WF]) }} of reviews (England {{ fmt(ar.decision.latest["England"]) }}).</li>
+<li>{{ "{:,.0f}".format(w.ceased) }} of the {{ "{:,.0f}".format(w.completed) }} reviews completed ended the plan, although the council expects many plans to end once overdue reviews are done.</li>
+{% endcall %}
 
 <h2>Reviews completed in {{ ar.period }}</h2>
 <p>{{ "{:,.0f}".format(w.expected) }} Waltham Forest plans were due a review in {{ ar.period }}. {{ "{:,.0f}".format(w.completed) }} ({{ fmt(w.completed_pct) }}) were completed in the year. {{ "{:,.0f}".format(w.not_completed) }} ({{ fmt(w.not_completed_pct) }}) were recorded as not completed. Across England, {{ fmt(e.completed_pct) }} were completed.</p>
@@ -23,10 +28,7 @@
 
 <h2 id="year9">Year 9 reviews (preparing for adulthood)</h2>
 <p>Ofsted asked the partnership to make sure annual reviews from Year 9 "represent children's and young people's aspirations and ambitions" ({{ cite("ofsted_2025", 6) }}).</p>
-<h3>{{ local.measures.year9_reviews.title }}</h3>
 {{ ui.observations_table(local.measures.year9_reviews) }}
-<h3>{{ local.measures.year9_overdue.title }}</h3>
-{{ ui.observations_table(local.measures.year9_overdue) }}
 
 {% set lb = local.backlogs[0] %}
 <h2 id="ceased">Plans ended at a review</h2>

@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}SEND funding and the deficit in Waltham Forest{% endblock %}
-{% block description %}{% with f = local.finance|selectattr("id", "equalto", "dsg_deficit")|first %}{{ f.label }}: {{ f.value }}.{% endwith %} High needs funding and the schools budget deficit in Waltham Forest, SEND payments to suppliers and SEND contracts.{% endblock %}
+{% block description %}{% with f = local.finance|selectattr("id", "equalto", "dsg_deficit")|first %}{{ f.label }}: {{ f.value }}.{% endwith %} High needs funding, the schools budget deficit and what Waltham Forest spends on SEND services compared with other councils.{% endblock %}
 {% block content %}
 <h1>High needs funding and the schools budget deficit</h1>
 <p class="lede">Support for children with EHC plans is mostly paid for from the High Needs Block of the Dedicated Schools Grant (DSG), a ring-fenced government grant. Spending above the grant builds up as a DSG deficit. A government "statutory override" currently keeps that deficit off the council's main budget, until March 2028 ({{ cite("sf_oct2026", 31) }}).</p>
+{% set fin = {} %}{% for f in local.finance %}{% set _ = fin.update({f.id: f}) %}{% endfor %}{% set eph = d.spending.lines.ep.per_head %}
+{% call ui.key_points() %}
+<li>The schools budget (DSG) deficit was {{ fin.dsg_deficit.value }} at 31 March 2026.</li>
+<li>The council forecasts a High Needs overspend of {{ fin.hnb_forecast_2627.value }} in 2026/27.</li>
+<li>The DfE has agreed a {{ fin.stability_grant.value }} High Needs Stability Grant. {{ fin.stability_grant.detail.split(". ")[-1] }}</li>
+<li>Net spend per head on educational psychology was £{{ eph.latest[WF]|round|int }} in {{ eph.latest_period }}, against £{{ eph.latest["England"]|round|int }} in England. The council sells much of the service to schools, which lowers its net figure.</li>
+{% endcall %}
 
 <div class="tablewrap"><table class="wide">
 <thead><tr><th scope="col">What</th><th scope="col">Figure</th><th scope="col">Detail</th><th scope="col">Source</th></tr></thead>
@@ -60,81 +67,5 @@
 {{ figure(sp.lines.independent.per_head, ranked=True) }}
 {{ figure(sp.lines.transport.per_head, ranked=True) }}
 
-{% set ip = foi.independent_placements %}{% set npl = foi.placements_2025_26 %}{% set eo = foi.eotas_2025_26 %}{% set pcn = d.placement_counts.counts %}
-{% set ind = sp.lines.independent.special_schools %}
-<h2 id="independent-placements">Placements in independent special schools</h2>
-<p>Independent and non-maintained special schools charge fees, which the council pays from the High Needs Block. In June 2026, in answer to a Freedom of Information (FOI) request, the council said it had {{ ip.rows[0]["values"][-1] }} children and young people in these schools in 2025-26, against {{ ip.rows[0]["values"][0] }} in 2022-23. What it spent on them rose from {{ ip.rows[1]["values"][0] }} to {{ ip.rows[1]["values"][-1] }} a year.</p>
-<figure class="metric" id="independent-placements-table">
-<figcaption><h3>{{ ip.title }}</h3>
-<p class="explain">Financial years, April to March, from the council's FOI answer.</p></figcaption>
-{{ ui.simple_table(ip) }}
-<p class="note">Other figures show the same rise, though they don't match exactly. The council's January returns to the DfE recorded {{ fmt(pcn["Special independent"]["Jan 2024"] + pcn["Special non-maintained"]["Jan 2024"], "count") }} plans in independent or non-maintained special schools in January 2024, {{ fmt(pcn["Special independent"]["Jan 2025"] + pcn["Special non-maintained"]["Jan 2025"], "count") }} in January 2025 and {{ fmt(pcn["Special independent"]["Jan 2026"] + pcn["Special non-maintained"]["Jan 2026"], "count") }} in January 2026. Those are counts on one day, while the FOI figures cover a whole year. In its spending returns, the council's top-up funding for independent and non-maintained special schools was £{{ "{:.2f}".format(ind["2022/23"] / 1e6) }} million in 2022/23, £{{ "{:.2f}".format(ind["2023/24"] / 1e6) }} million in 2023/24 and £{{ "{:.2f}".format(ind["2024/25"] / 1e6) }} million in 2024/25 ({{ cite_dfe(["ehcp_caseload", "s251_outturn"])|replace("Source: ", "") }}). That is the special schools part of the top-up line in the spending table above, which also covers independent and non-maintained early years, primary, secondary, alternative provision and post-16 places ({{ "£{:.2f}".format(sp.lines.independent.total["2024/25"]) }} million in all in 2024/25).{% set same = sp.lines.independent.same_split %}{% if same %} In {{ same|join(" and ") }}, the council recorded exactly the same amount against secondary schools and special schools on this line. Treat the split between them with care.{% endif %}</p>
-</figure>
-<p>New places cost more than the average. For the {{ npl.rows[0].value }} new independent special school places it commissioned in 2025-26, the average annual fee was {{ npl.rows[5].value }} and the median was {{ npl.rows[6].value }}. The council buys each place case by case ("spot purchasing"), not through a framework with agreed prices ({{ cite(npl.source, "pages 1 and 2") }}). The council's SEND Sufficiency Plan puts the average cost of an out-of-borough independent or special school place at about £60,000 a year ({{ cite("sufficiency_plan_2025", 59) }}).</p>
-
-<h2 id="education-outside-school-costs">Education outside school</h2>
-<p>What the council spent in 2025-26 on education otherwise than at school (EOTAS), and on interim or home tuition for children waiting for a school place. How many children this covers is on the <a href="places.html#education-outside-school">places page</a>.</p>
-{{ ui.foi_table(eo, [eo.rows[1], eo.rows[2], eo.rows[4]], "2025-26") }}
-
-<h2 id="cost-per-plan">Average cost of an EHC plan</h2>
-{% set pl = foi.ehc_plan_costs %}
-<p>The council told the same FOI request that it spent {{ pl.rows[0].value }} on provision in EHC plans in the most recent financial year, not counting independent school placements. With {{ "{:,}".format(pl.rows[1].value) }} plans, that is an average of {{ pl.rows[2].value }} a plan.</p>
-{{ ui.foi_table(pl) }}
-{% set lp = local.live_plans|selectattr("period", "equalto", "March 2026")|first %}
-<p class="note">The response doesn't say which year these figures are for. The council reported {{ "{:,}".format(lp.value) }} plans in March 2026 ({{ cite(lp.source, lp.page) }}), and its January 2026 return to the DfE counted {{ fmt(pcn["Total"]["Jan 2026"], "count") }}. {{ "{:,}".format(pl.rows[1].value) }} is closer to the {{ fmt(pcn["Total"]["Jan 2025"], "count") }} it reported in January 2025, so the figures may be for 2024-25. Treat the average as a rough guide.</p>
-
-{% set pay = d.supplier_payments %}{% set ly = pay.latest_year %}
-{% set src %}Source: London Borough of Waltham Forest, <a class="cite" href="{{ pay.manifest.url }}">{{ pay.manifest.title }}</a> (downloaded {{ fetched(pay.manifest) }}). Copy used here: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>.{% endset %}
-<h2 id="payments">Payments to suppliers</h2>
-<p>Each month the council publishes every payment of £500 or more it makes to suppliers. These are the payments it coded to its SEND services. They show who the money goes to. They don't cover everything the council spends on SEND: payments under £500 and staff pay aren't listed.</p>
-<figure class="metric" id="payments-by-service">
-<figcaption><h3>Payments over £500 by SEND service</h3>
-<p class="explain">Financial years, April to March. Service names are the council's own.</p></figcaption>
-<div class="tablewrap"><table>
-<thead><tr><th scope="col">Service</th>{% for y in pay.years %}<th scope="col">{{ y }}</th>{% endfor %}</tr></thead>
-<tbody>
-{% for s in pay.services %}
-<tr><th scope="row">{{ s.label }}</th>{% for y in pay.years %}<td>{% if s.payments[y] %}{{ fmt(s.total[y], "gbp") }}<br><span class="note">{{ "{:,}".format(s.payments[y]) }} payment{{ "s" if s.payments[y] != 1 }}</span>{% else %}–{% endif %}</td>{% endfor %}</tr>
-{% endfor %}
-<tr><th scope="row">Total</th>{% for y in pay.years %}<td><strong>{{ fmt(pay.total[y], "gbp") }}</strong><br><span class="note">{{ "{:,}".format(pay.count[y]) }} payments</span></td>{% endfor %}</tr>
-</tbody></table></div>
-<p class="note">"Provisions Team Short Breaks and Home School Transport" covers both short breaks for disabled children and transport to school, and the reports don't split them. Legal fees are coded to the council's legal service, so the cost of SEND Tribunal cases can't be picked out.</p>
-<p class="source">{{ src }}</p>
-</figure>
-
-<figure class="metric" id="largest-suppliers">
-<figcaption><h3>Largest suppliers paid from SEND services, {{ ly }}</h3>
-<p class="explain">The {{ pay.top|length }} largest of {{ pay.suppliers }} suppliers received {{ fmt(pay.top_share) }} of the money. Where a supplier was paid from more than one service, the one it received most from is shown.</p></figcaption>
-<div class="tablewrap"><table>
-<thead><tr><th scope="col">Supplier</th><th scope="col">Service</th><th scope="col">Paid</th><th scope="col">Payments</th></tr></thead>
-<tbody>
-{% for s in pay.top %}
-<tr><th scope="row">{{ s.name }}</th><td>{{ s.service }}</td><td>{{ fmt(s.total, "gbp") }}</td><td>{{ "{:,}".format(s.payments) }}</td></tr>
-{% endfor %}
-</tbody></table></div>
-<p class="note">Supplier names are as the council publishes them. The reports don't say what each payment was for. Going by the suppliers' names, as well as school and college places they include building work, agency staff and tuition. {% if pay.redacted.payments %}The council withholds the names of individuals: {{ "{:,}".format(pay.redacted.payments) }} payments worth {{ fmt(pay.redacted.total, "gbp") }} in {{ ly }} are listed as "REDACTED PERSONAL DATA".{% endif %}</p>
-<p class="source">{{ src }}</p>
-</figure>
-<p class="note">Why only these years: the reports from {{ pay.first_coded_label }} onwards use the council's current finance codes, and earlier reports can't be matched to these services. From April 2026 the reports list far fewer payments for every service, not just SEND: {{ "{:,.0f}".format(pay.after.payments) }} a month on average, against {{ "{:,.0f}".format(pay.before.payments) }} in {{ ly }}. We have left 2026/27 out until the council explains the change.</p>
-
-{% set ct = d.contracts %}
-<h2 id="contracts">SEND contracts</h2>
-<p>Councils publish notices when they plan, tender and award contracts. These are the council's notices that mention SEND services, from Contracts Finder and Find a Tender.</p>
-{% macro notice_table(rows, caption, supplier=True) %}
-<div class="tablewrap"><table class="wide">
-<caption class="vh">{{ caption }}</caption>
-<thead><tr><th scope="col">Published</th><th scope="col">Contract</th>{% if supplier %}<th scope="col">Supplier</th>{% else %}<th scope="col">Stage</th>{% endif %}<th scope="col">Value</th></tr></thead>
-<tbody>
-{% for n in rows %}
-<tr><td>{{ n.published }}</td><th scope="row"><a href="{{ n.url }}">{{ n.title }}</a>{% if n.wider %}<br><span class="note">Wider contract that includes SEND work</span>{% endif %}</th><td>{% if supplier %}{{ n.supplier_short }}{% else %}{{ n.stage_label }}{% endif %}</td><td>{{ fmt(n.amount, "gbp") if n.amount else "–" }}</td></tr>
-{% endfor %}
-</tbody></table></div>
-{% endmacro %}
-<h3>Planned or not yet awarded</h3>
-<p class="explain">Notices published since {{ ct.since_label }} with no award notice yet.</p>
-{% if ct.upcoming %}{{ notice_table(ct.upcoming, "SEND procurements planned or not yet awarded", supplier=False) }}{% else %}<p>None found.</p>{% endif %}
-<h3>Contracts awarded</h3>
-{{ notice_table(ct.awarded, "SEND contracts awarded") }}
-<p class="note">Values are as published. Many cover several years, some include VAT and some don't, and a planned value can change before the contract is awarded. A framework's value is the most that can be spent through it, not what is spent. Notices are picked out by words in their title or description, so a few SEND contracts may be missing. Where only the description mentions SEND, the contract is marked as a wider one, and only part of its value is for SEND.</p>
-<p class="source">Source: <a class="cite" href="{{ ct.manifest.contracts_finder.url }}">Contracts Finder</a> and <a class="cite" href="{{ ct.manifest.find_a_tender.url }}">Find a Tender</a> (downloaded {{ fetched(ct.manifest) }}). Copy used here: <a href="data/contract_notices.csv">contract_notices.csv</a>.</p>
+<p>What the council pays for independent school places, education outside school and an average EHC plan, who it pays and the contracts it lets are on <a href="spending.html">where the money goes</a>.</p>
 {% endblock %}

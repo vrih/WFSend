@@ -143,14 +143,18 @@ def add_anchors(page):
     return HEADING.sub(heading, page)
 
 
-def figure(m, ranked=False, note=None, y_max=None, areas=AREAS):
-    """A chart (or ranked bars) with legend, data table and source line."""
+def figure(m, ranked=False, note=None, y_max=None, areas=AREAS, also=None, start=None):
+    """A chart (or ranked bars) with legend, data table and source line.
+    also: a second metric on the same measure (for example pupils on SEN
+    support), shown as a table under the chart rather than a chart of its own.
+    start: the first period to show."""
+    periods = m["periods"][m["periods"].index(start):] if start else m["periods"]
     series = {a: m["series"].get(a, {}) for a in areas if m["series"].get(a)}
     parts = [f'<figure class="metric" id="{escape(m["id"])}">',
              f'<figcaption><h3>{escape(m["title"])}</h3><p class="explain">{escape(m["explain"])}</p></figcaption>']
-    if len(m["periods"]) > 1:
+    if len(periods) > 1:
         parts.append(charts.legend(series.keys()))
-        parts.append(charts.line_chart(series, m["periods"], unit=m["unit"], title=m["title"], y_max=y_max))
+        parts.append(charts.line_chart(series, periods, unit=m["unit"], title=m["title"], y_max=y_max))
     if ranked and m["boroughs"]:
         latest = m["latest_period"]
         parts.append(f'<h4 class="sub">London boroughs, {escape(latest)}</h4>')
@@ -166,7 +170,12 @@ def figure(m, ranked=False, note=None, y_max=None, areas=AREAS):
                                           refs={M.SN: m["latest"].get(M.SN)})
                      + "</details>")
     parts.append("<details><summary>Show the numbers</summary>"
-                 + charts.table(series, m["periods"], unit=m["unit"]) + "</details>")
+                 + charts.table(series, periods, unit=m["unit"]) + "</details>")
+    if also:
+        a_periods = [p for p in also["periods"] if p in periods] or also["periods"]
+        a_series = {a: also["series"].get(a, {}) for a in areas if also["series"].get(a)}
+        parts.append(f'<h4 class="sub">{escape(also["title"])}</h4>'
+                     + charts.table(a_series, a_periods, unit=also["unit"]))
     if note:
         parts.append(f'<p class="note">{note}</p>')
     ons = f"; {cite_ons()}" if m.get("population") else ""
@@ -544,8 +553,7 @@ PAGES = [
     ("outcomes.html", "Outcomes"),
     ("health.html", "Health"),
     ("disputes.html", "Complaints & appeals"),
-    ("targets.html", "Targets"),
-    ("inspection.html", "Inspection"),
+    ("targets.html", "Inspection & targets"),
     ("money.html", "Money"),
     ("resources.html", "Resources"),
     ("sources.html", "Sources"),
@@ -555,8 +563,19 @@ PAGES = [
 # they belong to
 SUBPAGES = [
     ("deadlines.html", "Deadlines calculator", "resources.html"),
+    ("schools.html", "SEND in each school", "places.html"),
+    ("spending.html", "Where the money goes", "money.html"),
 ]
 SECTION = {name: parent for name, _, parent in SUBPAGES}
+# Subpages of each menu item, shown as tabs on the item and its subpages
+CHILDREN = {}
+for _name, _label, _parent in SUBPAGES:
+    CHILDREN.setdefault(_parent, []).append((_name, _label))
+
+# Old addresses, sent on to where their content now lives
+REDIRECTS = {
+    "inspection.html": "targets.html#inspection",
+}
 
 # Plain-language answers for families starting out. Linked from the home page
 # rather than the menu.
@@ -567,7 +586,7 @@ GUIDES = [
 ]
 
 # Pages described to search engines as a Dataset
-DATASETS = {name for name, _ in PAGES} - {"resources.html", "sources.html"}
+DATASETS = ({name for name, _ in PAGES} | {name for name, _, parent in SUBPAGES if parent != "resources.html"}) - {"resources.html", "sources.html"}
 
 
 def asset(path):
@@ -588,7 +607,7 @@ def main():
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
-                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION,
+                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION, subpages=CHILDREN,
                        guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
                        JSONLD=JSONLD, UPDATED=UPDATED, root="",
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
@@ -625,6 +644,13 @@ def main():
         html = html.replace(JSONLD, structured_data(name, info[name], updated, waits))
         html = html.replace(UPDATED, f"Figures last updated {long_date(updated)}. " if updated else "")
         (OUT / name).write_text(html, encoding="utf-8")
+    for name, target in REDIRECTS.items():
+        (OUT / name).write_text(
+            f'<!doctype html>\n<html lang="en-GB">\n<head>\n<meta charset="utf-8">\n<title>Moved | Waltham Forest SEND data</title>\n'
+            f'<meta name="robots" content="noindex">\n<link rel="canonical" href="{SITE_URL}{target.split("#")[0]}">\n'
+            f'<meta http-equiv="refresh" content="0; url={target}">\n</head>\n'
+            f'<body>\n<p>This page has moved to <a href="{target}">{SITE_URL}{target}</a>.</p>\n</body>\n</html>\n',
+            encoding="utf-8")
     # GitHub Pages serves this for any missing address, so its links start from the site root
     html = env.get_template("404.html").render(page="404.html", **{**ctx, "root": "/"})
     (OUT / "404.html").write_text(add_anchors(html).replace(JSONLD, "").replace(UPDATED, ""), encoding="utf-8")

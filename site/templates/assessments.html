@@ -5,6 +5,13 @@
 {% block content %}
 <h1>EHC needs assessments and timeliness</h1>
 <p class="lede">Parents, schools and professionals can ask the council for an education, health and care (EHC) needs assessment. The law sets two deadlines. The council must say within <strong>6 weeks</strong> whether it will assess. It must issue the final plan within <strong>20 weeks</strong> of the request ({{ cite("send_regs_2014", "regulations 5 and 13") }}).</p>
+{% set t = d.timeliness %}{% set lt = local.measures.timeliness_20_weeks.observations[-1] %}
+{% call ui.key_points() %}
+<li>In {{ t.latest_period }}, {{ fmt(t.latest[WF]) }} of new EHC plans were issued within the legal 20 weeks, against {{ fmt(t.latest["England"]) }} in England. That is {{ rank_text(t) }}.</li>
+<li>The council's own latest figure is {{ fmt(lt.value) }} within 20 weeks ({{ lt.period }}).</li>
+<li>{{ fmt(d.six_weeks.latest[WF]) }} of decisions on whether to assess were made within the legal 6 weeks (England {{ fmt(d.six_weeks.latest["England"]) }}).</li>
+<li>{% if d.refused.latest[WF] == 0 %}The council reported refusing no requests to assess in {{ d.refused.latest_period }}{% else %}The council reported refusing {{ fmt(d.refused.latest[WF]) }} of requests to assess in {{ d.refused.latest_period }}{% endif %}, against {{ fmt(d.refused.latest["England"]) }} in England. It recorded no decision for {{ fmt(d.undecided.latest[WF]) }} of requests.</li>
+{% endcall %}
 
 <p>New to this? Read <a href="ehcp-waiting-time.html">how long an EHC plan takes</a>, in plain words.</p>
 

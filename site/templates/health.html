@@ -5,6 +5,13 @@
 {% block content %}
 <h1>Health services for children with SEND</h1>
 <p class="lede">Health services are commissioned by NHS North East London and mostly provided by NELFT. The 2025 inspection asked health leaders to improve waiting times "at pace" for neurodevelopmental assessment, CAMHS, continence and wheelchair services ({{ cite("ofsted_2025", 6) }}).</p>
+{% set cw = d.community_waits %}
+{% call ui.key_points() %}
+{% if cw %}{% set cp = cw.services|selectattr("name", "equalto", "Community paediatrics")|first %}<li>{{ fmt(cp.pct18.series.NELFT[cw.latest]) }} of children on NELFT's community paediatrics list had waited over 18 weeks in {{ cw.latest }} (England {{ fmt(cp.pct18.series.England[cw.latest]) }}).</li>{% endif %}
+{% set at = waits["autism-assessment-waiting-time.html"].teaser %}<li>Autism assessment: {{ at[:1]|lower ~ at[1:] }}</li>
+<li>ADHD assessment: {{ waits["adhd-assessment-waiting-time.html"].teaser }}</li>
+{% if d.autism and d.autism.after_periods %}<li>NELFT's autism and mental health figures changed suddenly in {{ d.autism.after_periods[0] }}, so later months are shown separately.</li>{% endif %}
+{% endcall %}
 <blockquote>"{{ inspection.current.quotes[2].text }}" ({{ cite("ofsted_2025", inspection.current.quotes[2].page) }})</blockquote>
 
 {% set cw = d.community_waits %}
@@ -166,6 +173,7 @@
 
 <h2>What the council reports</h2>
 {{ ui.simple_table(local.health_waits) }}
+<p class="note">The council hasn't published these measures since its September 2025 highlight report.</p>
 <p>The council reports that health advice for EHC needs assessments is returned within 6 weeks in "65-90%" of cases ({{ cite("hwb_oct2025_report", 4) }}). The legal deadline is 6 weeks ({{ cite("send_regs_2014", "regulation 8") }}). No exact figure or trend has been published.</p>
 <p>In October 2025 the council said waits for occupational therapy "remain approximately one year", partly because therapists' time went into moving to a new community equipment provider. The previous provider went into insolvency on 31 July 2025 ({{ cite("hwb_oct2025_report", "pages 4 and 5") }}).</p>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}SEND school places in Waltham Forest{% endblock %}
-{% block description %}Special schools, resourced provision, forecast demand for specialist places, pupils with SEND in each mainstream school, children with EHC plans and no school named, and children home educated or missing education in Waltham Forest.{% endblock %}
+{% block description %}Special school places, forecast demand for specialist places, children with EHC plans and no school named or taught outside school, and children home educated or missing education in Waltham Forest.{% endblock %}
 {% block content %}
 {% set ss = d.special_schools %}
 {% set su = d.specialist_units %}
@@ -15,6 +15,13 @@
 {% set fc_first = fc.periods[0] %}{% set fc_last = fc.periods[-1] %}
 <h1>School places and children out of school</h1>
 <p class="lede">Whether there are enough specialist school places for children with EHC plans, how fast the council expects demand to grow, and how many children are not in school at all.</p>
+{% set sa = d.ehcp_school_age_neet %}
+{% call ui.key_points() %}
+<li>In May {{ ss_year[:2] ~ ss_year[-2:] }}, the borough's {{ ss.schools|length }} special schools had {{ fmt(ss_tot[1], "count") }} pupils for {{ fmt(ss_tot[0], "count") }} places.</li>
+<li>The council forecasts {{ fmt(fc.latest[WF] - 100) }} more children needing a specialist place by {{ fc_last }}, against {{ fmt(fc.latest["London"] - 100) }} across London.</li>
+<li>In May 2026, the council said {{ foi.no_placement_may2026.rows[0].value }} children and young people with an EHC plan had no school or college named.</li>
+<li>In {{ sa.latest_period }}, {{ fmt(sa.counts[sa.latest_period], "count") }} children of school age with an EHC plan were recorded as not in education ({{ fmt(sa.latest[WF]) }} of plans, England {{ fmt(sa.latest["England"]) }}).</li>
+{% endcall %}
 
 <h2 id="specialist-places">Specialist places in the borough</h2>
 <p>In May {{ ss_year[:2] ~ ss_year[-2:] }}, the council reported {{ "{:,.0f}".format(ss_tot[0]) }} places at Waltham Forest's {{ ss.schools|length }} special schools, with {{ "{:,.0f}".format(ss_tot[1]) }} pupils on roll. Mainstream schools had another {{ "{:,.0f}".format(su_latest.resourced + su_latest.units) }} places in resourced provision ({{ su_latest.primary|int }} primary and {{ su_latest.secondary|int }} secondary){% if not su_latest.units %}, and no SEN units{% endif %}.
@@ -36,76 +43,12 @@
 </figure>
 {{ figure(ss, y_max=120, note="The DfE publishes these as Official Statistics in Development: the collection is new and may change.") }}
 
-{% set gs = d.specialist_settings %}
-{% set gias_source %}Source: DfE, <a class="cite" href="{{ gs.manifest.downloads_url }}">Get Information About Schools</a> (downloaded {{ fetched(gs.manifest) }}). <a href="data/gias_specialist_settings.csv">Download the list (CSV)</a>{% endset %}
-<p>The DfE's register of schools, Get Information About Schools, records the ages each special school takes and the types of need it caters for. Schools and the council keep these entries up to date themselves.</p>
-<figure class="metric" id="special-school-needs">
-<figcaption><h3>Special schools in Waltham Forest: ages and types of need</h3>
-<p class="explain">As recorded on Get Information About Schools. Capacity can differ from the places the council reported above. Pupil numbers are from the school census in the month shown. Follow a school's name for its full entry.</p></figcaption>
-<div class="tablewrap"><table class="wide">
-<thead><tr><th scope="col">School</th><th scope="col">Ages</th><th scope="col">Types of need</th><th scope="col">Capacity</th><th scope="col">Pupils on roll</th></tr></thead>
-<tbody>
-{% for s in gs.special %}
-<tr><th scope="row"><a href="{{ s.url }}">{{ s.name }}</a>{% if s.status != "Open" %}<br><span class="note">{{ s.status }}</span>{% endif %}</th><td>{{ s.ages }}</td><td>{{ s.needs|join("; ") or "Not recorded" }}</td><td>{{ fmt(s.capacity, "count") }}</td><td>{{ fmt(s.pupils, "count") }}{% if s.census %}<br><span class="note">{{ s.census }}</span>{% endif %}</td></tr>
-{% endfor %}
-</tbody></table></div>
-<p class="source">{{ gias_source }}</p>
-</figure>
-
-<p>Some mainstream schools have places set aside for children with a particular type of need. In <strong>resourced provision</strong>, children are taught mostly in ordinary classes and get extra support. In an <strong>SEN unit</strong>, children are taught mostly in separate classes. Places are usually for children with an EHC plan.</p>
-{% set no_places = gs.other|selectattr("rp_capacity", "none")|selectattr("unit_capacity", "none")|list %}
-{% set ns = namespace(whole_school=[]) %}
-{% for s in gs.other if s.capacity and ((s.rp_capacity or 0) >= s.capacity or (s.unit_capacity or 0) >= s.capacity) %}{% set ns.whole_school = ns.whole_school + [s.name] %}{% endfor %}
-{% set whole_school = ns.whole_school %}
-<figure class="metric" id="resourced-provision-list">
-<figcaption><h3>Schools recorded with resourced provision or an SEN unit</h3>
-<p class="explain">As recorded on Get Information About Schools. "Places" and "Children in it" are for the resourced provision or unit only, not the whole school.</p></figcaption>
-<div class="tablewrap"><table class="wide">
-<thead><tr><th scope="col">School</th><th scope="col">Ages</th><th scope="col">Provision</th><th scope="col">Types of need</th><th scope="col">Places</th><th scope="col">Children in it</th></tr></thead>
-<tbody>
-{% for s in gs.other %}
-<tr><th scope="row"><a href="{{ s.url }}">{{ s.name }}</a>{% if s.status != "Open" %}<br><span class="note">{{ s.status }}</span>{% endif %}</th><td>{{ s.ages }}</td><td>{{ s.provision }}</td><td>{{ s.needs|join("; ") or "Not recorded" }}</td>
-{% if s.provision == "Resourced provision and SEN unit" %}
-<td>{{ fmt(s.rp_capacity, "count") }} resourced<br>{{ fmt(s.unit_capacity, "count") }} unit</td><td>{{ fmt(s.rp_pupils, "count") }} resourced<br>{{ fmt(s.unit_pupils, "count") }} unit</td>
-{% elif s.provision == "SEN unit" %}
-<td>{{ fmt(s.unit_capacity, "count") if s.unit_capacity is not none else "Not recorded" }}</td><td>{{ fmt(s.unit_pupils, "count") if s.unit_pupils is not none else "Not recorded" }}</td>
-{% else %}
-<td>{{ fmt(s.rp_capacity, "count") if s.rp_capacity is not none else "Not recorded" }}</td><td>{{ fmt(s.rp_pupils, "count") if s.rp_pupils is not none else "Not recorded" }}</td>
-{% endif %}
-</tr>
-{% endfor %}
-</tbody></table></div>
-<p class="note">Some entries look incomplete or out of date.{% if no_places %} {{ no_places|length }} {{ "school has" if no_places|length == 1 else "schools have" }} no places recorded.{% endif %}{% if whole_school %} {{ whole_school|join(" and ") }} {{ "records" if whole_school|length == 1 else "record" }} as many specialist places as the whole school, or more.{% endif %} So we haven't added these up, and they don't match the DfE count of {{ fmt(su_latest.resourced + su_latest.units, "count") }} places above, which comes from what the council reported each May.</p>
-<p class="source">{{ gias_source }}</p>
-</figure>
+<p>Which ages and needs each special school takes, and which mainstream schools have resourced provision or an SEN unit, are on <a href="schools.html">SEND in each school</a>.</p>
 
 <h2 id="forecasts">Forecast demand for specialist places</h2>
 <p>Each council forecasts how many children living in its area will have an EHC plan and need a specialist place. Waltham Forest forecasts {{ fmt(fc.wf_counts[fc_first], "count") }} children in {{ fc_first }}, rising to {{ fmt(fc.wf_counts[fc_last], "count") }} by {{ fc_last }}. That is growth of {{ fmt(fc.latest[WF] - 100) }}, against {{ fmt(fc.latest["London"] - 100) }} in London, {{ fmt(fc.latest["England"] - 100) }} in England and {{ fmt(fc.latest[SN] - 100) }} in similar areas. It is {{ rank_text(fc) }}.</p>
 {{ figure(fc, ranked=True) }}
 <p class="note">The DfE says these forecasts can't be set against the capacity figures above to work out a shortfall. The forecasts count children living in the borough in Reception to Year 11, wherever they go to school, including independent and alternative provision. The capacity figures count places in the borough's schools, including sixth forms, whoever fills them. The council doesn't report how many new places it plans.</p>
-
-{% set sch = d.school_sen %}
-<h2 id="schools">Pupils with SEND in each mainstream school</h2>
-<p>How many pupils in each of the borough's state-funded mainstream primary and secondary schools had an EHC plan or SEN support in the January {{ sch.period[-4:] }} school census.</p>
-{% for ph, v in sch.phases.items() %}
-{% set a = v.areas %}
-<p>In Waltham Forest's {{ v.schools|length }} {{ ph }} schools, {{ fmt(a[WF].ehcp) }} of pupils had an EHC plan, against {{ fmt(a.London.ehcp) }} in London and {{ fmt(a.England.ehcp) }} in England. In individual schools the share ranged from {{ fmt(v.lowest.ehcp_pct) }} to {{ fmt(v.highest.ehcp_pct) }}. Half the schools had {{ fmt(v.median) }} or less.</p>
-{% endfor %}
-<p class="note">These figures show which pupils go to each school, not how well a school supports them. A school with resourced provision or an SEN unit (marked below) has places for pupils with EHC plans from across the borough, which can raise its share. In small schools the share can change a lot from year to year.</p>
-{% for ph, v in sch.phases.items() %}
-<details class="schools">
-<summary>Show all {{ v.schools|length }} {{ ph }} schools</summary>
-<div class="tablewrap"><table class="wide">
-<caption class="vh">Pupils with an EHC plan or SEN support in each {{ ph }} school, January {{ sch.period[-4:] }}</caption>
-<thead><tr><th scope="col">School</th><th scope="col">Pupils</th><th scope="col">With an EHC plan</th><th scope="col">On SEN support</th><th scope="col">Resourced provision or SEN unit</th></tr></thead>
-<tbody>
-{% for s in v.schools %}
-<tr><th scope="row">{{ s.name }}</th><td>{{ fmt(s.pupils, "count") }}</td><td>{{ fmt(s.ehcp, "count") }} ({{ fmt(s.ehcp_pct) }})</td><td>{{ fmt(s.support, "count") }} ({{ fmt(s.support_pct) }})</td><td>{{ "Resourced provision" if s.rp else "" }}{{ " and " if s.rp and s.unit else "" }}{{ "SEN unit" if s.unit else "" }}{{ "–" if not (s.rp or s.unit) else "" }}</td></tr>
-{% endfor %}
-</tbody></table></div>
-</details>
-{% endfor %}
-<p class="source">{{ cite_dfe(sch.sources) }}</p>
 
 {% set np = foi.no_placement_may2026 %}{% set eo = foi.eotas_2025_26 %}{% set npl = foi.placements_2025_26 %}
 {% set pc = d.placement_counts %}{% set pcn = pc.counts %}
@@ -130,12 +73,12 @@
 <figcaption><h3>Children with EHC plans taught outside school or on reduced hours, 2025-26</h3>
 <p class="explain">April 2025 to March 2026, from the council's answer to an FOI request.</p></figcaption>
 {{ ui.foi_table(eo, [eo.rows[0], eo.rows[3], eo.rows[5]], "Children") }}
-<p class="note">The DfE figures for January 2026 recorded {{ fmt(pcn["Other arrangements LA"]["Jan 2026"], "count") }} plans where the council had made "other arrangements" for a child's education ({{ fmt(pcn["Other arrangements LA"]["Jan 2025"], "count") }} in January 2025). That is a count on one day, while the FOI answer covers a whole year, so the FOI numbers would be expected to be higher. The council's SEND Sufficiency Plan says 2.8% of children and young people with EHC plans are on home tuition packages, "mainly because of insufficient specialist provision to meet needs" ({{ cite("sufficiency_plan_2025", 28) }}). What these packages cost is on the <a href="money.html#education-outside-school-costs">money page</a>.</p>
+<p class="note">The DfE figures for January 2026 recorded {{ fmt(pcn["Other arrangements LA"]["Jan 2026"], "count") }} plans where the council had made "other arrangements" for a child's education ({{ fmt(pcn["Other arrangements LA"]["Jan 2025"], "count") }} in January 2025). That is a count on one day, while the FOI answer covers a whole year, so the FOI numbers would be expected to be higher. The council's SEND Sufficiency Plan says 2.8% of children and young people with EHC plans are on home tuition packages, "mainly because of insufficient specialist provision to meet needs" ({{ cite("sufficiency_plan_2025", 28) }}). What these packages cost is on the <a href="spending.html#education-outside-school-costs">where the money goes</a>.</p>
 </figure>
 
-<h3>New placements outside the borough</h3>
+<h3 id="out-of-borough">Placements outside the borough</h3>
 <p>In 2025-26 the council commissioned {{ npl.rows[0].value }} new places in independent special schools and none in non-maintained special schools. It made {{ npl.rows[2].value }} other new placements outside the borough. It said none of the {{ npl.rows[4].value }} placements were in Waltham Forest. It buys these places case by case ("spot purchasing"), not through a framework of approved schools ({{ cite(npl.source, "pages 1 and 2") }}).</p>
-<p class="note">In October 2025 the council told the Health and Wellbeing Board that {% for b in local.backlogs if b.label.startswith("Children placed out of borough") %}{{ b.value }}{% endfor %} children had been placed out of the borough "this year", against 28 the year before ({{ cite("hwb_oct2025_report", 3) }}). The FOI answer counts out-of-area placements "of any type", which may include colleges and mainstream schools in other boroughs, and covers April 2025 to March 2026. Even so, the two figures are far apart, and the council hasn't explained the difference.</p>
+<p class="note">In October 2025 the council told the Health and Wellbeing Board that {% for b in local.backlogs if b.label.startswith("Children placed out of borough") %}{{ b.value }}{% endfor %} children had been placed out of the borough "this year", against 28 the year before ({{ cite("hwb_oct2025_report", 3) }}). The FOI answer counts out-of-area placements "of any type", which may include colleges and mainstream schools in other boroughs, and covers April 2025 to March 2026. Even so, the two figures are far apart, and the council hasn't explained the difference. The same report says that in November 2024, 17% of SEND education placements were outside the borough ({{ cite("hwb_oct2025_report", 2) }}), and the SEND Sufficiency Plan puts it at 12% of children and young people with EHC plans ({{ cite("sufficiency_plan_2025", 28) }}).</p>
 
 <h2 id="out-of-school">Children out of school</h2>
 <p>Some children with SEND leave school because their needs aren't being met. The DfE doesn't publish home education or children missing education by SEN for each council. Across England, 16% of children electively home educated in autumn 2025 were on SEN support and 7% had an EHC plan, compared with 14% and 5% of all pupils (DfE, <a class="cite" href="{{ PUBS.ehe.url }}">{{ PUBS.ehe.title }}</a>).</p>
