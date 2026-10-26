@@ -120,6 +120,10 @@
 <p class="note">The council's figures for January, sent to the DfE, recorded {{ fmt(pcn["Placement unknown"]["Jan 2026"], "count") }} plan with the placement unknown in January 2026, against {{ fmt(pcn["Placement unknown"]["Jan 2025"], "count") }} in January 2025 and {{ fmt(pcn["Placement unknown"]["Jan 2024"], "count") }} in January 2024 ({{ cite_dfe(pc.sources)|replace("Source: ", "") }}). The DfE and FOI figures were counted on different dates and may not use the same definitions, so they can't be compared directly. The council hasn't explained the difference.</p>
 </figure>
 
+{% set sa = d.ehcp_school_age_neet %}
+<p>The council's January returns to the DfE also record children of compulsory school age with an EHC plan who are not in education. In {{ sa.latest_period }} there were <strong>{{ fmt(sa.counts[sa.latest_period], "count") }}</strong>, {{ fmt(sa.latest[WF]) }} of all plans, against {{ fmt(sa.latest["London"]) }} in London and {{ fmt(sa.latest["England"]) }} in England. That is {{ rank_text(sa) }}. It recorded none in any earlier year since {{ sa.periods[0] }}, when the DfE started publishing this. The rise came in the same year that plans with the placement unknown fell from {{ fmt(pcn["Placement unknown"]["Jan 2025"], "count") }} to {{ fmt(pcn["Placement unknown"]["Jan 2026"], "count") }}, so part of it may reflect a change in how cases are recorded.</p>
+{{ figure(sa, ranked=True) }}
+
 <h3>Education outside school</h3>
 <p>Some children with an EHC plan are taught outside school. With <strong>education otherwise than at school (EOTAS)</strong>, the council arranges and pays for a child's education somewhere other than a school, because school isn't suitable for them. <strong>Interim or home tuition</strong> is meant to be temporary, while the child waits for a school place.</p>
 <figure class="metric" id="education-outside-school">

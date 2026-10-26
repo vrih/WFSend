@@ -84,6 +84,25 @@ def _rank(values, hib):
     return {"pos": better + 1, "of": len(values), "joint": tied}
 
 
+def london_from_parts(rows, numerator, denominator, label=lambda p: p):
+    """{period: rate} for London in years when the DfE publishes only Inner
+    and Outer London: add up the two parts' counts and recompute the rate."""
+    parts = {}
+    for r in rows:
+        if r["geographic_level"] == "Regional" and r.get("region_name") in ("Inner London", "Outer London"):
+            n, d = num(r[numerator]), num(r[denominator])
+            if n is not None and d:
+                parts.setdefault(label(r["time_period"]), []).append((n, d))
+    return {p: pct(sum(n for n, _ in v), sum(d for _, d in v)) for p, v in parts.items() if len(v) == 2}
+
+
+def fill_london(series, rows, numerator, denominator, label=lambda p: p):
+    london = series.setdefault("London", {})
+    for p, v in london_from_parts(rows, numerator, denominator, label).items():
+        if london.get(p) is None:
+            london[p] = v
+
+
 def build(series_by_area, periods, **meta):
     """Package a metric. series_by_area includes every London borough and
     the statistical neighbours."""
@@ -295,7 +314,9 @@ PLACEMENT_GROUPS = [
     ("Further education", "Total further Education"),
     ("Alternative provision / PRU", "AP PRU total"),
     ("Educated elsewhere", "Total educated elsewhere"),
-    ("Not in education, employment or training", "Not in employment, education or training"),
+    # The DfE counts these inside "Total educated elsewhere"
+    ("of which not in education, employment or training", "Not in employment, education or training"),
+    ("of which of compulsory school age and not in education", "Not in employment, education or training compulsory school age"),
 ]
 
 
@@ -357,6 +378,8 @@ def annual_reviews():
             "not_completed_pct": pct(num(r["review_not_completed"]), expected),
             "decision_4wk_pct": pct(d4, (d4 or 0) + (dover or 0)) if d4 is not None else None,
             "d4": d4, "dover": dover,
+            "ceased": num(r["outcome_ceased"]),
+            "ceased_pct": pct(num(r["outcome_ceased"]), done),
         }
     period = rows[0]["time_period"]
     completed = build({a: {period: d["completed_pct"]} for a, d in out.items()}, [period],
@@ -573,6 +596,8 @@ def exclusions():
         sub = [r for r in rows if r["characteristic"] == ch]
         susp, periods = collect(sub, lambda r: num(r["susp_rate"]), label=academic)
         perm, _ = collect(sub, lambda r: num(r["perm_excl_rate"]), label=academic)
+        fill_london(susp, sub, "suspension", "headcount", academic)
+        fill_london(perm, sub, "perm_excl", "headcount", academic)
         res[ch] = {
             "susp": build(susp, periods, unit="score", rank=False, higher_is_better=False, sources=["exclusions_characteristics"],
                           id=f"susp_{g}", title=f"Suspensions per 100 {label}",
@@ -582,6 +607,17 @@ def exclusions():
                           explain="Permanent exclusions in the school year for every 100 pupils in the group."),
         }
     return res
+
+
+def exclusion_counts():
+    """Waltham Forest's permanent exclusions and suspensions as counts, to set
+    beside the council's own figures. {period: {characteristic: {perm, susp}}}"""
+    out = {}
+    for r in load("exclusions_characteristics"):
+        if area_of(r) == WF and r["characteristic"] in ("Total", "EHC plan", "SEN support"):
+            out.setdefault(academic(r["time_period"]), {})[r["characteristic"]] = {
+                "perm": num(r["perm_excl"]), "susp": num(r["suspension"])}
+    return {"counts": out, "sources": ["exclusions_characteristics"]}
 
 
 # --- Local Government and Social Care Ombudsman ---------------------------
@@ -659,6 +695,11 @@ def spending():
     ind = [r for r in rows if r["category_of_expenditure"].startswith("1.2.3 ")]
     s, _ = collect(ind, lambda r: num(r["sen_and_special_schools"]), label=academic)
     out["independent"]["special_schools"] = s.get(WF, {})
+    # Years where the council put exactly the same amount against secondary
+    # and special schools, which looks like a split rather than a record.
+    out["independent"]["same_split"] = [
+        academic(r["time_period"]) for r in ind if area_of(r) == WF
+        and num(r["secondary_schools"]) and num(r["secondary_schools"]) == num(r["sen_and_special_schools"])]
 
     # Schools and other settings buy educational psychology time from the
     # council, and that income is taken off before the net figure. So show
@@ -838,6 +879,8 @@ def absence():
         sub = [r for r in rows if r["characteristic_breakdown"] == group]
         overall, periods = collect(sub, lambda r: num(r["sess_overall_percent"]), label=academic)
         persistent, _ = collect(sub, lambda r: num(r["enrolments_pa_10_exact_percent"]), label=academic)
+        fill_london(overall, sub, "sess_overall", "sess_possible", academic)
+        fill_london(persistent, sub, "enrolments_pa_10_exact", "enrolments", academic)
         res[group] = {
             "overall": build(overall, periods, id=f"abs_overall_{g}", unit="percent", rank=False, higher_is_better=False,
                              title=f"Overall absence: {label}",
@@ -1098,6 +1141,29 @@ def ehcp_home_educated():
               sources=["ehcp_caseload"])
     m["counts"] = {p: by.get((WF, p), {}).get("Elective home education") for p in periods}
     m["other"] = {p: other.get(WF, {}).get(p) for p in periods}
+    return m
+
+
+def ehcp_school_age_neet():
+    """EHC plans for children of compulsory school age recorded as not in
+    education, as a share of all plans. Published from January 2023."""
+    rows = load("ehcp_caseload")
+    by = {}
+    for r in rows:
+        a = area_of(r)
+        if a:
+            by.setdefault((a, january(r["time_period"])), {})[r["setting_type"]] = num(r["ehc_plan_count"])
+    key = "Not in employment, education or training compulsory school age"
+    series = {}
+    for (a, p), d in by.items():
+        series.setdefault(a, {})[p] = pct(d.get(key), d.get("Total"))
+    periods = sorted({p for _, p in by}, key=lambda p: int(p[-4:]))
+    periods = [p for p in periods if series.get("England", {}).get(p) is not None]
+    m = build(series, periods, id="ehcp_school_age_neet", unit="percent", higher_is_better=False,
+              title="EHC plans for children of school age who are not in education",
+              explain="Plans for children of compulsory school age recorded as not in education, employment or training, as a share of all plans the council maintains. Counted each January.",
+              sources=["ehcp_caseload"])
+    m["counts"] = {p: by.get((WF, p), {}).get(key) for p in periods}
     return m
 
 

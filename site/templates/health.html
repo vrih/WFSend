@@ -27,6 +27,10 @@
 <td>{{ fmt(s.pct18.series.England[p]) if s.pct18.series.England[p] is not none else "–" }}</td></tr>
 {% endfor %}
 </tbody></table></div>
+{% set cp = cw.services|selectattr("name", "equalto", "Community paediatrics")|first %}
+{% if cp and cw.periods|length > 12 %}{% set q = cw.periods[-13] %}{% set s18 = cp.pct18.series %}
+<p class="note">For community paediatrics, the share of children on NELFT's list who had waited over 18 weeks went from {{ fmt(s18.NELFT[q]) }} in {{ q }} to {{ fmt(s18.NELFT[p]) }} in {{ p }}. Over the same year London went from {{ fmt(s18.London[q]) }} to {{ fmt(s18.London[p]) }}, and England from {{ fmt(s18.England[q]) }} to {{ fmt(s18.England[p]) }}.</p>
+{% endif %}
 {% if cw.periods|length > 1 %}
 {% for s in cw.services %}
 <h4 class="sub">{{ s.pct18.title }}</h4>
@@ -67,6 +71,10 @@
 {{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max)|safe }}
 <details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
 {% endfor %}
+{% set md = au.median.series %}
+{% if md.NELFT.get("Aug 2025") and md.NELFT.get("Oct 2025") %}
+<p class="note">NELFT's median wait fell from {{ fmt(md.NELFT["Aug 2025"], "count") }} days in Aug 2025 to {{ fmt(md.NELFT["Oct 2025"], "count") }} days in Oct 2025. Over the same months the North East London median went from {{ fmt(md["North East London"]["Aug 2025"], "count") }} to {{ fmt(md["North East London"]["Oct 2025"], "count") }} days. NHS England's release doesn't explain the fall, so treat the change in NELFT's figures with care.</p>
+{% endif %}
 {% if au.after_periods %}
 <h4 class="sub">From {{ au.after_periods[0] }}: a break in the figures</h4>
 <p>In {{ au.after_periods[0] }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.after.waiting.NELFT[au.after_periods[0]], "count") }} in a single month. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month. Until this is explained, these months are shown separately and not added to the trend.</p>

@@ -28,8 +28,18 @@
 {{ figure(d.exclusions["EHC plan"].perm) }}
 
 <h3>The council's own figures</h3>
-<p>The improvement plan also tracks exclusions and suspensions from the council's own records. They may be counted differently from the DfE statistics. They show suspensions of pupils with an EHC plan almost doubling between 2023/24 and 2024/25.</p>
-{{ ui.simple_table(local.local_exclusions) }}
+{% set le = local.local_exclusions %}{% set xc = d.exclusion_counts %}
+<p>The improvement plan also tracks exclusions and suspensions from the council's own records. They don't match the DfE statistics for the same years. The council's figures show suspensions of pupils with an EHC plan almost doubling between 2023/24 and 2024/25. The DfE's show a smaller rise, from a higher starting point. The council hasn't said how its figures are counted.</p>
+{{ ui.simple_table(le) }}
+<div class="tablewrap"><table class="wide">
+<caption>The same measures in the DfE statistics</caption>
+<thead><tr><th scope="col"><span class="vh">Item</span></th>{% for c in le.columns %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for label, ch, k in [("Permanent exclusions (all pupils)", "Total", "perm"), ("of which pupils with an EHC plan", "EHC plan", "perm"), ("of which pupils on SEN support", "SEN support", "perm"), ("Suspensions (all pupils)", "Total", "susp"), ("of which pupils with an EHC plan", "EHC plan", "susp"), ("of which pupils on SEN support", "SEN support", "susp")] %}
+<tr><th scope="row">{{ label }}</th>{% for c in le.columns %}{% set v = xc.counts.get(c, {}).get(ch, {}).get(k) %}<td>{{ fmt(v, "count") if v is not none else "–" }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe(xc.sources) }}</p>
 <p>The council's latest corporate performance report has figures for 2025/26, counted a different way.</p>
 {{ ui.simple_table(local.local_exclusions_2026) }}
 

@@ -22,7 +22,7 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 {% for o in meas.observations %}
 <tr>
   <td>{{ o.period }}</td>
-  <td><strong>{{ fmt(o.value, meas.unit) }}</strong>{% if o.n is defined %} <span class="note">(n={{ "{:,}".format(o.n) }})</span>{% endif %}
+  <td><strong>{{ fmt(o.value, meas.unit) }}</strong>{% if o.n is defined %} <span class="note">({{ "{:,}".format(o.n) }} {{ meas.n_label }})</span>{% endif %}
   {% if o.note is defined %}<br><span class="note">{{ o.note }}</span>{% endif %}</td>
   <td>{{ cite(o.source, o.page) }}</td>
 </tr>

@@ -36,7 +36,7 @@
 <p class="source">{{ cite_dfe(pn.sources) }}</p>
 </figure>
 {% if key == "ehcp" %}
-<h3>How the most common needs have changed</h3>
+<p>How the three most common needs have changed:</p>
 {% for m in g.trends %}{{ figure(m) }}{% endfor %}
 {% endif %}
 {% endfor %}
@@ -44,7 +44,7 @@
 <h2>Where children with EHC plans are placed</h2>
 <figure class="metric" id="placements">
 <figcaption><h3>{{ p.title }}, {{ p.period }}</h3>
-<p class="explain">Share of all EHC plans by the type of setting named. "Educated elsewhere" covers elective home education and other arrangements made by the council or by parents.</p></figcaption>
+<p class="explain">Share of all EHC plans by the type of setting named. "Educated elsewhere" covers elective home education, other arrangements made by the council or by parents, and children and young people not in education, employment or training. Each "of which" row is part of the main row above it.</p></figcaption>
 <div class="tablewrap"><table>
 <thead><tr><th scope="col">Setting</th>{% for a in AREAS %}<th scope="col">{{ a }}</th>{% endfor %}</tr></thead>
 <tbody>

@@ -5,6 +5,9 @@
 #
 # target: the numeric target the council has published for this measure, or
 # null where the plan sets a measure and baseline but no target.
+#
+# n: the count printed next to a percentage ("n=57"). In these documents it is
+# the number that met the measure, not the total, so n_label says what it counts.
 
 measures:
 
@@ -17,6 +20,7 @@ measures:
     target: null
     target_note: The improvement plan records a baseline but sets no target or trajectory. It relies on a recovery plan to clear backlogs "by end of 2025".
     target_source: { source: hwb_oct2025_report, page: 4 }
+    n_label: plans on time
     observations:
       - { period: "March 2023", value: 87.7, n: 57, source: send_perf_mar2024, page: 2, note: "57 of 65 plans issued in the month. The council's monthly briefing counts plans issued within 20 weeks, or 24 weeks where a legal exception applies." }
       - { period: "March 2024", value: 79.3, n: 23, source: send_perf_mar2024, page: 2, note: "23 of 29 plans issued in the month, within 20 weeks or 24 weeks where a legal exception applies. February 2024: 83.9% (52 of 62)." }
@@ -35,6 +39,7 @@ measures:
     statutory_source: { source: cfa_2014_s44, page: "Section 44(1); SEND Regulations 2014 reg. 20" }
     target: null
     target_note: No target is set. The council says it is clearing the backlog with temporary staff.
+    n_label: reviews meeting the measure
     observations:
       - { period: "March 2023", value: 67.1, n: 1634, source: send_perf_mar2024, page: 2, note: "Measured differently from the later figures: plans with an annual review completed in the previous 12 months (1,634 of 2,434), not reviews completed on time." }
       - { period: "March 2024", value: 51.5, n: 1432, source: send_perf_mar2024, page: 2, note: "Plans with an annual review completed in the previous 12 months (1,432 of 2,779), not reviews completed on time." }
@@ -50,6 +55,7 @@ measures:
     statutory: From Year 9, every annual review must cover preparation for adulthood.
     target: null
     target_note: No target is set.
+    n_label: reviews on time
     observations:
       - { period: "March 2025", value: 14, n: 33, source: laip_2025, page: 20, note: "193 Year 9 reviews were late." }
       - { period: "August 2025", value: 12, n: 5, source: hwb_oct2025_highlight, page: 17, note: "156 Year 9 reviews overdue, down from 202 in July 2025." }
@@ -122,7 +128,7 @@ tribunal_appeals:
   columns: ["2020", "2021", "2022", "2023", "2024"]
   rows:
     - { label: "Appeals", values: [18, 16, 36, 34, 63] }
-  note: "In 2024, 27% of appeals were about refusals to assess, 25% about the school or type of placement and 21% about plan contents. Mediation referrals rose from 77 in 2022-23 to 145 in 2023-24 (page 26). The council's legal costs for tribunal cases were £48,860 in 2024, up from £26,197 in 2023, excluding counsel fees."
+  note: "In 2024, 27% of appeals were about refusals to assess, 25% about the school or type of placement and 21% about plan contents. Mediation referrals rose from 77 in 2022-23 to 145 in 2023-24 (page 26)."
 
 sufficiency_findings:
   source: sufficiency_plan_2025
