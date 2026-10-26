@@ -77,8 +77,10 @@ For search engines and AI tools, the build also writes:
 
 The site is plain HTML and CSS. Charts are inline SVG, so no JavaScript
 libraries or external services are needed. A small script adds hover
-tooltips. Every chart has a "Show the numbers" table. The Deadlines page
-(`site/static/deadlines.js`) works out statutory deadlines in the browser.
+tooltips. Every chart has a "Show the numbers" table. The Resources page
+links to advice services and complaint routes. The deadlines calculator sits
+under it (`SUBPAGES` in `build.py`) and works out statutory deadlines in the
+browser (`site/static/deadlines.js`).
 
 ### Build locally
 

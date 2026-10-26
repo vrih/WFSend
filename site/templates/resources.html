@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}SEND help and resources in Waltham Forest{% endblock %}
+{% block description %}Where to get free, independent advice about SEND in Waltham Forest, how to complain or appeal about the council, and a calculator for EHC plan deadlines.{% endblock %}
+{% block content %}
+<h1>Help and resources</h1>
+<p class="lede">This site shows how SEND services in Waltham Forest are performing. If you need help with your own child's case, the services below can help.</p>
+<p>They are run by other organisations, not by this site. This page is not legal advice.</p>
+
+<h2>Tools on this site</h2>
+<ul class="cards">
+  <li><a href="deadlines.html">Deadlines calculator</a><br>Work out the legal deadlines for your child's EHC needs assessment, annual review or SEND Tribunal appeal.</li>
+{% for href, title in guides %}
+  <li><a href="{{ href }}">{{ title }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Free, independent advice</h2>
+<ul>
+  <li><a href="https://www.walthamforestsendiass.org.uk/">Waltham Forest SENDIASS</a> (SEND information, advice and support service) gives free, confidential and impartial advice to parents, carers, children and young people. It is run at arm's length from the council. It can help with EHC needs assessments, EHC plans, annual reviews, choosing a school and disagreements with the council. Call 07494 280 073 or <a href="https://www.walthamforestsendiass.org.uk/enquiries/new">send an enquiry online</a>.</li>
+  <li><a href="https://www.ipsea.org.uk/">IPSEA</a> (Independent Provider of Special Education Advice) is a national charity. It gives free advice based on the law, and has template letters and guides to EHC plans and appeals.</li>
+  <li><a href="https://contact.org.uk/">Contact</a> is a national charity for families with disabled children. It runs a free helpline.</li>
+  <li><a href="https://www.walthamforestparentforum.com/">Waltham Forest Parent Forum</a> is a voluntary group of parents and carers of children and young people with SEND aged 0 to 25. It runs meetings and passes parents' views on to the council.</li>
+</ul>
+
+<h2>The council's SEND information</h2>
+<ul>
+  <li>The <a href="https://www.walthamforest.gov.uk/schools-education-and-learning/local-offer-special-educational-needs-and-disability-send">Local Offer</a> is the council's guide to SEND services in Waltham Forest. Every council must publish one.</li>
+  <li><a href="https://www.walthamforest.gov.uk/schools-education-and-learning/local-offer-special-educational-needs-and-disability-send/information-advice-and-support/raising-disputes-and-complaints">Raising disputes and complaints</a> explains who to contact if your SEND officer doesn't reply, and how to complain about the council, a school or the NHS.</li>
+</ul>
+
+<h2 id="complaints">If you disagree with the council or want to complain</h2>
+<p>Which route to use depends on what the problem is. SENDIASS can help you decide.</p>
+
+<h3>You disagree with a decision</h3>
+<p>You can appeal to the <a href="https://www.gov.uk/courts-tribunals/first-tier-tribunal-special-educational-needs-and-disability">SEND Tribunal</a> against many decisions. These include the council refusing to assess, refusing to issue a plan, what a plan says, the school it names, or ending a plan.</p>
+<p>Before you appeal, you usually have to contact a mediation adviser. The council's decision letter tells you how. There are strict time limits. Use the <a href="deadlines.html#appeal">deadlines calculator</a> to work out yours.</p>
+
+<h3>Something has gone wrong with the service</h3>
+<p>For problems such as delays, missed deadlines or support in a plan not being provided, complain to the council using its <a href="https://www.walthamforest.gov.uk/council-and-elections/making-complaint-or-compliment/making-complaint">complaints process</a>. If you are not happy with the answer, you can ask for a second stage review.</p>
+<p>For a problem with a school, speak to the school's special educational needs coordinator (SENCO) first, then use the school's own complaints procedure.</p>
+
+<h3>The council's answer to your complaint has not put things right</h3>
+<p>You can complain to the <a href="https://www.lgo.org.uk/how-to-complain">Local Government and Social Care Ombudsman</a>. It is free. The Ombudsman usually expects you to finish the council's complaints process first, and to complain within 12 months of knowing about the problem. It normally won't look at a decision you could appeal to the SEND Tribunal. Read its <a href="https://www.lgo.org.uk/make-a-complaint/fact-sheets/education/special-educational-needs">guide to complaints about special educational needs</a>.</p>
+<p>See <a href="disputes.html">how many appeals and complaints there are about Waltham Forest</a>.</p>
+
+<h2>The law and national guidance</h2>
+<ul>
+  <li><a href="https://www.gov.uk/children-with-special-educational-needs">GOV.UK: children with special educational needs and disabilities</a>: a short introduction to SEN support and EHC plans.</li>
+  <li><a href="https://www.gov.uk/government/publications/send-guide-for-parents-and-carers">SEND: guide for parents and carers</a>: the Department for Education's guide to the system.</li>
+  <li><a href="https://www.gov.uk/government/publications/send-code-of-practice-0-to-25">SEND code of practice</a>: the statutory guidance councils, schools and health services must follow.</li>
+</ul>
+<p>Know of another service that should be listed here? Email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+{% endblock %}
