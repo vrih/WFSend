@@ -37,7 +37,8 @@
 {{ figure(d.undecided) }}
 
 <h2 id="not-issued">Assessments that end without a plan</h2>
-{{ figure(d.not_issued) }}
+{% set ni = d.not_issued.series %}{% set no_dec = local.assessments_2025_capita.rows|selectattr("label", "equalto", "Assessments with no decision recorded")|first %}
+{{ figure(d.not_issued, note="Waltham Forest reported that " ~ fmt(ni[WF]["2024"]) ~ " of assessments in 2024 and " ~ fmt(ni[WF]["2025"]) ~ " in 2025 ended without a plan, down from " ~ fmt(ni[WF]["2021"]) ~ " in 2021. England was " ~ fmt(ni["England"]["2025"]) ~ " in 2025. In the same years the council reported no refusals to assess, and recorded no decision for many requests (see above). The council's own records for 2025 show no decision recorded for " ~ no_dec.value ~ " of assessments (" ~ cite(local.assessments_2025_capita.source, no_dec.page) ~ "). So some decisions not to issue a plan may be missing from the figures sent to the DfE, rather than there being fewer of them.") }}
 
 <h2 id="issued">New plans issued</h2>
 {{ figure(d.plans_issued) }}
