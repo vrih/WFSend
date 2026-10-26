@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% import "_macros.html" as ui %}
 {% block title %}SEND school places in Waltham Forest{% endblock %}
-{% block description %}Special schools, resourced provision, forecast demand for specialist places, pupils with SEND in each mainstream school, and children home educated or missing education in Waltham Forest.{% endblock %}
+{% block description %}Special schools, resourced provision, forecast demand for specialist places, pupils with SEND in each mainstream school, children with EHC plans and no school named, and children home educated or missing education in Waltham Forest.{% endblock %}
 {% block content %}
 {% set ss = d.special_schools %}
 {% set su = d.specialist_units %}
@@ -105,6 +106,32 @@
 </details>
 {% endfor %}
 <p class="source">{{ cite_dfe(sch.sources) }}</p>
+
+{% set np = foi.no_placement_may2026 %}{% set eo = foi.eotas_2025_26 %}{% set npl = foi.placements_2025_26 %}
+{% set pc = d.placement_counts %}{% set pcn = pc.counts %}
+<h2 id="no-school-named">Children with an EHC plan and no school named</h2>
+<p>An EHC plan must name the school or college a child will go to, in section I. In May 2026, the council said <strong>{{ np.rows[0].value }}</strong> children and young people with an EHC plan had no school or college named. It recorded no education package commissioned by the council for any of them. It said it doesn't record what type of place each child is waiting for ({{ cite(np.source, 1) }}). These figures come from the council's answer to a Freedom of Information (FOI) request.</p>
+<figure class="metric" id="no-school-named-figures">
+<figcaption><h3>Children with an EHC plan and no school named, May 2026</h3>
+<p class="explain">By school phase and by main type of need, as the council gave them in its FOI answer.</p></figcaption>
+{{ ui.foi_table(np, np.rows|selectattr("group", "undefined")|list, "Children") }}
+{{ ui.foi_table(np, np.rows|selectattr("group", "defined")|selectattr("group", "equalto", "phase")|list, "Children") }}
+{{ ui.foi_table(np, np.rows|selectattr("group", "defined")|selectattr("group", "equalto", "need")|list, "Children") }}
+<p class="note">The council's figures for January, sent to the DfE, recorded {{ fmt(pcn["Placement unknown"]["Jan 2026"], "count") }} plan with the placement unknown in January 2026, against {{ fmt(pcn["Placement unknown"]["Jan 2025"], "count") }} in January 2025 and {{ fmt(pcn["Placement unknown"]["Jan 2024"], "count") }} in January 2024 ({{ cite_dfe(pc.sources)|replace("Source: ", "") }}). The DfE and FOI figures were counted on different dates and may not use the same definitions, so they can't be compared directly. The council hasn't explained the difference.</p>
+</figure>
+
+<h3>Education outside school</h3>
+<p>Some children with an EHC plan are taught outside school. With <strong>education otherwise than at school (EOTAS)</strong>, the council arranges and pays for a child's education somewhere other than a school, because school isn't suitable for them. <strong>Interim or home tuition</strong> is meant to be temporary, while the child waits for a school place.</p>
+<figure class="metric" id="education-outside-school">
+<figcaption><h3>Children with EHC plans taught outside school or on reduced hours, 2025-26</h3>
+<p class="explain">April 2025 to March 2026, from the council's answer to an FOI request.</p></figcaption>
+{{ ui.foi_table(eo, [eo.rows[0], eo.rows[3], eo.rows[5]], "Children") }}
+<p class="note">The DfE figures for January 2026 recorded {{ fmt(pcn["Other arrangements LA"]["Jan 2026"], "count") }} plans where the council had made "other arrangements" for a child's education ({{ fmt(pcn["Other arrangements LA"]["Jan 2025"], "count") }} in January 2025). That is a count on one day, while the FOI answer covers a whole year, so the FOI numbers would be expected to be higher. The council's SEND Sufficiency Plan says 2.8% of children and young people with EHC plans are on home tuition packages, "mainly because of insufficient specialist provision to meet needs" ({{ cite("sufficiency_plan_2025", 28) }}). What these packages cost is on the <a href="money.html#education-outside-school-costs">money page</a>.</p>
+</figure>
+
+<h3>New placements outside the borough</h3>
+<p>In 2025-26 the council commissioned {{ npl.rows[0].value }} new places in independent special schools and none in non-maintained special schools. It made {{ npl.rows[2].value }} other new placements outside the borough. It said none of the {{ npl.rows[4].value }} placements were in Waltham Forest. It buys these places case by case ("spot purchasing"), not through a framework of approved schools ({{ cite(npl.source, "pages 1 and 2") }}).</p>
+<p class="note">In October 2025 the council told the Health and Wellbeing Board that {% for b in local.backlogs if b.label.startswith("Children placed out of borough") %}{{ b.value }}{% endfor %} children had been placed out of the borough "this year", against 28 the year before ({{ cite("hwb_oct2025_report", 3) }}). The FOI answer counts out-of-area placements "of any type", which may include colleges and mainstream schools in other boroughs, and covers April 2025 to March 2026. Even so, the two figures are far apart, and the council hasn't explained the difference.</p>
 
 <h2 id="out-of-school">Children out of school</h2>
 <p>Some children with SEND leave school because their needs aren't being met. The DfE doesn't publish home education or children missing education by SEN for each council. Across England, 16% of children electively home educated in autumn 2025 were on SEN support and 7% had an EHC plan, compared with 14% and 5% of all pupils (DfE, <a class="cite" href="{{ PUBS.ehe.url }}">{{ PUBS.ehe.title }}</a>).</p>

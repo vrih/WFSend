@@ -17,7 +17,10 @@ before changing anything.
   `SUPPRESSED` in `scripts/metrics.py`.
 - **Use the publisher's own URL** (gov.uk, `democracy.walthamforest.gov.uk`,
   `civico.net`, `thehub-beta.walthamforest.gov.uk`, `files.ofsted.gov.uk`),
-  never a third-party mirror.
+  never a third-party mirror. FOI responses published on
+  `whatdotheyknow.com` count as published there: cite the request page, or
+  the council's own disclosure log if it publishes the same response.
+  WhatDoTheyKnow blocks automated downloads, so its files are saved by hand.
 - **Be fair.** Say what the data can and can't show: recording changes,
   small numbers, definitions that differ between sources. Put this in a
   chart `note` or `p.note`, as the existing pages do. Don't speculate about

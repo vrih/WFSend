@@ -469,6 +469,7 @@ def compute():
         "caseload": M.caseload(),
         "growth": M.caseload_growth(),
         "placements": M.placements(),
+        "placement_counts": M.placement_counts(),
         "primary_need": M.primary_need(),
         "special_schools": M.special_schools(),
         "specialist_units": M.specialist_units(),
@@ -577,6 +578,7 @@ def asset(path):
 def main():
     d = compute()
     local = read_yaml("council_reported.yaml")
+    foi = read_yaml("foi.yaml")["responses"]
     inspection = read_yaml("inspection.yaml")
     releases = read_yaml("release_calendar.yaml")
 
@@ -606,7 +608,7 @@ def main():
 
     built = dt.date.today().isoformat()
     waits = wait_answers(d, local)
-    ctx = dict(d=d, waits=waits, local=local, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
+    ctx = dict(d=d, waits=waits, local=local, foi=foi, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
                MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, ONS_MANIFEST=ONS_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
     rendered = {}
@@ -635,7 +637,7 @@ def main():
     for f in (ROOT / "data" / "spend").glob("*.csv"):
         shutil.copy(f, OUT / "data" / f"spend_{f.name}")
     shutil.copy(ROOT / "data" / "contracts" / "notices.csv", OUT / "data" / "contract_notices.csv")
-    for f in (ROOT / "data" / "local").glob("*.yaml"):
+    for f in [*(ROOT / "data" / "local").glob("*.yaml"), *(ROOT / "data" / "local").glob("*.csv")]:
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))
     # NHS extracts are folders of CSVs, so publish each dataset as one zip

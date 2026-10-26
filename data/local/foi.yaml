@@ -1,0 +1,105 @@
+# Figures Waltham Forest Council has given in answer to Freedom of Information
+# (FOI) requests. Each response is a document in sources.yaml, and each row has
+# the page number it is printed on. Values are copied as printed. Where a label
+# or figure is unclear it is kept and explained in `note`.
+#
+# FOI answers are one-off extracts from the council's case system, made to
+# answer one question. Definitions are the council's own, worded in the
+# response, and may not match the DfE's or the council's committee reports.
+
+responses:
+
+  ehc_assessments_mar2024:
+    source: foi_ehc_assessments_may2024
+    period: 30 March 2024
+    rows:
+      - { label: "Requests for new EHC plans waiting for a decision on whether to assess", value: 24, page: "question 3", note: "Printed as '24 as at 30/03/2024 (requests for new plans only)'. The question described this as the 6-week stage before the council decides whether to assess." }
+      - { label: "Requests for new EHC plans at the assessment stage", value: 169, page: "question 4", note: "Printed as '169 as at 30/03/2024 (requests for new plans only)'." }
+    note: "The council did not answer the questions on special school places and waiting lists. It said the request numbers were already published by the DfE."
+
+  ehc_requests_weekly:
+    source: foi_ehc_requests_weekly_may2026
+    period: Week 1 of 2024 to week 18 of 2026
+    file: foi_ehc_requests_weekly.csv
+    columns: { requests: "REQUESTS", plan_starts: "PLAN_STARTS" }
+    note: "Copied from the spreadsheet as published. The council says it can only give figures from 2024 because of a system migration. Its week 1 is the week containing 1 January, so a year can have 53 weeks and the last week of one year can overlap the first week of the next. The response does not define a request or a plan start, or say whether requests from other councils are included."
+
+  send_waits_nov2025:
+    source: foi_send_waits_nov2025
+    period: November 2025 (the date of the response)
+    rows:
+      - { label: "Average waiting time for new referrals", value: "218 Days", page: 1, note: "Council's definition: 'Average of days since request for all received without a notification date recorded. Excludes source Other LA'." }
+      - { label: "Average waiting time for EHC needs assessments", value: "156 Days", page: 1, note: "Council's definition: 'Average of days since request notification for assessments without a completion date or assessment stop reason. Excludes source Other LA'." }
+      - { label: "EHC plans in the backlog", value: 289, page: 1, note: "Council's definition: 'All requests which are still active and a plan has not yet started'." }
+      - { label: "Annual reviews overdue", value: "1,777", page: 1, note: "The question asked how many annual reviews the council 'currently' has. The council's definition: 'All plans open at least a year which have not been reviewed within 12 months'." }
+
+  eotas_2025_26:
+    source: foi_eotas_may2026
+    period: 2025-26 financial year
+    rows:
+      - { label: "Children and young people funded on education otherwise than at school (EOTAS) packages", value: 200, page: 1 }
+      - { label: "Total spend on EOTAS packages", value: "£2,980.106", page: 1, note: "Printed as '£2,980.106'. With 200 packages at an average of £14,900, this is probably £2,980,106. The council says it removed therapy payments, laptop contributions and ABA provision while at school from the figures." }
+      - { label: "Average annualised spend per EOTAS package", value: "£14,900", page: 1 }
+      - { label: "Children and young people funded on interim or home tuition pending placement", value: 161, page: 1 }
+      - { label: "Total spend on interim or home tuition pending placement", value: "£2,130,875", page: 1 }
+      - { label: "Children and young people getting fewer than 15 hours a week of commissioned education because no suitable placement is available", value: 86, page: 2, note: "The response does not say on what date this was counted." }
+
+  placements_2025_26:
+    source: foi_placements_may2026
+    period: 2025-26 financial year
+    rows:
+      - { label: "New placements commissioned in independent special schools", value: 21, page: 1 }
+      - { label: "New placements commissioned in non-maintained special schools", value: "Nil", page: 1 }
+      - { label: "New out-of-area placements of any other type", value: 83, page: 1, note: "Printed as '83 (excluding the 21 reported above)'." }
+      - { label: "New independent and non-maintained placements that were in the borough", value: 0, page: 1 }
+      - { label: "New independent and non-maintained placements that were out of the borough", value: 104, page: 1, note: "The question asked about the placements in question 1. 104 is the 21 independent placements plus the 83 other out-of-area placements." }
+      - { label: "Average annual fee for new independent and non-maintained special school placements", value: "£78,370", page: 1 }
+      - { label: "Median annual fee for new independent and non-maintained special school placements", value: "£80,303", page: 1 }
+      - { label: "Time from panel approval to placement offer", value: "within a month", page: 2, note: "The question asked for an average in calendar days." }
+      - { label: "Time from placement offer to placement start", value: "depends on each case, normally within a month but may be from a phase transfer date", page: 2 }
+      - { label: "How the council commissions these placements", value: "spot purchasing", page: 2, note: "No framework agreement or dynamic purchasing system." }
+
+  no_placement_may2026:
+    source: foi_no_placement_may2026
+    period: May 2026 (the date of the response)
+    rows:
+      - { label: "Children and young people with an EHC plan and no named placement in section I", value: 272, page: 1 }
+      - { label: "Of those, with no education package commissioned by the council", value: 272, page: 2, note: "The council says EOTAS, tuition and part-time packages are named in the plan if provided, and that searching each case would exceed the FOI cost limit. It is not clear whether 272 means none of these children has any package, or that none is recorded against them." }
+      - { group: phase, label: "Of those, primary age", value: 53, page: 2 }
+      - { group: phase, label: "Of those, secondary age", value: 60, page: 2 }
+      - { group: phase, label: "Of those, post-16", value: 104, page: 2, note: "Primary, secondary and post-16 add up to 217, not 272. The response does not explain the other 55." }
+      - { group: need, label: "Of those, primary need autism (ASD)", value: 93, page: 2 }
+      - { group: need, label: "Of those, primary need social, emotional and mental health (SEMH)", value: 69, page: 2 }
+      - { group: need, label: "Of those, primary need speech, language and communication (SLCN)", value: 48, page: 2 }
+      - { group: need, label: "Of those, all other primary needs", value: 62, page: 2 }
+    note: "The council said what type of placement each child is waiting for is 'Not recorded at this granularity'."
+
+  independent_placements:
+    title: Children placed in independent or non-maintained special schools
+    source: foi_send_costs_jun2026
+    page: "pages 1 and 2"
+    columns: ["2022-23", "2023-24", "2024-25", "2025-26"]
+    rows:
+      - { label: "Children and young people placed", values: [39, 54, 70, 82], page: 1 }
+      - { label: "Total annual spend", values: ["£1,904,643", "£3,068,604", "£4,354,070", "£5,505,726"], page: 2 }
+      - { label: "Average annual cost per placement", values: ["£48,837", "£56,826", "£62,201", "£67,143"], page: 2 }
+    note: "The council did not say how many of these placements followed a SEND Tribunal order, as answering would exceed the FOI cost limit. It does not record what it spends on tribunals."
+
+  ehc_plan_costs:
+    source: foi_send_costs_jun2026
+    period: Most recent financial year (not named in the response)
+    rows:
+      - { label: "Spend on provision in EHC plans, excluding independent placements", value: "£43,460,956", page: 2, note: "The question asked for spend including direct payments, top-up funding to schools and commissioned services." }
+      - { label: "EHC plans maintained at the end of the year", value: 3601, page: 2 }
+      - { label: "Average annual cost per EHC plan", value: "£12,069", page: 2 }
+
+  annual_reviews_by_year:
+    title: Annual reviews (council's FOI answer)
+    source: foi_send_costs_jun2026
+    page: 3
+    columns: ["2024", "2025"]
+    rows:
+      - { label: "EHC plans due an annual review in the calendar year", values: [2868, 1962] }
+      - { label: "Reviews completed within 12 months of the previous review", values: [121, 3307] }
+      - { label: "Reviews that led to the plan being amended", values: [65, 912] }
+    note: "The 2025 figures do not add up: 3,307 reviews completed on time is more than the 1,962 plans due. The response does not explain this, so treat these figures with care."
