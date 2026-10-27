@@ -6,9 +6,10 @@
 {% set ap = d.appeal_rate %}
 <h1>Complaints and SEND Tribunal appeals</h1>
 <p class="lede">Families can appeal to the SEND Tribunal against many council decisions, such as refusing to assess, refusing to issue a plan, what a plan says, or the school it names.</p>
-{% set ar_ = d.appeal_rate %}{% set lgo_last = d.ombudsman.by_year|selectattr("year", "ne", d.ombudsman.by_year[-1].year)|list|last %}
+{% set ar_ = d.appeal_rate %}{% set to = d.tribunal_outcomes %}{% set ty = to.latest_year %}{% set lgo_last = d.ombudsman.by_year|selectattr("year", "ne", d.ombudsman.by_year[-1].year)|list|last %}
 {% call ui.key_points() %}
 <li>{{ fmt(ar_.appeals[WF][ar_.latest_period], "count") }} appeals about Waltham Forest decisions were registered with the SEND Tribunal in {{ ar_.latest_period }}: an appeal rate of {{ fmt(ar_.latest[WF]) }}, against {{ fmt(ar_.latest["England"]) }} in England.</li>
+<li>Across England, {{ fmt(ty.in_favour_pct) }} of the SEND Tribunal appeals decided in {{ ty.academic_year }} went at least partly in the family's favour. This is not published for each council.</li>
 <li>The Ombudsman published {{ lgo_last.published }} decisions about SEND in Waltham Forest in {{ lgo_last.year }}, and found fault in {{ lgo_last.upheld }}.</li>
 {% endcall %}
 
@@ -18,6 +19,24 @@
 
 <h3>The council's own count of appeals</h3>
 {{ ui.simple_table(local.tribunal_appeals) }}
+
+<h3 id="outcomes">What happens to appeals across England</h3>
+<p>The Ministry of Justice publishes what happens to SEND Tribunal appeals, but only for England as a whole. It does not publish outcomes for each council, so these figures are not about Waltham Forest.</p>
+<p>In {{ ty.academic_year }}, {{ fmt(ty.registered, "count") }} appeals were registered across England and the tribunal decided {{ fmt(ty.decided, "count") }}. Of the appeals it decided, {{ fmt(ty.decided_in_favour, "count") }} ({{ fmt(ty.in_favour_pct) }}) went at least partly in the family's favour. The rest ended without a decision. Councils conceded {{ fmt(ty.conceded, "count") }}, meaning they stopped opposing the appeal, and families withdrew {{ fmt(ty.withdrawn, "count") }}.</p>
+{{ figure(to, areas=("England",), y_max=100, note="\"In the family's favour\" means the tribunal agreed with the family on at least part of the appeal. The Ministry of Justice says it \"does not mean all aspects of an appeal were in favour of appellant\". An appeal decided in one year may have been registered the year before. Families withdraw appeals for different reasons, including when the council has agreed to what they asked for, so withdrawn appeals are not counted as wins or losses.") }}
+<details><summary>All appeal outcomes in England, by year</summary>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">SEND Tribunal appeals registered and their outcomes in England</caption>
+<thead><tr><th scope="col">Academic year</th><th scope="col">Registered</th><th scope="col">Decided</th><th scope="col">Decided at least partly in the family's favour</th><th scope="col">Council's decision upheld</th><th scope="col">Conceded by the council</th><th scope="col">Withdrawn</th></tr></thead>
+<tbody>
+{% for y in to.years|reverse %}
+<tr><th scope="row">{{ y.academic_year }}</th><td>{{ fmt(y.registered, "count") }}</td><td>{{ fmt(y.decided, "count") }}</td><td>{{ fmt(y.decided_in_favour, "count") }}</td><td>{{ fmt(y.decided_upheld, "count") }}</td>
+<td>{{ fmt(y.conceded, "count") if y.conceded is not none else "–" }}</td><td>{{ fmt(y.withdrawn, "count") if y.withdrawn is not none else "–" }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Before {{ (to.years|selectattr("conceded", "ne", none)|first).academic_year }}, the Ministry of Justice counted conceded and withdrawn appeals together, so they show as "–" here. The download includes the combined count. A few decided appeals each year were "revised against" the family, which is why the decided columns don't add up to the total. Registered appeals and outcomes in a year are not the same appeals.</p>
+<p class="source">Source: {{ cite_moj(to.manifest) }}. <a href="data/moj_send_tribunal.csv">Download these figures (CSV)</a></p>
+</details>
 
 <h3>What tribunal cases cost the council</h3>
 <p>The council's SEND Sufficiency Plan says its legal costs for tribunal cases were £48,860 in 2024, up from £26,197 in 2023, not counting barristers' fees ({{ cite("sufficiency_plan_2025", 27) }}). But in June 2026, in answer to a Freedom of Information request, the council said "Tribunal expenditure is not recorded" ({{ cite("foi_send_costs_jun2026", 1) }}). It also said that finding out how many independent school placements followed a tribunal order, or were conceded during an appeal, would cost more than the FOI cost limit allows ({{ cite("foi_send_costs_jun2026", 2) }}). The council's published payments don't help either: legal fees are coded to its legal service, not to SEND (see <a href="spending.html#payments">payments to suppliers</a>).</p>
