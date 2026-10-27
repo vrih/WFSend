@@ -575,6 +575,7 @@ SUBPAGES = [
     ("deadlines.html", "Deadlines calculator", "resources.html"),
     ("schools.html", "SEND in each school", "places.html"),
     ("spending.html", "Where the money goes", "money.html"),
+    ("reform-plan.html", "SEND Reform Plan", "targets.html"),
 ]
 SECTION = {name: parent for name, _, parent in SUBPAGES}
 # Subpages of each menu item, shown as tabs on the item and its subpages
@@ -596,7 +597,7 @@ GUIDES = [
 ]
 
 # Pages described to search engines as a Dataset
-DATASETS = ({name for name, _ in PAGES} | {name for name, _, parent in SUBPAGES if parent != "resources.html"}) - {"resources.html", "sources.html"}
+DATASETS = ({name for name, _ in PAGES} | {name for name, _, parent in SUBPAGES if parent != "resources.html"}) - {"resources.html", "sources.html", "reform-plan.html"}
 
 
 def asset(path):
