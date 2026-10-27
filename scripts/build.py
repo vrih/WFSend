@@ -33,6 +33,7 @@ DOMAIN = "wfsenddata.org.uk"
 CONTACT_EMAIL = f"info@{DOMAIN}"
 SITE_URL = f"https://{DOMAIN}/"
 ORG_ID = SITE_URL + "#organization"
+LICENCE_URL = "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
 
 AREAS = (M.WF, "London", "England", M.SN)
 
@@ -338,7 +339,7 @@ def structured_data(name, info, updated, waits):
         files = unique(re.findall(r'href="(data/[^"#]+)"', main) + (["data/headlines.csv"] if name == "index.html" else []))
         kind = {".csv": "text/csv", ".zip": "application/zip", ".yaml": "application/yaml"}
         graph.append({"@type": "Dataset", "@id": url + "#dataset", **base, "creator": {"@id": ORG_ID},
-                      "isAccessibleForFree": True,
+                      "isAccessibleForFree": True, "license": LICENCE_URL,
                       "spatialCoverage": {"@type": "Place", "name": "London Borough of Waltham Forest, England"},
                       "variableMeasured": unique(text_of(h) for pair in re.findall(  # headline tiles and charts
                           r'<p class="label">(.*?)</p>|<figure\b[^>]*>\s*<figcaption>\s*<h3[^>]*>(.*?)</h3>', main, re.S)

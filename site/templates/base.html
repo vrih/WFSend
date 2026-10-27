@@ -4,7 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}{% endblock %} | Waltham Forest SEND data</title>
-<meta name="description" content="{% block description %}Performance data on special educational needs and disability (SEND) services in Waltham Forest, from public sources.{% endblock %}">
+{# The description block is rendered through self.description() so quotes in it are escaped #}
+{% if false %}{% block description %}Performance data on special educational needs and disability (SEND) services in Waltham Forest, from public sources.{% endblock %}{% endif %}
+<meta name="description" content="{{ self.description()|striptags }}">
 {% if page == "404.html" %}
 <meta name="robots" content="noindex">
 {% else %}
@@ -15,7 +17,7 @@
 <meta property="og:site_name" content="Waltham Forest SEND data">
 <meta property="og:locale" content="en_GB">
 <meta property="og:title" content="{{ self.title() }} | Waltham Forest SEND data">
-<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:description" content="{{ self.description()|striptags }}">
 <meta property="og:image" content="https://{{ domain }}/share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
