@@ -28,6 +28,10 @@ links back to a public source:
   service and supplier.
 - **Contracts Finder and Find a Tender**, downloaded automatically: the
   council's procurement notices, with SEND contracts awarded and planned.
+- **Ministry of Justice tribunal statistics**, downloaded automatically: SEND
+  Tribunal appeals registered in England and their outcomes, from the yearly
+  SEND tables in Tribunals statistics quarterly. These are not published for
+  each council, so the site shows them as England-wide context.
 - **NHS England waiting times**: children's community health services
   waiting lists, autism and ADHD assessment waits, and waits for children's
   mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
@@ -46,6 +50,7 @@ scripts/fetch_gias.py     downloads the GIAS register, keeps Waltham Forest's sp
 scripts/fetch_ons.py      downloads ONS population estimates (ages 2 to 18) -> data/ons/population.csv
 scripts/fetch_spend.py    downloads the council's spending over £500 reports, keeps SEND payments -> data/spend/
 scripts/fetch_contracts.py downloads the council's notices from Contracts Finder and Find a Tender -> data/contracts/
+scripts/fetch_moj.py      downloads the MoJ SEND Tribunal tables (England only) -> data/moj/send_tribunal.csv
 scripts/extract_nhs.py    cuts hand-downloaded NHS files down to NEL rows -> data/nhs/ (see data/nhs/README.md)
 data/local/*.yaml         figures copied from council/NHS/Ofsted documents, with page refs
 scripts/metrics.py        calculates the metrics shown on the site
@@ -124,7 +129,13 @@ run stopped (`fts_read_to` in `data/contracts/manifest.json`) and keeps the
 council's notices. Which notices count as SEND is decided by `SEND_NOTICE` in
 `scripts/metrics.py`. Check new matches after a refresh.
 
-The `Refresh DfE and Ombudsman data` workflow runs all six on the 3rd of each
+The SEND Tribunal outcomes come from `python scripts/fetch_moj.py`. The
+Ministry of Justice publishes its SEND tables once a year, with the July to
+September release of Tribunals statistics quarterly in December. The script
+finds the latest file through the GOV.UK content API, so it needs no updating,
+but it stops if the table headings change.
+
+The `Refresh DfE and Ombudsman data` workflow runs all seven on the 3rd of each
 month and opens a pull request if anything changed. Upcoming release dates
 are kept by hand in `data/local/release_calendar.yaml`.
 

@@ -102,6 +102,13 @@ def cite_ons():
                   f' (downloaded {escape(m["fetched"])})')
 
 
+def cite_moj(m):
+    PAGE_DATES.add(m["fetched"])
+    return Markup(f'{escape(m["publisher"])}, <a class="cite" href="{escape(m["url"])}" rel="noopener">{escape(m["title"])}</a>: '
+                  f'<a class="cite" href="{escape(m["dataset_url"])}" rel="noopener">{escape(m["dataset"])}</a>'
+                  f' (downloaded {escape(m["fetched"])})')
+
+
 def fetched(manifest, key="fetched"):
     """A download date from a manifest, counted towards the page's date."""
     PAGE_DATES.add(manifest[key])
@@ -180,7 +187,8 @@ def figure(m, ranked=False, note=None, y_max=None, areas=AREAS, also=None, start
     if note:
         parts.append(f'<p class="note">{note}</p>')
     ons = f"; {cite_ons()}" if m.get("population") else ""
-    parts.append(f'<p class="source">{cite_dfe(m["sources"])}{ons}</p></figure>')
+    src = Markup("Source: ") + cite_moj(m["manifest"]) if m.get("manifest") else cite_dfe(m["sources"])
+    parts.append(f'<p class="source">{src}{ons}</p></figure>')
     return Markup("\n".join(parts))
 
 
@@ -493,6 +501,7 @@ def compute():
         "prevalence": M.sen_prevalence(),
         "ar": ar,
         "appeal_rate": M.appeal_rate(),
+        "tribunal_outcomes": M.tribunal_outcomes(),
         "ks2": M.ks2(),
         "ks4": M.ks4(),
         "exclusions": M.exclusions(),
@@ -607,7 +616,7 @@ def main():
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.filters["month"] = long_month
-    env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
+    env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, cite_moj=cite_moj, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
                        ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION, subpages=CHILDREN,
                        guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
                        JSONLD=JSONLD, UPDATED=UPDATED, root="",
@@ -666,6 +675,7 @@ def main():
     for f in (ROOT / "data" / "spend").glob("*.csv"):
         shutil.copy(f, OUT / "data" / f"spend_{f.name}")
     shutil.copy(ROOT / "data" / "contracts" / "notices.csv", OUT / "data" / "contract_notices.csv")
+    shutil.copy(ROOT / "data" / "moj" / "send_tribunal.csv", OUT / "data" / "moj_send_tribunal.csv")
     for f in [*(ROOT / "data" / "local").glob("*.yaml"), *(ROOT / "data" / "local").glob("*.csv")]:
         shutil.copy(f, OUT / "data" / f.name)
     write_csv(OUT / "data" / "headlines.csv", headline_rows(d, local))

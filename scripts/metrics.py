@@ -415,6 +415,30 @@ def appeal_rate():
     return m
 
 
+MOJ = ROOT / "data" / "moj"
+
+
+def tribunal_outcomes():
+    """SEND Tribunal appeals registered and decided in England, by academic
+    year, from the Ministry of Justice. MoJ does not publish outcomes for each
+    council, so there is only an England series."""
+    with (MOJ / "send_tribunal.csv").open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    count = lambda v: 0 if v == "-" else num(v)  # MoJ prints zero as "-"
+    years = [{k: (v if k == "academic_year" else count(v)) for k, v in r.items()} for r in rows]
+    for y in years:
+        y["in_favour_pct"] = pct(y["decided_in_favour"], y["decided"])
+    periods = [y["academic_year"] for y in years]
+    m = build({"England": {y["academic_year"]: y["in_favour_pct"] for y in years}}, periods,
+              id="tribunal_outcomes", unit="percent", rank=False,
+              title="SEND Tribunal appeals decided at least partly in the family's favour, England",
+              explain="Of the appeals the tribunal decided, the share where it decided at least partly in the family's favour. Appeals that were withdrawn or conceded before a decision are not included. Academic years, September to August.")
+    m["years"] = years
+    m["latest_year"] = years[-1]
+    m["manifest"] = json.loads((MOJ / "manifest.json").read_text())
+    return m
+
+
 # --- Prevalence ------------------------------------------------------------
 
 def sen_prevalence():
