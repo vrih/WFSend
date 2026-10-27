@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% block title %}The SEND Reform Plan in Waltham Forest{% endblock %}
+{% block description %}Waltham Forest's SEND Reform Plan aims to cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28. The DfE accepted it on 2 October 2026. The full plan is not yet published: what council papers say so far.{% endblock %}
+{% block content %}
+{% set sup = d.prevalence.support %}
+{% set fin = {} %}{% for f in local.finance %}{% set _ = fin.update({f.id: f}) %}{% endfor %}
+<h1>The SEND Reform Plan</h1>
+<p class="lede">Every council had to send the Department for Education (DfE) a SEND Reform Plan in June 2026. It sets out how the council and the NHS will deliver the national SEND reforms in Waltham Forest within their budget. This page summarises what the council has said about the plan so far.</p>
+
+<div class="callout"><p><strong>The full plan has not been published.</strong> Everything on this page comes from a short summary in the July 2026 Schools Forum papers and an update in the October 2026 papers. We will update this page when the council publishes the plan or more detail about it. If you have seen it published, please email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p></div>
+
+{% call ui.key_points() %}
+<li>The DfE accepted Waltham Forest's plan on 2 October 2026.</li>
+<li>The plan aims to cut projected yearly growth in EHC plans from 11.3% to 9.8% from 2027/28, and to raise the share of children on SEN support from 12.5% to 14%.</li>
+<li>Most of the money is to go on "Experts at Hand", which gives schools access to specialist advice. The council has not yet said how it will be spent.</li>
+<li>The DfE has agreed a {{ fin.stability_grant.value }} High Needs Stability Grant.</li>
+{% endcall %}
+
+<h2>What the plan is</h2>
+<p>The DfE asked every council to write a SEND Reform Plan. Waltham Forest's plan covers the council and NHS North East London together. It was signed off by the council's Director of Children's Services and Chief Executive, and by the Chief Executive of the NHS Integrated Care Board ({{ cite("sf_jul2026", 177) }}).</p>
+<p>The council says the plan builds on its SEND Strategy and aims to "deliver an inclusive, sustainable 0-25 system where children and young people with SEND thrive within local communities". It sets out what the council will do up to 2028 and how it will spend the money ({{ cite("sf_jul2026", 178) }}).</p>
+
+<h2>What the plan says about Waltham Forest now</h2>
+<p>The summary gives these figures. They are the council's own and it does not say exactly how they were counted, so they may not match the DfE figures elsewhere on this site.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">What the plan says</th><th scope="col">Figure</th><th scope="col">Source</th></tr></thead>
+<tbody>
+<tr><td>Pupils with an EHC plan who attend mainstream schools</td><td><strong>56.7%</strong></td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
+<tr><td>Children reaching a good level of development in the early years</td><td><strong>75.4%</strong><br><span class="note">The plan says this is above London and England.</span></td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
+<tr><td>EHC plans</td><td><strong>2,584 in 2022, 3,703 in 2025</strong><br><span class="note">A 41.8% rise.</span></td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
+<tr><td>School-age children with an EHC plan</td><td><strong>4.9% rising to 6.5%</strong><br><span class="note">Against 5.3% in England in 2025. The plan does not give the starting year.</span></td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
+<tr><td>Children on SEN support (2025)</td><td><strong>12.5%</strong><br><span class="note">Against 14% in England, the plan says. The DfE's figure for Waltham Forest in January 2025 was {{ fmt(sup.series[WF]["Jan 2025"]) }}, so the council may be counting a different group of pupils. It was {{ fmt(sup.latest[WF]) }} in {{ sup.latest_period|month }}.</span></td><td>{{ cite("sf_jul2026", 178) }}<br>{{ cite_dfe(sup.sources) }}</td></tr>
+<tr><td>New EHC plans issued within 20 weeks</td><td><strong>12%</strong><br><span class="note">The summary does not say what period this covers. See <a href="ehcp-waiting-time.html">how long an EHC plan takes</a> for the DfE figures.</span></td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
+</tbody></table></div>
+<p>The plan also says the council's universal and targeted support is "under-developed and piecemeal", more complex needs are putting pressure on specialist places, and there is no co-ordinated route into adult life ("preparing for adulthood"). It names supported internships as a gap ({{ cite("sf_jul2026", 178) }}).</p>
+
+<h2>The five priority goals</h2>
+<ol>
+  <li>Improving attainment for pupils with EHC plans and on SEN support.</li>
+  <li>Reducing permanent exclusions and improving attendance for pupils with SEND.</li>
+  <li>Measuring and improving parents' confidence.</li>
+  <li>Improving how often EHC plan processes meet legal deadlines.</li>
+  <li>Managing money better, by having more specialist places in the borough and using fewer independent and non-maintained special schools.</li>
+</ol>
+<p class="source">{{ cite("sf_jul2026", 178) }}</p>
+<p>The summary gives no number or date for any of these goals. The only numeric targets it gives are the two below. We track them on the <a href="targets.html">targets page</a>.</p>
+
+<h2>Targets for EHC plans and SEN support</h2>
+<p>The plan aims to:</p>
+<ul>
+  <li>reduce the projected growth in EHC plans from 11.3% a year to 9.8% a year, from 2027/28</li>
+  <li>increase the share of children supported at SEN support, without an EHC plan, from 12.5% to 14%</li>
+</ul>
+<p class="source">{{ cite("sf_jul2026", 178) }}</p>
+<p>The council expects the number of EHC plans to keep growing while the reforms are put in place ({{ cite("sf_oct2026", 30) }}). The number of EHC plans rose by 201, or 5%, between March and August 2026 ({{ cite("sf_oct2026", 29) }}).</p>
+
+<h2>How the council plans to do it</h2>
+<p>The council says it will reach these targets mainly through "Experts at Hand" and its existing advisory teachers. These give mainstream schools and nurseries access to specialist advice and a set of core standards, so that "more children [can] receive targeted support without statutory funding" ({{ cite("sf_jul2026", 178) }}). The council's diagram of how the plan should work lists 4 areas of work: making schools more inclusive, more support for schools through Experts at Hand, using data and partnerships to spend money better, and having the right mix of specialist places ({{ cite("sf_jul2026", "pages 178 and 179") }}).</p>
+<p>The council is also looking at an "Inclusion fund" for schools. This could mean moving money from the main schools budget to the high needs budget (a "block transfer") in 2027/28. Waltham Forest has no block transfer at present ({{ cite("sf_jul2026", "pages 179 and 180") }}).</p>
+<p>Families keep the legal right to ask for an EHC needs assessment, whatever the plan says ({{ cite("cfa_2014_s36", "section 36(1)") }}). The <a href="assessments.html#decisions">request and refusal figures</a> show how requests are being handled.</p>
+
+<h2>The money</h2>
+<p>Once the DfE accepted the plan, it gave the council an indicative High Needs Stability Grant of £12.889m ({{ cite("sf_oct2026", 31) }}). With the grant, the council forecasts a schools budget (DSG) deficit of £15.115m on 31 March 2027 ({{ cite("sf_oct2026", 30) }}). More on the <a href="money.html">Money page</a>.</p>
+<p>The council says most of the reform money in 2026/27 will go on Experts at Hand, with some on extra finance staff to track spending ({{ cite("sf_jul2026", 179) }}). The July papers say the proposed split of the money is "outlined below", but the table is not in the published pack.</p>
+<p>Separately, the DfE's Inclusion Mainstream Fund gives Waltham Forest's maintained schools £914,930 in 2026/27 to make their everyday teaching more inclusive ({{ cite("sf_jul2026", 180) }}).</p>
+
+<h2>What we are waiting for</h2>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">When</th><th scope="col">What</th><th scope="col">Source</th></tr></thead>
+<tbody>
+<tr><td>June 2026</td><td>Plan sent to the DfE.</td><td>{{ cite("sf_jul2026", 177) }}</td></tr>
+<tr><td>8 July 2026</td><td>Summary of the plan given to the Schools Forum. The full plan and its slide pack (Annex A) were not included.</td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
+<tr><td>2 October 2026</td><td>DfE accepts the plan.</td><td>{{ cite("sf_oct2026", 31) }}</td></tr>
+<tr><td>21 October 2026</td><td>The council had promised the Schools Forum a detailed breakdown of the plan's spending and of Experts at Hand. It was not on the agenda.</td><td>{{ cite("sf_oct2026", 2) }}</td></tr>
+<tr><td>End of October 2026</td><td>The council's second quarterly progress report to the DfE is due. These reports are not published.</td><td>{{ cite("sf_oct2026", 30) }}</td></tr>
+<tr><td>Not yet known</td><td>The full plan, how Experts at Hand money will be shared out, and any block transfer proposal for 2027/28.</td><td>{{ cite("sf_jul2026", 180) }}</td></tr>
+</tbody></table></div>
+{% endblock %}
