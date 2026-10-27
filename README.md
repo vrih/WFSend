@@ -194,3 +194,5 @@ info@wfsenddata.org.uk
 DfE statistics are Crown copyright, reused under the
 [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 Council and Ofsted documents are quoted for comment and linked at source.
+The site's own data downloads are declared to search engines under the same
+licence (`LICENCE_URL` in `scripts/build.py`).
