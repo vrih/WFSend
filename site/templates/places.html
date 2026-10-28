@@ -45,10 +45,15 @@
 
 <p>Which ages and needs each special school takes, and which mainstream schools have resourced provision or an SEN unit, are on <a href="schools.html">SEND in each school</a>.</p>
 
+<h3>New places at Chapel End</h3>
+<p>In February 2026, the council announced a new site for children with SEND in the former Chapel End Early Years Centre on Brookscroft Road, Walthamstow. Lime Academy Hornbeam, one of the borough's special schools, runs it as part of its existing school. The council said the site would open to 40 pupils in September 2026 and grow to 100 pupils over the next 3 years ({{ cite("chapel_end_news_feb2026") }}).</p>
+<p>The site opened in September 2026 as the school's Maple Green campus, which the school says provides "specialist primary provision for Autism" ({{ cite("hornbeam_welcome") }}). In its first week, the school said it had "welcomed in our first 40 learners" ({{ cite("hornbeam_newsletter_sep2026", 3) }}).</p>
+<p class="note">The planning application, which went to the council's planning committee in July 2026, is for a school of "up to 40 pupils with 32 staff" ({{ cite("chapel_end_planning_jul2026", 2) }}). The council hasn't said how or when the site would grow to 100 places. These places are not in the table above, which counts places in May {{ ss_year[:2] ~ ss_year[-2:] }}.</p>
+
 <h2 id="forecasts">Forecast demand for specialist places</h2>
 <p>Each council forecasts how many children living in its area will have an EHC plan and need a specialist place. Waltham Forest forecasts {{ fmt(fc.wf_counts[fc_first], "count") }} children in {{ fc_first }}, rising to {{ fmt(fc.wf_counts[fc_last], "count") }} by {{ fc_last }}. That is growth of {{ fmt(fc.latest[WF] - 100) }}, against {{ fmt(fc.latest["London"] - 100) }} in London, {{ fmt(fc.latest["England"] - 100) }} in England and {{ fmt(fc.latest[SN] - 100) }} in similar areas. It is {{ rank_text(fc) }}.</p>
 {{ figure(fc, ranked=True) }}
-<p class="note">The DfE says these forecasts can't be set against the capacity figures above to work out a shortfall. The forecasts count children living in the borough in Reception to Year 11, wherever they go to school, including independent and alternative provision. The capacity figures count places in the borough's schools, including sixth forms, whoever fills them. The council doesn't report how many new places it plans.</p>
+<p class="note">The DfE says these forecasts can't be set against the capacity figures above to work out a shortfall. The forecasts count children living in the borough in Reception to Year 11, wherever they go to school, including independent and alternative provision. The capacity figures count places in the borough's schools, including sixth forms, whoever fills them. Apart from the <a href="#new-places-at-chapel-end">Chapel End site</a>, the council doesn't report how many new places it plans.</p>
 
 {% set np = foi.no_placement_may2026 %}{% set eo = foi.eotas_2025_26 %}{% set npl = foi.placements_2025_26 %}
 {% set pc = d.placement_counts %}{% set pcn = pc.counts %}

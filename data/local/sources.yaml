@@ -105,6 +105,35 @@ schools_budget_mar2026:
   meeting: Cabinet, 17 March 2026
   url: https://civico.net/walthamforest/documents/74237157/download
 
+chapel_end_news_feb2026:
+  title: New school for 100 SEND children planned
+  publisher: London Borough of Waltham Forest
+  date: 2026-02-12
+  url: https://www.walthamforest.gov.uk/stories/new-school-100-send-children-planned
+  notes: Council news story. The Lime Trust's consultation on the plans ran until 26 February 2026.
+
+chapel_end_planning_jul2026:
+  title: "Planning application 261097: Chapel End Early Years Centre, Brookscroft Road (committee report)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-07-07
+  meeting: Planning Committee, 7 July 2026
+  url: https://www.civico.net/walthamforest/documents/74239042/download
+  notes: Change of use from an early years centre to a school for pupils with special educational needs. The report recommends granting permission.
+
+hornbeam_welcome:
+  title: Welcome (About us)
+  publisher: Lime Academy Hornbeam
+  date: 2026-06-04
+  url: https://limeacademyhornbeam.org/about-us/welcome/
+  notes: The school's own web page. Date is the date of the Maple Green news item on the page; the page itself is undated.
+
+hornbeam_newsletter_sep2026:
+  title: Weekly newsletter, 9 September
+  publisher: Lime Academy Hornbeam
+  date: 2026-09-09
+  url: https://limeacademyhornbeam.org/wp-content/uploads/sites/8/2026/09/09th-Sept-2026.pdf
+  notes: The school's weekly newsletter. The Chapel End site is the school's Maple Green campus, on Brookscroft Road, E17 4LH (https://limeacademyhornbeam.org/contact-us/).
+
 send_regs_2014:
   short: SEND Regulations 2014  # link text for inline citations
   title: The Special Educational Needs and Disability Regulations 2014
