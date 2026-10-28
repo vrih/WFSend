@@ -695,7 +695,10 @@ def main():
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",
         encoding="utf-8")
-    (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
+    # Content-Signal (https://contentsignals.org): the figures are public and meant to be reused,
+    # so search, AI answers and AI training are all allowed
+    (OUT / "robots.txt").write_text("User-agent: *\nContent-Signal: search=yes, ai-input=yes, ai-train=yes\n"
+                                    f"Allow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
     # a plain-text map of the site for AI tools (https://llmstxt.org)
     lines = ["# Waltham Forest SEND data", "",
              "> Independent site showing how special educational needs and disability (SEND) services in Waltham "
