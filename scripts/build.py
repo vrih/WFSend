@@ -357,11 +357,37 @@ def wait_answers(d, local):
          "end it, you can appeal to the SEND Tribunal. If it changes the plan, you can appeal against the new plan "
          "once it is final."),
     ]
+    ss, fc = d["special_schools"], d["specialist_forecasts"]
+    places, pupils = ss["wf_totals"][ss["latest_period"]][:2]
+    may = "May " + ss["latest_period"][:2] + ss["latest_period"][-2:]
+    special = next(r for r in d["placements"]["rows"] if r["label"] == "Special school")
+    school = [
+        ("Can my child get a special school place in Waltham Forest?",
+         f"In {d['placements']['period'].replace('Jan ', 'January ')}, {pc(special[M.WF])} of children and young people with an EHC plan in "
+         f"Waltham Forest were at a special school, against {pc(special['England'])} in England. In {may}, the "
+         f"borough's {len(ss['schools'])} special schools had {pupils:,.0f} pupils for {places:,.0f} places, and "
+         f"the council forecasts {pc(fc['latest'][M.WF] - 100)} more children needing a specialist place by "
+         f"{fc['periods'][-1]}. You can ask for a particular school when you get your child's draft EHC plan. "
+         f"The council must name it unless it is unsuitable for your child, or would be incompatible with other "
+         f"children's education or the efficient use of resources."),
+        ("How do I ask for a particular school in an EHC plan?",
+         "When the council sends you the draft plan, you have at least 15 days to ask for a particular school or "
+         "college to be named. The council must consult the school. If it names a different school, or no school, "
+         "you can appeal to the SEND Tribunal without going to mediation first."),
+        ("Does a child with an EHC plan have to go to a mainstream school?",
+         "No. If you ask for a special school, the council must consider it in the same way as any other school. "
+         "If you don't ask for a particular school, or the council can't name the one you asked for, the plan must "
+         "name a mainstream school unless that goes against your wishes or the efficient education of other "
+         "children."),
+    ]
+    teasers["special-school-places.html"] = (f"How places are decided. In {may}, the borough's special schools "
+                                             f"had {pupils:,.0f} pupils for {places:,.0f} places.")
     out = {}
     for page, faq in (("ehcp-waiting-time.html", ehcp), ("autism-assessment-waiting-time.html", autism),
                       ("adhd-assessment-waiting-time.html", adhd), ("ehcp-refused.html", refusal),
                       ("ehcp-assessment-request.html", request),
-                      ("ehcp-annual-review.html", review)):
+                      ("ehcp-annual-review.html", review),
+                      ("special-school-places.html", school)):
         out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page]}
     return out
 
@@ -664,6 +690,7 @@ GUIDES = [
     ("ehcp-waiting-time.html", "How long does an EHC plan take?"),
     ("ehcp-refused.html", "What if the council refuses an assessment or a plan?"),
     ("ehcp-annual-review.html", "What should happen at an annual review?"),
+    ("special-school-places.html", "Can my child get a special school place?"),
     ("autism-assessment-waiting-time.html", "How long is the wait for an autism assessment?"),
     ("adhd-assessment-waiting-time.html", "How long is the wait for an ADHD assessment?"),
 ]

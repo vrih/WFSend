@@ -14,7 +14,7 @@
 {% set su_latest = su.by_year.values()|list|last %}
 {% set fc_first = fc.periods[0] %}{% set fc_last = fc.periods[-1] %}
 <h1>School places and children out of school</h1>
-<p class="lede">Whether there are enough specialist school places for children with EHC plans, how fast the council expects demand to grow, and how many children are not in school at all.</p>
+<p class="lede">Whether there are enough specialist school places for children with EHC plans, how fast the council expects demand to grow, and how many children are not in school at all. For how the school in a plan is decided, see <a href="special-school-places.html">can my child get a special school place?</a></p>
 {% set sa = d.ehcp_school_age_neet %}
 {% call ui.key_points() %}
 <li>In May {{ ss_year[:2] ~ ss_year[-2:] }}, the borough's {{ ss.schools|length }} special schools had {{ fmt(ss_tot[1], "count") }} pupils for {{ fmt(ss_tot[0], "count") }} places.</li>
