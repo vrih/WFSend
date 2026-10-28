@@ -73,7 +73,7 @@ For search engines and AI tools, the build also writes:
   date. In templates, show a manifest's download date with `fetched(manifest)`
   rather than `manifest.fetched`, so it counts.
 - schema.org structured data on every page: the site as an `Organization` and
-  `WebSite`, data pages as a `Dataset` (charts, sources cited and download
+  `WebSite` (with the About page as its `publishingPrinciples`), data pages as a `Dataset` (charts, sources cited and download
   links, read from the rendered page), and the waiting-time guides as an
   `FAQPage`.
 - `llms.txt`, listing every page with its description, and `llms-full.txt`,
@@ -87,7 +87,9 @@ For search engines and AI tools, the build also writes:
 The site is plain HTML and CSS. Charts are inline SVG, so no JavaScript
 libraries or external services are needed. A small script adds hover
 tooltips. Every chart has a "Show the numbers" table. The Resources page
-links to advice services and complaint routes. The deadlines calculator sits
+links to advice services and complaint routes. The About page, under Sources,
+says who the site is for, that it is independent, how figures are chosen and
+kept up to date, and how to reuse them or report a mistake. The deadlines calculator sits
 under it (`SUBPAGES` in `build.py`) and works out statutory deadlines in the
 browser (`site/static/deadlines.js`). "SEND in each school" sits under Places
 and "Where the money goes" under Money in the same way. A menu item with

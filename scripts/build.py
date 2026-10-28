@@ -329,7 +329,8 @@ def structured_data(name, info, updated, waits):
            "email": CONTACT_EMAIL, "logo": SITE_URL + "icon-512.png",
            "description": "An independent site showing how special educational needs and disability (SEND) services "
                           "in Waltham Forest are performing, from public sources. It is not run by or affiliated with "
-                          "the London Borough of Waltham Forest."}
+                          "the London Borough of Waltham Forest.",
+           "publishingPrinciples": SITE_URL + "about.html"}
     graph = [org]
     if name == "index.html":
         graph.append({"@type": "WebSite", "@id": SITE_URL + "#website", "name": "Waltham Forest SEND data",
@@ -356,7 +357,8 @@ def structured_data(name, info, updated, waits):
                       "distribution": [{"@type": "DataDownload", "contentUrl": SITE_URL + f,
                                         "encodingFormat": kind[Path(f).suffix]} for f in files]})
     else:
-        graph.append({"@type": "WebPage", **base})
+        graph.append({"@type": "AboutPage" if name == "about.html" else "WebPage", **base,
+                      **({"about": {"@id": ORG_ID}} if name == "about.html" else {})})
     graph = [{k: v for k, v in g.items() if v} for g in graph]
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("</", "<\\/")
     return f'<script type="application/ld+json">{ld}</script>'
@@ -576,6 +578,7 @@ SUBPAGES = [
     ("schools.html", "SEND in each school", "places.html"),
     ("spending.html", "Where the money goes", "money.html"),
     ("reform-plan.html", "SEND Reform Plan", "targets.html"),
+    ("about.html", "About this site", "sources.html"),
 ]
 SECTION = {name: parent for name, _, parent in SUBPAGES}
 # Subpages of each menu item, shown as tabs on the item and its subpages
@@ -597,7 +600,7 @@ GUIDES = [
 ]
 
 # Pages described to search engines as a Dataset
-DATASETS = ({name for name, _ in PAGES} | {name for name, _, parent in SUBPAGES if parent != "resources.html"}) - {"resources.html", "sources.html", "reform-plan.html"}
+DATASETS = ({name for name, _ in PAGES} | {name for name, _, parent in SUBPAGES if parent != "resources.html"}) - {"resources.html", "sources.html", "reform-plan.html", "about.html"}
 
 
 def asset(path):
