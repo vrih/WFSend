@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}About Waltham Forest SEND data{% endblock %}
+{% block description %}An independent site, not run by Waltham Forest Council, that brings together published figures on SEND services in Waltham Forest. Every figure links to its public source. How it works, how it is kept up to date and how to report a mistake.{% endblock %}
+{% block content %}
+<h1>About this site</h1>
+<p class="lede">This site brings together the published figures on special educational needs and disability (SEND) services in Waltham Forest, so families can see how the council and the NHS are doing without searching through statistics releases and committee papers.</p>
+
+<h2>Who it is for</h2>
+<p>It is for parents and carers of children and young people with SEND in Waltham Forest first. It is also for councillors, journalists and anyone else who wants to know how SEND services in the borough compare with London, England and similar areas.</p>
+<p>It does not give advice about individual children. If you need help with your own child's case, see <a href="resources.html">help and resources</a>.</p>
+
+<h2>Who runs it</h2>
+<p>The site is independent. It is not run by, paid for by or affiliated with the London Borough of Waltham Forest, NHS North East London or any school. The council has no say over what appears here.</p>
+<p>It has no adverts and does not track visitors.</p>
+
+<h2>How the figures are chosen</h2>
+<ul>
+  <li><strong>Every figure links to a public source.</strong> Statistics link to the Department for Education (DfE), NHS England or other official release. Figures from council, NHS and Ofsted documents link to the document and give the page number.</li>
+  <li><strong>Figures are copied as published.</strong> They are not rounded or corrected. Where a label or figure is unclear, the page says so. Figures the publisher has hidden to protect privacy are left out.</li>
+  <li><strong>Only the publisher's own copy is used.</strong> Links go to gov.uk, the council's own websites, Ofsted and the NHS, not to copies elsewhere. Freedom of Information responses link to where they were published.</li>
+  <li><strong>The pages say what the figures can't show.</strong> Notes explain changes in how things are counted, small numbers and definitions that differ between sources. The site does not guess at the reasons behind a figure.</li>
+  <li><strong>Waltham Forest is compared fairly.</strong> Most figures are shown alongside London, England and the average of the 10 areas most like Waltham Forest. <a href="sources.html#similar-areas">Similar areas</a> explains how they are chosen.</li>
+</ul>
+<p><a href="sources.html">Sources and method</a> lists every data set and document the site uses, and what to bear in mind when reading the figures.</p>
+
+<h2>How it is kept up to date</h2>
+<p>Figures from the DfE, the Ombudsman, the register of schools, population estimates, council spending, contract notices and SEND Tribunal statistics are downloaded automatically each month. NHS waiting times and figures from council, NHS and Ofsted documents are added by hand when they are published.</p>
+<p>Each page shows when its figures were last updated. <a href="sources.html#upcoming">When new figures are due</a> lists the next releases.</p>
+
+<h2>Reusing the figures</h2>
+<p>You can reuse the figures and the downloadable data on this site, including in news stories, council questions and AI tools. Please link to the original source given for each figure, as well as to this site. DfE statistics are Crown copyright and published under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</p>
+<p>Every chart has a "Show the numbers" table, and each data page links to its figures as CSV files. <a href="data/headlines.csv">The headline figures</a> are in one file. For AI tools, there is a <a href="llms.txt">plain-text map of the site</a> and a Markdown copy of every page.</p>
+
+<h2>Mistakes, new documents and the code</h2>
+<p>If something is wrong or out of date, or you know of a document the site should include, email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+<p>The code and data are open on <a href="https://github.com/vrih/WFSend">GitHub</a>, where you can see every change made to the site and raise an issue.</p>
+{% endblock %}
