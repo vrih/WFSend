@@ -405,9 +405,13 @@ def unique(items):
 
 
 def page_info(name, html):
-    """The title, description and main content of a rendered page."""
+    """The title, description, key points and main content of a rendered page."""
+    box = re.search(r'<div class="answer keypoints">(.*?)</div>', html, re.S)
     return {"title": text_of(re.search(r"<title>(.*?) \| ", html).group(1)),
             "description": text_of(re.search(r'<meta name="description" content="([^"]*)"', html).group(1)),
+            # each written to make sense when quoted on its own, without its "See the figures" link
+            "key_points": [text_of(re.sub(r'<a class="see"[^>]*>.*?</a>', "", li))
+                           for li in re.findall(r"<li>(.*?)</li>", box.group(1), re.S)] if box else [],
             "main": re.search(r'<main id="main"[^>]*>(.*)</main>', html, re.S).group(1)}
 
 
@@ -431,7 +435,7 @@ def structured_data(name, info, updated, waits):
                       "about": {"@type": "Thing", "name": "Special educational needs and disability (SEND) "
                                                           "services in Waltham Forest, London"}})
     base = {"name": info["title"], "description": info["description"], "url": url, "inLanguage": "en-GB",
-            "publisher": {"@id": ORG_ID}, "dateModified": updated}
+            "publisher": {"@id": ORG_ID}, "dateModified": updated, "abstract": " ".join(info["key_points"])}
     if name in waits:
         graph.append({"@type": "FAQPage", **base, "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
@@ -717,7 +721,7 @@ def main():
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.filters["month"] = long_month
     env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, cite_moj=cite_moj, cite_ons=cite_ons, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
-                       ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION, subpages=CHILDREN,
+                       ordinal=ordinal, months=months, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION, subpages=CHILDREN,
                        guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
                        JSONLD=JSONLD, UPDATED=UPDATED, root="",
                        SN=M.SN, SN_MIN=M.SN_MIN, NEIGHBOURS=M.NEIGHBOURS)
@@ -807,8 +811,9 @@ def main():
     for name, title in GUIDES:
         lines.append(f"- [{title}]({SITE_URL}{name}.md): {waits[name]['description']}")
     lines += ["", "## Data pages", ""]
-    lines += [f"- [{label}]({SITE_URL}{name}.md): {info[name]['description']}" for name, label in PAGES]
-    lines += [f"- [{label}]({SITE_URL}{name}.md): {info[name]['description']}" for name, label, _ in SUBPAGES]
+    for name, label in [*PAGES, *((n, l) for n, l, _ in SUBPAGES)]:
+        lines.append(f"- [{label}]({SITE_URL}{name}.md): {info[name]['description']}")
+        lines += [f"  - {point}" for point in info[name]["key_points"]]
     lines += ["", "## Data", "",
               f"- [Every page as plain text]({SITE_URL}llms-full.txt): all the figures, tables and sources in one file",
               f"- [Headline figures (CSV)]({SITE_URL}data/headlines.csv)", ""]

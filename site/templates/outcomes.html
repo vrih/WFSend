@@ -9,10 +9,10 @@
 <p class="lede">Results at the end of primary and secondary school, exclusions and attendance, for pupils with an EHC plan and pupils on SEN support. Cohorts are small, especially for EHC plans, so a change of a few pupils can move the percentage a lot from year to year. The latest year is often provisional.</p>
 {% set k2 = d.ks2[ehc] %}{% set su = d.exclusions["EHC plan"].susp %}{% set pa = d.absence["EHC plan"].persistent %}{% set ne = d.neet["SEN EHC/statement"] %}
 {% call ui.key_points() %}
-<li>At the end of primary school in {{ k2.latest_period }}, {{ fmt(k2.latest[WF]) }} of pupils with an EHC plan met the expected standard in reading, writing and maths, against {{ fmt(k2.latest["England"]) }} in England.</li>
-<li>Pupils with an EHC plan had {{ fmt(su.latest[WF], su.unit) }} suspensions per 100 pupils in {{ su.latest_period }} (England {{ fmt(su.latest["England"], su.unit) }}).</li>
-<li>{{ fmt(pa.latest[WF]) }} of pupils with an EHC plan were persistently absent in {{ pa.latest_period }} (England {{ fmt(pa.latest["England"]) }}).</li>
-<li>{{ fmt(ne.latest[WF]) }} of 16 and 17 year olds with an EHC plan were not in education, employment or training, or not known, in {{ ne.latest_period }} (England {{ fmt(ne.latest["England"]) }}).</li>
+<li>At the end of primary school in {{ k2.latest_period }}, {{ fmt(k2.latest[WF]) }} of pupils with an EHC plan in Waltham Forest met the expected standard in reading, writing and maths, against {{ fmt(k2.latest["England"]) }} in England.{{ ui.see("ks2_educ") }}</li>
+<li>In {{ su.latest_period }}, pupils with an EHC plan in Waltham Forest had {{ fmt(su.latest[WF], su.unit) }} suspensions per 100 pupils, against {{ fmt(su.latest["England"], su.unit) }} in England.{{ ui.see("susp_ehcp") }}</li>
+<li>In {{ pa.latest_period }}, {{ fmt(pa.latest[WF]) }} of pupils with an EHC plan in Waltham Forest were persistently absent, against {{ fmt(pa.latest["England"]) }} in England.{{ ui.see("abs_persistent_ehcp") }}</li>
+<li>In {{ ne.latest_period }}, {{ fmt(ne.latest[WF]) }} of 16 and 17 year olds with an EHC plan in Waltham Forest were not in education, employment or training, or their activity was not known, against {{ fmt(ne.latest["England"]) }} in England.{{ ui.see("neet_ehcp") }}</li>
 {% endcall %}
 
 <h2 id="early-years">End of Reception (early years foundation stage)</h2>

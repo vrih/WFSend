@@ -8,10 +8,10 @@
 <p class="lede">An EHC plan is a legal document setting out a child or young person's needs and the support they must get, from birth to age 25.</p>
 {% set pn0 = d.primary_need.ehcp.rows[0] %}{% set ms = d.placements.rows[0] %}
 {% call ui.key_points() %}
-<li>The council maintained {{ fmt(d.caseload.latest[WF], "count") }} EHC plans in {{ d.caseload.latest_period }}, up {{ fmt(d.growth.growth[WF]) }} since {{ d.growth["from"] }} (England up {{ fmt(d.growth.growth["England"]) }}).</li>
-<li>{{ fmt(d.prevalence.ehcp.latest[WF]) }} of pupils at the borough's schools have an EHC plan, against {{ fmt(d.prevalence.ehcp.latest["England"]) }} in England.</li>
-<li>{{ "Autism" if pn0.label == "Autistic spectrum disorder" else pn0.label }} is the main need for {{ fmt(pn0[WF]) }} of pupils with a plan (England {{ fmt(pn0["England"]) }}).</li>
-<li>{{ fmt(ms[WF]) }} of plans name a mainstream school, against {{ fmt(ms["London"]) }} in London and {{ fmt(ms["England"]) }} in England.</li>
+<li>Waltham Forest Council maintained {{ fmt(d.caseload.latest[WF], "count") }} EHC plans in {{ d.caseload.latest_period|month }}, up {{ fmt(d.growth.growth[WF]) }} since {{ d.growth["from"]|month }} (England up {{ fmt(d.growth.growth["England"]) }}).{{ ui.see("caseload") }}</li>
+<li>In {{ d.prevalence.ehcp.latest_period|month }}, {{ fmt(d.prevalence.ehcp.latest[WF]) }} of pupils at Waltham Forest schools had an EHC plan, against {{ fmt(d.prevalence.ehcp.latest["England"]) }} in England.{{ ui.see("pupils_ehcp") }}</li>
+<li>In {{ d.primary_need.period|month }}, {{ "autism" if pn0.label == "Autistic spectrum disorder" else pn0.label|lower }} was the main need for {{ fmt(pn0[WF]) }} of pupils with an EHC plan in Waltham Forest, against {{ fmt(pn0["England"]) }} in England.{{ ui.see("need-ehcp") }}</li>
+<li>In {{ d.placements.period|month }}, {{ fmt(ms[WF]) }} of Waltham Forest's EHC plans named a mainstream school, against {{ fmt(ms["London"]) }} in London and {{ fmt(ms["England"]) }} in England.{{ ui.see("placements") }}</li>
 {% endcall %}
 
 <h2>Plans maintained by the council</h2>

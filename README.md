@@ -100,7 +100,13 @@ subpages shows them as tabs at the top of the item and each subpage. When a page
 add its old address to `REDIRECTS` in `build.py` so links to it still work.
 
 Each data page opens with a "Key points" box (`key_points` in
-`_macros.html`), written from the latest figures on that page. Check the
+`_macros.html`), written from the latest figures on that page. Each point
+should make sense quoted on its own, because search engines and AI tools lift
+single sentences: name Waltham Forest, give the period and the comparison, spell
+out abbreviations, and don't refer back to another point. End each one with
+`ui.see(id)`, linking to the chart or section it summarises. The points are also
+listed under each page in `llms.txt` and used as the page's `abstract` in its
+structured data. Check the
 wording still makes sense after a refresh, as for the waiting-time answers.
 
 ### Build locally

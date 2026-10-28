@@ -9,9 +9,9 @@
 <h1>Annual reviews</h1>
 <p class="lede">Every EHC plan must be reviewed at least once every 12 months ({{ cite("cfa_2014_s44", "section 44(1)") }}). After the review meeting, the council has <strong>4 weeks</strong> to decide whether to keep, amend or end the plan ({{ cite("send_regs_2014", "regulation 20") }}). The DfE's latest annual review figures for each council cover the {{ ar.period }} calendar year. See <a href="ehcp-annual-review.html">what should happen at a review</a>.</p>
 {% call ui.key_points() %}
-<li>{{ fmt(w.completed_pct) }} of plans due a review in {{ ar.period }} had one completed, against {{ fmt(e.completed_pct) }} in England.</li>
-<li>The council made its decision within the legal 4 weeks after {{ fmt(ar.decision.latest[WF]) }} of reviews (England {{ fmt(ar.decision.latest["England"]) }}).</li>
-<li>{{ "{:,.0f}".format(w.ceased) }} of the {{ "{:,.0f}".format(w.completed) }} reviews completed ended the plan, although the council expects many plans to end once overdue reviews are done.</li>
+<li>In {{ ar.period }}, Waltham Forest Council completed {{ fmt(w.completed_pct) }} of the EHC plan annual reviews that were due, against {{ fmt(e.completed_pct) }} in England.{{ ui.see("ar_completed") }}</li>
+<li>In {{ ar.period }}, Waltham Forest Council made its decision within the legal 4 weeks after {{ fmt(ar.decision.latest[WF]) }} of EHC plan annual reviews, against {{ fmt(ar.decision.latest["England"]) }} in England.{{ ui.see("ar_decision") }}</li>
+<li>{{ "{:,.0f}".format(w.ceased) }} of the {{ "{:,.0f}".format(w.completed) }} annual reviews Waltham Forest Council completed in {{ ar.period }} ended the EHC plan, although the council expects many plans to end once overdue reviews are done.{{ ui.see("ceased") }}</li>
 {% endcall %}
 
 <h2>Reviews completed in {{ ar.period }}</h2>
