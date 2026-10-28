@@ -39,6 +39,11 @@ links back to a public source:
 - **Council, NHS and Ofsted documents**: committee papers, the SEND Local Area
   Improvement Plan and its highlight reports, budget reports, and the 2025 area
   SEND inspection. These are entered by hand with page numbers.
+- **What families say**: the Waltham Forest Parent Forum's surveys of parent
+  carers (January 2025 and May 2021), and figures for Waltham Forest SENDIASS
+  from the impact reports of Centre 404, the charity that runs it. Entered by
+  hand in `data/local/family_experience.yaml`. Healthwatch Waltham Forest has
+  published no report on SEND.
 
 ## How it works
 
@@ -191,7 +196,9 @@ release and needs updating by hand too.
    an FOI response, use the `whatdotheyknow.com` request page. It blocks
    automated downloads, so save the response by hand.
 2. Add the figure to `data/local/council_reported.yaml` (or
-   `data/local/foi.yaml` for an FOI response), with the source id and page
+   `data/local/foi.yaml` for an FOI response, or
+   `data/local/family_experience.yaml` for a parent survey or SENDIASS),
+   with the source id and page
    number. Copy values as printed. If a label is unclear, keep it and
    explain in `note`.
 3. Run `python scripts/build.py` and check the page.

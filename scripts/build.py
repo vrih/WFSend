@@ -616,6 +616,7 @@ def compute():
         "autism": M.autism(),
         "adhd": M.adhd(),
         "cyp_mental_health": M.cyp_mental_health(),
+        "family_survey": M.family_survey(),
     }
 
 
@@ -716,6 +717,7 @@ def main():
     foi = read_yaml("foi.yaml")["responses"]
     inspection = read_yaml("inspection.yaml")
     releases = read_yaml("release_calendar.yaml")
+    family = read_yaml("family_experience.yaml")
 
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
@@ -743,7 +745,7 @@ def main():
 
     built = dt.date.today().isoformat()
     waits = wait_answers(d, local)
-    ctx = dict(d=d, waits=waits, local=local, foi=foi, inspection=inspection, releases=releases, built=built, SOURCES=SOURCES,
+    ctx = dict(d=d, waits=waits, local=local, foi=foi, inspection=inspection, releases=releases, family=family, built=built, SOURCES=SOURCES,
                MANIFEST=MANIFEST, LGO_MANIFEST=LGO_MANIFEST, ONS_MANIFEST=ONS_MANIFEST, PUBS=PUBS, USED=USED, SN_CFG=SN_CFG)
     # sources.html last, so it can list every citation the other pages used
     rendered = {}

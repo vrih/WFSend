@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}SEND inspection and targets in Waltham Forest{% endblock %}
-{% block description %}Ofsted and CQC found "inconsistent experiences and outcomes" for children with SEND in Waltham Forest in 2025. What inspectors asked for, the legal deadlines, the targets the council has and hasn't set, and how it is doing against them.{% endblock %}
+{% block description %}Ofsted and CQC found "inconsistent experiences and outcomes" for children with SEND in Waltham Forest in 2025. What inspectors asked for, the legal deadlines, the targets the council has and hasn't set, how it is doing against them, and what families say about SEND services.{% endblock %}
 {% block content %}
 {% set c = inspection.current %}
 {% set statuses = {"met": ("met", "Met"), "behind": ("behind", "Behind"), "improving": ("improving", "Improving, no end point"), "no data": ("nodata", "No data published"), "unclear": ("unclear", "Unclear")} %}
 <h1>Inspection and targets</h1>
-<p class="lede">What Ofsted and the Care Quality Commission found in 2025, what the law requires, what the council has committed to since, and where no target has been set.</p>
+<p class="lede">What Ofsted and the Care Quality Commission found in 2025, what families say, what the law requires, what the council has committed to since, and where no target has been set.</p>
 {% set counts = {} %}{% for t in local.targets %}{% set _ = counts.update({t.status: counts.get(t.status, 0) + 1}) %}{% endfor %}
 {% call ui.key_points() %}
 <li>The 2025 Ofsted and CQC inspection of SEND services in Waltham Forest found "inconsistent experiences and outcomes", the middle of three possible outcomes.{{ ui.see("inspection") }}</li>
+<li>In a January 2025 Waltham Forest Parent Forum survey, {{ d.family_survey.by_id.overall.dissatisfied }} of {{ d.family_survey.by_id.overall.total }} parents and carers ({{ fmt(d.family_survey.by_id.overall.dissatisfied_pct) }}) were dissatisfied with SEND services in Waltham Forest overall, and {{ d.family_survey.by_id.overall.satisfied }} ({{ fmt(d.family_survey.by_id.overall.satisfied_pct) }}) were satisfied.{{ ui.see("parent-forum-survey") }}</li>
 <li>Waltham Forest Council has published no numeric target for how quickly it issues EHC plans or completes annual reviews.{{ ui.see("measures-with-no-target") }}</li>
 <li>Of the {{ local.targets|length }} commitments in Waltham Forest's SEND improvement plan with a number and a date, by our reading {{ counts.get("met", 0) }} have been met, {{ counts.get("behind", 0) }} are behind, {{ counts.get("improving", 0) }} are improving with no end point and {{ counts.get("no data", 0) }} have no progress figure published.{{ ui.see("commitments-with-a-number-and-a-date") }}</li>
 {% endcall %}
@@ -30,6 +31,79 @@
 {% for q in c.quotes %}
 <blockquote>"{{ q.text }}"<br><span class="source">{{ cite(c.source, q.page) }}</span></blockquote>
 {% endfor %}
+
+{% set fs = d.family_survey %}
+<h2>What families say</h2>
+<p>The Waltham Forest Parent Forum is the borough's parent carer forum, run by parents of children with SEND. Before the inspection, in January 2025, it asked parents and carers how satisfied they were with SEND services and shared the results with inspectors. {{ fs.responses }} answered.</p>
+<figure class="metric" id="parent-forum-survey">
+<figcaption><h3>How satisfied parents were, January 2025</h3>
+<p class="explain">Parents scored each service from 7 (very satisfied) to 1 (not at all satisfied). We count 1 to 3 as dissatisfied and 5 to 7 as satisfied. Each question was answered only by parents it applied to.</p></figcaption>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">Parent Forum survey, January 2025: answers to each question</caption>
+<thead><tr><th scope="col">Question</th><th scope="col">Answered</th><th scope="col">Dissatisfied (1 to 3)</th><th scope="col">Neither (4)</th><th scope="col">Satisfied (5 to 7)</th></tr></thead>
+<tbody>
+{% for q in fs.questions %}
+<tr><th scope="row">{{ q.label }}{% if q.note is defined %}<br><span class="note">{{ q.note }}</span>{% endif %}</th>
+<td>{{ q.total }}</td>
+<td><strong>{{ fmt(q.dissatisfied_pct) }}</strong> ({{ q.dissatisfied }})</td>
+<td>{{ fmt(q.neither_pct) }} ({{ q.neither }})</td>
+<td>{{ fmt(q.satisfied_pct) }} ({{ q.satisfied }})</td></tr>
+{% endfor %}
+</tbody></table></div>
+<details><summary>Show every answer</summary>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">Parent Forum survey, January 2025: number of parents giving each score</caption>
+<thead><tr><th scope="col">Question</th>{% for s in fs.scale %}<th scope="col">{{ s }}</th>{% endfor %}<th scope="col">Page</th></tr></thead>
+<tbody>
+{% for q in fs.questions %}
+<tr><th scope="row">{{ q.question }}</th>{% for c in q.counts %}<td>{{ c }}</td>{% endfor %}<td>{{ q.page }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+</details>
+<p class="note">This is the Forum's own survey, not an official statistic. Anyone could answer, so the results may not reflect all families: parents who are unhappy with a service may be more likely to take part. Some questions were answered by fewer than 50 parents, so a few answers change the percentages a lot. The figures are read from the labels on the report's charts.</p>
+<p class="source">Source: {{ cite(fs.source, "pages 3 to 11 and 13") }}</p>
+</figure>
+
+{% set imp = fs.improvement %}
+<p>Asked "{{ imp.label }}", {% for a in imp.answers %}{{ a.value }}% said "{{ a.label|lower }}"{{ ", " if loop.revindex > 2 else (" and " if not loop.last else "") }}{% endfor %} ({{ cite(fs.source, imp.page) }}). {{ imp.note }}</p>
+
+{% set pr = fs.priorities %}
+<h3>What parents most wanted improved</h3>
+<p>Parents could pick as many areas as they liked. The most chosen were more therapy support ({{ pr.answers[0].value }} parents), social support and activities ({{ pr.answers[1].value }}) and understanding and supporting their child's neurodiversity ({{ pr.answers[2].value }}).</p>
+<details><summary>Show all {{ pr.answers|length }} areas</summary>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">{{ pr.label }}</caption>
+<thead><tr><th scope="col">Area, as printed</th><th scope="col">Parents choosing it</th></tr></thead>
+<tbody>
+{% for a in pr.answers %}<tr><th scope="row">{{ a.label }}</th><td>{{ a.value }}</td></tr>{% endfor %}
+</tbody></table></div>
+<p class="note">{{ pr.note }}</p>
+</details>
+<p class="source">Source: {{ cite(fs.source, pr.page) }}</p>
+
+{% set old = family.forum_survey_2021 %}
+<details><summary>The Forum's earlier survey, {{ old.period }}</summary>
+<p>{{ old.responses }} parents and carers answered. {{ old.note }}</p>
+<div class="tablewrap"><table class="wide">
+<caption class="vh">Parent Forum survey, {{ old.period }}</caption>
+<thead><tr><th scope="col"><span class="vh">Item</span></th><th scope="col">Share of parents, as printed</th></tr></thead>
+<tbody>
+{% for r in old.rows %}<tr><th scope="row">{{ r.label }}</th><td>{{ r.value }}</td></tr>{% endfor %}
+</tbody></table></div>
+<p class="source">Source: {{ cite(old.source, old.page) }}</p>
+</details>
+
+{% set sd = family.sendiass %}
+<h3>Families asking SENDIASS for help</h3>
+<p>Waltham Forest SENDIASS gives families free, impartial advice on SEND. It is run by the charity Centre 404, which publishes its figures in a yearly impact report.</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Year</th><th scope="col">Figure, as printed</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for y in sd.years %}
+<tr><td>{{ y.period }}</td><td>{% for r in y.rows %}{{ r.label }}: <strong>{{ "{:,}".format(r.value) if r.value is number else r.value }}</strong>{% if not loop.last %}<br>{% endif %}{% endfor %}</td><td>{{ cite(y.source, y.page) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">{{ sd.note }} Centre 404's 2025-26 report gives one figure for Enfield and Waltham Forest together, so it isn't shown.</p>
 
 <h2>What the law requires</h2>
 <div class="tablewrap"><table class="wide">

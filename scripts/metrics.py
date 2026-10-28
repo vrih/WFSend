@@ -1422,3 +1422,20 @@ def cyp_mental_health():
                               "One in ten children still waiting for a first contact had waited at least this many days."),
         "sources": [json.loads((f / "source.json").read_text()) for f in folders],
     }
+
+
+# --- What families say (copied by hand into data/local/) ------------------
+
+def family_survey():
+    """The Waltham Forest Parent Forum's January 2025 survey, with each 7-point
+    question grouped into dissatisfied (1 to 3), neither (4) and satisfied (5 to 7).
+    The counts are as printed on the report's charts."""
+    s = yaml.safe_load((ROOT / "data" / "local" / "family_experience.yaml").read_text())["forum_survey"]
+    questions = []
+    for q in s["questions"]:
+        c = q["counts"]  # 7 down to 1
+        total = sum(c)
+        groups = {"satisfied": sum(c[:3]), "neither": c[3], "dissatisfied": sum(c[4:])}
+        questions.append({**q, "total": total, **groups,
+                          **{f"{k}_pct": pct(v, total) for k, v in groups.items()}})
+    return {**s, "questions": questions, "by_id": {q["id"]: q for q in questions}}
