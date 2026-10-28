@@ -105,6 +105,21 @@ schools_budget_mar2026:
   meeting: Cabinet, 17 March 2026
   url: https://civico.net/walthamforest/documents/74237157/download
 
+chapel_end_news_feb2026:
+  title: New school for 100 SEND children planned
+  publisher: London Borough of Waltham Forest
+  date: 2026-02-12
+  url: https://www.walthamforest.gov.uk/stories/new-school-100-send-children-planned
+  notes: Council news story. The Lime Trust's consultation on the plans ran until 26 February 2026.
+
+chapel_end_planning_jul2026:
+  title: "Planning application 261097: Chapel End Early Years Centre, Brookscroft Road (committee report)"
+  publisher: London Borough of Waltham Forest
+  date: 2026-07-07
+  meeting: Planning Committee, 7 July 2026
+  url: https://www.civico.net/walthamforest/documents/74239042/download
+  notes: Change of use from an early years centre to a school for pupils with special educational needs. The report recommends granting permission.
+
 send_regs_2014:
   short: SEND Regulations 2014  # link text for inline citations
   title: The Special Educational Needs and Disability Regulations 2014
