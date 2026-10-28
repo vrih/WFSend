@@ -1,0 +1,172 @@
+# What families say about SEND services in Waltham Forest, from groups that
+# are independent of the council. Each figure cites a document in sources.yaml
+# and a page number. Values are copied as printed.
+#
+# Checked in October 2026:
+# - Waltham Forest Parent Forum: the January 2025 and May 2021 surveys have
+#   figures. Its 2026 reports (CAMHS and the neurodevelopmental pathway, April
+#   2026; nurture rooms, January 2026) give themes and quotes but no figures.
+#   The 2020 lockdown and Covid surveys are left out as out of date.
+# - Waltham Forest SENDIASS publishes no annual report of its own. The figures
+#   below come from the yearly impact reports of Centre 404, which runs it. The
+#   2025-26 report gives one figure for its SENDIASS services in Enfield and
+#   Waltham Forest together (1,002 families), so it is left out.
+# - Healthwatch Waltham Forest has published no report on SEND. Its quarterly
+#   reports cover all health and care services, with children's health a very
+#   small share of the feedback.
+
+forum_survey:
+  source: wfpf_survey_jan2025
+  period: January 2025
+  responses: 255
+  # Each question's answers, from 7 down to 1, as on the charts. Only parents
+  # the question applied to answered it, so the totals differ.
+  scale: ["7 - Very Satisfied", "6 - Somewhat satisfied", "5 - Slightly satisfied", "4 - Neither satisfied nor dissatisfied", "3 - Somewhat dissatisfied", "2 - Very Dissatisfied", "1 - Not at all satisfied"]
+  questions:
+    - id: overall
+      label: "Overall satisfaction with SEND services in Waltham Forest"
+      question: "Q22: What is your overall satisfaction level with SEND services in Waltham Forest?"
+      counts: [7, 12, 20, 54, 43, 44, 75]
+      page: 13
+    - id: send_team
+      label: "Support and communication from the council's SEND team, for parents in contact with it"
+      question: "Q4: If you had contact with the SEND team, how satisfied are you with the support / communication you receive from them?"
+      counts: [13, 14, 21, 32, 27, 25, 76]
+      page: 3
+    - id: ehcp_pathway
+      label: "The EHC plan process (assessments, quality of plan, timeliness of annual reviews), for parents of children with an EHC plan"
+      question: "Q5: If your child/YP has an EHCP, how satisfied are you with the various elements of the pathway (assessments, quality of plan, timelines of annual reviews etc.)?"
+      counts: [13, 21, 17, 29, 24, 31, 61]
+      page: 4
+    - id: sen_support
+      label: "SEND support at their education setting, for parents of children without an EHC plan"
+      question: "Q6: If your child does not have an EHCP plan are you satisfied with the SEND support they are receiving at their education setting?"
+      counts: [9, 1, 10, 10, 12, 9, 14]
+      page: 4
+    - id: transition
+      label: "Moving between phases of education in the past 12 months, such as primary to secondary"
+      question: "Q10: If your child has transitioned from one phase to another in the past 12 months i.e. nursery to reception, primary to secondary, secondary to college- how satisfied have you been with the process?"
+      counts: [16, 6, 11, 11, 7, 6, 26]
+      page: 6
+    - id: preparing_for_adulthood
+      label: "Confidence they have the information needed for the move to adulthood, for parents of young people aged 14 and over"
+      question: "Q17: If your young person is aged 14+ are you confident you have been given all the information needed for them to transition smoothly to adulthood- e.g. info about college courses, employment options, etc."
+      counts: [5, 5, 1, 5, 6, 10, 34]
+      page: 10
+      note: "The scale runs from '7 - Very confident' to '1 - Not at all confident'."
+    - id: school_inclusive
+      label: "How inclusive their child's school or college is"
+      question: "Q7: How would you rate your child's/ young person's educational setting in terms of how inclusive it is?"
+      counts: [45, 33, 41, 40, 35, 15, 18]
+      page: 5
+      note: "The scale runs from '7 - Very inclusive' to '1 - Not at all inclusive'."
+    - id: school_views
+      label: "Whether their views are heard and valued by the school"
+      question: "Q9: Are you satisfied that your views are heard and valued when communicating with the school about your child?"
+      counts: [52, 33, 36, 47, 27, 23, 37]
+      page: 6
+    - id: school_activities
+      label: "Reasonable adjustments to trips, events and other activities at school"
+      question: "Q8: Are you satisfied that the school supports/makes reasonable adjustments to extra-curricular activities and enrichment? e.g. trips, special events, visitors into school."
+      counts: [42, 22, 25, 42, 21, 27, 37]
+      page: 5
+    - id: therapies
+      label: "Speech and language therapy, occupational therapy or physiotherapy from NELFT"
+      question: "Q11: If your child/ young person accesses therapies via NELFT (speech therapy, occupational therapy, physiotherapy) how satisfied are you with the service you are receiving?"
+      counts: [19, 10, 22, 16, 17, 15, 41]
+      page: 7
+    - id: nd_0_5
+      label: "Support while waiting or after diagnosis on the 0 to 5 neurodevelopmental pathway, in the past 12 months"
+      question: "Q12: If your child has been on the 0-5 Neurodevelopmental pathway in the last 12 months, how satisfied have you been with the support you have received whilst waiting or post diagnosis?"
+      counts: [6, 2, 5, 8, 2, 7, 10]
+      page: 7
+    - id: nd_camhs
+      label: "Support while waiting or after diagnosis on the CAMHS neurodevelopmental pathway, in the past 12 months"
+      question: "Q13: If your child has been on the CAMHS Neurodevelopmental pathway in the last 12 months, how satisfied have you been with the support you received whilst waiting or post diagnosis?"
+      counts: [6, 6, 5, 5, 10, 17, 30]
+      page: 8
+    - id: other_health
+      label: "Other health services, such as GP, dentist, hospital, wheelchair services or dietician"
+      question: "Q14: If your child has accessed other health services e.g. GP, dentist, hospital, wheelchair services, dietician etc. how satisfied have you been with the service you have received?"
+      counts: [24, 25, 41, 39, 20, 10, 20]
+      page: 8
+    - id: social_care
+      label: "Social care or a social worker (not short breaks)"
+      question: "Q15: If your child has accessed social care(NOT short breaks)/has a social worker, how satisfied have you been with the service you have received?"
+      counts: [6, 4, 0, 4, 3, 7, 15]
+      page: 9
+    - id: short_breaks
+      label: "Short breaks, including direct payments"
+      question: "Q16: If your child has accessed short breaks (including using direct payments) how satisfied have you been with the service you have received- quality of support, providers, easy access etc.?"
+      counts: [16, 12, 11, 10, 11, 8, 25]
+      page: 9
+    - id: day_services
+      label: "Social care day services, for young people who use them"
+      question: "Q18: If your young person accesses social care day services how satisfied are you with the services you are using?"
+      counts: [4, 4, 2, 2, 0, 3, 7]
+      page: 10
+    - id: community_activities
+      label: "Accessible activities in the community, such as holiday schemes and SEN-friendly leisure"
+      question: "Q19: How satisfied are you with the variety of accessible activities that are available for your child/young person in the community? e.g. non short break holiday schemes, leisure activities that are SEN friendly etc."
+      counts: [7, 9, 14, 32, 25, 34, 74]
+      page: 11
+  improvement:
+    label: "Do you think there have been any improvements to SEND services in the borough in the past 12 months?"
+    page: 11
+    answers:
+      - { label: "No", value: 72 }
+      - { label: "A little improvement", value: 20 }
+      - { label: "Yes", value: 8 }
+    note: "Printed as percentages on a pie chart, without the number who answered."
+  priorities:
+    label: "Q23: What areas do you think need improving the most in the borough?"
+    page: 14
+    note: "Parents could choose more than one. Labels as printed on the chart, which cuts the longer ones short."
+    answers:
+      - { label: "More therapy support", value: 105 }
+      - { label: "Social Support and Activities (making friends, understanding/working through social situations etc, inclusive activities.", value: 104 }
+      - { label: "Understanding and supporting my child's Neurodiversity - ( At school, At home, wider School community)", value: 104 }
+      - { label: "Understanding and supporting my child's mental health and emotional regulation", value: 91 }
+      - { label: "Suitable education options that suit my child's/ young person's needs", value: 82 }
+      - { label: "SEN Support: Ensure that children on SEN support have a plan that is in place following the Assess, Plan, Do, Review process and that…", value: 71 }
+      - { label: "EHCP Quality", value: 71 }
+      - { label: "Annual EHCPs Reviews:Take place within expected timescales", value: 67 }
+      - { label: "Communication between services and parent carers is improved", value: 63 }
+      - { label: "Understanding my child's sensory needs (Sensory Differences)", value: 61 }
+      - { label: "Improved collaboration between school and home", value: 55 }
+      - { label: "More short breaks options", value: 49 }
+      - { label: "Understanding amongst schools, services what it is to be inclusive", value: 42 }
+      - { label: "Improved Preparing for Adulthood information and pathway(post 14 including Post 16 options, information about transitioning to adult…", value: 39 }
+      - { label: "Social Care: Ensure social care assessments take place as part of an EHCP needs assessment/ development of an EHCP", value: 23 }
+      - { label: "Supporting my child to attend school i.e. EBSNA (Emotional Based School Non Attendance) or returning to school after reduced time…", value: 18 }
+
+forum_survey_2021:
+  source: wfpf_survey_may2021
+  period: March to May 2021
+  responses: 107
+  page: Headlines section
+  note: "Different questions from the 2025 survey, so the two can't be compared directly. The report says most parents who answered had children aged 5-11 (46.73%) in mainstream primary schools (36.45%), autistic children (67.29%), and an EHC plan (63.55%)."
+  rows:
+    - { label: "Parents with an EHC plan who think it is of excellent quality", value: "14.95%" }
+    - { label: "Parents with an EHC plan who have had an annual review within the year", value: "34.5%" }
+    - { label: "Parents who rate communication with the SEND team as poor or inadequate", value: "56%" }
+    - { label: "Parents who know who their SEND officer is", value: "36%" }
+    - { label: "Parents of children on SEN support who know their SEN support plan is reviewed at least 3 times a year", value: "9%" }
+    - { label: "Parents who don't think there are enough leisure activities for children with SEND", value: "78%" }
+    - { label: "Parents who have never heard of the Local Offer", value: "67%" }
+
+sendiass:
+  note: "Waltham Forest SENDIASS gives free, impartial advice on SEND to families. Each report counts its work differently (referrals and cases in 2023-24, individual clients in 2024-25), so the years can't be compared. The reports don't define these terms."
+  years:
+    - period: 2023-24
+      source: centre404_impact_2023_24
+      page: 11
+      rows:
+        - { label: "Total referrals", value: 861 }
+        - { label: "Total number of cases delivered by the service", value: 89 }
+    - period: 2024-25
+      source: centre404_impact_2024_25
+      page: 15
+      rows:
+        - { label: "Individual clients supported", value: "2,180" }
+        - { label: "Hours of dedicated support", value: "over 1,800" }

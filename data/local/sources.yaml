@@ -323,3 +323,35 @@ foi_ehc_assessments_may2024:
   date: 2024-05-23
   url: https://www.whatdotheyknow.com/request/ehc_plans_foi_request_31
   notes: Response attached as a Word document, with answers written under each question.
+
+# What families say: surveys by the Waltham Forest Parent Forum (the borough's
+# parent carer forum) and figures from the SENDIASS service. All its reports are
+# listed at https://www.walthamforestparentforum.com/surveys-and-reports
+# The figures are in data/local/family_experience.yaml.
+wfpf_survey_jan2025:
+  title: Waltham Forest SEND Survey January 2025
+  publisher: Waltham Forest Parent Forum
+  date: 2025-01-30
+  url: https://www.walthamforestparentforum.com/_files/ugd/5d2d9a_a84ba17dcb704bd699d2284e25219a92.pdf
+  notes: A flash survey of parent carers, run to inform the February 2025 Ofsted and CQC inspection and shared with inspectors. 255 responses by 29 January 2025. The figures are read from the labels on the report's charts. Date is the date the PDF was made.
+
+wfpf_survey_may2021:
+  title: Waltham Forest Parent Forum Consultation on Services and Support, May 2021
+  publisher: Waltham Forest Parent Forum
+  date: 2021-05-17
+  url: https://www.walthamforestparentforum.com/_files/ugd/5d2d9a_d89c73cc19e541a6ae57ace4c6d4e3d5.docx
+  notes: A Word document with no page numbers. 107 responses to an online survey from 29 March to 17 May 2021.
+
+centre404_impact_2023_24:
+  title: Impact Report 2023-24
+  publisher: Centre 404
+  date: 2024-09-17
+  url: https://centre404.org.uk/wp-content/uploads/2025/07/C-404-Impact-Report-A4-2023-24-V6-FINAL.pdf
+  notes: Centre 404 is the charity that runs Waltham Forest SENDIASS. Page numbers are pages of the PDF, where each page is a two-page spread. Date is the date the PDF was made. All its impact reports are at https://centre404.org.uk/impact-reports/
+
+centre404_impact_2024_25:
+  title: Impact Report 2024-2025
+  publisher: Centre 404
+  date: 2025-10-21
+  url: https://centre404.org.uk/wp-content/uploads/2025/10/Impact-Report-2024-2025.pdf
+  notes: Page numbers are pages of the PDF, where each page is a two-page spread. Date is the date the PDF was made.
