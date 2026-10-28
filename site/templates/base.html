@@ -12,6 +12,7 @@
 {% else %}
 <link rel="canonical" href="https://{{ domain }}/{{ "" if page == "index.html" else page }}">
 <meta property="og:url" content="https://{{ domain }}/{{ "" if page == "index.html" else page }}">
+<link rel="alternate" type="text/markdown" href="{{ page }}.md">
 {% endif %}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Waltham Forest SEND data">
