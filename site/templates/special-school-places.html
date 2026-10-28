@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% set w = waits[page] %}
+{% set ss, su, fc, pl = d.special_schools, d.specialist_units, d.specialist_forecasts, d.placements %}
+{% set ss_year = ss.latest_period %}{% set may = "May " ~ ss_year[:2] ~ ss_year[-2:] %}
+{% set ss_tot = ss.wf_totals[ss_year] %}
+{% set su_latest = su.by_year.values()|list|last %}
+{% set np = foi.no_placement_may2026 %}
+{% block title %}Special school places in Waltham Forest: how to get one{% endblock %}
+{% block description %}{{ w.description }}{% endblock %}
+{% block content %}
+<h1>Can my child get a special school place?</h1>
+{{ ui.short_answer(w, "DfE figures for " ~ pl.period|replace("Jan ", "January ") ~ " and " ~ may ~ ", and the council's forecast.", "This is not legal advice.") }}
+
+<h2 id="how">How the school in an EHC plan is decided</h2>
+<p>Children with an EHC plan don't apply for a school place in the usual way. The school is named in section I of the plan.</p>
+<ol>
+  <li><strong>You get a draft plan.</strong> It doesn't name a school yet. You have at least 15 days to comment on it and to ask for a particular school or college to be named ({{ cite("cfa_2014_s38", "section 38(2) and (5)") }}; {{ cite("send_regs_2014", "regulation 13(1)") }}). This can be a mainstream school, a special school, an academy or free school, a college, or an independent special school approved by the government.</li>
+  <li><strong>The council consults the school</strong> you asked for, and any other school it is thinking of naming ({{ cite("cfa_2014_s39", "section 39(2)") }}).</li>
+  <li><strong>The council must name the school you asked for</strong> unless it is unsuitable for your child's age, ability, aptitude or special educational needs, or your child going there would be incompatible with the efficient education of other children or the efficient use of resources ({{ cite("cfa_2014_s39", "section 39(3) and (4)") }}).</li>
+  <li><strong>If it can't name your choice</strong>, it names a school or type of school it thinks is right. That must be a mainstream school unless this goes against your wishes or the efficient education of other children ({{ cite("cfa_2014_s39", "section 39(5)") }}; {{ cite("cfa_2014_s33", "section 33(2)") }}).</li>
+</ol>
+<p>The same steps apply when a plan is changed after an annual review, including before your child moves school. See <a href="ehcp-annual-review.html#moving-school">the deadlines for changing school</a>.</p>
+<p>Visit the schools you are thinking of and ask whether they can meet your child's needs. <a href="schools.html">SEND in each school</a> lists every school in the borough with the ages and needs each specialist setting takes.</p>
+
+<h2 id="places">Specialist places in Waltham Forest</h2>
+<p>In {{ may }}, the borough's {{ ss.schools|length }} special schools had {{ fmt(ss_tot[1], "count") }} pupils for {{ fmt(ss_tot[0], "count") }} places. Mainstream schools had another {{ fmt(su_latest.resourced + su_latest.units, "count") }} places in resourced provision, where a mainstream school has a specialist base ({{ su_latest.primary|int }} primary and {{ su_latest.secondary|int }} secondary).</p>
+<div class="tablewrap"><table>
+<caption class="vh">Special schools in Waltham Forest, {{ may }}</caption>
+<thead><tr><th scope="col">School</th><th scope="col">Places</th><th scope="col">Pupils on roll</th></tr></thead>
+<tbody>
+{% for s in ss.schools %}
+<tr><th scope="row">{{ s.name }}</th><td>{{ fmt(s.places, "count") }}</td><td>{{ fmt(s.pupils, "count") }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe((ss.sources + su.sources)|unique|list) }}</p>
+{% set full = local.sufficiency_findings["items"][0] %}
+<p>The council's SEND Sufficiency Plan says its special schools are full, and that 14% of their places are taken by children from other boroughs ({{ cite(local.sufficiency_findings.source, full.page) }}). In September 2026, Lime Academy Hornbeam opened a new site at Chapel End in Walthamstow, with "specialist primary provision for Autism" ({{ cite("hornbeam_welcome") }}). It took its first 40 pupils ({{ cite("hornbeam_newsletter_sep2026", 3) }}). See <a href="places.html#new-places-at-chapel-end">new places at Chapel End</a>.</p>
+
+<h2 id="where">Where children with EHC plans go to school</h2>
+<p>In Waltham Forest, a larger share of children and young people with a plan are in mainstream schools, and a smaller share in special schools, than in London or England.</p>
+<div class="tablewrap"><table>
+<caption class="vh">Where children and young people with EHC plans are placed, {{ pl.period }}</caption>
+<thead><tr><th scope="col">Setting</th><th scope="col">Waltham Forest</th><th scope="col">London</th><th scope="col">England</th></tr></thead>
+<tbody>
+{% for r in pl.rows if not r.label.startswith("of which") or r.label == "of which independent special" %}
+<tr><th scope="row">{{ r.label[:1]|upper ~ r.label[1:] }}</th><td>{{ fmt(r[WF]) }}</td><td>{{ fmt(r["London"]) }}</td><td>{{ fmt(r["England"]) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe(pl.sources) }}. Share of all EHC plans, ages 0 to 25, in {{ pl.period|replace("Jan ", "January ") }}.</p>
+<p>The council says 12% of children and young people with a plan are placed outside the borough ({{ cite(local.sufficiency_findings.source, 28) }}). For more, see <a href="plans.html#placements">EHC plans</a>.</p>
+
+<h2 id="demand">Demand is forecast to grow</h2>
+<p>The council forecasts {{ fmt(fc.wf_counts[fc.periods[0]], "count") }} children living in the borough needing a specialist place in {{ fc.periods[0] }}, rising to {{ fmt(fc.wf_counts[fc.periods[-1]], "count") }} by {{ fc.periods[-1] }}. That is growth of {{ fmt(fc.latest[WF] - 100) }}, against {{ fmt(fc.latest["London"] - 100) }} across London ({{ cite_dfe(fc.sources)|replace("Source: ", "") }}).</p>
+<p>In May 2026, the council said {{ np.rows[0].value }} children and young people with an EHC plan had no school or college named. It said it doesn't record what type of place each child is waiting for ({{ cite(np.source, 1) }}). See <a href="places.html#no-school-named">children with no school named</a>.</p>
+
+<h2 id="disagree">If you disagree with the school named</h2>
+<p>You can appeal to the SEND Tribunal against the school or type of school named in the plan, or against no school being named ({{ cite("cfa_2014_s51", "section 51(2)(c)") }}). If your appeal is only about the school, you don't need a mediation certificate first ({{ cite("cfa_2014_s55", "section 55(2)") }}). See <a href="ehcp-refused.html#how">how to appeal</a>. For free advice, contact <a href="https://www.ipsea.org.uk/">IPSEA</a> or <a href="https://www.walthamforestsendiass.org.uk/">Waltham Forest SENDIASS</a>.</p>
+
+<h2 id="caveats">What these figures don't tell you</h2>
+<ul>
+  <li>They can't tell you whether a particular school will have a place for your child. That depends on the school, your child's needs and the council's decision.</li>
+  <li>The forecast and the places can't be set against each other to work out a shortfall. The DfE says the forecasts count children living in the borough, wherever they go to school, while the places are in the borough's schools, whoever fills them.</li>
+  <li>The forecasts are the council's own and may change.</li>
+</ul>
+
+{{ ui.other_guides(page, guides) }}
+{% endblock %}

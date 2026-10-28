@@ -162,6 +162,27 @@ cfa_2014_s51:
   date: 2014-09-01
   url: https://www.legislation.gov.uk/ukpga/2014/6/section/51
 
+cfa_2014_s33:
+  short: Children and Families Act 2014  # link text for inline citations
+  title: Children and Families Act 2014, section 33 (Children and young people with EHC plans)
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/ukpga/2014/6/section/33
+
+cfa_2014_s38:
+  short: Children and Families Act 2014  # link text for inline citations
+  title: "Children and Families Act 2014, section 38 (Preparation of EHC plans: draft plan)"
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/ukpga/2014/6/section/38
+
+cfa_2014_s39:
+  short: Children and Families Act 2014  # link text for inline citations
+  title: "Children and Families Act 2014, section 39 (Finalising EHC plans: request for particular school or other institution)"
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/ukpga/2014/6/section/39
+
 tribunal_rules_2008:
   short: Tribunal Procedure Rules 2008  # link text for inline citations
   title: The Tribunal Procedure (First-tier Tribunal) (Health, Education and Social Care Chamber) Rules 2008, rule 20 (Starting proceedings)
