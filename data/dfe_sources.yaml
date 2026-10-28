@@ -69,6 +69,10 @@ publications:
     title: Key stage 4 destination measures
     publisher: Department for Education
     url: https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-destination-measures
+  attainment_19:
+    title: Level 2 and 3 attainment age 16 to 25
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/level-2-and-3-attainment-by-young-people-aged-19
   neet:
     title: Participation in education, training and NEET age 16 to 17 by local authority
     publisher: Department for Education
@@ -233,6 +237,18 @@ datasets:
       ethnicity_major: [Total]
       disadvantage_status: [Total]
       destination_group: [Overall destination]
+
+  # Young people are counted in the council where they went to school in Year 11.
+  # The file also has future cohorts with no figures yet (marked z).
+  attainment_19_sen:
+    publication: attainment_19
+    file_id: 882297f8-d6da-42fd-ac3e-791d1936ad4b
+    title: Attainment by local authority data
+    keep:
+      breakdown_topic: [Type of SEN (Special Educational Need) Provision]
+      age: [by age 19]
+      subject: [Total]
+      qualification_type: [Total Level 2, Total Level 3]
 
   neet_sen:
     publication: neet

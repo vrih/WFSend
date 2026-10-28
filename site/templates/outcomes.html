@@ -1,18 +1,19 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}Outcomes for pupils with SEND in Waltham Forest{% endblock %}
-{% block description %}Results at the end of Reception, at 11 and at 16, exclusions, attendance, and what young people do next, for pupils with SEND in Waltham Forest.{% endblock %}
+{% block description %}Results at the end of Reception, at 11, at 16 and by 19, exclusions, attendance, and what young people do next, for pupils with SEND in Waltham Forest.{% endblock %}
 {% block content %}
 {% set ehc = "Education, health and care plan" %}
 {% set sup = "SEN support / SEN without an EHC plan" %}
 <h1>Outcomes for children and young people with SEND</h1>
-<p class="lede">Results at the end of primary and secondary school, exclusions and attendance, for pupils with an EHC plan and pupils on SEN support. Cohorts are small, especially for EHC plans, so a change of a few pupils can move the percentage a lot from year to year. The latest year is often provisional.</p>
-{% set k2 = d.ks2[ehc] %}{% set su = d.exclusions["EHC plan"].susp %}{% set pa = d.absence["EHC plan"].persistent %}{% set ne = d.neet["SEN EHC/statement"] %}
+<p class="lede">Results at the end of primary and secondary school and by age 19, exclusions and attendance, for pupils with an EHC plan and pupils on SEN support. Cohorts are small, especially for EHC plans, so a change of a few pupils can move the percentage a lot from year to year. The latest year is often provisional.</p>
+{% set k2 = d.ks2[ehc] %}{% set su = d.exclusions["EHC plan"].susp %}{% set pa = d.absence["EHC plan"].persistent %}{% set ne = d.neet["SEN EHC/statement"] %}{% set l3 = d.attainment_19["Education Health and Care plan"]["3"] %}
 {% call ui.key_points() %}
 <li>At the end of primary school in {{ k2.latest_period }}, {{ fmt(k2.latest[WF]) }} of pupils with an EHC plan in Waltham Forest met the expected standard in reading, writing and maths, against {{ fmt(k2.latest["England"]) }} in England.{{ ui.see("ks2_educ") }}</li>
 <li>In {{ su.latest_period }}, pupils with an EHC plan in Waltham Forest had {{ fmt(su.latest[WF], su.unit) }} suspensions per 100 pupils, against {{ fmt(su.latest["England"], su.unit) }} in England.{{ ui.see("susp_ehcp") }}</li>
 <li>In {{ pa.latest_period }}, {{ fmt(pa.latest[WF]) }} of pupils with an EHC plan in Waltham Forest were persistently absent, against {{ fmt(pa.latest["England"]) }} in England.{{ ui.see("abs_persistent_ehcp") }}</li>
 <li>In {{ ne.latest_period }}, {{ fmt(ne.latest[WF]) }} of 16 and 17 year olds with an EHC plan in Waltham Forest were not in education, employment or training, or their activity was not known, against {{ fmt(ne.latest["England"]) }} in England.{{ ui.see("neet_ehcp") }}</li>
+<li>Of young people with an EHC plan in Waltham Forest who turned 19 in {{ l3.latest_period }}, {{ fmt(l3.latest[WF]) }} were qualified to level 3 (the same level as 2 A levels), against {{ fmt(l3.latest["London"]) }} in London and {{ fmt(l3.latest["England"]) }} in England.{{ ui.see("l3_19_ehcp") }}</li>
 {% endcall %}
 
 <h2 id="early-years">End of Reception (early years foundation stage)</h2>
@@ -61,4 +62,12 @@
 
 <h3>The council's own figures</h3>
 <p>Of 351 young people in Years 12 and 13 with an EHC plan, 339 (97%) were in education, employment or training and 12 (3%) were not. This is a three-month average for 2024/25 ({{ cite("hwb_oct2025_highlight", 17) }}). There is no baseline yet for young people aged 18 and over.</p>
+
+{% set l2 = d.attainment_19["Education Health and Care plan"]["2"] %}
+<h2 id="by-19">Qualifications by age 19</h2>
+<p>These show whether young people had reached level 2 or level 3 by the end of the school year in which they turned 19, wherever they studied after Year 11. Young people are grouped by their SEN status in Year 11 and counted in the area where they went to school then. Only young people who were at state-funded schools in Year 11 are included.</p>
+{% set note_19 = "In " ~ l3.latest_period ~ ", the EHC plan group in Waltham Forest was " ~ fmt(l3.wf_cohort[l3.latest_period], "count") ~ " young people, so a few young people can move the percentage a lot. Rankings between areas should be read with this in mind. The EHC plan group includes young people who had a statement of SEN, which EHC plans replaced between 2014 and 2018." %}
+{{ figure(l3, ranked=True, y_max=100, also=d.attainment_19["SEN support"]["3"], start="2015/16", note=note_19) }}
+{{ figure(l2, y_max=100, also=d.attainment_19["SEN support"]["2"], start="2015/16") }}
+
 {% endblock %}
