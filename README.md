@@ -7,7 +7,8 @@ links back to a public source:
 - **Department for Education statistics**, downloaded automatically from
   [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/):
   EHC plan numbers, requests, 20-week timeliness, annual reviews, placements,
-  SEND Tribunal appeal rates, results at key stages 2 and 4,
+  SEND Tribunal appeal rates, results at key stages 2 and 4 and level 2 and 3
+  qualifications by age 19,
   pupils' main type of need, pupils with SEND in each mainstream school, exclusions, special school places and forecast
   demand, elective home education and children missing education. Each figure is shown for Waltham
   Forest, London, England and the average of Waltham Forest's 10 statistical
@@ -169,6 +170,7 @@ release comes out. Check them each year:
 | Early years foundation stage profile | Autumn |
 | Key stage 4 destination measures | Autumn |
 | NEET age 16 to 17 by local authority | Summer |
+| Level 2 and 3 attainment age 16 to 25 | Spring |
 | School capacity (special school places, specialist places in mainstream schools, forecasts) | Spring |
 
 The statistical neighbours are listed in `data/dfe_sources.yaml` under

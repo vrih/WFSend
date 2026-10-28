@@ -10,6 +10,17 @@
     "rows": 1650,
     "fetched": "2026-10-25"
   },
+  "attainment_19_sen": {
+    "title": "Attainment by local authority data",
+    "publication": "attainment_19",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/882297f8-d6da-42fd-ac3e-791d1936ad4b",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/882297f8-d6da-42fd-ac3e-791d1936ad4b/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 4410,
+    "fetched": "2026-10-28"
+  },
   "cme_census": {
     "title": "Children missing education at census date",
     "publication": "cme",

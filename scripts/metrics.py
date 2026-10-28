@@ -966,6 +966,24 @@ def neet():
     return res
 
 
+def attainment_19():
+    # The file also lists future cohorts with no figures yet; leave them out.
+    rows = [r for r in load("attainment_19_sen") if num(r["percentage"]) is not None]
+    res = {}
+    for g, (group, label) in zip(GROUP_IDS, (("Education Health and Care plan", "young people with an EHC plan"), ("SEN support", "young people on SEN support"), ("No identified SEN", "young people with no SEN"))):
+        res[group] = {}
+        for level, what in (("Level 2", "the same level as 5 GCSEs at grade 4 or above"), ("Level 3", "the same level as 2 A levels")):
+            series, periods = collect([r for r in rows if r["breakdown"] == group and r["qualification_level"] == level],
+                                      lambda r: num(r["percentage"]), label=academic)
+            res[group][level[-1]] = build(series, periods, id=f"l{level[-1]}_19_{g}", unit="percent",
+                                          title=f"{level} by age 19: {label}",
+                                          explain=f"Young people qualified to {level.lower()} ({what}) by the end of the school year in which they turned 19. They are counted in the area of the state-funded school they went to in Year 11, by their SEN status then.",
+                                          sources=["attainment_19_sen"],
+                                          wf_cohort={academic(r["time_period"]): num(r["number_in_ss_cohort"]) for r in rows
+                                                     if r["breakdown"] == group and r["qualification_level"] == level and r["la_name"] == WF})
+    return res
+
+
 # --- NHS community health services waiting lists (hand-downloaded) --------
 
 NHS = ROOT / "data" / "nhs"

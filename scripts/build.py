@@ -612,6 +612,7 @@ def compute():
         "eyfs": M.eyfs(),
         "ks4_destinations": M.ks4_destinations(),
         "neet": M.neet(),
+        "attainment_19": M.attainment_19(),
         "community_waits": M.community_waits(),
         "autism": M.autism(),
         "adhd": M.adhd(),
