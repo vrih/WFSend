@@ -700,15 +700,16 @@ def main():
     (OUT / "robots.txt").write_text("User-agent: *\nContent-Signal: search=yes, ai-input=yes, ai-train=yes\n"
                                     f"Allow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
     # a plain-text map of the site for AI tools (https://llmstxt.org)
+    # links go to each page's Markdown copy, written below
     lines = ["# Waltham Forest SEND data", "",
              "> Independent site showing how special educational needs and disability (SEND) services in Waltham "
              "Forest, London, are performing. Every figure links to a public source (DfE, NHS England, Ofsted, "
              "council papers). Not run by Waltham Forest Council.", "", "## Waiting times", ""]
     for name, title in GUIDES:
-        lines.append(f"- [{title}](https://{DOMAIN}/{name}): {waits[name]['description']}")
+        lines.append(f"- [{title}]({SITE_URL}{name}.md): {waits[name]['description']}")
     lines += ["", "## Data pages", ""]
-    lines += [f"- [{label}]({page_url(name)}): {info[name]['description']}" for name, label in PAGES]
-    lines += [f"- [{label}]({page_url(name)}): {info[name]['description']}" for name, label, _ in SUBPAGES]
+    lines += [f"- [{label}]({SITE_URL}{name}.md): {info[name]['description']}" for name, label in PAGES]
+    lines += [f"- [{label}]({SITE_URL}{name}.md): {info[name]['description']}" for name, label, _ in SUBPAGES]
     lines += ["", "## Data", "",
               f"- [Every page as plain text]({SITE_URL}llms-full.txt): all the figures, tables and sources in one file",
               f"- [Headline figures (CSV)]({SITE_URL}data/headlines.csv)", ""]
@@ -718,8 +719,11 @@ def main():
             f"Links in brackets are the public sources. Built {built}.\n"]
     for name in names:
         updated = rendered[name][1]
-        full.append(f"---\n\nPage: {page_url(name)}\n" + (f"Figures last updated: {updated}\n" if updated else "")
-                    + "\n" + plain_text(name, info[name]["main"]))
+        page = (f"Page: {page_url(name)}\n" + (f"Figures last updated: {updated}\n" if updated else "")
+                + "\n" + plain_text(name, info[name]["main"]))
+        full.append("---\n\n" + page)
+        # each page as Markdown at its address plus .md (https://llmstxt.org), linked from the page's <head>
+        (OUT / f"{name}.md").write_text(page, encoding="utf-8")
     (OUT / "llms-full.txt").write_text("\n".join(full), encoding="utf-8")
     print(f"Built {len(names)} pages into {OUT.relative_to(ROOT)}/")
 

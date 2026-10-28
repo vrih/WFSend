@@ -78,6 +78,8 @@ For search engines and AI tools, the build also writes:
   `FAQPage`.
 - `llms.txt`, listing every page with its description, and `llms-full.txt`,
   every page converted to Markdown with its tables and source links.
+- a Markdown copy of each page at its address plus `.md` (`plans.html.md`),
+  linked from the page's `<head>` and from `llms.txt`.
 - `robots.txt`, allowing all crawlers, with a `Content-Signal` line saying the
   content may be used for search, AI answers and AI training.
 - `404.html`, which GitHub Pages serves for any missing address.
