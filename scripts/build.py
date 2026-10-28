@@ -282,6 +282,7 @@ def wait_answers(d, local):
         "ehcp-waiting-time.html": f"In {y}, {pc(wf['within20'])} of new plans were issued within the legal 20 weeks.",
         "autism-assessment-waiting-time.html": f"A median of {months(med['NELFT'])} from referral to a first appointment at NELFT.",
         "adhd-assessment-waiting-time.html": f"{pc(o52['North East London'][p])} of children waiting in North East London had waited a year or more.",
+        "ehcp-assessment-request.html": f"Who can ask and how. In {d['six_weeks']['latest_period']}, {pc(d['six_weeks']['latest'][M.WF])} of requests were decided within the legal 6 weeks.",
         "ehcp-refused.html": f"You can appeal. Across England, {d['tribunal_outcomes']['latest_year']['in_favour_pct']:.1f}% of appeals decided went at least partly the family's way.",
     }
     adhd = [
@@ -318,9 +319,27 @@ def wait_answers(d, local):
          "want mediation. You don't need a certificate at all if your appeal is only about the school or type of "
          "school named in the plan, or that no school is named."),
     ]
+    rq, rr, sw = d["requests"], d["requests_rate"], d["six_weeks"]
+    request = [
+        ("How do I ask for an EHC needs assessment in Waltham Forest?",
+         f"Write to the council's SEND service, using its request form or your own letter or email, and say why "
+         f"you think your child needs an assessment. A parent, a young person aged 16 or over, or the child's "
+         f"school can ask. A school needs your consent. The council must tell you within 6 weeks whether it will "
+         f"assess. In {sw['latest_period']} it made {pc(sw['latest'][M.WF])} of these decisions within 6 weeks "
+         f"(England {pc(sw['latest']['England'])})."),
+        ("Does my child need a diagnosis, or the school's support, to get an EHC needs assessment?",
+         "No. The council must assess if your child has or may have special educational needs and may need "
+         "support through an EHC plan. A diagnosis is not part of the legal test, and you can ask yourself "
+         "even if the school doesn't agree."),
+        ("How many families ask for an EHC needs assessment in Waltham Forest?",
+         f"The council received {rq['latest'][M.WF]:,.0f} requests in {rq['latest_period']}. That is "
+         f"{rr['latest'][M.WF]:.1f} for every 1,000 children aged 2 to 18 living in the borough, against "
+         f"{rr['latest']['London']:.1f} in London and {rr['latest']['England']:.1f} in England."),
+    ]
     out = {}
     for page, faq in (("ehcp-waiting-time.html", ehcp), ("autism-assessment-waiting-time.html", autism),
-                      ("adhd-assessment-waiting-time.html", adhd), ("ehcp-refused.html", refusal)):
+                      ("adhd-assessment-waiting-time.html", adhd), ("ehcp-refused.html", refusal),
+                      ("ehcp-assessment-request.html", request)):
         out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page]}
     return out
 
@@ -619,10 +638,11 @@ REDIRECTS = {
 # Plain-language answers to the questions families ask. Linked from the home
 # page and Resources rather than the menu.
 GUIDES = [
+    ("ehcp-assessment-request.html", "How do I ask for an EHC needs assessment?"),
     ("ehcp-waiting-time.html", "How long does an EHC plan take?"),
+    ("ehcp-refused.html", "What if the council refuses an assessment or a plan?"),
     ("autism-assessment-waiting-time.html", "How long is the wait for an autism assessment?"),
     ("adhd-assessment-waiting-time.html", "How long is the wait for an ADHD assessment?"),
-    ("ehcp-refused.html", "What if the council refuses an assessment or a plan?"),
 ]
 
 # Pages described to search engines as a Dataset
@@ -646,7 +666,7 @@ def main():
     env = Environment(loader=FileSystemLoader(SITE / "templates"), undefined=StrictUndefined,
                       autoescape=True, trim_blocks=True, lstrip_blocks=True)
     env.filters["month"] = long_month
-    env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, cite_moj=cite_moj, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
+    env.globals.update(figure=figure, cite=cite, cite_dfe=cite_dfe, cite_moj=cite_moj, cite_ons=cite_ons, fmt=fmt, rank_text=rank_text, sn_rank_text=sn_rank_text,
                        ordinal=ordinal, charts=charts, Markup=Markup, WF=M.WF, AREAS=AREAS, pages=PAGES, section=SECTION, subpages=CHILDREN,
                        guides=GUIDES, asset=asset, contact_email=CONTACT_EMAIL, domain=DOMAIN, fetched=fetched,
                        JSONLD=JSONLD, UPDATED=UPDATED, root="",

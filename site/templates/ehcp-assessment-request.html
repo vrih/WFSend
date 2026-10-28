@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% set w = waits[page] %}
+{% set rq, rr, sw = d.requests, d.requests_rate, d.six_weeks %}
+{% set y = rq.latest_period %}
+{% block title %}How to ask for an EHC needs assessment in Waltham Forest{% endblock %}
+{% block description %}{{ w.description }}{% endblock %}
+{% block content %}
+<h1>How do I ask for an EHC needs assessment?</h1>
+{{ ui.short_answer(w, "DfE figures for requests made in " ~ sw.latest_period ~ ".", "This is not legal advice.") }}
+
+<p>An EHC needs assessment is the council's check of your child's education, health and care needs. It is the first step to getting an EHC plan, which is a legal document setting out the support your child must get.</p>
+
+<h2 id="who">Who can ask</h2>
+<ul>
+  <li><strong>You</strong>, as the child's parent or carer.</li>
+  <li><strong>A young person</strong> aged 16 or over can ask for themselves.</li>
+  <li><strong>Your child's school, nursery or college.</strong> The council says a school needs your consent first, and should meet you to talk about your child's needs and the support they get ({{ cite("lbwf_ehcna_request_page") }}).</li>
+</ul>
+<p>The law gives these people the right to ask ({{ cite("cfa_2014_s36", "section 36(1)") }}). The council says other professionals who work with your child can also send a request, with your consent ({{ cite("lbwf_ehcna_request_page") }}). You don't need anyone's support to ask yourself.</p>
+
+<h2 id="how">How to ask in Waltham Forest</h2>
+<p>The council says you can do any of these ({{ cite("lbwf_ehcna_request_page") }}):</p>
+<ul>
+  <li>fill in its parent request form, on its <a href="https://www.walthamforest.gov.uk/schools-education-and-learning/local-offer-special-educational-needs-and-disability-send/education-health-and-care-plans-ehcp/referrals-and-assessments-education-health-and-care-plans">referrals and assessments page</a></li>
+  <li>write your own letter or email saying why you think your child needs an assessment</li>
+  <li>ask your child's school to make the request</li>
+</ul>
+<p>Send it to the SEND service by email to <a href="mailto:SEND.EHCNA@walthamforest.gov.uk">SEND.EHCNA@walthamforest.gov.uk</a>, or by post to SEND Service, Fellowship Square, Walthamstow, London E17 4JF. Keep a copy and note the date you sent it: the legal deadlines count from the day the council gets it.</p>
+
+<h3 id="what-to-say">What to say</h3>
+<p>The council must assess if your child has or may have special educational needs, and it may be necessary for them to get support through an EHC plan ({{ cite("cfa_2014_s36", "section 36(8)") }}). So it helps to say:</p>
+<ul>
+  <li>what your child finds hard, at school or nursery and at home</li>
+  <li>what support they already get, and whether it is enough</li>
+  <li>any reports you have, for example from the school, a speech and language therapist, a doctor or an educational psychologist</li>
+</ul>
+<p>Your child doesn't need a diagnosis, and you can ask even if the school doesn't agree. <a href="https://www.ipsea.org.uk/">IPSEA</a> has model letters for asking for an assessment, and <a href="https://www.walthamforestsendiass.org.uk/">Waltham Forest SENDIASS</a> can help you write one.</p>
+
+<h2 id="next">What happens next</h2>
+<ol>
+  <li><strong>The council asks for your views.</strong> Before it decides, it must consult you. If it is thinking of assessing, it must tell you that you can give your views and send evidence ({{ cite("cfa_2014_s36", "section 36(4) and (7)") }}).</li>
+  <li><strong>It decides whether to assess: 6 weeks.</strong> It must tell you within 6 weeks of getting your request ({{ cite("send_regs_2014", "regulation 5(1)") }}). If it says no, it must give its reasons and tell you how to appeal ({{ cite("cfa_2014_s36", "section 36(5)") }}). See <a href="ehcp-refused.html">what to do if the council refuses</a>.</li>
+  <li><strong>If it assesses, the final plan is due in 20 weeks</strong> from your request. See <a href="ehcp-waiting-time.html">how long EHC plans take in Waltham Forest</a>.</li>
+</ol>
+<p>Enter the date the council got your request in the <a href="deadlines.html#assessment">deadlines calculator</a> to see each date.</p>
+
+<h2 id="figures">Requests in Waltham Forest</h2>
+<p>The council received {{ fmt(rq.latest[WF], "count") }} requests in {{ y }}. {% set peak = namespace(p=rq.periods[0]) %}{% for p in rq.periods if rq.series[WF][p] > rq.series[WF][peak.p] %}{% set peak.p = p %}{% endfor %}They rose from {{ fmt(rq.series[WF][rq.periods[0]], "count") }} in {{ rq.periods[0] }} to {{ fmt(rq.series[WF][peak.p], "count") }} in {{ peak.p }}{% if peak.p != y %}, and have fallen since{% endif %}. To compare areas of different sizes, the table divides requests by the number of children aged 2 to 18 living in each area.</p>
+<div class="tablewrap"><table>
+<caption class="vh">Requests for an EHC needs assessment in {{ y }}</caption>
+<thead><tr><th scope="col">Area</th><th scope="col">Requests</th><th scope="col">Per 1,000 children aged 2 to 18</th><th scope="col">Decided within 6 weeks</th></tr></thead>
+<tbody>
+{% for a in (WF, "London", "England") %}
+<tr><th scope="row">{{ a }}</th><td>{{ fmt(rq.latest[a], "count") }}</td><td>{{ "%.1f"|format(rr.latest[a]) }}</td><td>{{ fmt(sw.latest[a]) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe((rq.sources + sw.sources)|unique|list) }}; {{ cite_ons() }}. Figures for {{ y }}.</p>
+<p>Waltham Forest made decisions on time for {{ fmt(sw.latest[WF]) }} of requests, {{ ordinal(sw.rank.pos) }} of {{ sw.rank.of }} London boroughs (1st = best). In {{ sw.periods[0] }} the figure was {{ fmt(sw.series[WF][sw.periods[0]]) }}. For charts and rankings, see <a href="assessments.html">assessments</a>.</p>
+
+<h2 id="changes">Council plans that could affect requests</h2>
+<p>The council has plans aimed at slowing the growth in EHC plans, such as giving schools more specialist advice and keeping some children on early years funding for longer. They don't change your right to ask for an assessment, or the legal test the council must apply ({{ cite("cfa_2014_s36", "section 36") }}). See <a href="assessments.html#policy">changes that could affect who gets assessed</a>.</p>
+
+<h2 id="caveats">What these figures don't tell you</h2>
+<ul>
+  <li>A fall in requests doesn't show on its own whether fewer children need support or fewer families are asking.</li>
+  <li>The council has said data from its case management system is inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}).</li>
+</ul>
+
+{{ ui.other_guides(page, guides) }}
+{% endblock %}
