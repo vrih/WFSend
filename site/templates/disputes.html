@@ -5,7 +5,7 @@
 {% block content %}
 {% set ap = d.appeal_rate %}
 <h1>Complaints and SEND Tribunal appeals</h1>
-<p class="lede">Families can appeal to the SEND Tribunal against many council decisions, such as refusing to assess, refusing to issue a plan, what a plan says, or the school it names.</p>
+<p class="lede">Families can appeal to the SEND Tribunal against many council decisions, such as refusing to assess, refusing to issue a plan, what a plan says, or the school it names. See <a href="ehcp-refused.html">how to appeal</a>.</p>
 {% set ar_ = d.appeal_rate %}{% set to = d.tribunal_outcomes %}{% set ty = to.latest_year %}{% set lgo_last = d.ombudsman.by_year|selectattr("year", "ne", d.ombudsman.by_year[-1].year)|list|last %}
 {% call ui.key_points() %}
 <li>{{ fmt(ar_.appeals[WF][ar_.latest_period], "count") }} appeals about Waltham Forest decisions were registered with the SEND Tribunal in {{ ar_.latest_period }}: an appeal rate of {{ fmt(ar_.latest[WF]) }}, against {{ fmt(ar_.latest["England"]) }} in England.</li>

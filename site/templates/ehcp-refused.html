@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% import "_macros.html" as ui %}
+{% set w = waits[page] %}
+{% set to = d.tribunal_outcomes %}{% set ty = to.latest_year %}
+{% set ap = d.appeal_rate %}
+{% set ref, und, ni = d.refused, d.undecided, d.not_issued %}
+{% set ry = ref.latest_period %}
+{% set capita = local.assessments_2025_capita %}
+{% block title %}Refused an EHC needs assessment or plan in Waltham Forest? What you can do{% endblock %}
+{% block description %}{{ w.description }}{% endblock %}
+{% block content %}
+<h1>What if the council refuses an EHC needs assessment or plan?</h1>
+{{ ui.short_answer(w, "Ministry of Justice figures for England in " ~ ty.academic_year ~ ", and DfE figures for Waltham Forest in " ~ ap.latest_period ~ ".", "The Tribunal does not publish outcomes for each council. This is not legal advice.") }}
+
+<h2 id="decisions">Decisions you can appeal</h2>
+<p>A parent, or a young person over school-leaving age, can appeal to the SEND Tribunal against these council decisions ({{ cite("cfa_2014_s51", "section 51(2)") }}):</p>
+<ul>
+  <li>not to carry out an EHC needs assessment</li>
+  <li>not to issue an EHC plan after an assessment</li>
+  <li>what a plan says about a child's needs or the support they must get, when the plan is first issued or after it is changed</li>
+  <li>the school or college named in a plan, or that no school is named</li>
+  <li>not to change a plan after an annual review, or not to carry out a re-assessment</li>
+  <li>to stop a plan</li>
+</ul>
+<p>If the council refuses an assessment, its letter must tell you that you can appeal, the time limit, and how to get mediation ({{ cite("send_regs_2014", "regulation 5(3)") }}). You can also ask the council to explain its decision and think again, but this does not stop the time limit for appealing.</p>
+
+<h2 id="how">How to appeal</h2>
+<ol>
+  <li><strong>Contact a mediation adviser.</strong> The decision letter tells you who to contact. The adviser explains mediation, which is a meeting with the council and an independent mediator to try to settle the disagreement.</li>
+  <li><strong>Get a mediation certificate.</strong> The adviser must give you one once they have explained mediation, whether you go on to mediation or tell them you don't want to ({{ cite("cfa_2014_s55", "section 55(3) to (5)") }}). You don't need a certificate if your appeal is only about the school or type of school named in the plan, or that no school is named ({{ cite("cfa_2014_s55", "section 55(2)") }}).</li>
+  <li><strong>Send your appeal to the Tribunal</strong> within 2 months of the date of the decision letter, or 1 month after the date of the mediation certificate, whichever is later ({{ cite("tribunal_rules_2008", "rule 20(1)(c)") }}). See <a href="https://www.gov.uk/special-educational-needs-disability-tribunal">GOV.UK: appeal to the SEND Tribunal</a>.</li>
+</ol>
+<p>Enter the date of your decision letter in the <a href="deadlines.html#appeal">deadlines calculator</a> to see your dates. Appealing is free. For help with an appeal, contact <a href="https://www.ipsea.org.uk/">IPSEA</a> or <a href="https://www.walthamforestsendiass.org.uk/">Waltham Forest's SEND information, advice and support service (SENDIASS)</a>.</p>
+
+<h2 id="outcomes">What happens to appeals</h2>
+<p>The Ministry of Justice publishes appeal outcomes only for England as a whole, not for each council. In {{ ty.academic_year }}, the Tribunal decided {{ fmt(ty.decided, "count") }} appeals across England. {{ fmt(ty.decided_in_favour, "count") }} of them ({{ fmt(ty.in_favour_pct) }}) went at least partly in the family's favour. That doesn't mean the family got everything they asked for. Councils also conceded {{ fmt(ty.conceded, "count") }} appeals before a decision, meaning they stopped opposing them ({{ cite_moj(to.manifest) }}).</p>
+<p>In {{ ap.latest_period }}, {{ fmt(ap.appeals[WF][ap.latest_period], "count") }} appeals were registered about Waltham Forest decisions. That is {{ fmt(ap.latest[WF]) }} of the decisions families could have appealed, against {{ fmt(ap.latest["England"]) }} in England. The council says that in 2024, 27% of appeals against it were about refusals to assess ({{ cite(local.tribunal_appeals.source, local.tribunal_appeals.page) }}).</p>
+<p class="source">{{ cite_dfe(ap.sources) }}. See <a href="disputes.html">complaints and appeals</a> for the trends.</p>
+
+<h2 id="how-often">How often Waltham Forest says no</h2>
+<p>{{ w.faq[1][1] }}</p>
+<div class="tablewrap"><table>
+<caption class="vh">Decisions on requests and assessments in {{ ry }}</caption>
+<thead><tr><th scope="col">Area</th><th scope="col">Requests refused</th><th scope="col">Requests with no decision recorded</th><th scope="col">Assessments that ended without a plan</th></tr></thead>
+<tbody>
+{% for a in (WF, "London", "England") %}
+<tr><th scope="row">{{ a }}</th><td>{{ fmt(ref.latest[a]) }}</td><td>{{ fmt(und.latest[a]) }}</td><td>{{ fmt(ni.latest[a]) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite_dfe(ref.sources + ni.sources) }}. Figures for {{ ry }}.</p>
+{% set no_dec = capita.rows|selectattr("label", "equalto", "Assessments with no decision recorded")|first %}
+<p>The council's own records for {{ capita.period }} also show no requests refused, and no decision recorded for {{ no_dec.value }} of assessments. The council says this "needs further investigation" ({{ cite(capita.source, no_dec.page) }}). The council has also said data from its case management system is inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}). So these figures can't tell you how likely the council is to say no to your child.</p>
+<p>For the trends, see <a href="assessments.html">assessments</a>.</p>
+
+<h2 id="complaints">Appeals and complaints</h2>
+<p>An appeal is about a decision: whether to assess, whether to issue a plan, or what the plan says. If the council has missed a deadline, not replied or not delivered what a plan says, you can complain to the council and then to the Local Government and Social Care Ombudsman. The Ombudsman usually won't look at decisions you can appeal. See <a href="resources.html#complaints">how to complain</a>.</p>
+
+{{ ui.other_guides(page, guides) }}
+{% endblock %}

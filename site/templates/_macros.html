@@ -65,15 +65,15 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 <p class="source">Source: {{ cite(block.source, block.page) }}{% if block.note is defined %}. {{ block.note }}{% endif %}</p>
 {% endmacro %}
 
-{% macro short_answer(w, when) %}
+{% macro short_answer(w, when, caveat="This is how long other families waited, not a prediction for your child.") %}
 <div class="answer">
   <p><strong>Short answer.</strong> {{ w.faq[0][1] }}</p>
-  <p class="note">{{ when }} This is how long other families waited, not a prediction for your child.</p>
+  <p class="note">{{ when }} {{ caveat }}</p>
 </div>
 {% endmacro %}
 
 {% macro other_guides(page, guides) %}
-<h2>Other waiting times</h2>
+<h2>More guides for families</h2>
 <ul>
 {% for href, title in guides if href != page %}
   <li><a href="{{ href }}">{{ title }}</a></li>
