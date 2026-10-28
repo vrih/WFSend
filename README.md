@@ -60,7 +60,8 @@ scripts/make_icons.py     draws the favicon, home screen icons and share image -
 
 Plain-language guides answer the questions families ask when they start
 out: how to ask for an EHC needs assessment, how long an EHC plan, an autism
-assessment and an ADHD assessment take, and what to do if the council refuses an assessment or a plan (`GUIDES` in
+assessment and an ADHD assessment take, what to do if the council refuses an assessment or a plan, and what should
+happen at an annual review (`GUIDES` in
 `build.py`).
 Their short answers are written in `wait_answers()` in `scripts/build.py` from
 the latest figures, and reused for the page description, FAQ structured data

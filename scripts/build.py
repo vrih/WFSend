@@ -283,6 +283,7 @@ def wait_answers(d, local):
         "autism-assessment-waiting-time.html": f"A median of {months(med['NELFT'])} from referral to a first appointment at NELFT.",
         "adhd-assessment-waiting-time.html": f"{pc(o52['North East London'][p])} of children waiting in North East London had waited a year or more.",
         "ehcp-assessment-request.html": f"Who can ask and how. In {d['six_weeks']['latest_period']}, {pc(d['six_weeks']['latest'][M.WF])} of requests were decided within the legal 6 weeks.",
+        "ehcp-annual-review.html": f"What should happen, and the deadlines. In {d['ar']['period']}, {pc(d['ar']['decision']['latest'][M.WF])} of decisions after a review were made within the legal 4 weeks.",
         "ehcp-refused.html": f"You can appeal. Across England, {d['tribunal_outcomes']['latest_year']['in_favour_pct']:.1f}% of appeals decided went at least partly the family's way.",
     }
     adhd = [
@@ -336,10 +337,31 @@ def wait_answers(d, local):
          f"{rr['latest'][M.WF]:.1f} for every 1,000 children aged 2 to 18 living in the borough, against "
          f"{rr['latest']['London']:.1f} in London and {rr['latest']['England']:.1f} in England."),
     ]
+    arc, ard = d["ar"]["completed"], d["ar"]["decision"]
+    review = [
+        ("What should happen at an EHC plan annual review in Waltham Forest?",
+         f"The council must review your child's EHC plan at least every 12 months. You should get at least 2 weeks' "
+         f"notice of the review meeting, and the reports at least 2 weeks before it. After the meeting the council "
+         f"has 4 weeks to tell you whether it will keep, change or end the plan. In {d['ar']['period']}, Waltham "
+         f"Forest completed {pc(arc['latest'][M.WF])} of the reviews due (England {pc(arc['latest']['England'])}), "
+         f"and made its decision within 4 weeks after {pc(ard['latest'][M.WF])} of them (England "
+         f"{pc(ard['latest']['England'])})."),
+        ("When must an EHC plan be updated before my child changes school?",
+         "If your child is moving to a new phase of education, such as from nursery to primary school or from "
+         "primary to secondary school, the plan must be reviewed and, if needed, changed to name the new school by "
+         "15 February in the year of the move. For a move from secondary school to a college or other post-16 "
+         "setting, the date is 31 March."),
+        ("What can I do if an annual review is late, or I disagree with the outcome?",
+         "If the review doesn't happen or the council's decision is late, you can complain to the council and then "
+         "to the Local Government and Social Care Ombudsman. If the council decides not to change the plan, or to "
+         "end it, you can appeal to the SEND Tribunal. If it changes the plan, you can appeal against the new plan "
+         "once it is final."),
+    ]
     out = {}
     for page, faq in (("ehcp-waiting-time.html", ehcp), ("autism-assessment-waiting-time.html", autism),
                       ("adhd-assessment-waiting-time.html", adhd), ("ehcp-refused.html", refusal),
-                      ("ehcp-assessment-request.html", request)):
+                      ("ehcp-assessment-request.html", request),
+                      ("ehcp-annual-review.html", review)):
         out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page]}
     return out
 
@@ -641,6 +663,7 @@ GUIDES = [
     ("ehcp-assessment-request.html", "How do I ask for an EHC needs assessment?"),
     ("ehcp-waiting-time.html", "How long does an EHC plan take?"),
     ("ehcp-refused.html", "What if the council refuses an assessment or a plan?"),
+    ("ehcp-annual-review.html", "What should happen at an annual review?"),
     ("autism-assessment-waiting-time.html", "How long is the wait for an autism assessment?"),
     ("adhd-assessment-waiting-time.html", "How long is the wait for an ADHD assessment?"),
 ]
