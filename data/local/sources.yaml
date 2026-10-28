@@ -155,6 +155,13 @@ cfa_2014_s55:
   date: 2014-09-01
   url: https://www.legislation.gov.uk/ukpga/2014/6/section/55
 
+cfa_2014_s51:
+  short: Children and Families Act 2014  # link text for inline citations
+  title: Children and Families Act 2014, section 51 (Appeals)
+  publisher: legislation.gov.uk
+  date: 2014-09-01
+  url: https://www.legislation.gov.uk/ukpga/2014/6/section/51
+
 tribunal_rules_2008:
   short: Tribunal Procedure Rules 2008  # link text for inline citations
   title: The Tribunal Procedure (First-tier Tribunal) (Health, Education and Social Care Chamber) Rules 2008, rule 20 (Starting proceedings)

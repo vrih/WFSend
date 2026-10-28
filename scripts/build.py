@@ -233,7 +233,7 @@ def months(days):
 
 
 def wait_answers(d, local):
-    """The plain-language answers at the top of each waiting-time page. They are
+    """The plain-language answers at the top of each guide for families. They are
     also used for the meta description, the FAQ structured data and llms.txt, so
     search engines and AI tools quote the same words people read."""
     pc = lambda v: f"{v:.0f}%"
@@ -282,6 +282,7 @@ def wait_answers(d, local):
         "ehcp-waiting-time.html": f"In {y}, {pc(wf['within20'])} of new plans were issued within the legal 20 weeks.",
         "autism-assessment-waiting-time.html": f"A median of {months(med['NELFT'])} from referral to a first appointment at NELFT.",
         "adhd-assessment-waiting-time.html": f"{pc(o52['North East London'][p])} of children waiting in North East London had waited a year or more.",
+        "ehcp-refused.html": f"You can appeal. Across England, {d['tribunal_outcomes']['latest_year']['in_favour_pct']:.1f}% of appeals decided went at least partly the family's way.",
     }
     adhd = [
         ("How long is the wait for an ADHD assessment in Waltham Forest?",
@@ -293,9 +294,33 @@ def wait_answers(d, local):
          f"England {pc(o52['England'][p])} and {pc(o104['England'][p])}."),
         autism[2],
     ]
+    to, ap = d["tribunal_outcomes"]["latest_year"], d["appeal_rate"]
+    ref, und = d["refused"], d["undecided"]
+    ry = ref["latest_period"]
+    capita = {r["label"]: r["value"] for r in local["assessments_2025_capita"]["rows"]}
+    refusal = [
+        ("What can I do if Waltham Forest refuses an EHC needs assessment or an EHC plan?",
+         f"You can appeal to the SEND Tribunal. First you must contact a mediation adviser, who gives you a "
+         f"certificate whether or not you go on to mediation. Your appeal must reach the Tribunal within 2 months "
+         f"of the decision letter, or 1 month after the certificate if that is later. Across England, "
+         f"{to['in_favour_pct']:.1f}% of the appeals the Tribunal decided in {to['academic_year']} went at least "
+         f"partly in the family's favour. In {ap['latest_period']}, {ap['appeals'][M.WF][ap['latest_period']]:,.0f} "
+         f"appeals were made about Waltham Forest decisions."),
+        ("How often does Waltham Forest refuse an EHC needs assessment?",
+         ("The council reported refusing no requests to assess" if ref["latest"][M.WF] == 0 else
+          f"The council reported refusing {pc(ref['latest'][M.WF])} of requests to assess")
+         + f" in {ry}, against {pc(ref['latest']['London'])} in London and {pc(ref['latest']['England'])} in "
+         f"England. But it recorded no decision for {pc(und['latest'][M.WF])} of requests (England "
+         f"{pc(und['latest']['England'])}), and its own records show no decision for {capita['Assessments with no decision recorded']} "
+         f"of assessments in 2025. So the published figures may leave out some refusals."),
+        ("Do I have to go to mediation before I appeal?",
+         "No. You must contact a mediation adviser and get a certificate, but you can tell the adviser you don't "
+         "want mediation. You don't need a certificate at all if your appeal is only about the school or type of "
+         "school named in the plan, or that no school is named."),
+    ]
     out = {}
     for page, faq in (("ehcp-waiting-time.html", ehcp), ("autism-assessment-waiting-time.html", autism),
-                      ("adhd-assessment-waiting-time.html", adhd)):
+                      ("adhd-assessment-waiting-time.html", adhd), ("ehcp-refused.html", refusal)):
         out[page] = {"faq": faq, "description": faq[0][1], "teaser": teasers[page]}
     return out
 
@@ -591,12 +616,13 @@ REDIRECTS = {
     "inspection.html": "targets.html#inspection",
 }
 
-# Plain-language answers for families starting out. Linked from the home page
-# rather than the menu.
+# Plain-language answers to the questions families ask. Linked from the home
+# page and Resources rather than the menu.
 GUIDES = [
     ("ehcp-waiting-time.html", "How long does an EHC plan take?"),
     ("autism-assessment-waiting-time.html", "How long is the wait for an autism assessment?"),
     ("adhd-assessment-waiting-time.html", "How long is the wait for an ADHD assessment?"),
+    ("ehcp-refused.html", "What if the council refuses an assessment or a plan?"),
 ]
 
 # Pages described to search engines as a Dataset
@@ -707,7 +733,7 @@ def main():
     lines = ["# Waltham Forest SEND data", "",
              "> Independent site showing how special educational needs and disability (SEND) services in Waltham "
              "Forest, London, are performing. Every figure links to a public source (DfE, NHS England, Ofsted, "
-             "council papers). Not run by Waltham Forest Council.", "", "## Waiting times", ""]
+             "council papers). Not run by Waltham Forest Council.", "", "## Guides for families", ""]
     for name, title in GUIDES:
         lines.append(f"- [{title}]({SITE_URL}{name}.md): {waits[name]['description']}")
     lines += ["", "## Data pages", ""]
