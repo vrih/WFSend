@@ -94,6 +94,10 @@ London {{ fmt(m.latest["London"], u) }} · England {{ fmt(m.latest["England"], u
 <p class="source">Source: {{ cite(block.source, pages[0] if pages|length == 1 else "pages " ~ pages|join(" and ")) }}</p>
 {% endmacro %}
 
+{# A link from a key point to the chart or section it summarises, so a quoted point
+   can be traced to its figures and their source #}
+{% macro see(id) %} <a class="see" href="#{{ id }}">See the figures</a>{% endmacro %}
+
 {% macro key_points() %}
 <div class="answer keypoints">
 <p><strong>Key points</strong></p>

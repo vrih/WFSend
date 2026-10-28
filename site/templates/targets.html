@@ -9,9 +9,9 @@
 <p class="lede">What Ofsted and the Care Quality Commission found in 2025, what the law requires, what the council has committed to since, and where no target has been set.</p>
 {% set counts = {} %}{% for t in local.targets %}{% set _ = counts.update({t.status: counts.get(t.status, 0) + 1}) %}{% endfor %}
 {% call ui.key_points() %}
-<li>The 2025 inspection found "inconsistent experiences and outcomes", the middle of three possible outcomes.</li>
-<li>The council has published no numeric target for how quickly it issues EHC plans or completes annual reviews.</li>
-<li>Of {{ local.targets|length }} commitments with a number and a date, by our reading {{ counts.get("met", 0) }} have been met, {{ counts.get("behind", 0) }} are behind, {{ counts.get("improving", 0) }} are improving with no end point and {{ counts.get("no data", 0) }} have no progress figure published.</li>
+<li>The 2025 Ofsted and CQC inspection of SEND services in Waltham Forest found "inconsistent experiences and outcomes", the middle of three possible outcomes.{{ ui.see("inspection") }}</li>
+<li>Waltham Forest Council has published no numeric target for how quickly it issues EHC plans or completes annual reviews.{{ ui.see("measures-with-no-target") }}</li>
+<li>Of the {{ local.targets|length }} commitments in Waltham Forest's SEND improvement plan with a number and a date, by our reading {{ counts.get("met", 0) }} have been met, {{ counts.get("behind", 0) }} are behind, {{ counts.get("improving", 0) }} are improving with no end point and {{ counts.get("no data", 0) }} have no progress figure published.{{ ui.see("commitments-with-a-number-and-a-date") }}</li>
 {% endcall %}
 
 <h2 id="inspection">The 2025 inspection</h2>

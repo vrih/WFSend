@@ -8,9 +8,9 @@
 <p class="lede">Families can appeal to the SEND Tribunal against many council decisions, such as refusing to assess, refusing to issue a plan, what a plan says, or the school it names. See <a href="ehcp-refused.html">how to appeal</a>.</p>
 {% set ar_ = d.appeal_rate %}{% set to = d.tribunal_outcomes %}{% set ty = to.latest_year %}{% set lgo_last = d.ombudsman.by_year|selectattr("year", "ne", d.ombudsman.by_year[-1].year)|list|last %}
 {% call ui.key_points() %}
-<li>{{ fmt(ar_.appeals[WF][ar_.latest_period], "count") }} appeals about Waltham Forest decisions were registered with the SEND Tribunal in {{ ar_.latest_period }}: an appeal rate of {{ fmt(ar_.latest[WF]) }}, against {{ fmt(ar_.latest["England"]) }} in England.</li>
-<li>Across England, {{ fmt(ty.in_favour_pct) }} of the SEND Tribunal appeals decided in {{ ty.academic_year }} went at least partly in the family's favour. This is not published for each council.</li>
-<li>The Ombudsman published {{ lgo_last.published }} decisions about SEND in Waltham Forest in {{ lgo_last.year }}, and found fault in {{ lgo_last.upheld }}.</li>
+<li>{{ fmt(ar_.appeals[WF][ar_.latest_period], "count") }} appeals about Waltham Forest Council's SEND decisions were registered with the SEND Tribunal in {{ ar_.latest_period }}: an appeal rate of {{ fmt(ar_.latest[WF]) }}, against {{ fmt(ar_.latest["England"]) }} in England.{{ ui.see("appeal_rate") }}</li>
+<li>Across England, {{ fmt(ty.in_favour_pct) }} of the SEND Tribunal appeals decided in {{ ty.academic_year }} went at least partly in the family's favour. The Ministry of Justice doesn't publish this for each council, so there is no figure for Waltham Forest.{{ ui.see("tribunal_outcomes") }}</li>
+<li>In {{ lgo_last.year }}, the Local Government and Social Care Ombudsman published {{ lgo_last.published }} decisions about SEND in Waltham Forest, and found fault by the council in {{ lgo_last.upheld }}.{{ ui.see("ombudsman") }}</li>
 {% endcall %}
 
 <h2>Tribunal appeals</h2>

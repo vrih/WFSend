@@ -7,10 +7,10 @@
 <p class="lede">Health services are commissioned by NHS North East London and mostly provided by NELFT. The 2025 inspection asked health leaders to improve waiting times "at pace" for neurodevelopmental assessment, CAMHS, continence and wheelchair services ({{ cite("ofsted_2025", 6) }}).</p>
 {% set cw = d.community_waits %}
 {% call ui.key_points() %}
-{% if cw %}{% set cp = cw.services|selectattr("name", "equalto", "Community paediatrics")|first %}<li>{{ fmt(cp.pct18.series.NELFT[cw.latest]) }} of children on NELFT's community paediatrics list had waited over 18 weeks in {{ cw.latest }} (England {{ fmt(cp.pct18.series.England[cw.latest]) }}).</li>{% endif %}
-{% set at = waits["autism-assessment-waiting-time.html"].teaser %}<li>Autism assessment: {{ at[:1]|lower ~ at[1:] }}</li>
-<li>ADHD assessment: {{ waits["adhd-assessment-waiting-time.html"].teaser }}</li>
-{% if d.autism and d.autism.after_periods %}<li>NELFT's autism and mental health figures changed suddenly in {{ d.autism.after_periods[0] }}, so later months are shown separately.</li>{% endif %}
+{% if cw %}{% set cp = cw.services|selectattr("name", "equalto", "Community paediatrics")|first %}<li>In {{ cw.latest|month }}, {{ fmt(cp.pct18.series.NELFT[cw.latest]) }} of children on the community paediatrics waiting list at NELFT, the NHS trust that runs children's community health services in Waltham Forest, had waited over 18 weeks (England {{ fmt(cp.pct18.series.England[cw.latest]) }}).{{ ui.see("nhs-waits") }}</li>{% endif %}
+{% set au = d.autism %}<li>Children seen by NELFT, the NHS trust that assesses children in Waltham Forest, who had a first autism assessment appointment in the 3 months to {{ au.latest|month }} had waited a median of {{ months(au.median.series.NELFT[au.latest]) }} since referral.{{ ui.see("autism") }}</li>
+{% set ad = d.adhd %}<li>In {{ ad.latest|month }}, {{ fmt(ad.over52.series["North East London"][ad.latest]) }} of children aged 5 to 17 waiting for an ADHD assessment in North East London, which includes Waltham Forest, had waited a year or more (England {{ fmt(ad.over52.series["England"][ad.latest]) }}).{{ ui.see("adhd") }}</li>
+{% if d.autism and d.autism.after_periods %}<li>NELFT's published autism and mental health figures changed suddenly in {{ d.autism.after_periods[0]|month }}, so this site shows later months separately.{{ ui.see("autism") }}</li>{% endif %}
 {% endcall %}
 <blockquote>"{{ inspection.current.quotes[2].text }}" ({{ cite("ofsted_2025", inspection.current.quotes[2].page) }})</blockquote>
 
