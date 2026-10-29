@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}How are SEND services in Waltham Forest performing?{% endblock %}
-{% block description %}Independent figures on SEND services in Waltham Forest: how long EHC plans take, annual reviews, tribunal appeals, NHS waiting times and money. Every figure links to its source.{% endblock %}
+{% block description %}{% with t = d.timeliness %}In {{ t.latest_period }}, Waltham Forest issued {{ fmt(t.latest[WF]) }} of new EHC plans within the legal 20 weeks{% if t.rank %}, {{ "joint " if t.rank.joint }}{{ ordinal(t.rank.pos) }} of {{ t.rank.of }} London boroughs{% endif %} (England {{ fmt(t.latest["England"]) }}).{% endwith %} Independent figures on EHC plans, annual reviews, tribunal appeals, NHS waits and SEND money. Every figure links to its public source.{% endblock %}
 {% block content %}
 {% set t = d.timeliness %}
 {% set ar = d.ar %}
