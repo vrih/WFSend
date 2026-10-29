@@ -9,7 +9,8 @@ links back to a public source:
   EHC plan numbers, requests, 20-week timeliness, annual reviews, placements,
   SEND Tribunal appeal rates, results at key stages 2 and 4 and level 2 and 3
   qualifications by age 19,
-  pupils' main type of need, pupils with SEND in each mainstream school, exclusions, special school places and forecast
+  pupils' main type of need, EHC plans and SEN support among children in need
+  and children in care, pupils with SEND in each mainstream school, exclusions, special school places and forecast
   demand, elective home education and children missing education. Each figure is shown for Waltham
   Forest, London, England and the average of Waltham Forest's 10 statistical
   neighbours ("similar areas"), with rankings against the London boroughs and
@@ -176,6 +177,7 @@ release comes out. Check them each year:
 | Key stage 4 destination measures | Autumn |
 | NEET age 16 to 17 by local authority | Summer |
 | Level 2 and 3 attainment age 16 to 25 | Spring |
+| Outcomes for children in need, including children looked after | Spring |
 | School capacity (special school places, specialist places in mainstream schools, forecasts) | Spring |
 
 The statistical neighbours are listed in `data/dfe_sources.yaml` under

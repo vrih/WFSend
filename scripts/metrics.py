@@ -465,6 +465,32 @@ def sen_prevalence():
     }
 
 
+CARE_GROUPS = (("cla", "CLA 12 months at 31 March", "children in care"),
+               ("cpp", "CPPO at 31 March", "children on a child protection plan"),
+               ("cin", "CINO at 31 March", "other children in need"))
+
+
+def care_sen():
+    """SEN of pupils known to children's social care. The DfE rounds national
+    and regional counts to the nearest 10, so its published percentages are
+    used rather than recomputed."""
+    rows = load("cin_sen")
+    res = {}
+    for g, group, label in CARE_GROUPS:
+        sub = [r for r in rows if r["social_care_group"] == group]
+        ehcp, periods = collect(sub, lambda r: num(r["pt_ehc_plan"]), label=academic)
+        support, _ = collect(sub, lambda r: num(r["pt_sen_support"]), label=academic)
+        common = dict(unit="percent", rank=False, sources=["cin_sen"],
+                      wf_pupils={academic(r["time_period"]): num(r["t_pupils"]) for r in sub if r["la_name"] == WF})
+        res[g] = {
+            "ehcp": build(ehcp, periods, id=f"care_ehcp_{g}", title=f"Pupils with an EHC plan: {label}", **common,
+                          explain=f"Share of {label} who had an EHC plan, among those at school or in alternative provision. "
+                                  "Counted at 31 March each year, in the council responsible for them."),
+            "support": build(support, periods, id=f"care_support_{g}", title=f"Pupils on SEN support: {label}", **common),
+        }
+    return res
+
+
 SCHOOL_PHASES = {"State-funded primary": "primary", "State-funded secondary": "secondary"}
 
 
