@@ -89,6 +89,10 @@ publications:
     title: Children missing education
     publisher: Department for Education
     url: https://explore-education-statistics.service.gov.uk/find-statistics/children-missing-education
+  cin_outcomes:
+    title: Outcomes for children in need, including children looked after by local authorities in England
+    publisher: Department for Education
+    url: https://explore-education-statistics.service.gov.uk/find-statistics/outcomes-for-children-in-need-including-children-looked-after-by-local-authorities-in-england
   capacity:
     title: School capacity
     publisher: Department for Education
@@ -256,6 +260,15 @@ datasets:
     title: NEET by characteristics
     keep:
       characteristic_grouping: [Total, SEND]
+
+  # SEN of pupils who were children in need, on a child protection plan or
+  # in care (looked after for 12 months or more) at 31 March. Children are
+  # counted in the council responsible for them. The API version of this file
+  # is far bigger (one row per filter combination), so the catalogue file is used.
+  cin_sen:
+    publication: cin_outcomes
+    file_id: 8522857b-1e9d-4d69-971f-15131561ec4d
+    title: LA - Special education needs (SEN)
 
   ehe_census:
     publication: ehe

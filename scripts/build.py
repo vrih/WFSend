@@ -597,6 +597,7 @@ def compute():
         "ehcp_home_educated": M.ehcp_home_educated(),
         "ehcp_school_age_neet": M.ehcp_school_age_neet(),
         "prevalence": M.sen_prevalence(),
+        "care_sen": M.care_sen(),
         "ar": ar,
         "appeal_rate": M.appeal_rate(),
         "tribunal_outcomes": M.tribunal_outcomes(),

@@ -21,6 +21,17 @@
     "rows": 4410,
     "fetched": "2026-10-28"
   },
+  "cin_sen": {
+    "title": "LA - Special education needs (SEN)",
+    "publication": "cin_outcomes",
+    "dataset_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/8522857b-1e9d-4d69-971f-15131561ec4d",
+    "download_url": "https://explore-education-statistics.service.gov.uk/data-catalogue/data-set/8522857b-1e9d-4d69-971f-15131561ec4d/csv",
+    "api_id": null,
+    "api_version": null,
+    "published": null,
+    "rows": 798,
+    "fetched": "2026-10-29"
+  },
   "cme_census": {
     "title": "Children missing education at census date",
     "publication": "cme",
