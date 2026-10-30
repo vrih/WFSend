@@ -407,7 +407,7 @@ def unique(items):
 def page_info(name, html):
     """The title, description, key points and main content of a rendered page."""
     box = re.search(r'<div class="answer keypoints">(.*?)</div>', html, re.S)
-    return {"title": text_of(re.search(r"<title>(.*?) \| ", html).group(1)),
+    return {"title": text_of(re.search(r"<title>(.*?)(?: \| Waltham Forest SEND data)?</title>", html).group(1)),
             "description": text_of(re.search(r'<meta name="description" content="([^"]*)"', html).group(1)),
             # each written to make sense when quoted on its own, without its "See the figures" link
             "key_points": [text_of(re.sub(r'<a class="see"[^>]*>.*?</a>', "", li))
@@ -803,9 +803,9 @@ def main():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n",
         encoding="utf-8")
     # Content-Signal (https://contentsignals.org): the figures are public and meant to be reused,
-    # so search, AI answers and AI training are all allowed
+    # so search, AI answers and AI training are all allowed. /cdn-cgi/ is Cloudflare's, not the site's
     (OUT / "robots.txt").write_text("User-agent: *\nContent-Signal: search=yes, ai-input=yes, ai-train=yes\n"
-                                    f"Allow: /\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
+                                    f"Allow: /\nDisallow: /cdn-cgi/\n\nSitemap: https://{DOMAIN}/sitemap.xml\n")
     # a plain-text map of the site for AI tools (https://llmstxt.org)
     # links go to each page's Markdown copy, written below
     lines = ["# Waltham Forest SEND data", "",
