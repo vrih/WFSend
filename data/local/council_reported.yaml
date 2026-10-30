@@ -322,6 +322,12 @@ finance:
     detail: Against a planned overspend of £5.76m. The council says this includes a one-off reconciliation of historic payments to schools, as well as growth in EHC plans and alternative provision.
     source: sf_jul2026
     page: 11
+  - id: gf_send_overspend_2526
+    label: SEND overspend on the council's main budget (General Fund) 2025/26
+    value: "£3.658m"
+    detail: Separate from the High Needs overspend, which is paid for from the DSG. The overspend was on home to school transport, staffing and package costs, "all driven by ongoing increases in the number of children with an Education and Health Care Plan (EHCPs)". The accounts say EHC plans rose by 6%, from 3,795 to 4,025.
+    source: soa_draft_2026
+    page: 16
   - id: hnb_forecast_2627
     label: Forecast High Needs overspend 2026/27 (at July 2026)
     value: "£13.68m"
@@ -364,3 +370,37 @@ finance:
     detail: '"reducing the number of requests to assess children whose needs can be met outside the statutory framework; more cost-effective provision being commissioned locally and closer financial management; and improving the workforce capacity."'
     source: budget_feb2026
     page: 34
+
+# The DSG deficit as the council's Statement of Accounts records it: the
+# balance on the "DSG Adjustment Account", an unusable reserve, in £'000 as
+# printed. None of these accounts has been fully audited.
+dsg_accounts:
+  - date: 31 March 2024
+    value: "2,161"
+    source: soa_draft_2025
+    page: 95
+    note: The DSG note in the same accounts (page 63) gives different figures for the end of 2023/24.
+  - date: 31 March 2025
+    value: "5,380"
+    source: soa_draft_2026
+    page: 96
+    note: The same figure is in the 2024/25 draft accounts (page 95).
+  - date: 31 March 2026
+    value: "14,321"
+    source: soa_draft_2026
+    page: 96
+    note: Up 8,941 in the year. Central spending, which includes the High Needs Block, overspent by 10,913. Schools' own budgets (ISB) were 1,972 under budget (page 64).
+
+# The risk on SEND and high needs in the council's corporate risk register.
+# Scores are likelihood x impact, each from 1 to 5 (risk_scoring_2026, page 1).
+send_risk:
+  ref: SRFH0001
+  title: "Inability to deliver special educational needs and disabilities (SEND) and the overspend of high needs block funding."
+  cause: "Associated financial pressures/overspend to meet such demand due to insufficient govt funding."
+  effect: "May result in government intervention/legal recourse/significant overspent and reputational risk."
+  source: risk_register_q1_2026
+  page: 17
+  observations:
+    - { register: "Q1 2025/26 (June 2025)", inherent: [4, 4, 16], residual: [2, 3, 6], source: risk_register_q1_2025, page: 15 }
+    - { register: "Q3 2025/26 (February 2026)", inherent: [4, 4, 16], residual: [2, 3, 6], source: risk_register_q3_2025, page: 18 }
+    - { register: "Q1 2026/27 (July 2026)", inherent: [4, 4, 16], residual: [2, 3, 6], source: risk_register_q1_2026, page: 17 }
