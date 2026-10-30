@@ -255,6 +255,94 @@ sf_oct2026:
   meeting: Schools Forum, 21 October 2026
   url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2026-10/21October_2026_School_Forum_Report.pdf
 
+# Statements of Accounts and Audit and Governance Committee papers. The figures
+# are in the finance, dsg_accounts and send_risk sections of council_reported.yaml.
+# All the committee's meetings are at
+# https://democracy.walthamforest.gov.uk/ieListMeetings.aspx?CommitteeId=494
+soa_draft_2026:
+  title: Draft Statement of Accounts 2025-26
+  publisher: London Borough of Waltham Forest
+  date: 2026-07-08
+  meeting: Audit and Governance Committee, 8 July 2026 (Appendix 1 to item 7)
+  url: https://democracy.walthamforest.gov.uk/documents/s109728/Appendix%201%20-%20Draft%20Statement%20of%20Accounts%202025-26.pdf
+  notes: Not audited. Page numbers are the numbers printed on each page. The DSG note is Note 12 (page 64) and the DSG Adjustment Account is in Note 30 (page 96).
+
+soa_draft_2025:
+  title: Draft Statement of Accounts 2024-25
+  publisher: London Borough of Waltham Forest
+  date: 2025-07-15
+  meeting: Audit and Governance Committee, 15 July 2025 (Appendix 1 to item 6)
+  url: https://democracy.walthamforest.gov.uk/documents/s104531/Appendix%201%20-%20Draft%20Statement%20of%20Accounts%202024-25.pdf
+  notes: Not audited. Page numbers are the numbers printed on each page.
+
+kpmg_isa260_2025:
+  title: "Year end report for the year ended 31 March 2025 (ISA 260 report)"
+  publisher: KPMG LLP, the council's external auditor
+  date: 2026-02-18
+  meeting: Audit and Governance Committee, 18 February 2026 (Appendix 2 to item 4)
+  url: https://democracy.walthamforest.gov.uk/documents/s106932/Appendix%202%20-%20LBWF%202024-25%20ISA260%20Accessible.pdf
+  notes: The accessible version, marked draft. It has no printed page numbers, so page numbers are pages of the PDF.
+
+kpmg_rebuilding_2026:
+  title: "Rebuilding assurance update for the year ending 31 March 2026"
+  publisher: KPMG LLP, the council's external auditor
+  date: 2026-09-25
+  meeting: Audit and Governance Committee, 14 October 2026 (Appendix 2 to item 4)
+  url: https://democracy.walthamforest.gov.uk/documents/s111347/1.%20Appendix%202%20-%20LBWF%202025-26%20Rebuilding%20assurance%20update%20v1.pdf
+  notes: Marked draft.
+
+kpmg_vfm_2026:
+  title: "Value for money risk assessment for the year ending 31 March 2026"
+  publisher: KPMG LLP, the council's external auditor
+  date: 2026-10-06
+  meeting: Audit and Governance Committee, 14 October 2026 (Appendix 1 to item 4)
+  url: https://democracy.walthamforest.gov.uk/documents/s111346/Appendix%201%20-%20LBWF%20VFM%20risk%20assessment%20v1.pdf
+  notes: The auditor's work was not finished. Appendix A (page 23) lists the information it was still waiting for on 25 September 2026.
+
+ext_audit_update_oct2026:
+  title: External Audit update
+  publisher: London Borough of Waltham Forest
+  date: 2026-10-14
+  meeting: Audit and Governance Committee, 14 October 2026 (item 4)
+  url: https://democracy.walthamforest.gov.uk/documents/s111345/1.%20External%20Audit%20update.pdf
+
+risk_register_q1_2026:
+  title: Corporate Risk Register Q1 2026/27
+  publisher: London Borough of Waltham Forest
+  date: 2026-07-08
+  meeting: Audit and Governance Committee, 8 July 2026 (Appendix A to item 9)
+  url: https://democracy.walthamforest.gov.uk/documents/s109734/Appendix%20A%20-%20Corporate%20Risk%20Register%20Q1%202026.27%20FINAL.pdf
+
+risk_register_q3_2025:
+  title: Corporate Risk Register Quarter 3 2025/26
+  publisher: London Borough of Waltham Forest
+  date: 2026-02-18
+  meeting: Audit and Governance Committee, 18 February 2026 (Appendix A to item 8)
+  url: https://democracy.walthamforest.gov.uk/documents/s106809/Appendix%20A%20-%20Corporate%20Risk%20Register%20Quarter%203%202025.26.pdf
+
+risk_register_q1_2025:
+  title: Strategic Risk Register Q1 2025/26
+  publisher: London Borough of Waltham Forest
+  date: 2025-07-15
+  meeting: Audit and Governance Committee, 15 July 2025 (Appendix A to item 8)
+  url: https://democracy.walthamforest.gov.uk/documents/s104539/Appendix%20A%20-%20Strategic%20Risk%20Register%20Q1%2025%20-%2026.pdf
+  notes: The register is dated 27 June 2025.
+
+risk_scoring_2026:
+  title: Risk scoring guidance
+  publisher: London Borough of Waltham Forest
+  date: 2026-07-08
+  meeting: Audit and Governance Committee, 8 July 2026 (Appendix B to item 9)
+  url: https://democracy.walthamforest.gov.uk/documents/s109735/Appendix%20B%20-%20Scoring%20Guidance%20FINAL.pdf
+
+ia_limited_oct2026:
+  title: Internal audits with a "Limited" or "No Assurance" opinion
+  publisher: London Borough of Waltham Forest (Internal Audit)
+  date: 2026-10-14
+  meeting: Audit and Governance Committee, 14 October 2026 (Appendix D to item 8)
+  url: https://democracy.walthamforest.gov.uk/documents/s111358/5.%20Appendix%20D%20-%20Limited%20and%20No%20Assurance%20Opinion%20Reports.pdf
+  notes: Executive summaries only. The Special Educational Needs (SEN) Budget audit is on pages 7 and 8. Its full findings and action plan are not published.
+
 cfa_2014_s36:
   short: Children and Families Act 2014  # link text for inline citations
   title: Children and Families Act 2014, section 36 (Assessment of education, health and care needs)

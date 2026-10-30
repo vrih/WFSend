@@ -10,6 +10,7 @@
 <li>Waltham Forest's schools budget, the Dedicated Schools Grant, had a deficit of {{ fin.dsg_deficit.value }} at 31 March 2026.{{ ui.see("deficit") }}</li>
 <li>Waltham Forest Council forecasts that its High Needs budget, which pays for SEND support, will overspend by {{ fin.hnb_forecast_2627.value }} in 2026/27.{{ ui.see("deficit") }}</li>
 <li>The DfE has confirmed a {{ fin.stability_grant.value }} High Needs Stability Grant for Waltham Forest, to pay off 90% of the deficit built up to March 2026. With the grant, the council forecasts a deficit of {{ fin.dsg_forecast_2627.value }} on 31 March 2027.{{ ui.see("deficit") }}</li>
+<li>The council's auditor, KPMG, has named the council's SEND arrangements as a significant risk to value for money in 2025/26. The council's own internal audit of the SEN budget gave it "limited assurance".{{ ui.see("audit") }}</li>
 <li>Waltham Forest Council's net spend per head on educational psychology was £{{ eph.latest[WF]|round|int }} in {{ eph.latest_period }}, against £{{ eph.latest["England"]|round|int }} in England. The council sells much of the service to schools, which lowers its net figure.{{ ui.see("spend_ep") }}</li>
 {% endcall %}
 
@@ -26,6 +27,41 @@
 <h2>The SEND Reform Plan</h2>
 <p>Waltham Forest was not in either of the DfE's intervention programmes for councils with deficits, Safety Valve and Delivering Better Value ({{ cite("budget_feb2026", 33) }}). In June 2026, like every council, it had to send the DfE a SEND Reform Plan setting out how it will deliver the national SEND reforms within its budget ({{ cite("sf_jul2026", 177) }}). The DfE accepted the plan on 2 October 2026, and the council now reports to the DfE on it every quarter ({{ cite("sf_oct2026", "pages 30 and 31") }}). On 29 October 2026 the DfE published the High Needs Stability Grant for each council. Waltham Forest's is £12,888,664, 90% of its deficit at 31 March 2026. The grant can only be used to pay off that deficit, not to pay for new services. While the statutory override lasts, the council must hold the grant in a reserve ({{ cite("dfe_hnsg_2026", "grant determination letter, Annex B") }}). The plan's targets are on the <a href="targets.html">targets page</a>, and what we know of the plan so far is on the <a href="reform-plan.html">SEND Reform Plan page</a>.</p>
 <p>We have not found the full plan published. In July the council said a detailed breakdown of the plan's spending, and of its "Experts at Hand" support for schools, would come to the Schools Forum in October 2026 ({{ cite("sf_jul2026", 177) }}). It was not on the October agenda ({{ cite("sf_oct2026", 2) }}).</p>
+
+<h2 id="audit">What the council's accounts and auditors say</h2>
+<p>Most figures above come from reports to the Schools Forum. The council's yearly Statement of Accounts records the same deficit. The council's Audit and Governance Committee also sees its risk register and reports from its auditors.</p>
+
+<h3>How the deficit is shown in the accounts</h3>
+<p>The deficit is not charged to the council's main budget, the General Fund, which pays for most council services. Instead the accounts hold it in a separate account, the DSG Adjustment Account. This is one of the council's "unusable reserves" ({{ cite("soa_draft_2026", 96) }}). The statutory override is what allows this. The accounts do not name the override or say when it ends. The council told the Schools Forum it lasts until March 2028 ({{ cite("sf_oct2026", 31) }}).</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Date</th><th scope="col">DSG Adjustment Account (£ thousand)</th><th scope="col">Detail</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for r in local.dsg_accounts %}
+<tr><th scope="row">{{ r.date }}</th><td>{{ r.value }}</td><td>{{ r.note }}</td><td>{{ cite(r.source, r.page) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">These accounts are drafts and have not been audited. KPMG expects to issue a "disclaimer of opinion" on the 2025/26 accounts by January 2027 ({{ cite("ext_audit_update_oct2026", 2) }}). This means it could not get enough evidence to give an opinion. It did the same for 2023/24 and 2024/25, as part of the government's plan to clear a national backlog of council audits ({{ cite("kpmg_rebuilding_2026", 3) }}). For 2024/25 it said it could not finish checking the "split of usable and unusable reserves" ({{ cite("kpmg_isa260_2025", 7) }}). The DSG Adjustment Account is one of those reserves.</p>
+
+<h3>The council's risk register</h3>
+{% set sr = local.send_risk %}
+<p>The council updates its corporate risk register every quarter and reports it to the Audit and Governance Committee ({{ cite("soa_draft_2026", 168) }}). Every register we have checked since June 2025 has a risk on SEND and high needs: "{{ sr.title }}" The cause given is "{{ sr.cause }}" The effect: "{{ sr.effect }}" ({{ cite(sr.source, sr.page) }}).</p>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">Register</th><th scope="col">Score before controls</th><th scope="col">Score after controls</th><th scope="col">Source</th></tr></thead>
+<tbody>
+{% for o in sr.observations %}
+<tr><th scope="row">{{ o.register }}</th><td>{{ o.inherent[0] }} × {{ o.inherent[1] }} = {{ o.inherent[2] }}</td><td>{{ o.residual[0] }} × {{ o.residual[1] }} = {{ o.residual[2] }}</td><td>{{ cite(o.source, o.page) }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Each score is likelihood × impact, both from 1 to 5. Before its controls, the council scores this risk 4 for likelihood ("probable") and 4 for impact ("major"). After its controls, it scores it 2 for likelihood ("unlikely", an 11% to 30% chance) and 3 for impact ("significant"; for money, a loss of between £500,000 and £2 million) ({{ cite("risk_scoring_2026", 1) }}). The scores were the same in all 3 registers. The July 2026 register's controls include applying for grants and monitoring the High Needs Block with schools and the Schools Forum. One still reads: "Subject to receipt of HNB finance settlement from central govt. expected early 2026" ({{ cite(sr.source, sr.page) }}).</p>
+
+<h3>What the auditors say</h3>
+<p>The council's external auditor is KPMG ({{ cite("soa_draft_2026", 64) }}). Its reports to the committee do not comment on the DSG deficit itself. They raise SEND in two ways.</p>
+<ul>
+<li><strong>Paying for services in future.</strong> For 2024/25, KPMG found a "significant weakness" in the council's arrangements for staying financially sustainable. The council had to apply for £19m of Exceptional Financial Support, special permission from the government to borrow or use other money to balance its 2026/27 budget. KPMG said the council's financial plan shows "rising demand-led pressures across: Temporary Accommodation, Adult Social Care and Special Educational Needs and Disabilities (SEND)" ({{ cite("kpmg_vfm_2026", 5) }}).</li>
+<li><strong>Value for money of SEND services.</strong> In October 2026, KPMG named "Value for Money of SEND arrangements within Children's Services" as a significant risk for 2025/26. It pointed to the 2025 Ofsted and CQC inspection and to an internal audit of the SEN budget. It said there is "a risk that the Council's arrangements for managing and improving SEND services are not operating effectively" ({{ cite("kpmg_vfm_2026", 8) }}). Its work was not finished. It was still waiting for the council's action plan from the inspection ({{ cite("kpmg_vfm_2026", 23) }}). KPMG must report its conclusions by the end of November 2026 ({{ cite("ext_audit_update_oct2026", 1) }}).</li>
+</ul>
+<p>The internal audit of the Special Educational Needs (SEN) budget gave "limited assurance". It made 1 high-risk, 3 medium-risk and 1 low-risk finding ({{ cite("ia_limited_oct2026", 7) }}). The high-risk finding was about EHC plan data. The council's case management system for EHC plans, called MRI, "is not currently being utilised effectively". Teams still rely on spreadsheets kept by hand. In a test of 25 EHC plans, 4 records were missing and 14 had no assessment documents. The system is not linked to the council's finance system. The other findings were: no written procedures for EHC plan processes, no risk management or business continuity plan for the SEN service, a backlog of overdue annual reviews, and some assessments taking longer than the legal limit of 20 weeks ({{ cite("ia_limited_oct2026", 8) }}).</p>
+<p class="note">The audit was part of the 2025/26 internal audit plan, and its scope was set in August 2025. Only its summary is published, so we can't see the full findings, the council's response or its deadlines for acting on them. The test of 25 plans is a sample, not a count of all plans.</p>
 
 <h2 id="spending">What the council spends on SEND services</h2>
 <p>Every council reports its education spending to the DfE line by line (the "section 251" return). These are Waltham Forest's net figures for the lines most relevant to SEND, in £ million. "Net" means after income, for example when schools buy educational psychology time.</p>
