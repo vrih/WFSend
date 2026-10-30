@@ -236,7 +236,7 @@ targets:
   - commitment: SEND Reform Plan - cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28
     due: From 2027/28
     source: { source: sf_jul2026, page: 178 }
-    latest: Plan accepted by the DfE on 2 October 2026. EHC plans grew by 201 (5%) between March and August 2026. The plan's other priority goals (attainment, exclusions and attendance, parental confidence, statutory timeliness) have no published numbers.
+    latest: Plan accepted by the DfE on 2 October 2026, and its High Needs Stability Grant confirmed on 29 October 2026. EHC plans grew by 201 (5%) between March and August 2026. The plan's other priority goals (attainment, exclusions and attendance, parental confidence, statutory timeliness) have no published numbers.
     latest_source: { source: sf_oct2026, page: 29 }
     status: no data
   - commitment: SEND Reform Plan - raise the share of children on SEN support from 12.5% to 14%
@@ -331,9 +331,15 @@ finance:
   - id: stability_grant
     label: High Needs Stability Grant
     value: "£12.89m"
-    detail: Confirmed on 2 October 2026 after the DfE accepted the council's SEND Reform Plan. With the grant, the DSG deficit is forecast at £15.12m on 31 March 2027.
+    detail: £12,888,664, confirmed by the DfE on 29 October 2026 after it approved the council's SEND Reform Plan. This is 90% of the DSG deficit built up to 31 March 2026, and it can only be used to pay that deficit off. The DfE says it may still change once the council's accounts are audited.
+    source: dfe_hnsg_2026
+    page: allocations spreadsheet, row 142
+  - id: dsg_forecast_2627
+    label: Forecast DSG deficit at 31 March 2027 (at July 2026)
+    value: "£15.12m"
+    detail: The council's forecast once the High Needs Stability Grant is taken off. It uses the same forecast as the High Needs overspend above.
     source: sf_oct2026
-    page: "30 and 31"
+    page: 30
   - id: hnb_allocation
     label: High Needs Block allocation 2026/27 (gross)
     value: "£65.80m"
