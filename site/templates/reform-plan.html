@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}The SEND Reform Plan in Waltham Forest{% endblock %}
-{% block description %}Waltham Forest's SEND Reform Plan aims to cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28. The DfE accepted it on 2 October 2026. The full plan is not yet published: what council papers say so far.{% endblock %}
+{% block description %}Waltham Forest's SEND Reform Plan aims to cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28. The DfE accepted it on 2 October 2026 and confirmed a £12.89m High Needs Stability Grant on 29 October. The full plan is not yet published: what council papers say so far.{% endblock %}
 {% block content %}
 {% set sup = d.prevalence.support %}
 {% set fin = {} %}{% for f in local.finance %}{% set _ = fin.update({f.id: f}) %}{% endfor %}
 <h1>The SEND Reform Plan</h1>
 <p class="lede">Every council had to send the Department for Education (DfE) a SEND Reform Plan in June 2026. It sets out how the council and the NHS will deliver the national SEND reforms in Waltham Forest within their budget. This page summarises what the council has said about the plan so far.</p>
 
-<div class="callout"><p><strong>The full plan has not been published.</strong> Everything on this page comes from a short summary in the July 2026 Schools Forum papers and an update in the October 2026 papers. We will update this page when the council publishes the plan or more detail about it. If you have seen it published, please email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p></div>
+<div class="callout"><p><strong>The full plan has not been published.</strong> Everything on this page comes from a short summary in the July 2026 Schools Forum papers, an update in the October 2026 papers and the DfE's list of grants. We will update this page when the council publishes the plan or more detail about it. If you have seen it published, please email <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p></div>
 
 {% call ui.key_points() %}
 <li>The DfE accepted Waltham Forest's SEND Reform Plan on 2 October 2026.{{ ui.see("what-the-plan-is") }}</li>
 <li>Waltham Forest's SEND Reform Plan aims to cut projected yearly growth in EHC plans from 11.3% to 9.8% from 2027/28, and to raise the share of children on SEN support from 12.5% to 14%.{{ ui.see("targets-for-ehc-plans-and-sen-support") }}</li>
 <li>Most of the money in Waltham Forest's SEND Reform Plan is to go on "Experts at Hand", which gives schools access to specialist advice, but the council has not yet said how it will be spent.{{ ui.see("how-the-council-plans-to-do-it") }}</li>
-<li>The DfE has agreed a {{ fin.stability_grant.value }} High Needs Stability Grant for Waltham Forest.{{ ui.see("the-money") }}</li>
+<li>The DfE has confirmed a {{ fin.stability_grant.value }} High Needs Stability Grant for Waltham Forest. It can only be used to pay off the schools budget deficit.{{ ui.see("the-money") }}</li>
 {% endcall %}
 
 <h2>What the plan is</h2>
@@ -61,7 +61,8 @@
 <p>Families keep the legal right to ask for an EHC needs assessment, whatever the plan says ({{ cite("cfa_2014_s36", "section 36(1)") }}). The <a href="assessments.html#decisions">request and refusal figures</a> show how requests are being handled.</p>
 
 <h2>The money</h2>
-<p>Once the DfE accepted the plan, it gave the council an indicative High Needs Stability Grant of £12.889m ({{ cite("sf_oct2026", 31) }}). With the grant, the council forecasts a schools budget (DSG) deficit of £15.115m on 31 March 2027 ({{ cite("sf_oct2026", 30) }}). More on the <a href="money.html">Money page</a>.</p>
+<p>Once the DfE accepted the plan, it gave the council an indicative High Needs Stability Grant of £12.889m ({{ cite("sf_oct2026", 31) }}). The DfE confirmed the grant on 29 October 2026: £12,888,664 ({{ cite("dfe_hnsg_2026", "allocations spreadsheet, row 142") }}). This is 90% of Waltham Forest's deficit at 31 March 2026. The DfE says the amount may still change once the council's accounts are audited.</p>
+<p>The grant is not new money for SEND services. It can only be used to pay off the deficit built up to 31 March 2026. While the statutory override keeps the deficit off the council's main budget, the council must hold the grant in a reserve ({{ cite("dfe_hnsg_2026", "grant determination letter, Annex B") }}). The grant only covers the deficit built up to the end of 2025/26, not this year's overspend ({{ cite("dfe_hnsg_2026") }}). With the grant, the council forecasts a schools budget (DSG) deficit of £15.115m on 31 March 2027 ({{ cite("sf_oct2026", 30) }}). More on the <a href="money.html">Money page</a>.</p>
 <p>The council says most of the reform money in 2026/27 will go on Experts at Hand, with some on extra finance staff to track spending ({{ cite("sf_jul2026", 179) }}). The July papers say the proposed split of the money is "outlined below", but the table is not in the published pack.</p>
 <p>Separately, the DfE's Inclusion Mainstream Fund gives Waltham Forest's maintained schools £914,930 in 2026/27 to make their everyday teaching more inclusive ({{ cite("sf_jul2026", 180) }}).</p>
 
@@ -72,6 +73,7 @@
 <tr><td>June 2026</td><td>Plan sent to the DfE.</td><td>{{ cite("sf_jul2026", 177) }}</td></tr>
 <tr><td>8 July 2026</td><td>Summary of the plan given to the Schools Forum. The full plan and its slide pack (Annex A) were not included.</td><td>{{ cite("sf_jul2026", 178) }}</td></tr>
 <tr><td>2 October 2026</td><td>DfE accepts the plan.</td><td>{{ cite("sf_oct2026", 31) }}</td></tr>
+<tr><td>29 October 2026</td><td>DfE confirms the High Needs Stability Grant of £12,888,664. It did not approve 12 councils' plans at first submission, including those of 2 similar areas, Lewisham and Redbridge. Their grants are deferred until they send new plans.</td><td>{{ cite("dfe_hnsg_2026", "allocations spreadsheet") }}</td></tr>
 <tr><td>21 October 2026</td><td>The council had promised the Schools Forum a detailed breakdown of the plan's spending and of Experts at Hand. It was not on the agenda.</td><td>{{ cite("sf_oct2026", 2) }}</td></tr>
 <tr><td>End of October 2026</td><td>The council's second quarterly progress report to the DfE is due. These reports are not published.</td><td>{{ cite("sf_oct2026", 30) }}</td></tr>
 <tr><td>Not yet known</td><td>The full plan, how Experts at Hand money will be shared out, and any block transfer proposal for 2027/28.</td><td>{{ cite("sf_jul2026", 180) }}</td></tr>
