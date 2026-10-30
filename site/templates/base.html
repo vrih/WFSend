@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang="en-GB">
+{# Stops Cloudflare's email obfuscation rewriting mailto links to /cdn-cgi/l/email-protection, which crawlers report as broken #}
+<!--email_off-->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}{% endblock %} | Waltham Forest SEND data</title>
+{# Search engines cut titles over 70 characters, so the site name is only added when the title doesn't already name Waltham Forest #}
+{% if false %}{% block title %}{% endblock %}{% endif %}
+{% set page_title = self.title() if "Waltham Forest" in self.title() else self.title() ~ " | Waltham Forest SEND data" %}
+<title>{{ page_title }}</title>
 {# The description block is rendered through self.description() so quotes in it are escaped #}
 {% if false %}{% block description %}Performance data on special educational needs and disability (SEND) services in Waltham Forest, from public sources.{% endblock %}{% endif %}
 <meta name="description" content="{{ self.description()|striptags }}">
@@ -17,7 +22,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Waltham Forest SEND data">
 <meta property="og:locale" content="en_GB">
-<meta property="og:title" content="{{ self.title() }} | Waltham Forest SEND data">
+<meta property="og:title" content="{{ page_title }}">
 <meta property="og:description" content="{{ self.description()|striptags }}">
 <meta property="og:image" content="https://{{ domain }}/share.png">
 <meta property="og:image:width" content="1200">
@@ -71,4 +76,5 @@
 </footer>
 <div id="tip" role="tooltip" hidden></div>
 </body>
+<!--/email_off-->
 </html>
