@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Get advice about your child's SEND
+    url: https://www.walthamforestsendiass.org.uk/
+    about: This site only publishes figures. For free, impartial advice contact Waltham Forest SENDIASS or IPSEA.
+  - name: Email the site
+    url: mailto:info@wfsenddata.org.uk
+    about: If you'd rather not use GitHub, email corrections and documents instead.

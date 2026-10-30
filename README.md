@@ -228,6 +228,10 @@ info@wfsenddata.org.uk
 
 ## Licence and attribution
 
+The code is under the MIT licence, and the site's text and data under the
+Open Government Licence v3.0 (see [LICENSE](LICENSE)). To report a mistake or
+help, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 DfE statistics are Crown copyright, reused under the
 [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 Council and Ofsted documents are quoted for comment and linked at source.
