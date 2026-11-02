@@ -21,7 +21,7 @@ measures:
     statutory: All plans must be issued within 20 weeks of the request, unless a legal exception applies.
     statutory_source: { source: send_regs_2014, page: "Regulation 13" }
     target: null
-    target_note: The improvement plan records a baseline but sets no target or trajectory. It relies on a recovery plan to clear backlogs "by end of 2025".
+    target_note: The improvement plan records a baseline but sets no target or trajectory. It relies on a recovery plan to clear backlogs "by end of 2025". The SEND Reform Plan (accepted October 2026) aims for 30% by 2027 and the England average by 2028.
     target_source: { source: hwb_oct2025_report, page: 4 }
     n_label: plans on time
     observations:
@@ -32,7 +32,7 @@ measures:
       - { period: "June 2025", value: 30.58, source: hwb_oct2025_highlight, page: 15 }
       - { period: "August 2025", value: 28, n: 96, source: hwb_oct2025_highlight, page: 15, note: "The council blames delays in educational psychologist advice." }
       - { period: "2025 to date (plan dated 1 Sept 2025)", value: 31, source: sufficiency_plan_2025, page: 58, note: "'The EHCP 20-week statutory timelines have significantly dropped over the years from 90% previously to 50% in 2024 and 31% to-date.' The same plan also says 58% of the 375 new plans issued in 2025 to date went over 20 weeks (page 22). The two figures do not agree." }
-      - { period: "July 2026 report", value: 12, source: sf_jul2026, page: 178, note: "'Timeliness in statutory processes remains 12% within 20 weeks.' From the summary of the SEND Reform Plan submitted to the DfE in June 2026. The report does not say what period the figure covers." }
+      - { period: "July 2026 report", value: 12, source: sf_jul2026, page: 178, note: "'Timeliness in statutory processes remains 12% within 20 weeks.' From the summary of the SEND Reform Plan submitted to the DfE in June 2026. The report does not say what period the figure covers. The plan summary given to the Scrutiny Committee in November 2026 repeats 12% on slide 6 but gives 15.6% on slide 4, also without a period." }
 
   annual_reviews_on_time:
     title: Annual reviews completed on time (council monitoring)
@@ -236,8 +236,31 @@ targets:
   - commitment: SEND Reform Plan - cut projected annual growth in EHC plans from 11.3% to 9.8% from 2027/28
     due: From 2027/28
     source: { source: sf_jul2026, page: 178 }
-    latest: Plan accepted by the DfE on 2 October 2026, and its High Needs Stability Grant confirmed on 29 October 2026. EHC plans grew by 201 (5%) between March and August 2026. The plan's other priority goals (attainment, exclusions and attendance, parental confidence, statutory timeliness) have no published numbers.
+    latest: Plan accepted by the DfE on 2 October 2026, and its High Needs Stability Grant confirmed on 29 October 2026. EHC plans grew by 201 (5%) between March and August 2026.
     latest_source: { source: sf_oct2026, page: 29 }
+    status: no data
+  - commitment: SEND Reform Plan - issue 30% of new EHC plans within 20 weeks by 2027, match the England average by 2028 and exceed it by 2029
+    due: 2027, 2028 and 2029
+    source: { source: scrutiny_nov2026_summary, page: 6 }
+    latest: The plan gives a starting point of 12% (slide 6) or 15.6% (slide 4), with no period. The DfE's figure for 2025 is 25.7%, against 46.1% in England (leaving out plans where a legal exception applies).
+    latest_dfe: [ehcp_timeliness]
+    status: unclear
+  - commitment: SEND Reform Plan - 1,405 locally commissioned specialist places, up from 1,234
+    due: September 2029
+    source: { source: scrutiny_nov2026_summary, page: 6 }
+    latest: 54 more places opened in September 2026 and 50 more are due in September 2027, out of 168 planned by 2029.
+    latest_source: { source: scrutiny_nov2026_summary, page: 17 }
+    status: unclear
+  - commitment: SEND Reform Plan - raise Attainment 8 for pupils with an EHC plan from 13.7 to the England average (14.8)
+    due: 2029
+    source: { source: scrutiny_nov2026_summary, page: 6 }
+    latest: 16.6 in 2025/26 (provisional), against 15.1 in England (DfE). The plan's 13.7 is the DfE figure for 2024/25.
+    latest_dfe: [ks4_sen]
+    status: met
+  - commitment: SEND Reform Plan - bring permanent exclusions (0.24%) and special school attendance (86.19%) of pupils with SEND in line with London (0.09% and 89.14%)
+    due: Not stated
+    source: { source: scrutiny_nov2026_summary, page: 6 }
+    latest: No progress figure published. The plan does not say what year its figures cover.
     status: no data
   - commitment: SEND Reform Plan - raise the share of children on SEN support from 12.5% to 14%
     due: Not stated (the plan runs to 2028)

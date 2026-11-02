@@ -255,6 +255,22 @@ sf_oct2026:
   meeting: Schools Forum, 21 October 2026
   url: https://thehub-beta.walthamforest.gov.uk/sites/default/files/2026-10/21October_2026_School_Forum_Report.pdf
 
+scrutiny_nov2026_report:
+  title: Waltham Forest SEND Reform Plan (report to the Children and Families Scrutiny Committee)
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-04
+  meeting: Children and Families Scrutiny Committee, 4 November 2026
+  url: https://democracy.walthamforest.gov.uk/documents/s111648/Waltham%20Forest%20SEND%20Reform%20Plan.pdf
+  notes: 4-page cover report by the Corporate Director Education. Its appendix is scrutiny_nov2026_summary.
+
+scrutiny_nov2026_summary:
+  title: Waltham Forest SEND Reform Plan summary (Appendix 1, "SEND Reform Plan Comms Overview")
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-04
+  meeting: Children and Families Scrutiny Committee, 4 November 2026
+  url: https://democracy.walthamforest.gov.uk/documents/s111649/Appendix%201%20-%20SEND%20Reform%20Plan%20Comms%20Overview.pdf
+  notes: A 24-slide summary of the plan, not the full plan. Page numbers are slide numbers. Slide 14 is an Experts at Hand leaflet for families, and slide 24 is an extract from the programme's risk log.
+
 # Statements of Accounts and Audit and Governance Committee papers. The figures
 # are in the finance, dsg_accounts and send_risk sections of council_reported.yaml.
 # All the committee's meetings are at
