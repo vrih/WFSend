@@ -127,15 +127,15 @@
 <div class="tablewrap"><table class="wide">
 <thead><tr><th scope="col">Measure</th><th scope="col">Latest council figure</th><th scope="col">Target</th></tr></thead>
 <tbody>
-{% for key in ["timeliness_20_weeks", "annual_reviews_on_time", "year9_reviews", "ehcp_audit_quality", "complaints"] %}
+{% for key in ["annual_reviews_on_time", "year9_reviews", "ehcp_audit_quality", "complaints"] %}
 {% set m = local.measures[key] %}{% set o = m.observations[-1] %}
 <tr><td>{{ m.title }}{% if m.plan_ref is defined %}<br><span class="note">{{ m.plan_ref }}</span>{% endif %}</td>
 <td>{{ fmt(o.value, m.unit) }} ({{ o.period }})<br><span class="note">{{ cite(o.source, o.page) }}</span></td>
 <td><span class="notarget">None published</span></td></tr>
 {% endfor %}
 </tbody></table></div>
-<p class="note">Apart from the 20-week figure, the council hasn't published any of these measures since its September 2025 highlight report.</p>
-<p>The SEND Reform Plan submitted in June 2026 lists "improving statutory timeliness for EHCP processes" as one of five priority goals. The Schools Forum summary gives no number or date for it ({{ cite("sf_jul2026", 178) }}). See <a href="reform-plan.html">what we know about the SEND Reform Plan</a>.</p>
+<p class="note">The council hasn't published any of these measures since its September 2025 highlight report.</p>
+<p>The SEND Reform Plan, accepted by the DfE in October 2026, now sets a target for the 20-week measure: 30% by 2027, the England average by 2028 and above it by 2029 ({{ cite("scrutiny_nov2026_summary", 6) }}). It is listed under commitments below. See <a href="reform-plan.html">what we know about the SEND Reform Plan</a>.</p>
 <p>The SEND Strategy 2025–2028 says the partnership will "develop a local area plan with clear targets that measure if we are realising our vision" ({{ cite("send_strategy_2025", 4) }}). If you know where those targets are published, please get in touch.</p>
 
 <h2>Commitments with a number and a date</h2>
