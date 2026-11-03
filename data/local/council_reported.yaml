@@ -427,3 +427,25 @@ send_risk:
     - { register: "Q1 2025/26 (June 2025)", inherent: [4, 4, 16], residual: [2, 3, 6], source: risk_register_q1_2025, page: 15 }
     - { register: "Q3 2025/26 (February 2026)", inherent: [4, 4, 16], residual: [2, 3, 6], source: risk_register_q3_2025, page: 18 }
     - { register: "Q1 2026/27 (July 2026)", inherent: [4, 4, 16], residual: [2, 3, 6], source: risk_register_q1_2026, page: 17 }
+
+# The council's plan to recommission short breaks for disabled children,
+# from the report to Cabinet on 3 November 2026.
+short_breaks_recommissioning:
+  source: cabinet_nov2026_short_breaks
+  value: "£5.095m"
+  value_page: 4
+  value_note: Page 2 gives the same figure as "up to £5,095m", with a comma in place of the decimal point.
+  term: an initial period of three years, commencing on 1 April 2027, with the option to extend for up to a further two years
+  term_page: 4
+  term_note: The summary on page 1 says the new arrangement starts "from 1 April 2026". That date is before the meeting, so this uses 1 April 2027 from page 4.
+  lots:
+    - "Lot 1: Overnight Short Breaks"
+    - "Lot 2: Community Short Breaks"
+    - "Lot 3: Holiday Activities"
+    - "Lot 4: Targeted Support"
+    - "Lot 5: Family Designed Short Breaks and Innovation"
+  lots_page: 2
+  budget: "does not reduce the Council's investment in short breaks services and is intended to maintain existing service capacity"
+  budget_page: 2
+  eligibility: "does not propose changes to eligibility or policy details"
+  eligibility_page: 6
