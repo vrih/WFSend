@@ -91,6 +91,9 @@
 
 <h2>Specialist places</h2>
 <p>The council's 2025 SEND Sufficiency Plan aims for 168 more SEND places in the borough by 2029: 100 at Lime, 15 at Kelmscott, 15 at Willowfield, 10 at Mayville, 10 at Thorpe Hall, 10 at Connaught and 8 at Belmont Park special school. 54 places opened in September 2026, and 50 more are due in September 2027 ({{ cite("scrutiny_nov2026_summary", 17) }}).</p>
+{% for s in d.specialist_settings.other if s.name == "Willowfield School" and s.rp_capacity %}
+<p>The DfE's register of schools now lists <a href="schools.html#resourced-provision-list">resourced provision at Willowfield School</a> with {{ fmt(s.rp_capacity, "count") }} places and {{ fmt(s.rp_pupils, "count") }} children in it in {{ s.census }} (DfE, <a class="cite" href="{{ s.url }}">Get Information About Schools</a>, downloaded {{ fetched(d.specialist_settings.manifest) }}). The register may not yet show places added since then.</p>
+{% endfor %}
 <p class="note">The summary gives the increase in 3 ways that do not quite match: 168 places (slides 5 and 17), 1,234 rising to 1,405 places, an increase of 171, and "100 specialist provision places" and "60 in Specialist Inclusion Bases", which make 160 (slide 6).</p>
 <p>See <a href="special-school-places.html">how to get a special school place</a> and the <a href="places.html">places page</a>.</p>
 
