@@ -2,7 +2,7 @@
   "publisher": "Department for Education",
   "title": "Get Information About Schools",
   "downloads_url": "https://get-information-schools.service.gov.uk/Downloads",
-  "file_url": "https://ea-edubase-api-prod.azurewebsites.net/edubase/downloads/public/edubasealldata20261025.csv",
-  "file_date": "2026-10-25",
-  "fetched": "2026-10-25"
+  "file_url": "https://ea-edubase-api-prod.azurewebsites.net/edubase/downloads/public/edubasealldata20261103.csv",
+  "file_date": "2026-11-03",
+  "fetched": "2026-11-03"
 }
