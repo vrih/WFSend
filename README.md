@@ -2,7 +2,9 @@
 
 A static website showing how special educational needs and disability (SEND)
 services in Waltham Forest are performing, and what targets exist. Every figure
-links back to a public source:
+links back to a public source. The one exception is letters and emails that
+named council or NHS officers send to the site's author: these are attributed
+to the officer by name and role, but not published. The public sources are:
 
 - **Department for Education statistics**, downloaded automatically from
   [Explore Education Statistics](https://explore-education-statistics.service.gov.uk/):
@@ -199,6 +201,9 @@ release and needs updating by hand too.
    URL (for example `democracy.walthamforest.gov.uk` or `civico.net`). For
    an FOI response, use the `whatdotheyknow.com` request page. It blocks
    automated downloads, so save the response by hand.
+   For a letter or email a named council or NHS officer sent to the site's
+   author, add `kind: correspondence` and leave out `url`. The site
+   attributes it to the person and their role, and does not publish it.
 2. Add the figure to `data/local/council_reported.yaml` (or
    `data/local/foi.yaml` for an FOI response, or
    `data/local/family_experience.yaml` for a parent survey or SENDIASS),
