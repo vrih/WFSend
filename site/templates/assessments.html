@@ -16,7 +16,10 @@
 <p>New to this? Read <a href="ehcp-waiting-time.html">how long an EHC plan takes</a>, in plain words.</p>
 
 <h2>Plans issued within 20 weeks</h2>
-{{ figure(d.timeliness, ranked=True, y_max=100) }}
+{% set council_2026 = [{"period": "2026", "low": 12, "high": 15.6, "label": "Council, single months", "short": "Council"}] %}
+{{ figure(d.timeliness, ranked=True, y_max=100, ranges=council_2026,
+   note="The 2026 bar is not a DfE figure. It shows the 2 figures the council gave in 2026 papers: 12% and 15.6%. The council says they are for single months, and has not said which (" ~ cite("crouch_nov2026", "EHC plans issued within 20 weeks") ~ "). They come from the council's own records, and the council has not said whether they count plans where a legal exception applies. The DfE's figures are for whole calendar years and leave those plans out. So the bar shows roughly where the council puts itself in 2026. It is not directly comparable with the line.",
+   range_source="Source for 2026: " ~ cite("sf_jul2026", 178) ~ "; " ~ cite("scrutiny_nov2026_summary", "slides 4 and 6")) }}
 
 <h3 id="council-timeliness">What the council reports to its own boards</h3>
 <p>The improvement plan tracks the same measure each month. These figures come from the council's case management system, so they won't exactly match the DfE figures above.</p>

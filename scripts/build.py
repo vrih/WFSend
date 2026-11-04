@@ -155,18 +155,21 @@ def add_anchors(page):
     return HEADING.sub(heading, page)
 
 
-def figure(m, ranked=False, note=None, y_max=None, areas=AREAS, also=None, start=None):
+def figure(m, ranked=False, note=None, y_max=None, areas=AREAS, also=None, start=None, ranges=(), range_source=None):
     """A chart (or ranked bars) with legend, data table and source line.
+    ranges: low-high figures from another source, added after the last period
+    (see charts.line_chart); range_source is their citation.
     also: a second metric on the same measure (for example pupils on SEN
     support), shown as a table under the chart rather than a chart of its own.
     start: the first period to show."""
-    periods = m["periods"][m["periods"].index(start):] if start else m["periods"]
+    periods = m["periods"][m["periods"].index(start):] if start else list(m["periods"])
+    periods += [r["period"] for r in ranges if r["period"] not in periods]
     series = {a: m["series"].get(a, {}) for a in areas if m["series"].get(a)}
     parts = [f'<figure class="metric" id="{escape(m["id"])}">',
              f'<figcaption><h3>{escape(m["title"])}</h3><p class="explain">{escape(m["explain"])}</p></figcaption>']
     if len(periods) > 1:
-        parts.append(charts.legend(series.keys()))
-        parts.append(charts.line_chart(series, periods, unit=m["unit"], title=m["title"], y_max=y_max))
+        parts.append(charts.legend(series.keys(), ranges))
+        parts.append(charts.line_chart(series, periods, unit=m["unit"], title=m["title"], y_max=y_max, ranges=ranges))
     if ranked and m["boroughs"]:
         latest = m["latest_period"]
         parts.append(f'<h4 class="sub">London boroughs, {escape(latest)}</h4>')
@@ -182,7 +185,7 @@ def figure(m, ranked=False, note=None, y_max=None, areas=AREAS, also=None, start
                                           refs={M.SN: m["latest"].get(M.SN)})
                      + "</details>")
     parts.append("<details><summary>Show the numbers</summary>"
-                 + charts.table(series, periods, unit=m["unit"]) + "</details>")
+                 + charts.table(series, periods, unit=m["unit"], ranges=ranges) + "</details>")
     if also:
         a_periods = [p for p in also["periods"] if p in periods] or also["periods"]
         a_series = {a: also["series"].get(a, {}) for a in areas if also["series"].get(a)}
@@ -192,7 +195,8 @@ def figure(m, ranked=False, note=None, y_max=None, areas=AREAS, also=None, start
         parts.append(f'<p class="note">{note}</p>')
     ons = f"; {cite_ons()}" if m.get("population") else ""
     src = Markup("Source: ") + cite_moj(m["manifest"]) if m.get("manifest") else cite_dfe(m["sources"])
-    parts.append(f'<p class="source">{src}{ons}</p></figure>')
+    extra = f"<br>{range_source}" if range_source else ""
+    parts.append(f'<p class="source">{src}{ons}{extra}</p></figure>')
     return Markup("\n".join(parts))
 
 

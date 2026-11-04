@@ -34,12 +34,15 @@ def _nice_max(v, unit):
     return v * 1.1
 
 
-def line_chart(series, periods, unit="percent", title="", y_max=None, height=260):
-    """series: {area: {period: value}}; periods: ordered list of period labels."""
+def line_chart(series, periods, unit="percent", title="", y_max=None, height=260, ranges=()):
+    """series: {area: {period: value}}; periods: ordered list of period labels.
+    ranges: figures from another source that only give a low and a high,
+    drawn as a hollow vertical bar, not joined to the lines. Each is a dict
+    with period (in periods), low, high and label."""
     W, H = 640, height
     left, right, top, bottom = 44, 150, 16, 34
     pw, ph = W - left - right, H - top - bottom
-    vals = [v for s in series.values() for v in s.values() if v is not None]
+    vals = [v for s in series.values() for v in s.values() if v is not None] + [r["high"] for r in ranges]
     if not vals:
         return ""
     ymax = y_max or _nice_max(max(vals), unit)
@@ -72,10 +75,12 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
         pts = [(i, s.get(p)) for i, p in enumerate(periods) if s.get(p) is not None]
         if pts:
             ends.append([y(pts[-1][1]), area, pts[-1][1], x(pts[-1][0])])
-    ends.sort()
+    for r in ranges:
+        ends.append([y((r["low"] + r["high"]) / 2), r["label"], None, x(periods.index(r["period"])), r])
+    ends.sort(key=lambda e: e[0])
     for i in range(1, len(ends)):
         if ends[i][0] - ends[i - 1][0] < 15:
-            ends[i][0] = ends[i - 1][0] + 15
+            ends[i][0] = ends[i - 1][0] + (22 if len(ends[i - 1]) > 4 or len(ends[i]) > 4 else 15)
 
     for area, s in series.items():
         cls = AREA_CLASS.get(area, "s4")
@@ -100,16 +105,28 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
             tip = f"{area}, {p}: {_fmt(v, unit)}"
             out.append(f'<circle class="dot {cls}" cx="{x(i):.1f}" cy="{y(v):.1f}" r="4"/>')
             out.append(f'<circle class="hit" cx="{x(i):.1f}" cy="{y(v):.1f}" r="12" data-tip="{escape(tip)}"><title>{escape(tip)}</title></circle>')
-    for ly, area, v, lx in ends:
+    for r in ranges:
+        rx, y1, y2 = x(periods.index(r["period"])), y(r["low"]), y(r["high"])
+        tip = f"{r['label']}, {r['period']}: {_fmt(r['low'], unit)} to {_fmt(r['high'], unit)}"
+        out.append(f'<g class="range"><line x1="{rx:.1f}" x2="{rx:.1f}" y1="{y1:.1f}" y2="{y2:.1f}"/>'
+                   f'<line x1="{rx - 6:.1f}" x2="{rx + 6:.1f}" y1="{y1:.1f}" y2="{y1:.1f}"/>'
+                   f'<line x1="{rx - 6:.1f}" x2="{rx + 6:.1f}" y1="{y2:.1f}" y2="{y2:.1f}"/></g>')
+        out.append(f'<rect class="hit" x="{rx - 12:.1f}" y="{y2 - 6:.1f}" width="24" height="{y1 - y2 + 12:.1f}" data-tip="{escape(tip)}"><title>{escape(tip)}</title></rect>')
+    for ly, area, v, lx, *r in ends:
+        if r:
+            lo, hi = r[0]["low"], r[0]["high"]
+            out.append(f'<text class="endlabel" x="{lx + 12:.1f}" y="{ly - 3:.1f}"><tspan class="endname">{escape(r[0].get("short", area))}</tspan>'
+                       f'<tspan x="{lx + 12:.1f}" dy="14">{escape(_fmt(lo, unit))} to {escape(_fmt(hi, unit))}</tspan></text>')
+            continue
         out.append(f'<text class="endlabel" x="{lx + 10:.1f}" y="{ly + 4:.1f}"><tspan class="endname">{escape(area)}</tspan> {escape(_fmt(v, unit))}</text>')
     out.append("</svg>")
     return "\n".join(out)
 
 
-def legend(areas):
+def legend(areas, ranges=()):
     items = "".join(
         f'<span class="key"><span class="swatch {AREA_CLASS.get(a, "s4")}"></span>{escape(a)}</span>' for a in areas
-    )
+    ) + "".join(f'<span class="key"><span class="swatch range"></span>{escape(r["label"])}</span>' for r in ranges)
     return f'<div class="legend">{items}</div>'
 
 
@@ -146,11 +163,15 @@ def ranked_bars(values, highlight="Waltham Forest", unit="percent", higher_is_be
     return f'<div class="ranked"><ol>{"".join(rows)}</ol></div>'
 
 
-def table(series, periods, unit="percent", caption=""):
+def table(series, periods, unit="percent", caption="", ranges=()):
     head = "".join(f"<th scope='col'>{escape(p)}</th>" for p in periods)
     body = ""
     for area, s in series.items():
         cells = "".join(f"<td>{escape(_fmt(s.get(p), unit)) if s.get(p) is not None else '–'}</td>" for p in periods)
         body += f"<tr><th scope='row'>{escape(area)}</th>{cells}</tr>"
+    for r in ranges:
+        cells = "".join(f"<td>{escape(_fmt(r['low'], unit))} to {escape(_fmt(r['high'], unit))}</td>" if p == r["period"] else "<td>–</td>"
+                        for p in periods)
+        body += f"<tr><th scope='row'>{escape(r['label'])}</th>{cells}</tr>"
     cap = f"<caption>{escape(caption)}</caption>" if caption else ""
     return f'<div class="tablewrap"><table>{cap}<thead><tr><th scope="col"><span class="vh">Area</span></th>{head}</tr></thead><tbody>{body}</tbody></table></div>'
