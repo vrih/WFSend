@@ -271,6 +271,17 @@ scrutiny_nov2026_summary:
   url: https://democracy.walthamforest.gov.uk/documents/s111649/Appendix%201%20-%20SEND%20Reform%20Plan%20Comms%20Overview.pdf
   notes: A 24-slide summary of the plan, not the full plan. Page numbers are slide numbers. Slide 14 is an Experts at Hand leaflet for families, and slide 24 is an extract from the programme's risk log.
 
+# Letters and emails sent to the site's author by named council or NHS
+# officers. They are not published, so they have `kind: correspondence` and
+# no url. Attribute them to the person and their role. Quote them exactly,
+# and cite the part of the letter instead of a page number.
+crouch_nov2026:
+  kind: correspondence
+  title: email to the author of this site
+  publisher: Nicky Crouch, Strategic Director, Children's (Director of Children's Services), London Borough of Waltham Forest
+  date: 2026-11-04
+  notes: A reply to questions about the SEND Reform Plan papers for the Children and Families Scrutiny Committee on 4 November 2026, sent to a councillor on 2 November. The council says the Assistant Director for SEND will reply on the points still open.
+
 # Statements of Accounts and Audit and Governance Committee papers. The figures
 # are in the finance, dsg_accounts and send_risk sections of council_reported.yaml.
 # All the committee's meetings are at

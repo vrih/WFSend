@@ -75,6 +75,10 @@ def cite(source, page=None):
     if "short" in s:  # legislation: "SEND Regulations 2014, regulation 5"; full title on sources.html
         label = s["short"] + where
         return Markup(f'<a class="cite" href="{escape(s["url"])}" title="{escape(s["title"])}" rel="noopener">{escape(label)}</a>')
+    if s.get("kind") == "correspondence":  # a letter or email to us: attributed, not linked
+        day = dt.date.fromisoformat(str(s["date"])).strftime("%-d %B %Y")
+        label = f"{s['publisher']}, {s['title']}, {day}{where}"
+        return Markup(f'<a class="cite" href="sources.html#correspondence">{escape(label)}</a>')
     label = f"{s['publisher']}, {s['title']} ({dt.date.fromisoformat(str(s['date'])).strftime('%B %Y')}){where}"
     return Markup(f'<a class="cite" href="{escape(s["url"])}" rel="noopener">{escape(label)}</a>')
 
@@ -622,6 +626,13 @@ def compute():
     }
 
 
+def source_ref(source, page):
+    """A source for the CSV: the document's URL, or who wrote a letter we were sent."""
+    s = SOURCES[source]
+    where = s["url"] if "url" in s else f"{s['publisher']}, {s['title']}, {s['date']}"
+    return where + f" (p. {page})"
+
+
 def headline_rows(d, local):
     """Every headline number on the home page, for the downloadable CSV."""
     t, ar = d["timeliness"], d["ar"]
@@ -636,14 +647,14 @@ def headline_rows(d, local):
         MANIFEST["ehcp_caseload"]["dataset_url"])
     for key, meas in local["measures"].items():
         o = meas["observations"][-1]
-        add(meas["title"], o["period"], o["value"], meas["unit"], SOURCES[o["source"]]["url"] + f" (p. {o['page']})")
+        add(meas["title"], o["period"], o["value"], meas["unit"], source_ref(o["source"], o["page"]))
     lgo = d["ombudsman"]["stats"][-1]
     add("Ombudsman: complaints about the council upheld (all services)", lgo["reporting_year"],
         int(lgo["upheld"]), "count", LGO_MANIFEST["statistics_url"])
     for y in d["ombudsman"]["by_year"]:
         add("Ombudsman: published SEND decisions upheld", y["year"], y["upheld"], "count", LGO_MANIFEST["decisions_url"])
     for f in local["finance"]:
-        add(f["label"], "", f["value"], "", SOURCES[f["source"]]["url"] + f" (p. {f['page']})")
+        add(f["label"], "", f["value"], "", source_ref(f["source"], f["page"]))
     return rows
 
 

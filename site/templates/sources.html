@@ -3,7 +3,7 @@
 {% block description %}Where every figure on this site comes from, how it is calculated, and when new figures are due.{% endblock %}
 {% block content %}
 <h1>Sources and method</h1>
-<p class="lede">Every figure on this site comes from a public document or official statistic, listed below.</p>
+<p class="lede">Every figure on this site comes from a public document or official statistic, listed below. A few explanations and corrections come from <a href="#correspondence">letters and emails from senior council officers</a>.</p>
 
 <h2>Department for Education statistics</h2>
 <p>These come from <a href="https://explore-education-statistics.service.gov.uk/">Explore Education Statistics</a>. A script downloads each file, keeps the rows for England, London, the London boroughs and Waltham Forest's similar areas (below), and saves a copy in the repository. Rates such as "% within 20 weeks" are recalculated from the published counts. For exclusions and absence, the DfE publishes only Inner and Outer London for earlier years, so the London figure for those years adds the two together. The City of London is left out of London rankings because its numbers are too small to compare.</p>
@@ -59,9 +59,12 @@
 <thead><tr><th scope="col">Document</th><th scope="col">Publisher</th><th scope="col">Date</th><th scope="col">Notes</th></tr></thead>
 <tbody>
 {% for key, s in SOURCES.items()|sort(attribute="1.date", reverse=true) if key in USED.local %}
-<tr><td><a href="{{ s.url }}">{{ s.title }}</a>{% if s.meeting is defined %}<br><span class="note">{{ s.meeting }}</span>{% endif %}</td><td>{{ s.publisher }}</td><td>{{ s.date }}</td><td>{{ s.notes if s.notes is defined else "" }}</td></tr>
+<tr><td>{% if s.url is defined %}<a href="{{ s.url }}">{{ s.title }}</a>{% else %}{{ s.title|capitalize }} (not published){% endif %}{% if s.meeting is defined %}<br><span class="note">{{ s.meeting }}</span>{% endif %}</td><td>{{ s.publisher }}</td><td>{{ s.date }}</td><td>{{ s.notes if s.notes is defined else "" }}</td></tr>
 {% endfor %}
 </tbody></table></div>
+
+<h3 id="correspondence">Letters and emails from the council</h3>
+<p>A few figures and explanations come from letters or emails that senior council or NHS officers sent to the author of this site. They are not published, so we cannot link to them. We name the person and their role, quote them exactly and give the date. These are the officer's own statements on behalf of the council. Where they correct or explain a figure in a published report, we show both. We leave out personal details and anything about individual children.</p>
 
 <h2>Things to bear in mind</h2>
 <ul>
