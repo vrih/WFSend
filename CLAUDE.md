@@ -21,6 +21,14 @@ before changing anything.
   `whatdotheyknow.com` count as published there: cite the request page, or
   the council's own disclosure log if it publishes the same response.
   WhatDoTheyKnow blocks automated downloads, so its files are saved by hand.
+- **Letters and emails from senior officers** are the one exception to
+  "public source". A reply sent to the site's author by a named council or
+  NHS officer can be cited as a `kind: correspondence` entry in
+  `sources.yaml`, with no `url`. Attribute it to the person and their role,
+  quote it exactly, cite the part of the letter instead of a page, and show
+  it next to the published figure it corrects or explains. Never publish
+  the letter itself, contact details, or anything about individual children.
+  `cite()` links these to the explanation on `sources.html#correspondence`.
 - **Be fair.** Say what the data can and can't show: recording changes,
   small numbers, definitions that differ between sources. Put this in a
   chart `note` or `p.note`, as the existing pages do. Don't speculate about

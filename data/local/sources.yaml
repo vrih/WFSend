@@ -279,6 +279,17 @@ cabinet_nov2026_short_breaks:
   url: https://democracy.walthamforest.gov.uk/documents/s111597/Short%20Breaks%20Recommissioning%20-%20Cabinet%20November.pdf
   notes: The report asks Cabinet to approve the recommissioning. Its appendices (a draft coproduction framework and an equality impact assessment) are separate documents on the meeting page, https://democracy.walthamforest.gov.uk/ieListDocuments.aspx?CId=287&MId=6359
 
+# Letters and emails sent to the site's author by named council or NHS
+# officers. They are not published, so they have `kind: correspondence` and
+# no url. Attribute them to the person and their role. Quote them exactly,
+# and cite the part of the letter instead of a page number.
+crouch_nov2026:
+  kind: correspondence
+  title: email to the author of this site
+  publisher: Nicky Crouch, Strategic Director, Children's (Director of Children's Services), London Borough of Waltham Forest
+  date: 2026-11-04
+  notes: A reply to questions about the SEND Reform Plan papers for the Children and Families Scrutiny Committee on 4 November 2026, sent to a councillor on 2 November. The council says the Assistant Director for SEND will reply on the points still open.
+
 # Statements of Accounts and Audit and Governance Committee papers. The figures
 # are in the finance, dsg_accounts and send_risk sections of council_reported.yaml.
 # All the committee's meetings are at
