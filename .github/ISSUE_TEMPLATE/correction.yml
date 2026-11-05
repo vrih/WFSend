@@ -1,0 +1,24 @@
+name: Report a mistake
+description: A figure, label or link on the site is wrong or out of date.
+labels: [correction]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The address of the page, or its name.
+      placeholder: https://wfsenddata.org.uk/plans.html
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong
+      description: Which figure or text, what the site says, and what you think it should say.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link to the public document or data set that shows the correct figure, with a page number if you can.
