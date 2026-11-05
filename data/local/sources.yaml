@@ -271,6 +271,14 @@ scrutiny_nov2026_summary:
   url: https://democracy.walthamforest.gov.uk/documents/s111649/Appendix%201%20-%20SEND%20Reform%20Plan%20Comms%20Overview.pdf
   notes: A 24-slide summary of the plan, not the full plan. Page numbers are slide numbers. Slide 14 is an Experts at Hand leaflet for families, and slide 24 is an extract from the programme's risk log.
 
+cabinet_nov2026_short_breaks:
+  title: Short Breaks Recommissioning (Cabinet report)
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-03
+  meeting: Cabinet, 3 November 2026
+  url: https://democracy.walthamforest.gov.uk/documents/s111597/Short%20Breaks%20Recommissioning%20-%20Cabinet%20November.pdf
+  notes: The report asks Cabinet to approve the recommissioning. Its appendices (a draft coproduction framework and an equality impact assessment) are separate documents on the meeting page, https://democracy.walthamforest.gov.uk/ieListDocuments.aspx?CId=287&MId=6359
+
 # Letters and emails sent to the site's author by named council or NHS
 # officers. They are not published, so they have `kind: correspondence` and
 # no url. Attribute them to the person and their role. Quote them exactly,
