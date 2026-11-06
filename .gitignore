@@ -5,3 +5,5 @@ __pycache__/
 # Hand-downloaded NHS files are too big to commit; only extracts are kept
 data/nhs/raw/
 *.zip
+
+.claude/settings.local.json
