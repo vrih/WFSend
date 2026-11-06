@@ -271,6 +271,30 @@ scrutiny_nov2026_summary:
   url: https://democracy.walthamforest.gov.uk/documents/s111649/Appendix%201%20-%20SEND%20Reform%20Plan%20Comms%20Overview.pdf
   notes: A 24-slide summary of the plan, not the full plan. Page numbers are slide numbers. Slide 14 is an Experts at Hand leaflet for families, and slide 24 is an extract from the programme's risk log.
 
+scrutiny_nov2026_htst:
+  title: Home to School Transport (HTST) Taxi Open Framework (report to the Children and Families Scrutiny Committee)
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-04
+  meeting: Children and Families Scrutiny Committee, 4 November 2026 (item 8)
+  url: https://democracy.walthamforest.gov.uk/documents/s111646/HTST%20Taxis%20Open%20Framework.pdf
+  notes: 5-page cover report by the Head of SEND Commissioning and Delivery. Its appendix is scrutiny_nov2026_htst_cabinet.
+
+scrutiny_nov2026_htst_cabinet:
+  title: Home to School Transport (HTST) Taxi Open Framework (draft Cabinet report, Appendix 1)
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-04
+  meeting: Children and Families Scrutiny Committee, 4 November 2026 (Appendix 1 to item 8)
+  url: https://democracy.walthamforest.gov.uk/documents/s111647/Appendix%201%20-%20Cabinet%20Report%20Second%20Draft%2016.10.26%20-%20HTST%20Taxis%20Open%20Framework%20Dec.pdf
+  notes: A draft ("Second Draft 16.10.26") of the report going to Cabinet on 1 December 2026. The figures may change before then.
+
+scrutiny_sep2026_minutes:
+  title: Minutes of the Children and Families Scrutiny Committee, 9 September 2026
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-04
+  meeting: Children and Families Scrutiny Committee, 4 November 2026 (item 3, for approval)
+  url: https://democracy.walthamforest.gov.uk/documents/s111662/Minutes%20Public%20Pack%2009092026%20Children%20and%20Families%20Scrutiny%20Committee.pdf
+  notes: Minutes summarise what was said. They are not a transcript. Published as part of the papers for the next meeting, where they were due to be approved.
+
 cabinet_nov2026_short_breaks:
   title: Short Breaks Recommissioning (Cabinet report)
   publisher: London Borough of Waltham Forest

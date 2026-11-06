@@ -369,6 +369,12 @@ finance:
     detail: The council's forecast once the High Needs Stability Grant is taken off. It uses the same forecast as the High Needs overspend above.
     source: sf_oct2026
     page: 30
+  - id: htst_taxi_2627
+    label: Forecast spend on school transport taxis 2026/27
+    value: "£2.25m"
+    detail: '"a highly significant overspend against its £1.7m budget". The council spent "approximately £1.7m" in 2025/26. The figures are from a draft Cabinet report, which says the council is "investigating the causes of this increase in demand".'
+    source: scrutiny_nov2026_htst_cabinet
+    page: "2 and 6"
   - id: hnb_allocation
     label: High Needs Block allocation 2026/27 (gross)
     value: "£65.80m"
@@ -449,3 +455,27 @@ short_breaks_recommissioning:
   budget_page: 2
   eligibility: "does not propose changes to eligibility or policy details"
   eligibility_page: 6
+
+# Proposed framework for buying home to school transport taxis. Figures are
+# from a draft Cabinet report (Appendix 1 to the scrutiny item). The PDFs
+# have no printed page numbers, so pages are PDF page numbers.
+htst_taxi_framework:
+  source: scrutiny_nov2026_htst_cabinet
+  cover_source: scrutiny_nov2026_htst
+  cabinet_date: 1 December 2026
+  value: "£7.3m"
+  value_page: 2
+  term: a three-year period
+  spend_2526: "approximately £1.7m"
+  spend_2627: "£2.25m"
+  spend_page: 2
+  expired: "The previous Taxi Dynamic Purchasing System expired in 2023 and no current compliant replacement arrangement is in place."
+  expired_page: 2
+  providers: "four to five providers delivering most Home to School Transport taxi routes"
+  providers_page: 3
+  demand: "we are investigating the causes of this increase in demand and will return to council with recommendations"
+  demand_page: 2
+  eligibility: "does not seek to change Home to School Transport eligibility criteria, transport policy or service entitlements"
+  eligibility_page: 1
+  forum_themes: communication with families, driver consistency, safeguarding, SEND-specific training, information sharing and the importance of defining what good-quality Home to School Transport looks like from the perspective of children and families
+  forum_page: 5
