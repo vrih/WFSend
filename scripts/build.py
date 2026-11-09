@@ -598,6 +598,7 @@ def compute():
         "special_schools": M.special_schools(),
         "specialist_units": M.specialist_units(),
         "specialist_settings": M.specialist_settings(),
+        "ofsted_schools": M.ofsted_schools(),
         "school_sen": M.school_sen(),
         "specialist_forecasts": M.specialist_forecasts(),
         "home_education": M.home_education(),
@@ -795,6 +796,7 @@ def main():
     for f in (ROOT / "data" / "lgo").glob("*.csv"):
         shutil.copy(f, OUT / "data" / f"ombudsman_{f.name}")
     shutil.copy(ROOT / "data" / "gias" / "specialist_settings.csv", OUT / "data" / "gias_specialist_settings.csv")
+    shutil.copy(ROOT / "data" / "ofsted" / "school_inspections.csv", OUT / "data" / "ofsted_school_inspections.csv")
     for f in (ROOT / "data" / "spend").glob("*.csv"):
         shutil.copy(f, OUT / "data" / f"spend_{f.name}")
     shutil.copy(ROOT / "data" / "contracts" / "notices.csv", OUT / "data" / "contract_notices.csv")

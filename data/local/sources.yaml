@@ -12,6 +12,34 @@ ofsted_2025:
   url: https://files.ofsted.gov.uk/v1/file/50273312
   notes: Inspection 10 to 14 February 2025. All Ofsted reports for the council are at https://reports.ofsted.gov.uk/provider/44/80517
 
+ofsted_fv_2026:
+  title: Focused visit to London Borough of Waltham Forest children's services
+  publisher: Ofsted
+  date: 2026-02-19
+  url: https://files.ofsted.gov.uk/v1/file/50295743
+  notes: Visit 20 and 21 January 2026, looking at the "front door" (the multi-agency safeguarding hub). Focused visits are part of the ILACS framework but are not graded. All Ofsted reports on the council's children's services are at https://reports.ofsted.gov.uk/provider/44/320
+
+ofsted_ilacs_2024:
+  title: Inspection of Waltham Forest local authority children's services
+  publisher: Ofsted
+  date: 2024-08-20
+  url: https://files.ofsted.gov.uk/v1/file/50255164
+  notes: Inspection of local authority children's services (ILACS), 8 to 12 July 2024. Covers social work with children and families, children in care and care leavers, not SEND services.
+
+ofsted_ilacs_2019:
+  title: London Borough of Waltham Forest inspection of children's social care services
+  publisher: Ofsted
+  date: 2019-03-11
+  url: https://files.ofsted.gov.uk/v1/file/50061232
+  notes: Inspection 28 January to 8 February 2019.
+
+ofsted_bca_2024:
+  title: Inspection of Big Creative Academy
+  publisher: Ofsted
+  date: 2024-03-14
+  url: https://files.ofsted.gov.uk/v1/file/50241782
+  notes: Further education and skills inspection, 23 to 25 January 2024. Big Creative Academy is a 16 to 19 academy, so it is not in Ofsted's management information for schools. Its reports are at https://reports.ofsted.gov.uk/provider/46/141030
+
 ofsted_2019:
   title: Local area SEND revisit, Waltham Forest
   publisher: Ofsted and Care Quality Commission

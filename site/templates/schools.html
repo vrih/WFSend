@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}SEND in each school in Waltham Forest{% endblock %}
-{% block description %}{% with v = d.school_sen.phases.secondary %}In Waltham Forest's secondary schools, {{ fmt(v.areas[WF].ehcp) }} of pupils had an EHC plan, against {{ fmt(v.areas.England.ehcp) }} in England.{% endwith %} Pupils with an EHC plan or SEN support in each mainstream school, and the borough's special schools, resourced provision and SEN units.{% endblock %}
+{% block description %}{% with v = d.school_sen.phases.secondary %}In Waltham Forest's secondary schools, {{ fmt(v.areas[WF].ehcp) }} of pupils had an EHC plan, against {{ fmt(v.areas.England.ehcp) }} in England.{% endwith %} Pupils with an EHC plan or SEN support in each mainstream school, and the borough's special schools, resourced provision and SEN units, with their latest Ofsted inspections.{% endblock %}
 {% block content %}
 {% set su = d.specialist_units %}
 {% set su_latest = su.by_year.values()|list|last %}
 <h1>SEND in each school</h1>
-<p class="lede">How many pupils in each of Waltham Forest's mainstream schools have an EHC plan or SEN support, and what each special school, resourced provision and SEN unit is recorded as offering. For whether there are enough places, see <a href="places.html">Places</a>.</p>
+<p class="lede">How many pupils in each of Waltham Forest's mainstream schools have an EHC plan or SEN support, what each special school, resourced provision and SEN unit is recorded as offering, and what Ofsted found when it last inspected them. For whether there are enough places, see <a href="places.html">Places</a>.</p>
 
 {% set sch = d.school_sen %}
 <h2 id="mainstream">Pupils with SEND in each mainstream school</h2>
@@ -72,6 +72,34 @@
 </tbody></table></div>
 <p class="note">Some entries look incomplete or out of date.{% if no_places %} {{ no_places|length }} {{ "school has" if no_places|length == 1 else "schools have" }} no places recorded.{% endif %}{% if whole_school %} {{ whole_school|join(" and ") }} {{ "records" if whole_school|length == 1 else "record" }} as many specialist places as the whole school, or more.{% endif %} So we haven't added these up, and they don't match the DfE count of {{ fmt(su_latest.resourced + su_latest.units, "count") }} places on the <a href="places.html#specialist-places">Places</a> page, which comes from what the council reported each May.</p>
 <p class="source">{{ gias_source }}</p>
+</figure>
+
+{% set os = d.ofsted_schools %}
+<h2 id="ofsted">Ofsted inspections</h2>
+<p>The latest Ofsted inspection of each special school, and of each school with resourced provision or an SEN unit. These inspections took place between {{ os.oldest.strftime("%B %Y") }} and {{ os.newest.strftime("%B %Y") }}. Follow a school's name for its inspection reports.</p>
+<figure class="metric" id="ofsted-inspections">
+<figcaption><h3>Latest Ofsted inspection of each special school and school with resourced provision or an SEN unit</h3>
+<p class="explain">For a mainstream school, Ofsted inspects the whole school. It does not grade the resourced provision or SEN unit on its own, although inspectors look at how well pupils with SEND are taught.</p></figcaption>
+<div class="tablewrap"><table class="wide">
+<thead><tr><th scope="col">School</th><th scope="col">Setting</th><th scope="col">Latest inspection</th><th scope="col">What Ofsted found</th></tr></thead>
+<tbody>
+{% for s in os.schools %}
+{% set l = s.latest %}
+<tr><th scope="row"><a href="{{ s.ofsted_url }}">{{ s.name }}</a></th><td>{{ s.setting }}</td>
+{% if l %}
+<td>{{ l.kind }}, {{ l.date.strftime("%B %Y") }}<br><span class="note">Report published {{ l.published.strftime("%-d %B %Y") }}</span>{% if l.name_then %}<br><span class="note">Inspected as {{ l.name_then }}</span>{% endif %}</td>
+<td>{% if l.judgements is defined %}{% for a, g in l.judgements %}{{ a }}: <strong>{{ g }}</strong>{{ "<br>"|safe if not loop.last }}{% endfor %}{% else %}<strong>{{ l.outcome }}</strong>{% if l.next %}<br><span class="note">{{ l.next }}</span>{% endif %}{% endif %}{% if l.concern %}<br>Category of concern: <strong>{{ l.concern }}</strong>{% endif %}</td>
+{% elif s.fe %}
+<td>Further education inspection, {{ s.fe.dates }}</td>
+<td>{% for j in s.fe.judgements %}{{ j.area }}: <strong>{{ j.grade }}</strong>{{ "<br>"|safe if not loop.last }}{% endfor %}<br><span class="note">{{ cite(s.fe.source, s.fe.page) }}</span></td>
+{% else %}
+<td colspan="2">Not in Ofsted's data for state-funded schools</td>
+{% endif %}
+</tr>
+{% endfor %}
+</tbody></table></div>
+<p class="note">Ofsted has changed how it judges schools twice since these inspections began, so the results are not all on the same scale. Graded inspections before September 2024 gave an overall grade of Outstanding, Good, Requires improvement or Inadequate. From September 2024 to November 2025, graded inspections still graded each area but no longer gave an overall grade ("Not judged"). Since November 2025, report card inspections grade each area on a five-point scale, from "Exceptional" to "Urgent improvement", with "Expected standard" in the middle. Under the previous system, a school graded Good or Outstanding usually had a shorter ungraded inspection about every four years, which checked whether it was still at that grade but did not grade it again. An older inspection may not show how a school is doing now.</p>
+<p class="source">Source: {{ os.manifest.publisher }}, <a class="cite" href="{{ os.manifest.url }}">{{ os.manifest.title }}</a>: {{ os.manifest.dataset }} (downloaded {{ fetched(os.manifest) }}). <a href="data/ofsted_school_inspections.csv">Download the data (CSV)</a></p>
 </figure>
 
 {% endblock %}
