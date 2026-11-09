@@ -1336,6 +1336,86 @@ def specialist_settings():
             "manifest": manifest}
 
 
+OFSTED = ROOT / "data" / "ofsted"
+OFSTED_URL = "https://reports.ofsted.gov.uk/inspection-reports/find-inspection-report/provider/ELS/{urn}"
+OFSTED_GRADES = {"1": "Outstanding", "2": "Good", "3": "Requires improvement", "4": "Inadequate"}
+# "9" means the area doesn't apply (no early years or sixth form)
+OFSTED_BLANK = {"", "NULL", "9", "Not applicable"}
+# Ungraded inspections under the previous framework could end with one of these
+OFSTED_NEXT = {
+    "(Improving) - S5 Next": "Inspectors saw signs the school could now be better than this grade, so its next inspection would be a graded one.",
+    "(Concerns) - S5 Next": "Inspectors had some concerns, so the school's next inspection would be a graded one.",
+}
+
+
+def _ofsted_date(s):
+    """'20/01/2026' -> date, or None for 'NULL'."""
+    return dt.datetime.strptime(s, "%d/%m/%Y").date() if s and s != "NULL" else None
+
+
+def _ofsted_latest(r):
+    """The most recent of a school's report card, graded and ungraded inspections."""
+    found = []
+    if d := _ofsted_date(r["Inspection start date"]):
+        areas = ["Inclusion", "Curriculum and teaching", "Achievement", "Attendance and behaviour",
+                 "Personal development and wellbeing", "Early years (where applicable)",
+                 "Post-16 provision (where applicable)", "Leadership and governance"]
+        found.append({
+            "kind": "Report card inspection", "date": d, "published": _ofsted_date(r["Publication date"]),
+            "judgements": [(a.replace(" (where applicable)", ""), r[a]) for a in areas if r[a] not in OFSTED_BLANK]
+                          + [("Safeguarding standards", r["Safeguarding standards"])],
+            "concern": r["Category of concern"], "same_urn": r["Does the latest full inspection relate to the URN of the current school?"],
+            "name_then": r["School name at time of latest full inspection"]})
+    if d := _ofsted_date(r["Inspection start date of latest OEIF graded inspection"]):
+        p = "Latest OEIF "
+        areas = [("overall effectiveness", "Overall effectiveness"), ("quality of education", "Quality of education"),
+                 ("behaviour and attitudes", "Behaviour and attitudes"), ("personal development", "Personal development"),
+                 ("effectiveness of leadership and management", "Leadership and management"),
+                 ("early years provision (where applicable)", "Early years"), ("sixth form provision (where applicable)", "Sixth form")]
+        found.append({
+            "kind": "Graded inspection", "date": d, "published": _ofsted_date(r["Publication date of latest OEIF graded inspection"]),
+            "judgements": [(label, OFSTED_GRADES.get(r[p + col], r[p + col])) for col, label in areas if r[p + col] not in OFSTED_BLANK]
+                          + [("Safeguarding effective", r[p + " safeguarding is effective?"])],
+            "concern": r["Latest OEIF category of concern"],
+            "same_urn": r["Does the latest OEIF graded inspection relate to the URN of the current school?"],
+            "name_then": r["School name at time of latest OEIF graded inspection"]})
+    if d := _ofsted_date(r["Date of latest ungraded inspection"]):
+        outcome = r["Ungraded inspection overall outcome"]
+        found.append({
+            "kind": "Ungraded inspection", "date": d, "published": _ofsted_date(r["Ungraded inspection publication date"]),
+            "outcome": outcome, "next": next((v for k, v in OFSTED_NEXT.items() if outcome.endswith(k)), None),
+            "concern": "NULL", "same_urn": r["Does the ungraded inspection relate to the URN of the current school?"],
+            "name_then": r["School name at time of the ungraded inspection"]})
+    if not found:
+        return None
+    latest = max(found, key=lambda f: f["date"])
+    latest["concern"] = "" if latest["concern"] in OFSTED_BLANK else latest["concern"]
+    if latest["same_urn"] != "No":  # inspected as an earlier school, e.g. before becoming an academy
+        latest["name_then"] = ""
+    return latest
+
+
+def ofsted_schools():
+    """The latest Ofsted inspection of each open special school and school with
+    resourced provision or an SEN unit on the GIAS list. Ofsted inspects the
+    whole school, not the resourced provision or unit on its own."""
+    with (OFSTED / "school_inspections.csv").open(encoding="utf-8") as f:
+        by_urn = {r["URN"]: r for r in csv.DictReader(f)}
+    fe = yaml.safe_load((ROOT / "data" / "local" / "inspection.yaml").read_text()).get("further_education", {})
+    settings = specialist_settings()
+    rows = []
+    for group, label in (("special", "Special school"), ("other", None)):
+        for s in settings[group]:
+            r = by_urn.get(s["urn"])
+            row = {"urn": s["urn"], "name": s["name"], "setting": label or s["provision"],
+                   "ofsted_url": OFSTED_URL.format(urn=s["urn"]), "latest": _ofsted_latest(r) if r else None,
+                   "fe": fe.get(s["urn"])}
+            rows.append(row)
+    dates = [r["latest"]["date"] for r in rows if r["latest"]]
+    return {"schools": rows, "oldest": min(dates), "newest": max(dates),
+            "manifest": json.loads((OFSTED / "manifest.json").read_text())}
+
+
 def specialist_forecasts():
     """Council forecasts of resident pupils with an EHC plan who will need a
     specialist place, indexed to the first forecast year so areas compare."""

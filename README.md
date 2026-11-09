@@ -23,6 +23,10 @@ to the officer by name and role, but not published. The public sources are:
 - **Get Information About Schools**, downloaded automatically: the DfE's
   register of schools, for Waltham Forest's special schools, resourced
   provision and SEN units, with the ages and types of need each one takes.
+- **Ofsted school inspections**, downloaded automatically from Ofsted's
+  [monthly management information](https://www.gov.uk/government/statistical-data-sets/monthly-management-information-ofsteds-school-inspections-outcomes):
+  the latest inspection of each special school and school with resourced
+  provision or an SEN unit on the GIAS list.
 - **ONS population estimates**, downloaded automatically from
   [Nomis](https://www.nomisweb.co.uk/datasets/pestsyoala): the number of
   children aged 2 to 18 in each area, used to show requests for an assessment per
@@ -41,8 +45,9 @@ to the officer by name and role, but not published. The public sources are:
   mental health services, for NELFT, North East London, London and England. NHS England blocks automated downloads, so these are
   downloaded by hand and cut down with `scripts/extract_nhs.py`.
 - **Council, NHS and Ofsted documents**: committee papers, the SEND Local Area
-  Improvement Plan and its highlight reports, budget reports, and the 2025 area
-  SEND inspection. These are entered by hand with page numbers.
+  Improvement Plan and its highlight reports, budget reports, the 2025 area
+  SEND inspection and the inspections of the council's children's services
+  (ILACS). These are entered by hand with page numbers.
 - **What families say**: the Waltham Forest Parent Forum's surveys of parent
   carers (January 2025 and May 2021), and figures for Waltham Forest SENDIASS
   from the impact reports of Centre 404, the charity that runs it. Entered by
@@ -56,6 +61,7 @@ data/dfe_sources.yaml     which DfE data sets to download
 scripts/fetch_dfe.py      downloads them, keeps England, London and neighbour rows -> data/dfe/*.csv
 scripts/fetch_lgo.py      downloads Ombudsman decisions and statistics -> data/lgo/*.csv
 scripts/fetch_gias.py     downloads the GIAS register, keeps Waltham Forest's specialist settings -> data/gias/
+scripts/fetch_ofsted.py   downloads Ofsted's latest school inspections, keeps the GIAS settings -> data/ofsted/
 scripts/fetch_ons.py      downloads ONS population estimates (ages 2 to 18) -> data/ons/population.csv
 scripts/fetch_spend.py    downloads the council's spending over £500 reports, keeps SEND payments -> data/spend/
 scripts/fetch_contracts.py downloads the council's notices from Contracts Finder and Find a Tender -> data/contracts/
@@ -134,7 +140,9 @@ python scripts/fetch_dfe.py ehcp_timeliness  # or one data set
 ```
 
 Refresh the Ombudsman data the same way with `python scripts/fetch_lgo.py`,
-the list of specialist settings with `python scripts/fetch_gias.py`, and the
+the list of specialist settings with `python scripts/fetch_gias.py`, their
+Ofsted inspections with `python scripts/fetch_ofsted.py` (after `fetch_gias.py`,
+because it keeps the schools on that list), and the
 ONS population estimates with `python scripts/fetch_ons.py`, and the council's
 spending over £500 with `python scripts/fetch_spend.py`. The GIAS file is
 about 65 MB, but only Waltham Forest's specialist settings are kept. The ONS
@@ -159,7 +167,14 @@ September release of Tribunals statistics quarterly in December. The script
 finds the latest file through the GOV.UK content API, so it needs no updating,
 but it stops if the table headings change.
 
-The `Refresh DfE and Ombudsman data` workflow runs all seven on the 3rd of each
+Ofsted publishes its management information for schools in the middle of
+each month, covering inspections published by the end of the month before.
+The script finds the newest file through the GOV.UK content API. Ofsted
+inspects 16 to 19 academies as further education providers, so they aren't in
+it: their results are copied by hand into `further_education` in
+`data/local/inspection.yaml`.
+
+The `Refresh DfE and Ombudsman data` workflow runs all eight on the 3rd of each
 month and opens a pull request if anything changed. Upcoming release dates
 are kept by hand in `data/local/release_calendar.yaml`.
 

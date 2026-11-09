@@ -29,10 +29,75 @@ current:
 
 history:
   - { date: "January 2017", summary: "Joint local area SEND inspection. A written statement of action was required.", source: ofsted_2017 }
+  - { date: "February 2019", summary: "Inspection of children's social care services: good overall.", source: ofsted_ilacs_2019 }
   - { date: "March 2019", summary: "Revisit found sufficient progress on the significant weaknesses identified in 2017.", source: ofsted_2019 }
+  - { date: "July 2024", summary: "Inspection of children's social care services: good overall, and outstanding for children in care.", source: ofsted_ilacs_2024 }
   - { date: "February 2025", summary: "Area SEND inspection: inconsistent experiences and outcomes (middle of three outcomes).", source: ofsted_2025 }
+  - { date: "January 2026", summary: "Focused visit to children's social care services, looking at how the council responds when someone first raises a concern about a child. Not graded.", source: ofsted_fv_2026 }
 
 response:
   - { date: "April 2025", summary: "SEND Local Area Improvement Plan published. It has six priorities and 46 actions, with measures and March 2025 baselines.", source: laip_2025 }
   - { date: "October 2025", summary: "Highlight report to the Health and Wellbeing Board: 35 of 46 actions complete or on track, 8 at risk of delay, 3 delayed.", source: hwb_oct2025_highlight }
   - { date: "December 2025", summary: "Cabinet asked to approve the SEND Strategy 2025-2028. The strategy says a separate Local Area Plan will hold the 'clear targets'.", source: send_strategy_cabinet_dec2025 }
+
+# The council's children's services (social care), inspected by Ofsted under
+# the ILACS framework. Separate from the area SEND inspection above.
+childrens_services:
+  source: ofsted_ilacs_2024
+  dates: 8 to 12 July 2024
+  published: 20 August 2024
+  judgements_page: 1
+  judgements:
+    - { area: The impact of leaders on social work practice with children and families, grade: Good }
+    - { area: The experiences and progress of children who need help and protection, grade: Good }
+    - { area: The experiences and progress of children in care, grade: Outstanding }
+    - { area: The experiences and progress of care leavers, grade: Good }
+    - { area: Overall effectiveness, grade: Good }
+  scale_note: >-
+    Ofsted grades each area as outstanding, good, requires improvement to be
+    good, or inadequate.
+  areas_for_improvement_page: 2
+  areas_for_improvement:
+    - The use of the pre-proceedings element of the Public Law Outline (PLO) when children experience neglect.
+    - The support to care leavers, including how information is shared, to help them fully understand their pathway plans and their rights and entitlements.
+    - The quality of supervision and the impact of audits on practice.
+  improvement_note: >-
+    The Public Law Outline is the process a council follows before it asks a
+    court to make a care order for a child.
+  quotes:
+    - text: Disabled children have detailed and current assessments of their needs. Social workers consider well the impact of a child’s disability, and plans provide appropriate support, including care provided by specialist services when needed.
+      page: 4
+    - text: The virtual school is led by committed and skilled leaders who know their children well.
+      page: 6
+  focused_visit:
+    source: ofsted_fv_2026
+    dates: 20 and 21 January 2026
+    published: 19 February 2026
+    page: 1
+    summary: >-
+      Inspectors looked at the "front door": the multi-agency safeguarding hub
+      (MASH), where the council, police and health staff decide what help a
+      child needs when someone raises a concern. Focused visits are not graded.
+    quote: There has been improvement in the timeliness of responses for children who need a lower level of support, and improved management oversight is having a positive impact on decision-making.
+    areas_for_improvement_page: 2
+    areas_for_improvement:
+      - Engagement with parents to support swift information-gathering and multi-agency decision-making.
+      - The consistent use of safety and contingency planning.
+      - The impact of quality assurance on practice within the MASH.
+
+# Specialist settings Ofsted inspects as further education providers, so they
+# are not in its management information for schools (data/ofsted/). Keyed by
+# URN, to match the GIAS list.
+further_education:
+  "141030":
+    source: ofsted_bca_2024
+    page: 1
+    dates: 23 to 25 January 2024
+    judgements:
+      - { area: Overall effectiveness, grade: Outstanding }
+      - { area: The quality of education, grade: Outstanding }
+      - { area: Behaviour and attitudes, grade: Outstanding }
+      - { area: Personal development, grade: Outstanding }
+      - { area: Leadership and management, grade: Outstanding }
+      - { area: Education programmes for young people, grade: Outstanding }
+      - { area: Provision for learners with high needs, grade: Outstanding }

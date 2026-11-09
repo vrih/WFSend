@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% import "_macros.html" as ui %}
 {% block title %}SEND inspection and targets in Waltham Forest{% endblock %}
-{% block description %}Ofsted and CQC found "inconsistent experiences and outcomes" for children with SEND in Waltham Forest in 2025. What inspectors asked for, the legal deadlines, the targets the council has and hasn't set, how it is doing against them, and what families say about SEND services.{% endblock %}
+{% block description %}Ofsted and CQC found "inconsistent experiences and outcomes" for children with SEND in Waltham Forest in 2025. What inspectors asked for, the legal deadlines, the targets the council has and hasn't set, how it is doing against them, and what families say about SEND services. Ofsted judged the council's children's services good in 2024.{% endblock %}
 {% block content %}
 {% set c = inspection.current %}
 {% set statuses = {"met": ("met", "Met"), "behind": ("behind", "Behind"), "improving": ("improving", "Improving, no end point"), "no data": ("nodata", "No data published"), "unclear": ("unclear", "Unclear")} %}
 <h1>Inspection and targets</h1>
-<p class="lede">What Ofsted and the Care Quality Commission found in 2025, what families say, what the law requires, what the council has committed to since, and where no target has been set.</p>
+<p class="lede">What Ofsted and the Care Quality Commission found in 2025, what Ofsted found when it inspected the council's children's services, what families say, what the law requires, what the council has committed to since, and where no target has been set.</p>
 {% set counts = {} %}{% for t in local.targets %}{% set _ = counts.update({t.status: counts.get(t.status, 0) + 1}) %}{% endfor %}
 {% call ui.key_points() %}
 <li>The 2025 Ofsted and CQC inspection of SEND services in Waltham Forest found "inconsistent experiences and outcomes", the middle of three possible outcomes.{{ ui.see("inspection") }}</li>
+<li>In July 2024, Ofsted judged Waltham Forest Council's children's services, which cover social work, children in care and care leavers, good overall and outstanding for children in care. This inspection does not cover SEND services.{{ ui.see("childrens-services") }}</li>
 <li>In a January 2025 Waltham Forest Parent Forum survey, {{ d.family_survey.by_id.overall.dissatisfied }} of {{ d.family_survey.by_id.overall.total }} parents and carers ({{ fmt(d.family_survey.by_id.overall.dissatisfied_pct) }}) were dissatisfied with SEND services in Waltham Forest overall, and {{ d.family_survey.by_id.overall.satisfied }} ({{ fmt(d.family_survey.by_id.overall.satisfied_pct) }}) were satisfied.{{ ui.see("parent-forum-survey") }}</li>
 <li>Waltham Forest Council has published no numeric target for how quickly it issues EHC plans or completes annual reviews.{{ ui.see("measures-with-no-target") }}</li>
 <li>Of the {{ local.targets|length }} commitments in Waltham Forest's SEND improvement plan with a number and a date, by our reading {{ counts.get("met", 0) }} have been met, {{ counts.get("behind", 0) }} are behind, {{ counts.get("improving", 0) }} are improving with no end point and {{ counts.get("no data", 0) }} have no progress figure published.{{ ui.see("commitments-with-a-number-and-a-date") }}</li>
@@ -31,6 +32,40 @@
 {% for q in c.quotes %}
 <blockquote>"{{ q.text }}"<br><span class="source">{{ cite(c.source, q.page) }}</span></blockquote>
 {% endfor %}
+
+{% set cs = inspection.childrens_services %}
+<h2 id="childrens-services">Children's services inspection</h2>
+<p>Ofsted also inspects the council's children's services: social work with children and families, children in care and care leavers. This is a separate inspection from the area SEND inspection. It does not look at EHC plans or SEN support, but it does look at social work with disabled children and at the virtual school, which supports the education of children in care. The latest full inspection was {{ cs.dates }}, and the report was published on {{ cs.published }}.</p>
+<div class="tablewrap"><table>
+<caption class="vh">Ofsted judgements of Waltham Forest children's services, July 2024</caption>
+<thead><tr><th scope="col">Judgement</th><th scope="col">Grade</th></tr></thead>
+<tbody>
+{% for j in cs.judgements %}<tr><th scope="row">{{ j.area }}</th><td>{{ j.grade }}</td></tr>{% endfor %}
+</tbody></table></div>
+<p class="source">{{ cite(cs.source, cs.judgements_page) }}</p>
+<p>{{ cs.scale_note }}</p>
+
+<h3>What inspectors asked the council to improve</h3>
+<ul>
+{% for a in cs.areas_for_improvement %}<li>{{ a }}</li>{% endfor %}
+</ul>
+<p class="note">{{ cs.improvement_note }}</p>
+<p class="source">{{ cite(cs.source, cs.areas_for_improvement_page) }}</p>
+
+<h3>What inspectors said about disabled children and education</h3>
+{% for q in cs.quotes %}
+<blockquote>"{{ q.text }}"<br><span class="source">{{ cite(cs.source, q.page) }}</span></blockquote>
+{% endfor %}
+
+{% set fv = cs.focused_visit %}
+<h3>Focused visit, January 2026</h3>
+<p>Ofsted visited again on {{ fv.dates }}, and published its findings on {{ fv.published }}. {{ fv.summary }}</p>
+<blockquote>"{{ fv.quote }}"<br><span class="source">{{ cite(fv.source, fv.page) }}</span></blockquote>
+<p>Inspectors said these still needed to improve:</p>
+<ul>
+{% for a in fv.areas_for_improvement %}<li>{{ a }}</li>{% endfor %}
+</ul>
+<p class="source">{{ cite(fv.source, fv.areas_for_improvement_page) }}</p>
 
 {% set fs = d.family_survey %}
 <h2>What families say</h2>
