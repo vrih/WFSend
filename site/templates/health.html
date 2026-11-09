@@ -38,11 +38,16 @@
 {% if cp and cw.periods|length > 12 %}{% set q = cw.periods[-13] %}{% set s18 = cp.pct18.series %}
 <p class="note">For community paediatrics, the share of children on NELFT's list who had waited over 18 weeks went from {{ fmt(s18.NELFT[q]) }} in {{ q }} to {{ fmt(s18.NELFT[p]) }} in {{ p }}. Over the same year London went from {{ fmt(s18.London[q]) }} to {{ fmt(s18.London[p]) }}, and England from {{ fmt(s18.England[q]) }} to {{ fmt(s18.England[p]) }}.</p>
 {% endif %}
+{% set late = cw.services|selectattr("nelft_from")|list %}
+{% if late %}
+<p class="note">For {{ late|map(attribute="name")|map("lower")|join(" and ") }}, NELFT reported 0 children waiting, or left the figure blank, in every month up to {{ cw.periods[cw.periods.index(late[0].nelft_from) - 1] }}. From {{ late[0].nelft_from }} it reported several hundred. NHS England doesn't explain the change, so NELFT's figures for these services are shown only from {{ late[0].nelft_from }} and can't be compared with earlier months. Wheelchairs are counted with orthotics, prosthetics and other equipment, so this is not a wheelchair waiting list on its own.</p>
+{% endif %}
 {% if cw.periods|length > 1 %}
 {% for s in cw.services %}
 <h4 class="sub">{{ s.pct18.title }}</h4>
 {{ charts.legend(["NELFT", "London", "England"])|safe }}
 {{ charts.line_chart(s.pct18.series, cw.periods, unit="percent", title=s.pct18.title, y_max=100)|safe }}
+{% if s.nelft_from %}<p class="note">NELFT's line starts in {{ s.nelft_from }}, the first month it reported children waiting for this service.</p>{% endif %}
 <details><summary>Show the numbers</summary>{{ charts.table(s.pct18.series, cw.periods)|safe }}</details>
 {% endfor %}
 {% endif %}
