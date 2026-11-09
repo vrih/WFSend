@@ -1018,7 +1018,16 @@ CHS_SERVICES = [
     ("(CYP) Therapy interventions: Speech and language", "Speech and language therapy"),
     ("(CYP) Therapy interventions: Occupational therapy", "Occupational therapy"),
     ("(CYP) Therapy interventions: Physiotherapy", "Physiotherapy"),
+    ("(CYP) Audiology", "Audiology (hearing)"),
+    ("(CYP) Wheelchair, orthotics, prosthetics and equipment", "Wheelchairs, orthotics, prosthetics and equipment"),
 ]
+# NELFT returned 0 or blank for these services every month to March 2026, then
+# reported hundreds of children from April 2026. NHS England gives no reason,
+# so NELFT's months before then are left off rather than shown as zero.
+CHS_NELFT_FROM = {
+    "(CYP) Audiology": (2026, 4),
+    "(CYP) Wheelchair, orthotics, prosthetics and equipment": (2026, 4),
+}
 CHS_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "": "England"}
 MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July",
                                       "August", "September", "October", "November", "December"], 1)}
@@ -1069,6 +1078,10 @@ def community_waits():
             t = months[ym]["tables"]
             p = label(ym)
             for area in CHS_AREAS.values():
+                if area == "NELFT" and ym < CHS_NELFT_FROM.get(col, ym):
+                    for d in (total, over18, over52, pct18):
+                        d.setdefault(area, {})[p] = None
+                    continue
                 get = lambda k: t.get(k, (None, {}))[1].get(area, {}).get(col)
                 tot = get("Table_4")
                 bands = [get(k) for k in ("Table_4f", "Table_4g", "Table_4h")]
@@ -1078,8 +1091,10 @@ def community_waits():
                 over18.setdefault(area, {})[p] = o18
                 over52.setdefault(area, {})[p] = o52
                 pct18.setdefault(area, {})[p] = pct(o18, tot) if tot else None
+        nelft_from = CHS_NELFT_FROM.get(col)
         services.append({
-            "name": name, "column": col, "total": total, "over18": over18, "over52": over52,
+            "name": name, "column": col, "nelft_from": label(nelft_from) if nelft_from else None,
+            "total": total, "over18": over18, "over52": over52,
             "pct18": {"id": "chs_" + re.sub(r"\W+", "_", name.lower()), "unit": "percent",
                       "title": f"Children waiting over 18 weeks: {name.lower()}",
                       "explain": "Share of children on the waiting list who had waited more than 18 weeks at the end of the month.",
