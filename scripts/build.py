@@ -71,7 +71,8 @@ def cite(source, page=None):
     USED["local"].add(source)
     if "short" not in s:  # legislation is not data, and would date a page to 2014
         PAGE_DATES.add(str(s["date"]))
-    where = f", p. {page}" if isinstance(page, int) else (f", {page}" if page else "")
+    # `page_label` in sources.yaml: "slide" for slide packs, where "p." would mislead
+    where = f", {s.get('page_label', 'p.')} {page}" if isinstance(page, int) else (f", {page}" if page else "")
     if "short" in s:  # legislation: "SEND Regulations 2014, regulation 5"; full title on sources.html
         label = s["short"] + where
         return Markup(f'<a class="cite" href="{escape(s["url"])}" title="{escape(s["title"])}" rel="noopener">{escape(label)}</a>')

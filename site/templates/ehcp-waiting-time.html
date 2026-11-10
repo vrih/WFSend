@@ -26,7 +26,7 @@
 {% for p in b.periods %}{{ fmt(b["values"][p][WF].within20) }} in {{ p }}{{ ", " if not loop.last else ". " }}{% endfor %}
 {% set first = b["values"][b.periods[0]][WF].over52 %}
 The share taking more than a year went from {{ "none" if first == 0 else fmt(first) }} in {{ b.periods[0] }} to {{ fmt(b["values"][y][WF].over52) }} in {{ y }}.</p>
-<p>The council's own monitoring shows no recovery yet. Its latest figure ({{ lt.period }}) is {{ lt.value }}% within 20 weeks ({{ cite(lt.source, lt.page) }}). These figures come from the council's case management system, which the council has said may be inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}).</p>
+<p>The council's own monitoring shows no recovery yet. Its latest figure ({{ lt.period }}) is {{ lt.value }}% within 20 weeks ({{ cite(lt.source, lt.page) }}). The council's SEND Reform Plan aims for 30% of new plans within 20 weeks by 2027, and the England average by 2028 ({{ cite("scrutiny_nov2026_summary", 6) }}). The legal limit still applies to every plan. These figures come from the council's case management system, which the council has said may be inaccurate ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}).</p>
 
 <h2 id="steps">The steps and the legal deadlines</h2>
 <ol>

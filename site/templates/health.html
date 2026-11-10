@@ -89,7 +89,7 @@
 {% endif %}
 {% if au.after_periods %}
 <h4 class="sub">From {{ au.after_periods[0] }}: a break in the figures</h4>
-<p>In {{ au.after_periods[0] }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.after.waiting.NELFT[au.after_periods[0]], "count") }} in a single month. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month. Until this is explained, these months are shown separately and not added to the trend.</p>
+<p>In {{ au.after_periods[0] }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.after.waiting.NELFT[au.after_periods[0]], "count") }} in a single month. The North East London count fell too, from {{ fmt(au.waiting.series["North East London"][p], "count") }} to {{ fmt(au.after.waiting["North East London"][au.after_periods[0]], "count") }}. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month. Until this is explained, these months are shown separately and not added to the trend.</p>
 <div class="tablewrap"><table>
 <thead><tr><th scope="col">Area</th>{% for q in au.after_periods %}<th scope="col">{{ q }}: waiting</th>{% endfor %}<th scope="col">{{ au.after_periods[-1] }}: 13+ weeks</th></tr></thead>
 <tbody>

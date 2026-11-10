@@ -156,7 +156,7 @@ forum_survey_2021:
     - { label: "Parents who have never heard of the Local Offer", value: "67%" }
 
 sendiass:
-  note: "Waltham Forest SENDIASS gives free, impartial advice on SEND to families. Each report counts its work differently (referrals and cases in 2023-24, individual clients in 2024-25), so the years can't be compared. The reports don't define these terms."
+  note: "Each report counts its work differently (referrals and cases in 2023-24, individual clients in 2024-25), so the years can't be compared. The reports don't define these terms."
   years:
     - period: 2023-24
       source: centre404_impact_2023_24

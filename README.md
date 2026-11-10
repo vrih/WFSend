@@ -219,6 +219,8 @@ release and needs updating by hand too.
    For a letter or email a named council or NHS officer sent to the site's
    author, add `kind: correspondence` and leave out `url`. The site
    attributes it to the person and their role, and does not publish it.
+   For a slide pack, add `page_label: slide` so citations say "slide 6", not
+   "p. 6".
 2. Add the figure to `data/local/council_reported.yaml` (or
    `data/local/foi.yaml` for an FOI response, or
    `data/local/family_experience.yaml` for a parent survey or SENDIASS),

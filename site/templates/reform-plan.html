@@ -95,7 +95,7 @@
   <li><strong>Preparing for adulthood.</strong> A new preparing for adulthood strategy, and clearer routes into work and post-16 education. The NHS will add a health element to preparing for adulthood reviews, so that no young person "falls into a gap between children's and adult health services" ({{ cite("scrutiny_nov2026_summary", 18) }}).</li>
 </ul>
 
-<h2>Specialist places</h2>
+<h2 id="specialist-places">Specialist places</h2>
 <p>The council's 2025 SEND Sufficiency Plan aims for 168 more SEND places in the borough by 2029: 100 at Lime, 15 at Kelmscott, 15 at Willowfield, 10 at Mayville, 10 at Thorpe Hall, 10 at Connaught and 8 at Belmont Park special school. 54 places opened in September 2026, and 50 more are due in September 2027 ({{ cite("scrutiny_nov2026_summary", 17) }}).</p>
 {% for s in d.specialist_settings.other if s.name == "Willowfield School" and s.rp_capacity %}
 <p>The DfE's register of schools now lists <a href="schools.html#resourced-provision-list">resourced provision at Willowfield School</a> with {{ fmt(s.rp_capacity, "count") }} places and {{ fmt(s.rp_pupils, "count") }} children in it in {{ s.census }} (DfE, <a class="cite" href="{{ s.url }}">Get Information About Schools</a>, downloaded {{ fetched(d.specialist_settings.manifest) }}). The register may not yet show places added since then.</p>
