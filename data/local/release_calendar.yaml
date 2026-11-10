@@ -1,13 +1,15 @@
 # Upcoming official releases that will update figures on this site.
 # Dates come from the GOV.UK release calendar. "Provisional" dates can move.
+# Where GOV.UK gives only a month, set `date` to the last day of that month (for
+# sorting) and `display` to the month as GOV.UK prints it.
 # Check https://www.gov.uk/search/research-and-statistics?content_store_document_type=upcoming_statistics
-checked: 2026-10-25
+checked: 2026-11-10
 releases:
   - key: tribunals
     title: Tribunals statistics quarterly, July to September 2026
     covers: SEND Tribunal appeals and outcomes for England, academic year 2025/26 (not broken down by council)
     date: 2026-12-10
-    status: provisional
+    status: confirmed
     url: https://www.gov.uk/government/statistics/announcements/tribunals-statistics-quarterly-july-to-september-2026
   - key: ehcp
     title: "Education, health and care plans: reporting year 2027"
@@ -39,3 +41,38 @@ releases:
     date: 2027-03-25
     status: provisional
     url: https://www.gov.uk/government/statistics/announcements/school-capacity-in-england-academic-year-2025-to-2026
+  - key: ks2_revised
+    title: "Key stage 2 attainment (revised): 2026"
+    covers: Revised results at the end of primary school for 2025/26, replacing the provisional figures
+    date: 2026-12-31
+    display: December 2026
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/key-stage-2-attainment-revised-2026
+  - key: ks4_revised
+    title: Key stage 4 performance 2026 (revised)
+    covers: Revised GCSE results for 2025/26, replacing the provisional figures
+    date: 2027-02-28
+    display: February 2027
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/key-stage-4-performance-2026-revised
+  - key: absence
+    title: "Pupil absence in schools in England: 2025/26"
+    covers: Absence and persistent absence for the full 2025/26 school year
+    date: 2027-03-31
+    display: March 2027
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/pupil-absence-in-schools-in-england-202526
+  - key: attainment_19
+    title: Level 2 and 3 attainment age 16 to 25
+    covers: Qualifications by age 19 for young people who turned 19 in 2025/26
+    date: 2027-04-30
+    display: April 2027
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/level-2-and-3-attainment-age-16-to-25--4
+  - key: cin_outcomes
+    title: "Outcomes for children in need, including children looked after by local authorities in England: 2025 to 2026"
+    covers: EHC plans and SEN support among children in need and children in care, 2025/26
+    date: 2027-04-30
+    display: March to April 2027
+    status: provisional
+    url: https://www.gov.uk/government/statistics/announcements/outcomes-for-children-in-need-including-children-looked-after-by-local-authorities-in-england-2025-to-2026

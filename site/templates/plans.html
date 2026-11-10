@@ -39,7 +39,7 @@
 {% set care_note = "The DfE changed how it matches social care records to school records in 2024, so earlier years may not be directly comparable." %}
 {% for g, label in (("cla", "children in care"), ("cpp", "children on a child protection plan"), ("cin", "other children in need")) %}
 {% set m = cs[g].ehcp %}
-{{ figure(m, also=cs[g].support, note="Waltham Forest's " ~ m.latest_period ~ " figure is based on " ~ fmt(m.wf_pupils[m.latest_period], "count") ~ " " ~ label ~ ", so a few children can move the percentage a lot. " ~ care_note) }}
+{{ figure(m, also=cs[g].support, note="Waltham Forest's " ~ m.latest_period ~ " figure is based on " ~ fmt(m.wf_pupils[m.latest_period], "count") ~ " " ~ label ~ (", so a few children can move the percentage a lot. " if m.wf_pupils[m.latest_period] < 250 else ". ") ~ care_note) }}
 {% endfor %}
 
 <h2 id="primary-need">Main types of need</h2>

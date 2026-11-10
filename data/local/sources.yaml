@@ -137,7 +137,7 @@ chapel_end_news_feb2026:
   title: New school for 100 SEND children planned
   publisher: London Borough of Waltham Forest
   date: 2026-02-12
-  url: https://www.walthamforest.gov.uk/stories/new-school-100-send-children-planned
+  url: https://www.walthamforest.gov.uk/news/new-school-100-send-children-planned
   notes: Council news story. The Lime Trust's consultation on the plans ran until 26 February 2026.
 
 chapel_end_planning_jul2026:
@@ -305,6 +305,7 @@ scrutiny_nov2026_summary:
   date: 2026-11-04
   meeting: Children and Families Scrutiny Committee, 4 November 2026
   url: https://democracy.walthamforest.gov.uk/documents/s111649/Appendix%201%20-%20SEND%20Reform%20Plan%20Comms%20Overview.pdf
+  page_label: slide
   notes: A 24-slide summary of the plan, not the full plan. Page numbers are slide numbers. Slide 14 is an Experts at Hand leaflet for families, and slide 24 is an extract from the programme's risk log.
 
 scrutiny_nov2026_htst:
@@ -437,6 +438,13 @@ ia_limited_oct2026:
   meeting: Audit and Governance Committee, 14 October 2026 (Appendix D to item 8)
   url: https://democracy.walthamforest.gov.uk/documents/s111358/5.%20Appendix%20D%20-%20Limited%20and%20No%20Assurance%20Opinion%20Reports.pdf
   notes: Executive summaries only. The Special Educational Needs (SEN) Budget audit is on pages 7 and 8. Its full findings and action plan are not published.
+
+capita_one_sale_2024:
+  title: Completion of Capita One sale
+  publisher: Capita plc
+  date: 2024-09-05
+  url: https://www.capita.com/news-and-insights/news/2024/completion-capita-one-sale
+  notes: Capita's announcement that it had completed the sale of Capita One, its software business for councils, to MRI Software. Capita's site blocks automated checks, so this link was not opened by script.
 
 cfa_2014_s36:
   short: Children and Families Act 2014  # link text for inline citations

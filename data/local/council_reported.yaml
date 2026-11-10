@@ -21,7 +21,7 @@ measures:
     statutory: All plans must be issued within 20 weeks of the request, unless a legal exception applies.
     statutory_source: { source: send_regs_2014, page: "Regulation 13" }
     target: null
-    target_note: The improvement plan records a baseline but sets no target or trajectory. It relies on a recovery plan to clear backlogs "by end of 2025". The SEND Reform Plan (accepted October 2026) aims for 30% by 2027 and the England average by 2028.
+    target_note: The improvement plan records a baseline but sets no target or trajectory. It relied on a recovery plan to clear backlogs "by end of 2025". That date has passed, and the council has not published the size of the backlog since. Its latest figures for plans issued within 20 weeks, above, show most plans are still late. The SEND Reform Plan (accepted October 2026) aims for 30% by 2027 and the England average by 2028.
     target_source: { source: hwb_oct2025_report, page: 4 }
     n_label: plans on time
     observations:
@@ -256,7 +256,7 @@ targets:
     source: { source: scrutiny_nov2026_summary, page: 6 }
     latest: 16.6 in 2025/26 (provisional), against 15.1 in England (DfE). The plan's 13.7 is the DfE figure for 2024/25.
     latest_dfe: [ks4_sen]
-    status: met
+    status: ahead
   - commitment: SEND Reform Plan - bring permanent exclusions (0.24%) and special school attendance (86.19%) of pupils with SEND in line with London (0.09% and 89.14%)
     due: Not stated
     source: { source: scrutiny_nov2026_summary, page: 6 }
@@ -369,6 +369,18 @@ finance:
     detail: The council's forecast once the High Needs Stability Grant is taken off. It uses the same forecast as the High Needs overspend above.
     source: sf_oct2026
     page: 30
+  - id: hnb_forecast_2627_nov
+    label: Forecast High Needs overspend 2026/27 (November 2026 report)
+    value: "£14.755m"
+    detail: Higher than the £13.68m the council gave the Schools Forum in October, which used the forecast from month 4. The report also forecasts a DSG deficit of £29.076m before the grant.
+    source: scrutiny_nov2026_report
+    page: 2
+  - id: dsg_carried_2728_nov
+    label: Forecast DSG deficit carried into 2027/28 (November 2026 report)
+    value: "£16.187m"
+    detail: After the High Needs Stability Grant. The report prints £16.088m. The council's Director of Children's Services has since told this site that was a typing error and "the correct figure is £16.187m" (see the SEND Reform Plan section below).
+    source: scrutiny_nov2026_report
+    page: 2
   - id: htst_taxi_2627
     label: Forecast spend on school transport taxis 2026/27
     value: "£2.25m"

@@ -53,7 +53,7 @@
 <thead><tr><th scope="col">Date</th><th scope="col">Release</th><th scope="col">What it will update</th></tr></thead>
 <tbody>
 {% for r in releases.releases|sort(attribute="date") %}
-<tr><td>{{ r.date.strftime("%-d %B %Y") }}<br><span class="note">{{ r.status }}</span></td><td><a href="{{ r.url }}">{{ r.title }}</a></td><td>{{ r.covers }}</td></tr>
+<tr><td>{{ r.get("display") or r.date.strftime("%-d %B %Y") }}<br><span class="note">{{ r.status }}</span></td><td><a href="{{ r.url }}">{{ r.title }}</a></td><td>{{ r.covers }}</td></tr>
 {% endfor %}
 </tbody></table></div>
 
@@ -73,7 +73,7 @@
 <h2>Things to bear in mind</h2>
 <ul>
   <li><strong>DfE and council figures measure different things.</strong> DfE timeliness counts plans issued in a calendar year. The council's monitoring uses monthly or quarterly snapshots from its own case management system.</li>
-  <li><strong>Data quality.</strong> In October 2025 the council said its performance data "may be providing a worst-case scenario as data analytics from our Capita system is inaccurate" ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}). The council did not say whether this also affects the figures it sends to the DfE.</li>
+  <li><strong>Data quality.</strong> In October 2025 the council said its performance data "may be providing a worst-case scenario as data analytics from our Capita system is inaccurate" ({{ cite(local.data_quality_warning.source, local.data_quality_warning.page) }}). The council did not say whether this also affects the figures it sends to the DfE. In October 2026 the council's internal audit called the case management system "MRI" ({{ cite("ia_limited_oct2026", 7) }}). Capita sold its Capita One software business to MRI Software in September 2024 ({{ cite("capita_one_sale_2024") }}), so they may be the same system. The council hasn't said.</li>
   <li><strong>Small numbers.</strong> Exam results and exclusion rates for pupils with EHC plans are based on small groups and can change a lot from year to year.</li>
   <li><strong>Provisional data.</strong> The latest year of exam results is usually provisional and is revised later.</li>
   <li><strong>Suppressed figures.</strong> DfE hides some small numbers to protect privacy. These show as "–" or "no data".</li>
@@ -82,7 +82,7 @@
 <h2>Gaps</h2>
 <p>Figures parents have asked for that we have not found published for Waltham Forest:</p>
 <ul>
-  <li>Numeric targets for EHC plan timeliness, annual reviews or plan quality.</li>
+  <li>Numeric targets for annual reviews or plan quality. For EHC plan timeliness, the only target is the SEND Reform Plan's 30% within 20 weeks by 2027 (see <a href="reform-plan.html">the SEND Reform Plan</a>).</li>
   <li>Any public report on the SEND Local Area Improvement Plan's measures since the September 2025 highlight report: EHC plan timeliness, annual reviews, Year 9 reviews, plan quality, complaints and health waits. The council's corporate performance dashboard, reported to its Budget, Performance and Coordinating Committee every two months, counts live EHC plans but doesn't track timeliness or reviews. The only later timeliness figure we found is "12% within 20 weeks" in the July 2026 Schools Forum papers, and they don't say what period it covers.</li>
   <li>The full SEND Reform Plan and its slide pack (Annex A). The July 2026 Schools Forum papers refer to them, but they are not in the published pack.</li>
   <li>The council's quarterly reports to the DfE on the SEND Reform Plan. The council says it sends them ({{ cite("sf_oct2026", "pages 30 and 31") }}), but they are not published.</li>
