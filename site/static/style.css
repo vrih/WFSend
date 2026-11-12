@@ -182,6 +182,8 @@ figure.metric { background: var(--surface); border: 1px solid var(--border); bor
 
 svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
 svg .grid { stroke: var(--grid); stroke-width: 1; }
+svg .break { stroke: var(--ink-2); stroke-width: 1.5; stroke-dasharray: 4 4; }
+svg .breaklabel { font-size: 12px; fill: var(--ink-2); }
 svg .axis { stroke: var(--axis); stroke-width: 1; }
 svg .tick { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
 svg .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }

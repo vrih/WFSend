@@ -10,7 +10,7 @@
 {% if cw %}{% set cp = cw.services|selectattr("name", "equalto", "Community paediatrics")|first %}<li>In {{ cw.latest|month }}, {{ fmt(cp.pct18.series.NELFT[cw.latest]) }} of children on the community paediatrics waiting list at NELFT, the NHS trust that runs children's community health services in Waltham Forest, had waited over 18 weeks (England {{ fmt(cp.pct18.series.England[cw.latest]) }}).{{ ui.see("nhs-waits") }}</li>{% endif %}
 {% set au = d.autism %}<li>Children seen by NELFT, the NHS trust that assesses children in Waltham Forest, who had a first autism assessment appointment in the 3 months to {{ au.latest|month }} had waited a median of {{ months(au.median.series.NELFT[au.latest]) }} since referral.{{ ui.see("autism") }}</li>
 {% set ad = d.adhd %}<li>In {{ ad.latest|month }}, {{ fmt(ad.over52.series["North East London"][ad.latest]) }} of children aged 5 to 17 waiting for an ADHD assessment in North East London, which includes Waltham Forest, had waited a year or more (England {{ fmt(ad.over52.series["England"][ad.latest]) }}).{{ ui.see("adhd") }}</li>
-{% if d.autism and d.autism.after_periods %}<li>NELFT's published autism and mental health figures changed suddenly in {{ d.autism.after_periods[0]|month }}, so this site shows later months separately.{{ ui.see("autism") }}</li>{% endif %}
+{% if d.autism and d.autism.after_periods %}<li>NELFT's published autism and mental health figures changed suddenly in {{ d.autism.after_periods[0]|month }}, and have stayed at the new level since. The charts show these months with the line broken, so you can see the change.{{ ui.see("autism") }}</li>{% endif %}
 {% endcall %}
 <blockquote>"{{ inspection.current.quotes[2].text }}" ({{ cite("ofsted_2025", inspection.current.quotes[2].page) }})</blockquote>
 
@@ -76,30 +76,33 @@
 <td>{{ fmt(au.median.series[a][p], "count") ~ " days" if au.median.series[a][p] is not none else "–" }}</td></tr>
 {% endfor %}
 </tbody></table></div>
-{% for m in (au.over13, au.median) %}
+{% if au.break_at %}
+<h4 class="sub">From {{ au.break_at }}: a break in the figures</h4>
+<p>In {{ au.break_at }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.waiting.series.NELFT[au.break_at], "count") }} in a single month. The North East London count fell too, from {{ fmt(au.waiting.series["North East London"][p], "count") }} to {{ fmt(au.waiting.series["North East London"][au.break_at], "count") }}. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month.</p>
+<p>The figures have stayed at the new level for {{ au.after_periods|length }} months, to {{ au.latest_all }}. The charts below show them, but the NELFT and North East London lines are not joined across the break, and the table above uses {{ p }}, the last month that can be compared with earlier ones.</p>
+{% endif %}
+{% for m in (au.waiting_nel, au.over13, au.median) %}
 <h4 class="sub">{{ m.title }}</h4>
 <p class="explain">{{ m.explain }}</p>
 {{ charts.legend(m.series.keys())|safe }}
-{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max)|safe }}
+{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max, break_at=au.break_at, break_areas=au.break_areas)|safe }}
 <details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
+{% if loop.first %}
+<p class="note">London and England are left off this chart because their numbers are far larger. All 4 areas are in the "all areas" table below.</p>
+{% endif %}
 {% endfor %}
+<details><summary>Children with an open autism referral: all areas</summary>{{ charts.table(au.waiting.series, au.periods, unit="count")|safe }}</details>
 {% set md = au.median.series %}
 {% if md.NELFT.get("Aug 2025") and md.NELFT.get("Oct 2025") %}
 <p class="note">NELFT's median wait fell from {{ fmt(md.NELFT["Aug 2025"], "count") }} days in Aug 2025 to {{ fmt(md.NELFT["Oct 2025"], "count") }} days in Oct 2025. Over the same months the North East London median went from {{ fmt(md["North East London"]["Aug 2025"], "count") }} to {{ fmt(md["North East London"]["Oct 2025"], "count") }} days. NHS England's release doesn't explain the fall, so treat the change in NELFT's figures with care.</p>
 {% endif %}
-{% if au.after_periods %}
-<h4 class="sub">From {{ au.after_periods[0] }}: a break in the figures</h4>
-<p>In {{ au.after_periods[0] }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.after.waiting.NELFT[au.after_periods[0]], "count") }} in a single month. The North East London count fell too, from {{ fmt(au.waiting.series["North East London"][p], "count") }} to {{ fmt(au.after.waiting["North East London"][au.after_periods[0]], "count") }}. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month. Until this is explained, these months are shown separately and not added to the trend.</p>
-<div class="tablewrap"><table>
-<thead><tr><th scope="col">Area</th>{% for q in au.after_periods %}<th scope="col">{{ q }}: waiting</th>{% endfor %}<th scope="col">{{ au.after_periods[-1] }}: 13+ weeks</th></tr></thead>
-<tbody>
-{% for a in au.after.waiting %}
-<tr><th scope="row">{{ a }}</th>
-{% for q in au.after_periods %}<td>{{ fmt(au.after.waiting[a][q], "count") if au.after.waiting[a][q] is not none else "–" }}</td>{% endfor %}
-<td>{{ fmt(au.after.over13[a][au.after_periods[-1]]) if au.after.over13[a][au.after_periods[-1]] is not none else "–" }}</td></tr>
-{% endfor %}
-</tbody></table></div>
+{% if au.swings %}
+<p class="note">Since the break, some counts of children waiting have also changed by more than a fifth in a single month, with no explanation in NHS England's release:</p>
+<ul class="note">
+{% for s in au.swings %}<li>{{ s.area }}: {{ fmt(s.v0, "count") }} in {{ s.from }}, {{ fmt(s.v1, "count") }} in {{ s.to }}</li>
+{% endfor %}</ul>
 {% endif %}
+<p class="note">Each release can revise earlier months. Where releases overlap, this page uses the latest one.</p>
 <p class="source">Source: NHS England, <a class="cite" href="https://digital.nhs.uk/data-and-information/publications/statistical/autism-statistics">Autism waiting time statistics</a> (experimental statistics):
 {% for src in au.sources %}{% set _ = fetched(src, "extracted") %}{{ src.original_file }}{{ "; " if not loop.last else "" }}{% endfor %}. <a href="data/nhs_autism.zip">Extracted rows (zip)</a></p>
 </figure>
@@ -159,14 +162,14 @@
 {% set nb = mh.nelft_break %}
 {% if nb %}
 <h4 class="sub">From {{ nb.after }}: a break in NELFT's figures</h4>
-<p>Between {{ nb.before }} and {{ nb.after }}, the number of children on NELFT's mental health caseload fell from {{ fmt(nb.caseload[0], "count") }} to {{ fmt(nb.caseload[1], "count") }}. The number still waiting for a first contact fell from {{ fmt(nb.waiting[0], "count") }} to {{ fmt(nb.waiting[1], "count") }}, and their median wait from {{ fmt(nb.median[0], "count") }} to {{ fmt(nb.median[1], "count") }} days. North East London, London and England show no such change. The same month brought a similar unexplained fall in NELFT's <a href="#autism">autism figures</a>. A change in how NELFT records or submits data is more likely than half its caseload being discharged in a month. NELFT's figures from {{ nb.after }} are in the table above but are kept off the charts below. The North East London line counts children by where they live, so it is not affected in the same way.</p>
+<p>Between {{ nb.before }} and {{ nb.after }}, the number of children on NELFT's mental health caseload fell from {{ fmt(nb.caseload[0], "count") }} to {{ fmt(nb.caseload[1], "count") }}. The number still waiting for a first contact fell from {{ fmt(nb.waiting[0], "count") }} to {{ fmt(nb.waiting[1], "count") }}, and their median wait from {{ fmt(nb.median[0], "count") }} to {{ fmt(nb.median[1], "count") }} days. North East London, London and England show no such change. The same month brought a similar unexplained fall in NELFT's <a href="#autism">autism figures</a>. A change in how NELFT records or submits data is more likely than half its caseload being discharged in a month. The charts below show NELFT's figures from {{ nb.after }}, but its line is not joined across the break. The North East London line counts children by where they live, so it is not affected in the same way.</p>
 {% endif %}
 {% if mh.periods|length > 1 %}
 {% for m in (mh.median_waiting, mh.p90_waiting) %}
 <h4 class="sub">{{ m.title }}</h4>
 <p class="explain">{{ m.explain }}</p>
 {{ charts.legend(m.series.keys())|safe }}
-{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max)|safe }}
+{{ charts.line_chart(m.series, m.periods, unit=m.unit, title=m.title, y_max=m.y_max, break_at=mh.break_at, break_areas=("NELFT",))|safe }}
 <details><summary>Show the numbers</summary>{{ charts.table(m.series, m.periods, unit=m.unit)|safe }}</details>
 {% endfor %}
 {% if mh.missing %}<p class="note">No figures are shown for {{ mh.missing|join(", ") }} because that month's file hasn't been added yet.</p>{% endif %}
