@@ -26,9 +26,10 @@ python scripts/extract_nhs.py autism ~/Downloads/<zip file 1> ~/Downloads/<zip f
 
 Where releases overlap, the later folder's figures win. NELFT's children's
 figures fall by almost 90% between March and April 2026, which looks like a
-recording change. `AUTISM_BREAK` in `scripts/metrics.py` keeps months from
-April 2026 off the trend charts. Review it when NHS England explains the
-change or a new release revises those months.
+recording change. `AUTISM_BREAK` in `scripts/metrics.py` marks the break: the
+charts show every month but don't join the NELFT, North East London and London lines
+across it, and the headline figures use the last month before it. Review it
+when NHS England explains the change or a new release revises those months.
 
 ## 2. Community health services waiting lists (monthly)
 
@@ -86,8 +87,8 @@ The script stops if the dataset name isn't one it knows, so a typo can't
 create a folder the site never reads.
 
 NELFT's children's figures change sharply in April 2026, in both this data
-and the autism data. `MHSDS_NELFT_BREAK` in `scripts/metrics.py` keeps
-NELFT's months from then off the CAMHS charts.
+and the autism data. `MHSDS_NELFT_BREAK` in `scripts/metrics.py` marks the
+break, so the CAMHS charts don't join NELFT's line across it.
 
 ## Then
 

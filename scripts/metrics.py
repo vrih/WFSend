@@ -1112,9 +1112,17 @@ def community_waits():
 AUTISM_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "England": "England"}
 AUTISM_METRICS = ("ASD16b", "ASD16c", "ASD25a")
 # From April 2026 NELFT's children's figures fall by almost 90% in one month
-# (4,305 to 505 children waiting). NHS England gives no reason, so months from
-# here on are shown separately rather than joined onto the trend.
+# (4,305 to 505 children waiting), and North East London's by 80%. NHS England
+# gives no reason. NELFT was about half of London's list, so London's figures
+# change too. The charts still show these months, but don't join the NELFT,
+# North East London and London lines across the break, and the headline
+# figures use the last month before it.
 AUTISM_BREAK = (2026, 4)
+AUTISM_BREAK_AREAS = ("NELFT", "North East London", "London")
+AUTISM_NEL = ("NELFT", "North East London")
+# Month-on-month changes in children waiting bigger than this, after the
+# break, are listed on the health page as further signs of unreliable data.
+AUTISM_SWING = 0.2
 
 
 def autism():
@@ -1137,8 +1145,9 @@ def autism():
                     vals.setdefault((int(y), int(m)), {}).setdefault(area, {})[r["METRIC"]] = num(r["METRIC_VALUE"])
     label = lambda ym: f"{list(MONTHS)[ym[1] - 1][:3]} {ym[0]}"
     order = sorted(vals)
+    periods = [label(m) for m in order]
 
-    def series(fn, months):
+    def series(fn, months=order):
         return {a: {label(ym): fn(vals[ym].get(a, {})) for ym in months} for a in AUTISM_AREAS.values()}
 
     waiting = lambda v: v.get("ASD16b")
@@ -1147,24 +1156,43 @@ def autism():
     before = [ym for ym in order if ym < AUTISM_BREAK]
     after = [ym for ym in order if ym >= AUTISM_BREAK]
 
-    def metric(id_, fn, unit, title, explain):
-        s = series(fn, before)
+    def metric(id_, fn, unit, title, explain, areas=tuple(AUTISM_AREAS.values())):
+        s = {a: v for a, v in series(fn).items() if a in areas}
         top = max((v for a in s.values() for v in a.values() if v is not None), default=0)
-        return {"id": id_, "unit": unit, "title": title, "explain": explain, "series": s,
-                "periods": [label(m) for m in before],
+        return {"id": id_, "unit": unit, "title": title, "explain": explain, "series": s, "periods": periods,
                 # round the axis up to a multiple of 400 so the 4 gridlines land on round numbers
                 "y_max": 100 if unit == "percent" else -(-top // 400) * 400 or None}
+
+    # big month-on-month swings in children waiting since the break (not the break itself)
+    w = series(waiting, after)
+    swings = []
+    for a, s in w.items():
+        for p0, p1 in zip(list(s), list(s)[1:]):
+            v0, v1 = s[p0], s[p1]
+            if v0 and v1 is not None and abs(v1 / v0 - 1) > AUTISM_SWING:
+                swings.append({"area": a, "from": p0, "to": p1, "v0": v0, "v1": v1})
     return {
-        "latest": label(before[-1]),
-        "periods": [label(m) for m in before],
+        "latest": label(before[-1]),  # the last month comparable with the trend
+        "latest_all": periods[-1],
+        "periods": periods,
         "after_periods": [label(m) for m in after],
+        "break_at": label(after[0]) if before and after else None,
+        "break_areas": AUTISM_BREAK_AREAS,
+        "swings": swings,
+        # NELFT's share of London's list just before the break
+        "nelft_share_london": pct(vals[before[-1]].get("NELFT", {}).get("ASD16b"),
+                                  vals[before[-1]].get("London", {}).get("ASD16b")) if before else None,
         "waiting": metric("autism_waiting", waiting, "count", "Children with an open autism referral",
                           "Children aged 0 to 17 with a suspected autism referral still open at the end of the month."),
+        # London and England are in the tens and hundreds of thousands, so only
+        # the two North East London measures go on the chart of children waiting.
+        "waiting_nel": metric("autism_waiting_nel", waiting, "count", "Children with an open autism referral: NELFT and North East London",
+                              "Children aged 0 to 17 with a suspected autism referral still open at the end of the month.",
+                              areas=AUTISM_NEL),
         "over13": metric("autism_over13", over13, "percent", "Children whose autism referral has been open 13 weeks or more",
                          "Share of children with an open suspected autism referral whose referral had been open for at least 13 weeks."),
         "median": metric("autism_median", median, "count", "Median wait for a first appointment (days)",
                          "Median days from referral to first appointment, for children whose first appointment was in the quarter up to that month."),
-        "after": {k: series(fn, after) for k, fn in (("waiting", waiting), ("over13", over13), ("median", median))},
         "sources": sources,
     }
 
@@ -1511,8 +1539,8 @@ def adhd():
 MHSDS_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "England": "England"}
 # NELFT's children's mental health caseload halves in April 2026 (33,380 to
 # 16,825 children), the same month as the break in its autism figures, while
-# North East London barely changes. NHS England gives no reason, so NELFT's
-# months from here on are kept off the trend charts.
+# North East London barely changes. NHS England gives no reason, so the
+# charts don't join NELFT's line across the break.
 MHSDS_NELFT_BREAK = AUTISM_BREAK
 
 
@@ -1538,8 +1566,7 @@ def cyp_mental_health():
     areas = tuple(MHSDS_AREAS.values())
 
     def metric(id_, measure, unit, title, explain):
-        series = {a: {_month(m): (None if a == "NELFT" and m >= MHSDS_NELFT_BREAK else vals.get(m, {}).get(a, {}).get(measure))
-                      for m in order} for a in areas}
+        series = {a: {_month(m): vals.get(m, {}).get(a, {}).get(measure) for m in order} for a in areas}
         top = max((v for s in series.values() for v in s.values() if v is not None), default=0)
         # round the axis up to a multiple of 400 so the 4 gridlines land on round numbers
         return {"id": id_, "unit": unit, "title": title, "explain": explain, "periods": periods,
@@ -1550,11 +1577,17 @@ def cyp_mental_health():
     return {
         "latest": periods[-1], "periods": periods,
         "missing": [_month(m) for m in order if m not in have],
+        "break_at": _month(after[0]) if before and after else None,
         "nelft_break": {"before": _month(before[-1]), "after": _month(after[0]),
                         "caseload": (nelft(before[-1], "CYP01"), nelft(after[0], "CYP01")),
                         "waiting": (nelft(before[-1], "MHS133"), nelft(after[0], "MHS133")),
                         "median": (nelft(before[-1], "MHS134"), nelft(after[0], "MHS134"))} if before and after else None,
         "latest_values": {a: vals[order[-1]].get(a, {}) for a in areas},
+        # the headline table: NELFT's last comparable period next to its latest one
+        "table_rows": ([(f"NELFT, 3 months to {_month(before[-1])} (last comparable)", vals[before[-1]].get("NELFT", {})),
+                        (f"NELFT, 3 months to {_month(order[-1])} (after the break)", vals[order[-1]].get("NELFT", {}))]
+                       if before and after and order[-1] >= MHSDS_NELFT_BREAK else [("NELFT", vals[order[-1]].get("NELFT", {}))])
+                      + [(a, vals[order[-1]].get(a, {})) for a in areas if a != "NELFT"],
         "median_waiting": metric("cyp_mh_median", "MHS134", "count", "Median wait so far for children still waiting (days)",
                                  "Children and young people under 18 referred to NHS-funded mental health services and still waiting for a first contact: the median number of days they had waited so far."),
         "p90_waiting": metric("cyp_mh_p90", "MHS135", "count", "Longest waits for children still waiting: 90th percentile (days)",

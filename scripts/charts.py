@@ -34,13 +34,17 @@ def _nice_max(v, unit):
     return v * 1.1
 
 
-def line_chart(series, periods, unit="percent", title="", y_max=None, height=260, ranges=()):
+def line_chart(series, periods, unit="percent", title="", y_max=None, height=260, ranges=(), break_at=None, break_areas=()):
     """series: {area: {period: value}}; periods: ordered list of period labels.
     ranges: figures from another source that only give a low and a high,
     drawn as a hollow vertical bar, not joined to the lines. Each is a dict
-    with period (in periods), low, high and label."""
+    with period (in periods), low, high and label.
+    break_at: a period where the data for break_areas stops being comparable
+    with earlier months (a recording change, say). Those areas' lines are not
+    joined across it, and a dashed line marks it."""
     W, H = 640, height
-    left, right, top, bottom = 44, 150, 16, 34
+    brk = periods.index(break_at) if break_at in periods[1:] else None
+    left, right, top, bottom = 44, 150, 30 if brk is not None else 16, 34
     pw, ph = W - left - right, H - top - bottom
     vals = [v for s in series.values() for v in s.values() if v is not None] + [r["high"] for r in ranges]
     if not vals:
@@ -54,7 +58,12 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
     def y(v):
         return top + ph - ph * v / ymax
 
-    out = [f'<svg class="chart" viewBox="0 0 {W} {H}" role="img" aria-label="{escape(title)}">']
+    label = title
+    if brk is not None and break_areas:
+        names = [a for a in break_areas if a in series]
+        names = names[0] if len(names) < 2 else ", ".join(names[:-1]) + " and " + names[-1]
+        label += f". The {names} line{'s are' if len(break_areas) > 1 else ' is'} broken at {break_at}, where the figures stop being comparable"
+    out = [f'<svg class="chart" viewBox="0 0 {W} {H}" role="img" aria-label="{escape(label)}">']
     # gridlines and y ticks
     for k in range(5):
         tv = ymax * k / 4
@@ -62,6 +71,10 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
         out.append(f'<line class="grid" x1="{left}" x2="{left + pw}" y1="{yy:.1f}" y2="{yy:.1f}"/>')
         out.append(f'<text class="tick" x="{left - 6}" y="{yy + 4:.1f}" text-anchor="end">{escape(_fmt(tv, unit).replace(".0%", "%").replace(".0", ""))}</text>')
     out.append(f'<line class="axis" x1="{left}" x2="{left + pw}" y1="{top + ph}" y2="{top + ph}"/>')
+    if brk is not None:
+        bx = (x(brk - 1) + x(brk)) / 2
+        out.append(f'<line class="break" x1="{bx:.1f}" x2="{bx:.1f}" y1="{top - 4}" y2="{top + ph}"/>')
+        out.append(f'<text class="breaklabel" x="{bx:.1f}" y="{top - 8}" text-anchor="middle">Break in figures</text>')
     # x labels: thin out if crowded
     stride = 1 if n <= 8 else 2 if n <= 12 else 3
     for i, p in enumerate(periods):
@@ -87,6 +100,9 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
         segs, cur = [], []
         for i, p in enumerate(periods):
             v = s.get(p)
+            if i == brk and area in break_areas and cur:
+                segs.append(cur)
+                cur = []
             if v is None:
                 if cur:
                     segs.append(cur)

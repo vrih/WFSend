@@ -1,0 +1,13 @@
+{
+  "dataset": "mhsds",
+  "original_file": "MHSDS Data_SepPerf_2026.zip",
+  "original_sha256": "c474e302f6d6d7c0b041b2f30bc7254e6e31bcad2b1cc1c48c9562d18e0e130b",
+  "original_bytes": 4404324,
+  "extracted": "2026-11-12",
+  "files": [
+    {
+      "file": "MHSDS Data_SepPerf_2026/MHSDS Data_SepPerf_2026.csv",
+      "rows_kept": 40
+    }
+  ]
+}

@@ -459,6 +459,18 @@ lbwf_ehcna_request_page:
   date: 2026-10-28
   url: https://www.walthamforest.gov.uk/schools-education-and-learning/local-offer-special-educational-needs-and-disability-send/education-health-and-care-plans-ehcp/referrals-and-assessments-education-health-and-care-plans
   notes: A web page with no publication date. The date is when it was checked. The request forms linked from it are dated September 2026.
+nelft_wf_community_paeds:
+  title: Community medical paediatric service (Waltham Forest)
+  publisher: NELFT NHS Foundation Trust
+  date: 2026-11-12
+  url: https://www.nelft.nhs.uk/services-waltham-forest-community-medical-paediatrics
+  notes: A web page with no publication date. The date is when it was checked. Lists the clinics the service runs, including the Social and Communication assessment Clinic (SACC) for autism, and its statutory duties.
+lbwf_child_development:
+  title: Child Development Services (Local Offer)
+  publisher: London Borough of Waltham Forest
+  date: 2026-11-12
+  url: https://www.walthamforest.gov.uk/schools-education-and-learning/local-offer-special-educational-needs-and-disability-send/health-services-children-and-young-people/child-development-services
+  notes: A web page with no publication date. The date is when it was checked. Says SACC assesses children under 5 for autism, and children over 5 are seen by CAMHS.
 nice_cg128:
   title: "Autism spectrum disorder in under 19s: recognition, referral and diagnosis (CG128)"
   publisher: NICE
