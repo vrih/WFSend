@@ -27,7 +27,7 @@ python scripts/extract_nhs.py autism ~/Downloads/<zip file 1> ~/Downloads/<zip f
 Where releases overlap, the later folder's figures win. NELFT's children's
 figures fall by almost 90% between March and April 2026, which looks like a
 recording change. `AUTISM_BREAK` in `scripts/metrics.py` marks the break: the
-charts show every month but don't join the NELFT and North East London lines
+charts show every month but don't join the NELFT, North East London and London lines
 across it, and the headline figures use the last month before it. Review it
 when NHS England explains the change or a new release revises those months.
 

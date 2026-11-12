@@ -289,7 +289,7 @@ def wait_answers(d, local):
     o52, o104 = ad["over52"]["series"], ad["over104"]["series"]
     teasers = {
         "ehcp-waiting-time.html": f"In {y}, {pc(wf['within20'])} of new plans were issued within the legal 20 weeks.",
-        "autism-assessment-waiting-time.html": f"A median of {months(med['NELFT'])} from referral to a first appointment at NELFT.",
+        "autism-assessment-waiting-time.html": f"A median of {months(med['NELFT'])} from referral to a first appointment at NELFT, in the 3 months to {long_month(au['latest'])}.",
         "adhd-assessment-waiting-time.html": f"{pc(o52['North East London'][p])} of children waiting in North East London had waited a year or more.",
         "ehcp-assessment-request.html": f"Who can ask and how. In {d['six_weeks']['latest_period']}, {pc(d['six_weeks']['latest'][M.WF])} of requests were decided within the legal 6 weeks.",
         "ehcp-annual-review.html": f"What should happen, and the deadlines. In {d['ar']['period']}, {pc(d['ar']['decision']['latest'][M.WF])} of decisions after a review were made within the legal 4 weeks.",

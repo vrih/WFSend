@@ -78,8 +78,8 @@
 </tbody></table></div>
 {% if au.break_at %}
 <h4 class="sub">From {{ au.break_at }}: a break in the figures</h4>
-<p>In {{ au.break_at }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.waiting.series.NELFT[au.break_at], "count") }} in a single month. The North East London count fell too, from {{ fmt(au.waiting.series["North East London"][p], "count") }} to {{ fmt(au.waiting.series["North East London"][au.break_at], "count") }}. London and England show no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month.</p>
-<p>The figures have stayed at the new level for {{ au.after_periods|length }} months, to {{ au.latest_all }}. The charts below show them, but the NELFT and North East London lines are not joined across the break, and the table above uses {{ p }}, the last month that can be compared with earlier ones.</p>
+<p>In {{ au.break_at }} the number of children NELFT reports as waiting fell from {{ fmt(au.waiting.series.NELFT[p], "count") }} to {{ fmt(au.waiting.series.NELFT[au.break_at], "count") }} in a single month. The North East London count fell too, from {{ fmt(au.waiting.series["North East London"][p], "count") }} to {{ fmt(au.waiting.series["North East London"][au.break_at], "count") }}. In {{ p }}, NELFT's children made up {{ fmt(au.nelft_share_london) }} of London's list, so London's figures changed as well. London's count fell from {{ fmt(au.waiting.series.London[p], "count") }} to {{ fmt(au.waiting.series.London[au.break_at], "count") }}, and its median wait for a first appointment went from {{ fmt(au.median.series.London[p], "count") }} days in {{ p }} to {{ fmt(au.median.series.London[au.latest_all], "count") }} days in {{ au.latest_all }}. England shows no such fall. NHS England's release gives no explanation. A change in how referrals are recorded or submitted is more likely than thousands of children being assessed in one month.</p>
+<p>The figures have stayed at the new level for {{ au.after_periods|length }} months, to {{ au.latest_all }}. The charts below show them, but the NELFT, North East London and London lines are not joined across the break, and the table above uses {{ p }}, the last month that can be compared with earlier ones.</p>
 {% endif %}
 {% for m in (au.waiting_nel, au.over13, au.median) %}
 <h4 class="sub">{{ m.title }}</h4>
@@ -153,7 +153,7 @@
 <div class="tablewrap"><table>
 <thead><tr><th scope="col">Area</th><th scope="col">Still waiting</th><th scope="col">Median wait so far</th><th scope="col">1 in 10 waited at least</th><th scope="col">Seen</th><th scope="col">Median wait to be seen</th><th scope="col">1 in 10 waited at least</th></tr></thead>
 <tbody>
-{% for a, v in mh.latest_values.items() %}
+{% for a, v in mh.table_rows %}
 <tr><th scope="row">{{ a }}</th>
 <td>{{ fmt(v.MHS133, "count") }}</td><td>{{ fmt(v.MHS134, "count") }} days</td><td>{{ fmt(v.MHS135, "count") }} days</td>
 <td>{{ fmt(v.MHS130, "count") }}</td><td>{{ fmt(v.MHS131, "count") }} days</td><td>{{ fmt(v.MHS132, "count") }} days</td></tr>

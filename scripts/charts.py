@@ -60,7 +60,9 @@ def line_chart(series, periods, unit="percent", title="", y_max=None, height=260
 
     label = title
     if brk is not None and break_areas:
-        label += f". The {' and '.join(break_areas)} line{'s are' if len(break_areas) > 1 else ' is'} broken at {break_at}, where the figures stop being comparable"
+        names = [a for a in break_areas if a in series]
+        names = names[0] if len(names) < 2 else ", ".join(names[:-1]) + " and " + names[-1]
+        label += f". The {names} line{'s are' if len(break_areas) > 1 else ' is'} broken at {break_at}, where the figures stop being comparable"
     out = [f'<svg class="chart" viewBox="0 0 {W} {H}" role="img" aria-label="{escape(label)}">']
     # gridlines and y ticks
     for k in range(5):

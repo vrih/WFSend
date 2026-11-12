@@ -1113,11 +1113,13 @@ AUTISM_AREAS = {"RAT": "NELFT", "QMF": "North East London", "Y56": "London", "En
 AUTISM_METRICS = ("ASD16b", "ASD16c", "ASD25a")
 # From April 2026 NELFT's children's figures fall by almost 90% in one month
 # (4,305 to 505 children waiting), and North East London's by 80%. NHS England
-# gives no reason. The charts still show these months, but don't join the
-# NELFT and North East London lines across the break, and the headline figures
-# use the last month before it.
+# gives no reason. NELFT was about half of London's list, so London's figures
+# change too. The charts still show these months, but don't join the NELFT,
+# North East London and London lines across the break, and the headline
+# figures use the last month before it.
 AUTISM_BREAK = (2026, 4)
-AUTISM_BREAK_AREAS = ("NELFT", "North East London")
+AUTISM_BREAK_AREAS = ("NELFT", "North East London", "London")
+AUTISM_NEL = ("NELFT", "North East London")
 # Month-on-month changes in children waiting bigger than this, after the
 # break, are listed on the health page as further signs of unreliable data.
 AUTISM_SWING = 0.2
@@ -1177,13 +1179,16 @@ def autism():
         "break_at": label(after[0]) if before and after else None,
         "break_areas": AUTISM_BREAK_AREAS,
         "swings": swings,
+        # NELFT's share of London's list just before the break
+        "nelft_share_london": pct(vals[before[-1]].get("NELFT", {}).get("ASD16b"),
+                                  vals[before[-1]].get("London", {}).get("ASD16b")) if before else None,
         "waiting": metric("autism_waiting", waiting, "count", "Children with an open autism referral",
                           "Children aged 0 to 17 with a suspected autism referral still open at the end of the month."),
         # London and England are in the tens and hundreds of thousands, so only
         # the two North East London measures go on the chart of children waiting.
         "waiting_nel": metric("autism_waiting_nel", waiting, "count", "Children with an open autism referral: NELFT and North East London",
                               "Children aged 0 to 17 with a suspected autism referral still open at the end of the month.",
-                              areas=AUTISM_BREAK_AREAS),
+                              areas=AUTISM_NEL),
         "over13": metric("autism_over13", over13, "percent", "Children whose autism referral has been open 13 weeks or more",
                          "Share of children with an open suspected autism referral whose referral had been open for at least 13 weeks."),
         "median": metric("autism_median", median, "count", "Median wait for a first appointment (days)",
@@ -1578,6 +1583,11 @@ def cyp_mental_health():
                         "waiting": (nelft(before[-1], "MHS133"), nelft(after[0], "MHS133")),
                         "median": (nelft(before[-1], "MHS134"), nelft(after[0], "MHS134"))} if before and after else None,
         "latest_values": {a: vals[order[-1]].get(a, {}) for a in areas},
+        # the headline table: NELFT's last comparable period next to its latest one
+        "table_rows": ([(f"NELFT, 3 months to {_month(before[-1])} (last comparable)", vals[before[-1]].get("NELFT", {})),
+                        (f"NELFT, 3 months to {_month(order[-1])} (after the break)", vals[order[-1]].get("NELFT", {}))]
+                       if before and after and order[-1] >= MHSDS_NELFT_BREAK else [("NELFT", vals[order[-1]].get("NELFT", {}))])
+                      + [(a, vals[order[-1]].get(a, {})) for a in areas if a != "NELFT"],
         "median_waiting": metric("cyp_mh_median", "MHS134", "count", "Median wait so far for children still waiting (days)",
                                  "Children and young people under 18 referred to NHS-funded mental health services and still waiting for a first contact: the median number of days they had waited so far."),
         "p90_waiting": metric("cyp_mh_p90", "MHS135", "count", "Longest waits for children still waiting: 90th percentile (days)",
