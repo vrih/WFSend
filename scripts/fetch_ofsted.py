@@ -59,6 +59,13 @@ COLUMNS = [
     "Most recent category of concern",
 ]
 
+# Ofsted has renamed columns between months. The site's extract keeps the names
+# it was first built with, so map the newer published names back to them.
+ALIASES = {
+    "Latest OEIF safeguarding is effective?": "Latest OEIF  safeguarding is effective?",
+    "School name at time of ungraded inspection": "School name at time of the ungraded inspection",
+}
+
 
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "wfsend-data-fetch"})
@@ -89,7 +96,10 @@ def main():
     page, as_at, att = latest_file()
     print(f"[ofsted] downloading {att['title']}")
     raw = get(att["url"])
-    reader = csv.DictReader(io.StringIO(raw.decode("cp1252")))  # Ofsted's CSVs are Windows-1252
+    text = raw.decode("cp1252")  # Ofsted's CSVs are Windows-1252
+    text = text.removeprefix("\u00ef\u00bb\u00bf")  # a UTF-8 byte-order mark, which cp1252 shows as "ï»¿"
+    reader = csv.DictReader(io.StringIO(text))
+    reader.fieldnames = [ALIASES.get(n, n) for n in reader.fieldnames]
     missing = set(COLUMNS) - set(reader.fieldnames)
     if missing:
         raise SystemExit(f"Ofsted columns missing: {sorted(missing)}")
