@@ -155,6 +155,16 @@ list far fewer payments for every service. `SPEND_LAST_COMPLETE` in
 explains the change or republishes those months, and check `SEND_SERVICES` in
 `scripts/fetch_spend.py` if the council restructures its services.
 
+In November 2026 the council took the monthly reports off its transparency
+page and added a notice saying the published reports "may not always reflect
+the correct service attribution for some transactions". The data in
+`data/spend/` is the last copy, downloaded on 3 November 2026 (reports to
+September 2026). `fetch_spend.py` now leaves it unchanged, with a workflow
+warning, when the page links no reports. `spending.html` carries a note
+(`#payments-withdrawn`). When the council republishes, check the link labels
+the script matches in `reports()`, re-run it, and remove the note if the
+reports and their service codes can be relied on again.
+
 Contract notices come from `python scripts/fetch_contracts.py`. Find a Tender
 has no search API, so the script reads its national feed from where the last
 run stopped (`fts_read_to` in `data/contracts/manifest.json`) and keeps the

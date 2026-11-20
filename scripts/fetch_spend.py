@@ -128,8 +128,16 @@ def payments(data):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    found = reports()
+    if not found:
+        # The council took the monthly reports down in November 2026. Keep the
+        # last copy rather than overwrite it with nothing, and don't fail the
+        # refresh, which runs other fetches after this one.
+        print("::warning::No monthly spending reports are linked from the council's transparency "
+              "page. Existing data/spend files left unchanged.")
+        return
     kept, summary = [], []
-    for y, mo, url in reports():
+    for y, mo, url in found:
         ps = list(payments(get(url)))
         total = sum(float(p["Invoice Amount"]) for p in ps if re.fullmatch(r"-?[\d.]+", p["Invoice Amount"]))
         month = f"{y}-{mo:02d}"
