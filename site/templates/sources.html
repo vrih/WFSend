@@ -41,7 +41,7 @@
 
 <h2 id="payments">Council payments to suppliers</h2>
 {% set pm = d.supplier_payments.manifest %}
-<p>The <a href="spending.html#payments">payments to suppliers</a> on the Where the money goes page come from the council's monthly reports of spending over £500, published on its <a href="{{ pm.url }}">transparency page</a>. A script downloads every report and keeps the payments coded to the council's SEND services, from the {{ d.supplier_payments.first_coded_label }} report onwards. It also counts every payment in each report, so changes in how much the council publishes can be seen. Last downloaded {{ fetched(pm) }}. Copies: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>, <a href="data/spend_reports.csv">spend_reports.csv</a>.</p>
+<p>The <a href="spending.html#payments">payments to suppliers</a> on the Where the money goes page come from the council's monthly reports of spending over £500, published on its <a href="{{ pm.url }}">transparency page</a>. A script downloads every report and keeps the payments coded to the council's SEND services, from the {{ d.supplier_payments.first_coded_label }} report onwards. It also counts every payment in each report, so changes in how much the council publishes can be seen. The council has since taken the reports down, so this is the last copy we downloaded, on {{ fetched(pm) }} (<a href="spending.html#payments-withdrawn">details</a>). Copies: <a href="data/spend_send_payments.csv">spend_send_payments.csv</a>, <a href="data/spend_reports.csv">spend_reports.csv</a>.</p>
 
 <h2 id="contracts">Contract notices</h2>
 {% set cm = d.contracts.manifest %}
