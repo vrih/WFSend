@@ -1,4 +1,18 @@
 source,notice_id,url,procurement_id,stage,status,published,title,description,value,value_low,value_high,awarded_value,suppliers,start,end
+Find a Tender,111237-2026,https://www.find-tender.service.gov.uk/Notice/111237-2026,ocds-h6vhtk-07c2a4,"award, contract",complete,2026-11-24,Waltham Forest Council Chatbot Production Deployment and Managed Service,Chatbot Production Deployment and Managed Service for Digital and Technology Services,,,,,Lambert Labs Ltd,2026-12-01,2027-11-30
+Find a Tender,109690-2026,https://www.find-tender.service.gov.uk/Notice/109690-2026,ocds-h6vhtk-07bf6b,"award, contract",complete,2026-11-19,Contingency Funeral Director for Transportation,Mortuary Services is required under the Essex contract/SLA to arrange transportation of deceased persons. The proposal is to continue using the existing contingency arrangement with funeral directors we have the SLA with to provide transportation support when required until internal driver capacity is restored.,,,,,T Cribb & Sons Funeral Directors,2026-10-30,2027-03-30
+Find a Tender,109343-2026,https://www.find-tender.service.gov.uk/Notice/109343-2026,ocds-h6vhtk-07beb9,planning,planning,2026-11-18,Market Engagement Event for Home-Based Support and Reablement Services,"Description 
+The London Borough of Waltham Forest is undertaking further preliminary market engagement for a new Home-Based Support and Reablement Framework. This engagement is intended to inform providers of the Council’s commissioning intentions and the forthcoming procurement opportunity for Home-Based Support and Reablement services. 
+Market Engagement Event 
+An online market engagement webinar will be held via Microsoft Teams on 25 November 2026, from 3:00pm to 4:00pm. Interested providers can register using the following link: Microsoft Teams registration. [https://te...ImXd6Dzp2t] 
+The session will provide an overview of the proposed commissioning and procurement approach, including: 
+Service requirements
+Framework structure and lot arrangements 
+Procurement process and timetable 
+Opportunities for questions and clarification 
+Please note that all information provided during this engagement is indicative and subject to change prior to the release of the formal Invitation to Tender. 
+Estimated Maximum Framework Value: Up to £125 million over the four-year framework term. 
+Contract Term (Estimated): 1 August 2027 to 31 July 2031 Call-off contracts may be extended until 31 July 2033, where applicable.",125000000.0,,,,,,
 Find a Tender,107910-2026,https://www.find-tender.service.gov.uk/Notice/107910-2026,ocds-h6vhtk-07bb69,"award, contract",complete,2026-11-13,Chingford Crematorium & Cemetery management System,Chingford Crematorium & Cemetery management System Replacement Tender process,,,,,GSS (NI) Ltd,2026-11-16,2031-11-15
 Find a Tender,107872-2026,https://www.find-tender.service.gov.uk/Notice/107872-2026,ocds-h6vhtk-07bb52,"award, contract",complete,2026-11-13,Crematorium AV,Audio Visual equipment & services for Chingford Mount Crematorium,,,,,Vivedia Ltd,2025-04-01,2030-04-01
 Contracts Finder,51091fc9-382b-4a40-a43e-ff6e51923671,https://www.contractsfinder.service.gov.uk/Notice/51091fc9-382b-4a40-a43e-ff6e51923671,fb20cb0d-7278-4f40-a712-37bda244eb19,Contract,Awarded,2026-11-11,Oracle Support Contract,"The London Borough of Waltham Forest is looking to appoint a Supplier that can deliver a managed service solution in line with the requirements provided within this document, hereafter referred to as the Service.",,0.01,0.01,1500000,Version 1 Solutions Limited,2026-12-01,2029-11-30
