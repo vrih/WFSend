@@ -7,7 +7,9 @@ and dark mode are handled by the stylesheet, not here.
 from html import escape
 
 # Series identity is fixed per area so a colour always means the same place.
-AREA_CLASS = {"Waltham Forest": "s1", "NELFT": "s1", "London": "s2", "England": "s3", "Similar areas": "s5"}
+AREA_CLASS = {"Waltham Forest": "s1", "NELFT": "s1", "London": "s2", "England": "s3", "Similar areas": "s5",
+              # Waltham Forest series from the council's own figures
+              "Requests": "s1", "Plan starts": "s4"}
 
 
 def _fmt(v, unit):
