@@ -526,3 +526,46 @@ htst_taxi_framework:
   eligibility_page: 1
   forum_themes: communication with families, driver consistency, safeguarding, SEND-specific training, information sharing and the importance of defining what good-quality Home to School Transport looks like from the perspective of children and families
   forum_page: 5
+
+# Schools Capital Programme 2026-2030, report to Cabinet on 1 December 2026.
+# The PDF has no printed page numbers, so pages are PDF page numbers.
+schools_capital_2026:
+  source: cabinet_dec2026_schools_capital
+  total: "£50.58m"
+  committed: "£31.58m"
+  unallocated: "£19m"
+  total_page: 4
+  hnpca: "£3,378,268"
+  sca: "£3,639,779"
+  grants_page: 10
+  inmss_cost_from: "£65,168"
+  inmss_cost_to: "£73,390"
+  inmss_cost_page: 7
+  ehcp_growth: "53%"
+  ehcp_projection: "31%"
+  ehcp_growth_page: 11
+  pivot: "Investment therefore needs to pivot from expansion towards SEND sufficiency, estate optimisation and condition"
+  pivot_page: 4
+  # Places from paragraphs 3.12.3, 3.12.4 and 3.13 (page 5) and 3.19 (page 7).
+  places:
+    - { setting: "Maple Green campus (Lime Academy Hornbeam, former Chapel End Early Years Centre)", places: "40, then 60 more", timing: "40 from September 2026; 20 more in 2027 and up to 100 in all by 2028", page: 5 }
+    - { setting: "Willowfield School", places: 15, timing: "6 needed for September 2026", page: 5 }
+    - { setting: "Mayville School", places: 10, timing: "4 in September 2026, then 2 more each September until full in September 2029", page: 5 }
+    - { setting: "Thorpe Hall", places: 10, timing: "4 in September 2026, then 2 more each September until full in September 2029", page: 5 }
+    - { setting: "Connaught School for Girls", places: "up to 10", timing: "not given", page: 5 }
+    - { setting: "Kelmscott School", places: 15, timing: "not given", page: 5 }
+  # Paragraph 3.19 says two primary and one secondary resource provision opened
+  # in September 2026 and "a further two secondary SEND resource provisions are
+  # scheduled to open" from September 2027, without naming them.
+  next_wave: "From September 2027, a further two secondary SEND resource provisions are scheduled to open"
+  next_wave_page: 7
+  out_of_borough:
+    title: Waltham Forest children placed outside the borough, and the council's forecast if nothing changes
+    source: cabinet_dec2026_schools_capital
+    page: 7
+    columns: ["2020", "2025", "2026", "2030 (forecast)"]
+    rows:
+      - { label: "Independent and non-maintained special schools", values: [29, "not given", 89, 182] }
+      - { label: "Other councils' special schools", values: [30, "not given", 80, 214] }
+      - { label: "Mainstream schools in other boroughs", values: ["not given", 129, "not given", 252] }
+    note: 'The forecasts are what the council expects "if no mitigating action is taken". The report gives the 182 as "out-of-borough placements" straight after the independent school figures, so it appears to be the forecast for independent and non-maintained schools. The report does not say on what date in each year the children were counted.'

@@ -348,6 +348,14 @@ cabinet_nov2026_short_breaks:
   url: https://democracy.walthamforest.gov.uk/documents/s111597/Short%20Breaks%20Recommissioning%20-%20Cabinet%20November.pdf
   notes: The report asks Cabinet to approve the recommissioning. Its appendices (a draft coproduction framework and an equality impact assessment) are separate documents on the meeting page, https://democracy.walthamforest.gov.uk/ieListDocuments.aspx?CId=287&MId=6359
 
+cabinet_dec2026_schools_capital:
+  title: Schools Capital Programme 2026 – 2030 (Cabinet report)
+  publisher: London Borough of Waltham Forest
+  date: 2026-12-01
+  meeting: Cabinet, 1 December 2026
+  url: https://democracy.walthamforest.gov.uk/documents/s112089/Cabinet%20Paper%20Schools%20Capital%20Programme%202026-30%20Cabinet%20Paper_v16.pdf
+  notes: The report asks Cabinet to approve £50.58m of school building spending to 2029/30. The PDF has no printed page numbers, so pages are PDF page numbers. Appendix 1 (a resources summary), Appendix 4 (an equality impact screening) and Appendix 5 (a sustainability matrix) are separate documents on the meeting page. Appendices 2 and 3, which list the committed and proposed projects and their costs, are not published. The council says they contain information about "the financial or business affairs of any particular person".
+
 # Letters and emails sent to the site's author by named council or NHS
 # officers. They are not published, so they have `kind: correspondence` and
 # no url. Attribute them to the person and their role. Quote them exactly,
